@@ -1,0 +1,62 @@
+[
+    {
+        "input": {
+            "style": "mailer",
+            "material": "kraft",
+            "print": "full-color",
+            "finish": "matte",
+            "quantity": 1000,
+            "length": 30,
+            "width": 22,
+            "height": 12,
+            "rush": false
+        },
+        "unit": 2.01,
+        "total": 2012.22
+    },
+    {
+        "input": {
+            "style": "rigid",
+            "material": "rigidboard",
+            "print": "full-color",
+            "finish": "soft-touch",
+            "quantity": 2500,
+            "length": 22,
+            "width": 16,
+            "height": 8,
+            "rush": false
+        },
+        "unit": 4.02,
+        "total": 10050.95
+    },
+    {
+        "input": {
+            "style": "carton",
+            "material": "white",
+            "print": "one-color",
+            "finish": "none",
+            "quantity": 500,
+            "length": 12,
+            "width": 4,
+            "height": 16,
+            "rush": false
+        },
+        "unit": 1.13,
+        "total": 566.3
+    },
+    {
+        "input": {
+            "style": "pouch",
+            "material": "kraftpoly",
+            "print": "full-color",
+            "finish": "matte",
+            "quantity": 5000,
+            "length": 19,
+            "width": 7,
+            "height": 28,
+            "rush": true
+        },
+        "unit": 0.58,
+        "total": 2880.27
+    }
+]

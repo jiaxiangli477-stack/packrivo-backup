@@ -1,0 +1,170 @@
+{
+  "generatedFrom": [
+    "app/globals.css",
+    "lib/pricing.ts"
+  ],
+  "styles": {
+    "mailer": {
+      "label": "Mailer box",
+      "base": 1.42
+    },
+    "product": {
+      "label": "Product box",
+      "base": 1.18
+    },
+    "shipping": {
+      "label": "Shipping box",
+      "base": 1.02
+    },
+    "rigid": {
+      "label": "Rigid box",
+      "base": 3.4
+    },
+    "carton": {
+      "label": "Folding carton",
+      "base": 0.74
+    },
+    "pouch": {
+      "label": "Stand-up pouch",
+      "base": 0.46
+    },
+    "bag": {
+      "label": "Paper bag",
+      "base": 0.92
+    },
+    "sticker": {
+      "label": "Sticker sheet",
+      "base": 0.16
+    },
+    "poly": {
+      "label": "Poly mailer",
+      "base": 0.62
+    }
+  },
+  "materials": {
+    "kraft": {
+      "label": "Kraft E-flute",
+      "factor": 1,
+      "note": "Recycled, natural finish, best value"
+    },
+    "white": {
+      "label": "White E-flute",
+      "factor": 1.06,
+      "note": "Bright print surface for full-colour art"
+    },
+    "recycled": {
+      "label": "100% recycled board",
+      "factor": 1.1,
+      "note": "Unbleached core; certification subject to supplier verification"
+    },
+    "corrugated": {
+      "label": "Double-wall corrugated",
+      "factor": 1.22,
+      "note": "Heavy-duty transit protection"
+    },
+    "rigidboard": {
+      "label": "Rigid greyboard 2 mm",
+      "factor": 1.75,
+      "note": "Wrap-around luxury construction"
+    },
+    "kraftpoly": {
+      "label": "Kraft-look poly mailer",
+      "factor": 0.92,
+      "note": "Water resistant, lightweight parcel"
+    },
+    "compostable": {
+      "label": "Compostable mailer",
+      "factor": 1.38,
+      "note": "Compostability subject to supplier verification"
+    }
+  },
+  "prints": {
+    "none": {
+      "label": "Unprinted",
+      "add": 0
+    },
+    "one-color": {
+      "label": "1-colour flexo",
+      "add": 0.09
+    },
+    "full-color": {
+      "label": "Full-colour CMYK",
+      "add": 0.18
+    },
+    "full-color-spot": {
+      "label": "CMYK + spot colour",
+      "add": 0.29
+    }
+  },
+  "finishes": {
+    "none": {
+      "label": "None",
+      "add": 0
+    },
+    "matte": {
+      "label": "Matte varnish",
+      "add": 0.06
+    },
+    "gloss": {
+      "label": "Gloss varnish",
+      "add": 0.05
+    },
+    "soft-touch": {
+      "label": "Soft-touch lamination",
+      "add": 0.13
+    },
+    "spot-uv": {
+      "label": "Spot UV",
+      "add": 0.16
+    },
+    "foil": {
+      "label": "Foil stamp",
+      "add": 0.35
+    },
+    "emboss": {
+      "label": "Blind emboss",
+      "add": 0.24
+    }
+  },
+  "tiers": [
+    [
+      500,
+      1
+    ],
+    [
+      1000,
+      0.93
+    ],
+    [
+      2500,
+      0.85
+    ],
+    [
+      5000,
+      0.78
+    ],
+    [
+      10000,
+      0.72
+    ],
+    [
+      25000,
+      0.66
+    ]
+  ],
+  "setup": {
+    "print": 220,
+    "die": 120
+  },
+  "sizeRef": [
+    30,
+    20,
+    10
+  ],
+  "rules": {
+    "freePrintSetupFrom": 2500,
+    "freeDieFrom": 5000,
+    "rushPercent": 22,
+    "tierFloor": 0.64
+  }
+}

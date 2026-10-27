@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Packrivo">
+  <rect x="10" y="8" width="24" height="48" fill="#0d4836"/>
+  <path d="M34 8h8a16 16 0 0 1 0 32h-8z" fill="#b89553"/>
+  <path d="M10 32l24-14v10L10 42z" fill="#f6f2e9"/>
+</svg>
