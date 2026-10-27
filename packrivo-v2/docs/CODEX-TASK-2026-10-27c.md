@@ -1,13 +1,13 @@
 # Codex 任务单 · 2026-10-27c · 把 v2 的转化路径、产品筛选和博客版式搬进子主题
 
-> **草稿状态：** 等 `docs/CODEX-RESULT-2026-10-27b.md` 出来、Claude 复核后，才转为正式版。转正后删除这一行。
-
 直接按顺序执行，不需要再向我确认方案。遇到需要我决定的事，写进结果文件的"待站长决定"，然后继续做下一项。
 
 ## 0. 开工前
 
 1. 读完 `E:\破甲工作区\packrivo-v2\agent.md`，第 1–8 条照做。
-2. 读 `docs\CODEX-RESULT-2026-10-27b.md`。上一轮改过的文件（`/get-a-quote/` 页面、去掉 H1 里的 Sourcing、前 2 个首饰子品类页）以它的结果为准，在它的基础上改，不要回退。
+2. 上一轮（27b）的任务是：起本地环境、建 `/get-a-quote/` 页面、批量去掉 H1 里的 Sourcing、做前 2 个首饰子品类页。
+   - 如果 `docs\CODEX-RESULT-2026-10-27b.md` 已经存在：以它的结果为准，在它的基础上改，不要回退。
+   - 如果还不存在：先检查这几项在本地是否已经做了。做了的不要重做；没做的，`/get-a-quote/` 页面属于本轮前提，先把它补上，其余的不在本轮范围。在结果文件里写清楚你看到的状态。
 3. 范围：只改
    - `E:\破甲工作区\packrivo-wp\packrivo-home-v4\`（子主题）
    - `E:\破甲工作区\packrivo-wp\packrivo-quote\`（报价插件）
@@ -156,13 +156,18 @@
 - 来源：`E:\破甲工作区\audit-parkrivo\codex-output\`，索引 `交付索引.csv`，原图在 `D:\Codex\packrivo-image-work\sources`。
 - 只给 B 节**没有封面**、或封面明显不是该产品的卡片补图，每张卡一张，按分类对应。
 - **每张都要和原图对比**：产品本身的压纹或印字被误删的不能用（已知 drawer-box-033975 的玫瑰压纹丢了）。结果里列出用了哪些、对比结论、排除了哪些。
-- 图片 alt 写产品描述。卡片下方或图片 `<figcaption>` 标注 `Supplier product photo, retouched (text and watermarks removed)`，小字即可。
+- 图片 alt 写产品描述。图片 `<figcaption>`（或卡片下方小字）的标注统一用 27d 任务单第 2 节的写法：`Image enhanced from the supplier's product photo (text and watermarks removed). Colours and details may vary slightly.`
 - 上传进本地媒体库，转成 webp，宽度 800 和 1200 各一份。
 - 9 个子品类页的批量做图不在本轮，按 INTEGRATION-PLAN 的分批计划另做。
 
 ## G. 提交和结果
 
-- `E:\破甲工作区\packrivo-wp` 目前**不是 git 仓库**。开工前先整目录复制一份到 `E:\破甲工作区\packrivo-wp-backup-20261027c`。如果上一轮已经给它建了 git，就按 A、B、C、D、E、F 分组提交，每次提交信息写清楚改了什么、怎么验证的；如果没建，在结果文件里按节列出改动的文件。不要自己 `git init`。
+- `E:\破甲工作区\packrivo-wp` 本身**不是 git 仓库**，不要在里面 `git init`。
+- 改动前的快照已经备份到 `E:\破甲工作区\packrivo-backup`，这是一个 git 仓库，远端是私人仓库 `jiaxiangli477-stack/packrivo-backup`，`main` 分支，提交 `8081453`。
+- 每完成一节（A、B、C、D、E、F）：
+  1. 把 `packrivo-wp\` 下改过的文件同步到 `packrivo-backup\packrivo-wp\`。
+  2. 在 `packrivo-backup` 里提交一次，提交信息写清楚改了什么、怎么验证的。
+  3. 全部完成后 `git push`。这样 Claude 可以按提交逐节核验。
 - 结果写到 `E:\破甲工作区\packrivo-v2\docs\CODEX-RESULT-2026-10-27c.md`，内容包括：
   - 每节的状态：完成 / 部分 / 待 HTTP 验证 / 没做及原因
   - 各节验收命令和原样输出
