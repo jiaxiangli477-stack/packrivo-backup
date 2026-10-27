@@ -1,0 +1,14 @@
+{
+  "csv_rows": 223,
+  "local_pages": 226,
+  "local_published": 208,
+  "local_published_and_csv": 192,
+  "csv_not_local_published": 31,
+  "local_published_not_csv": 16,
+  "qa": {
+    "通过": 0,
+    "不通过": 4,
+    "需人工看": 219
+  },
+  "note": "local snapshot only; not current production evidence"
+}
