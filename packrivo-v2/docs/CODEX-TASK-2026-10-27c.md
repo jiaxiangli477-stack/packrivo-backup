@@ -79,7 +79,7 @@
 1. **英雄区统计**：在现有三项前面加一项 `From` / `$X / unit`，X 取首页产品卡片 from 价的最小值（引擎算）。现有三项不动。检查 375 px 下 4 项的排版。
 2. **产品区**：把 5 张分类卡片换成 8 张 B 节的产品卡片。
    - 选卡原则：优先首饰（戒指、项链、抽屉、磁吸首饰盒），然后礼盒、mailer、标签。必须有映射 + 有封面。选不满 8 张就有几张放几张，并在结果里说明。
-   - eyebrow 保留 `What we make`。H2 改为 `Start from a structure`。
+   - eyebrow 保留 `What we make`。H2 改为买家词：`Custom jewelry boxes, pouches and gift boxes with your logo`。卡片标题和 alt 也用买家能搜到的叫法（例如 `Custom Ring Boxes`），不用技术名。全站的 H2、按钮、卡片文案都不放技术参数词（E-flute、SBS、GSM、Delta E 等）。
    - 右侧保留 `All products →`。
 3. **价格透明区**：
    - 现有 `<ul>` 换成三条，前半句加粗，逐字使用：
@@ -156,7 +156,7 @@
 - 来源：`E:\破甲工作区\audit-parkrivo\codex-output\`，索引 `交付索引.csv`，原图在 `D:\Codex\packrivo-image-work\sources`。
 - 只给 B 节**没有封面**、或封面明显不是该产品的卡片补图，每张卡一张，按分类对应。
 - **每张都要和原图对比**：产品本身的压纹或印字被误删的不能用（已知 drawer-box-033975 的玫瑰压纹丢了）。结果里列出用了哪些、对比结论、排除了哪些。
-- 图片 alt 写产品描述。图片 `<figcaption>`（或卡片下方小字）的标注统一用 27d 任务单第 2 节的写法：`Image enhanced from the supplier's product photo (text and watermarks removed). Colours and details may vary slightly.`
+- 图片 alt 写产品描述。图片 `<figcaption>`（或卡片下方小字）的标注统一写：`Supplier product photo, retouched (text and watermarks removed)`
 - 上传进本地媒体库，转成 webp，宽度 800 和 1200 各一份。
 - 9 个子品类页的批量做图不在本轮，按 INTEGRATION-PLAN 的分批计划另做。
 
