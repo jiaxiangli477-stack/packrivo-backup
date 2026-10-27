@@ -71,6 +71,7 @@ final class PKQ_REST
         }
         $clean = [
             'style' => sanitize_text_field($p['style'] ?? ''),
+            'product' => is_scalar($p['product'] ?? '') ? sanitize_title($p['product'] ?? '') : '',
             'material' => sanitize_text_field($p['material'] ?? ''),
             'print' => sanitize_text_field($p['print'] ?? ''),
             'finish' => sanitize_text_field($p['finish'] ?? ''),
@@ -146,6 +147,7 @@ final class PKQ_REST
                 'pkq_phone' => $data['phone'],
                 'pkq_notes' => $data['notes'],
                 'pkq_style' => $data['style'],
+                'pkq_product' => $data['product'],
                 'pkq_material' => $data['material'],
                 'pkq_print' => $data['print'],
                 'pkq_finish' => $data['finish'],
@@ -191,6 +193,7 @@ final class PKQ_REST
             'Phone: ' . $data['phone'],
             '',
             'Style: ' . $data['style'],
+            'Product: ' . $data['product'],
             'Size: ' . $data['length'] . ' × ' . $data['width'] . ' × ' . $data['height'] . ' cm',
             'Material: ' . $data['material'],
             'Print: ' . $data['print'],

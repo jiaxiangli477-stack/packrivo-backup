@@ -147,14 +147,22 @@ final class PKQ_Plugin
             ],
         ]);
 
-        $atts = shortcode_atts(['style' => '', 'qty' => ''], $atts, 'packrivo_quote');
-        $style = sanitize_text_field($atts['style']);
-        $qty = (int) $atts['qty'];
+        $atts = shortcode_atts(['style' => '', 'qty' => '', 'product' => ''], $atts, 'packrivo_quote');
+        $style_input = $atts['style'] !== '' ? $atts['style'] : ($_GET['style'] ?? '');
+        $qty_input = $atts['qty'] !== '' ? $atts['qty'] : ($_GET['qty'] ?? '');
+        $product_input = $atts['product'] !== '' ? $atts['product'] : ($_GET['product'] ?? '');
+        $style = is_scalar($style_input) ? sanitize_text_field(wp_unslash($style_input)) : '';
+        if (!isset($settings['styles'][$style])) {
+            $style = '';
+        }
+        $qty = is_scalar($qty_input) && $qty_input !== '' ? max((int) $settings['min_qty'], min((int) $settings['max_qty'], (int) $qty_input)) : 0;
+        $product = is_scalar($product_input) ? sanitize_title(wp_unslash($product_input)) : '';
 
         return sprintf(
-            '<div class="pkq-root" data-style="%s" data-qty="%d"><noscript>%s</noscript></div>',
+            '<div class="pkq-root" data-style="%s" data-qty="%d" data-product="%s"><noscript>%s</noscript></div>',
             esc_attr($style),
             $qty,
+            esc_attr($product),
             esc_html__('This configurator needs JavaScript. Email hello@packrivo.com and we will quote manually.', 'packrivo-quote')
         );
     }

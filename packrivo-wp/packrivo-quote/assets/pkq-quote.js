@@ -371,6 +371,7 @@
           var data = new FormData(form);
           var payload = {
             style: state.style,
+            product: root.getAttribute('data-product') || '',
             material: state.material,
             print: state.print,
             finish: state.finish,
