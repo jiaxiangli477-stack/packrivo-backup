@@ -806,3 +806,49 @@ r28q-net 演练栈五容器全部 Up：php(r28q-php:8.3) / nginx(nginx:alpine，
 - 提交 16d2189 后立即复查 `git status`，发现 `M deploy/RUNBOOK-launch.md`（未暂存、未提交，非本链改动，+43/−1）：并行链正在落地 28r §4.1 的最后手段改写——新增前置探针（并引述 28r 实测：拆包装时 `db import` 退出码 1、装包装后导入成功、`28r-canary` 草稿导入后消失）、L1 整库导入 + L2 transient/缓存清理 + L3 文件回滚顺序（9.6→9.5→9.4→9.2）、L-1…L-6 逐条判据表（照 28r §3），并声称「28r 本地实测 L-1…L-6 全 PASS；L3 后整站快照 sha256 与 28q 基线 `4972cd81…` 逐字节一致；证据 `deploy/verification-28r/lastresort.log`」。
 - 但截至本观察：`deploy/verification-28r/` 目录不存在、`dsh-out/DSH-RESULT-2026-10-28r.md` 不存在、该 RUNBOOK 改动未提交 → 28r 成果为**在途状态**，不能作为已提交证据采信；17.7 门禁结论不变（生产第 1 步重跑条件仍不满足、继续停止等待、第 2–8 步与 SSH 生产继续禁止）。
 - 零触碰：该在途改动与全部未跟踪文件未被本链暂存/提交/修改；本补充仅追加本日志文件。
+## 18 · 28r 增量门禁核查（3dd46fc 之后）：在途改写逐 hunk 核实 / 28r 演练终态 / Claude 三项必改与 supplement2 落地 / 审批项⑥⑦口径（2026-10-28 本机只读核查；未执行任何脚本、未启动/停止/接入容器、未修改/删除他人文件、未读任何凭据）
+
+### 18.1 增量范围（3dd46fc 之后）
+
+- `git fetch origin` 后 `origin/main == HEAD == 3dd46fc`（`rev-list --count main...origin/main` = 0/0）：**零新提交**。
+- 任务单答复：packrivo-v2/docs/（仓库内外两处）最新仍是 DSH-TASK-2026-10-28r.md（bd17806，11:09/11:10）；**无 28r 答复、无新任务单**。
+- 工作树在途改动（并行链，未暂存未提交）仍仅 2 处：`deploy/RUNBOOK-launch.md`（+58/−11 双 hunk：L549–600 最后手段节改写 + L626–653 附录 C 改写）、`dsh-out/DSH-RESULT-2026-10-28q.md`（§6 一行：删「db import 成功」改述「28r 已补跑，见 DSH-RESULT-2026-10-28r.md」）。无任何未跟踪文件（porcelain -uall=0）。
+- 28r §5 交付物在仓库仍**全部缺位**：`deploy/verification-28r/` 目录不存在、`dsh-out/DSH-RESULT-2026-10-28r.md` 不存在——在途文本引用的 `deploy/verification-28r/lastresort.log` 在仓库内不存在（真实日志在仓库外 `.tmp\28q\rehearsal\home\web\rehearsal-28r\lastresort.log`）。
+
+### 18.2 在途 RUNBOOK 改写逐 hunk 核实（对照真实演练日志，只读）
+
+- 28r 演练已于本地**完整结束**（r28r-runner，日志 136 行终态）：起点快照 847 行 sha256 `4247693f…`（与任务单 §1 要求一致 PASS）；拆包装 `db import` 退出码 1（TLS 2026，表数仍 40、siteurl 可读——未被导坏）；装包装后探针导出 35,265,982 B>0、`db import` rc=0；canary ID 3883 导入后 count=0；9.6 mu 恢复 sha256 OK、9.5 子主题移除、9.4 quote deactivate+delete、9.2 i18n 复制；阶段 7 最终快照 s-final.txt 845 行 sha256 `4972cd81…3deb` **与 28q 基线逐字节一致 PASS**；三份 diff 生成。
+- **演练自身验收汇总：`PASS=16 FAIL=2`，脚本 `EXIT=1`**。两条 FAIL：L-4「packrivo-quote 仍在插件列表」（阶段 5 导入后插件文件仍在磁盘、未激活）；L-6「/get-a-quote/ 200」（期望 301）。
+- → 在途 RUNBOOK L600「28r 本地实测：L-1…L-6 全 PASS」与附录 C L640「L-1…L-6 全 PASS」**与演练日志矛盾**（日志自身 FAIL=2、exit 1）；该声称写于 11:23（RUNBOOK mtime），早于阶段 6/7 结果产出（11:24–11:26 才到终态），属超前/失实断言。「4972cd81 逐字节一致」部分事后成立（阶段 7 PASS），但「全 PASS」不成立。
+- 附录 C 对 28q 的改写「正向/回滚/再正向 各步判据行全 PASS」**无对应证据**：28q rehearsal.log（e68b87a 入库版）仅 7 处「### STEP n 通过判据 ###」标题、无逐条 PASS/FAIL 判据行；Claude 已否定「18 块全 exit=0」证据体系 → 把 exit=0 改写成「判据行全 PASS」属未经重跑的改写，不可采信。
+- 附录 C「`bash rehearsal.sh selftest` 可自检这套机制」：仓库 `deploy/verification-28q/scripts/rehearsal.sh`（266 行，mtime 09:29:37，cad8c62 入库版）无 step_end/selftest/ckp/ckf、每步仍 `set +x` 收尾、唯一 exit 为 L268 用法错误 `exit 2` → 该机制只存在于仓库外 `.tmp\28q\rehearsal.sh`（11:18，18,254 B，patch-rehearsal.mjs 产物），**未入库**。
+
+### 18.3 Claude 三项必改落地判定（在途 ≠ 落地）
+
+1. **最后手段 db import 真实演练**：已实际执行且有完整日志（双向 import + canary + 文件回滚 + 终态==基线）；DSH-RESULT-q §6 已在途改正；RUNBOOK 最后手段节已在途改写（前置探针/L1/L2/L3/判据表）。但未提交；判据表声称与实际 FAIL 矛盾（18.2）。
+2. **rehearsal.sh 可判别 FAIL/exit 1 硬守卫**：仓库**未落地**（scripts/rehearsal.sh 未动；机制只在 .tmp 副本 + 在途文本引用）。
+3. **每轮 §0.1 --skip-ssl 探针且不依赖容器遗留包装**：**部分成立**——28r 演练实测了包装依赖（拆→败 rc=1、装→成 rc=0）并在最后手段节加了前置探针（在途）；但「每轮轮内 step0 先跑 0.1 探针、不依赖遗留包装」仍未落实到仓库内任何脚本（scripts/rehearsal.sh 无 step0 探针，step0-probe.sh 仍是轮后补跑模式）。
+
+### 18.4 supplement2（2.5/3.0/9.3/附录 D）落地与冲突
+
+- 工作树 RUNBOOK：无「附录 D」（仅附录 A/B/C）、2.5 校验行（L231 起）仍为 `|| echo` 吞失败、无 3.0 预 apply 守卫、无 9.3 预回滚 site 守卫（grep 零命中）→ **2.5/3.0/9.3/附录 D 全部未落地**；与在途两处 hunk（最后手段节/附录 C）无上下文重叠、不构成冲突，但 supplement2 本体仍未获批准（其自注「待负责人批准」）。
+- 方向背书：28r 任务单 §4.4（rehearsal.sh FAIL 计数+exit 1）≈ supplement2 2.5；§4.1（最后手段前置探针）≈ D.2.1——同向背书存在，**全量批准与落地仍缺**。
+
+### 18.5 三轮完整正向 PASS（严格口径）与 Claude 复验 / 新生产授权
+
+- **严格三轮整轮 PASS：仍不成立**。结构仍为 28q「2 正向+1 回滚」；28r 仅为第 9 步最后手段+文件回滚演练（非完整正向轮，且其验收 FAIL=2、exit 1）；新的 PASS/FAIL+exit 1 机制（step_end）只存在于 .tmp 脚本、未入库、未在完整轮次上跑过。不得以 2 正向+1 回滚、恒 exit=0 或他人自述替代。
+- **Claude 对修正结果的复验结论：不存在**（无 DSH-RESULT-28r、无任何新核验文档；28r 结果尚未成文，Claude 未对三项必改后的结果做过第二次核验）。
+- **新生产授权：不存在**。28r 明确「本轮不碰生产：不 SSH，不碰密码」；无任何新授权记录。
+
+### 18.6 审批项⑥⑦口径裁定（最新）
+
+- **⑥ 演练内容复位**（supplement2 附录 D.1 prep-restore.php 进 /pkg）：仍**未落地**；28r 演练起点=4247693f（未走 reset 轮，不涉及内容复位）；第 3/9 步判 PASS 须在负责人批准的落地版本上重新验证——口径保持。
+- **⑦ 重启归属/轮次计数**：28r last-resort 演练由并行链 r28r-runner 执行、完整结束（未截断），但不计入「三轮完整循环」；「2 正向+1 回滚 vs 三轮完整循环」计数口径仍待负责人确认。**新口径点**：28r 演练自身 FAIL=2（L-4/L-6）与在途 RUNBOOK「全 PASS」声称矛盾——需并行链在 DSH-RESULT-28r 中如实说明或修正在途文本，否则该声称不可采信。
+- **⑧ 四边界批复不变**：「28r 本地补演练/改文件获批、生产授权仍未批」。
+
+### 18.7 门禁结论与操作边界
+
+- 四前置仍全部缺失：①严格口径三轮整轮 PASS；②Claude 修正后复验结论；③负责人新的生产授权（28r 仍禁生产）；④Claude 三项必改与 supplement2 守卫按批准**落地到仓库**（现仅在途/.tmp）。
+- **生产第 1 步重跑条件不满足**：生产第 1 步维持 FAIL，**第 2–8 步与 SSH 生产继续禁止**，本链继续停止等待，绝不执行第 2–8 步。
+- 操作边界：仅只读命令（git status/log/fetch/diff/ls-files、Get-Content/Select-String、docker ps 只读列举）；未执行任何脚本、未启动/停止/接入容器、未修改/删除他人文件、未 SSH 生产、未重跑生产第 1 步、未读取或打印任何密码/密钥/token。
+- 本轮仓库变更：本节日志追加 + 新增独立只读证据摘录 `deploy/verification-28q/gate-evidence-2026-10-28-after-3dd46fc.md`；仅这两个文件暂存提交并 push；并行链在途改动（RUNBOOK/DSH-RESULT-q）与全部未跟踪文件保持零触碰。
