@@ -1,5 +1,7 @@
 # 27e / 27g / 27h / 27i 上线前检查与回滚方案（未执行）
 
+> **上线以 [`RUNBOOK-launch.md`](RUNBOOK-launch.md) 为准；本文件里 27g…28o 的分轮记录只作历史参考。**
+
 **状态：27i 主页面元数据和按钮字典已完成本地准备，尚未部署。** 包含既有 134 个产品、60 条界面词及本轮 8 个 hub/1 条按钮译文；主字典累计 33 个冲突（27g 的 19 个 + 本轮新增 14 个 title 冲突）按生产优先保留，runtime 新键无冲突。32 个 hub 样本中 27 个严格 dsh 一致，5 个为 inquiry/生产译文保留例外，详见本轮结果。27h 已在本地修复重复 title、RTL skip-link 溢出及 Template 三项，并重新打包子主题；修复没有部署到生产。首页仍为 5/8 张卡片，报价重定向补丁仍待获授权上线时执行。
 
 只读核验：生产主题目录 `packrivo-static-bridge-1.2.38` 存在、`packrivo-static-bridge` 不存在。将来构建子主题包时，`style.css` 的 `Template:` 应为 `packrivo-static-bridge-1.2.38`，并在部署前重新核验。27h 当前源码已改为该值，本地测试已移除临时父主题别名挂载，实际加载同名父主题目录。
@@ -176,8 +178,8 @@ node E:\破甲工作区\.tmp\packrivo-27h\verify-runtime.cjs
 
 | 包 | 文件数 | 大小 | SHA-256 |
 |---|---|---|---|
-| `packrivo-home-v4.zip`（子主题） | 38 | 770.2 KB（788,720 B） | `e7041551906e319e1d361dd53921598940c6775957d0fe8bad33d21dc9244acb` |
-| `packrivo-quote.zip`（报价插件） | 19（含 `includes/quote-i18n/` 11 个语种文件；`demo/` 不进包） | 53.3 KB（54,581 B） | `6c225718357aa7467f6bd50288ccc3a76a0909ea9e18fa3edcbb85d262b66895` |
+| `packrivo-home-v4.zip`（子主题） | 38 | 770.2 KB（788,881 B） | `05de19e1e5072e4bda8e6d843824d915725a57732b4da728036c94e88cf8c3a8` |
+| `packrivo-quote.zip`（报价插件） | 19（含 `includes/quote-i18n/` 11 个语种文件；`demo/` 不进包） | 53.3 KB（54,512 B） | `8e62865ea202d7711b4f113390be898a64024648f348151e27f1dace54c3c05c` |
 
 两个包都与 `packrivo-wp/` 下的工作源逐字节相同（`robocopy /E` 镜像后重打，2026-10-28 总回归最终态重打）。报价插件的报价计算文件 `includes/class-pkq-pricing.php`、`includes/pricing.json`、`includes/class-pkq-rest.php` 与 28m 段 1 结束时的副本 **SHA-256 完全一致**——价格逻辑一行未改；插件包未变化，哈希与第一版相同。子主题包相对第一版（`62a31fc2…`）只多了总回归中修复两处 header 横向溢出的 `assets/site.css` 改动（`.pk-section-head` 加 `flex-wrap: wrap`；6 条按语种隐藏 header 次要链接的媒体查询），其余文件未变。
 
@@ -254,7 +256,7 @@ patch -p1         < /path/to/packrivo-i18n-404-viewport.patch
 ```
 回滚：`cp -a "$BACKUP/mu/packrivo-i18n.php" wp-content/mu-plugins/`。补丁基于本地 `packrivo-i18n.php` 的 164–176 行；生产该文件若已漂移，`--dry-run` 会失败，必须重新比对后手改，不要强打。两个补丁各自回滚只涉及各自文件，一个回滚不影响另一个。
 
-6. **内容**：本轮没有改动任何 post_title / post_content / meta，跳过。28m 的首页卡片、报价按钮去向全部由代码决定。
+6. **内容**：28m 这一轮本身没有改 post_title / post_content / meta，但**上线时不能跳过内容**——27g 的 134 个产品页与 27i 的 8 个主页面才是这次 SEO 改动的主体，见 [`RUNBOOK-launch.md`](RUNBOOK-launch.md) 第 3 步。28m 的首页卡片、报价按钮去向由代码决定。
 
 7. **清缓存 + 复测**：按站点实际缓存方案执行；复测清单见 `packrivo-v2/docs/DSH-RESULT-2026-10-28m.md` 的最后一节。
 

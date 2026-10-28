@@ -380,3 +380,14 @@ en/blog=375  ar/blog=375      en/inquiry=375   ar/inquiry=375
 - 重打包：子主题 38 文件 788,720 B `e7041551…`；插件 19 文件 54,581 B `6c225718…`（`demo/` 不进包）。解压后与工作源逐字节相同。
 - 额外发现 → 已处理：页头 `Sample kit` 原无译文（1351 px 以上在语种页面显示英文，不属报价按钮）；最终收尾阶段已按 11 份主字典补齐译文（每份 `text` 加一键）随最终提交入库。
 - 最终收尾（commit `45e2616` + 文档提交）：item4 终验产物 `verification-28n/buttons-28n-item4.{txt,json}`（16 组 `englishLeak=0`/`wrongHref=0`）；`packrivo-backup/packrivo-wp/` 镜像 `robocopy /MIR` 同步、`packrivo-wp/*.zip` 与镜像 zip 副本同步为新包字节；重跑 `pack-zips.ps1` 两个 zip 哈希不变（`e7041551…`/`6c225718…`），解压后与工作源逐字节相同（主题 38 / 插件 19，`demo/` 0 进包）；`pricing.json` 与 28n 前提交版逐路径 diff 仅 3 个 `label`、33 个数值字段 0 变化，4 组价格数字完全一致；除并行 28o 会话未跟踪的 `deploy/verification-28o/` 外，工作树干净。
+
+## 28o 上线前最后 4 项（2026-10-28）
+
+- 第 1 项：两个 zip 改用 Python zipfile 重打（arcname 正斜杠），容器里 `unzip -Z1` 反斜杠 0；PHP ZipArchive 解压后与工作源逐字节一致（19/19、38/38）；容器里另建独立 WP 根 `/tmp/wp2` 跑 `wp plugin/theme install --force` 均成功，装完 diff 只剩 demo。
+  - 教训：先在本机 bind-mount 站点上跑同一组命令，`--force` 删不掉挂载点 → 旧目录被清空、安装失败；已用快照整目录恢复，站点与 4 组价格正常。RUNBOOK 第 4/5 步已写明必须有目录级备份。
+- 第 2 项：两份源码镜像进备份仓库，容器里 `diff -r` 双向 0 差异（demo 两侧都在）。
+- 第 3 项：11 份字典的 `Sample kit` 统一为短名词（es/fr/it/nl/pt 首字母大写）；1440 px 下 de/fr/nl 无溢出（该宽度副链接本就被隐藏）；1700 px 的 nl 因译文变长多出 31 px，按实测把 it/pt/fr/es/nl 五条媒体查询阈值改为 1620/1680/1640/1760/1780，重扫 13 宽度 × 12 语种 = 156 组，0 溢出。
+- 第 4 项：新建 `deploy/RUNBOOK-launch.md`（九步 + 每步机器/命令/判据/回滚/耗时 + 空档期说明 + 已知问题附录）；新增 `deploy/tools/merge-i18n.php`（生产优先合并 + 冲突清单 + paths 并集，`--self-test` 7 条全过）；README 开头加「上线以 RUNBOOK 为准」，28m 第 6 步「跳过内容」改为指向 RUNBOOK 第 3 步。
+  - 顺手修掉坏补丁：原 404 viewport 补丁 `git apply` 报 `corrupt patch at :21`，重出 15 行版本，`git apply --check`/apply/php -l 全过。
+- 包：子主题 38 文件 788,881 B `05de19e1…`；插件 19 文件 54,512 B `8e62865e…`。
+- 已知未修：页头 768 px（de/nl）与 1024 px（7 语种）横向溢出，需改布局与视觉确认。

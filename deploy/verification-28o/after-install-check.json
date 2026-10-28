@@ -1,0 +1,61 @@
+{
+ "prices": [
+  {
+   "style": "rigid",
+   "unit": "$2.83",
+   "total": "$1,417.43"
+  },
+  {
+   "style": "mailer",
+   "unit": "$2.48",
+   "total": "$1,239.04"
+  },
+  {
+   "style": "sticker",
+   "unit": "$0.96",
+   "total": "$479.63"
+  },
+  {
+   "style": "shipping",
+   "unit": "$2.31",
+   "total": "$1,156.69"
+  }
+ ],
+ "pages": [
+  {
+   "path": "/",
+   "status": 200,
+   "title": "Custom Jewelry Boxes & Packaging with Logo | Packrivo"
+  },
+  {
+   "path": "/products/",
+   "status": 200,
+   "title": "Custom Packaging: 134 Styles, MOQ 500 | Packrivo"
+  },
+  {
+   "path": "/jewelry-boxes/",
+   "status": 200,
+   "title": "Custom Jewelry Boxes: Rigid, Drawer, MOQ 500 | Packrivo"
+  },
+  {
+   "path": "/blog/",
+   "status": 200,
+   "title": "Custom Packaging Guides for Small Brands | Packrivo"
+  },
+  {
+   "path": "/get-a-quote/",
+   "status": 200,
+   "title": "Get a Quote – Packrivo"
+  },
+  {
+   "path": "/inquiry/",
+   "status": 200,
+   "title": "Request a Custom Packaging Quote | Packrivo"
+  },
+  {
+   "path": "/product-drawer-jewelry-box/",
+   "status": 200,
+   "title": "Custom Drawer Jewelry Boxes with Logo | Packrivo"
+  }
+ ]
+}

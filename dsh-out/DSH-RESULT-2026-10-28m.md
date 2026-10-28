@@ -438,3 +438,214 @@ zh-TW home 16 条 / product 5 条 | 可见英文 0 | href 不在本语种报价�
 ### 额外发现（不在 6 项内，没改）
 
 页头还有一个 `Sample kit` 链接同样没进字典。它在 1350 px 以下被 13c7f1f 的媒体查询隐藏，但在 1351 px 以上（阿语、德语、中文等）会以英文出现。它不是报价按钮，也不在任务书范围内；11 语种里只有 `Order a sample kit` 的整句译文，直接截短会改文案口径，所以初版没有动；最终收尾阶段已按 11 份主字典补齐 `Sample kit` 译文（每份 `text` 加一键）随最终提交入库。同位置的两个报价按钮现在已经全部是译文（见上表）。
+
+---
+
+# 28o 上线前最后 4 项
+
+任务书 `packrivo-v2/docs/DSH-TASK-2026-10-28o.md`。只在本地做：没有部署、没有 SSH、没改 `www.packrivo.com`、没有读取或记录任何密码；`deploy/RUNBOOK-launch.md` 里的每一条生产命令**本轮一条都没有执行**。
+
+## 第 1 项 · 两个 zip 的反斜杠（上线阻断）
+
+根因：Windows 的 `Compress-Archive` 把目录分隔符写成 `\`，Linux 的 PHP `ZipArchive` 会把 `packrivo-quote\packrivo-quote.php` 整串当文件名，插件和主题都装不上。
+
+修法：改用 Python `zipfile` 打包，`arcname` 显式写 `/`，目录结构不变（顶层 `packrivo-quote/`、`packrivo-home-v4/`，不含 `demo/`）。
+
+**验收 1：`unzip -Z1` 没有反斜杠**（在本地 Docker 的 Linux 容器 `packrivo-live-wp-1` 里跑，先 `apt-get install -y unzip`）
+
+```
+/tmp/packrivo-quote.zip      条目=19  反斜杠字符数=0
+  首条 packrivo-quote/README.md
+  末条 packrivo-quote/packrivo-quote.php
+/tmp/packrivo-home-v4.zip    条目=38  反斜杠字符数=0
+  首条 packrivo-home-v4/README.md
+  末条 packrivo-home-v4/template-products-v4.php
+```
+
+**验收 2：容器里用 PHP `ZipArchive` 解压，再与工作源逐字节比对**
+
+```
+=== packrivo-quote.zip ===
+  条目 19，条目名含反斜杠 0
+  解压后文件 19，工作源文件 19
+  只在包里 0，只在源里 0，内容不同 0
+  结论: 通过（逐字节一致，无反斜杠条目）
+=== packrivo-home-v4.zip ===
+  条目 38，条目名含反斜杠 0
+  解压后文件 38，工作源文件 38
+  只在包里 0，只在源里 0，内容不同 0
+  结论: 通过（逐字节一致，无反斜杠条目）
+```
+
+原始输出：`deploy/verification-28o/zip-verify-php.txt`、`unzip-list.txt`。
+
+**验收 3：`wp plugin install` / `wp theme install` 真装一次**
+
+容器里原本没有 wp-cli，本轮 `curl` 下载 `wp-cli.phar`（PHP 8.2.28 / WP 6.7.2）到容器 `/tmp`，然后在容器里一份**独立的 WP 根** `/tmp/wp2`（从 `/var/www/html` 复制，含全部插件与主题，单独可写）上执行：
+
+```
+$ wp plugin install /tmp/packrivo-quote.zip --force --path=/tmp/wp2
+Unpacking the package...
+Installing the plugin...
+Removing the old version of the plugin...
+Plugin updated successfully.
+Success: Installed 1 of 1 plugins.
+
+$ wp theme install /tmp/packrivo-home-v4.zip --force --path=/tmp/wp2
+Unpacking the package...
+Installing the theme...
+Removing the old version of the theme...
+This theme requires a parent theme. Checking if it is installed...
+The parent theme, Packrivo Static Bridge 1.2.38, is currently installed.
+Theme updated successfully.
+Success: Installed 1 of 1 themes.
+
+$ diff -r /tmp/wp2/wp-content/themes/packrivo-home-v4 /tmp/src/packrivo-home-v4
+（无输出，exit=0）
+$ diff -r /tmp/wp2/wp-content/plugins/packrivo-quote /tmp/src/packrivo-quote
+Only in /tmp/src/packrivo-quote: demo
+$ wp eval-file /tmp/check-load.php --path=/tmp/wp2
+PKQ_Plugin loaded
+theme=Packrivo Home v4 (child)
+```
+
+**本机这份站点**（跑在 `/var/www/html`，插件与主题目录是 bind mount）装完复测：4 组价格未变、7 个关键页 200：
+
+```
+rigid     $2.83 / $1,417.43
+mailer    $2.48 / $1,239.04
+sticker   $0.96 / $479.63
+shipping  $2.31 / $1,156.69
+200 /  Custom Jewelry Boxes & Packaging with Logo | Packrivo
+200 /products/  Custom Packaging: 134 Styles, MOQ 500 | Packrivo
+200 /jewelry-boxes/  Custom Jewelry Boxes: Rigid, Drawer, MOQ 500 | Packrivo
+200 /blog/  Custom Packaging Guides for Small Brands | Packrivo
+200 /get-a-quote/  Get a Quote – Packrivo
+200 /inquiry/  Request a Custom Packaging Quote | Packrivo
+200 /product-drawer-jewelry-box/  Custom Drawer Jewelry Boxes with Logo | Packrivo
+```
+
+**必须记下来的一件事**：同一组命令**先在本机这份 bind-mount 站点上跑过，失败了**。`--force` 会先删旧目录再解包，而 bind mount 的根目录在容器里删不掉，结果是「旧目录内容被清空 + 新包没解出来」：
+
+```
+$ wp plugin install /tmp/packrivo-quote.zip --force --path=/var/www/html
+Removing the old version of the plugin...
+Warning: Could not remove the old plugin.
+Plugin update failed.
+```
+
+两个源目录（`packrivo-wp/packrivo-quote` 23 个文件、`packrivo-wp/packrivo-home-v4` 38 个文件）被清空到 0 个文件，已用开跑前的快照整目录恢复，恢复后与 zip 解压结果逐字节一致、站点与价格正常。这条也写进了 RUNBOOK 第 4/5 步的回滚要求：`--force` 之前必须有目录级备份。
+
+## 第 2 项 · 备份仓库里的源码副本
+
+`packrivo-backup/packrivo-wp/packrivo-quote` 与 `packrivo-wp/packrivo-home-v4` 已用 `robocopy /E` 从工作源整目录镜像（`demo/` 原样保留，两边都有）。容器里 `diff -r` 双向比对：
+
+```
+$ diff -r 备份仓库 vs 工作源
+packrivo-quote diff exit=0
+packrivo-home-v4 diff exit=0
+```
+
+**0 处差异**（`demo/` 两侧都在，所以连 demo 都没有差异）。原始输出：`deploy/verification-28o/diff-r.txt`。
+
+## 第 3 项 · Sample kit 译文
+
+11 份 `deploy/i18n-merged/*-dict.json` 的 `text` 里各有一行 `"Sample kit"`，全部是**短名词**，并且是整句 `Order a sample kit` 里已经审过的那个名词短语（本轮把 es / fr / it / nl / pt 的首字母大写，作为按钮标签）：
+
+| 语种 | Sample kit | 对照整句 Order a sample kit |
+|---|---|---|
+| ar | مجموعة عينات | اطلب مجموعة عينات |
+| de | Musterset | Ein Musterset bestellen |
+| es | Kit de muestras | Pedir un kit de muestras |
+| fr | Kit d’échantillons | Commander un kit d’échantillons |
+| it | Kit campioni | Ordina un kit campioni |
+| ja | サンプルキット | サンプルキットを注文 |
+| ko | 샘플 키트 | 샘플 키트 주문 |
+| nl | Monsterpakket | Bestel een monsterpakket |
+| pt | Kit de amostras | Pedir um kit de amostras |
+| zh-CN | 样品套装 | 订购样品套装 |
+| zh-TW | 樣品套裝 | 訂購樣品套裝 |
+
+**1440 px 实测**（de / fr / nl，任务书要求的三个）：
+
+| 宽 | 语种 | Sample kit 可见 | 那个副链接文字 | `scrollWidth` | 横向溢出 |
+|---|---|---|---|---|---|
+| 1440 | de | 否（按语种媒体查询隐藏） | — | 1440 | 无 |
+| 1440 | fr | 否 | — | 1440 | 无 |
+| 1440 | nl | 否 | — | 1440 | 无 |
+| 1440 | en | 是 | `Sample kit` | 1440 | 无 |
+| 1700 | de | 是 | `Musterset` | 1700 | 无 |
+| 1700 | fr | 是 | `Kit d’échantillons` | 1700 | 无 |
+| 1700 | nl | 是 | `Monsterpakket` | **1731** | **有（31 px）** |
+
+1440 这一档三个语种本来就把这个副链接隐藏了（13c7f1f 的按语种规则），所以**1440 不会溢出**；但把标签换成译文之后，**1700 的 nl 多出 31 px 溢出**——量出 `.pk-actions` 与 `.pk-cta` 右缘到 1731，把副链接临时 `display:none` 后 `scrollWidth` 正好回到 1700，确认是这个标签撑的。同样的问题在 es（1600–1740）、fr（1560–1620）、it（1560–1600）、pt（1560–1660）都能测到。
+
+处理：按实测重设 `assets/site.css` 里 5 条按语种媒体查询的上限，规则形状不变（还是「在放不下的宽度区间隐藏副链接」），只把阈值挪到各语种真正放得下的宽度：
+
+| 语种 | 改前 `max-width` | 改后 `max-width` | 依据 |
+|---|---|---|---|
+| it | 1500 | **1620** | 1620 起不再溢出 |
+| pt | 1540 | **1680** | 1680 起不再溢出 |
+| fr | 1550 | **1640** | 1640 起不再溢出 |
+| es | 1595 | **1760** | 1760 起不再溢出 |
+| nl | 1655 | **1780** | 1780 起不再溢出 |
+
+改完重扫 **13 个宽度（1560–1800）× 12 个语种 = 156 组**：**0 溢出**。1440 / 1280 / 375 三档仍然 0 溢出。
+
+## 第 4 项 · 一份完整的上线手册
+
+新建 `deploy/RUNBOOK-launch.md`（九步，一步一个顺序），另加两个工具/改动：
+
+- `deploy/tools/merge-i18n.php`：字典合并脚本，规则就是手册第 2 步要求的「生产优先 + 冲突清单 + paths 并集 + 必填路径」。自带 `--self-test`，7 条断言全过（生产值优先、生产独有键保留、本地独有键保留、相同值不记冲突、两个真冲突都记下、paths 取并集、必填路径补齐）。本轮也在容器里对真实仓库跑过合并入口。
+- `deploy/README.md` 开头加了一行「上线以 `RUNBOOK-launch.md` 为准，本文件里 27g…28o 的分轮记录只作历史参考」。
+- 28m 那节第 6 步「内容：本轮没有改动，跳过」改成明确写明**上线不能跳过内容**，并指向 RUNBOOK 第 3 步（134 产品页 + 8 主页面）。
+
+手册每一步都写了：执行机器（生产 SSH / 本机）、具体命令（只有占位变量，没有任何密码或 key）、通过判据、回滚命令、预计耗时。顺序与任务书一致：备份 → 字典与路径表 → 内容 → 报价插件 → 子主题 → mu 补丁（先 27e 再 404）→ 清缓存 → 复测 7 条 → 整体逆序回滚。第 6 步写明了空档期：**第 4–6 步之间 `/get-a-quote/` 仍 301 到询盘页，按钮落到询盘页但不会 404**。
+
+顺手修掉一个真问题：原来的 `deploy/patches-28m/packrivo-i18n-404-viewport.patch` **本身是坏的**——20 行、1,036 B，hunk 后面多挂了两行没有前缀的内容，`git apply` 直接拒：
+
+```
+error: corrupt patch at .../packrivo-i18n-404-viewport.patch:21
+```
+
+用容器里的 `diff -u` 对着原始 mu 文件重新出了一份 15 行 / 1,018 B 的补丁（同样的三处改动：`viewport`、`<style>`、标题行拆开），验证链路：
+
+```
+git apply --check  → exit 0（非 git 目录也能跑）
+git apply          → exit 0
+grep viewport      → 168: . '<meta name="viewport" content="width=device-width, initial-scale=1">'
+php -l              → No syntax errors detected
+```
+
+`27e-quote-redirect.patch` 同样验过：`git apply --check` exit 0 → 打上 → `$legacy` 里已无 `get-a-quote` → `php -l` 干净。两个补丁的本机基线哈希也写进了手册（`packrivo-i18n.php` `3bc32550…`、`packrivo-site-remediation-20261022.php` `abe6f134…`）。
+
+导入脚本的调用方式按脚本真实签名核对过（不是猜的），并在本机容器里以 `plan` 模式实跑：
+
+```
+$ wp eval-file scripts/product-buyers-27g/import.php plan /tmp/pkgroot http://localhost:8081 … all134
+input_pages=134 preflight=PASS
+writes=0
+$ wp eval-file scripts/hubs-27i/import.php plan /tmp/pkgroot http://localhost:8081 …
+hub_pages=8 preflight=PASS
+inquiry_existing_description=preserved writes=0
+```
+
+## 结束 · 重打包与提交
+
+| 包 | 文件数 | 大小 | SHA-256 |
+|---|---|---|---|
+| `packrivo-home-v4.zip` | 38 | 788,881 B | `05de19e1e5072e4bda8e6d843824d915725a57732b4da728036c94e88cf8c3a8` |
+| `packrivo-quote.zip` | 19（`demo/` 不进包） | 54,512 B | `8e62865ea202d7711b4f113390be898a64024648f348151e27f1dace54c3c05c` |
+
+子主题包在 28o 之后又多了一次 `site.css` 改动（5 条按语种媒体查询阈值），所以哈希与 28n 那版不同；插件包只有 `label` 之外的改动没有新增。
+
+### 已知问题（本轮没动）
+
+| 问题 | 实测 |
+|---|---|
+| 页头 768 px 横向溢出 | de 801、nl 896；溢出元素是配色切换按钮和一条导航链接 |
+| 页头 1024 px 横向溢出 | en 1117 / de 1181 / fr 1168 / nl 1221 / es 1191 / pt 1163 / it 1144；溢出元素是 `.pk-actions` 那一簇 |
+| `/ar/<文章路径>/` 返回 404 | `noindex,follow` + 英文版链接，等文章翻译 |
+| `/contact/` 301 到 `/inquiry/` | 生产与本地一致，不构成重复标题页 |
+
+768 / 1024 这两条是页头结构问题（要改布局），需要视觉确认，列进 RUNBOOK 附录 A 与下一轮。

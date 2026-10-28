@@ -1,0 +1,506 @@
+[
+ {
+  "w": 375,
+  "lang": "en",
+  "sw": 375,
+  "vw": 375,
+  "kit": false,
+  "overflow": false
+ },
+ {
+  "w": 375,
+  "lang": "de",
+  "sw": 375,
+  "vw": 375,
+  "kit": false,
+  "overflow": false
+ },
+ {
+  "w": 375,
+  "lang": "fr",
+  "sw": 375,
+  "vw": 375,
+  "kit": false,
+  "overflow": false
+ },
+ {
+  "w": 375,
+  "lang": "nl",
+  "sw": 375,
+  "vw": 375,
+  "kit": false,
+  "overflow": false
+ },
+ {
+  "w": 375,
+  "lang": "es",
+  "sw": 375,
+  "vw": 375,
+  "kit": false,
+  "overflow": false
+ },
+ {
+  "w": 375,
+  "lang": "pt",
+  "sw": 375,
+  "vw": 375,
+  "kit": false,
+  "overflow": false
+ },
+ {
+  "w": 375,
+  "lang": "it",
+  "sw": 375,
+  "vw": 375,
+  "kit": false,
+  "overflow": false
+ },
+ {
+  "w": 414,
+  "lang": "en",
+  "sw": 414,
+  "vw": 414,
+  "kit": false,
+  "overflow": false
+ },
+ {
+  "w": 414,
+  "lang": "de",
+  "sw": 414,
+  "vw": 414,
+  "kit": false,
+  "overflow": false
+ },
+ {
+  "w": 414,
+  "lang": "fr",
+  "sw": 414,
+  "vw": 414,
+  "kit": false,
+  "overflow": false
+ },
+ {
+  "w": 414,
+  "lang": "nl",
+  "sw": 414,
+  "vw": 414,
+  "kit": false,
+  "overflow": false
+ },
+ {
+  "w": 414,
+  "lang": "es",
+  "sw": 414,
+  "vw": 414,
+  "kit": false,
+  "overflow": false
+ },
+ {
+  "w": 414,
+  "lang": "pt",
+  "sw": 414,
+  "vw": 414,
+  "kit": false,
+  "overflow": false
+ },
+ {
+  "w": 414,
+  "lang": "it",
+  "sw": 414,
+  "vw": 414,
+  "kit": false,
+  "overflow": false
+ },
+ {
+  "w": 768,
+  "lang": "en",
+  "sw": 768,
+  "vw": 768,
+  "kit": false,
+  "overflow": false
+ },
+ {
+  "w": 768,
+  "lang": "de",
+  "sw": 801,
+  "vw": 768,
+  "kit": false,
+  "overflow": true
+ },
+ {
+  "w": 768,
+  "lang": "fr",
+  "sw": 768,
+  "vw": 768,
+  "kit": false,
+  "overflow": false
+ },
+ {
+  "w": 768,
+  "lang": "nl",
+  "sw": 896,
+  "vw": 768,
+  "kit": false,
+  "overflow": true
+ },
+ {
+  "w": 768,
+  "lang": "es",
+  "sw": 768,
+  "vw": 768,
+  "kit": false,
+  "overflow": false
+ },
+ {
+  "w": 768,
+  "lang": "pt",
+  "sw": 768,
+  "vw": 768,
+  "kit": false,
+  "overflow": false
+ },
+ {
+  "w": 768,
+  "lang": "it",
+  "sw": 768,
+  "vw": 768,
+  "kit": false,
+  "overflow": false
+ },
+ {
+  "w": 1024,
+  "lang": "en",
+  "sw": 1117,
+  "vw": 1024,
+  "kit": false,
+  "overflow": true
+ },
+ {
+  "w": 1024,
+  "lang": "de",
+  "sw": 1181,
+  "vw": 1024,
+  "kit": false,
+  "overflow": true
+ },
+ {
+  "w": 1024,
+  "lang": "fr",
+  "sw": 1168,
+  "vw": 1024,
+  "kit": false,
+  "overflow": true
+ },
+ {
+  "w": 1024,
+  "lang": "nl",
+  "sw": 1221,
+  "vw": 1024,
+  "kit": false,
+  "overflow": true
+ },
+ {
+  "w": 1024,
+  "lang": "es",
+  "sw": 1191,
+  "vw": 1024,
+  "kit": false,
+  "overflow": true
+ },
+ {
+  "w": 1024,
+  "lang": "pt",
+  "sw": 1163,
+  "vw": 1024,
+  "kit": false,
+  "overflow": true
+ },
+ {
+  "w": 1024,
+  "lang": "it",
+  "sw": 1144,
+  "vw": 1024,
+  "kit": false,
+  "overflow": true
+ },
+ {
+  "w": 1280,
+  "lang": "en",
+  "sw": 1280,
+  "vw": 1280,
+  "kit": false,
+  "overflow": false
+ },
+ {
+  "w": 1280,
+  "lang": "de",
+  "sw": 1280,
+  "vw": 1280,
+  "kit": false,
+  "overflow": false
+ },
+ {
+  "w": 1280,
+  "lang": "fr",
+  "sw": 1280,
+  "vw": 1280,
+  "kit": false,
+  "overflow": false
+ },
+ {
+  "w": 1280,
+  "lang": "nl",
+  "sw": 1280,
+  "vw": 1280,
+  "kit": false,
+  "overflow": false
+ },
+ {
+  "w": 1280,
+  "lang": "es",
+  "sw": 1280,
+  "vw": 1280,
+  "kit": false,
+  "overflow": false
+ },
+ {
+  "w": 1280,
+  "lang": "pt",
+  "sw": 1280,
+  "vw": 1280,
+  "kit": false,
+  "overflow": false
+ },
+ {
+  "w": 1280,
+  "lang": "it",
+  "sw": 1280,
+  "vw": 1280,
+  "kit": false,
+  "overflow": false
+ },
+ {
+  "w": 1440,
+  "lang": "en",
+  "sw": 1440,
+  "vw": 1440,
+  "kit": true,
+  "overflow": false
+ },
+ {
+  "w": 1440,
+  "lang": "de",
+  "sw": 1440,
+  "vw": 1440,
+  "kit": false,
+  "overflow": false
+ },
+ {
+  "w": 1440,
+  "lang": "fr",
+  "sw": 1440,
+  "vw": 1440,
+  "kit": false,
+  "overflow": false
+ },
+ {
+  "w": 1440,
+  "lang": "nl",
+  "sw": 1440,
+  "vw": 1440,
+  "kit": false,
+  "overflow": false
+ },
+ {
+  "w": 1440,
+  "lang": "es",
+  "sw": 1440,
+  "vw": 1440,
+  "kit": false,
+  "overflow": false
+ },
+ {
+  "w": 1440,
+  "lang": "pt",
+  "sw": 1440,
+  "vw": 1440,
+  "kit": false,
+  "overflow": false
+ },
+ {
+  "w": 1440,
+  "lang": "it",
+  "sw": 1440,
+  "vw": 1440,
+  "kit": false,
+  "overflow": false
+ },
+ {
+  "w": 1600,
+  "lang": "en",
+  "sw": 1600,
+  "vw": 1600,
+  "kit": true,
+  "overflow": false
+ },
+ {
+  "w": 1600,
+  "lang": "de",
+  "sw": 1600,
+  "vw": 1600,
+  "kit": true,
+  "overflow": false
+ },
+ {
+  "w": 1600,
+  "lang": "fr",
+  "sw": 1600,
+  "vw": 1600,
+  "kit": false,
+  "overflow": false
+ },
+ {
+  "w": 1600,
+  "lang": "nl",
+  "sw": 1600,
+  "vw": 1600,
+  "kit": false,
+  "overflow": false
+ },
+ {
+  "w": 1600,
+  "lang": "es",
+  "sw": 1600,
+  "vw": 1600,
+  "kit": false,
+  "overflow": false
+ },
+ {
+  "w": 1600,
+  "lang": "pt",
+  "sw": 1600,
+  "vw": 1600,
+  "kit": false,
+  "overflow": false
+ },
+ {
+  "w": 1600,
+  "lang": "it",
+  "sw": 1600,
+  "vw": 1600,
+  "kit": false,
+  "overflow": false
+ },
+ {
+  "w": 1700,
+  "lang": "en",
+  "sw": 1700,
+  "vw": 1700,
+  "kit": true,
+  "overflow": false
+ },
+ {
+  "w": 1700,
+  "lang": "de",
+  "sw": 1700,
+  "vw": 1700,
+  "kit": true,
+  "overflow": false
+ },
+ {
+  "w": 1700,
+  "lang": "fr",
+  "sw": 1700,
+  "vw": 1700,
+  "kit": true,
+  "overflow": false
+ },
+ {
+  "w": 1700,
+  "lang": "nl",
+  "sw": 1700,
+  "vw": 1700,
+  "kit": false,
+  "overflow": false
+ },
+ {
+  "w": 1700,
+  "lang": "es",
+  "sw": 1700,
+  "vw": 1700,
+  "kit": false,
+  "overflow": false
+ },
+ {
+  "w": 1700,
+  "lang": "pt",
+  "sw": 1700,
+  "vw": 1700,
+  "kit": true,
+  "overflow": false
+ },
+ {
+  "w": 1700,
+  "lang": "it",
+  "sw": 1700,
+  "vw": 1700,
+  "kit": true,
+  "overflow": false
+ },
+ {
+  "w": 1920,
+  "lang": "en",
+  "sw": 1920,
+  "vw": 1920,
+  "kit": true,
+  "overflow": false
+ },
+ {
+  "w": 1920,
+  "lang": "de",
+  "sw": 1920,
+  "vw": 1920,
+  "kit": true,
+  "overflow": false
+ },
+ {
+  "w": 1920,
+  "lang": "fr",
+  "sw": 1920,
+  "vw": 1920,
+  "kit": true,
+  "overflow": false
+ },
+ {
+  "w": 1920,
+  "lang": "nl",
+  "sw": 1920,
+  "vw": 1920,
+  "kit": true,
+  "overflow": false
+ },
+ {
+  "w": 1920,
+  "lang": "es",
+  "sw": 1920,
+  "vw": 1920,
+  "kit": true,
+  "overflow": false
+ },
+ {
+  "w": 1920,
+  "lang": "pt",
+  "sw": 1920,
+  "vw": 1920,
+  "kit": true,
+  "overflow": false
+ },
+ {
+  "w": 1920,
+  "lang": "it",
+  "sw": 1920,
+  "vw": 1920,
+  "kit": true,
+  "overflow": false
+ }
+]

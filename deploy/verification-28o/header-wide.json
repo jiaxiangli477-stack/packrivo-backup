@@ -1,0 +1,110 @@
+[
+ {
+  "width": 1700,
+  "lang": "en",
+  "scrollWidth": 1700,
+  "inner": 1700,
+  "kit": "Sample kit",
+  "kitRight": 1318,
+  "overflow": false
+ },
+ {
+  "width": 1700,
+  "lang": "de",
+  "scrollWidth": 1700,
+  "inner": 1700,
+  "kit": "Musterset",
+  "kitRight": 1348,
+  "overflow": false
+ },
+ {
+  "width": 1700,
+  "lang": "fr",
+  "scrollWidth": 1700,
+  "inner": 1700,
+  "kit": "Kit d’échantillons",
+  "kitRight": 1405,
+  "overflow": false
+ },
+ {
+  "width": 1700,
+  "lang": "nl",
+  "scrollWidth": 1731,
+  "inner": 1700,
+  "kit": "Monsterpakket",
+  "kitRight": 1356,
+  "overflow": true
+ },
+ {
+  "width": 1700,
+  "lang": "ar",
+  "scrollWidth": 1700,
+  "inner": 1700,
+  "kit": "مجموعة عينات",
+  "kitRight": 559,
+  "overflow": false
+ },
+ {
+  "width": 1700,
+  "lang": "ja",
+  "scrollWidth": 1700,
+  "inner": 1700,
+  "kit": "サンプルキット",
+  "kitRight": 1163,
+  "overflow": false
+ },
+ {
+  "width": 1920,
+  "lang": "en",
+  "scrollWidth": 1920,
+  "inner": 1920,
+  "kit": "Sample kit",
+  "kitRight": 1428,
+  "overflow": false
+ },
+ {
+  "width": 1920,
+  "lang": "de",
+  "scrollWidth": 1920,
+  "inner": 1920,
+  "kit": "Musterset",
+  "kitRight": 1458,
+  "overflow": false
+ },
+ {
+  "width": 1920,
+  "lang": "fr",
+  "scrollWidth": 1920,
+  "inner": 1920,
+  "kit": "Kit d’échantillons",
+  "kitRight": 1515,
+  "overflow": false
+ },
+ {
+  "width": 1920,
+  "lang": "nl",
+  "scrollWidth": 1920,
+  "inner": 1920,
+  "kit": "Monsterpakket",
+  "kitRight": 1466,
+  "overflow": false
+ },
+ {
+  "width": 1920,
+  "lang": "ar",
+  "scrollWidth": 1920,
+  "inner": 1920,
+  "kit": "مجموعة عينات",
+  "kitRight": 669,
+  "overflow": false
+ },
+ {
+  "width": 1920,
+  "lang": "ja",
+  "scrollWidth": 1920,
+  "inner": 1920,
+  "kit": "サンプルキット",
+  "kitRight": 1273,
+  "overflow": false
+ }
+]

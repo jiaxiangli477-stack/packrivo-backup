@@ -1,0 +1,21 @@
+﻿$ php tools/merge-i18n.php --self-test
+de     生产有 → 合并后 title=4 attr=0 block=0 text=2，冲突 2
+paths.json：生产 2 + 本地 2 → 合并 4（本轮补 1：/get-a-quote/）
+冲突清单：2 条 → /tmp/merge-i18n-selftest-1612/out/conflicts.json
+  有冲突，装之前必须人工看过 conflicts.json（生产值已被采用）。
+  OK   生产值优先（Diff=PROD）
+  OK   生产值优先（text A）
+  OK   本地独有键保留（OnlyLocal）
+  OK   生产独有键保留（OnlyProd）
+  OK   两边相同不记冲突（Same）
+  OK   两个真冲突都记下来
+  OK   paths 取并集
+自检通过
+
+$ wp eval-file scripts/product-buyers-27g/import.php plan /tmp/pkgroot http://localhost:8081 /tmp/rollback-27g.json all134
+input_pages=134 preflight=PASS
+writes=0
+
+$ wp eval-file scripts/hubs-27i/import.php plan /tmp/pkgroot http://localhost:8081 /tmp/rollback-27i.json
+hub_pages=8 preflight=PASS
+inquiry_existing_description=preserved writes=0

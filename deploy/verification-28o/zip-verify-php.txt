@@ -1,0 +1,14 @@
+﻿=== packrivo-quote.zip ===
+  条目 19，条目名含反斜杠 0
+  首条 packrivo-quote/README.md
+  解压后文件 19，工作源文件 19
+  只在包里 0，只在源里 0，内容不同 0
+  目录树（前 6 行）: README.md | assets/pkq-quote.css | assets/pkq-quote.js | includes/class-pkq-admin.php | includes/class-pkq-pricing.php | includes/class-pkq-rest.php
+  结论: 通过（逐字节一致，无反斜杠条目）
+=== packrivo-home-v4.zip ===
+  条目 38，条目名含反斜杠 0
+  首条 packrivo-home-v4/README.md
+  解压后文件 38，工作源文件 38
+  只在包里 0，只在源里 0，内容不同 0
+  目录树（前 6 行）: README.md | assets/cta-28l.js | assets/img/gift-480.webp | assets/img/gift-800.webp | assets/img/gift.webp | assets/img/hero-480.webp
+  结论: 通过（逐字节一致，无反斜杠条目）

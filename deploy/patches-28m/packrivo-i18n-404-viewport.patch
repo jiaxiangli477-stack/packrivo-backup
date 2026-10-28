@@ -1,7 +1,6 @@
---- a/wp-content/mu-plugins/packrivo-i18n.php
-+++ b/wp-content/mu-plugins/packrivo-i18n.php
-@@ -164,11 +164,18 @@
-         status_header(404);
+--- a/wp-content/mu-plugins/packrivo-i18n.php	2026-10-26 16:35:31.000000000 +0000
++++ b/wp-content/mu-plugins/packrivo-i18n.php	2026-10-28 13:28:29.000000000 +0000
+@@ -165,8 +165,11 @@
          nocache_headers();
          header('Content-Type: text/html; charset=UTF-8');
          echo '<!DOCTYPE html><html lang="' . esc_attr($seg) . '"><head><meta charset="utf-8">'
@@ -14,7 +13,3 @@
             . '<p>This page has no ' . esc_html($ready[$seg]['english']) . ' version yet.</p>'
             . '<p><a href="' . PACKRIVO_I18N_BASE . $en . '">Read it in English</a></p>'
             . '</body></html>';
-         exit;
-     }
- 
-     define('PACKRIVO_LANG', $seg);
