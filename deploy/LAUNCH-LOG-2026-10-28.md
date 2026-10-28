@@ -186,6 +186,20 @@ a2a7bdf39f4e9a1a78ed7ef09818be25bd9e92a1e04ba20d2fa59e8c84bdebcb  packrivo-i18n.
 
 这四处必须在上线前修掉，否则第 6 步和第 9 步的回滚本身不可用（`sha256sum -c "$BACKUP/before-mu.sha256"` 也就无从谈起）。
 
+### 2.2 第三处会让回滚失效的地方：`$BACKUP` 每次开新会话都会变
+
+RUNBOOK L12 写「变量（每开一个 SSH 会话先执行一次）」，L16 是 `BACKUP=/home/web/backups/packrivo-launch-$(date +%Y%m%d-%H%M)`。第 9 步按 L12 在新会话里重新 export，`$(date …)` 求值出新的时间戳 → `$BACKUP` 指向一个空目录，于是 9.2–9.6 的 `cp -a` 全部对不上第 1 步的真实备份，L368 那条「最后手段」的 `db import "$BACKUP/db/packrivo-before-launch.sql"` 同样炸。这与 L9 声称的「每一步都能单独回滚」直接冲突。
+
+### 2.3 首次安装语义下的第二个判据坑：install 没带 `--activate`
+
+L178 `plugin install … --force` 与 L203 `theme install … --force` 都不带 `--activate`。生产上这两个组件现在是**不存在**的，所以它们会被当作全新安装并保持 `inactive`，紧接的 L179 / L204 判据「状态必须是 `active`」必然不过；而按规则判据不过就要回滚，L189 / L213 的回滚第一句是 `rm -r` 一个刚装上的目录、然后从 `$BACKUP` 恢复（`$BACKUP` 里没有），`&&` 链在此断掉，插件/主题会被删掉且无法恢复。
+
+### 2.4 第 1 步判据与备份集不对齐
+
+L66–L69 四条判据里**没有任何一条校验 L52 的 i18n 备份**——而第 2 步（L121）和 9.2（L361）都靠它回滚。另外 L66 的「`$BACKUP/mu/` 里有全部 mu 文件」按字面 `ls "$BACKUP/mu"` 只会看到一个 `mu-plugins/` 子目录，守规操作者会直接判不通过（实测确实如此）。
+
+作为对照，L83 `cp -a "$I18N" "$BACKUP/i18n-today"` 是全文唯一写对的一份：目标 `$BACKUP/i18n-today` 不在 L47 的 mkdir 名单里，所以内容平铺，L85 与 L91 的读取路径都按平铺写，自洽。差别就在那一个尾斜杠。
+
 ---
 
 ## 3 · 需要负责人拍的三件事
