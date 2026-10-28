@@ -405,3 +405,31 @@ ac0a27538c428f2175e9596bd21f27be47069aaf57cbeabf8892ae456e2f471d  …/mu-plugins
 1. **批准本补丁**作为 28q 对 RUNBOOK 的修订（含 8.2/8.3 口径），随后 `git apply` 落地并进入 28q §1–§3 本地演练。
 2. **附录 C 以演练结果为准**：补丁内附录 C 引用 `deploy/verification-28q/rehearsal.log`、`rehearsal-verify.json`，两文件目前尚不存在（演练未启动）；演练三轮全部 PASS 并写出这两份文件之前，附录 C 不得作为「已演练」依据。
 3. **批准顺序**：按任务单 §4，本地环境对齐（WP 7.1.3/PHP 8.3）→ 28p 验收复跑 → 生产同构环境三轮演练（正向→回滚→再正向）→ 验收与 Claude 核验 → 才授权生产。本补丁只是第一步，其余各步未经批准均不启动。
+
+---
+
+## 9 · 28q 非本链演练材料只读来源/时序核查与批准记录检查（本机只读；未连生产、未改/未删/未执行任何材料、未读任何凭据）
+
+### 9.1 材料与时序（当前实测）
+
+- `deploy/verification-28q/` 下共有 **18 个未跟踪文件**（git status 全部 `??`）：`post-upgrade-scan.json`（157,212 B，mtime 09:03:31）、16 张 `header-*.png`（09:04:06–09:04:56）、`burger-functional.json`（7,668 B，09:04:59），时间均为本机时区（UTC-7）。
+- 与上次观察（§8 期间：12 张 png、mtime 保留为较早的 03:31/04:06）相比，png 已增至 **16 张**、全部文件 mtime 更新为 09:03–09:05 → **产生方在两次观察之间仍在增写/重写这些文件，属持续进行中的并行工作**。
+- 本链唯一写过的文件是 `RUNBOOK-launch.28q.patch`（已随 `cee09f4` 入库）；这 18 个文件**不是本链产物**。
+
+### 9.2 内容与来源判定（只读检查，未打印任何凭据）
+
+- `post-upgrade-scan.json`：`summary.generatedAt=2026-10-28T16:03:31.487Z`（= 本地 09:03:31）；12 语言 × 4 页面 × 20 宽度 = **960 combos，failures=0，pass=true**，breakpoint=1294；rows 每行仅 lang/page/width/status/scrollWidth/innerWidth/ok/offenders。→ 是**本地 WP 升级后的 960 组溢出扫描**，对应任务单 §1「升级后重跑 28p 验收·960 组溢出扫描」。
+- `burger-functional.json`：8 组（en/ar/de/nl × 768/1024）汉堡菜单功能验收（navOpen/display/burgerExpanded/cta/langSwitch），`langSwitch.landed=http://localhost:8081/de/` → **本地 8081**，对应任务单 §1「汉堡菜单功能」。
+- 16 张 `header-*.png`（4 语言 × 2 宽度 × 开/关）：**en 的 4 张与已提交的 `deploy/verification-28p/` 同名文件 sha256 逐字节一致**（复制自 28p 已验收截图）；ar/de/nl 12 张与 28p 不同（本地重新生成）→ 28p 验收复跑的视觉留证。
+- 判定：这组材料是**另一执行链在本地（localhost:8081）复跑 28p 验收 / 本地升级扫描的产物**；文件内只见 localhost，无生产地址、无密码/密钥/token。哈希（可复核）：`post-upgrade-scan.json` sha256 `fe6fdca9f7c9d4ae081f6406954b17e8358e15ec3169a282cd2c809c6b8bb519`；`burger-functional.json` sha256 `967cd6a8a54b0461c767db7c1252e7dc13a208646136113f9ff81d5b96a18fc5`。
+
+### 9.3 28q 批准记录检查（本任务材料 + 仓库已有记录）
+
+- 仓库内唯一的 28q 授权依据仍是任务单 `packrivo-v2/docs/DSH-TASK-2026-10-28q.md`（`30927ec`）引用的负责人答复 3：**「先改 RUNBOOK，再在本地把整份 RUNBOOK 完整演练一遍，包括回滚。演练通过、Claude 核验之后，才会再授权上生产」** → 该答复对 **28q 本地工作（改 RUNBOOK + 本地完整演练）构成负责人指示**；**生产授权被明确推迟**到演练通过 + Claude 核验之后。
+- 没有 `DSH-RESULT-2026-10-28q.md`；`rehearsal.log`、`rehearsal-verify.json`（§8.4.2 引用的两份演练产物）仍不存在；`origin/main == cee09f4`，无任何新提交；本任务工作目录（tasks/55 各意图目录）中无外部批准记录。→ **未发现「批准落地补丁 / 批准执行 28q / 授权生产」的任何新批复记录。**
+
+### 9.4 结论：是否满足进入本地三轮演练的前置条件 & 仍需负责人决定的事项
+
+- **进入本地三轮演练的前置条件尚未完整满足/可证实**：① 任务单 §1 本地对齐 + 28p 验收复跑——并行链材料显示进行中且有部分证据（960 组 pass、汉堡 8 组、16 张截图），但**价格 4 组、7 关键页 200、663 线上网址**三项目前无留证文件；② RUNBOOK 修订尚未落地（补丁已拟、`apply --check` 通过，但未 `git apply`，原 RUNBOOK 仍与 HEAD 一致）；③ `rehearsal.log` 不存在。→ **本链继续不启动任何本地或生产演练。**
+- **仍需负责人决定**：a) §8.4.1 补丁口径与落地批准；b) **明确该并行链的本地 28q 工作是否即官方执行**——若是，本链与其如何衔接（避免双链重复/文件冲突）；若否，由谁停止；c) §7.4 四项继续有效。
+- **本链处置**：对上述 18 个未跟踪材料不修改、不删除、不执行，原样保留给产生方；未 SSH 生产；生产第 1 步不重跑，第 2–8 步继续停止等待负责人批复。
