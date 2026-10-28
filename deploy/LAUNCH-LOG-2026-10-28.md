@@ -802,3 +802,7 @@ r28q-net 演练栈五容器全部 Up：php(r28q-php:8.3) / nginx(nginx:alpine，
 ### 17.7 门禁结论与操作边界
 - 四前置仍全缺：①严格口径三轮整轮 PASS 不存在（且 28q 判据体系被 Claude 否定）；②Claude 修正后复验结论不存在；③新生产授权不存在（28r 仍禁生产）；④Claude 三项必改与 supplement2 守卫均未落地（仅获 28r 同向背书）。**生产第 1 步重跑条件不满足，生产第 1 步维持 FAIL，第 2–8 步与 SSH 生产继续禁止，本链继续停止等待，绝不执行第 2–8 步。**
 - 操作边界：只读 `git fetch/log/show/status` 与文件读取（DSH-TASK-2026-10-28r.md、rehearsal.sh、step0-probe.sh、check-0.1.rehearsal.sh、RUNBOOK-launch.md、DSH-RESULT-2026-10-28q.md、rehearsal-verify.json）；未执行 28r 任何指令、未启动/停止/接入容器、未修改/删除他人文件、未 SSH 生产、未读取或打印任何密码/密钥/token。本轮仓库变更仅本日志 §17 + 证据摘录文件 `deploy/verification-28q/gate-evidence-2026-10-28-after-cfd4bd7.md` 两个文件，其余零触碰。
+### 17.8 补充（16d2189 提交后观察）：并行链 28r 执行已开始（工作树在途，未提交）
+- 提交 16d2189 后立即复查 `git status`，发现 `M deploy/RUNBOOK-launch.md`（未暂存、未提交，非本链改动，+43/−1）：并行链正在落地 28r §4.1 的最后手段改写——新增前置探针（并引述 28r 实测：拆包装时 `db import` 退出码 1、装包装后导入成功、`28r-canary` 草稿导入后消失）、L1 整库导入 + L2 transient/缓存清理 + L3 文件回滚顺序（9.6→9.5→9.4→9.2）、L-1…L-6 逐条判据表（照 28r §3），并声称「28r 本地实测 L-1…L-6 全 PASS；L3 后整站快照 sha256 与 28q 基线 `4972cd81…` 逐字节一致；证据 `deploy/verification-28r/lastresort.log`」。
+- 但截至本观察：`deploy/verification-28r/` 目录不存在、`dsh-out/DSH-RESULT-2026-10-28r.md` 不存在、该 RUNBOOK 改动未提交 → 28r 成果为**在途状态**，不能作为已提交证据采信；17.7 门禁结论不变（生产第 1 步重跑条件仍不满足、继续停止等待、第 2–8 步与 SSH 生产继续禁止）。
+- 零触碰：该在途改动与全部未跟踪文件未被本链暂存/提交/修改；本补充仅追加本日志文件。
