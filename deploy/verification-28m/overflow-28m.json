@@ -1,0 +1,128 @@
+[
+ {
+  "lang": "en",
+  "name": "home",
+  "path": "/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "en",
+  "name": "products",
+  "path": "/products/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "en",
+  "name": "jewelry-boxes",
+  "path": "/jewelry-boxes/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "en",
+  "name": "blog",
+  "path": "/blog/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "en",
+  "name": "article",
+  "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "en",
+  "name": "product",
+  "path": "/product-pillow-jewelry-box/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "en",
+  "name": "quote",
+  "path": "/get-a-quote/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "ar",
+  "name": "home",
+  "path": "/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "ar",
+  "name": "products",
+  "path": "/products/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "ar",
+  "name": "jewelry-boxes",
+  "path": "/jewelry-boxes/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "ar",
+  "name": "blog",
+  "path": "/blog/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "ar",
+  "name": "article",
+  "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+  "status": 404,
+  "scrollWidth": 981,
+  "vw": 981,
+  "offenders": []
+ },
+ {
+  "lang": "ar",
+  "name": "product",
+  "path": "/product-pillow-jewelry-box/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "ar",
+  "name": "quote",
+  "path": "/get-a-quote/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ }
+]

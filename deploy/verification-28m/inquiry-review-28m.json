@@ -1,0 +1,74 @@
+{
+ "postsDuringReview": [],
+ "before": {
+  "sendVisible": false,
+  "text": true
+ },
+ "after": {
+  "buttons": [
+   {
+    "text": "",
+    "type": "button",
+    "h": 44,
+    "visible": true
+   },
+   {
+    "text": "",
+    "type": "button",
+    "h": 44,
+    "visible": true
+   },
+   {
+    "text": "",
+    "type": "button",
+    "h": 44,
+    "visible": true
+   },
+   {
+    "text": "EN",
+    "type": "button",
+    "h": 42,
+    "visible": true
+   },
+   {
+    "text": "Review My Brief",
+    "type": "button",
+    "h": 46,
+    "visible": true
+   },
+   {
+    "text": "Open WhatsApp ↗",
+    "type": "",
+    "h": 46,
+    "visible": true
+   },
+   {
+    "text": "Cookie settings",
+    "type": "button",
+    "h": 44,
+    "visible": true
+   },
+   {
+    "text": "Switch color theme",
+    "type": "button",
+    "h": 44,
+    "visible": true
+   },
+   {
+    "text": "Reject",
+    "type": "button",
+    "h": 46,
+    "visible": true
+   },
+   {
+    "text": "Accept",
+    "type": "button",
+    "h": 46,
+    "visible": true
+   }
+  ],
+  "summaryPresent": false,
+  "summaryText": "",
+  "sendPresent": true
+ }
+}

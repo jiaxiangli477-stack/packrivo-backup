@@ -1,0 +1,20 @@
+--- a/wp-content/mu-plugins/packrivo-i18n.php
++++ b/wp-content/mu-plugins/packrivo-i18n.php
+@@ -164,11 +164,18 @@
+         status_header(404);
+         nocache_headers();
+         header('Content-Type: text/html; charset=UTF-8');
+         echo '<!DOCTYPE html><html lang="' . esc_attr($seg) . '"><head><meta charset="utf-8">'
++           . '<meta name="viewport" content="width=device-width, initial-scale=1">'
+            . '<meta name="robots" content="noindex,follow">'
+-           . '<title>404 — page not translated</title></head><body>'
++           . '<title>404 — page not translated</title>'
++           . '<style>body{margin:0;padding:24px;font:16px/1.5 system-ui,sans-serif;max-width:44rem}'
++           . 'a{color:inherit}</style></head><body>'
+            . '<p>This page has no ' . esc_html($ready[$seg]['english']) . ' version yet.</p>'
+            . '<p><a href="' . PACKRIVO_I18N_BASE . $en . '">Read it in English</a></p>'
+            . '</body></html>';
+         exit;
+     }
+ 
+     define('PACKRIVO_LANG', $seg);

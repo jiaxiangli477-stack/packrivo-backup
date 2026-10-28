@@ -1,0 +1,278 @@
+{
+ "plain": {
+  "hasForm": true,
+  "action": "",
+  "method": "",
+  "fields": [
+   {
+    "type": "select",
+    "name": "product",
+    "id": "inquiry-product",
+    "required": true,
+    "value": "",
+    "visible": true,
+    "label": "Product / packaging type *"
+   },
+   {
+    "type": "search",
+    "name": "",
+    "id": "buyer-direction-search",
+    "required": false,
+    "value": "",
+    "visible": true,
+    "label": "Find a packaging option"
+   },
+   {
+    "type": "text",
+    "name": "dimensions",
+    "id": "inquiry-dimensions",
+    "required": true,
+    "value": "",
+    "visible": true,
+    "label": "Approximate dimensions (include unit) *"
+   },
+   {
+    "type": "text",
+    "name": "quantity",
+    "id": "inquiry-quantity",
+    "required": true,
+    "value": "",
+    "visible": true,
+    "label": "Expected quantity *"
+   },
+   {
+    "type": "text",
+    "name": "country",
+    "id": "inquiry-country",
+    "required": true,
+    "value": "",
+    "visible": true,
+    "label": "Destination country *"
+   },
+   {
+    "type": "email",
+    "name": "email",
+    "id": "inquiry-email",
+    "required": true,
+    "value": "",
+    "visible": true,
+    "label": "Work email *"
+   },
+   {
+    "type": "text",
+    "name": "material",
+    "id": "inquiry-material",
+    "required": false,
+    "value": "",
+    "visible": true,
+    "label": "Material direction"
+   },
+   {
+    "type": "text",
+    "name": "printing",
+    "id": "inquiry-printing",
+    "required": false,
+    "value": "",
+    "visible": true,
+    "label": "Printing / finish"
+   },
+   {
+    "type": "text",
+    "name": "date",
+    "id": "inquiry-date",
+    "required": false,
+    "value": "",
+    "visible": true,
+    "label": "Target date"
+   },
+   {
+    "type": "textarea",
+    "name": "notes",
+    "id": "inquiry-notes",
+    "required": false,
+    "value": "",
+    "visible": true,
+    "label": ""
+   },
+   {
+    "type": "text",
+    "name": "contact_name",
+    "id": "",
+    "required": false,
+    "value": "",
+    "visible": true,
+    "label": ""
+   },
+   {
+    "type": "text",
+    "name": "company",
+    "id": "",
+    "required": false,
+    "value": "",
+    "visible": true,
+    "label": ""
+   },
+   {
+    "type": "url",
+    "name": "company_website",
+    "id": "",
+    "required": false,
+    "value": "",
+    "visible": true,
+    "label": ""
+   },
+   {
+    "type": "file",
+    "name": "reference_files",
+    "id": "reference-files",
+    "required": false,
+    "value": "",
+    "visible": true,
+    "label": "Logo, dieline or reference files Optiona"
+   }
+  ],
+  "submit": [],
+  "fieldCount": 14,
+  "productFieldValue": "",
+  "requiredMissingLabel": [],
+  "status": "Request a Custom Packaging Quote | Packrivo"
+ },
+ "?product=product-drawer-jewelry-box": {
+  "hasForm": true,
+  "action": "",
+  "method": "",
+  "fields": [
+   {
+    "type": "select",
+    "name": "product",
+    "id": "inquiry-product",
+    "required": true,
+    "value": "drawer-jewelry-box",
+    "visible": true,
+    "label": "Product / packaging type *"
+   },
+   {
+    "type": "search",
+    "name": "",
+    "id": "buyer-direction-search",
+    "required": false,
+    "value": "",
+    "visible": true,
+    "label": "Find a packaging option"
+   },
+   {
+    "type": "text",
+    "name": "dimensions",
+    "id": "inquiry-dimensions",
+    "required": true,
+    "value": "",
+    "visible": true,
+    "label": "Approximate dimensions (include unit) *"
+   },
+   {
+    "type": "text",
+    "name": "quantity",
+    "id": "inquiry-quantity",
+    "required": true,
+    "value": "",
+    "visible": true,
+    "label": "Expected quantity *"
+   },
+   {
+    "type": "text",
+    "name": "country",
+    "id": "inquiry-country",
+    "required": true,
+    "value": "",
+    "visible": true,
+    "label": "Destination country *"
+   },
+   {
+    "type": "email",
+    "name": "email",
+    "id": "inquiry-email",
+    "required": true,
+    "value": "",
+    "visible": true,
+    "label": "Work email *"
+   },
+   {
+    "type": "text",
+    "name": "material",
+    "id": "inquiry-material",
+    "required": false,
+    "value": "",
+    "visible": true,
+    "label": "Material direction"
+   },
+   {
+    "type": "text",
+    "name": "printing",
+    "id": "inquiry-printing",
+    "required": false,
+    "value": "",
+    "visible": true,
+    "label": "Printing / finish"
+   },
+   {
+    "type": "text",
+    "name": "date",
+    "id": "inquiry-date",
+    "required": false,
+    "value": "",
+    "visible": true,
+    "label": "Target date"
+   },
+   {
+    "type": "textarea",
+    "name": "notes",
+    "id": "inquiry-notes",
+    "required": false,
+    "value": "",
+    "visible": true,
+    "label": ""
+   },
+   {
+    "type": "text",
+    "name": "contact_name",
+    "id": "",
+    "required": false,
+    "value": "",
+    "visible": true,
+    "label": ""
+   },
+   {
+    "type": "text",
+    "name": "company",
+    "id": "",
+    "required": false,
+    "value": "",
+    "visible": true,
+    "label": ""
+   },
+   {
+    "type": "url",
+    "name": "company_website",
+    "id": "",
+    "required": false,
+    "value": "",
+    "visible": true,
+    "label": ""
+   },
+   {
+    "type": "file",
+    "name": "reference_files",
+    "id": "reference-files",
+    "required": false,
+    "value": "",
+    "visible": true,
+    "label": "Logo, dieline or reference files Optiona"
+   }
+  ],
+  "submit": [],
+  "fieldCount": 14,
+  "productFieldValue": "drawer-jewelry-box",
+  "requiredMissingLabel": [],
+  "status": "Request a Custom Packaging Quote | Packrivo"
+ }
+}

@@ -1,0 +1,651 @@
+[
+  {
+    "lang": "ar",
+    "path": "/blog/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "ar",
+    "path": "/jewelry-boxes/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "ar",
+    "path": "/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "ar",
+    "path": "/products/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "ar",
+    "path": "/product-pillow-jewelry-box/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "ar",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "status": 200,
+    "fallback": {
+      "status": 200,
+      "url": "http://localhost:8081/ar/?p=2937"
+    },
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "ar",
+    "path": "/get-a-quote/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "de",
+    "path": "/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "de",
+    "path": "/products/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "de",
+    "path": "/jewelry-boxes/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "de",
+    "path": "/blog/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "de",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "status": 200,
+    "fallback": {
+      "status": 200,
+      "url": "http://localhost:8081/de/?p=2937"
+    },
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "de",
+    "path": "/product-pillow-jewelry-box/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "de",
+    "path": "/get-a-quote/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "es",
+    "path": "/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "es",
+    "path": "/blog/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "es",
+    "path": "/jewelry-boxes/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "es",
+    "path": "/products/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "es",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "status": 200,
+    "fallback": {
+      "status": 200,
+      "url": "http://localhost:8081/es/?p=2937"
+    },
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "es",
+    "path": "/product-pillow-jewelry-box/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "es",
+    "path": "/get-a-quote/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "fr",
+    "path": "/jewelry-boxes/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "fr",
+    "path": "/blog/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "fr",
+    "path": "/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "fr",
+    "path": "/products/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "fr",
+    "path": "/product-pillow-jewelry-box/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "fr",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "status": 200,
+    "fallback": {
+      "status": 200,
+      "url": "http://localhost:8081/fr/?p=2937"
+    },
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "fr",
+    "path": "/get-a-quote/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "it",
+    "path": "/jewelry-boxes/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "it",
+    "path": "/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "it",
+    "path": "/products/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "it",
+    "path": "/blog/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "it",
+    "path": "/product-pillow-jewelry-box/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "it",
+    "path": "/get-a-quote/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "it",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "status": 200,
+    "fallback": {
+      "status": 200,
+      "url": "http://localhost:8081/it/?p=2937"
+    },
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "ja",
+    "path": "/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "ja",
+    "path": "/jewelry-boxes/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "ja",
+    "path": "/blog/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "ja",
+    "path": "/product-pillow-jewelry-box/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "ja",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "status": 200,
+    "fallback": {
+      "status": 200,
+      "url": "http://localhost:8081/ja/?p=2937"
+    },
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "ja",
+    "path": "/products/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "ja",
+    "path": "/get-a-quote/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "ko",
+    "path": "/jewelry-boxes/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "ko",
+    "path": "/blog/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "ko",
+    "path": "/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "ko",
+    "path": "/products/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "ko",
+    "path": "/product-pillow-jewelry-box/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "ko",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "status": 200,
+    "fallback": {
+      "status": 200,
+      "url": "http://localhost:8081/ko/?p=2937"
+    },
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "ko",
+    "path": "/get-a-quote/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "nl",
+    "path": "/jewelry-boxes/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "nl",
+    "path": "/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "nl",
+    "path": "/products/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "nl",
+    "path": "/blog/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "nl",
+    "path": "/product-pillow-jewelry-box/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "nl",
+    "path": "/get-a-quote/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "nl",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "status": 200,
+    "fallback": {
+      "status": 200,
+      "url": "http://localhost:8081/nl/?p=2937"
+    },
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "pt",
+    "path": "/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "pt",
+    "path": "/jewelry-boxes/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "pt",
+    "path": "/blog/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "pt",
+    "path": "/product-pillow-jewelry-box/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "pt",
+    "path": "/products/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "pt",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "status": 200,
+    "fallback": {
+      "status": 200,
+      "url": "http://localhost:8081/pt/?p=2937"
+    },
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "pt",
+    "path": "/get-a-quote/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "zh-CN",
+    "path": "/jewelry-boxes/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "zh-CN",
+    "path": "/blog/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "zh-CN",
+    "path": "/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "zh-CN",
+    "path": "/products/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "zh-CN",
+    "path": "/product-pillow-jewelry-box/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "zh-CN",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "status": 200,
+    "fallback": {
+      "status": 200,
+      "url": "http://localhost:8081/zh-CN/?p=2937"
+    },
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "zh-CN",
+    "path": "/get-a-quote/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "zh-TW",
+    "path": "/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "zh-TW",
+    "path": "/jewelry-boxes/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "zh-TW",
+    "path": "/blog/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "zh-TW",
+    "path": "/products/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "zh-TW",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "status": 200,
+    "fallback": {
+      "status": 200,
+      "url": "http://localhost:8081/zh-TW/?p=2937"
+    },
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "zh-TW",
+    "path": "/product-pillow-jewelry-box/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "zh-TW",
+    "path": "/get-a-quote/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  }
+]

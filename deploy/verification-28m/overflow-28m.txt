@@ -1,0 +1,19 @@
+页面,语种,状态,scrollWidth,视口,越界元素
+home,en,200,375,375,0
+products,en,200,375,375,0
+jewelry-boxes,en,200,375,375,0
+blog,en,200,375,375,0
+article,en,200,375,375,0
+product,en,200,375,375,0
+quote,en,200,375,375,0
+home,ar,200,375,375,0
+products,ar,200,375,375,0
+jewelry-boxes,ar,200,375,375,0
+blog,ar,200,375,375,0
+article,ar,404,981,981,0
+product,ar,200,375,375,0
+quote,ar,200,375,375,0
+
+询盘页：
+  plain: hasForm=true action= method= 可见控件=14 提交按钮=[] product值=""
+  ?product=product-drawer-jewelry-box: hasForm=true action= method= 可见控件=14 提交按钮=[] product值="drawer-jewelry-box"

@@ -169,3 +169,87 @@ node E:\破甲工作区\.tmp\packrivo-27h\verify-runtime.cjs
 - 报价手机端选项在摘要前，卡片对比度已测；遇到 27c 没有 style 映射的产品，先不选择结构、不展示默认估价，待买家明确选款后计算。TS/PHP 引擎及浏览器 `price()` 函数未改，4 组价格前后相同。报价按钮经子主题脚本按语言改 href，文字未改；需要脚本运行后生效。
 - 本地 `/get-a-quote/` 的 200 依赖以前已存在的 27c 本地测试 MU 覆盖；生产原重定向及 `27e-quote-redirect.patch` 仍未处理。本轮没有应用或改动父主题、其他插件或 MU。任何将来的应用需先核验生产基线并另行授权。报价页本身的多语种工作仍未完成，首页 5/8 卡片等旧项仍保留。
 - 28l 只验证了表单控件与键盘路径，**未提交任何询盘**；完整输出与 en/ar/de 所有报价链接逐项表见 `verification-28l/` 和 `packrivo-v2/docs/CODEX-RESULT-2026-10-28l.md`。
+
+## 28m：交付包、上线顺序与剩余阻断（本地完成，未部署）
+
+### 包内容与哈希
+
+| 包 | 文件数 | 大小 | SHA-256 |
+|---|---|---|---|
+| `packrivo-home-v4.zip`（子主题） | 38 | 769.5 KB | `62a31fc2c9ef6ad2dbd1634c673fd98dc69351e82197279301b84a5d988d040c` |
+| `packrivo-quote.zip`（报价插件） | 23（含 `includes/quote-i18n/` 11 个语种文件） | 57 KB | `3600ac5fc817d9414376949d534688952b0ba425f06810cc5373cf6b75fd0370` |
+
+两个包都与 `packrivo-wp/` 下的工作源逐字节相同（`robocopy /E` 镜像后重打）。报价插件的报价计算文件 `includes/class-pkq-pricing.php`、`includes/pricing.json`、`includes/class-pkq-rest.php` 与 28m 段 1 结束时的副本 **SHA-256 完全一致**——价格逻辑一行未改。
+
+### 上线顺序与命令（任一步失败就停，按回滚列恢复后再继续）
+
+1. **备份**（不改任何文件）
+
+```bash
+WP=/home/web/html/www.packrivo.com/wordpress
+BACKUP=/home/web/backups/packrivo-28m-before
+mkdir -p "$BACKUP"
+cp -a "$WP/wp-content/uploads/packrivo-i18n"          "$BACKUP/i18n"
+cp -a "$WP/wp-content/themes/packrivo-home-v4"        "$BACKUP/theme"
+cp -a "$WP/wp-content/plugins/packrivo-quote"         "$BACKUP/plugin"
+cp -a "$WP/wp-content/mu-plugins"                     "$BACKUP/mu"
+sha256sum "$BACKUP"/i18n/*.json > "$BACKUP/i18n.sha256"
+```
+回滚：无需（只读）。**验证备份可恢复**后再进下一步。
+
+2. **字典**（11 份 `*-dict.json` + `paths.json`）
+
+```bash
+for lang in ar de es fr it ja ko nl pt zh-CN zh-TW; do
+  cp deploy/i18n-merged/$lang-dict.json "$WP/wp-content/uploads/packrivo-i18n/$lang-dict.json"
+done
+cp deploy/i18n-merged/paths.json "$WP/wp-content/uploads/packrivo-i18n/paths.json"
+```
+回滚：`cp -a "$BACKUP/i18n/"* "$WP/wp-content/uploads/packrivo-i18n/"`，再按 `$BACKUP/i18n.sha256` 核对。
+
+⚠️ 这两份是**本地基线**。生产字典可能已被站内改动，直接覆盖会吃掉生产侧新增键。正确做法是先读生产当前字典，用 `scripts/ui-28k/merge-i18n.mjs` 把本地增量合到生产基线上（28k README 段有完整命令），冲突逐条人工确认后再装。
+
+3. **报价插件**
+
+```bash
+cp -a deploy/packrivo-quote.zip "$BACKUP/"
+unzip -o deploy/packrivo-quote.zip -d "$WP/wp-content/plugins/"
+```
+回滚：`rm -rf "$WP/wp-content/plugins/packrivo-quote" && cp -a "$BACKUP/plugin" "$WP/wp-content/plugins/packrivo-quote"`。
+
+装完在任一语种页开 `/de/get-a-quote/`，确认 5 步文案是德语、价格 `$2.83 / $1,417.43`（rigid 500）与英文一致。
+
+4. **子主题**
+
+```bash
+cp -a deploy/packrivo-home-v4.zip "$BACKUP/"
+unzip -o deploy/packrivo-home-v4.zip -d "$WP/wp-content/themes/"
+```
+回滚：`rm -rf "$WP/wp-content/themes/packrivo-home-v4" && cp -a "$BACKUP/theme" "$WP/wp-content/themes/packrivo-home-v4"`。
+
+装完先看这四项：首页首屏（375 px 下标题 + 主按钮 + 产品图）、`/products/` 第一张卡是否在 700 px 内、产品页底部固定条是否墨绿（不再是橙色）、11 语种页报价按钮是否去 `/{lang}/get-a-quote/`。
+
+5. **MU 补丁**（本轮唯一新增的未应用补丁）
+
+`deploy/patches-28m/packrivo-i18n-404-viewport.patch`：给「本页尚未翻译」的 404 页补 `<meta name="viewport">` 和一行内联样式。没有它，`/ar/<未翻译路径>/` 在手机上按 980 px 渲染（实测 `window.innerWidth=981`、`scrollWidth=981`）。
+
+```bash
+cd "$WP/wp-content/mu-plugins"
+patch -p1 --dry-run < /path/to/packrivo-i18n-404-viewport.patch   # 先 dry-run
+patch -p1         < /path/to/packrivo-i18n-404-viewport.patch
+```
+回滚：`cp -a "$BACKUP/mu/packrivo-i18n.php" .`。补丁基于本地 `packrivo-i18n.php` 的 164–176 行；生产该文件若已漂移，`--dry-run` 会失败，必须重新比对后手改，不要强打。
+
+6. **内容**：本轮没有改动任何 post_title / post_content / meta，跳过。28m 的首页卡片、报价按钮去向全部由代码决定。
+
+7. **清缓存 + 复测**：按站点实际缓存方案执行；复测清单见 `packrivo-v2/docs/DSH-RESULT-2026-10-28m.md` 的最后一节。
+
+### 剩余阻断（照实写，未解决）
+
+- **生产字典/路径表必须以生产基线重新合并**：本地 `deploy/i18n-merged/` 是本地快照，不能当生产当前值直接覆盖。
+- **`/get-a-quote/` 的生产重定向**：27e 的 `27e-quote-redirect.patch` 仍未执行。生产若仍把 `/get-a-quote/` 301 到 `/inquiry/`，则本轮所有 `/{lang}/get-a-quote/?style=…` 按钮在生产都会跳去询盘页——**上线顺序上必须先处理这条重定向**，否则第 2/4 步的效果看不见。
+- **MU 404 viewport 补丁未应用**（见上面第 5 步）。
+- **`/contact/` 与 `/inquiry/` 的 `<title>` 完全相同**（都是 `Request a Custom Packaging Quote | Packrivo`）。这是内容决策，本轮没改；142 页里只有这一对重复。
+- **`/ar/<文章路径>/` 是 404**：`/2026/10/26/jewelry-pouch-box-customer-handoff/` 不在 `paths.json` 里，属 27j 已记录的 `route-unavailable` 缺口，本轮没有扩白名单（扩了也没有对应译文，会变成阿语外壳 + 英文正文）。
+- **父主题类名依赖**：产品页底部固定条与 WhatsApp 悬浮按钮由父主题 `packrivo-static-bridge` 与 mu-plugin `packrivo-wave1.php` 注入，本轮的配色与隐藏规则是**子主题 CSS 覆盖**（`body .pr-sticky .pr-sticky-main`、`html body.pr-has-sticky nav.contact-dock`）。父主题若改类名或提高选择器权重，这两条会失效，需要跟着调。
+- **英文源串里的技术词**：`Kraft E-flute`、`White E-flute`、`Rigid greyboard 2 mm`、`An engineer confirms the dieline…` 仍在英文界面与译文里（按「英文不变」未动）。买家可见文案的用词口径由站长定。
