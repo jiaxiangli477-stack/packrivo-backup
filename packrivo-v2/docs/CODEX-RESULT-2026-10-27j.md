@@ -190,4 +190,9 @@ dictionary_diff_from_dc3cf19_exit=0
 
 ## 提交与推送
 
-主交付和推送回执在实际执行后补入；本段不代表已推送。
+主交付提交 `4f855c7`。以下是首次推送的原样输出；本回执随后作为文档提交同步推送。
+
+```text
+To https://github.com/jiaxiangli477-stack/packrivo-backup.git
+   dc3cf19..4f855c7  main -> main
+```
