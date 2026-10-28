@@ -983,3 +983,45 @@ r28q-net 演练栈五容器全部 Up：php(r28q-php:8.3) / nginx(nginx:alpine，
 - **→ 生产第 1 步重跑条件仍不满足，生产第 1 步维持 FAIL；第 2–8 步与 SSH 生产继续禁止；本链继续停止等待，绝不执行第 2–8 步。**
 - 待规划者/负责人关注：①28s 整轮（正向 0–8 每步 PASS=n FAIL=0 EXIT=0 + 正向快照 4247693f + 第 9 步回滚 + 回滚后快照=基线 + negtest 3.0 反向自检）运行中，完成后是否交付 DSH-RESULT-28s + verification-28s/ 并如实给逐步 PASS/FAIL 表；②r28s-runner 内 /opt/x28r/rehearsal.sh 为镜像 r28q-host:7 内副本，与 .tmp/28q/rehearsal.sh（11:56:24）是否逐字节一致未验证，需镜像层证据或把 .tmp 版同步入库；③在途 RUNBOOK（+27/−7）与 .tmp rehearsal.sh 是否随 28s 交付一并提交；④28s 交付后仍需 Claude 对最终结果的复验与负责人新的生产授权，此前继续停止等待。
 - 操作边界：本轮全程只读（git fetch/log/status/diff、文件读取、docker ps/inspect/logs 只读列举）；未执行任何脚本、未启动/停止/接入容器、未修改/删除他人文件、未 SSH 生产、未重跑生产第 1 步、未读取或打印任何密码/密钥/token；仓库变更仅本节日志与独立只读证据摘录两个文件，在途 RUNBOOK-launch.md 改写与全部未跟踪/在途文件零触碰。
+## 22 · 28s 增量门禁核查（6312f24 之后）：零新提交 / 28s 整轮被重启一次（旧实例 step2 后被杀 137 + 镜像 tag8 重建 + 12:07:34 从复位重跑，新轮运行中）/ 在途 RUNBOOK+rehearsal.sh 守卫逐项在案 / 门禁结论：生产第 1 步重跑条件仍不满足、继续停止等待（2026-10-28 本机只读核查；未执行任何脚本、未启动/停止/接入容器、未修改/删除他人文件、未读任何凭据）
+
+### 22.1 增量范围（6312f24 之后）
+- **零新提交**：git fetch 后 origin/main == HEAD == 6312f24；无新任务单/新答复；无 `dsh-out/DSH-RESULT-2026-10-28s.md`；无 `deploy/verification-28s/`（Test-Path False）。
+- 工作树仍仅 ` M deploy/RUNBOOK-launch.md` 一条（在途改写，本轮由 §21 的 +27/−7 增至 **+28/−8**，mtime 12:07:32）；`git ls-files --others` 仍为 0。
+- `.tmp/28s` 新增 2 个只读诊断脚本（并行链于被杀前 12:07 时段写入、未执行）：`inspect-merged.sh`（12:07:02，931B，检查 /pkg/merged 各 JSON 合法性/falsy/类型）、`check-pkg.sh`（12:07:20，687B，检查 /home/web/packrivo-packages 顶层与 /pkg/rollback site 值）——两者均为 docker exec 型脚本，指向旧实例 step2 合并产物校验，暗示重启原因与 /pkg/merged 校验有关，但无书面重启原因记录。
+
+### 22.2 28s 整轮被重启一次：旧实例被杀（137）+ 镜像 tag8 重建 + 12:07:34 重建重启
+- **旧实例被杀**：r28s-runner（镜像 r28q-host:7，11:56:32 启动）在完成 step1 备份与 step2 合并后，于 ~12:07:30 被 SIGKILL（首次采样 `docker ps -a` 显示 `Exited (137) 36 seconds ago`）。
+- **旧实例被杀前真实进度残留**（主机侧只读可见，不构成任何判据结论）：
+  - step1 备份 `backups/packrivo-launch-20261028-1903/` 完整：db.sql 35,409,451B（12:03:45）、INSTALL-STATE.txt 205B 非空（12:05:54：launch=1903、theme_before=packrivo-static-bridge-1.2.38、parent_before=packrivo-static-bridge-1.2.38、child_theme_present=no、quote_plugin_present=no）、before-* 9 项（12:03:44–12:05:24）；CURRENT_LAUNCH=1903。
+  - step2 合并产物 `packrivo-packages/merged/` 23 个 JSON（12:06:12）：paths.json count=146（≥146 ✓）、conflicts.json=[]（3B，合法空数组）、11 dict + 11 js 均在。
+- **重启链条（时间戳环环相扣）**：`.tmp/28q/rehearsal.sh` 12:07:13 再次编辑（22,862B，仍 432 行）→ 镜像 **r28q-host:8** 12:07:33 重建（tag7=11:56:31、tag6=11:46:52…）→ 旧 runner ~12:07:30 被杀 → 新 runner 12:07:34 启动（RestartCount=0、镜像=9428053c960d=tag8、Cmd 先删除并重建 /home/web/rehearsal-28s 目录后跑 run28s.sh、EXIT 追加到 rehearsal.log，见 docker inspect）。
+- → **整轮被重启一次：旧实例在 step2 后截断，其 rehearsal-28s 日志目录被清空重建**；新轮从复位开始、未复用旧轮任何进度（与 28s「不拼凑、判据写错则从复位重跑整轮」方向一致；被杀原因无书面记录，见 §22.6 待办②）。
+- **新轮当前进度（截至 ~12:11:30 采样）**：运行中（Up 3 分钟），第 [1] 步复位收尾——reset.log 1,421B（12:10:44，持续递增）：site→http://nginx、mu/i18n(23 文件)/主题/插件复位、清掉上一轮遗留 rollback 依据、restore_slug=130 missing=0 无正文依据 0 / restore_slug=8 missing=0 无正文依据 8、状态确认 packrivo-static-bridge-1.2.38、子主题未安装 ✓（附一条 WordPress wp_update_themes 联网告警，演练容器无外网，与判据无关）；rehearsal.log 仅 102B（头部 + "[1] 复位"）。→ s-reset.txt 复位快照尚未生成、step0 尚未开始，**整轮远未完成**。
+
+### 22.3 在途 RUNBOOK（+28/−8，12:07:32）逐项核对（相对 §21.3 的增量变化）
+- §0.1 探针注记由 1 段增为 2 段，新增「判据只看补救后的结果：包装本来不在时第一次探针失败是预期现象、不算本步 FAIL；按补救块装包装重探到字节数>0 才通过；装了包装仍 0 字节/报 TLS 错误才是真 FAIL，停下别做第 1 步」——与 rehearsal.sh 0f 分支逻辑逐字呼应。
+- 2.5 逐条 PASS:/FAIL:（paths 存在/含 /get-a-quote//条数≥146/dict=11/js=11/无坏 JSON）与「任一条 FAIL→本步 FAIL→回滚字典并停止、不得把 exit=0 静默失败当通过」；坏 JSON 判据改为 `json_last_error()` 并注明 conflicts.json=[] 在 PHP 里 falsy、用 `or exit(1)` 会误判——与 28s 裁定一致。
+- 3.0 应用前守卫、9.3 回滚前守卫各 1 处；step3 总数口径 `apply_updated + already_current = 134`（27g）/`= 8`（27i）+ 演练 `apply_updated > 0` + `URL_and_body_check=PASS`/`H1_body_URL_check=PASS` + mismatch→FAIL；附录 C 新增 28s 行；**附录 D 仍零命中（未并入）、无写死 apply_updated=134**。均未提交。
+
+### 22.4 .tmp/28q/rehearsal.sh（432 行，12:07:13 再编辑后已烤入镜像 tag8，未入库）逐项核对
+- ckp/ckf/ck + step_end（本步 PASS=n FAIL=m、有 FAIL 即 exit 1）+ selftest 自证分支。
+- step0：0f 导出探针（包装在→ckp；探针失败→装 --skip-ssl 包装（参数追加在末尾）→重探→ckp/ckf「装包装后仍是 0 字节→第 1 步的备份会失败，停下」）；0a–0e。标签仅 0f（无字面 0g，补救重探并入 0f 路径，与 §21.4 结论一致）。
+- step2：2a–2h（paths 存在/含 /get-a-quote//条数≥146/dict=11/js=11/无坏 JSON(json_last_error)/conflicts=0/de lang=de）。
+- step3：3.0 GUARD30（site 不符→FAIL+apply 不执行+exit 1）；3a/3b verify metadata_mismatches=0；27g/27i 总数 =134/=8、apply_updated>0、URL_and_body_check=PASS、H1_body_URL_check=PASS；3c/3d rollback 依据非空；3e 产品页 200。
+- step9：9.3 GUARD93（site 不符→FAIL+rollback 不执行+exit 1）。
+- 仓库内 `deploy/verification-28q/scripts/rehearsal.sh` 仍无改动、未提交。
+
+### 22.5 目标问题逐项裁定（截至 ~12:11:30 采样）
+- **28s 一整轮正向+回滚+3.0 反向自检完整端到端且每阶段全判据 PASS：尚不存在**（新轮复位收尾中，无 step-summary、无 s-reset/s-forward/s-after-rollback 快照、无 step9、无 negtest 产物、无 DSH-RESULT-28s、无 verification-28s/）；旧轮已被杀，其残余（1903 备份、merged 产物）不构成任何判据结论。不得以 acceptance-recheck、局部复跑、最终快照、预写结论或运行中部分日志替代完整验收。
+- §0.1 0f --skip-ssl 探针每轮生效：机制在在途两文件到位（0f 探针+补救重探+ckf），本轮实跑证据待 step0；旧轮 step0 的 0f 段采样未到即被杀。
+- 2.5 逐条 PASS/FAIL、3.0/9.3 硬守卫真实生效：改写到位（RUNBOOK+rehearsal.sh），待本轮日志实证（3.0 反向自检待 negtest.sh 放 site 不一致 JSON 确认拦截）。
+- 新口径 apply_updated+already_current=134/8 且演练 apply_updated>0：改写到位，待 step3 实证。
+- 最终复位与基线一致：待整轮结束后回滚后快照 sha256=4972cd81…验证。
+- **Claude 对 28s 最终修正结果的明确复验：不存在**（零新提交/新答复；28s 整轮未完成，无从复验）。
+- **负责人新的生产上线授权：不存在**（28s 任务单明确「本轮不碰生产：不 SSH，不碰密码，不打开 .cf.env」）。
+
+### 22.6 门禁结论与操作边界
+- **→ 生产第 1 步重跑条件仍不满足，生产第 1 步维持 FAIL；第 2–8 步与 SSH 生产继续禁止；本链继续停止等待，绝不执行第 2–8 步。**（整轮重启非失败亦非通过：仅记录真实进度，继续停止等待。）
+- 待规划者/负责人关注：①28s 新轮（镜像 tag8）是否完整跑完正向 0–8（每步 PASS=n FAIL=0 EXIT=0）+ 正向快照 4247693f + 第 9 步回滚 + 回滚后快照=基线 + negtest 3.0 反向自检，完成后交付 DSH-RESULT-28s + verification-28s/ 并如实给逐步 PASS/FAIL 表；②旧实例为何于 step2 后被 kill（12:07:02/12:07:20 两份诊断脚本指向 /pkg/merged 校验，12:07:13 改 rehearsal.sh、12:07:33 重建 tag8）——无书面重启原因记录，建议并行链在交付物中说明；③新镜像 tag8 内 /opt/x28r/rehearsal.sh 是否与 .tmp/28q/rehearsal.sh（12:07:13）逐字节一致，需镜像层证据或同步入库；④在途 RUNBOOK（+28/−8）与 .tmp rehearsal.sh 是否随 28s 交付一并提交；⑤28s 交付后仍需 Claude 对最终结果的复验与负责人新的生产授权，此前继续停止等待。
+- 操作边界：本轮全程只读（git fetch/log/status/diff、文件读取、docker ps/inspect 只读列举）；未执行任何脚本、未启动/停止/接入容器、未修改/删除他人文件、未 SSH 生产、未重跑生产第 1 步、未读取或打印任何密码/密钥/token；仓库变更仅本节日志与独立只读证据摘录两个文件，在途 RUNBOOK-launch.md 改写与全部未跟踪/在途文件零触碰。
