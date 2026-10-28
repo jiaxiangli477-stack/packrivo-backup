@@ -166,4 +166,9 @@ paths_unchanged=True approved_translation_sha256=edcadc0b117fa3a564c18c25c5b52b9
 
 ## 提交与推送
 
-主交付和推送回执在实际执行后补入；本段不代表已推送。
+主交付提交 `4b8366e`。以下为首次推送原样输出；本回执随后作为文档提交同步推送。
+
+```text
+To https://github.com/jiaxiangli477-stack/packrivo-backup.git
+   3f530a9..4b8366e  main -> main
+```
