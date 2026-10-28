@@ -649,3 +649,99 @@ inquiry_existing_description=preserved writes=0
 | `/contact/` 301 到 `/inquiry/` | 生产与本地一致，不构成重复标题页 |
 
 768 / 1024 这两条是页头结构问题（要改布局），需要视觉确认，列进 RUNBOOK 附录 A 与下一轮。
+
+
+## 28o 收尾（06:50 之后）
+
+上一轮 06:33 报“工作区干净”之后，后台并行任务又动了三个文件。先确认它已经停手：三个文件的 mtime 停在 06:43–06:44，06:50–06:52 之间没有再变，且改动已被并行任务自己提交（709b2fb、1d790e7），所以本轮**不接受任何新内容**，只做收尾四件事。
+
+替代包也复核了一遍：709b2fb 换掉的 4 个 zip（deploy 与 packrivo-wp 各两份）哈希与 README 第 183/184 行一致（`c3ed9d72…` 788,955 B / `096d0c8e…` 54,581 B），容器里 `ZipArchive` 解压后与工作源**逐字节一致、反斜杠 0**，所以不需要再动包。
+
+### 1 · README 开头只剩一行提示
+
+并行任务在标题**上方**又加了一行同义提示，和 9f3a0b6 在标题下方那行重复。删掉新加的那行（709b2fb 引入的），保留标题下方那行：
+
+```
+1|# 27e / 27g / 27h / 27i 上线前检查与回滚方案（未执行）
+2|
+3|> **上线以 [`RUNBOOK-launch.md`](RUNBOOK-launch.md) 为准；本文件里 27g…28o 的分轮记录只作历史参考。**
+4|
+5|**状态：27i 主页面元数据和按钮字典已完成本地准备，尚未部署。** …
+```
+
+全文“上线以”只出现 1 次（`grep -c` 计数）。
+
+### 2 · merge-i18n.php 自检与新增断言
+
+`merge_js` 覆盖 `*-js.json`：`exact` 取并集、同键生产值优先；`patterns` 生产在前、本地新正则追加；其余顶层键生产优先。新加一条断言，专门盯「exact 键冲突时要采用生产值，并且要进冲突清单」——之前只断言了合并后的值，没断言“可审计”这一半：
+
+```php
+$jsConflict = null;
+foreach ($conf as $c) {
+    if (($c['kind'] ?? '') === 'js-exact' && ($c['key'] ?? '') === 'Diff') { $jsConflict = $c; break; }
+}
+$check('js-exact 键冲突记进清单且用生产值（Diff: LOCAL→PROD）',
+    $jsConflict !== null
+        && ($jsConflict['prod'] ?? null) === 'PROD'
+        && ($jsConflict['local'] ?? null) === 'LOCAL'
+        && ($jsConflict['used'] ?? null) === 'PROD');
+```
+
+`php -l` 通过，`--self-test` 原始输出（容器 PHP 8.2.28）：
+
+```
+No syntax errors detected in /tmp/tools/merge-i18n.php
+=== --self-test ===
+de     生产有 → 合并后 title=4 attr=0 block=0 text=2，冲突 2
+de     js：exact=4 patterns=3，冲突 2
+paths.json：生产 2 + 本地 2 → 合并 4（本轮补 1：/get-a-quote/）
+冲突清单：4 条 → /tmp/merge-i18n-selftest-1775/out/conflicts.json
+  有冲突，装之前必须人工看过 conflicts.json（生产值已被采用）。
+  OK   生产值优先（Diff=PROD）
+  OK   生产值优先（text A）
+  OK   本地独有键保留（OnlyLocal）
+  OK   生产独有键保留（OnlyProd）
+  OK   两边相同不记冲突（Same）
+  OK   四个真冲突都记下来
+  OK   paths 取并集
+  OK   js-exact 生产值优先（Diff=PROD）
+  OK   js-exact 本地独有键保留（OnlyLocal）
+  OK   js-exact 生产独有键保留（OnlyProd）
+  OK   js-exact 键冲突记进清单且用生产值（Diff: LOCAL→PROD）
+  OK   js-patterns 生产优先、本地新正则追加
+  OK   js 其余顶层键生产优先（meta）
+自检通过
+exit=0
+```
+
+12 条断言全 OK。
+
+### 3 · RUNBOOK 第 7 步（清缓存）：只引用路径，标注负责人亲自执行
+
+第 7 步的 Cloudflare 段现在明确写：
+
+> **Cloudflare 这一段：负责人亲自执行。**
+> 凭据只存在 `E:\破甲工作区\i18n\.cf.env` 这一个文件里，本手册只引用它的路径、不写任何值。
+> 执行时不要把文件内容 `cat`/`echo` 出来，也不要把命令输出里的 token 贴进聊天、工单或日志。
+
+命令块里只有 `python E:\破甲工作区\i18n\cf_purge.py`，脚本自己从那个文件读凭据。附录 B 第 7 行也加了「Cloudflare 那一步：负责人亲自执行」。
+
+对整个手册做了一次凭据扫描（`token|api[_-]?key|Bearer|password|secret|@域名|[0-9a-f]{32,}`）：命中的只有三处 `*.env` **路径**说明、以及包与补丁的 SHA-256，**没有任何 key / token / 账号值**。
+
+### 4 · 提交
+
+```
+$ git status --short
+（无输出，工作区干净）
+
+$ git log -1 --stat
+commit 5b2c77c5d41969f034979cdb27aa2b7528c55240
+    28o wrap-up: drop duplicate README banner, assert exact-key conflicts, mark Cloudflare purge owner-only
+
+ deploy/README.md            |  2 --
+ deploy/RUNBOOK-launch.md    |  9 +++++++--
+ deploy/tools/merge-i18n.php | 14 ++++++++++++++
+ 3 files changed, 21 insertions(+), 4 deletions(-)
+```
+
+以上四件事仍然只在本地做：没有 SSH、没有碰生产、没有读取或打印任何密码与凭据。
