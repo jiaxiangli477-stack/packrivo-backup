@@ -306,3 +306,63 @@ en/blog=375  ar/blog=375      en/inquiry=375   ar/inquiry=375
 - **「改前」基线不是纯原始状态**：抓基线时 `/products/` 的 `pk-catalog-hero` / `pk-strip` 那套样式已经在树里（本会话更早写的），所以 3.2 的对照是「catalogue hero 已改 + 其余未改」→「全部改完」；首页、产品页、报价页的 before 是干净的。
 - 底部固定条与 WhatsApp 悬浮按钮都是**父主题 `packrivo-static-bridge` 和 mu-plugin `packrivo-wave1.php` 注入的**，父主题与 mu 插件一个字节没动，全部改动落在子主题 CSS 覆盖；若以后父主题改类名，这两条覆盖要跟着改。
 - cookie 同意条（`#pr-consent`）在测量脚本里只是临时 `display:none` 后才量最终态，页面本身没改它的行为。
+
+## 第 4 段 · 总回归 + 上线包 —— 已完成
+
+### 4.0 过程与两处回归修复
+
+第一轮总回归（commit `2fe9f9c` / `0b36b5e`）发现并修复两处 header 横向溢出，修复只改 `packrivo-wp\packrivo-home-v4\assets\site.css`（容器 bind 该目录，改动即时生效）：
+
+1. **375 px 首页 de/es/nl**：`.pk-more` 链接 `white-space:nowrap` 在不可换行的 `.pk-section-head` flex 行把页面最小内容宽顶出 375（实测 sw=411/378/418，移动 Chrome 随之把布局视口扩宽；`#pr-consent` 只是随视口变宽的受害者）。修复：`.pk-section-head` 加 `flex-wrap: wrap`（一行）。
+2. **桌面 1440 px header de/es/nl（连带 fr/it/pt）**：header `.pk-actions` 行（`flex:0 0 auto`）里 `.pk-cta` 按钮 `white-space:nowrap`，德/西/荷译文更长把整行顶出视口（sw=1494/1450/1466）。在回归环境拦截外部字体、用兜底字体的最坏度量下溢出带为 1351–1491，fr/it/pt 也在带内先后溢出。修复：site.css 追加 6 条媒体查询，按语种只在各自放不下的宽度区间隐藏次要 `.pk-text-link`（Sample kit / Instant quote）：it 1351–1500、pt 1351–1540、fr 1351–1550、de 1351–1575、es 1351–1595、nl 1351–1655；en/ar/ja/ko/zh 与 ≤1350 px 不受影响，`.pk-cta` 主按钮始终保留。
+
+### 4.1 142 页 <title>（最终态复验，本轮完成被中断的复验）
+
+命令：`.tmp\packrivo-28m\check-titles-28m-v3.mjs`（产品页标题 = 已审标题 + ` | Packrivo`，主页面与 `dsh-out\hubs-27i.json` 8 条精确一致）：
+
+```
+合计 142 页（产品页 134 + 主页面 8）
+非 200 或 <title> 数量≠1：0
+与已审清单不一致：0
+含 Sourcing 的标题：0
+重复标题：0
+最长标题：57 字符
+```
+
+证据：`deploy/verification-28m/titles-28m.csv` / `titles-28m.json`（本轮重跑覆盖）。注意：中间草稿脚本 `check-titles-final.mjs` 按严格相等比较会误报 136 条「不一致」——实际是它没实现「已审标题 + ` | Packrivo` 后缀」判定规则，已弃用，以 v3 为准。
+
+### 4.2 可见英文节点（77 组合，最终态复跑）
+
+7 页面 × 11 语种 = 77 组合，全部 0（报价页 5 个步骤另算，0 泄漏）。证据：`deploy/verification-28m/node-counts-28m.csv` / `.json`。
+
+### 4.3 横向溢出最终复验
+
+- **375 px：12 语种 × 7 路径 = 84 组合 `scrollWidth` 全部 375、0 溢出**（命令 `node scripts\28m-verify-overflow-all.mjs` → `dsh-out\overflow-28m-fixed.csv`，已同步 `deploy/verification-28m/`）。文章页非 en 语种按 `/?p=2937` 回退路径测量；`/ar/<文章路径>/` 的 404 及 404 页缺 viewport 问题仍在「还剩什么」（补丁未应用）。
+- **1440 px header：`deploy/verification-28m/header-1440-12langs.txt`**——A) 1440 px 拦截字体，12 语种 sw 全 =1440（bad=0）；B) 1440 px 字体加载，12 语种全 =1440（bad=0）；C) 各语种隐藏区间顶 +1 px，链接重新出现且仍不溢出（bad=0）。
+- after 截图：`home-de-375-after.png` / `home-es-375-after.png` / `home-nl-375-after.png`。
+
+### 4.4 询盘页 / 4.5 4 组价格
+
+同 DSH-RESULT 第 4.4 / 4.5 节：表单 14 个可见控件、`?product=` 能预选、Review 期间 0 条 POST；4 组价格与 27c 记录完全一致。证据：`inquiry-28m.json`、`inquiry-review-28m.json`、`quote-4groups.json`。
+
+### 4.6 上线包与 README（本轮重打）
+
+- `robocopy /E /MIR` 镜像 `packrivo-wp\packrivo-home-v4`、`packrivo-wp\packrivo-quote` → `packrivo-backup\packrivo-wp\`（镜像后 site.css SHA-256 与工作源相同）。
+- 重打 `deploy\packrivo-home-v4.zip`：38 文件、788,171 B、SHA-256 `17ac86204236beedd066ab1efb24ce8160231ed38a2ea65106482c6cb02295d0`；`deploy\packrivo-quote.zip`：23 文件、57 KB、SHA-256 `3600ac5fc817d9414376949d534688952b0ba425f06810cc5373cf6b75fd0370`（插件未变，哈希与第一版相同）。
+- `packrivo-wp\*.zip` 与 `packrivo-backup\packrivo-wp\*.zip` 同步为新包字节。
+- `deploy/README.md` 28m 段哈希表已更新为最终包，并注明子主题包相对第一版只多了两处 header 修复的 site.css 改动；六步上线顺序与回滚、7 条剩余阻断照旧。
+
+### 4.7 结果与提交
+
+- `packrivo-v2\docs\DSH-RESULT-2026-10-28m.md` 已补记两处 header 修复与最终复验，同步到 `packrivo-backup\dsh-out\DSH-RESULT-2026-10-28m.md`。
+- 提交（packrivo-backup，见 git log 最新两条）：一条为最终证据 + 重打上线包 + README 哈希 + 结果/进度更新，一条为结果文档补记提交哈希。
+
+### 还剩什么（同 DSH-RESULT 结尾 7 条，照实）
+
+1. 生产 `/get-a-quote/` 的 301 未处理（27e 补丁未执行）。
+2. 生产字典/路径表必须以生产基线重新合并，不能直接覆盖。
+3. MU 404 viewport 补丁未应用（`deploy/patches-28m/packrivo-i18n-404-viewport.patch`）。
+4. `/ar/<文章路径>/` 仍是 404（缺 path 白名单与译文）。
+5. `/contact/` 与 `/inquiry/` 标题重复，待站长定。
+6. 英文源串里 `E-flute` / `2 mm` / `dieline` 仍在，待站长定口径。
+7. 页头「Get a Quote」在语种页仍去 `/{lang}/inquiry/`，是否改配置器待定。

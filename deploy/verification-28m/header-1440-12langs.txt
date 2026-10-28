@@ -1,0 +1,36 @@
+﻿=== A) 1440, fonts BLOCKED (canonical regression condition) ===
+en: sw=1440 OK links=Sample kit:block|Instant quote:block
+ar: sw=1440 OK links=Sample kit:block|Instant quote:block
+de: sw=1440 OK links=Sample kit:none|Instant quote:none
+es: sw=1440 OK links=Sample kit:none|Instant quote:none
+fr: sw=1440 OK links=Sample kit:none|Instant quote:none
+it: sw=1440 OK links=Sample kit:none|Instant quote:none
+ja: sw=1440 OK links=Sample kit:block|Instant quote:block
+ko: sw=1440 OK links=Sample kit:block|Instant quote:block
+nl: sw=1440 OK links=Sample kit:none|Instant quote:none
+pt: sw=1440 OK links=Sample kit:none|Instant quote:none
+zh-CN: sw=1440 OK links=Sample kit:block|Instant quote:block
+zh-TW: sw=1440 OK links=Sample kit:block|Instant quote:block
+A bad=0
+=== B) 1440, fonts loaded (normal user condition) ===
+en: sw=1440 OK links=Sample kit:block|Instant quote:block
+ar: sw=1440 OK links=Sample kit:block|Instant quote:block
+de: sw=1440 OK links=Sample kit:none|Instant quote:none
+es: sw=1440 OK links=Sample kit:none|Instant quote:none
+fr: sw=1440 OK links=Sample kit:none|Instant quote:none
+it: sw=1440 OK links=Sample kit:none|Instant quote:none
+ja: sw=1440 OK links=Sample kit:block|Instant quote:block
+ko: sw=1440 OK links=Sample kit:block|Instant quote:block
+nl: sw=1440 OK links=Sample kit:none|Instant quote:none
+pt: sw=1440 OK links=Sample kit:none|Instant quote:none
+zh-CN: sw=1440 OK links=Sample kit:block|Instant quote:block
+zh-TW: sw=1440 OK links=Sample kit:block|Instant quote:block
+B bad=0
+=== C) band tops+1, fonts BLOCKED: links must reappear and still fit ===
+it@1501: sw=1501 linksVisible=true OK
+pt@1541: sw=1541 linksVisible=true OK
+fr@1551: sw=1551 linksVisible=true OK
+de@1576: sw=1576 linksVisible=true OK
+es@1596: sw=1596 linksVisible=true OK
+nl@1656: sw=1656 linksVisible=true OK
+C bad=0

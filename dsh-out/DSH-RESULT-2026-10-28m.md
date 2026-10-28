@@ -10,7 +10,8 @@
 | 2 | `102348d` | 报价页 11 语种 |
 | 2 证据 | `4e916ca` | 4 组价格 × 4 语种、ar 375 两图、105 条按钮 href |
 | 3 | `b818176` | P2 视觉（手机首屏 / 列表密度 / 控件系统） |
-| 4 | 本次提交 | 总回归、上线包、本文件 |
+| 4 | `0b36b5e` | 总回归第一轮、上线包、本文件（第一版） |
+| 4 终态 | 见 `packrivo-backup` 最新提交 | 两处 header 溢出修复、142 页标题最终复验、重打上线包、本文件更新 |
 
 进度与原始输出：`packrivo-backup/dsh-out/progress-28m.md`；证据目录：`packrivo-backup/deploy/verification-28m/`。
 
@@ -166,9 +167,9 @@ ar 0  de 0  es 0  fr 0  it 0  ja 0  ko 0  nl 0  pt 0  zh-CN 0  zh-TW 0
 最长标题：57 字符
 ```
 
-原始表：`deploy/verification-28m/titles-28m.csv` / `titles-28m.json`。
+原始表：`deploy/verification-28m/titles-28m.csv` / `titles-28m.json`（最终态复验，脚本 `check-titles-28m-v3.mjs`；判定：产品页标题 = 已审标题 + ` | Packrivo` 或 ` – Packrivo`，主页面与 `hubs-27i.json` 8 条标题精确一致）。
 
-> 另记一笔（不在这 142 页里）：`/contact/` 与 `/inquiry/` 的 `<title>` 都是 `Request a Custom Packaging Quote | Packrivo`。内容决策，本轮未改。
+> 另记一笔：`/contact/`（不在 142 页内）与 `/inquiry/`（在 142 页内）的 `<title>` 都是 `Request a Custom Packaging Quote | Packrivo`。内容决策，本轮未改。
 
 ### 2. 可见英文节点数：77 次页面/语种组合，**全部 0**
 
@@ -190,7 +191,24 @@ page,ar,de,es,fr,it,ja,ko,nl,pt,zh-CN,zh-TW
 
 > 唯一一个需要说明的豁免：意大利语的 `Home`（面包屑）。字典里 `it.Home = Home`，是意大利语本来就用的词，已加入同形词白名单并在此记录，不算泄漏。
 
-### 3. 375 px 横向溢出：13/14 通过
+### 3. 横向溢出：总回归中发现并修复两处 header 溢出，最终 84/84 通过
+
+总回归第一轮在 375 px 和 1440 px 各发现一处 header 横向溢出，都已修复并复验；修复只落在 `packrivo-home-v4/assets/site.css`，父主题/插件未动。
+
+**修复 1 · 375 px 首页 de/es/nl（第一轮回归发现）**
+
+- 现象：`/de/` `/es/` `/nl/` 首页 375 视口 `scrollWidth` 411/378/418，且这 3 个语种页的布局视口本身被移动 Chrome 扩成 411/378/418（`window.innerWidth ≠ 375`）。
+- 根因：不是 viewport meta、也不是语言插件注入——`.pk-more` 链接 `white-space:nowrap` 在不可换行的 `.pk-section-head` flex 行里把页面最小内容宽顶出 375，浏览器随之扩视口；`#pr-consent` 只是随视口变宽的受害者。
+- 修复：`.pk-section-head` 加 `flex-wrap: wrap`（site.css 一行）。
+- 复验：`overflow-28m-fixed.csv` **12 语种 × 7 路径 = 84 组合，`scrollWidth` 全部 375、0 溢出**；after 截图 `home-de/es/nl-375-after.png`。
+
+**修复 2 · 桌面 1440 px header de/es/nl（并带出 fr/it/pt）**
+
+- 现象：1440 视口下 header `.pk-actions` 行（`flex:0 0 auto`）里 `.pk-cta` 按钮 `white-space:nowrap`，德/西/荷译文更长（`Angebot erstellen` / `Crear un presupuesto` / `Stel een prijsopgave samen`）把整行顶出视口（`scrollWidth` 1494/1450/1466；en/fr 正常）。在回归环境拦截外部字体、用兜底字体的最坏度量下，溢出带为 1351–1491，fr/pt/it 也在带内先后溢出。
+- 修复：site.css 追加 6 条媒体查询，只在各自放不下的宽度区间隐藏次要 `.pk-text-link`（Sample kit / Instant quote）：it 1351–1500、pt 1351–1540、fr 1351–1550、de 1351–1575、es 1351–1595、nl 1351–1655；en/ar/ja/ko/zh 与 ≤1350 px 完全不受影响，`.pk-cta` 主按钮始终保留。
+- 复验（`header-1440-12langs.txt`）：A) 1440 px 拦截字体，12 语种 `scrollWidth` 全 =1440（bad=0）；B) 1440 px 字体加载，12 语种全 =1440（bad=0）；C) 各语种隐藏区间顶 +1 px，链接重新出现且仍不溢出（bad=0）。
+
+**最终 375 px 复验表**（修复 1 落地后；en/ar 14 行 + 其余 10 语种全部 375）：
 
 | 页面 | en | ar |
 |---|---|---|
@@ -198,13 +216,11 @@ page,ar,de,es,fr,it,ja,ko,nl,pt,zh-CN,zh-TW
 | `/products/` | 375 | 375 |
 | `/jewelry-boxes/` | 375 | 375 |
 | `/blog/` | 375 | 375 |
-| 1 篇文章 | 375 | **404 / 981** |
+| 1 篇文章 | 375 | **404 / 981**（见下） |
 | 1 个产品页 | 375 | 375 |
 | 报价页 | 375 | 375 |
 
-另外 6 个页面（首页 / `/products/` / `/jewelry-boxes/` / `/blog/` / 产品页 / 报价页）× 12 个语言前缀（en + 11 语种）= **72 行，`scrollWidth` 全部 375**（`overflow-28m.csv`，逐个元素量过 `offenders=0`）。
-
-`/ar/<文章路径>/` 是 404（该路径不在 `paths.json`，27j 已记为 `route-unavailable`），而这个 404 页**没有 `<meta name="viewport">`**，手机按 980 px 渲染 → `innerWidth=981`。修复补丁已写好但**未应用**：`deploy/patches-28m/packrivo-i18n-404-viewport.patch`（mu-plugin 只读，按规则只交补丁）。
+`/ar/<文章路径>/` 是 404（该路径不在 `paths.json`，27j 已记为 `route-unavailable`），而这个 404 页**没有 `<meta name="viewport">`**，手机按 980 px 渲染 → `innerWidth=981`。修复补丁已写好但**未应用**：`deploy/patches-28m/packrivo-i18n-404-viewport.patch`（mu-plugin 只读，按规则只交补丁）。最终复验脚本里文章页非 en 语种按 `/?p=2937` 回退路径测量，全部 =375——84 组合含此回退，0 溢出。
 
 ### 4. 询盘页
 

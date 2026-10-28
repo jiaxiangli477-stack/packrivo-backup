@@ -176,10 +176,10 @@ node E:\破甲工作区\.tmp\packrivo-27h\verify-runtime.cjs
 
 | 包 | 文件数 | 大小 | SHA-256 |
 |---|---|---|---|
-| `packrivo-home-v4.zip`（子主题） | 38 | 769.5 KB | `62a31fc2c9ef6ad2dbd1634c673fd98dc69351e82197279301b84a5d988d040c` |
+| `packrivo-home-v4.zip`（子主题） | 38 | 769.7 KB（788,171 B） | `17ac86204236beedd066ab1efb24ce8160231ed38a2ea65106482c6cb02295d0` |
 | `packrivo-quote.zip`（报价插件） | 23（含 `includes/quote-i18n/` 11 个语种文件） | 57 KB | `3600ac5fc817d9414376949d534688952b0ba425f06810cc5373cf6b75fd0370` |
 
-两个包都与 `packrivo-wp/` 下的工作源逐字节相同（`robocopy /E` 镜像后重打）。报价插件的报价计算文件 `includes/class-pkq-pricing.php`、`includes/pricing.json`、`includes/class-pkq-rest.php` 与 28m 段 1 结束时的副本 **SHA-256 完全一致**——价格逻辑一行未改。
+两个包都与 `packrivo-wp/` 下的工作源逐字节相同（`robocopy /E` 镜像后重打，2026-10-28 总回归最终态重打）。报价插件的报价计算文件 `includes/class-pkq-pricing.php`、`includes/pricing.json`、`includes/class-pkq-rest.php` 与 28m 段 1 结束时的副本 **SHA-256 完全一致**——价格逻辑一行未改；插件包未变化，哈希与第一版相同。子主题包相对第一版（`62a31fc2…`）只多了总回归中修复两处 header 横向溢出的 `assets/site.css` 改动（`.pk-section-head` 加 `flex-wrap: wrap`；6 条按语种隐藏 header 次要链接的媒体查询），其余文件未变。
 
 ### 上线顺序与命令（任一步失败就停，按回滚列恢复后再继续）
 
