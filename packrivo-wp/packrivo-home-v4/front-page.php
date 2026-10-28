@@ -56,7 +56,7 @@ $faq = [
 <main id="main" class="pk-main">
 <section class="pk-hero">
   <div class="pk-wrap pk-hero-grid">
-    <div>
+    <div class="pk-hero-copy">
       <p class="pk-eyebrow">Custom packaging · MOQ 500 · 11 languages</p>
       <h1 class="pk-display"><?php
       $pk_home_h1_translation = function_exists('packrivo_lang') && packrivo_lang() !== null && function_exists('packrivo_i18n_lookup')
@@ -69,12 +69,6 @@ $faq = [
         <a class="pk-btn" href="<?php echo esc_url(home_url('/get-a-quote/')); ?>">Build a quote <span aria-hidden="true">→</span></a>
         <a class="pk-btn-ghost" href="<?php echo esc_url(home_url('/samples/')); ?>">Order a sample kit</a>
       </div>
-      <dl class="pk-stats">
-        <?php if ($home_products) : ?><div><dt>From · 500 pcs</dt><dd>$<?php echo esc_html(number_format(min(array_column($home_products,'price')),2)); ?> / unit</dd></div><?php endif; ?>
-        <div><dt>MOQ</dt><dd>500 / design</dd></div>
-        <div><dt>Production</dt><dd>7–30 days</dd></div>
-        <div><dt>Sourcing fee</dt><dd>8–15%</dd></div>
-      </dl>
     </div>
     <figure class="pk-hero-media">
       <img src="<?php echo esc_url($img . '/hero.webp'); ?>" alt="Rigid gift box with insert, studio shot" width="1200" height="1200" loading="eager" />
@@ -103,6 +97,12 @@ $faq = [
         <p class="pk-mono pk-muted">per unit at 1,000 pieces</p>
       </figcaption>
     </figure>
+    <dl class="pk-stats">
+      <?php if ($home_products) : ?><div><dt>From · 500 pcs</dt><dd>$<?php echo esc_html(number_format(min(array_column($home_products,'price')),2)); ?> / unit</dd></div><?php endif; ?>
+      <div><dt>MOQ</dt><dd>500 / design</dd></div>
+      <div><dt>Production</dt><dd>7–30 days</dd></div>
+      <div><dt>Sourcing fee</dt><dd>8–15%</dd></div>
+    </dl>
   </div>
 </section>
 

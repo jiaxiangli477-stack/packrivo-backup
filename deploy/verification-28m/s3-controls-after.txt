@@ -1,0 +1,56 @@
+
+## 375 px 控件实测
+### home
+   52×159  主按钮 .pk-btn                "Build a quote →"
+   52×159  次按钮 .pk-btn-ghost          "Order a sample kit"
+### products
+   44×123  主按钮 .pk-btn                "Send a brief"
+   44×162  次按钮 .pk-btn-ghost          "Start from a price"
+   44×47   筛选 .pk-chip                "All"
+   44×170  搜索框                        ""
+   44×150  排序下拉                       "Name A–ZNewest firstOl"
+   44×79   搜索按钮 .pk-sort button       "Search"
+### product
+### quote
+   44×94   报价 主按钮 .pkq-btn            "Continue"
+   44×84   报价 次按钮 .pkq-btn-ghost      "← Back"
+   44×76   报价 步骤 .pkq-step            "01 Style"
+
+## 1440 px 控件实测
+### home
+   44×154  主按钮 .pk-btn                "Build a quote →"
+   44×168  次按钮 .pk-btn-ghost          "Order a sample kit"
+   44×127  页头 CTA .pk-cta             "Build a quote"
+### products
+   44×123  主按钮 .pk-btn                "Send a brief"
+   44×162  次按钮 .pk-btn-ghost          "Start from a price"
+   44×47   筛选 .pk-chip                "All"
+   44×211  搜索框                        ""
+   44×170  排序下拉                       "Name A–ZNewest firstOl"
+   44×79   搜索按钮 .pk-sort button       "Search"
+   44×127  页头 CTA .pk-cta             "Build a quote"
+### product
+   44×127  页头 CTA .pk-cta             "Build a quote"
+### quote
+   44×94   报价 主按钮 .pkq-btn            "Continue"
+   44×84   报价 次按钮 .pkq-btn-ghost      "← Back"
+   44×76   报价 步骤 .pkq-step            "01 Style"
+   44×127  页头 CTA .pk-cta             "Build a quote"
+
+## /products/ 筛选栏
+375: {"bar":{"top":353,"h":202,"bottom":555,"w":327},"chips":{"top":364,"h":46,"bottom":410,"w":327},"form":{"top":420,"h":124,"bottom":544,"w":327},"search":{"top":428,"h":44,"bottom":472,"w":170},"sortSelect":{"top":428,"h":44,"bottom":472,"w":150},"sameRowDesktop":false,"firstCardTop":603,"chipsScroll":{"clientWidth":327,"scrollWidth":794,"overflowX":"auto"},"barHeightRatio":24.9}
+1440: {"bar":{"top":469,"h":164,"bottom":633,"w":1132},"chips":{"top":484,"h":44,"bottom":528,"w":794},"form":{"top":546,"h":72,"bottom":618,"w":580},"search":{"top":554,"h":44,"bottom":598,"w":211},"sortSelect":{"top":554,"h":44,"bottom":598,"w":170},"sameRowDesktop":false,"firstCardTop":681,"chipsScroll":{"clientWidth":794,"scrollWidth":794,"overflowX":"visible"},"barHeightRatio":18.2}
+
+## 375 px 溢出（已排除横向滚动容器内部）
+en/home: scrollWidth=375 vw=375 offenders=[]
+ar/home: scrollWidth=375 vw=375 offenders=[]
+en/products: scrollWidth=375 vw=375 offenders=[]
+ar/products: scrollWidth=375 vw=375 offenders=[]
+en/product: scrollWidth=375 vw=375 offenders=[]
+ar/product: scrollWidth=375 vw=375 offenders=[]
+en/quote: scrollWidth=375 vw=375 offenders=[]
+ar/quote: scrollWidth=375 vw=375 offenders=[]
+en/blog: scrollWidth=375 vw=375 offenders=[]
+ar/blog: scrollWidth=375 vw=375 offenders=[]
+en/inquiry: scrollWidth=375 vw=375 offenders=[]
+ar/inquiry: scrollWidth=375 vw=375 offenders=[]

@@ -51,7 +51,7 @@ $contact=get_page_by_path('contact'); $contact_url=$contact && $contact->post_st
 $params=array_filter(['group'=>$group==='all'?'':$group,'sub'=>$sub,'q'=>$search,'sort'=>$sort==='title'?'':$sort],static function($x){return $x!=='';});
 ?>
 <main id="main" class="pk-main">
- <section class="pk-hero" style="padding:56px 0 40px"><div class="pk-wrap"><p class="pk-eyebrow">Catalogue · <?php echo count($ids); ?> structures</p><h1 class="pk-display" style="font-size:clamp(2.2rem,4.4vw,3.4rem)">Every structure we can source</h1><p>MOQ 500 · Dielines included · Live prices in the quote builder</p><p class="pk-lede">Filter by family, sort by newest or name, and open any structure for the specification, price range and dieline notes.</p></div></section>
+ <section class="pk-hero pk-catalog-hero"><div class="pk-wrap"><p class="pk-eyebrow">Catalogue · <?php echo count($ids); ?> structures</p><h1 class="pk-display">Every structure we can source</h1><p class="pk-strip">MOQ 500 · Dielines included · Live prices in the quote builder</p><p class="pk-lede">Filter by family, sort by newest or name, and open any structure for the specification, price range and dieline notes.</p></div></section>
  <section class="pk-section" style="padding-top:0"><div class="pk-wrap"><div class="pk-filterbar"><div class="pk-chips">
  <a class="pk-chip <?php echo $group==='all'?'is-active':''; ?>" href="<?php echo esc_url(add_query_arg(['sort'=>$sort],$base)); ?>">All</a>
  <?php foreach($groups as $key=>$g): ?><a class="pk-chip <?php echo $group===$key?'is-active':''; ?>" href="<?php echo esc_url(add_query_arg(['group'=>$key,'sort'=>$sort],$base)); ?>"><?php echo esc_html($g['label']); ?></a><?php endforeach; ?></div>

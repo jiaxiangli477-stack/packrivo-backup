@@ -1,0 +1,435 @@
+{
+ "table": {
+  "375": [
+   {
+    "page": "home",
+    "rows": [
+     {
+      "label": "主按钮 .pk-btn",
+      "sel": "a.pk-btn, button.pk-btn",
+      "count": 4,
+      "w": 159,
+      "h": 52,
+      "text": "Build a quote →"
+     },
+     {
+      "label": "次按钮 .pk-btn-ghost",
+      "sel": "a.pk-btn-ghost",
+      "count": 1,
+      "w": 159,
+      "h": 52,
+      "text": "Order a sample kit"
+     }
+    ]
+   },
+   {
+    "page": "products",
+    "rows": [
+     {
+      "label": "主按钮 .pk-btn",
+      "sel": "a.pk-btn, button.pk-btn",
+      "count": 1,
+      "w": 123,
+      "h": 44,
+      "text": "Send a brief"
+     },
+     {
+      "label": "次按钮 .pk-btn-ghost",
+      "sel": "a.pk-btn-ghost",
+      "count": 1,
+      "w": 162,
+      "h": 44,
+      "text": "Start from a price"
+     },
+     {
+      "label": "筛选 .pk-chip",
+      "sel": "a.pk-chip",
+      "count": 7,
+      "w": 47,
+      "h": 44,
+      "text": "All"
+     },
+     {
+      "label": "搜索框",
+      "sel": "#pk-search",
+      "count": 1,
+      "w": 170,
+      "h": 44,
+      "text": ""
+     },
+     {
+      "label": "排序下拉",
+      "sel": "#sort",
+      "count": 1,
+      "w": 150,
+      "h": 44,
+      "text": "Name A–ZNewest firstOl"
+     },
+     {
+      "label": "搜索按钮 .pk-sort button",
+      "sel": ".pk-sort button",
+      "count": 1,
+      "w": 79,
+      "h": 44,
+      "text": "Search"
+     }
+    ]
+   },
+   {
+    "page": "product",
+    "rows": []
+   },
+   {
+    "page": "quote",
+    "rows": [
+     {
+      "label": "报价 主按钮 .pkq-btn",
+      "sel": ".pkq-btn",
+      "count": 1,
+      "w": 94,
+      "h": 44,
+      "text": "Continue"
+     },
+     {
+      "label": "报价 次按钮 .pkq-btn-ghost",
+      "sel": ".pkq-btn-ghost",
+      "count": 1,
+      "w": 84,
+      "h": 44,
+      "text": "← Back"
+     },
+     {
+      "label": "报价 步骤 .pkq-step",
+      "sel": ".pkq-step",
+      "count": 5,
+      "w": 76,
+      "h": 44,
+      "text": "01 Style"
+     }
+    ]
+   }
+  ],
+  "1440": [
+   {
+    "page": "home",
+    "rows": [
+     {
+      "label": "主按钮 .pk-btn",
+      "sel": "a.pk-btn, button.pk-btn",
+      "count": 4,
+      "w": 154,
+      "h": 44,
+      "text": "Build a quote →"
+     },
+     {
+      "label": "次按钮 .pk-btn-ghost",
+      "sel": "a.pk-btn-ghost",
+      "count": 1,
+      "w": 168,
+      "h": 44,
+      "text": "Order a sample kit"
+     },
+     {
+      "label": "页头 CTA .pk-cta",
+      "sel": ".pk-actions .pk-cta",
+      "count": 1,
+      "w": 127,
+      "h": 44,
+      "text": "Build a quote"
+     }
+    ]
+   },
+   {
+    "page": "products",
+    "rows": [
+     {
+      "label": "主按钮 .pk-btn",
+      "sel": "a.pk-btn, button.pk-btn",
+      "count": 1,
+      "w": 123,
+      "h": 44,
+      "text": "Send a brief"
+     },
+     {
+      "label": "次按钮 .pk-btn-ghost",
+      "sel": "a.pk-btn-ghost",
+      "count": 1,
+      "w": 162,
+      "h": 44,
+      "text": "Start from a price"
+     },
+     {
+      "label": "筛选 .pk-chip",
+      "sel": "a.pk-chip",
+      "count": 7,
+      "w": 47,
+      "h": 44,
+      "text": "All"
+     },
+     {
+      "label": "搜索框",
+      "sel": "#pk-search",
+      "count": 1,
+      "w": 211,
+      "h": 44,
+      "text": ""
+     },
+     {
+      "label": "排序下拉",
+      "sel": "#sort",
+      "count": 1,
+      "w": 170,
+      "h": 44,
+      "text": "Name A–ZNewest firstOl"
+     },
+     {
+      "label": "搜索按钮 .pk-sort button",
+      "sel": ".pk-sort button",
+      "count": 1,
+      "w": 79,
+      "h": 44,
+      "text": "Search"
+     },
+     {
+      "label": "页头 CTA .pk-cta",
+      "sel": ".pk-actions .pk-cta",
+      "count": 1,
+      "w": 127,
+      "h": 44,
+      "text": "Build a quote"
+     }
+    ]
+   },
+   {
+    "page": "product",
+    "rows": [
+     {
+      "label": "页头 CTA .pk-cta",
+      "sel": ".pk-actions .pk-cta",
+      "count": 1,
+      "w": 127,
+      "h": 44,
+      "text": "Build a quote"
+     }
+    ]
+   },
+   {
+    "page": "quote",
+    "rows": [
+     {
+      "label": "报价 主按钮 .pkq-btn",
+      "sel": ".pkq-btn",
+      "count": 1,
+      "w": 94,
+      "h": 44,
+      "text": "Continue"
+     },
+     {
+      "label": "报价 次按钮 .pkq-btn-ghost",
+      "sel": ".pkq-btn-ghost",
+      "count": 1,
+      "w": 84,
+      "h": 44,
+      "text": "← Back"
+     },
+     {
+      "label": "报价 步骤 .pkq-step",
+      "sel": ".pkq-step",
+      "count": 5,
+      "w": 76,
+      "h": 44,
+      "text": "01 Style"
+     },
+     {
+      "label": "页头 CTA .pk-cta",
+      "sel": ".pk-actions .pk-cta",
+      "count": 1,
+      "w": 127,
+      "h": 44,
+      "text": "Build a quote"
+     }
+    ]
+   }
+  ]
+ },
+ "bars": {
+  "375": {
+   "bar": {
+    "top": 353,
+    "h": 202,
+    "bottom": 555,
+    "w": 327
+   },
+   "chips": {
+    "top": 364,
+    "h": 46,
+    "bottom": 410,
+    "w": 327
+   },
+   "form": {
+    "top": 420,
+    "h": 124,
+    "bottom": 544,
+    "w": 327
+   },
+   "search": {
+    "top": 428,
+    "h": 44,
+    "bottom": 472,
+    "w": 170
+   },
+   "sortSelect": {
+    "top": 428,
+    "h": 44,
+    "bottom": 472,
+    "w": 150
+   },
+   "sameRowDesktop": false,
+   "firstCardTop": 603,
+   "chipsScroll": {
+    "clientWidth": 327,
+    "scrollWidth": 794,
+    "overflowX": "auto"
+   },
+   "barHeightRatio": 24.9
+  },
+  "1440": {
+   "bar": {
+    "top": 469,
+    "h": 164,
+    "bottom": 633,
+    "w": 1132
+   },
+   "chips": {
+    "top": 484,
+    "h": 44,
+    "bottom": 528,
+    "w": 794
+   },
+   "form": {
+    "top": 546,
+    "h": 72,
+    "bottom": 618,
+    "w": 580
+   },
+   "search": {
+    "top": 554,
+    "h": 44,
+    "bottom": 598,
+    "w": 211
+   },
+   "sortSelect": {
+    "top": 554,
+    "h": 44,
+    "bottom": 598,
+    "w": 170
+   },
+   "sameRowDesktop": false,
+   "firstCardTop": 681,
+   "chipsScroll": {
+    "clientWidth": 794,
+    "scrollWidth": 794,
+    "overflowX": "visible"
+   },
+   "barHeightRatio": 18.2
+  }
+ },
+ "overflow": [
+  {
+   "name": "home",
+   "lang": "en",
+   "scrollWidth": 375,
+   "bodyScroll": 375,
+   "vw": 375,
+   "offenders": []
+  },
+  {
+   "name": "home",
+   "lang": "ar",
+   "scrollWidth": 375,
+   "bodyScroll": 375,
+   "vw": 375,
+   "offenders": []
+  },
+  {
+   "name": "products",
+   "lang": "en",
+   "scrollWidth": 375,
+   "bodyScroll": 375,
+   "vw": 375,
+   "offenders": []
+  },
+  {
+   "name": "products",
+   "lang": "ar",
+   "scrollWidth": 375,
+   "bodyScroll": 375,
+   "vw": 375,
+   "offenders": []
+  },
+  {
+   "name": "product",
+   "lang": "en",
+   "scrollWidth": 375,
+   "bodyScroll": 375,
+   "vw": 375,
+   "offenders": []
+  },
+  {
+   "name": "product",
+   "lang": "ar",
+   "scrollWidth": 375,
+   "bodyScroll": 375,
+   "vw": 375,
+   "offenders": []
+  },
+  {
+   "name": "quote",
+   "lang": "en",
+   "scrollWidth": 375,
+   "bodyScroll": 375,
+   "vw": 375,
+   "offenders": []
+  },
+  {
+   "name": "quote",
+   "lang": "ar",
+   "scrollWidth": 375,
+   "bodyScroll": 375,
+   "vw": 375,
+   "offenders": []
+  },
+  {
+   "name": "blog",
+   "lang": "en",
+   "scrollWidth": 375,
+   "bodyScroll": 375,
+   "vw": 375,
+   "offenders": []
+  },
+  {
+   "name": "blog",
+   "lang": "ar",
+   "scrollWidth": 375,
+   "bodyScroll": 375,
+   "vw": 375,
+   "offenders": []
+  },
+  {
+   "name": "inquiry",
+   "lang": "en",
+   "scrollWidth": 375,
+   "bodyScroll": 375,
+   "vw": 375,
+   "offenders": []
+  },
+  {
+   "name": "inquiry",
+   "lang": "ar",
+   "scrollWidth": 375,
+   "bodyScroll": 375,
+   "vw": 375,
+   "offenders": []
+  }
+ ]
+}

@@ -430,3 +430,39 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ---------- 28m P2: same control system as the site (44 px, one border, one weight, one focus ring) ---------- */
+.pkq-btn,
+.pkq-btn-ghost,
+.pkq-submit,
+.pkq-chip,
+.pkq-input,
+.pkq-step {
+  min-height: 44px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+/* The site primary carries a 1 px border in its own fill colour; match it so
+   primary buttons measure identically across theme and widget. */
+.pkq-btn,
+.pkq-submit { border: 1px solid var(--pkq-ink); }
+.pkq-btn,
+.pkq-btn-ghost,
+.pkq-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.pkq-chip { padding: 9px 13px; }
+.pkq-input { padding: 10px 12px; }
+.pkq-step { padding: 10px 12px; }
+:is(.pkq-btn, .pkq-btn-ghost, .pkq-submit, .pkq-chip, .pkq-input, .pkq-step):focus-visible {
+  outline: 2px solid #0c1411;
+  outline-offset: 2px;
+}
+@media (max-width: 900px) {
+  .pkq-steps { gap: 6px; }
+  .pkq-chip { padding: 8px 12px; }
+  .pkq-submit { min-height: 48px; }
+}

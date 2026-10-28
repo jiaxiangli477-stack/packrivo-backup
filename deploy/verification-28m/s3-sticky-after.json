@@ -1,0 +1,172 @@
+[
+ {
+  "width": 375,
+  "vh": 812,
+  "stickyBar": {
+   "top": 635,
+   "left": 0,
+   "w": 375,
+   "h": 65,
+   "bottom": 700,
+   "right": 375
+  },
+  "stickyMain": {
+   "top": 644,
+   "left": 12,
+   "w": 291,
+   "h": 48,
+   "bottom": 692,
+   "right": 303
+  },
+  "stickyMainStyle": {
+   "bg": "rgb(12, 20, 17)",
+   "bgImage": "none",
+   "color": "rgb(253, 252, 248)",
+   "border": "rgb(12, 20, 17)",
+   "radius": "6px",
+   "weight": "600",
+   "minH": "44px"
+  },
+  "whatsapp": {
+   "top": 0,
+   "left": 0,
+   "w": 0,
+   "h": 0,
+   "bottom": 0,
+   "right": 0
+  },
+  "overlap": false,
+  "samePaletteAsHomePrimary": true,
+  "homePrimaryStyle": {
+   "bg": "rgb(12, 20, 17)",
+   "color": "rgb(253, 252, 248)",
+   "border": "rgb(12, 20, 17)",
+   "radius": "6px",
+   "weight": "600"
+  },
+  "bottomHits": [
+   {
+    "text": "Overall",
+    "top": 551,
+    "left": 0,
+    "w": 120,
+    "h": 143,
+    "bottom": 694,
+    "right": 120
+   },
+   {
+    "text": "Open Closed",
+    "top": 551,
+    "left": 128,
+    "w": 120,
+    "h": 143,
+    "bottom": 694,
+    "right": 247
+   },
+   {
+    "text": "Side Back",
+    "top": 551,
+    "left": 255,
+    "w": 120,
+    "h": 143,
+    "bottom": 694,
+    "right": 375
+   },
+   {
+    "text": "Interior Insert",
+    "top": 702,
+    "left": 0,
+    "w": 120,
+    "h": 143,
+    "bottom": 844,
+    "right": 120
+   },
+   {
+    "text": "Material Finish",
+    "top": 702,
+    "left": 128,
+    "w": 120,
+    "h": 143,
+    "bottom": 844,
+    "right": 247
+   },
+   {
+    "text": "Structure",
+    "top": 702,
+    "left": 255,
+    "w": 120,
+    "h": 143,
+    "bottom": 844,
+    "right": 375
+   },
+   {
+    "text": "Get a quote · MOQ 50",
+    "top": 644,
+    "left": 12,
+    "w": 291,
+    "h": 48,
+    "bottom": 692,
+    "right": 303
+   }
+  ],
+  "dockCoversBottomHits": []
+ },
+ {
+  "width": 1440,
+  "vh": 900,
+  "stickyBar": {
+   "top": 0,
+   "left": 0,
+   "w": 0,
+   "h": 0,
+   "bottom": 0,
+   "right": 0
+  },
+  "stickyMain": {
+   "top": 0,
+   "left": 0,
+   "w": 0,
+   "h": 0,
+   "bottom": 0,
+   "right": 0
+  },
+  "stickyMainStyle": {
+   "bg": "rgb(12, 20, 17)",
+   "bgImage": "none",
+   "color": "rgb(253, 252, 248)",
+   "border": "rgb(12, 20, 17)",
+   "radius": "6px",
+   "weight": "600",
+   "minH": "44px"
+  },
+  "whatsapp": {
+   "top": 828,
+   "left": 1368,
+   "w": 56,
+   "h": 56,
+   "bottom": 884,
+   "right": 1424
+  },
+  "overlap": false,
+  "samePaletteAsHomePrimary": true,
+  "homePrimaryStyle": {
+   "bg": "rgb(12, 20, 17)",
+   "color": "rgb(253, 252, 248)",
+   "border": "rgb(12, 20, 17)",
+   "radius": "6px",
+   "weight": "600"
+  },
+  "bottomHits": [
+   {
+    "text": "",
+    "top": 149,
+    "left": 0,
+    "w": 766,
+    "h": 766,
+    "bottom": 915,
+    "right": 766
+   }
+  ],
+  "dockCoversBottomHits": []
+ }
+]

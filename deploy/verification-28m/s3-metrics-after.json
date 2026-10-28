@@ -1,0 +1,856 @@
+{
+ "tag": "after",
+ "shots": [
+  {
+   "name": "home",
+   "w": 375,
+   "file": "E:\\破甲工作区\\packrivo-backup\\deploy\\verification-28m/after-home-375.png",
+   "scrollWidth": 375,
+   "bodyScroll": 375,
+   "innerWidth": 375
+  },
+  {
+   "name": "products",
+   "w": 375,
+   "file": "E:\\破甲工作区\\packrivo-backup\\deploy\\verification-28m/after-products-375.png",
+   "scrollWidth": 375,
+   "bodyScroll": 375,
+   "innerWidth": 375
+  },
+  {
+   "name": "product",
+   "w": 375,
+   "file": "E:\\破甲工作区\\packrivo-backup\\deploy\\verification-28m/after-product-375.png",
+   "scrollWidth": 375,
+   "bodyScroll": 375,
+   "innerWidth": 375
+  },
+  {
+   "name": "quote",
+   "w": 375,
+   "file": "E:\\破甲工作区\\packrivo-backup\\deploy\\verification-28m/after-quote-375.png",
+   "scrollWidth": 375,
+   "bodyScroll": 375,
+   "innerWidth": 375
+  },
+  {
+   "name": "home",
+   "w": 1440,
+   "file": "E:\\破甲工作区\\packrivo-backup\\deploy\\verification-28m/after-home-1440.png",
+   "scrollWidth": 1440,
+   "bodyScroll": 1440,
+   "innerWidth": 1440
+  },
+  {
+   "name": "products",
+   "w": 1440,
+   "file": "E:\\破甲工作区\\packrivo-backup\\deploy\\verification-28m/after-products-1440.png",
+   "scrollWidth": 1440,
+   "bodyScroll": 1440,
+   "innerWidth": 1440
+  },
+  {
+   "name": "product",
+   "w": 1440,
+   "file": "E:\\破甲工作区\\packrivo-backup\\deploy\\verification-28m/after-product-1440.png",
+   "scrollWidth": 1440,
+   "bodyScroll": 1440,
+   "innerWidth": 1440
+  },
+  {
+   "name": "quote",
+   "w": 1440,
+   "file": "E:\\破甲工作区\\packrivo-backup\\deploy\\verification-28m/after-quote-1440.png",
+   "scrollWidth": 1440,
+   "bodyScroll": 1440,
+   "innerWidth": 1440
+  }
+ ],
+ "overflow": [
+  {
+   "name": "home",
+   "path": "/",
+   "lang": "en",
+   "status": 200,
+   "scrollWidth": 375,
+   "bodyScroll": 375,
+   "innerWidth": 375,
+   "offenders": []
+  },
+  {
+   "name": "products",
+   "path": "/products/",
+   "lang": "en",
+   "status": 200,
+   "scrollWidth": 375,
+   "bodyScroll": 375,
+   "innerWidth": 375,
+   "offenders": [
+    {
+     "sel": "pk-chip ",
+     "right": 520,
+     "left": 372,
+     "w": 149
+    },
+    {
+     "sel": "pk-chip ",
+     "right": 660,
+     "left": 528,
+     "w": 132
+    },
+    {
+     "sel": "pk-chip ",
+     "right": 737,
+     "left": 668,
+     "w": 70
+    },
+    {
+     "sel": "pk-chip ",
+     "right": 818,
+     "left": 745,
+     "w": 73
+    }
+   ]
+  },
+  {
+   "name": "product",
+   "path": "/product-drawer-jewelry-box/",
+   "lang": "en",
+   "status": 200,
+   "scrollWidth": 375,
+   "bodyScroll": 375,
+   "innerWidth": 375,
+   "offenders": []
+  },
+  {
+   "name": "quote",
+   "path": "/get-a-quote/",
+   "lang": "en",
+   "status": 200,
+   "scrollWidth": 375,
+   "bodyScroll": 375,
+   "innerWidth": 375,
+   "offenders": []
+  },
+  {
+   "name": "home",
+   "path": "/ar/",
+   "lang": "ar",
+   "status": 200,
+   "scrollWidth": 375,
+   "bodyScroll": 375,
+   "innerWidth": 375,
+   "offenders": []
+  },
+  {
+   "name": "products",
+   "path": "/ar/products/",
+   "lang": "ar",
+   "status": 200,
+   "scrollWidth": 375,
+   "bodyScroll": 375,
+   "innerWidth": 375,
+   "offenders": [
+    {
+     "sel": "pk-chip ",
+     "right": 162,
+     "left": -34,
+     "w": 195
+    },
+    {
+     "sel": "pk-chip ",
+     "right": -42,
+     "left": -170,
+     "w": 128
+    },
+    {
+     "sel": "pk-chip ",
+     "right": -178,
+     "left": -330,
+     "w": 152
+    },
+    {
+     "sel": "pk-chip ",
+     "right": -338,
+     "left": -420,
+     "w": 82
+    },
+    {
+     "sel": "pk-chip ",
+     "right": -428,
+     "left": -504,
+     "w": 76
+    }
+   ]
+  },
+  {
+   "name": "product",
+   "path": "/ar/product-drawer-jewelry-box/",
+   "lang": "ar",
+   "status": 200,
+   "scrollWidth": 375,
+   "bodyScroll": 375,
+   "innerWidth": 375,
+   "offenders": []
+  },
+  {
+   "name": "quote",
+   "path": "/ar/get-a-quote/",
+   "lang": "ar",
+   "status": 200,
+   "scrollWidth": 375,
+   "bodyScroll": 375,
+   "innerWidth": 375,
+   "offenders": []
+  },
+  {
+   "name": "blog",
+   "path": "/ar/blog/",
+   "lang": "ar",
+   "status": 200,
+   "scrollWidth": 375,
+   "bodyScroll": 375,
+   "innerWidth": 375,
+   "offenders": [
+    {
+     "sel": "pk-chip ",
+     "right": 30,
+     "left": -106,
+     "w": 136
+    },
+    {
+     "sel": "SPAN",
+     "right": -78,
+     "left": -91,
+     "w": 13
+    },
+    {
+     "sel": "pk-chip ",
+     "right": -114,
+     "left": -253,
+     "w": 139
+    },
+    {
+     "sel": "SPAN",
+     "right": -225,
+     "left": -238,
+     "w": 13
+    },
+    {
+     "sel": "pk-chip ",
+     "right": -261,
+     "left": -395,
+     "w": 135
+    },
+    {
+     "sel": "SPAN",
+     "right": -368,
+     "left": -380,
+     "w": 13
+    }
+   ]
+  },
+  {
+   "name": "inquiry",
+   "path": "/ar/inquiry/",
+   "lang": "ar",
+   "status": 200,
+   "scrollWidth": 375,
+   "bodyScroll": 375,
+   "innerWidth": 375,
+   "offenders": []
+  },
+  {
+   "name": "blog",
+   "path": "/blog/",
+   "lang": "en",
+   "status": 200,
+   "scrollWidth": 375,
+   "bodyScroll": 375,
+   "innerWidth": 375,
+   "offenders": [
+    {
+     "sel": "pk-chip ",
+     "right": 504,
+     "left": 365,
+     "w": 139
+    },
+    {
+     "sel": "SPAN",
+     "right": 489,
+     "left": 477,
+     "w": 12
+    },
+    {
+     "sel": "pk-chip ",
+     "right": 686,
+     "left": 512,
+     "w": 174
+    },
+    {
+     "sel": "SPAN",
+     "right": 671,
+     "left": 660,
+     "w": 12
+    },
+    {
+     "sel": "pk-chip ",
+     "right": 839,
+     "left": 694,
+     "w": 145
+    },
+    {
+     "sel": "SPAN",
+     "right": 824,
+     "left": 812,
+     "w": 12
+    }
+   ]
+  },
+  {
+   "name": "inquiry",
+   "path": "/inquiry/",
+   "lang": "en",
+   "status": 200,
+   "scrollWidth": 375,
+   "bodyScroll": 375,
+   "innerWidth": 375,
+   "offenders": []
+  }
+ ],
+ "hero": {
+  "m375": {
+   "viewportH": 900,
+   "h1": {
+    "top": 127,
+    "h": 96,
+    "bottom": 223,
+    "w": 327
+   },
+   "primaryCta": {
+    "top": 338,
+    "h": 52,
+    "bottom": 390,
+    "w": 159
+   },
+   "ghostCta": {
+    "top": 338,
+    "h": 52,
+    "bottom": 390,
+    "w": 159
+   },
+   "heroImage": {
+    "top": 408,
+    "h": 245,
+    "bottom": 653,
+    "w": 327
+   },
+   "heroImageVisibleInFirstScreen": true,
+   "ctaAboveFold": true,
+   "stats": {
+    "top": 687,
+    "h": 111,
+    "bottom": 798,
+    "w": 327
+   },
+   "statCount": 4,
+   "statItems": [
+    {
+     "text": "From · 500 pcs$1.63 / unit",
+     "h": 44
+    },
+    {
+     "text": "MOQ500 / design",
+     "h": 44
+    },
+    {
+     "text": "Production7–30 days",
+     "h": 44
+    },
+    {
+     "text": "Sourcing fee8–15%",
+     "h": 44
+    }
+   ]
+  },
+  "m1440": {
+   "viewportH": 1000,
+   "h1": {
+    "top": 171,
+    "h": 260,
+    "bottom": 430,
+    "w": 576
+   },
+   "primaryCta": {
+    "top": 581,
+    "h": 44,
+    "bottom": 625,
+    "w": 154
+   },
+   "heroImage": {
+    "top": 183,
+    "h": 500,
+    "bottom": 683,
+    "w": 500
+   },
+   "stats": {
+    "top": 661,
+    "h": 76,
+    "bottom": 737,
+    "w": 576
+   }
+  }
+ },
+ "lists": {
+  "375": {
+   "width": 375,
+   "firstCardTop": 560,
+   "cardCount": 24,
+   "search": {
+    "top": 385,
+    "h": 44,
+    "bottom": 429,
+    "w": 170
+   },
+   "sort": {
+    "top": 385,
+    "h": 44,
+    "bottom": 429,
+    "w": 150
+   },
+   "submit": {
+    "top": 457,
+    "h": 44,
+    "bottom": 501,
+    "w": 79
+   },
+   "searchSortSameRow": true,
+   "intro": [
+    {
+     "tag": "P",
+     "text": "Catalogue · 134 structures",
+     "top": 98,
+     "h": 16
+    },
+    {
+     "tag": "H1",
+     "text": "Every structure we can source",
+     "top": 125,
+     "h": 64
+    },
+    {
+     "tag": "P",
+     "text": "MOQ 500 · Dielines included · Live prices in the quote builder",
+     "top": 197,
+     "h": 33
+    },
+    {
+     "tag": "P",
+     "text": "Filter by family, sort by newest or name, and open any structure for the specification, pr",
+     "top": 236,
+     "h": 57
+    }
+   ]
+  },
+  "1440": {
+   "width": 1440,
+   "firstCardTop": 633,
+   "cardCount": 24,
+   "search": {
+    "top": 506,
+    "h": 44,
+    "bottom": 550,
+    "w": 211
+   },
+   "sort": {
+    "top": 506,
+    "h": 44,
+    "bottom": 550,
+    "w": 170
+   },
+   "submit": {
+    "top": 512,
+    "h": 44,
+    "bottom": 556,
+    "w": 79
+   },
+   "searchSortSameRow": true,
+   "intro": [
+    {
+     "tag": "P",
+     "text": "Catalogue · 134 structures",
+     "top": 130,
+     "h": 16
+    },
+    {
+     "tag": "H1",
+     "text": "Every structure we can source",
+     "top": 163,
+     "h": 108
+    },
+    {
+     "tag": "P",
+     "text": "MOQ 500 · Dielines included · Live prices in the quote builder",
+     "top": 284,
+     "h": 25
+    },
+    {
+     "tag": "P",
+     "text": "Filter by family, sort by newest or name, and open any structure for the specification, pr",
+     "top": 329,
+     "h": 51
+    }
+   ]
+  }
+ },
+ "buttons": [
+  {
+   "page": "Custom Jewelry Boxes & Packaging with Lo",
+   "w": 375,
+   "items": [
+    {
+     "label": "home primary CTA",
+     "w": 159,
+     "h": 52,
+     "minH": "44px",
+     "border": "1px",
+     "radius": "6px",
+     "weight": "600"
+    },
+    {
+     "label": "home secondary CTA",
+     "w": 159,
+     "h": 52,
+     "minH": "44px",
+     "border": "1px",
+     "radius": "6px",
+     "weight": "600"
+    },
+    {
+     "label": "cta band light",
+     "w": 132,
+     "h": 44,
+     "minH": "44px",
+     "border": "1px",
+     "radius": "6px",
+     "weight": "600"
+    }
+   ]
+  },
+  {
+   "page": "Custom Packaging: 134 Styles, MOQ 500 | ",
+   "w": 375,
+   "items": [
+    {
+     "label": "filter chip (first)",
+     "w": 47,
+     "h": 44,
+     "minH": "44px",
+     "border": "1px",
+     "radius": "6px",
+     "weight": "600"
+    },
+    {
+     "label": "search input",
+     "w": 170,
+     "h": 44,
+     "minH": "44px",
+     "border": "1px",
+     "radius": "6px",
+     "weight": "600"
+    },
+    {
+     "label": "sort select",
+     "w": 150,
+     "h": 44,
+     "minH": "44px",
+     "border": "1px",
+     "radius": "6px",
+     "weight": "600"
+    },
+    {
+     "label": "search submit",
+     "w": 79,
+     "h": 44,
+     "minH": "44px",
+     "border": "1px",
+     "radius": "6px",
+     "weight": "600"
+    },
+    {
+     "label": "product sticky CTA",
+     "w": 291,
+     "h": 48,
+     "minH": "44px",
+     "border": "1px",
+     "radius": "6px",
+     "weight": "600"
+    }
+   ]
+  },
+  {
+   "page": "Custom Drawer Jewelry Boxes with Logo | ",
+   "w": 375,
+   "items": [
+    {
+     "label": "product sticky CTA",
+     "w": 291,
+     "h": 48,
+     "minH": "44px",
+     "border": "1px",
+     "radius": "6px",
+     "weight": "600"
+    }
+   ]
+  },
+  {
+   "page": "Get a Quote – Packrivo",
+   "w": 375,
+   "items": [
+    {
+     "label": "quote step (first)",
+     "w": 76,
+     "h": 44,
+     "minH": "44px",
+     "border": "1px",
+     "radius": "6px",
+     "weight": "600"
+    },
+    {
+     "label": "quote continue",
+     "w": 94,
+     "h": 44,
+     "minH": "44px",
+     "border": "0px",
+     "radius": "6px",
+     "weight": "600"
+    }
+   ]
+  },
+  {
+   "page": "Custom Jewelry Boxes & Packaging with Lo",
+   "w": 1440,
+   "items": [
+    {
+     "label": "home primary CTA",
+     "w": 154,
+     "h": 44,
+     "minH": "44px",
+     "border": "1px",
+     "radius": "6px",
+     "weight": "600"
+    },
+    {
+     "label": "home secondary CTA",
+     "w": 168,
+     "h": 44,
+     "minH": "44px",
+     "border": "1px",
+     "radius": "6px",
+     "weight": "600"
+    },
+    {
+     "label": "cta band light",
+     "w": 132,
+     "h": 44,
+     "minH": "44px",
+     "border": "1px",
+     "radius": "6px",
+     "weight": "600"
+    }
+   ]
+  },
+  {
+   "page": "Custom Packaging: 134 Styles, MOQ 500 | ",
+   "w": 1440,
+   "items": [
+    {
+     "label": "filter chip (first)",
+     "w": 47,
+     "h": 44,
+     "minH": "44px",
+     "border": "1px",
+     "radius": "6px",
+     "weight": "600"
+    },
+    {
+     "label": "search input",
+     "w": 211,
+     "h": 44,
+     "minH": "44px",
+     "border": "1px",
+     "radius": "6px",
+     "weight": "600"
+    },
+    {
+     "label": "sort select",
+     "w": 170,
+     "h": 44,
+     "minH": "44px",
+     "border": "1px",
+     "radius": "6px",
+     "weight": "600"
+    },
+    {
+     "label": "search submit",
+     "w": 79,
+     "h": 44,
+     "minH": "44px",
+     "border": "1px",
+     "radius": "6px",
+     "weight": "600"
+    },
+    {
+     "label": "product sticky CTA",
+     "w": 0,
+     "h": 0,
+     "minH": "44px",
+     "border": "1px",
+     "radius": "6px",
+     "weight": "600"
+    }
+   ]
+  },
+  {
+   "page": "Custom Drawer Jewelry Boxes with Logo | ",
+   "w": 1440,
+   "items": [
+    {
+     "label": "product sticky CTA",
+     "w": 0,
+     "h": 0,
+     "minH": "44px",
+     "border": "1px",
+     "radius": "6px",
+     "weight": "600"
+    }
+   ]
+  },
+  {
+   "page": "Get a Quote – Packrivo",
+   "w": 1440,
+   "items": [
+    {
+     "label": "quote step (first)",
+     "w": 76,
+     "h": 44,
+     "minH": "44px",
+     "border": "1px",
+     "radius": "6px",
+     "weight": "600"
+    },
+    {
+     "label": "quote continue",
+     "w": 94,
+     "h": 44,
+     "minH": "44px",
+     "border": "0px",
+     "radius": "6px",
+     "weight": "600"
+    }
+   ]
+  }
+ ],
+ "overlap": {
+  "m375": {
+   "sticky": {
+    "top": 732,
+    "h": 48,
+    "bottom": 780,
+    "w": 291,
+    "bg": "rgb(12, 20, 17)",
+    "color": "rgb(253, 252, 248)",
+    "minHeight": "44px"
+   },
+   "stickyBar": {
+    "top": 723,
+    "h": 65,
+    "bottom": 788,
+    "w": 375,
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(12, 20, 17)",
+    "minHeight": "0px"
+   },
+   "whatsapp": {
+    "top": 0,
+    "h": 0,
+    "bottom": 0,
+    "w": 0,
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(12, 20, 17)",
+    "minHeight": "0px"
+   }
+  },
+  "m1440": {
+   "sticky": {
+    "top": 0,
+    "h": 0,
+    "bottom": 0,
+    "w": 0,
+    "bg": "rgb(12, 20, 17)",
+    "color": "rgb(253, 252, 248)",
+    "minHeight": "44px"
+   },
+   "stickyBar": {
+    "top": 0,
+    "h": 0,
+    "bottom": 0,
+    "w": 0,
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(12, 20, 17)",
+    "minHeight": "0px"
+   },
+   "whatsapp": {
+    "top": 928,
+    "h": 56,
+    "bottom": 984,
+    "w": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(12, 20, 17)",
+    "minHeight": "0px"
+   }
+  }
+ },
+ "stickyColor": {
+  "375": {
+   "stickyMain": {
+    "top": 732,
+    "h": 48,
+    "bottom": 780,
+    "w": 291,
+    "bg": "rgb(12, 20, 17)",
+    "color": "rgb(253, 252, 248)",
+    "minHeight": "44px"
+   },
+   "stickyBar": {
+    "top": 723,
+    "h": 65,
+    "bottom": 788,
+    "w": 375,
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(12, 20, 17)",
+    "minHeight": "0px"
+   }
+  },
+  "1440": {
+   "stickyMain": {
+    "top": 0,
+    "h": 0,
+    "bottom": 0,
+    "w": 0,
+    "bg": "rgb(12, 20, 17)",
+    "color": "rgb(253, 252, 248)",
+    "minHeight": "44px"
+   },
+   "stickyBar": {
+    "top": 0,
+    "h": 0,
+    "bottom": 0,
+    "w": 0,
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(12, 20, 17)",
+    "minHeight": "0px"
+   }
+  }
+ }
+}
