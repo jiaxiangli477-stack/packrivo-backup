@@ -154,3 +154,12 @@ function pk_from_price($post_id)
     set_transient($key, (float) $result['unit'], 12 * HOUR_IN_SECONDS);
     return (float) $result['unit'];
 }
+
+/** Search-filter URLs should never be indexed as separate pages. */
+add_filter('wp_robots', function ($robots) {
+    if (isset($_GET['q'])) { $robots['noindex'] = true; unset($robots['index']); $robots['follow'] = true; }
+    return $robots;
+}, 100);
+add_filter('wpseo_robots', function ($robots) {
+    return isset($_GET['q']) ? 'noindex, follow' : $robots;
+}, 100);

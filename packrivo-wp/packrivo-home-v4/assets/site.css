@@ -667,3 +667,4 @@ body .pk-main {
 @media(max-width:560px){.pk-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}}
 @media (min-width:901px) and (max-width:1350px){.pk-actions .pk-text-link{display:none}}
 @media (max-width:560px){.pk-actions .pk-cta{display:none}.pk-hd-inner{padding-left:16px;padding-right:16px}}
+.pk-empty{border:1px dashed #999;padding:28px;margin-top:18px}.pk-sort{flex-wrap:wrap;gap:8px}.pk-sort input{min-width:0;max-width:100%}.pk-pager .page-numbers{padding:8px}
