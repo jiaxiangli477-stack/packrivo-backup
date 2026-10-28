@@ -608,3 +608,45 @@ r28q-net 演练栈五容器全部 Up：php(r28q-php:8.3) / nginx(nginx:alpine，
 - 仅只读命令：git status/log/ls-remote/diff/grep/hash-object、Get-Content/Select-String/Get-Item、docker ps -a、docker network ls、文件列举与 mtime 统计。未执行任何脚本、未启动/停止任何容器、未修改/删除/格式化任何文件（含 31 个未跟踪文件、工作树 3 处改动及 .tmp\28q 全部在途文件）、未 SSH 生产、未重跑生产第 1 步、未执行第 2–8 步、未读取或打印任何密码/密钥/token（编排文件中的本地演练数据库口令字段仅确认存在，不记录不打印）。
 - 本轮唯一仓库变更：本节日志追加。只暂存并提交 `deploy/LAUNCH-LOG-2026-10-28.md`，其余改动与未跟踪文件保持原样。
 
+
+
+## 13 · 28q 前两遍演练四类缺陷逐项判定 + 补充补丁 2（2026-10-28 本机只读核查与拟制；未执行任何脚本、未启动/停止/接入容器、未修改/删除他人文件、未读任何凭据）
+
+### 13.1 四类缺陷逐项判定（依据：.tmp\28q 演练日志与引用文件，只读）
+
+| # | 缺陷（实测证据） | 对应 RUNBOOK 步骤 | 第一遍（16:32–16:39 UTC） | 第二遍（16:53 起；17:04:32 UTC 被并行链重启） | 判定 |
+|---|---|---|---|---|---|
+| 1 | 复位报 `'/pkg/prep-restore.php' does not exist.` ×2（reset.sh 第 5 步 eval-file 的目标不在 /pkg；该文件只在 .tmp\28q 根 9:27:53，未随 packrivo-packages 进容器） | 演练环境复位（非第 1–8 步；附录 C 三轮演练有效性的前提） | —（该轮用旧 prep-db.sh，见缺陷 4） | 两次 reset（9:54:18、10:07:30）均复现：内容复位静默跳过 | 复位未真正成功：文件/字典/主题/插件层已复位，DB 内容层未复位；重启后仍未修 |
+| 2 | 第 2 步 `/pkg/merged/paths.json` 缺失、`*-js.json`=0、`不是合法 JSON: /bk-i18n-today/ar-js.json`（i18n-today 的 js 文件为 0 字节，合并工具未产出 js 与路径表） | 第 2 步 2.5 校验 + 通过判据（dict=11 / js=11 / paths≥146） | 判据失败但整步 exit=0（静默）；2.6 的 js/paths cp 亦失败 | 未达 2.5：16:58:13 UTC 起卡在 `docker cp "$PKG/." php:"$PKGC/"` 至重启前无新输出 | 第一遍第 2 步 FAIL（静默）。在途修复=merge-i18n.php 9:41:14 空字典容错 + RUNBOOK 工作树哈希备注（未提交）；9:48:28 手动复跑 merged/ 已 11 dict + 11 js + paths.json → 第二遍本可过，被卡死中断 |
+| 3 | 第 1 步 `mariadb-dump: Got error: 2026 TLS/SSL error: SSL is required, but the server does not support it`（wp db export → db.sql=0） | 第 1 步 1e/1f 判据（db.sql 非空 / 含 CREATE TABLE） | 1632/db.sql=0，1e/1f 静默失败、step exit=0 | 1656/1710 db.sql=32.4 MB、40 CREATE TABLE、1e/1f 打印 PASS | 第一遍第 1 步 FAIL（静默）。已修=容器内 /usr/local/bin/mariadb(-dump) 包装（--skip-ssl 追加参数末尾，fix-dump-bin2.sh 实测生效）。覆盖=在途 RUNBOOK 工作树 0.1 探针+包装（9:42:52，未提交）+ 容器态；缺口=rehearsal.sh step0 无探针/包装，依赖容器遗留（重建即丢） |
+| 4 | 第 3 步 `Error: Backup input/site mismatch; original backup was not changed.`（27g apply+verify）与 `Original backup site/input mismatch; not overwritten.`（27i apply+verify） | 第 3 步 apply/verify（第 9 步 rollback 同源 JSON） | 16:34 apply/verify 全部拒写；抽 3 页标题「通过」为种子内容已含 27g/27i 结果（伪通过）；step exit=0 | 复位第 4 步已清空 /pkg 目录，本可干净 apply，但未跑到第 3 步（中断） | 第一遍第 3 步 FAIL。根因=旧 prep-db.sh 把 site=http://localhost:8081 的种子 rollback JSON 拷进 /pkg/rollback（seed-rollback/*.json 实测 site=localhost:8081；27i 行为旧标题「Custom Packaging Sourcing for Small Brands」等），与 SITE=http://nginx 不符被守卫拒写 |
+
+### 13.2 本轮/整轮判定与 reset/回滚成功性
+
+- **第一遍**：第 1 步（db.sql=0）、第 2 步（paths/js 缺）、第 3 步（apply/verify 拒写）三步判据均失败；各步 exit=0 属静默失败，不代表 PASS。
+- **第二遍**：reset 内容复位仍失败（缺陷 1 未修）；正向第 2 步 16:58:13 UTC 起卡在 `docker cp "$PKG/." php:"$PKGC/"`，至 17:04:32 UTC（本地 10:04:32）并行链截断三份日志重启新一轮 run-all 前无新输出（约 6 分钟静默）；重启后 reset.log 10:07:30 复现缺陷 1、s-baseline 10:09:05、正向 step1 10:11:14 db export Success。因此第二遍**未完成，不得判 PASS**。
+- **整轮验收**：种子库内容=27g/27i 上线后状态（s-baseline 产品页标题为新值），而内容复位从未成功 → 即便表面跑通，第 3 步 apply 只会 `apply_updated=0 already_current=134`、第 9 步 rollback `eligible=0`，内容写入/回滚语义从未被真实演练——按附录 C 判据整轮验收**不成立**，缺证据时不得判 PASS。`rehearsal.log` / `rehearsal-verify.json` 截至本次核查仍不存在。
+- **reset/回滚成功性**：文件层（mu/字典/主题/插件）成功；内容层（DB 27g/27i 行）未复位（no-op）→ reset 未真正成功。第一遍未执行第 9 步（run-forward 只到 step8），第二遍未到第 9 步。
+
+### 13.3 在途 --skip-ssl 等改动覆盖核对
+
+- 在途 RUNBOOK 工作树（9:42:52，未提交）：0.1 新增导出探针 + `--skip-ssl` 客户端包装（追加参数末尾）指令 + 判据「探针字节数>0」；第 1 步已因此能过（1656/1710 实测 db export Success）。
+- 覆盖缺口：① 包装在 /usr/local/bin（容器态），容器重建即丢，演练驱动（rehearsal.sh step0）未自动执行 0.1 探针/包装；② 上述改动未提交，且与 28q-supplement.patch 的 0.1 判据 hunk 重写同一条「通过判据」行、互有冲突（本机 git apply 互相失败实测），需负责人合并口径。
+
+### 13.4 本链拟制：RUNBOOK-launch.28q-supplement2.patch（独立最小，未应用）
+
+- 位置：`deploy/verification-28q/RUNBOOK-launch.28q-supplement2.patch`；sha256 `C464678FFBBCCC931B6BB821A4EE82FA88E2535F731A4D4F12F715C964148107`；7 hunks（+50/−2）。
+- 内容：2.5 四条校验改硬 FAIL（paths.json 缺失/条目<146/js≠11 即 exit 1）+ 判据「必须打印、FAIL 即停」；3.0 应用前守卫（/pkg/rollback 已有 JSON 必须 site==本轮）；第 3 步判据加 mismatch→FAIL 与演练首轮 `apply_updated>0`；第 3 步回滚块与 9.3 各加回滚前守卫（JSON site==$SITE）；新增附录 D（D.1 复位修正：prep-restore.php 进 /pkg 的命令+验收+独立回滚；D.2 三步硬判据含 0.1 探针/包装每轮前置；D.3 门禁：FAIL 即从头重跑三轮 → Claude 核验 → 另行生产授权）。
+- 应用顺序与独立性：先 `RUNBOOK-launch.28q-supplement.patch` 再本补丁；`git apply --check` 对「HEAD 6af59be + supplement」实测通过；不覆盖 supplement 任何 hunk、不覆盖在途工作树改动（SITEMAP 变量 / 0.1 探针与包装 / merge-i18n 哈希备注）。
+
+### 13.5 未决审批项（在 §11/§12 之上追加）
+
+- ⑤ supplement 的 0.1 判据 hunk 与在途 0.1 探针/包装改动的冲突合并口径（谁先落地、以哪个为准）；
+- ⑥ 演练内容复位（附录 D.1）由演练负责人操作，本链不代执行；复位未修复前，任何一轮的第 3/9 步不得判 PASS；
+- ⑦ 第二遍中断（16:58 UTC 卡死）与 17:04:32 UTC 重启由并行链执行，其归属与重启后的轮次计数（是否仍算「第二遍」）需负责人确认；
+- ⑧ 本补丁落地与三轮重跑 / Claude 核验 / 另行生产授权四边界仍待负责人逐项批复（§11 审批文本继续有效）。
+
+### 13.6 本轮操作与边界
+
+- 仅只读命令：Get-Content/Select-String/Get-ChildItem/Get-Item/Get-FileHash、git show/diff/log/status、git apply --check（在 i667 工作目录 scratch 副本上验证补丁，未触碰仓库工作树）、docker ps -a、docker logs（只读）。未执行任何脚本、未启动/停止/接入任何容器、未修改/删除任何他人文件（含 .tmp\28q 全部在途文件、全部未跟踪文件与工作树 3 处改动）、未 SSH 生产、未重跑生产第 1 步、未执行第 2–8 步、未读取或打印任何密码/密钥/token（编排文件中的本地演练口令字段仅确认存在，不记录不打印）。
+- 本轮仓库变更：新增 `deploy/verification-28q/RUNBOOK-launch.28q-supplement2.patch` + 本节日志追加；只暂存并提交这两个文件并 push，其余改动与未跟踪文件保持原样。

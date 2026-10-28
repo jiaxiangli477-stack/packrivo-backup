@@ -1,0 +1,117 @@
+# 28q 补充补丁 2（独立最小修正 · 拟制，未应用；sha256 见下）
+# 作用：把 2026-10-28 前两遍演练实测暴露的四类缺陷落成 RUNBOOK 硬判据与演练复位判据
+#   1) 演练复位报 '/pkg/prep-restore.php' does not exist.（reset.sh 第 5 步）→ 附录 D.1 复位命令+验收+独立回滚
+#   2) 第 2 步 /pkg/merged/paths.json 缺失但整步 exit=0 → 2.5 校验改硬 FAIL + 判据加「必须打印/FAIL 即停」
+#   3) 第 1 步 mariadb-dump TLS/SSL error 2026（db.sql=0）→ 附录 D.2.1 明确 0.1 导出探针/--skip-ssl 包装为每轮前置
+#      （0.1 正文的探针与包装改动属在途工作树改动，本补丁不重复、不覆盖）
+#   4) 第 3/9 步 rollback site/input 不符 → 3.0 应用前守卫（/pkg/rollback 已有 JSON 必须 site==本轮）+ 9.3 回滚前守卫
+#      + apply/rollback 首轮必须真实写入判据
+# 应用顺序：先 RUNBOOK-launch.28q-supplement.patch，再本补丁（附录 D 锚点取自 supplement 落成后的附录 C 结尾）；
+#           本补丁不覆盖 supplement 任何 hunk、不覆盖在途工作树改动（SITEMAP 变量 / 0.1 探针与 --skip-ssl 包装 / merge-i18n 哈希备注）。
+# 注意：supplement 的 0.1 判据 hunk 与在途工作树的 0.1 探针改动重写同一条「通过判据」行，两者互有冲突，
+#       需负责人在落地时合并口径（本补丁不处理该冲突）。
+# 门禁：落地后必须从头重跑完整三轮演练 → Claude 核验 rehearsal.log/rehearsal-verify.json → 负责人另行生产授权（附录 D.3）；
+#       在另行授权前，生产第 2–8 步、SSH 生产、重跑生产第 1 步仍禁止。
+# 校验：git apply --check 已通过（基线 = HEAD 6af59be + RUNBOOK-launch.28q-supplement.patch）。
+#diff --git a/deploy/RUNBOOK-launch.md b/deploy/RUNBOOK-launch.md
+index 73066c0..96baba6 100644
+--- a/deploy/RUNBOOK-launch.md
++++ b/deploy/RUNBOOK-launch.md
+@@ -213,8 +213,10 @@ cat "$PKG/merged/conflicts.json"
+ docker exec php sh -c 'ls /pkg/merged/*-dict.json | wc -l'          # 期望 11
+ docker exec php sh -c 'ls /pkg/merged/*-js.json   | wc -l'          # 期望 11
+ docker exec php sh -c 'for f in /pkg/merged/*.json; do php -r "json_decode(file_get_contents(\$argv[1]),true) or exit(1);" "$f" || echo "坏 JSON: $f"; done'
+-docker exec php sh -c 'grep -q "\"/get-a-quote/\"" /pkg/merged/paths.json && echo "paths ok"'
+-docker exec php sh -c 'php -r "\$p=json_decode(file_get_contents(\"/pkg/merged/paths.json\"),true); exit((is_array(\$p)&&count(\$p)>=146)?0:1);" && echo "paths count ok"'
++docker exec php sh -c 'test -f /pkg/merged/paths.json || { echo "FAIL: paths.json 缺失（常见原因：当天 i18n 快照里 *-js.json 为空/坏 JSON，合并工具没产出 js 与路径表）"; exit 1; }'
++docker exec php sh -c 'grep -q "\"/get-a-quote/\"" /pkg/merged/paths.json || { echo "FAIL: paths.json 缺 /get-a-quote/"; exit 1; } && echo "paths ok"'
++docker exec php sh -c 'php -r "\$p=json_decode(file_get_contents(\"/pkg/merged/paths.json\"),true); if(!is_array(\$p)||count(\$p)<146){echo \"FAIL: paths < 146\";exit(1);} echo \"paths count ok\";"'
++docker exec php sh -c '[ "$(ls /pkg/merged/*-js.json 2>/dev/null | wc -l)" = "11" ] || { echo "FAIL: js 合并文件数 != 11"; exit 1; }'
+ 
+ # 2.6 装上去（宿主机侧，只覆盖同名文件；conflicts.json 不要拷进 i18n）
+ cp "$PKG/merged"/*-dict.json "$I18N/"
+@@ -228,6 +230,7 @@ ls -l "$I18N" | head
+ - `*-dict.json` = **11**、`*-js.json` = **11**；
+ - 每个 JSON 都能 `json_decode`，没有「坏 JSON」行；
+ - `paths.json` 含 `"/get-a-quote/"`，条目数 ≥ 146；
++- 2.5 每一条校验都必须**打印出来**（`paths ok`、`paths count ok`、dict=11、js=11、无「坏 JSON」行）；任一 FAIL → **本步 FAIL**：按下方回滚恢复字典并**停止**，修好合并输入后重跑第 2 步；不得把 exit=0 的静默失败当通过（2026-10-28 演练实测：paths.json 缺失时整步仍 exit=0）。
+ - `conflicts.json` 已人工逐条看过：凡是被生产值覆盖的键，都是我们**这次不打算改**的；
+ - 装完后 `/de/` 仍正常：`curl -s "$SITE/de/" | grep -c 'lang="de"'` ≥ 1。
+ 
+@@ -253,6 +256,9 @@ cp -a "$BACKUP/i18n/." "$I18N/"
+ BACKUP=/home/web/backups/$(cat /home/web/backups/CURRENT_LAUNCH)
+ docker exec php mkdir -p "$PKGC/rollback"          # 2.2 已把包灌进容器
+ 
++# 3.0 应用前守卫：rollback 目录若已有 JSON，必须都是本轮的（site 与本次一致）；残留他站/旧轮 JSON 会让 apply 因 site/input 不符拒写
++docker exec php sh -c 'for f in /pkg/rollback/*.json; do [ -f "$f" ] || continue; php -r "\$j=json_decode(file_get_contents(\$argv[1]),true); exit(((\$j[\"site\"]??\"\")===\$argv[2])?0:1);" "$f" '"$SITE"' || { echo "FAIL: $f 非本轮产物（site 与本次不一致），先清空 /pkg/rollback 再重跑"; exit 1; }; done'
++
+ # 3.1 dry-run
+ $WPCLI eval-file "$PKGC/scripts/product-buyers-27g/import.php" plan "$PKGC" "$SITE" "$PKGC/rollback/rollback-27g.json" all134
+ $WPCLI eval-file "$PKGC/scripts/hubs-27i/import.php"          plan "$PKGC" "$SITE" "$PKGC/rollback/rollback-27i.json"
+@@ -270,6 +276,7 @@ ls -l "$BACKUP/rollback/"
+ 
+ - `plan` 输出 `input_pages=134 preflight=PASS writes=0` 与 `hub_pages=8 preflight=PASS`；
+ - `apply` 输出 `apply_updated=134` / `apply_updated=8`（重复执行时 `already_current` 计入总数）；
++- apply 若输出 `Backup input/site mismatch` / `Original backup site/input mismatch` / `Expected-site guard failed` → **本步 FAIL**：核对 `$SITE` 与 `/pkg/rollback` 残留后按 3 回滚并**停止**，不得继续；演练环境首轮还要求 `apply_updated>0`（=0 且 already_current 占满说明演练库内容未复位、导入从未真实写入，该轮演练无效）。
+ - `verify` 输出 `metadata_mismatches=0`（27i 还要求 `H1_body_URL_unchanged=8/8 inquiry_description_preserved=yes`）；
+ - `$BACKUP/rollback/` 里两个 JSON 都在（27g 约 1.2 MB，含全部原值）：
+   ```bash
+@@ -288,6 +295,8 @@ ls -l "$BACKUP/rollback/"
+ ```bash
+ docker cp "$BACKUP/rollback/rollback-27i.json" php:"$PKGC/rollback/"
+ docker cp "$BACKUP/rollback/rollback-27g.json" php:"$PKGC/rollback/"
++# 回滚前守卫：推回去的 JSON 必须是本轮第 3 步生成的（site 与本轮一致），否则 rollback 会因 site/input 不符拒写
++docker exec php sh -c 'for f in /pkg/rollback/rollback-27g.json /pkg/rollback/rollback-27i.json; do php -r "\$j=json_decode(file_get_contents(\$argv[1]),true); exit(((\$j[\"site\"]??\"\")===\$argv[2])?0:1);" "$f" '"$SITE"' || { echo "FAIL: $f site 与本次不一致"; exit 1; }; done'
+ $WPCLI eval-file "$PKGC/scripts/hubs-27i/import.php"          rollback-check "$PKGC" "$SITE" "$PKGC/rollback/rollback-27i.json"
+ $WPCLI eval-file "$PKGC/scripts/hubs-27i/import.php"          rollback       "$PKGC" "$SITE" "$PKGC/rollback/rollback-27i.json"
+ $WPCLI eval-file "$PKGC/scripts/product-buyers-27g/import.php" rollback-check "$PKGC" "$SITE" "$PKGC/rollback/rollback-27g.json" all134
+@@ -517,6 +526,8 @@ $WPCLI plugin list --format=csv | grep packrivo-quote || echo "报价插件已
+ docker exec php mkdir -p "$PKGC/rollback"     # 预建：第 3 步未执行或容器重建过时，docker cp 也能落位
+ docker cp "$BACKUP/rollback/rollback-27i.json" php:"$PKGC/rollback/"
+ docker cp "$BACKUP/rollback/rollback-27g.json" php:"$PKGC/rollback/"
++# 回滚前守卫：推回去的 JSON 必须是本轮第 3 步生成的（site 与本轮一致），否则 rollback 会因 site/input 不符拒写
++docker exec php sh -c 'for f in /pkg/rollback/rollback-27g.json /pkg/rollback/rollback-27i.json; do php -r "\$j=json_decode(file_get_contents(\$argv[1]),true); exit(((\$j[\"site\"]??\"\")===\$argv[2])?0:1);" "$f" '"$SITE"' || { echo "FAIL: $f site 与本次不一致"; exit 1; }; done'
+ $WPCLI eval-file "$PKGC/scripts/hubs-27i/import.php"          rollback-check "$PKGC" "$SITE" "$PKGC/rollback/rollback-27i.json"
+ $WPCLI eval-file "$PKGC/scripts/hubs-27i/import.php"          rollback       "$PKGC" "$SITE" "$PKGC/rollback/rollback-27i.json"
+ $WPCLI eval-file "$PKGC/scripts/product-buyers-27g/import.php" rollback-check "$PKGC" "$SITE" "$PKGC/rollback/rollback-27g.json" all134
+@@ -580,3 +591,40 @@ docker exec php rm -f /tmp/db.sql
+ 4. `rehearsal-verify.json`：结构化机检结果，`steps` 覆盖第 0–9 步且逐项 `result=PASS`，含 `wp_core=7.1.3`、`php=8.3.x` 及第 9 步回滚后 sha256 一致、标题回原值的机检项；
+ 5. 演练通过 + Claude 核验 `rehearsal.log` 之后，由负责人**另行授权生产**（任务单答复 3）；演练通过不自动获得生产授权；
+ 6. 未决项：任务单 §1 的 663 网址检查中 `/sitemap_index.xml` 本地 404（本地无 Yoast，生产该项 200，属环境差异）——需负责人明确豁免口径后 §1 网址项方可判定整体通过；豁免记录写入 `DSH-RESULT-2026-10-28q.md` 或 LAUNCH-LOG。
++
++## 附录 D · 演练环境复位与三步硬判据（28q-supplement2 · 待负责人批准）
++
++> 依据：2026-10-28 前两遍演练实测暴露的四类缺陷——演练复位报 `'/pkg/prep-restore.php' does not exist.`；第 2 步 `/pkg/merged/paths.json` 缺失且整步 exit=0；第 1 步 `mariadb-dump: Got error: 2026 TLS/SSL error`（db.sql=0，判据 1e/1f 静默失败）；第 3 步 `Backup input/site mismatch`（残留 site=http://localhost:8081 的旧 rollback JSON）。本附录把复位与硬判据写进手册，防止「步骤 exit=0 但判据静默失败」被误判为 PASS。
++
++### D.1 每轮演练前的环境复位（演练负责人操作，不属于第 1–8 步）
++
++来源文件：演练环境 `reset.sh` 第 5 步（`docker cp` seed-rollback JSON 后 `wp eval-file /pkg/prep-restore.php`）。缺陷：`prep-restore.php` 只在演练工作目录根，未随包进 `/pkg`，复位报 `'/pkg/prep-restore.php' does not exist.`，内容复位被静默跳过（文件/字典/主题/插件层已复位，DB 内容层未复位）。
++
++修正命令（在演练宿主容器内，二选一，修正后每轮复位都要执行）：
++
++```bash
++# 方案 A：单独推文件
++docker cp /home/web/seed-restore/prep-restore.php php:/pkg/prep-restore.php
++# 方案 B：把 prep-restore.php 放进 packrivo-packages/，随 reset 第 4 步的 docker cp 一起进 /pkg
++$WPCLI eval-file /pkg/prep-restore.php /pkg/rb27g.json
++$WPCLI eval-file /pkg/prep-restore.php /pkg/rb27i.json
++```
++
++验收（三条全满足才算复位成功）：
++
++- 两次输出均为 `restore_rows=N missing=0 dry=no`（N≥1）；
++- 抽检旧标题：`curl -s "$SITE/product-drawer-jewelry-box/" | grep -o '<title>[^<]*</title>'` 回到上线前旧值（不含 "with Logo"）；首页与 `/products/` 同理回旧值；
++- `/pkg/rollback` 为空（保证下轮 apply 能独占创建）。
++
++独立回滚（演练库专用，不涉及生产）：`prep-restore.php` 只按 ID 覆盖 `wp_posts` 行；回滚 = 对演练库重灌 `seed.clean.sql`（或重跑 reset + D.1 命令）。
++
++### D.2 三步硬判据（已由本补丁 2.5/3.0/9.3 落地到正文）
++
++1. 第 1 步：`1e db.sql 非空`、`1f db.sql 含 CREATE TABLE` 必须**打印**；`wp db export` 报 `TLS/SSL error` 或 db.sql=0 → 本步 FAIL：按 0.1 装 `--skip-ssl` 包装（追加在参数末尾）并重探，探针字节数 >0 后才能继续；容器重建后包装会丢，演练驱动脚本不得依赖上次容器遗留的包装，须每轮先跑 0.1 探针；
++2. 第 2 步：`paths ok`、`paths count ok`、dict=11、js=11、无「坏 JSON」必须**打印**；`paths.json` 缺失或 js≠11 → 本步 FAIL：回滚字典并停止（详见 2.5 新校验行）；
++3. 第 3 步：apply 必须输出 `apply_updated=134` / `apply_updated=8`；演练首轮必须 `apply_updated>0`（=0 说明演练库内容未复位、导入从未真实写入，该轮演练无效，须按 D.1 复位后重跑）；输出 `site/input mismatch` → 本步 FAIL；
++4. 第 9 步：回滚前 JSON `site` 必须与本轮 `$SITE` 一致（9.3 守卫）；演练首轮回滚必须 `rollback_eligible>0` 且回滚后标题回旧值（=0 的"空转回滚"不算演练通过）。
++
++### D.3 门禁（不变，重新明确）
++
++D.1/D.2 任一条 FAIL → 该轮演练 FAIL；修正后**从头重跑完整三轮**（正向 0→8 → 第 9 步整体回滚验收 → 再正向 1→8），产出 `deploy/verification-28q/rehearsal.log` 与 `rehearsal-verify.json` → Claude 核验 → 负责人**另行授权生产**；演练通过不自动获得生产授权，生产第 2–8 步与生产 SSH 在另行授权前仍禁止执行（任务单答复 3）。
