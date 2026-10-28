@@ -32,6 +32,14 @@ function pkv4_menus()
 }
 add_action('after_setup_theme', 'pkv4_menus');
 
+// The product workspace can remove the core title and its own replacement on
+// native pages. Restore the core renderer only when neither renderer remains.
+add_action('wp', function () {
+    if (is_singular('page') && get_post_meta(get_queried_object_id(), '_packrivo_remediation_product', true) && current_theme_supports('title-tag') && !has_action('wp_head', '_wp_render_title_tag') && !has_action('wp_head', ['PKPW_Product_Renderer', 'render_title'])) {
+        add_action('wp_head', '_wp_render_title_tag', 1);
+    }
+}, 99);
+
 /** Fallback menu when no menu is assigned yet — mirrors the live IA. */
 function pkv4_fallback_menu()
 {
