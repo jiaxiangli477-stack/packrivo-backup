@@ -1,0 +1,1593 @@
+[
+ {
+  "width": 1440,
+  "lang": "en",
+  "page": "home",
+  "url": "http://localhost:8081/",
+  "links": [
+   {
+    "text": "Get a quote",
+    "href": "/get-a-quote/",
+    "visible": false,
+    "where": "body"
+   },
+   {
+    "text": "Instant quote",
+    "href": "/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Build a quote",
+    "href": "/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Build a quote →",
+    "href": "/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Configure →",
+    "href": "/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Configure →",
+    "href": "/get-a-quote/?style=rigid&qty=500&product=product-lid-and-base-jewelry-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Configure →",
+    "href": "/get-a-quote/?style=rigid&qty=500&product=product-jewelry-box-with-insert",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Configure →",
+    "href": "/get-a-quote/?style=rigid&qty=500&product=product-window-lid-rigid-gift-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Configure →",
+    "href": "/get-a-quote/?style=rigid&qty=500&product=product-hinged-nonmagnetic-rigid-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Configure →",
+    "href": "/get-a-quote/?style=mailer&qty=500&product=product-corrugated-roll-end-hinged-lid",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Configure →",
+    "href": "/get-a-quote/?style=bag&qty=500&product=product-euro-tote-paper-carrier",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Configure →",
+    "href": "/get-a-quote/?style=bag&qty=500&product=product-sos-paper-gift-bag",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Open the quote builder",
+    "href": "/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Ask a question",
+    "href": "/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Ask a specific question →",
+    "href": "/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Get a Quote",
+    "href": "/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "",
+    "href": "/?s=",
+    "visible": true,
+    "where": "header"
+   },
+   {
+    "text": "Sample kit",
+    "href": "/samples/",
+    "visible": true,
+    "where": "header"
+   },
+   {
+    "text": "Instant quote",
+    "href": "/get-a-quote/",
+    "visible": true,
+    "where": "header"
+   },
+   {
+    "text": "Build a quote",
+    "href": "/get-a-quote/",
+    "visible": true,
+    "where": "header"
+   }
+  ],
+  "nativeEnglish": [
+   "Instant quote → /get-a-quote/ (body)",
+   "Build a quote → /get-a-quote/ (body)",
+   "Open the quote builder → /get-a-quote/ (body)",
+   "Ask a question → /get-a-quote/ (body)",
+   "Get a Quote → /get-a-quote/ (body)",
+   "Sample kit → /samples/ (header)",
+   "Instant quote → /get-a-quote/ (header)",
+   "Build a quote → /get-a-quote/ (header)"
+  ],
+  "englishLeak": [],
+  "wrongHref": []
+ },
+ {
+  "width": 1440,
+  "lang": "en",
+  "page": "product",
+  "url": "http://localhost:8081/product-drawer-jewelry-box/",
+  "links": [
+   {
+    "text": "Get a quote",
+    "href": "/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": false,
+    "where": "body"
+   },
+   {
+    "text": "Instant quote",
+    "href": "/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Build a quote",
+    "href": "/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Get a Quote",
+    "href": "/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Get a quote · MOQ 500",
+    "href": "/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": false,
+    "where": "body"
+   },
+   {
+    "text": "",
+    "href": "/?s=",
+    "visible": true,
+    "where": "header"
+   },
+   {
+    "text": "Sample kit",
+    "href": "/samples/",
+    "visible": true,
+    "where": "header"
+   },
+   {
+    "text": "Instant quote",
+    "href": "/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": true,
+    "where": "header"
+   },
+   {
+    "text": "Build a quote",
+    "href": "/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": true,
+    "where": "header"
+   }
+  ],
+  "nativeEnglish": [
+   "Instant quote → /get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box (body)",
+   "Build a quote → /get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box (body)",
+   "Get a Quote → /get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box (body)",
+   "Sample kit → /samples/ (header)",
+   "Instant quote → /get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box (header)",
+   "Build a quote → /get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box (header)"
+  ],
+  "englishLeak": [],
+  "wrongHref": []
+ },
+ {
+  "width": 1440,
+  "lang": "ar",
+  "page": "home",
+  "url": "http://localhost:8081/ar/",
+  "links": [
+   {
+    "text": "اطلب عرض سعر",
+    "href": "/ar/get-a-quote/",
+    "visible": false,
+    "where": "body"
+   },
+   {
+    "text": "عرض سعر فوري",
+    "href": "/ar/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "أنشئ عرض سعر",
+    "href": "/ar/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "أنشئ عرض سعر →",
+    "href": "/ar/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "اختر المواصفات →",
+    "href": "/ar/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "اختر المواصفات →",
+    "href": "/ar/get-a-quote/?style=rigid&qty=500&product=product-lid-and-base-jewelry-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "اختر المواصفات →",
+    "href": "/ar/get-a-quote/?style=rigid&qty=500&product=product-jewelry-box-with-insert",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "اختر المواصفات →",
+    "href": "/ar/get-a-quote/?style=rigid&qty=500&product=product-window-lid-rigid-gift-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "اختر المواصفات →",
+    "href": "/ar/get-a-quote/?style=rigid&qty=500&product=product-hinged-nonmagnetic-rigid-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "اختر المواصفات →",
+    "href": "/ar/get-a-quote/?style=mailer&qty=500&product=product-corrugated-roll-end-hinged-lid",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "اختر المواصفات →",
+    "href": "/ar/get-a-quote/?style=bag&qty=500&product=product-euro-tote-paper-carrier",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "اختر المواصفات →",
+    "href": "/ar/get-a-quote/?style=bag&qty=500&product=product-sos-paper-gift-bag",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "افتح أداة إعداد عرض السعر",
+    "href": "/ar/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "اسأل عن تفصيل",
+    "href": "/ar/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "اسأل سؤالًا محددًا →",
+    "href": "/ar/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "احصل على عرض سعر",
+    "href": "/ar/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "",
+    "href": "/?s=",
+    "visible": true,
+    "where": "header"
+   },
+   {
+    "text": "مجموعة عينات",
+    "href": "/samples/",
+    "visible": true,
+    "where": "header"
+   },
+   {
+    "text": "عرض سعر فوري",
+    "href": "/ar/get-a-quote/",
+    "visible": true,
+    "where": "header"
+   },
+   {
+    "text": "أنشئ عرض سعر",
+    "href": "/ar/get-a-quote/",
+    "visible": true,
+    "where": "header"
+   }
+  ],
+  "nativeEnglish": [],
+  "englishLeak": [],
+  "wrongHref": []
+ },
+ {
+  "width": 1440,
+  "lang": "ar",
+  "page": "product",
+  "url": "http://localhost:8081/ar/product-drawer-jewelry-box/",
+  "links": [
+   {
+    "text": "اطلب عرض سعر",
+    "href": "/ar/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": false,
+    "where": "body"
+   },
+   {
+    "text": "عرض سعر فوري",
+    "href": "/ar/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "أنشئ عرض سعر",
+    "href": "/ar/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "احصل على عرض سعر",
+    "href": "/ar/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "اطلب عرض سعر · الحد الأدنى 500",
+    "href": "/ar/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": false,
+    "where": "body"
+   },
+   {
+    "text": "",
+    "href": "/?s=",
+    "visible": true,
+    "where": "header"
+   },
+   {
+    "text": "مجموعة عينات",
+    "href": "/samples/",
+    "visible": true,
+    "where": "header"
+   },
+   {
+    "text": "عرض سعر فوري",
+    "href": "/ar/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": true,
+    "where": "header"
+   },
+   {
+    "text": "أنشئ عرض سعر",
+    "href": "/ar/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": true,
+    "where": "header"
+   }
+  ],
+  "nativeEnglish": [],
+  "englishLeak": [],
+  "wrongHref": []
+ },
+ {
+  "width": 1440,
+  "lang": "de",
+  "page": "home",
+  "url": "http://localhost:8081/de/",
+  "links": [
+   {
+    "text": "Angebot einholen",
+    "href": "/de/get-a-quote/",
+    "visible": false,
+    "where": "body"
+   },
+   {
+    "text": "Sofortangebot",
+    "href": "/de/get-a-quote/",
+    "visible": false,
+    "where": "body"
+   },
+   {
+    "text": "Angebot erstellen",
+    "href": "/de/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Angebot erstellen →",
+    "href": "/de/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Konfigurieren →",
+    "href": "/de/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Konfigurieren →",
+    "href": "/de/get-a-quote/?style=rigid&qty=500&product=product-lid-and-base-jewelry-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Konfigurieren →",
+    "href": "/de/get-a-quote/?style=rigid&qty=500&product=product-jewelry-box-with-insert",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Konfigurieren →",
+    "href": "/de/get-a-quote/?style=rigid&qty=500&product=product-window-lid-rigid-gift-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Konfigurieren →",
+    "href": "/de/get-a-quote/?style=rigid&qty=500&product=product-hinged-nonmagnetic-rigid-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Konfigurieren →",
+    "href": "/de/get-a-quote/?style=mailer&qty=500&product=product-corrugated-roll-end-hinged-lid",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Konfigurieren →",
+    "href": "/de/get-a-quote/?style=bag&qty=500&product=product-euro-tote-paper-carrier",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Konfigurieren →",
+    "href": "/de/get-a-quote/?style=bag&qty=500&product=product-sos-paper-gift-bag",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Angebotsrechner öffnen",
+    "href": "/de/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Frage stellen",
+    "href": "/de/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Konkrete Frage stellen →",
+    "href": "/de/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Angebot anfordern",
+    "href": "/de/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "",
+    "href": "/?s=",
+    "visible": true,
+    "where": "header"
+   },
+   {
+    "text": "Musterset",
+    "href": "/samples/",
+    "visible": false,
+    "where": "header"
+   },
+   {
+    "text": "Sofortangebot",
+    "href": "/de/get-a-quote/",
+    "visible": false,
+    "where": "header"
+   },
+   {
+    "text": "Angebot erstellen",
+    "href": "/de/get-a-quote/",
+    "visible": true,
+    "where": "header"
+   }
+  ],
+  "nativeEnglish": [],
+  "englishLeak": [],
+  "wrongHref": []
+ },
+ {
+  "width": 1440,
+  "lang": "de",
+  "page": "product",
+  "url": "http://localhost:8081/de/product-drawer-jewelry-box/",
+  "links": [
+   {
+    "text": "Angebot einholen",
+    "href": "/de/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": false,
+    "where": "body"
+   },
+   {
+    "text": "Sofortangebot",
+    "href": "/de/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": false,
+    "where": "body"
+   },
+   {
+    "text": "Angebot erstellen",
+    "href": "/de/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Angebot anfordern",
+    "href": "/de/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Angebot anfragen · Mindestmenge 500",
+    "href": "/de/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": false,
+    "where": "body"
+   },
+   {
+    "text": "",
+    "href": "/?s=",
+    "visible": true,
+    "where": "header"
+   },
+   {
+    "text": "Musterset",
+    "href": "/samples/",
+    "visible": false,
+    "where": "header"
+   },
+   {
+    "text": "Sofortangebot",
+    "href": "/de/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": false,
+    "where": "header"
+   },
+   {
+    "text": "Angebot erstellen",
+    "href": "/de/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": true,
+    "where": "header"
+   }
+  ],
+  "nativeEnglish": [],
+  "englishLeak": [],
+  "wrongHref": []
+ },
+ {
+  "width": 1440,
+  "lang": "ja",
+  "page": "home",
+  "url": "http://localhost:8081/ja/",
+  "links": [
+   {
+    "text": "見積もりを取る",
+    "href": "/ja/get-a-quote/",
+    "visible": false,
+    "where": "body"
+   },
+   {
+    "text": "すぐに見積もり",
+    "href": "/ja/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "見積もりを作成",
+    "href": "/ja/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "見積もりを作成 →",
+    "href": "/ja/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "仕様を選ぶ →",
+    "href": "/ja/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "仕様を選ぶ →",
+    "href": "/ja/get-a-quote/?style=rigid&qty=500&product=product-lid-and-base-jewelry-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "仕様を選ぶ →",
+    "href": "/ja/get-a-quote/?style=rigid&qty=500&product=product-jewelry-box-with-insert",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "仕様を選ぶ →",
+    "href": "/ja/get-a-quote/?style=rigid&qty=500&product=product-window-lid-rigid-gift-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "仕様を選ぶ →",
+    "href": "/ja/get-a-quote/?style=rigid&qty=500&product=product-hinged-nonmagnetic-rigid-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "仕様を選ぶ →",
+    "href": "/ja/get-a-quote/?style=mailer&qty=500&product=product-corrugated-roll-end-hinged-lid",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "仕様を選ぶ →",
+    "href": "/ja/get-a-quote/?style=bag&qty=500&product=product-euro-tote-paper-carrier",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "仕様を選ぶ →",
+    "href": "/ja/get-a-quote/?style=bag&qty=500&product=product-sos-paper-gift-bag",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "見積もり作成ツールを開く",
+    "href": "/ja/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "質問する",
+    "href": "/ja/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "具体的に質問する →",
+    "href": "/ja/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "見積を取得",
+    "href": "/ja/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "",
+    "href": "/?s=",
+    "visible": true,
+    "where": "header"
+   },
+   {
+    "text": "サンプルキット",
+    "href": "/samples/",
+    "visible": true,
+    "where": "header"
+   },
+   {
+    "text": "すぐに見積もり",
+    "href": "/ja/get-a-quote/",
+    "visible": true,
+    "where": "header"
+   },
+   {
+    "text": "見積もりを作成",
+    "href": "/ja/get-a-quote/",
+    "visible": true,
+    "where": "header"
+   }
+  ],
+  "nativeEnglish": [],
+  "englishLeak": [],
+  "wrongHref": []
+ },
+ {
+  "width": 1440,
+  "lang": "ja",
+  "page": "product",
+  "url": "http://localhost:8081/ja/product-drawer-jewelry-box/",
+  "links": [
+   {
+    "text": "見積もりを取る",
+    "href": "/ja/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": false,
+    "where": "body"
+   },
+   {
+    "text": "すぐに見積もり",
+    "href": "/ja/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "見積もりを作成",
+    "href": "/ja/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "見積を取得",
+    "href": "/ja/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "見積もりを依頼 · 最低注文数500個",
+    "href": "/ja/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": false,
+    "where": "body"
+   },
+   {
+    "text": "",
+    "href": "/?s=",
+    "visible": true,
+    "where": "header"
+   },
+   {
+    "text": "サンプルキット",
+    "href": "/samples/",
+    "visible": true,
+    "where": "header"
+   },
+   {
+    "text": "すぐに見積もり",
+    "href": "/ja/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": true,
+    "where": "header"
+   },
+   {
+    "text": "見積もりを作成",
+    "href": "/ja/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": true,
+    "where": "header"
+   }
+  ],
+  "nativeEnglish": [],
+  "englishLeak": [],
+  "wrongHref": []
+ },
+ {
+  "width": 375,
+  "lang": "en",
+  "page": "home",
+  "url": "http://localhost:8081/",
+  "links": [
+   {
+    "text": "Get a quote",
+    "href": "/get-a-quote/",
+    "visible": false,
+    "where": "body"
+   },
+   {
+    "text": "Instant quote",
+    "href": "/get-a-quote/",
+    "visible": false,
+    "where": "body"
+   },
+   {
+    "text": "Build a quote",
+    "href": "/get-a-quote/",
+    "visible": false,
+    "where": "body"
+   },
+   {
+    "text": "Build a quote →",
+    "href": "/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Configure →",
+    "href": "/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Configure →",
+    "href": "/get-a-quote/?style=rigid&qty=500&product=product-lid-and-base-jewelry-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Configure →",
+    "href": "/get-a-quote/?style=rigid&qty=500&product=product-jewelry-box-with-insert",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Configure →",
+    "href": "/get-a-quote/?style=rigid&qty=500&product=product-window-lid-rigid-gift-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Configure →",
+    "href": "/get-a-quote/?style=rigid&qty=500&product=product-hinged-nonmagnetic-rigid-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Configure →",
+    "href": "/get-a-quote/?style=mailer&qty=500&product=product-corrugated-roll-end-hinged-lid",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Configure →",
+    "href": "/get-a-quote/?style=bag&qty=500&product=product-euro-tote-paper-carrier",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Configure →",
+    "href": "/get-a-quote/?style=bag&qty=500&product=product-sos-paper-gift-bag",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Open the quote builder",
+    "href": "/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Ask a question",
+    "href": "/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Ask a specific question →",
+    "href": "/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Get a Quote",
+    "href": "/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "",
+    "href": "/?s=",
+    "visible": false,
+    "where": "header"
+   },
+   {
+    "text": "Sample kit",
+    "href": "/samples/",
+    "visible": false,
+    "where": "header"
+   },
+   {
+    "text": "Instant quote",
+    "href": "/get-a-quote/",
+    "visible": false,
+    "where": "header"
+   },
+   {
+    "text": "Build a quote",
+    "href": "/get-a-quote/",
+    "visible": false,
+    "where": "header"
+   }
+  ],
+  "nativeEnglish": [
+   "Open the quote builder → /get-a-quote/ (body)",
+   "Ask a question → /get-a-quote/ (body)",
+   "Get a Quote → /get-a-quote/ (body)"
+  ],
+  "englishLeak": [],
+  "wrongHref": []
+ },
+ {
+  "width": 375,
+  "lang": "en",
+  "page": "product",
+  "url": "http://localhost:8081/product-drawer-jewelry-box/",
+  "links": [
+   {
+    "text": "Get a quote",
+    "href": "/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": false,
+    "where": "body"
+   },
+   {
+    "text": "Instant quote",
+    "href": "/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": false,
+    "where": "body"
+   },
+   {
+    "text": "Build a quote",
+    "href": "/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": false,
+    "where": "body"
+   },
+   {
+    "text": "Get a Quote",
+    "href": "/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Get a quote · MOQ 500",
+    "href": "/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "",
+    "href": "/?s=",
+    "visible": false,
+    "where": "header"
+   },
+   {
+    "text": "Sample kit",
+    "href": "/samples/",
+    "visible": false,
+    "where": "header"
+   },
+   {
+    "text": "Instant quote",
+    "href": "/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": false,
+    "where": "header"
+   },
+   {
+    "text": "Build a quote",
+    "href": "/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": false,
+    "where": "header"
+   }
+  ],
+  "nativeEnglish": [
+   "Get a Quote → /get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box (body)",
+   "Get a quote · MOQ 500 → /get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box (body)"
+  ],
+  "englishLeak": [],
+  "wrongHref": []
+ },
+ {
+  "width": 375,
+  "lang": "ar",
+  "page": "home",
+  "url": "http://localhost:8081/ar/",
+  "links": [
+   {
+    "text": "اطلب عرض سعر",
+    "href": "/ar/get-a-quote/",
+    "visible": false,
+    "where": "body"
+   },
+   {
+    "text": "عرض سعر فوري",
+    "href": "/ar/get-a-quote/",
+    "visible": false,
+    "where": "body"
+   },
+   {
+    "text": "أنشئ عرض سعر",
+    "href": "/ar/get-a-quote/",
+    "visible": false,
+    "where": "body"
+   },
+   {
+    "text": "أنشئ عرض سعر →",
+    "href": "/ar/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "اختر المواصفات →",
+    "href": "/ar/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "اختر المواصفات →",
+    "href": "/ar/get-a-quote/?style=rigid&qty=500&product=product-lid-and-base-jewelry-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "اختر المواصفات →",
+    "href": "/ar/get-a-quote/?style=rigid&qty=500&product=product-jewelry-box-with-insert",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "اختر المواصفات →",
+    "href": "/ar/get-a-quote/?style=rigid&qty=500&product=product-window-lid-rigid-gift-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "اختر المواصفات →",
+    "href": "/ar/get-a-quote/?style=rigid&qty=500&product=product-hinged-nonmagnetic-rigid-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "اختر المواصفات →",
+    "href": "/ar/get-a-quote/?style=mailer&qty=500&product=product-corrugated-roll-end-hinged-lid",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "اختر المواصفات →",
+    "href": "/ar/get-a-quote/?style=bag&qty=500&product=product-euro-tote-paper-carrier",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "اختر المواصفات →",
+    "href": "/ar/get-a-quote/?style=bag&qty=500&product=product-sos-paper-gift-bag",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "افتح أداة إعداد عرض السعر",
+    "href": "/ar/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "اسأل عن تفصيل",
+    "href": "/ar/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "اسأل سؤالًا محددًا →",
+    "href": "/ar/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "احصل على عرض سعر",
+    "href": "/ar/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "",
+    "href": "/?s=",
+    "visible": false,
+    "where": "header"
+   },
+   {
+    "text": "مجموعة عينات",
+    "href": "/samples/",
+    "visible": false,
+    "where": "header"
+   },
+   {
+    "text": "عرض سعر فوري",
+    "href": "/ar/get-a-quote/",
+    "visible": false,
+    "where": "header"
+   },
+   {
+    "text": "أنشئ عرض سعر",
+    "href": "/ar/get-a-quote/",
+    "visible": false,
+    "where": "header"
+   }
+  ],
+  "nativeEnglish": [],
+  "englishLeak": [],
+  "wrongHref": []
+ },
+ {
+  "width": 375,
+  "lang": "ar",
+  "page": "product",
+  "url": "http://localhost:8081/ar/product-drawer-jewelry-box/",
+  "links": [
+   {
+    "text": "اطلب عرض سعر",
+    "href": "/ar/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": false,
+    "where": "body"
+   },
+   {
+    "text": "عرض سعر فوري",
+    "href": "/ar/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": false,
+    "where": "body"
+   },
+   {
+    "text": "أنشئ عرض سعر",
+    "href": "/ar/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": false,
+    "where": "body"
+   },
+   {
+    "text": "احصل على عرض سعر",
+    "href": "/ar/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "اطلب عرض سعر · الحد الأدنى 500",
+    "href": "/ar/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "",
+    "href": "/?s=",
+    "visible": false,
+    "where": "header"
+   },
+   {
+    "text": "مجموعة عينات",
+    "href": "/samples/",
+    "visible": false,
+    "where": "header"
+   },
+   {
+    "text": "عرض سعر فوري",
+    "href": "/ar/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": false,
+    "where": "header"
+   },
+   {
+    "text": "أنشئ عرض سعر",
+    "href": "/ar/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": false,
+    "where": "header"
+   }
+  ],
+  "nativeEnglish": [],
+  "englishLeak": [],
+  "wrongHref": []
+ },
+ {
+  "width": 375,
+  "lang": "de",
+  "page": "home",
+  "url": "http://localhost:8081/de/",
+  "links": [
+   {
+    "text": "Angebot einholen",
+    "href": "/de/get-a-quote/",
+    "visible": false,
+    "where": "body"
+   },
+   {
+    "text": "Sofortangebot",
+    "href": "/de/get-a-quote/",
+    "visible": false,
+    "where": "body"
+   },
+   {
+    "text": "Angebot erstellen",
+    "href": "/de/get-a-quote/",
+    "visible": false,
+    "where": "body"
+   },
+   {
+    "text": "Angebot erstellen →",
+    "href": "/de/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Konfigurieren →",
+    "href": "/de/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Konfigurieren →",
+    "href": "/de/get-a-quote/?style=rigid&qty=500&product=product-lid-and-base-jewelry-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Konfigurieren →",
+    "href": "/de/get-a-quote/?style=rigid&qty=500&product=product-jewelry-box-with-insert",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Konfigurieren →",
+    "href": "/de/get-a-quote/?style=rigid&qty=500&product=product-window-lid-rigid-gift-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Konfigurieren →",
+    "href": "/de/get-a-quote/?style=rigid&qty=500&product=product-hinged-nonmagnetic-rigid-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Konfigurieren →",
+    "href": "/de/get-a-quote/?style=mailer&qty=500&product=product-corrugated-roll-end-hinged-lid",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Konfigurieren →",
+    "href": "/de/get-a-quote/?style=bag&qty=500&product=product-euro-tote-paper-carrier",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Konfigurieren →",
+    "href": "/de/get-a-quote/?style=bag&qty=500&product=product-sos-paper-gift-bag",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Angebotsrechner öffnen",
+    "href": "/de/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Frage stellen",
+    "href": "/de/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Konkrete Frage stellen →",
+    "href": "/de/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Angebot anfordern",
+    "href": "/de/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "",
+    "href": "/?s=",
+    "visible": false,
+    "where": "header"
+   },
+   {
+    "text": "Musterset",
+    "href": "/samples/",
+    "visible": false,
+    "where": "header"
+   },
+   {
+    "text": "Sofortangebot",
+    "href": "/de/get-a-quote/",
+    "visible": false,
+    "where": "header"
+   },
+   {
+    "text": "Angebot erstellen",
+    "href": "/de/get-a-quote/",
+    "visible": false,
+    "where": "header"
+   }
+  ],
+  "nativeEnglish": [],
+  "englishLeak": [],
+  "wrongHref": []
+ },
+ {
+  "width": 375,
+  "lang": "de",
+  "page": "product",
+  "url": "http://localhost:8081/de/product-drawer-jewelry-box/",
+  "links": [
+   {
+    "text": "Angebot einholen",
+    "href": "/de/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": false,
+    "where": "body"
+   },
+   {
+    "text": "Sofortangebot",
+    "href": "/de/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": false,
+    "where": "body"
+   },
+   {
+    "text": "Angebot erstellen",
+    "href": "/de/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": false,
+    "where": "body"
+   },
+   {
+    "text": "Angebot anfordern",
+    "href": "/de/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "Angebot anfragen · Mindestmenge 500",
+    "href": "/de/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "",
+    "href": "/?s=",
+    "visible": false,
+    "where": "header"
+   },
+   {
+    "text": "Musterset",
+    "href": "/samples/",
+    "visible": false,
+    "where": "header"
+   },
+   {
+    "text": "Sofortangebot",
+    "href": "/de/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": false,
+    "where": "header"
+   },
+   {
+    "text": "Angebot erstellen",
+    "href": "/de/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": false,
+    "where": "header"
+   }
+  ],
+  "nativeEnglish": [],
+  "englishLeak": [],
+  "wrongHref": []
+ },
+ {
+  "width": 375,
+  "lang": "ja",
+  "page": "home",
+  "url": "http://localhost:8081/ja/",
+  "links": [
+   {
+    "text": "見積もりを取る",
+    "href": "/ja/get-a-quote/",
+    "visible": false,
+    "where": "body"
+   },
+   {
+    "text": "すぐに見積もり",
+    "href": "/ja/get-a-quote/",
+    "visible": false,
+    "where": "body"
+   },
+   {
+    "text": "見積もりを作成",
+    "href": "/ja/get-a-quote/",
+    "visible": false,
+    "where": "body"
+   },
+   {
+    "text": "見積もりを作成 →",
+    "href": "/ja/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "仕様を選ぶ →",
+    "href": "/ja/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "仕様を選ぶ →",
+    "href": "/ja/get-a-quote/?style=rigid&qty=500&product=product-lid-and-base-jewelry-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "仕様を選ぶ →",
+    "href": "/ja/get-a-quote/?style=rigid&qty=500&product=product-jewelry-box-with-insert",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "仕様を選ぶ →",
+    "href": "/ja/get-a-quote/?style=rigid&qty=500&product=product-window-lid-rigid-gift-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "仕様を選ぶ →",
+    "href": "/ja/get-a-quote/?style=rigid&qty=500&product=product-hinged-nonmagnetic-rigid-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "仕様を選ぶ →",
+    "href": "/ja/get-a-quote/?style=mailer&qty=500&product=product-corrugated-roll-end-hinged-lid",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "仕様を選ぶ →",
+    "href": "/ja/get-a-quote/?style=bag&qty=500&product=product-euro-tote-paper-carrier",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "仕様を選ぶ →",
+    "href": "/ja/get-a-quote/?style=bag&qty=500&product=product-sos-paper-gift-bag",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "見積もり作成ツールを開く",
+    "href": "/ja/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "質問する",
+    "href": "/ja/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "具体的に質問する →",
+    "href": "/ja/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "見積を取得",
+    "href": "/ja/get-a-quote/",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "",
+    "href": "/?s=",
+    "visible": false,
+    "where": "header"
+   },
+   {
+    "text": "サンプルキット",
+    "href": "/samples/",
+    "visible": false,
+    "where": "header"
+   },
+   {
+    "text": "すぐに見積もり",
+    "href": "/ja/get-a-quote/",
+    "visible": false,
+    "where": "header"
+   },
+   {
+    "text": "見積もりを作成",
+    "href": "/ja/get-a-quote/",
+    "visible": false,
+    "where": "header"
+   }
+  ],
+  "nativeEnglish": [],
+  "englishLeak": [],
+  "wrongHref": []
+ },
+ {
+  "width": 375,
+  "lang": "ja",
+  "page": "product",
+  "url": "http://localhost:8081/ja/product-drawer-jewelry-box/",
+  "links": [
+   {
+    "text": "見積もりを取る",
+    "href": "/ja/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": false,
+    "where": "body"
+   },
+   {
+    "text": "すぐに見積もり",
+    "href": "/ja/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": false,
+    "where": "body"
+   },
+   {
+    "text": "見積もりを作成",
+    "href": "/ja/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": false,
+    "where": "body"
+   },
+   {
+    "text": "見積を取得",
+    "href": "/ja/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "見積もりを依頼 · 最低注文数500個",
+    "href": "/ja/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": true,
+    "where": "body"
+   },
+   {
+    "text": "",
+    "href": "/?s=",
+    "visible": false,
+    "where": "header"
+   },
+   {
+    "text": "サンプルキット",
+    "href": "/samples/",
+    "visible": false,
+    "where": "header"
+   },
+   {
+    "text": "すぐに見積もり",
+    "href": "/ja/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": false,
+    "where": "header"
+   },
+   {
+    "text": "見積もりを作成",
+    "href": "/ja/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+    "visible": false,
+    "where": "header"
+   }
+  ],
+  "nativeEnglish": [],
+  "englishLeak": [],
+  "wrongHref": []
+ }
+]

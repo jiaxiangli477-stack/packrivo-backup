@@ -462,6 +462,8 @@
   outline-offset: 2px;
 }
 @media (max-width: 900px) {
+  /* 手机端标题区需要和正文一致的左右安全边距；padding-inline 让阿语自动落在右侧 */
+  .pkq-head { padding-inline: 20px; }
   .pkq-steps { gap: 6px; }
   .pkq-chip { padding: 8px 12px; }
   .pkq-submit { min-height: 48px; }

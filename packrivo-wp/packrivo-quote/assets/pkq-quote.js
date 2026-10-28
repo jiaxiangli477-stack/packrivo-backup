@@ -3,11 +3,11 @@
   'use strict';
 
   var MATERIALS = {
-    kraft: { label: 'Kraft E-flute', factor: 1.0, note: 'Recycled, natural finish, best value' },
-    white: { label: 'White E-flute', factor: 1.06, note: 'Bright print surface' },
+    kraft: { label: 'Kraft corrugated', factor: 1.0, note: 'Recycled, natural finish, best value' },
+    white: { label: 'White corrugated', factor: 1.06, note: 'Bright print surface' },
     recycled: { label: '100% recycled board', factor: 1.1, note: 'Certification subject to supplier verification' },
     corrugated: { label: 'Double-wall corrugated', factor: 1.22, note: 'Heavy-duty transit' },
-    rigidboard: { label: 'Rigid greyboard 2 mm', factor: 1.75, note: 'Luxury wrap construction' },
+    rigidboard: { label: 'Rigid greyboard', factor: 1.75, note: 'Luxury wrap construction' },
     kraftpoly: { label: 'Kraft-look poly', factor: 0.92, note: 'Water resistant' },
     compostable: { label: 'Compostable stock', factor: 1.38, note: 'Compostability subject to supplier verification' }
   };

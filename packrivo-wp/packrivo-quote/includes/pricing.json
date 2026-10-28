@@ -43,12 +43,12 @@
   },
   "materials": {
     "kraft": {
-      "label": "Kraft E-flute",
+      "label": "Kraft corrugated",
       "factor": 1,
       "note": "Recycled, natural finish, best value"
     },
     "white": {
-      "label": "White E-flute",
+      "label": "White corrugated",
       "factor": 1.06,
       "note": "Bright print surface for full-colour art"
     },
@@ -63,7 +63,7 @@
       "note": "Heavy-duty transit protection"
     },
     "rigidboard": {
-      "label": "Rigid greyboard 2 mm",
+      "label": "Rigid greyboard",
       "factor": 1.75,
       "note": "Wrap-around luxury construction"
     },

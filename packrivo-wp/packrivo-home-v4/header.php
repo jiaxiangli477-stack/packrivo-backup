@@ -4,7 +4,10 @@
  * The live theme's bug: the top-level word only opened on hover, so a click did nothing.
  */
 $shop_url = home_url('/products/');
-$quote_url = home_url('/get-a-quote/');
+// 语种页面上 mu-plugin 已把 REQUEST_URI 改写成英文路径，home_url() 只会给出英文地址，
+// 所以报价按钮的语种前缀要在这里自己加。
+$pk_lang_prefix = function_exists('packrivo_lang') && packrivo_lang() !== null ? '/' . packrivo_lang() : '';
+$quote_url = home_url($pk_lang_prefix . '/get-a-quote/');
 ?><!doctype html>
 <html <?php language_attributes(); ?>>
 <head>

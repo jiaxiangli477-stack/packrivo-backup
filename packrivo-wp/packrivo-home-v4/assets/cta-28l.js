@@ -27,7 +27,10 @@
     var isCurrentProduct = !!product && !!config.product && product.replace(/^product-/, '') === config.product.replace(/^product-/, '');
     if (isCurrentProduct) product = config.product;
     var style = u.searchParams.get('style') || styleFor(product) || (isCurrentProduct ? config.style : '');
-    var target = new URL(lang ? '/' + lang + '/inquiry/' : '/get-a-quote/', site);
+    // 报价类链接在语种页面统一去本语种的配置器；只有真正的询盘链接留在询盘页。
+    // .pr-quote-cta 是父主题/MU 注入的页脚报价按钮，按类名识别，不碰 MU 源码。
+    var wantsBuilder = quotePath || sticky || quoteText || link.classList.contains('pr-quote-cta');
+    var target = new URL(lang ? '/' + lang + '/' + (wantsBuilder ? 'get-a-quote' : 'inquiry') + '/' : '/get-a-quote/', site);
     if (product) {
       // Localized visitors go straight to the builder when the engine prices the
       // structure; otherwise the brief form stays the destination.

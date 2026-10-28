@@ -172,7 +172,7 @@ final class PKQ_Plugin
             }, $settings['styles']),
             'i18n' => [
                 'title' => self::t('Build your quote'),
-                'sub' => self::t('Five steps. Live pricing. An engineer confirms the dieline before anything is cut.'),
+                'sub' => self::t('Five steps. Live pricing. An engineer confirms the cutting template before anything is cut.'),
                 'submit' => self::t('Request this quote'),
                 'sending' => self::t('Sending…'),
                 'done' => self::t('Quote requested'),
