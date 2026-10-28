@@ -1,0 +1,10 @@
+step0 :: 本步判据：PASS=6 FAIL=0 :: EXIT=0
+step1 :: 本步判据：PASS=10 FAIL=0 :: EXIT=0
+step2 :: 本步判据：PASS=8 FAIL=0 :: EXIT=0
+step3 :: 本步判据：PASS=11 FAIL=0 :: EXIT=0
+step4 :: 本步判据：PASS=3 FAIL=0 :: EXIT=0
+step5 :: 本步判据：PASS=4 FAIL=0 :: EXIT=0
+step6 :: 本步判据：PASS=5 FAIL=0 :: EXIT=0
+step7 :: 本步判据：PASS=1 FAIL=0 :: EXIT=0
+step8 :: 本步判据：PASS=9 FAIL=0 :: EXIT=0
+step9 :: 本步判据：PASS=8 FAIL=0 :: EXIT=0

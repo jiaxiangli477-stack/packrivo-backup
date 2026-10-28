@@ -78,6 +78,10 @@ mkdir -p "$PKG"
 **通过判据**：`docker ps` 里的 php/mysql/nginx 都在；`core version` = `7.1.3`；PHP = `8.3.x`；`template` = `packrivo-static-bridge-1.2.38`；子主题与报价插件都「未安装」；`mysqldump --version` 有输出；**导出探针的字节数 > 0**。
 若子主题或报价插件**已经存在**，说明不是首次安装，**停下**，本手册的 4/5 步与 9 步不适用。
 
+> **导出探针每轮都要重跑，不能靠上一轮留下的包装。** 下面的包装装在容器 `/usr/local/bin` 里，容器一重建就没了；28s 演练就是先把包装拆掉再跑，确认第 0 步真的会走「探针失败 → 按补救块装包装 → 重探成功」这条路。探针字节数为 0 或报 TLS/SSL error 就当没通过，别往下做第 1 步。
+>
+> **判据只看补救后的结果。** 包装本来不在时，第一次探针失败是**预期现象，不算本步 FAIL**；按补救块装上包装、重探一次到字节数 > 0 才算通过。装了包装仍然 0 字节/报 TLS 错误，才是真 FAIL，停下别做第 1 步。
+
 **若导出探针报 `TLS/SSL error: SSL is required, but the server does not support it`**（`mysql` 侧没开 TLS + 客户端是 mariadb 11.x 时的典型症状），做一次容器内的客户端包装再重探。要点：`--skip-ssl` 必须**追加在参数末尾**，因为 wp-cli 传的 `--no-defaults` 必须保持在第一位，放前面会被拒。
 
 ```bash
@@ -228,12 +232,15 @@ mkdir -p "$PKG/merged"
 docker cp php:"$PKGC/merged/." "$PKG/merged/"
 cat "$PKG/merged/conflicts.json"
 
-# 2.5 校验（容器内跑，路径都在容器侧）
-docker exec php sh -c 'ls /pkg/merged/*-dict.json | wc -l'          # 期望 11
-docker exec php sh -c 'ls /pkg/merged/*-js.json   | wc -l'          # 期望 11
-docker exec php sh -c 'for f in /pkg/merged/*.json; do php -r "json_decode(file_get_contents(\$argv[1]),true) or exit(1);" "$f" || echo "坏 JSON: $f"; done'
-docker exec php sh -c 'grep -q "\"/get-a-quote/\"" /pkg/merged/paths.json && echo "paths ok"'
-docker exec php sh -c 'php -r "\$p=json_decode(file_get_contents(\"/pkg/merged/paths.json\"),true); exit((is_array(\$p)&&count(\$p)>=146)?0:1);" && echo "paths count ok"'
+# 2.5 校验（容器内跑，路径都在容器侧）。每条都打印 PASS:/FAIL:，任一条 FAIL → 本步 FAIL
+docker exec php sh -c 'test -f /pkg/merged/paths.json && echo "PASS: paths.json 存在" || { echo "FAIL: paths.json 缺失（常见原因：当天 i18n 快照里 *-js.json 为空或坏 JSON，合并工具没产出 js 与路径表）"; exit 1; }'
+docker exec php sh -c 'grep -q "\"/get-a-quote/\"" /pkg/merged/paths.json && echo "PASS: paths 含 /get-a-quote/" || { echo "FAIL: paths.json 缺 /get-a-quote/"; exit 1; }'
+docker exec php sh -c 'php -r "\$p=json_decode(file_get_contents(\"/pkg/merged/paths.json\"),true); exit((is_array(\$p)&&count(\$p)>=146)?0:1);" && echo "PASS: paths 条数 >= 146" || { echo "FAIL: paths 条数 < 146"; exit 1; }'
+docker exec php sh -c '[ "$(ls /pkg/merged/*-dict.json 2>/dev/null | wc -l)" = "11" ] && echo "PASS: dict = 11" || { echo "FAIL: dict 文件数 != 11"; exit 1; }'
+docker exec php sh -c '[ "$(ls /pkg/merged/*-js.json   2>/dev/null | wc -l)" = "11" ] && echo "PASS: js = 11"   || { echo "FAIL: js 文件数 != 11";   exit 1; }'
+docker exec php sh -c 'for f in /pkg/merged/*.json; do php -r "\$d=json_decode(file_get_contents(\$argv[1]),true); exit((json_last_error()===JSON_ERROR_NONE)?0:1);" "$f" || echo "坏 JSON: $f"; done' > /tmp/badjson.txt
+if [ -s /tmp/badjson.txt ]; then echo "FAIL: 有坏 JSON"; cat /tmp/badjson.txt; else echo "PASS: 无坏 JSON"; fi
+rm -f /tmp/badjson.txt
 
 # 2.6 装上去（宿主机侧，只覆盖同名文件；conflicts.json 不要拷进 i18n）
 cp "$PKG/merged"/*-dict.json "$I18N/"
@@ -245,8 +252,9 @@ ls -l "$I18N" | head
 **通过判据**
 
 - `*-dict.json` = **11**、`*-js.json` = **11**；
-- 每个 JSON 都能 `json_decode`，没有「坏 JSON」行；
+- 每个 JSON 都能 `json_decode`（判据看 `json_last_error()`，不看返回值真假——`conflicts.json` 是 `[]` 也合法，空数组在 PHP 里是 falsy，用 `or exit(1)` 会把它误判成坏 JSON），没有「坏 JSON」行；
 - `paths.json` 含 `"/get-a-quote/"`，条目数 ≥ 146；
+- **2.5 的每一条都要打印出 `PASS:`**；任一条打 `FAIL:` → **本步 FAIL**：按下面「回滚」把字典恢复回去并**停止**，修好合并输入后重跑第 2 步。不得把 exit=0 的静默失败当通过（2026-10-28 演练实测：`paths.json` 缺失时整步仍 exit=0）；
 - `conflicts.json` 已人工逐条看过：凡是被生产值覆盖的键，都是我们**这次不打算改**的；
 - 装完后 `/de/` 仍正常：`curl -s "$SITE/de/" | grep -c 'lang="de"'` ≥ 1。
 
@@ -272,6 +280,14 @@ cp -a "$BACKUP/i18n/." "$I18N/"
 BACKUP=/home/web/backups/$(cat /home/web/backups/CURRENT_LAUNCH)
 docker exec php mkdir -p "$PKGC/rollback"          # 2.2 已把包灌进容器
 
+# 3.0 应用前守卫：/pkg/rollback 里若已有 JSON，它的 site 必须等于本次的 $SITE。
+# 残留他站/上一轮的 JSON 会让 apply 以 site/input 不符拒写，所以先拦一次，别等 apply 报错。
+for f in $(docker exec php sh -c 'ls /pkg/rollback/*.json 2>/dev/null'); do
+  docker exec php php -r '$j=json_decode(file_get_contents($argv[1]),true); exit((($j["site"]??"")===$argv[2])?0:1);' "$f" "$SITE" \
+    && echo "PASS: $f site 与本轮一致" \
+    || { echo "FAIL: $f 非本轮产物（site 与 $SITE 不一致），先清空 /pkg/rollback 再重跑第 3 步"; exit 1; }
+done
+
 # 3.1 dry-run
 $WPCLI eval-file "$PKGC/scripts/product-buyers-27g/import.php" plan "$PKGC" "$SITE" "$PKGC/rollback/rollback-27g.json" all134
 $WPCLI eval-file "$PKGC/scripts/hubs-27i/import.php"          plan "$PKGC" "$SITE" "$PKGC/rollback/rollback-27i.json"
@@ -288,8 +304,11 @@ ls -l "$BACKUP/rollback/"
 **通过判据**
 
 - `plan` 输出 `input_pages=134 preflight=PASS writes=0` 与 `hub_pages=8 preflight=PASS`；
-- `apply` 输出 `apply_updated=134` / `apply_updated=8`（重复执行时 `already_current` 计入总数）；
-- `verify` 输出 `metadata_mismatches=0`（27i 还要求 `H1_body_URL_unchanged=8/8 inquiry_description_preserved=yes`）；
+- `apply` 的**总数**对得上：`apply_updated + already_current = 134`（27g）、`= 8`（27i）。**不要要求 `apply_updated` 单独等于 134**——重复执行时 `already_current` 会吃掉其中一部分（28q 实测就是 130 + 4、7 + 1）；
+- 演练环境另加一条：`apply_updated > 0`。等于 0 说明演练库的内容没有被复位，导入从未真实写入，**这一轮演练作废**；
+- `apply` 输出 `URL_and_body_check=PASS`（27g）；27i 输出 `H1_body_URL_check=PASS` 与 `H1_body_URL_unchanged=8/8`；
+- 出现 `Backup input/site mismatch` / `Original backup site/input mismatch` / `Expected-site guard failed` → **本步 FAIL**：先查 `/pkg/rollback` 有没有他站残留（3.0 守卫本该拦住），按下面「回滚」处理并**停止**；
+- 27g `verify` 输出 `URL_and_non_H1_body_unchanged=134/134`；27i `verify` 输出 `metadata_mismatches=0`，并且有 `H1_body_URL_unchanged=8/8` 与 `inquiry_description_preserved=yes`（两个脚本的 verify 打的字段不一样，拿 27i 的字段去判 27g 会一直 FAIL）；
 - `$BACKUP/rollback/` 里两个 JSON 都在（27g 约 1.2 MB，含全部原值）：
   ```bash
   test -s "$BACKUP/rollback/rollback-27g.json" && echo "27g rollback ok"
@@ -536,6 +555,14 @@ $WPCLI plugin list --format=csv | grep packrivo-quote || echo "报价插件已�
 # 9.3 内容（134 产品页 + 8 主页面，先 rollback-check 再 rollback）
 docker cp "$BACKUP/rollback/rollback-27i.json" php:"$PKGC/rollback/"
 docker cp "$BACKUP/rollback/rollback-27g.json" php:"$PKGC/rollback/"
+
+# 9.3 回滚前守卫：推回去的两个 JSON 必须都是本轮第 3 步生成的（site 与本轮一致），
+# 否则 rollback 会以 site/input 不符拒写，而那时已经删了主题和插件，损失更大。
+for f in /pkg/rollback/rollback-27g.json /pkg/rollback/rollback-27i.json; do
+  docker exec php php -r '$j=json_decode(file_get_contents($argv[1]),true); exit((($j["site"]??"")===$argv[2])?0:1);' "$f" "$SITE" \
+    && echo "PASS: $f site 与本轮一致" \
+    || { echo "FAIL: $f site 与 $SITE 不一致"; exit 1; }
+done
 $WPCLI eval-file "$PKGC/scripts/hubs-27i/import.php"          rollback-check "$PKGC" "$SITE" "$PKGC/rollback/rollback-27i.json"
 $WPCLI eval-file "$PKGC/scripts/hubs-27i/import.php"          rollback       "$PKGC" "$SITE" "$PKGC/rollback/rollback-27i.json"
 $WPCLI eval-file "$PKGC/scripts/product-buyers-27g/import.php" rollback-check "$PKGC" "$SITE" "$PKGC/rollback/rollback-27g.json" all134
@@ -638,6 +665,7 @@ cp -a "$BACKUP/i18n/." "$I18N/"
 | 回滚（28q） | 第 9 步 | 站点快照与基线**逐字节一致**（`4972cd81…`）；注意这一步**没有导入数据库**，整库回滚见 28r |
 | 再正向（28q） | 第 1–8 步 | 站点快照与第一次正向**逐字节一致**（`4247693f…`），说明每步可重复执行 |
 | **最后手段（28r）** | 第 9 步末尾的整库导入 + 9.6/9.5/9.4/9.2 文件部分 | 原始一轮 `PASS=16 FAIL=2 EXIT=1`（L-4/L-6 判据写法与顺序都错了，见该节注记），按改写的判据复核 `PASS=11 FAIL=0 EXIT=0`；整站快照回到基线 `4972cd81…`（逐字节一致） |
+| **并入三个守卫后重跑（28s）** | 第 0–8 步正向 + 第 9 步回滚 | 见 `DSH-RESULT-2026-10-28s.md`：每步 `PASS=n FAIL=0` 且 `EXIT=0`；复位快照 `4972cd81…`、正向快照 `4247693f…`、回滚后回到 `4972cd81…`；反向自检确认 3.0 守卫拦得住他站残留 JSON |
 
 28q 补跑过第 0.1 步新加的**数据库导出探针**：拆掉客户端包装时探针报 `TLS/SSL error: SSL is required`、导出 0 字节；按本手册打包装后导出 36,381,501 B、40 张表。
 

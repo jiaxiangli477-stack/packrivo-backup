@@ -1,0 +1,61 @@
+
+############### STEP 1 备份 ###############
+
+++ date +%Y%m%d-%H%M
++ LAUNCH=packrivo-launch-20261028-1958
++ mkdir -p /home/web/backups
++ echo packrivo-launch-20261028-1958
++ BACKUP=/home/web/backups/packrivo-launch-20261028-1958
++ mkdir -p /home/web/backups/packrivo-launch-20261028-1958/mu /home/web/backups/packrivo-launch-20261028-1958/i18n /home/web/backups/packrivo-launch-20261028-1958/db /home/web/backups/packrivo-launch-20261028-1958/rollback
++ cp -a /home/web/html/www.packrivo.com/wordpress/wp-content/mu-plugins/. /home/web/backups/packrivo-launch-20261028-1958/mu/
++ cp -a /home/web/html/www.packrivo.com/wordpress/wp-content/uploads/packrivo-i18n/. /home/web/backups/packrivo-launch-20261028-1958/i18n/
++ sha256sum /home/web/html/www.packrivo.com/wordpress/wp-content/mu-plugins/packrivo-i18n.php /home/web/html/www.packrivo.com/wordpress/wp-content/mu-plugins/packrivo-site-remediation-20261022.php
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root db export /tmp/packrivo-before-launch.sql --skip-plugins --skip-themes
+Success: Exported to '/tmp/packrivo-before-launch.sql'.
++ docker cp php:/tmp/packrivo-before-launch.sql /home/web/backups/packrivo-launch-20261028-1958/db.sql
++ docker exec php rm -f /tmp/packrivo-before-launch.sql
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root plugin list --format=csv
+Warning: wp_update_plugins(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root theme list --format=csv
+Warning: wp_update_themes(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root option get template
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root option get stylesheet
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root post list --post_type=page --post_status=publish --fields=ID,post_name,post_title --format=csv
++ curl -s http://nginx/wp-sitemap.xml
++ curl -s http://nginx/robots.txt
++ cat
+++ date -u
+++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root option get stylesheet
+++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root option get template
+++ test -d /home/web/html/www.packrivo.com/wordpress/wp-content/themes/packrivo-home-v4
+++ echo no
+++ test -d /home/web/html/www.packrivo.com/wordpress/wp-content/plugins/packrivo-quote
+++ echo no
++ cat /home/web/backups/packrivo-launch-20261028-1958/INSTALL-STATE.txt
+launch=packrivo-launch-20261028-1958
+time=Wed Oct 28 20:00:06 UTC 2026
+theme_before=packrivo-static-bridge-1.2.38
+parent_before=packrivo-static-bridge-1.2.38
+child_theme_present=no
+quote_plugin_present=no
++ set +x
+
+############### STEP 1 通过判据 ###############
+
+++ cat /home/web/backups/CURRENT_LAUNCH
++ BACKUP=/home/web/backups/packrivo-launch-20261028-1958
++ set +x
+
+############### STEP 1 通过判据 ###############
+
+PASS: 1a mu 文件到位
+PASS: 1b mu 文件到位
+PASS: 1c i18n 文件到位
+PASS: 1d i18n 数量 >= 12
+PASS: 1e db.sql 非空
+PASS: 1f db.sql 含 CREATE TABLE
+PASS: 1g 两个 mu 哈希
+PASS: 1h sitemap 快照非空
+PASS: 1i 首装状态已记录
+PASS: 1j CURRENT_LAUNCH 可读
+本步判据：PASS=10 FAIL=0

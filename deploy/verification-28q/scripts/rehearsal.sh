@@ -70,6 +70,42 @@ step0)
   docker exec php mysqldump --version
   mkdir -p "$PKG"
   set +x
+
+  # 0.1 导出探针：包装在 /usr/local/bin，容器重建就没了，每轮都从这一步开始
+  hr "STEP 0.1 导出探针（判据：字节数 > 0）"
+  set -x
+  $WPCLI db export /tmp/probe.sql --skip-plugins --skip-themes 2>&1 | tail -2
+  set +x
+  PSZ=$(docker exec php sh -c 'wc -c < /tmp/probe.sql 2>/dev/null' | tr -d ' ')
+  docker exec php rm -f /tmp/probe.sql
+  echo "探针字节数 = ${PSZ:-0}"
+  if [ "${PSZ:-0}" -gt 0 ]; then
+    ckp "0f 导出探针 > 0 字节（$PSZ，包装本来就在）"
+  else
+    echo "观察: 探针没通过（${PSZ:-0} 字节）→ 按 0.1 补救块装包装后重探。这一条不算 FAIL，判据是补救后的结果"
+    set -x
+    docker exec php sh -c 'cat > /usr/local/bin/mariadb-dump <<EOF
+#!/bin/sh
+exec /usr/bin/mariadb-dump "\$@" --skip-ssl
+EOF
+chmod +x /usr/local/bin/mariadb-dump'
+    docker exec php sh -c 'cat > /usr/local/bin/mariadb <<EOF
+#!/bin/sh
+exec /usr/bin/mariadb "\$@" --skip-ssl
+EOF
+chmod +x /usr/local/bin/mariadb'
+    set +x
+    $WPCLI db export /tmp/probe.sql --skip-plugins --skip-themes 2>&1 | tail -2
+    PSZ2=$(docker exec php sh -c 'wc -c < /tmp/probe.sql 2>/dev/null' | tr -d ' ')
+    docker exec php rm -f /tmp/probe.sql
+    echo "装包装后探针字节数 = ${PSZ2:-0}"
+    if [ "${PSZ2:-0}" -gt 0 ]; then
+      ckp "0f 装包装后导出探针 > 0 字节（$PSZ2）"
+    else
+      ckf "0f 装包装后探针仍是 0 字节（${PSZ2:-0}）—— 第 1 步的备份会失败，停下"
+    fi
+  fi
+  set +x
   hr "STEP 0.2 上传清单核对（演练环境用本地目录代替 scp）"
   set -x
   sha256sum "$PKG"/*.zip
@@ -158,7 +194,7 @@ step2)
   cat "$PKG/merged/conflicts.json"
   docker exec php sh -c 'ls /pkg/merged/*-dict.json | wc -l'
   docker exec php sh -c 'ls /pkg/merged/*-js.json   | wc -l'
-  docker exec php sh -c 'for f in /pkg/merged/*.json; do php -r "json_decode(file_get_contents(\$argv[1]),true) or exit(1);" "$f" || echo "坏 JSON: $f"; done'
+  docker exec php sh -c 'for f in /pkg/merged/*.json; do php -r "\$d=json_decode(file_get_contents(\$argv[1]),true); exit((json_last_error()===JSON_ERROR_NONE)?0:1);" "$f" || echo "坏 JSON: $f"; done'
   docker exec php sh -c 'grep -q "\"/get-a-quote/\"" /pkg/merged/paths.json && echo "paths ok"'
   docker exec php sh -c 'php -r "\$p=json_decode(file_get_contents(\"/pkg/merged/paths.json\"),true); exit((is_array(\$p)&&count(\$p)>=146)?0:1);" && echo "paths count ok"'
   cp "$PKG/merged"/*-dict.json "$I18N/"
@@ -170,11 +206,16 @@ step2)
   set -x
   curl -s "$SITE/de/" | grep -c 'lang="de"'
   set +x
-  ck "2a dict 11 个"        test "$(docker exec php sh -c 'ls /pkg/merged/*-dict.json | wc -l' | tr -d ' ')" = "11"
-  ck "2b js 11 个"          test "$(docker exec php sh -c 'ls /pkg/merged/*-js.json | wc -l' | tr -d ' ')" = "11"
-  ck "2c paths.json >= 146" test "$(docker exec php php -r 'echo count(json_decode(file_get_contents("/pkg/merged/paths.json"), true));')" -ge 146
-  ck "2d 冲突 0"            test "$(docker exec php php -r '$c=json_decode(file_get_contents("/pkg/merged/conflicts.json"), true); echo is_array($c)?count($c):-1;')" = "0"
-  ck "2e de 站 lang=de"     sh -c "curl -s \"$SITE/de/\" | grep -q 'lang=\"de\"'"
+  ck "2a paths.json 存在"        docker exec php test -f /pkg/merged/paths.json
+  ck "2b paths 含 /get-a-quote/"  docker exec php grep -q "/get-a-quote/" /pkg/merged/paths.json
+  ck "2c paths 条数 >= 146"       test "$(docker exec php php -r 'echo count((array)json_decode(file_get_contents("/pkg/merged/paths.json"), true));' | tr -d ' ')" -ge 146
+  ck "2d dict = 11"              test "$(docker exec php sh -c 'ls /pkg/merged/*-dict.json | wc -l' | tr -d ' ')" = "11"
+  ck "2e js = 11"                test "$(docker exec php sh -c 'ls /pkg/merged/*-js.json | wc -l' | tr -d ' ')" = "11"
+  docker exec php sh -c 'for f in /pkg/merged/*.json; do php -r "\$d=json_decode(file_get_contents(\$argv[1]),true); exit((json_last_error()===JSON_ERROR_NONE)?0:1);" "$f" || echo "坏 JSON: $f"; done' > /tmp/badjson.txt
+  ck "2f 无坏 JSON"              test ! -s /tmp/badjson.txt
+  cat /tmp/badjson.txt 2>/dev/null; rm -f /tmp/badjson.txt
+  ck "2g 冲突 0"                 test "$(docker exec php php -r '$c=json_decode(file_get_contents("/pkg/merged/conflicts.json"), true); echo is_array($c)?count($c):-1;')" = "0"
+  ck "2h de 站 lang=de"          sh -c "curl -s \"$SITE/de/\" | grep -q 'lang=\"de\"'"
   step_end || exit 1
   ;;
 
@@ -183,11 +224,27 @@ step3)
   set -x
   BACKUP=/home/web/backups/$(cat /home/web/backups/CURRENT_LAUNCH)
   docker exec php mkdir -p "$PKGC/rollback"
+
+  # 3.0 应用前守卫：/pkg/rollback 里已有的 JSON，site 必须等于本轮 $SITE
+  hr "STEP 3.0 应用前守卫"
+  set +x
+  GUARD30=0
+  for f in $(docker exec php sh -c 'ls /pkg/rollback/*.json 2>/dev/null'); do
+    if docker exec php php -r '$j=json_decode(file_get_contents($argv[1]),true); exit((($j["site"]??"")===$argv[2])?0:1);' "$f" "$SITE"; then
+      ckp "3.0 $f site 与本轮一致"
+    else
+      S=$(docker exec php php -r '$j=json_decode(file_get_contents($argv[1]),true); echo $j["site"] ?? "(无)";' "$f")
+      ckf "3.0 $f 非本轮产物（site=$S，期望 $SITE），先清空 /pkg/rollback"
+      GUARD30=1
+    fi
+  done
+  [ "$GUARD30" -eq 0 ] || { echo "3.0 守卫拦截，apply 不执行"; step_end || exit 1; }
+  set -x
   $WPCLI eval-file "$PKGC/scripts/product-buyers-27g/import.php" plan "$PKGC" "$SITE" "$PKGC/rollback/rollback-27g.json" all134
   $WPCLI eval-file "$PKGC/scripts/hubs-27i/import.php"          plan "$PKGC" "$SITE" "$PKGC/rollback/rollback-27i.json"
-  $WPCLI eval-file "$PKGC/scripts/product-buyers-27g/import.php" apply  "$PKGC" "$SITE" "$PKGC/rollback/rollback-27g.json" all134
+  $WPCLI eval-file "$PKGC/scripts/product-buyers-27g/import.php" apply  "$PKGC" "$SITE" "$PKGC/rollback/rollback-27g.json" all134 2>&1 | tee /tmp/a3g.txt
   $WPCLI eval-file "$PKGC/scripts/product-buyers-27g/import.php" verify "$PKGC" "$SITE" "$PKGC/rollback/rollback-27g.json" all134
-  $WPCLI eval-file "$PKGC/scripts/hubs-27i/import.php"          apply  "$PKGC" "$SITE" "$PKGC/rollback/rollback-27i.json"
+  $WPCLI eval-file "$PKGC/scripts/hubs-27i/import.php"          apply  "$PKGC" "$SITE" "$PKGC/rollback/rollback-27i.json" 2>&1 | tee /tmp/a3i.txt
   $WPCLI eval-file "$PKGC/scripts/hubs-27i/import.php"          verify "$PKGC" "$SITE" "$PKGC/rollback/rollback-27i.json"
   docker cp php:"$PKGC/rollback/." "$BACKUP/rollback/"
   ls -l "$BACKUP/rollback/"
@@ -199,10 +256,26 @@ step3)
   set +x
   V3G=$($WPCLI eval-file "$PKGC/scripts/product-buyers-27g/import.php" verify "$PKGC" "$SITE" "$PKGC/rollback/rollback-27g.json" all134 2>&1 | tail -1)
   echo "27g verify: $V3G"
-  case "$V3G" in *metadata_mismatches=0*) ckp "3a 27g verify metadata_mismatches=0" ;; *) ckf "3a 27g verify（$V3G）" ;; esac
+  case "$V3G" in *URL_and_non_H1_body_unchanged=134/134*) ckp "3a 27g verify URL_and_non_H1_body_unchanged=134/134" ;; *) ckf "3a 27g verify（$V3G）" ;; esac
   V3I=$($WPCLI eval-file "$PKGC/scripts/hubs-27i/import.php" verify "$PKGC" "$SITE" "$PKGC/rollback/rollback-27i.json" 2>&1 | tail -1)
   echo "27i verify: $V3I"
   case "$V3I" in *metadata_mismatches=0*) ckp "3b 27i verify metadata_mismatches=0" ;; *) ckf "3b 27i verify（$V3I）" ;; esac
+  A3G=$(grep -o 'apply_updated=[0-9]* already_current=[0-9]*' /tmp/a3g.txt | head -1)
+  A3I=$(grep -o 'apply_updated=[0-9]* already_current=[0-9]*' /tmp/a3i.txt | head -1)
+  echo "27g apply: $A3G"
+  echo "27i apply: $A3I"
+  U3G=$(echo "$A3G" | sed -n 's/.*apply_updated=\([0-9]*\).*/\1/p'); U3G=${U3G:-0}
+  C3G=$(echo "$A3G" | sed -n 's/.*already_current=\([0-9]*\).*/\1/p'); C3G=${C3G:-0}
+  U3I=$(echo "$A3I" | sed -n 's/.*apply_updated=\([0-9]*\).*/\1/p'); U3I=${U3I:-0}
+  C3I=$(echo "$A3I" | sed -n 's/.*already_current=\([0-9]*\).*/\1/p'); C3I=${C3I:-0}
+  echo "27g: apply_updated=$U3G already_current=$C3G 合计=$((U3G+C3G))"
+  echo "27i: apply_updated=$U3I already_current=$C3I 合计=$((U3I+C3I))"
+  ck "3·27g 总数 = 134（$U3G+$C3G=$((${U3G}+${C3G}))）" test "$((U3G+C3G))" = "134"
+  ck "3·27i 总数 = 8（$U3I+$C3I=$((${U3I}+${C3I}))）"   test "$((U3I+C3I))" = "8"
+  ck "3·27g apply_updated > 0（演练要求真实写入）"      test "$U3G" -gt 0
+  ck "3·27i apply_updated > 0（演练要求真实写入）"      test "$U3I" -gt 0
+  ck "3·27g URL_and_body_check=PASS"                    grep -q 'URL_and_body_check=PASS' /tmp/a3g.txt
+  ck "3·27i H1_body_URL_check=PASS"                     grep -q 'H1_body_URL_check=PASS' /tmp/a3i.txt
   ck "3c 27g rollback 依据非空" test -s "$BACKUP/rollback/rollback-27g.json"
   ck "3d 27i rollback 依据非空" test -s "$BACKUP/rollback/rollback-27i.json"
   ck "3e 产品页 200"           test "$(curl -s -o /dev/null -w '%{http_code}' "$SITE/product-drawer-jewelry-box/")" = "200"
@@ -303,8 +376,12 @@ step8)
   for u in / /products/ /de/ /ar/ /product-drawer-jewelry-box/; do
     ck "8· $u 200" test "$(curl -s -o /dev/null -w '%{http_code}' "$SITE$u")" = "200"
   done
-  ck "8· sitemap 未变"         sh -c "diff -q \"$BACKUP/before-sitemap.xml\" <(curl -s \"$SITE$SITEMAP\")"
-  ck "8· robots 未变"          sh -c "diff -q \"$BACKUP/before-robots.txt\" <(curl -s \"$SITE/robots.txt\")"
+  TMP_S=$(mktemp); curl -s "$SITE$SITEMAP" > "$TMP_S"
+  ck "8· sitemap 未变"         diff -q "$BACKUP/before-sitemap.xml" "$TMP_S"
+  rm -f "$TMP_S"
+  TMP_R=$(mktemp); curl -s "$SITE/robots.txt" > "$TMP_R"
+  ck "8· robots 未变"          diff -q "$BACKUP/before-robots.txt" "$TMP_R"
+  rm -f "$TMP_R"
   ck "8· 报价页渲染 pkq-root"  sh -c "curl -s \"$SITE/get-a-quote/?style=rigid&qty=500\" | grep -q 'pkq-root'"
   ck "8· /inquiry/ 200"        test "$(curl -s -o /dev/null -w '%{http_code}' "$SITE/inquiry/")" = "200"
   step_end || exit 1
@@ -329,6 +406,22 @@ step9)
   $WPCLI plugin list --format=csv | grep packrivo-quote || echo "报价插件已移除"
   docker cp "$BACKUP/rollback/rollback-27i.json" php:"$PKGC/rollback/"
   docker cp "$BACKUP/rollback/rollback-27g.json" php:"$PKGC/rollback/"
+
+  # 9.3 回滚前守卫：两个 JSON 的 site 必须等于本轮 $SITE
+  hr "STEP 9.3 回滚前守卫"
+  set +x
+  GUARD93=0
+  for f in /pkg/rollback/rollback-27g.json /pkg/rollback/rollback-27i.json; do
+    if docker exec php php -r '$j=json_decode(file_get_contents($argv[1]),true); exit((($j["site"]??"")===$argv[2])?0:1);' "$f" "$SITE"; then
+      ckp "9.3 $f site 与本轮一致"
+    else
+      S=$(docker exec php php -r '$j=json_decode(file_get_contents($argv[1]),true); echo $j["site"] ?? "(无)";' "$f")
+      ckf "9.3 $f site=$S 与本轮 $SITE 不一致"
+      GUARD93=1
+    fi
+  done
+  [ "$GUARD93" -eq 0 ] || { echo "9.3 守卫拦截，rollback 不执行"; step_end || exit 1; }
+  set -x
   $WPCLI eval-file "$PKGC/scripts/hubs-27i/import.php"          rollback-check "$PKGC" "$SITE" "$PKGC/rollback/rollback-27i.json"
   $WPCLI eval-file "$PKGC/scripts/hubs-27i/import.php"          rollback       "$PKGC" "$SITE" "$PKGC/rollback/rollback-27i.json"
   $WPCLI eval-file "$PKGC/scripts/product-buyers-27g/import.php" rollback-check "$PKGC" "$SITE" "$PKGC/rollback/rollback-27g.json" all134

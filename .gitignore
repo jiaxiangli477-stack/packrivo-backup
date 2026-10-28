@@ -4,4 +4,10 @@ node_modules/
 !deploy/verification-28r/lastresort.log
 !deploy/verification-28r/acceptance-recheck.log
 !deploy/verification-28r/step0-proof.log
+!deploy/verification-28s/rehearsal.log
+!deploy/verification-28s/reset.log
+!deploy/verification-28s/negtest.log
+!deploy/verification-28s/negtest-step3.log
+!deploy/verification-28s/guard-selftest.log
+!deploy/verification-28s/step*.log
 .env*

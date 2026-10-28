@@ -1,0 +1,725 @@
+################ 28s 开始 2026-10-28T19:51:17Z ################
+===== [1] 复位（reset.sh）=====
+reset 退出码 = 0
+== 1) 站点地址指回演练站 ==
+http://nginx
+== 2) mu 回到打补丁前 ==
+== 3) 字典回到演练前（pristine-i18n）==
+i18n 文件数: 23
+== 4) 主题与插件回到首装前 ==
+== 5) 清掉上一轮遗留的 rollback 依据，重灌干净的包 ==
+== 6) 内容回到上线前（按 slug 写回依据里的旧值）==
+restore_slug=130 missing=0 无正文依据=0
+restore_slug=8 missing=0 无正文依据=8
+== 7) 状态确认 ==
+packrivo-static-bridge-1.2.38
+Warning: wp_update_themes(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
+子主题未安装 ✓
+Warning: wp_update_plugins(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
+报价插件未安装 ✓
+Custom Clear Display Box Sourcing
+get-a-quote 301（期望 301）
+首页 200（期望 200）
+===== [2] 拆掉 mariadb 包装 =====
+0
+包装已拆除
+===== [3] 复位后快照（必须 = 基线 4972cd81…）=====
+snapshot: /home/web/rehearsal-28s/s-reset.txt
+行数: 845
+整份 sha256: 4972cd8195d7b40a10dac4140273ba7faef4e152b2b886489bfcc624f2773deb
+复位快照 sha256 = 4972cd8195d7b40a10dac4140273ba7faef4e152b2b886489bfcc624f2773deb
+PASS: 复位快照 = 基线
+===== [4] 正向 0–8 =====
+----- step0 开始 19:56:44 -----
+step0 :: 本步判据：PASS=6 FAIL=0 :: EXIT=0
+----- step0 原始输出 -----
+
+############### STEP 0.1 上线前检查 ###############
+
++ docker + grep ps --format -E '^(php|mysql|nginx|redis)\b''{{.Names}}\t{{.Image}}'
+
+redis	redis:alpine
+php	r28q-php:8.3
+nginx	nginx:alpine
+mysql	mariadb:10.11
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root core version
+7.1.3
++ docker + head exec php -1
+php -v
+PHP 8.3.36 (cli) (built: Oct 21 2026 22:54:11) (NTS)
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root option get siteurl
+http://nginx
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root option get template
+packrivo-static-bridge-1.2.38
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root option get stylesheet
+packrivo-static-bridge-1.2.38
++ docker + grep exec php '^packrivo-home-v4,'php 
+-d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root theme list --format=csv
+Warning: wp_update_themes(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
++ echo '子主题未安装 → 首次安装'
+子主题未安装 → 首次安装
++ docker + exec php grep php -d '^packrivo-quote,'disable_functions= /usr/local/bin/wp 
+--path=/var/www/html/www.packrivo.com/wordpress --allow-root plugin list --format=csv
+Warning: wp_update_plugins(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
++ echo '报价插件未安装 → 首次安装'
+报价插件未安装 → 首次安装
++ docker + grep + exec php packrivo-static-bridge
+grep activephp -d 
+disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root theme list --format=csv
+Warning: wp_update_themes(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
+packrivo-static-bridge-1.2.38,active,none,1.2.38,,off
++ docker exec php sh -c 'command -v mysqldump || apk add --no-cache mariadb-client'
+/usr/bin/mysqldump
++ docker exec php mysqldump --version
+mysqldump: Deprecated program name. It will be removed in a future release, use '/usr/bin/mariadb-dump' instead
+mysqldump from 11.8.9-MariaDB, client 10.20 for Linux (x86_64)
++ mkdir -p /home/web/packrivo-packages
++ set +x
+
+############### STEP 0.1 导出探针（判据：字节数 > 0） ###############
+
++ docker + tail exec php -2
+php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root db export /tmp/probe.sql --skip-plugins --skip-themes
+
+mariadb-dump: Got error: 2026: "TLS/SSL error: SSL is required, but the server does not support it" when trying to connect
++ set +x
+探针字节数 = 0
+观察: 探针没通过（0 字节）→ 按 0.1 补救块装包装后重探。这一条不算 FAIL，判据是补救后的结果
++ docker exec php sh -c 'cat > /usr/local/bin/mariadb-dump <<EOF
+#!/bin/sh
+exec /usr/bin/mariadb-dump "\$@" --skip-ssl
+EOF
+chmod +x /usr/local/bin/mariadb-dump'
++ docker exec php sh -c 'cat > /usr/local/bin/mariadb <<EOF
+#!/bin/sh
+exec /usr/bin/mariadb "\$@" --skip-ssl
+EOF
+chmod +x /usr/local/bin/mariadb'
++ set +x
+Success: Exported to '/tmp/probe.sql'.
+装包装后探针字节数 = 39397375
+PASS: 0f 装包装后导出探针 > 0 字节（39397375）
+
+############### STEP 0.2 上传清单核对（演练环境用本地目录代替 scp） ###############
+
++ sha256sum /home/web/packrivo-packages/packrivo-home-v4.zip /home/web/packrivo-packages/packrivo-quote.zip
+5974ae0c208d03016701698c45dfbd467f7c24c6036fba120dccc01f72034bf9  /home/web/packrivo-packages/packrivo-home-v4.zip
+096d0c8e81360e7fc616e5d46c96088fc3a65ceb32daf9b78cf1e1de0bc52d93  /home/web/packrivo-packages/packrivo-quote.zip
++ ls + wc /home/web/packrivo-packages/i18n-merged
+-l
+23
++ ls + wc /home/web/packrivo-packages/dsh-out
+-l
+6
++ ls /home/web/packrivo-packages/scripts
+hubs-27i
+product-buyers-27e
+product-buyers-27g
++ set +x
+
+############### STEP 0 通过判据 ###############
+
+PASS: 0a core version = 7.1.3
+PASS: 0b PHP = 8.3.x
+PASS: 0c 首装：子主题未安装
+PASS: 0d 首装：报价插件未安装
+PASS: 0e mysqldump 可用
+本步判据：PASS=6 FAIL=0
+----- step1 开始 19:58:23 -----
+step1 :: 本步判据：PASS=10 FAIL=0 :: EXIT=0
+----- step1 原始输出 -----
+
+############### STEP 1 备份 ###############
+
+++ date +%Y%m%d-%H%M
++ LAUNCH=packrivo-launch-20261028-1958
++ mkdir -p /home/web/backups
++ echo packrivo-launch-20261028-1958
++ BACKUP=/home/web/backups/packrivo-launch-20261028-1958
++ mkdir -p /home/web/backups/packrivo-launch-20261028-1958/mu /home/web/backups/packrivo-launch-20261028-1958/i18n /home/web/backups/packrivo-launch-20261028-1958/db /home/web/backups/packrivo-launch-20261028-1958/rollback
++ cp -a /home/web/html/www.packrivo.com/wordpress/wp-content/mu-plugins/. /home/web/backups/packrivo-launch-20261028-1958/mu/
++ cp -a /home/web/html/www.packrivo.com/wordpress/wp-content/uploads/packrivo-i18n/. /home/web/backups/packrivo-launch-20261028-1958/i18n/
++ sha256sum /home/web/html/www.packrivo.com/wordpress/wp-content/mu-plugins/packrivo-i18n.php /home/web/html/www.packrivo.com/wordpress/wp-content/mu-plugins/packrivo-site-remediation-20261022.php
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root db export /tmp/packrivo-before-launch.sql --skip-plugins --skip-themes
+Success: Exported to '/tmp/packrivo-before-launch.sql'.
++ docker cp php:/tmp/packrivo-before-launch.sql /home/web/backups/packrivo-launch-20261028-1958/db.sql
++ docker exec php rm -f /tmp/packrivo-before-launch.sql
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root plugin list --format=csv
+Warning: wp_update_plugins(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root theme list --format=csv
+Warning: wp_update_themes(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root option get template
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root option get stylesheet
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root post list --post_type=page --post_status=publish --fields=ID,post_name,post_title --format=csv
++ curl -s http://nginx/wp-sitemap.xml
++ curl -s http://nginx/robots.txt
++ cat
+++ date -u
+++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root option get stylesheet
+++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root option get template
+++ test -d /home/web/html/www.packrivo.com/wordpress/wp-content/themes/packrivo-home-v4
+++ echo no
+++ test -d /home/web/html/www.packrivo.com/wordpress/wp-content/plugins/packrivo-quote
+++ echo no
++ cat /home/web/backups/packrivo-launch-20261028-1958/INSTALL-STATE.txt
+launch=packrivo-launch-20261028-1958
+time=Wed Oct 28 20:00:06 UTC 2026
+theme_before=packrivo-static-bridge-1.2.38
+parent_before=packrivo-static-bridge-1.2.38
+child_theme_present=no
+quote_plugin_present=no
++ set +x
+
+############### STEP 1 通过判据 ###############
+
+++ cat /home/web/backups/CURRENT_LAUNCH
++ BACKUP=/home/web/backups/packrivo-launch-20261028-1958
++ set +x
+
+############### STEP 1 通过判据 ###############
+
+PASS: 1a mu 文件到位
+PASS: 1b mu 文件到位
+PASS: 1c i18n 文件到位
+PASS: 1d i18n 数量 >= 12
+PASS: 1e db.sql 非空
+PASS: 1f db.sql 含 CREATE TABLE
+PASS: 1g 两个 mu 哈希
+PASS: 1h sitemap 快照非空
+PASS: 1i 首装状态已记录
+PASS: 1j CURRENT_LAUNCH 可读
+本步判据：PASS=10 FAIL=0
+----- step2 开始 20:00:49 -----
+step2 :: 本步判据：PASS=8 FAIL=0 :: EXIT=0
+----- step2 原始输出 -----
+
+############### STEP 2 字典与路径表 ###############
+
+++ cat /home/web/backups/CURRENT_LAUNCH
++ BACKUP=/home/web/backups/packrivo-launch-20261028-1958
++ cp -a /home/web/html/www.packrivo.com/wordpress/wp-content/uploads/packrivo-i18n /home/web/backups/packrivo-launch-20261028-1958/i18n-today
++ ls + /home/web/backups/packrivo-launch-20261028-1958/i18n-today
+head
+ar-dict.json
+ar-js.json
+de-dict.json
+de-js.json
+es-dict.json
+es-js.json
+fr-dict.json
+fr-js.json
+it-dict.json
+it-js.json
++ grep -c '"' /home/web/backups/packrivo-launch-20261028-1958/i18n-today/de-dict.json
+1
++ docker exec php mkdir -p /pkg
++ docker cp /home/web/packrivo-packages/. php:/pkg/
++ docker cp /home/web/backups/packrivo-launch-20261028-1958/i18n-today php:/bk-i18n-today
++ docker exec php rm -rf /pkg/merged
++ docker exec php mkdir -p /pkg/merged
++ docker exec php php /pkg/tools/merge-i18n.php --prod=/bk-i18n-today --local=/pkg/i18n-merged --out=/pkg/merged --require=/get-a-quote/
+ar     生产有 → 合并后 title=287 attr=738 block=6266 text=366，冲突 0
+de     生产有 → 合并后 title=287 attr=739 block=6266 text=417，冲突 0
+es     生产有 → 合并后 title=293 attr=739 block=6268 text=409，冲突 0
+fr     生产有 → 合并后 title=293 attr=739 block=6268 text=416，冲突 0
+it     生产有 → 合并后 title=293 attr=739 block=6268 text=411，冲突 0
+ja     生产有 → 合并后 title=287 attr=738 block=6266 text=366，冲突 0
+ko     生产有 → 合并后 title=287 attr=738 block=6266 text=366，冲突 0
+nl     生产有 → 合并后 title=293 attr=739 block=6268 text=415，冲突 0
+pt     生产有 → 合并后 title=293 attr=739 block=6268 text=415，冲突 0
+zh-CN  生产有 → 合并后 title=287 attr=739 block=6266 text=416，冲突 0
+zh-TW  生产有 → 合并后 title=287 attr=738 block=6266 text=366，冲突 0
+空文件，按空字典处理: /bk-i18n-today/ar-js.json
+空文件，按空字典处理: /bk-i18n-today/de-js.json
+ar     js：exact=125 patterns=110，冲突 0
+de     js：exact=125 patterns=110，冲突 0
+空文件，按空字典处理: /bk-i18n-today/es-js.json
+es     js：exact=125 patterns=110，冲突 0
+空文件，按空字典处理: /bk-i18n-today/fr-js.json
+fr     js：exact=125 patterns=110，冲突 0
+空文件，按空字典处理: /bk-i18n-today/it-js.json
+it     js：exact=125 patterns=110，冲突 0
+空文件，按空字典处理: /bk-i18n-today/ja-js.json
+ja     js：exact=126 patterns=110，冲突 0
+空文件，按空字典处理: /bk-i18n-today/ko-js.json
+ko     js：exact=125 patterns=110，冲突 0
+空文件，按空字典处理: /bk-i18n-today/nl-js.json
+nl     js：exact=125 patterns=110，冲突 0
+空文件，按空字典处理: /bk-i18n-today/pt-js.json
+空文件，按空字典处理: /bk-i18n-today/zh-CN-js.json
+pt     js：exact=125 patterns=110，冲突 0
+zh-CN  js：exact=125 patterns=110，冲突 0
+空文件，按空字典处理: /bk-i18n-today/zh-TW-js.json
+zh-TW  js：exact=125 patterns=110，冲突 0
+paths.json：生产 144 + 本地 146 → 合并 146（本轮补 0：无）
+冲突清单：0 条 → /pkg/merged/conflicts.json
++ mkdir -p /home/web/packrivo-packages/merged
++ docker cp php:/pkg/merged/. /home/web/packrivo-packages/merged/
++ cat /home/web/packrivo-packages/merged/conflicts.json
+[]
++ docker exec php sh -c 'ls /pkg/merged/*-dict.json | wc -l'
+11
++ docker exec php sh -c 'ls /pkg/merged/*-js.json   | wc -l'
+11
++ docker exec php sh -c 'for f in /pkg/merged/*.json; do php -r "\$d=json_decode(file_get_contents(\$argv[1]),true); exit((json_last_error()===JSON_ERROR_NONE)?0:1);" "$f" || echo "坏 JSON: $f"; done'
++ docker exec php sh -c 'grep -q "\"/get-a-quote/\"" /pkg/merged/paths.json && echo "paths ok"'
+paths ok
++ docker exec php sh -c 'php -r "\$p=json_decode(file_get_contents(\"/pkg/merged/paths.json\"),true); exit((is_array(\$p)&&count(\$p)>=146)?0:1);" && echo "paths count ok"'
+paths count ok
++ cp /home/web/packrivo-packages/merged/ar-dict.json /home/web/packrivo-packages/merged/de-dict.json /home/web/packrivo-packages/merged/es-dict.json /home/web/packrivo-packages/merged/fr-dict.json /home/web/packrivo-packages/merged/it-dict.json /home/web/packrivo-packages/merged/ja-dict.json /home/web/packrivo-packages/merged/ko-dict.json /home/web/packrivo-packages/merged/nl-dict.json /home/web/packrivo-packages/merged/pt-dict.json /home/web/packrivo-packages/merged/zh-CN-dict.json /home/web/packrivo-packages/merged/zh-TW-dict.json /home/web/html/www.packrivo.com/wordpress/wp-content/uploads/packrivo-i18n/
++ cp /home/web/packrivo-packages/merged/ar-js.json /home/web/packrivo-packages/merged/de-js.json /home/web/packrivo-packages/merged/es-js.json /home/web/packrivo-packages/merged/fr-js.json /home/web/packrivo-packages/merged/it-js.json /home/web/packrivo-packages/merged/ja-js.json /home/web/packrivo-packages/merged/ko-js.json /home/web/packrivo-packages/merged/nl-js.json /home/web/packrivo-packages/merged/pt-js.json /home/web/packrivo-packages/merged/zh-CN-js.json /home/web/packrivo-packages/merged/zh-TW-js.json /home/web/html/www.packrivo.com/wordpress/wp-content/uploads/packrivo-i18n/
++ cp /home/web/packrivo-packages/merged/paths.json /home/web/html/www.packrivo.com/wordpress/wp-content/uploads/packrivo-i18n/
++ ls + head-l /home/web/html/www.packrivo.com/wordpress/wp-content/uploads/packrivo-i18n
+
+total 16048
+-rw-r--r--    1 root     root       1667772 Oct 28 20:00 ar-dict.json
+-rw-r--r--    1 root     root         33133 Oct 28 20:01 ar-js.json
+-rw-r--r--    1 root     root       1485545 Oct 28 20:00 de-dict.json
+-rw-r--r--    1 root     root         28979 Oct 28 20:01 de-js.json
+-rw-r--r--    1 root     root       1474161 Oct 28 20:00 es-dict.json
+-rw-r--r--    1 root     root         29001 Oct 28 20:01 es-js.json
+-rw-r--r--    1 root     root       1516734 Oct 28 20:00 fr-dict.json
+-rw-r--r--    1 root     root         29651 Oct 28 20:01 fr-js.json
+-rw-r--r--    1 root     root       1494853 Oct 28 20:00 it-dict.json
++ set +x
+
+############### STEP 2 通过判据 ###############
+
++ curl + grep -s http://nginx/de/-c 'lang="de"'
+
+2
++ set +x
+PASS: 2a paths.json 存在
+PASS: 2b paths 含 /get-a-quote/
+PASS: 2c paths 条数 >= 146
+PASS: 2d dict = 11
+PASS: 2e js = 11
+PASS: 2f 无坏 JSON
+PASS: 2g 冲突 0
+PASS: 2h de 站 lang=de
+本步判据：PASS=8 FAIL=0
+----- step3 开始 20:01:15 -----
+step3 :: 本步判据：PASS=11 FAIL=0 :: EXIT=0
+----- step3 原始输出 -----
+
+############### STEP 3 134 产品页 + 8 主页面 ###############
+
+++ cat /home/web/backups/CURRENT_LAUNCH
++ BACKUP=/home/web/backups/packrivo-launch-20261028-1958
++ docker exec php mkdir -p /pkg/rollback
++ hr 'STEP 3.0 应用前守卫'
++ echo
+
++ echo '############### STEP 3.0 应用前守卫 ###############'
+############### STEP 3.0 应用前守卫 ###############
++ echo
+
++ set +x
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root eval-file /pkg/scripts/product-buyers-27g/import.php plan /pkg http://nginx /pkg/rollback/rollback-27g.json all134
+input_pages=134 preflight=PASS
+writes=0
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root eval-file /pkg/scripts/hubs-27i/import.php plan /pkg http://nginx /pkg/rollback/rollback-27i.json
+hub_pages=8 preflight=PASS
+inquiry_existing_description=preserved writes=0
++ docker + exec php tee /tmp/a3g.txtphp -d 
+disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root eval-file /pkg/scripts/product-buyers-27g/import.php apply /pkg http://nginx /pkg/rollback/rollback-27g.json all134
+input_pages=134 preflight=PASS
+backup=created rows=134
+apply_updated=130 already_current=4 URL_and_body_check=PASS
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root eval-file /pkg/scripts/product-buyers-27g/import.php verify /pkg http://nginx /pkg/rollback/rollback-27g.json all134
+input_pages=134 preflight=PASS
+backup=reused rows=134
+verified_pages=134 sourcing_titles=0 duplicate_titles=0 mismatches=0
+URL_and_non_H1_body_unchanged=134/134
++ tee + docker /tmp/a3i.txt
+exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root eval-file /pkg/scripts/hubs-27i/import.php apply /pkg http://nginx /pkg/rollback/rollback-27i.json
+hub_pages=8 preflight=PASS
+backup=created rows=8
+apply_updated=7 already_current=1 H1_body_URL_check=PASS
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root eval-file /pkg/scripts/hubs-27i/import.php verify /pkg http://nginx /pkg/rollback/rollback-27i.json
+hub_pages=8 preflight=PASS
+backup=reused rows=8
+verified_hubs=8 metadata_mismatches=0 H1_body_URL_unchanged=8/8 inquiry_description_preserved=yes
++ docker cp php:/pkg/rollback/. /home/web/backups/packrivo-launch-20261028-1958/rollback/
++ ls -l /home/web/backups/packrivo-launch-20261028-1958/rollback/
+total 1240
+-rw-r--r--    1 root     root       1255899 Oct 28 20:02 rollback-27g.json
+-rw-r--r--    1 root     root          9078 Oct 28 20:02 rollback-27i.json
++ test -s /home/web/backups/packrivo-launch-20261028-1958/rollback/rollback-27g.json
++ echo '27g rollback ok'
+27g rollback ok
++ test -s /home/web/backups/packrivo-launch-20261028-1958/rollback/rollback-27i.json
++ echo '27i rollback ok'
+27i rollback ok
++ + curl -s grep -o http://nginx/product-drawer-jewelry-box/
+'<title>[^<]*</title>'
+<title>Custom Drawer Jewelry Boxes with Logo | Packrivo</title>
++ curl + grep -s http://nginx/products/-o 
+'<title>[^<]*</title>'
+<title>Custom Packaging: 134 Styles, MOQ 500 | Packrivo</title>
++ curl + grep -s http://nginx/jewelry-boxes/-o 
+'<title>[^<]*</title>'
+<title>Custom Jewelry Boxes: Rigid, Drawer, MOQ 500 | Packrivo</title>
++ set +x
+27g verify: URL_and_non_H1_body_unchanged=134/134
+PASS: 3a 27g verify URL_and_non_H1_body_unchanged=134/134
+27i verify: verified_hubs=8 metadata_mismatches=0 H1_body_URL_unchanged=8/8 inquiry_description_preserved=yes
+PASS: 3b 27i verify metadata_mismatches=0
+27g apply: apply_updated=130 already_current=4
+27i apply: apply_updated=7 already_current=1
+27g: apply_updated=130 already_current=4 合计=134
+27i: apply_updated=7 already_current=1 合计=8
+PASS: 3·27g 总数 = 134（130+4=134）
+PASS: 3·27i 总数 = 8（7+1=8）
+PASS: 3·27g apply_updated > 0（演练要求真实写入）
+PASS: 3·27i apply_updated > 0（演练要求真实写入）
+PASS: 3·27g URL_and_body_check=PASS
+PASS: 3·27i H1_body_URL_check=PASS
+PASS: 3c 27g rollback 依据非空
+PASS: 3d 27i rollback 依据非空
+PASS: 3e 产品页 200
+本步判据：PASS=11 FAIL=0
+----- step4 开始 20:03:46 -----
+step4 :: 本步判据：PASS=3 FAIL=0 :: EXIT=0
+----- step4 原始输出 -----
+
+############### STEP 4 报价插件（首次安装） ###############
+
+++ cat /home/web/backups/CURRENT_LAUNCH
++ BACKUP=/home/web/backups/packrivo-launch-20261028-1958
++ docker cp /home/web/packrivo-packages/packrivo-quote.zip php:/pkg/packrivo-quote.zip
++ docker exec php sha256sum /pkg/packrivo-quote.zip
+096d0c8e81360e7fc616e5d46c96088fc3a65ceb32daf9b78cf1e1de0bc52d93  /pkg/packrivo-quote.zip
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root plugin install /pkg/packrivo-quote.zip --force
+Unpacking the package...
+Installing the plugin...
+Removing the old version of the plugin...
+Plugin updated successfully.
+Warning: wp_version_check(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
+Warning: wp_update_plugins(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
+Warning: wp_update_themes(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
+Success: Installed 1 of 1 plugins.
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root plugin activate packrivo-quote
+Plugin 'packrivo-quote' activated.
+Success: Activated 1 of 1 plugins.
++ docker + exec php grep packrivo-quotephp -d 
+disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root plugin list --format=csv
+Warning: wp_update_plugins(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
+packrivo-quote,active,none,1.0.1,,off
++ curl -s -o /dev/null -w '%{http_code}\n' http://nginx/
+200
++ set +x
+PASS: 4a 插件已激活
+PASS: 4b 插件目录存在
+PASS: 4c 首页 200
+本步判据：PASS=3 FAIL=0
+----- step5 开始 20:05:09 -----
+step5 :: 本步判据：PASS=4 FAIL=0 :: EXIT=0
+----- step5 原始输出 -----
+
+############### STEP 5 子主题（首次安装） ###############
+
+++ cat /home/web/backups/CURRENT_LAUNCH
++ BACKUP=/home/web/backups/packrivo-launch-20261028-1958
++ docker + grep + grep exec packrivo-static-bridge
+active
+php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root theme list --format=csv
+Warning: wp_update_themes(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
+packrivo-static-bridge-1.2.38,active,none,1.2.38,,off
++ docker cp /home/web/packrivo-packages/packrivo-home-v4.zip php:/pkg/packrivo-home-v4.zip
++ docker exec php sha256sum /pkg/packrivo-home-v4.zip
+5974ae0c208d03016701698c45dfbd467f7c24c6036fba120dccc01f72034bf9  /pkg/packrivo-home-v4.zip
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root theme install /pkg/packrivo-home-v4.zip --force
+Unpacking the package...
+Installing the theme...
+Removing the old version of the theme...
+This theme requires a parent theme. Checking if it is installed...
+The parent theme, Packrivo Static Bridge 1.2.38, is currently installed.
+Theme updated successfully.
+Warning: wp_version_check(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
+Warning: wp_update_plugins(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
+Warning: wp_update_themes(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
+Success: Installed 1 of 1 themes.
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root theme activate packrivo-home-v4
+Success: Switched to 'Packrivo Home v4 (child)' theme.
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root option get stylesheet
+packrivo-home-v4
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root option get template
+packrivo-static-bridge-1.2.38
++ curl -s -o /dev/null -w '%{http_code}\n' http://nginx/
+200
++ set +x
+PASS: 5a stylesheet = packrivo-home-v4
+PASS: 5b template = packrivo-static-bridge-1.2.38
+PASS: 5c 子主题目录存在
+PASS: 5d 首页 200
+本步判据：PASS=4 FAIL=0
+----- step6 开始 20:07:25 -----
+step6 :: 本步判据：PASS=5 FAIL=0 :: EXIT=0
+----- step6 原始输出 -----
+
+############### STEP 6 两个 mu 补丁 ###############
+
+++ cat /home/web/backups/CURRENT_LAUNCH
++ BACKUP=/home/web/backups/packrivo-launch-20261028-1958
++ cd /home/web/html/www.packrivo.com/wordpress/wp-content/mu-plugins
++ sha256sum packrivo-site-remediation-20261022.php
+ac0a27538c428f2175e9596bd21f27be47069aaf57cbeabf8892ae456e2f471d  packrivo-site-remediation-20261022.php
++ git apply -p1 --check /home/web/packrivo-packages/27e-quote-redirect.patch
++ echo CHECK-OK
+CHECK-OK
++ git apply -p1 /home/web/packrivo-packages/27e-quote-redirect.patch
++ docker exec php php -l /var/www/html/www.packrivo.com/wordpress/wp-content/mu-plugins/packrivo-site-remediation-20261022.php
+No syntax errors detected in /var/www/html/www.packrivo.com/wordpress/wp-content/mu-plugins/packrivo-site-remediation-20261022.php
++ cd /home/web/html/www.packrivo.com/wordpress
++ sha256sum wp-content/mu-plugins/packrivo-i18n.php
+3bc325503b16a5de8cea7600801512653d4ab94db94739ac773e3d4a2741bb5e  wp-content/mu-plugins/packrivo-i18n.php
++ git apply -p1 --check /home/web/packrivo-packages/patches-28m/packrivo-i18n-404-viewport.patch
++ echo CHECK-OK
+CHECK-OK
++ git apply -p1 /home/web/packrivo-packages/patches-28m/packrivo-i18n-404-viewport.patch
++ docker exec php php -l /var/www/html/www.packrivo.com/wordpress/wp-content/mu-plugins/packrivo-i18n.php
+No syntax errors detected in /var/www/html/www.packrivo.com/wordpress/wp-content/mu-plugins/packrivo-i18n.php
++ set +x
+
+############### STEP 6 通过判据 ###############
+
++ + curl -sI head -3http://nginx/get-a-quote/
+
+HTTP/1.1 200 OK
+Server: nginx/1.31.8
+Date: Wed, 28 Oct 2026 20:07:34 GMT
++ + curl -sI head -3http://nginx/de/get-a-quote/
+
+HTTP/1.1 200 OK
+Server: nginx/1.31.8
+Date: Wed, 28 Oct 2026 20:07:38 GMT
++ curl + -s http://nginx/ar/2026/10/26/jewelry-pouch-box-customer-handoff/grep -c 
+'name="viewport"'
+1
++ set +x
+PASS: 6a /get-a-quote/ 200
+PASS: 6b /de/get-a-quote/ 200
+PASS: 6c ar 文章页有 viewport
+PASS: 6d mu 语法 OK
+PASS: 6e 27e 语法 OK
+本步判据：PASS=5 FAIL=0
+----- step7 开始 20:07:50 -----
+step7 :: 本步判据：PASS=1 FAIL=0 :: EXIT=0
+----- step7 原始输出 -----
+
+############### STEP 7 清缓存（演练：跳过 Cloudflare，只做服务器端） ###############
+
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root transient delete --all
+Success: 6 transients deleted from the database.
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root cache flush
+Success: The cache was flushed.
++ docker + tail exec php -1
+php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root transient delete --all
+Success: No transients found.
++ + head curl -sI -5
+http://nginx/de/
+HTTP/1.1 200 OK
+Server: nginx/1.31.8
+Date: Wed, 28 Oct 2026 20:08:42 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: keep-alive
++ curl + grep -s http://nginx/de/-c 'lang="de"'
+
+2
++ set +x
+PASS: 7a /de/ 200
+本步判据：PASS=1 FAIL=0
+----- step8 开始 20:08:58 -----
+step8 :: 本步判据：PASS=9 FAIL=0 :: EXIT=0
+----- step8 原始输出 -----
+
+############### STEP 8 复测 ###############
+
+++ cat /home/web/backups/CURRENT_LAUNCH
++ BACKUP=/home/web/backups/packrivo-launch-20261028-1958
++ for u in "$SITE/" "$SITE/products/" "$SITE/de/" "$SITE/ar/" "$SITE/product-drawer-jewelry-box/"
++ echo -n 'http://nginx/  title数='
+http://nginx/  title数=+ curl + -s http://nginx/grep -c 
+'<title>'
+1
++ for u in "$SITE/" "$SITE/products/" "$SITE/de/" "$SITE/ar/" "$SITE/product-drawer-jewelry-box/"
++ echo -n 'http://nginx/products/  title数='
+http://nginx/products/  title数=+ curl + -s http://nginx/products/grep -c 
+'<title>'
+1
++ for u in "$SITE/" "$SITE/products/" "$SITE/de/" "$SITE/ar/" "$SITE/product-drawer-jewelry-box/"
++ echo -n 'http://nginx/de/  title数='
+http://nginx/de/  title数=+ + grep curl -s -c '<title>'http://nginx/de/
+
+1
++ for u in "$SITE/" "$SITE/products/" "$SITE/de/" "$SITE/ar/" "$SITE/product-drawer-jewelry-box/"
++ echo -n 'http://nginx/ar/  title数='
+http://nginx/ar/  title数=+ curl + -s http://nginx/ar/grep -c 
+'<title>'
+1
++ for u in "$SITE/" "$SITE/products/" "$SITE/de/" "$SITE/ar/" "$SITE/product-drawer-jewelry-box/"
++ echo -n 'http://nginx/product-drawer-jewelry-box/  title数='
+http://nginx/product-drawer-jewelry-box/  title数=+ curl + -s http://nginx/product-drawer-jewelry-box/grep -c 
+'<title>'
+1
++ diff ++ curl /home/web/backups/packrivo-launch-20261028-1958/before-sitemap.xml /dev/fd/63-s http://nginx/wp-sitemap.xml
+
++ echo 'sitemap 未变'
+sitemap 未变
++ diff ++ curl /home/web/backups/packrivo-launch-20261028-1958/before-robots.txt /dev/fd/63-s http://nginx/robots.txt
+
++ echo 'robots 未变'
+robots 未变
++ curl + -s 'http://nginx/get-a-quote/?style=rigid&qty=500'grep -c 
+pkq-root
+1
++ curl -s -o /dev/null -w 'inquiry %{http_code}\n' http://nginx/inquiry/
+inquiry 200
++ set +x
+PASS: 8· / 200
+PASS: 8· /products/ 200
+PASS: 8· /de/ 200
+PASS: 8· /ar/ 200
+PASS: 8· /product-drawer-jewelry-box/ 200
+PASS: 8· sitemap 未变
+PASS: 8· robots 未变
+PASS: 8· 报价页渲染 pkq-root
+PASS: 8· /inquiry/ 200
+本步判据：PASS=9 FAIL=0
+===== [5] 正向后快照（应当 = 4247693f…）=====
+snapshot: /home/web/rehearsal-28s/s-forward.txt
+行数: 847
+整份 sha256: 4247693fa3a31f35477dcb059ad79e4ae5c13de861f94dfcc3848fe57f81b392
+正向快照 sha256 = 4247693fa3a31f35477dcb059ad79e4ae5c13de861f94dfcc3848fe57f81b392
+PASS: 正向快照 = 4247693f…
+===== [6] 回滚 第 9 步 =====
+step9 :: 本步判据：PASS=8 FAIL=0 :: EXIT=0
+----- step9 原始输出 -----
+
+############### STEP 9 整体回滚 ###############
+
+++ cat /home/web/backups/CURRENT_LAUNCH
++ LAUNCH=packrivo-launch-20261028-1958
++ BACKUP=/home/web/backups/packrivo-launch-20261028-1958
++ echo '回滚目标: /home/web/backups/packrivo-launch-20261028-1958'
+回滚目标: /home/web/backups/packrivo-launch-20261028-1958
++ test -f /home/web/backups/packrivo-launch-20261028-1958/db.sql
++ echo 备份在位
+备份在位
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root transient delete --all
+Success: 8 transients deleted from the database.
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root cache flush
+Success: The cache was flushed.
++ cp -a /home/web/backups/packrivo-launch-20261028-1958/mu/packrivo-i18n.php /home/web/html/www.packrivo.com/wordpress/wp-content/mu-plugins/
++ cp -a /home/web/backups/packrivo-launch-20261028-1958/mu/packrivo-site-remediation-20261022.php /home/web/html/www.packrivo.com/wordpress/wp-content/mu-plugins/
++ sha256sum -c /home/web/backups/packrivo-launch-20261028-1958/before-mu.sha256
+/home/web/html/www.packrivo.com/wordpress/wp-content/mu-plugins/packrivo-i18n.php: OK
+/home/web/html/www.packrivo.com/wordpress/wp-content/mu-plugins/packrivo-site-remediation-20261022.php: OK
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root theme activate packrivo-static-bridge-1.2.38
+Success: Switched to 'Packrivo Static Bridge' theme.
++ rm -r /home/web/html/www.packrivo.com/wordpress/wp-content/themes/packrivo-home-v4
++ docker + exec php grep packrivo-home-v4php -d 
+disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root theme list --format=csv
+Warning: wp_update_themes(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
++ echo 子主题已移除
+子主题已移除
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root plugin deactivate packrivo-quote
+Plugin 'packrivo-quote' deactivated.
+Success: Deactivated 1 of 1 plugins.
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root plugin delete packrivo-quote
+Deleted 'packrivo-quote' plugin.
+Success: Deleted 1 of 1 plugins.
++ docker + exec php grep packrivo-quotephp -d 
+disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root plugin list --format=csv
+Warning: wp_update_plugins(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
++ echo 报价插件已移除
+报价插件已移除
++ docker cp /home/web/backups/packrivo-launch-20261028-1958/rollback/rollback-27i.json php:/pkg/rollback/
++ docker cp /home/web/backups/packrivo-launch-20261028-1958/rollback/rollback-27g.json php:/pkg/rollback/
++ hr 'STEP 9.3 回滚前守卫'
++ echo
+
++ echo '############### STEP 9.3 回滚前守卫 ###############'
+############### STEP 9.3 回滚前守卫 ###############
++ echo
+
++ set +x
+PASS: 9.3 /pkg/rollback/rollback-27g.json site 与本轮一致
+PASS: 9.3 /pkg/rollback/rollback-27i.json site 与本轮一致
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root eval-file /pkg/scripts/hubs-27i/import.php rollback-check /pkg http://nginx /pkg/rollback/rollback-27i.json
+hub_pages=8 preflight=PASS
+backup=reused rows=8
+rollback_eligible=7 already_restored=1 writes=0
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root eval-file /pkg/scripts/hubs-27i/import.php rollback /pkg http://nginx /pkg/rollback/rollback-27i.json
+hub_pages=8 preflight=PASS
+backup=reused rows=8
+rollback_updated=7 already_current=1 H1_body_URL_check=PASS
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root eval-file /pkg/scripts/product-buyers-27g/import.php rollback-check /pkg http://nginx /pkg/rollback/rollback-27g.json all134
+input_pages=134 preflight=PASS
+backup=reused rows=134
+rollback_eligible=130 already_restored=4 writes=0
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root eval-file /pkg/scripts/product-buyers-27g/import.php rollback /pkg http://nginx /pkg/rollback/rollback-27g.json all134
+input_pages=134 preflight=PASS
+backup=reused rows=134
+rollback_updated=130 already_current=4 URL_and_body_check=PASS
++ cp -a /home/web/backups/packrivo-launch-20261028-1958/i18n/. /home/web/html/www.packrivo.com/wordpress/wp-content/uploads/packrivo-i18n/
++ set +x
+
+############### STEP 9 判据 ###############
+
++ sha256sum -c /home/web/backups/packrivo-launch-20261028-1958/before-mu.sha256
+/home/web/html/www.packrivo.com/wordpress/wp-content/mu-plugins/packrivo-i18n.php: OK
+/home/web/html/www.packrivo.com/wordpress/wp-content/mu-plugins/packrivo-site-remediation-20261022.php: OK
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root option get stylesheet
+packrivo-static-bridge-1.2.38
++ docker + exec php grep packrivo-quotephp -d 
+disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root plugin list --format=csv
+Warning: wp_update_plugins(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
++ echo 报价插件不在列表里
+报价插件不在列表里
++ for u in "$SITE/" "$SITE/products/" "$SITE/de/"
++ echo -n 'http://nginx/  title数='
+http://nginx/  title数=+ + grep curl -s -c '<title>'http://nginx/
+
+2
++ for u in "$SITE/" "$SITE/products/" "$SITE/de/"
++ echo -n 'http://nginx/products/  title数='
+http://nginx/products/  title数=+ curl + grep -s http://nginx/products/-c '<title>'
+
+1
++ for u in "$SITE/" "$SITE/products/" "$SITE/de/"
++ echo -n 'http://nginx/de/  title数='
+http://nginx/de/  title数=+ curl + grep -s http://nginx/de/-c '<title>'
+
+2
++ curl + -s http://nginx/product-drawer-jewelry-box/grep -o 
+'<title>[^<]*</title>'
+<title>Custom Drawer Jewelry Boxes with Logo | Packrivo</title>
++ set +x
+PASS: 9a before-mu.sha256 全 OK
+PASS: 9b stylesheet 回到父主题
+PASS: 9c 子主题目录已删
+PASS: 9d 报价插件已移除
+PASS: 9e 首页 200
+PASS: 9f /get-a-quote/ 回到 301
+本步判据：PASS=8 FAIL=0
+===== [7] 回滚后快照（必须 = 基线 4972cd81…）=====
+snapshot: /home/web/rehearsal-28s/s-after-rollback.txt
+行数: 845
+整份 sha256: 4972cd8195d7b40a10dac4140273ba7faef4e152b2b886489bfcc624f2773deb
+回滚后快照 sha256 = 4972cd8195d7b40a10dac4140273ba7faef4e152b2b886489bfcc624f2773deb
+PASS: 回滚后快照 = 基线
+===== 逐步汇总 =====
+step0 :: 本步判据：PASS=6 FAIL=0 :: EXIT=0
+step1 :: 本步判据：PASS=10 FAIL=0 :: EXIT=0
+step2 :: 本步判据：PASS=8 FAIL=0 :: EXIT=0
+step3 :: 本步判据：PASS=11 FAIL=0 :: EXIT=0
+step4 :: 本步判据：PASS=3 FAIL=0 :: EXIT=0
+step5 :: 本步判据：PASS=4 FAIL=0 :: EXIT=0
+step6 :: 本步判据：PASS=5 FAIL=0 :: EXIT=0
+step7 :: 本步判据：PASS=1 FAIL=0 :: EXIT=0
+step8 :: 本步判据：PASS=9 FAIL=0 :: EXIT=0
+step9 :: 本步判据：PASS=8 FAIL=0 :: EXIT=0
+################ 28s 结束 2026-10-28T20:19:10Z ################
+EXIT=0
