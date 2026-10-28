@@ -333,3 +333,31 @@ ac0a27538c428f2175e9596bd21f27be47069aaf57cbeabf8892ae456e2f471d  …/mu-plugins
 - 第 1 步按判据 FAIL 并停止，§5.5 为本轮最终结论：备份在 `/home/web/backups/packrivo-launch-20261028-1648/`，两条 FAIL（theme 两主题目录、plugin 报价插件，均为生产源不存在），本步零生产变更、无需回滚，第 2–8 步一律未执行。
 - 工作区唯一变更即本日志文件（§4–§6），随本提交入库并 push 至 `main`；提交不含任何其它文件，未改动 RUNBOOK，未修改生产，未删除任何备份（`$BACKUP` 保留至上线确认）。
 - 提交后 `git status` 工作区干净，`main` 与 `origin/main` 一致。上线结论：**第 1 步未通过，本次上线中止**。
+
+---
+
+## 7 · 28q 修订核对（本机只读核对：部署仓库内材料；未连生产、未改 RUNBOOK）
+
+### 7.1 材料范围
+
+- 提交 `30927ec`（28q）只含 1 个文件：`packrivo-v2/docs/DSH-TASK-2026-10-28q.md`（+57 行），即「先修 RUNBOOK 并在本地完整演练，再上线」的任务单，含负责人对 28o 三个问题的答复。
+- 仓库内没有 `DSH-RESULT-2026-10-28q.md`，也没有 `deploy/verification-28q/rehearsal.log`（`git ls-files` 只命中任务单本身）→ **28q 尚未执行**。
+- `deploy/RUNBOOK-launch.md` 自 28o（`1d790e7`/`5b2c77c`/`63a5214`）之后无任何提交改动；`30927ec` 只加了任务单，未动 RUNBOOK。
+
+### 7.2 针对第 1 步两项 FAIL 与首次安装语义的核对
+
+- 任务单第 7 行（负责人答复 1）：**是首次安装，生产上子主题和报价插件都不存在** → 与第 1 步实测两条 FAIL（L48 home-v4、L50 packrivo-quote 源目录不存在）完全吻合，属首次安装的预期状态而非复制错误；§5.2「两条 FAIL 与上轮相同」由此得到官方解释。
+- 任务单 §2.4 给出首次安装语义：第 1 步**不再要求备份子主题与插件**，改为记录「安装前不存在」；第 4 步插件 install 后 activate（回滚 = `deactivate` 后清掉该插件）；第 5 步主题 install 后 activate `packrivo-home-v4`（回滚 = activate `packrivo-static-bridge-1.2.38`，随后清掉子主题目录）；回滚命令不得用 `&&` 串联。
+- 但**当前 RUNBOOK 尚未落实**这些修订：第 1 步判据仍要求 theme 两目录 + plugin 目录存在（正是两次 FAIL 的判据本身）；变量仍用 `$(date …)` 生成 BACKUP（§2.2 要求改为 CURRENT_LAUNCH 文件读取）；`WPCLI="wp --path=$WP"`（§2.1 要求 `docker exec php php …` 且区分宿主机/容器内路径）；mu/i18n 备份仍是整目录 `cp -a`（§2.3 要求 `/.` 摊平、回滚路径一一对应）；版本仍写 WordPress 6.7（§2.5 要求改 7.1.3）；db 导出仍写 `$BACKUP/db/packrivo-before-launch.sql`（§2.6 要求 `$BACKUP/db.sql` 且第 9 步「最后手段」读同一份）；第 4/5 步回滚仍是 `rm -r … && cp -a … && activate` 串联（§2.4 禁止；首次安装语义下回滚应为 `deactivate` 后清掉插件、activate 父主题后清掉子主题目录）。
+- **结论：Docker/首次安装修订在任务单层面已明确覆盖第 1 步两项 FAIL 与首次安装语义，但停留在指令层，尚未落到 RUNBOOK、也未做本地演练；第 1 步重跑前必须先完成 28q。**
+
+### 7.3 第 1 步重跑条件（任务单已给出，供负责人确认）
+
+按任务单 §1–§4 顺序：① 按 §2 修改 RUNBOOK；② 本地 docker WP 升 7.1.3、PHP 8.3 对齐生产并复跑 28p 验收；③ 本地搭生产同构环境（容器名 php、宿主机路径 /home/web/...、子主题与插件未安装态），原样复制 RUNBOOK 命令跑第 0–8 步 → 第 9 步整体回滚 → 再正向第 1–8 步，三轮全部 PASS，输出写 `deploy/verification-28q/rehearsal.log`；④ §4 验收（wp core 7.1.3 / php 8.3.x、三轮 PASS、哈希与 zip 一致、git 干净）；⑤ 负责人答复 3：「演练通过、Claude 核验之后，才会再授权上生产」。
+
+### 7.4 仍需负责人决定的事项
+
+1. 确认修订后的第 1 步判据口径（以「安装前不存在」记录替代 theme/plugin 目录备份）作为新门槛，并批准执行 28q（改 RUNBOOK + 本地演练）。
+2. 生产上两个遗留备份目录 `/home/web/backups/packrivo-launch-20261028-1648/` 与上轮 1629 目录：按 RUNBOOK L71 保留至上线确认后再清，还是现在清理。
+3. 生产 `/tmp/` 下 `pre-check.sh`、`probe-db.sh`、`step1-backup.sh` 三个无敏感内容辅助脚本：上次清理被平台拦下，下次会话是否顺手清掉。
+4. db 导出路径若按 §2.6 改为 `$BACKUP/db.sql`，第 9 步「最后手段」需读同一份，改 RUNBOOK 时需一并核对第 1 步落点（`$BACKUP/db/`）与判据引用。
