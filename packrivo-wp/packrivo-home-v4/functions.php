@@ -163,3 +163,44 @@ add_filter('wp_robots', function ($robots) {
 add_filter('wpseo_robots', function ($robots) {
     return isset($_GET['q']) ? 'noindex, follow' : $robots;
 }, 100);
+
+/* Journal archive owns the posts-page template when the child theme is active. */
+add_filter('template_include', function ($template) {
+    if (is_home()) { $candidate = get_stylesheet_directory() . '/template-journal-v4.php'; if (is_readable($candidate)) return $candidate; }
+    return $template;
+}, 99);
+
+function pk_related_structures($post_id)
+{
+    $groups = [
+      'jewelry'=>['jewelry','ring','watch','necklace'], 'gift'=>['gift','folding','carton','rigid','magnetic'],
+      'mailer'=>['mailer','corrugated','shipping','tray'], 'bag'=>['bag','pouch','tote'],
+      'label'=>['label','sticker'], 'insert'=>['insert','inlay','divider','pulp'],
+    ];
+    $terms=wp_get_post_terms($post_id,['category','post_tag'],['fields'=>'names']);
+    if (is_wp_error($terms)) $terms=[];
+    $text=strtolower(get_the_title($post_id).' '.implode(' ',$terms)); $selected='jewelry';
+    foreach ($groups as $group=>$words) {
+        foreach ($words as $word) if (preg_match('~\b'.preg_quote($word,'~').'(?:s|es)?\b~i',$text)) { $selected=$group; break 2; }
+    }
+    $ids=get_posts(['post_type'=>'page','post_status'=>'publish','posts_per_page'=>-1,'fields'=>'ids','meta_key'=>'_packrivo_remediation_product','orderby'=>'title','order'=>'ASC']);
+    $out=[];
+    foreach($ids as $id) {
+        $slug=get_post_field('post_name',$id); $hit=false;
+        foreach($groups[$selected] as $word) if(preg_match('~\b'.preg_quote($word,'~').'(?:s|es)?\b~i',$slug)) { $hit=true; break; }
+        if($hit && pk_from_price($id)!==null) $out[]=$id;
+        if(count($out)===3) break;
+    }
+    return ['group'=>$selected,'ids'=>$out];
+}
+
+/** Parameterised journal views share the unfiltered archive canonical. */
+add_filter('wpseo_canonical', function ($canonical) {
+    return is_home() ? get_permalink((int)get_option('page_for_posts')) : $canonical;
+}, 9999);
+add_action('wp_head', function () {
+    if (is_home() && !defined('WPSEO_VERSION')) {
+        $url=get_permalink((int)get_option('page_for_posts')) ?: home_url('/blog/');
+        echo '<link rel="canonical" href="'.esc_url($url).'" />' . "\n";
+    }
+}, 5);

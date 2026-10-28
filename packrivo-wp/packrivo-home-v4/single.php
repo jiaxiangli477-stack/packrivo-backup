@@ -41,6 +41,12 @@ while (have_posts()) :
                 <div class="pk-post-body" style="margin-top:28px;max-width:70ch"><?php the_content(); ?></div>
             </article>
 
+            <?php $pk_structures = pk_related_structures($pk_id); if ($pk_structures['ids']) : ?>
+                <section class="pk-related" style="margin-top:56px" data-product-group="<?php echo esc_attr($pk_structures['group']); ?>">
+                    <h2 class="pk-h2">Related structures</h2>
+                    <div class="pk-cards pk-cards-4"><?php foreach ($pk_structures['ids'] as $pk_product) get_template_part('template-parts/product-card', null, ['product'=>$pk_product,'group'=>$pk_structures['group']]); ?></div>
+                </section>
+            <?php endif; ?>
             <?php
             $pk_related = get_posts([
                 'post_type' => 'post',
@@ -70,10 +76,10 @@ while (have_posts()) :
         <section class="pk-cta-band">
             <div class="pk-wrap pk-cta-inner">
                 <div>
-                    <h2 class="pk-h2 pk-on-dark">Have a spec you need priced?</h2>
-                    <p class="pk-lede pk-on-dark-muted">Five steps, live pricing, one business day reply.</p>
+                    <h2 class="pk-h2 pk-on-dark">Put it to work on a real pack</h2>
+                    <p class="pk-lede pk-on-dark-muted">The quote builder applies these numbers to your size and quantity. We confirm the dieline before anything is produced.</p>
                 </div>
-                <a class="pk-btn pk-btn-light" href="<?php echo esc_url(home_url('/inquiry/')); ?>">Build a quote</a>
+                <div><a class="pk-btn pk-btn-light" href="<?php echo esc_url(home_url('/get-a-quote/')); ?>">Build a quote</a> <a class="pk-btn pk-btn-light" href="<?php echo esc_url(home_url('/samples/')); ?>">Order a sample</a></div>
             </div>
         </section>
     </main>
