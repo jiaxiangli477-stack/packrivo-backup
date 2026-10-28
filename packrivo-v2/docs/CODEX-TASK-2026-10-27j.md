@@ -1,4 +1,4 @@
-# Codex 任务单 · 2026-10-27j · 首页去掉未确认的说法 + 找出子主题没翻译的文字
+# Codex 任务单 · 2026-10-27j · 首页换掉技术词 + 找出子主题没翻译的文字
 
 **一轮做完。** 只改子主题 `E:\破甲工作区\packrivo-wp\packrivo-home-v4`，不改父主题、插件、mu-plugin。生产只读，不部署。完成后同步到 `E:\破甲工作区\packrivo-backup` 并 push，结果写到 `docs\CODEX-RESULT-2026-10-27j.md`，附命令和原样输出。
 
@@ -6,27 +6,21 @@
 
 Claude 在本地 `/ar/` 首页数到 **83 段可见英文**：H1、步骤、FAQ、价格说明、博客区标题都没翻译。生产的阿语首页 H1 是阿语，所以这个子主题现在上线，多语言首页会**倒退**。
 
-另外，首页有一批从 v2 带过来、**站长没有确认过**的经营说法。规则是"只带事实部分"，下面先按保守版处理。
+首页上从 v2 带过来的经营说法，**站长已于 2026-10-27 逐条确认全部属实**：服务费 8–15%、生产 7–30 天、现货 1–15 天、打样 5–10 天、无印现货 100 个起、美欧 DDP 为标准且可 FOB、包装前寄印张、每单附照片和材料声明、回收率表、报价附刀模、供应商经过审核、流程含验货。**这些说法都保留，不要删。**
 
-## 1. 首页文案（`front-page.php`）
+## 1. 首页文案（`front-page.php`）：只换掉技术词
 
-按下表逐条改。**表里没列的句子不动。** 引擎算出来的价格和百分比（`$faq_price_answer`、`freePrintSetupFrom`、`$by_qty` 那几句）都保留。
+规则：H2、按钮、卡片和表格里不放买家看不懂的技术词。只改下表几处，**其他句子和数字一个字都不动**。
 
 | 位置 | 现在 | 改成 |
 | --- | --- | --- |
-| hero lede（约 60 行） | `Sampling, production and freight handled end to end. Reference prices published, dielines included, and a person on the other end of the quote — not a form that goes nowhere.` | `Sampling, production and freight handled end to end, with live prices in the quote builder and a real person replying to every quote.` |
-| hero 数据（约 68–69 行） | `Production 7–30 days`、`Sourcing fee 8–15%` | **删掉这两项**，只留 MOQ 和起价。布局在 375 / 768 / 1280 px 下不能出现空位。 |
-| 步骤 02 Sample | `…produced in 5–10 days. Nothing is committed before you hold it.` | `A physical sample in your artwork. Nothing is committed before you hold it.` |
-| 步骤 03 Produce | `Artwork goes to plate, the run is scheduled, and we send press sheets before packing.` | `Once you approve the sample, the run is scheduled and checked before packing.` |
-| 步骤 04 Deliver | `DDP or FOB, palletised, with photos and the material declaration per order.` | `Shipped from Shenzhen to your door or port, with freight quoted per shipment.` |
-| FAQ 最低起订量 | `…Unprinted stock ships from 100 pieces.` | 删掉这一句，只留 `MOQ 500 pieces per design for printed boxes.` |
-| FAQ 生产周期 | `Stock styles ship in 1–15 days. Printed custom orders … usually 7–30 days …` | `Timing depends on the structure and finishing. We confirm it with your quote, before you pay for anything.` |
-| FAQ 整条供应链 | `…with vetted suppliers, and charge an 8–15% sourcing fee on the order value.` | `We coordinate sampling, production and freight with independent suppliers, and you see the full price before you order.` |
-| FAQ 从哪里发货 | `Shenzhen, China. DDP to the US and EU is standard; FOB is available if you consolidate.` | `Shenzhen, China. Freight to your country is quoted per shipment.` |
-| 材料区（约 189–202 行，"Say what the box is made of, in numbers" 和 Board / Recycled 表） | 回收率 70–90% / 60% / 100%、`Kraft E-flute`、`Greyboard 2 mm` | **整块删掉**，连同它的导航锚点或链接。没有来源的环保百分比不能写，技术词也不进首页。 |
+| hero lede（约 60 行） | `…Reference prices published, dielines included, and a person…` | `…Reference prices published, a cutting template with every quote, and a person…`（只换 `dielines included` 这几个词） |
+| 材料表（约 197–199 行） | `Kraft E-flute` | `Kraft corrugated` |
+| 同上 | `White E-flute` | `White corrugated` |
+| 同上 | `Greyboard 2 mm` | `Rigid greyboard` |
 
-- FAQ 改了文字，首页的 FAQPage JSON-LD 也要同步（如果有）。
-- 改完全文搜一遍：`days`、`%`（引擎算的除外）、`E-flute`、`mm`、`DDP`、`FOB`、`vetted`、`press sheet`，贴出剩余命中并说明。
+- 回收率百分比、Use 列、标题和说明句都保留。
+- 改完全文搜一遍 `E-flute`、`mm`（尺寸 `cm` 不算）、`dieline`，贴出剩余命中并说明。
 
 ## 2. 找出没翻译的文字
 
@@ -50,7 +44,7 @@ Claude 在本地 `/ar/` 首页数到 **83 段可见英文**：H1、步骤、FAQ�
 
 ## 4. 验收
 
-- 首页 en：第 1 节每条都已改（贴 diff）；375 / 768 / 1280 截图各 1 张。
+- 首页 en：第 1 节 4 处已改，其余经营说法原样保留（贴 diff）；375 / 768 / 1280 截图各 1 张。
 - `dsh-in\untranslated-27j.json` 存在，统计表贴出。
 - 首页 × 11 语种 H1 是译文。
 - 提交并 push。不部署，不改 www.packrivo.com。
