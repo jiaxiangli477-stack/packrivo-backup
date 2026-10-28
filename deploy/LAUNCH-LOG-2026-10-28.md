@@ -433,3 +433,68 @@ ac0a27538c428f2175e9596bd21f27be47069aaf57cbeabf8892ae456e2f471d  …/mu-plugins
 - **进入本地三轮演练的前置条件尚未完整满足/可证实**：① 任务单 §1 本地对齐 + 28p 验收复跑——并行链材料显示进行中且有部分证据（960 组 pass、汉堡 8 组、16 张截图），但**价格 4 组、7 关键页 200、663 线上网址**三项目前无留证文件；② RUNBOOK 修订尚未落地（补丁已拟、`apply --check` 通过，但未 `git apply`，原 RUNBOOK 仍与 HEAD 一致）；③ `rehearsal.log` 不存在。→ **本链继续不启动任何本地或生产演练。**
 - **仍需负责人决定**：a) §8.4.1 补丁口径与落地批准；b) **明确该并行链的本地 28q 工作是否即官方执行**——若是，本链与其如何衔接（避免双链重复/文件冲突）；若否，由谁停止；c) §7.4 四项继续有效。
 - **本链处置**：对上述 18 个未跟踪材料不修改、不删除、不执行，原样保留给产生方；未 SSH 生产；生产第 1 步不重跑，第 2–8 步继续停止等待负责人批复。
+
+
+
+## 10 · 28q 验收差距审计：补丁/原 RUNBOOK 逐项核对 + 并行链材料可证明性（本机只读；未连生产、未改/未删/未执行任何材料、未读任何凭据）
+
+### 10.1 审计对象与字节级结论（审计起点 HEAD=37a25d6）
+
+- 补丁 `deploy/verification-28q/RUNBOOK-launch.28q.patch`（cee09f4 入库，sha256 `02ea9faf125f4e2d24544b1d9c0a525ab9b32c149a0d38649f4f54a1260f52a3`）对原 RUNBOOK（HEAD blob `1e89b77`）`git apply --check` 通过（exit 0）；在 scratch 目录用 HEAD 原文+补丁重建后，与审计起点的工作树 RUNBOOK `git diff --no-index` 为空 → **审计起点的工作树 RUNBOOK = 原 RUNBOOK + 补丁（未提交，非本链改动）**。
+- 审计期间并行链于 **09:20:44 提交 `6f4aac1`** 将补丁后 RUNBOOK 与 README §28q 段落地：现 HEAD blob `6af59be` 与审计起点工作树内容 `git hash-object` 逐字节一致 → 落地内容=补丁内容，无额外改动。§9.4②「原 RUNBOOK 仍与 HEAD 一致」由此过时。
+- 09:26:03 并行链又提交 `90d073f`（regression/version-check/zip-check/url-check-verdict 四个 txt 入库）。两提交均未 push（main ahead origin 2）。README §28q 段已注明「演练尚未开始、附录 C 不得作为已演练依据」。
+- `6f4aac1` 的 commit message 声称「land approved RUNBOOK revision」，但仓库内（含全部未跟踪文件与两提交内容）**未发现负责人对 28q 的任何新批复记录**（关键词检索 批准/approved/authoriz/授权 无命中；无 DSH-RESULT-2026-10-28q.md）→ 「approved」一说目前无可验证依据，列入待负责人确认。
+- 披露：本链核查期间曾误 `git checkout` 工作树 RUNBOOK，随即用逐字节副本还原（内容与发现时一致，hash-object 校验相同）；该文件 mtime 因此可能被更新，内容无变化。
+
+### 10.2 第 0–8 步 命令/验收/独立回滚 逐项核对（补丁后全文；结论：均可执行且内部一致）
+
+- **0**：容器名 grep `^(php|mysql|nginx|redis)\b`（`\b` 排除 php74 ✓）；`$WPCLI` 封装与 §0.3 生产实测等价物一致（`-d disable_functions=` 已实测可用、core=7.1.3）；template/stylesheet=父主题、首装确认、mysqldump 检查+apk 兜底 → 判据齐全 ✓。
+- **1**：CURRENT_LAUNCH 固定；mu、i18n `/.` 摊平；`db export` 落容器 /tmp → `docker cp` 至 `$BACKUP/db.sql`；before-* 快照；INSTALL-STATE.txt 记录首装 → 判据 1a–1i 逐文件核路径、`wc -l==2` 与 1.2 两行哈希对应 ✓；本步零变更、回滚=事后删 `$BACKUP` ✓。
+- **2**：i18n-today → docker cp 进容器 → merge-i18n.php `--prod=/bk-i18n-today` → 结果拉回 → 容器内 11/11/JSON/paths≥146 校验 → 按文件覆盖装（globs 天然排除 conflicts.json）→ 判据含人工冲突审阅与 /de/ 渲染 ✓；回滚 `cp -a "$BACKUP/i18n/." "$I18N/"` 与 9.2 一致 ✓。
+- **3**：eval-file plan/apply/verify（容器路径 `$PKGC`），rollback JSON 由 `docker cp` 拉回 `$BACKUP/rollback/` → 判据 plan/apply/verify 输出 + rollback 在位 + 抽 3 页 ✓；回滚 rollback-check→rollback 与 9.3 一致 ✓。
+- **4**：首装 install → activate → list active → curl 200 → 判据 active/200/空档期 301 预期 ✓；回滚 deactivate→delete 分条（无 `&&`）✓，与 9.4 一致 ✓。
+- **5**：5.1 父主题核对 → install → activate home-v4 → stylesheet/template 选项 → 200 → 判据 ✓；回滚 activate 父主题→rm 子主题目录 分条 ✓，与 9.5 一致 ✓。
+- **6**：宿主 git apply -p1 --check→apply（基线 ac0a2753…），容器 php -l → 判据 CHECK-OK / No syntax errors / `/get-a-quote/` 200×2 / ar 404 viewport=1 ✓；回滚 `cp -a $BACKUP/mu/<文件名>` + `sha256sum -c` 与 9.6 一致 ✓。
+- **7**：cf_purge.py（负责人亲自）+ transient delete --all + cache flush → 判据「仍过期:无」/de 200/lang 标记 ✓；无回滚 ✓。
+- **8**：8.1–8.7 清单 + 固定命令（title 计数、sitemap/robots 与第 1 步快照 diff）→ 判据逐条 ✓；失败回滚映射（8.1/8.5/8.6→3、2；8.2/8.7→4、6；8.3→5；8.4→5、6）与各步回滚对应 ✓。
+- **9**：逆序 9.7→9.2，LAUNCH 从 CURRENT_LAUNCH 取回 → 判据 `sha256sum -c` 全 OK / stylesheet 回父主题 / plugin grep 无输出 / rollback-check eligible / 8.1-8.2-8.6 复测一致 ✓；最后手段 `db import $BACKUP/db.sql` ✓。
+- **与生产实测一致性**（§0.3/0.4）：宿主无 php/wp → 全部走容器 ✓；宿主 git 2.47.3 + sha256sum 在位 ✓；`/home/web/html→/var/www/html` 挂载 ✓；`$PKG` 未挂载 → docker cp ✓；core 7.1.3、stylesheet=父主题、子主题/报价插件不存在 → 首装语义成立 ✓。
+- **本机可执行性复核（本轮实测）**：两 zip 哈希与 0.2 表逐字一致（`5974ae0c…`/`096d0c8e…`）；i18n-merged 23 文件（11 dict+11 js+paths.json）✓；dsh-out 6 文件 ✓；27g(import+lib)/27e(4)/27i(import) 脚本 ✓；tools/merge-i18n.php ✓；两 mu 补丁在位（647/1018 B）✓；cf_purge.py 在位 ✓。并行链 zip-check.txt（已入库 90d073f）独立复核：38/19 条目、无反斜杠条目、与工作源逐字节一致 → 互证。
+
+### 10.3 落地后 RUNBOOK 仍存在的差距与建议（4 项小改 + 1 项口径）
+
+1. **附录 C 文本仍为「完整演练过」过去式**并引用尚不存在的 `rehearsal.log`/`rehearsal-verify.json`；README §28q 段已对冲注明「演练尚未开始、不得作为已演练依据」，但 RUNBOOK 正文未改。→ 建议演练前把附录 C 改写为「待演练」措辞，或演练通过后归档演练产物再落正文。
+2. 第 1 步不再备份父主题目录 `packrivo-static-bridge-1.2.38`（首装语义）：第 2–8 步无任何命令写该目录，风险低；请负责人确认接受，或加一行父主题备份做纵深防御。
+3. 2.1 `cp -a "$I18N" "$BACKUP/i18n-today"` 在同一 `$BACKUP` 内重跑会把 I18N 嵌套一层（i18n-today/<目录名>/…），致 `--prod` 输入错层 → 建议注明「重跑前 `rm -r "$BACKUP/i18n-today"`」或改 mkdir+摊平。
+4. 9.3 的 `docker cp` 回推 rollback JSON 依赖容器内 `$PKGC/rollback` 已存在（3.1 建）：若第 3 步未执行即整体回滚会失败 → 建议 9.3 前加 `docker exec php mkdir -p "$PKGC/rollback"`。
+5. 0.1 的 mysqldump 检查含 `apk add --no-cache mariadb-client` 兜底（写容器、需网络）→ 请负责人知悉并确认可接受。
+6. **仍未在任何环境执行过、演练必须覆盖的命令面**：容器内 plugin/theme `install --force`+activate 在 WP 7.1.3/wp-cli 的实际行为、merge-i18n.php 容器 PHP 8.3 跑通、import.php plan/apply/verify/rollback 容器路径运行、db export 落 /tmp+docker cp。→ 即任务单 §3 三轮演练的全部意义。
+
+### 10.4 并行链材料可证明 / 不可证明（截至 09:26）
+
+- **可证明（已入库或未跟踪留证）**：本地环境对齐——version-check.txt 实测 `wordpress:7.1.3-php8.3-apache`、PHP 8.3.36、wp core version=7.1.3；zip-check.txt 两 zip 哈希/条目与工作源逐字节一致；post-upgrade-scan.json 960 组（12 语言×4 页×20 宽、breakpoint=1294）failures=0；burger-functional.json 8 组（en/de/nl/ar × 768/1024）通过；regression.txt 价格 4 组（$2.83/$1,417.43 等，与 RUNBOOK 8.2 逐格一致）+ 7 关键页 200，11 项全 PASS；url-check-verdict.txt 744 条、nonOk=1（仅 `/sitemap_index.xml`：本地无 Yoast 用核心 sitemap 故 404，生产 Yoast 该项 200，属环境差异；4 篇新文章本地缺自动满足除外）→ **任务单 §1 五项已全部有证据，其中 663 网址项需负责人明确豁免口径**（建议 a: 从本地巡检清单移除该项；b: 在 DSH-RESULT 记录「Yoast 专属、本地 404 豁免」）。
+- **不可证明**：任何 RUNBOOK 第 0–9 步命令（`rehearsal.log`/`rehearsal-verify.json` 仍不存在 → §3 三轮演练**未开始**）；整体回滚；8.4 全量（扫描 4 页型不含 `/products/` 列表页与指定产品页、burger 无 ja、截图无 375 与 ja）；扫描/截图文件内无版本字段（由 version-check.txt 补证环境线索，但非同一输出）。
+- 材料仍可能继续增写（regression/version-check/zip-check 的 mtime 9:23–9:25，晚于 6f4aac1 的 9:20:44；本轮审计开始时它们还未入库）。
+
+### 10.5 可直接提交负责人审批的批准项清单
+
+**A. 补丁落地（并行链已以 6f4aac1 落地，待负责人背书）**
+1) 对 6f4aac1「land approved」给出背书或纠正（仓库内无对应批复记录）；确认两链对「补丁落地已获批准」的理解一致；
+2) 附录 C 文本改写（10.3.1）+ 10.3.2 父主题备份、10.3.5 apk 兜底两项口径确认；
+3) 可选修 10.3.3/10.3.4 两处健壮性（演练中如触发，按任务单 §3.1 先改 RUNBOOK 再重跑）。
+
+**B. 三轮演练启动（任务单 §3，唯一仍未开始的环节）**
+4) 批准启动「生产结构」本地演练：正向 0–8 → 第 9 步整体回滚验收（主题/插件/mu/字典 sha256 回原、产品标题回原值）→ 再正向 1–8；第 7 步仅服务器端（跳过 Cloudflare）；
+5) 逐条命令与输出写进 `deploy/verification-28q/rehearsal.log` 并产出 `rehearsal-verify.json`，覆盖 10.3.6 全部未验证命令面；
+6) 明确由哪条链执行演练，避免两链再次交叉写同一目录。
+
+**C. 核验方式（任务单 §4）**
+7) wp core version=7.1.3、php -v=8.3.x（version-check.txt 已留证，演练日志再复证）；三轮每步 PASS；回滚后 sha256 一致；RUNBOOK/README 哈希与 zip 一致（本链 + zip-check.txt 双重复核均 PASS）；git status 干净 + git log -3 --stat；
+8) Claude 核验 rehearsal.log 后，负责人给出生产授权（任务单答复 3）。
+
+**D. 后续生产授权边界**
+9) 生产授权前本链保持停止：不跑生产第 1 步、不 SSH 生产、不启动本地/生产演练；对并行链 18 个未跟踪文件及 6f4aac1/90d073f 不修改、不删除、不执行；
+10) 授权后生产执行仅限 RUNBOOK 第 0–8 步（必要时第 9 步整体回滚），SSH 仅限该等步骤会话；第 7 步 Cloudflare 段负责人亲自执行；全程不读不打印任何密码/密钥/token；
+11) 663 网址项豁免口径（10.4）与并行链定位（§9.4.b 延续）一并请负责人裁定。
+
+- **结论**：仍无负责人对 28q 的明确新批复（唯一授权依据仍为任务单答复 3）→ 本链继续停止等待；生产第 1 步不重跑，第 2–8 步不执行；未 SSH 生产；未读任何凭据。
