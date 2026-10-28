@@ -202,6 +202,8 @@ page,ar,de,es,fr,it,ja,ko,nl,pt,zh-CN,zh-TW
 | 1 个产品页 | 375 | 375 |
 | 报价页 | 375 | 375 |
 
+另外 6 个页面（首页 / `/products/` / `/jewelry-boxes/` / `/blog/` / 产品页 / 报价页）× 12 个语言前缀（en + 11 语种）= **72 行，`scrollWidth` 全部 375**（`overflow-28m.csv`，逐个元素量过 `offenders=0`）。
+
 `/ar/<文章路径>/` 是 404（该路径不在 `paths.json`，27j 已记为 `route-unavailable`），而这个 404 页**没有 `<meta name="viewport">`**，手机按 980 px 渲染 → `innerWidth=981`。修复补丁已写好但**未应用**：`deploy/patches-28m/packrivo-i18n-404-viewport.patch`（mu-plugin 只读，按规则只交补丁）。
 
 ### 4. 询盘页
