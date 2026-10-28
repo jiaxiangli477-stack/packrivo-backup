@@ -24,8 +24,33 @@ function pkv4_assets()
         'base' => home_url('/'),
         'product' => $is_product ? $slug : '',
         'style' => $is_product ? (pk_engine_style_for($post_id) ?: '') : '',
+        // List pages carry no engine style in the link, so ship the map once and
+        // let the CTA script send configured products to the builder.
+        'styles' => pkv4_style_map(),
     ];
     wp_add_inline_script('pkv4-quote-targets', 'window.pkv4QuoteTargets=' . wp_json_encode($context) . ';', 'before');
+}
+
+/** slug => engine style for every page that has one. Cached; slugs, not IDs. */
+function pkv4_style_map()
+{
+    $cached = get_transient('pkv4_style_map');
+    if (is_array($cached)) return $cached;
+    $map = [];
+    $ids = get_posts([
+        'post_type' => 'page',
+        'post_status' => 'publish',
+        'numberposts' => -1,
+        'fields' => 'ids',
+        'meta_key' => '_packrivo_engine_style',
+    ]);
+    foreach ($ids as $id) {
+        $style = pk_engine_style_for($id);
+        if (!$style) continue;
+        $map[(string) get_post_field('post_name', $id)] = $style;
+    }
+    set_transient('pkv4_style_map', $map, HOUR_IN_SECONDS);
+    return $map;
 }
 // Priority 20: the child functions.php loads before the parent, so the default 10
 // put our stylesheet *before* the parent's and lost every equal-specificity fight.

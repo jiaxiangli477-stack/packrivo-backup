@@ -1,5 +1,7 @@
 {
   "title": {
+    "Get a Quote – Packrivo": "获取报价 – Packrivo",
+    "Get a Quote": "获取报价",
     "Custom Packaging Labels | Packrivo": "定制包装标签 | Packrivo",
     "Custom Mailer Box Sourcing | Packrivo": "定制邮寄盒采购 | Packrivo",
     "Request a Custom Packaging Quote | Packrivo": "申请定制包装报价 | Packrivo",
@@ -7296,6 +7298,7 @@
     "Wooden Jewelry Boxes": "木质首饰盒"
   },
   "text": {
+    "Get a Quote": "获取报价",
     "Blog": "博客",
     "Home": "首页",
     "About": "关于",

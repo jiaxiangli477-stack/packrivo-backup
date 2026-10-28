@@ -3,7 +3,14 @@
   'use strict';
   var config = window.pkv4QuoteTargets || {}, supported = ['ar','de','es','fr','it','ja','ko','nl','pt','zh-CN','zh-TW'];
   var segment = location.pathname.split('/')[1], lang = supported.indexOf(segment) >= 0 ? segment : '';
-  var site = new URL(config.base || '/', location.href);
+  var site = new URL(config.base || '/', location.href), styleMap = config.styles || {};
+
+  // A product only belongs in the configurator when the engine prices it.
+  function styleFor(slug) {
+    if (!slug) return '';
+    var bare = slug.replace(/^product-/, '');
+    return styleMap[slug] || styleMap['product-' + bare] || styleMap[bare] || '';
+  }
 
   function rewrite(link) {
     if (!link || !link.getAttribute('href')) return;
@@ -19,12 +26,19 @@
     var product = u.searchParams.get('product') || config.product || '';
     var isCurrentProduct = !!product && !!config.product && product.replace(/^product-/, '') === config.product.replace(/^product-/, '');
     if (isCurrentProduct) product = config.product;
+    var style = u.searchParams.get('style') || styleFor(product) || (isCurrentProduct ? config.style : '');
     var target = new URL(lang ? '/' + lang + '/inquiry/' : '/get-a-quote/', site);
     if (product) {
-      if (lang) {
+      // Localized visitors go straight to the builder when the engine prices the
+      // structure; otherwise the brief form stays the destination.
+      if (lang && style) {
+        target = new URL('/' + lang + '/get-a-quote/', site);
+        target.searchParams.set('style', style);
+        target.searchParams.set('qty', '500');
+        target.searchParams.set('product', product);
+      } else if (lang) {
         target.searchParams.set('product', product.replace(/^product-/, ''));
       } else {
-        var style = u.searchParams.get('style') || (isCurrentProduct ? config.style : '') || '';
         target.searchParams.set('style', style);
         target.searchParams.set('qty', '500');
         target.searchParams.set('product', product);

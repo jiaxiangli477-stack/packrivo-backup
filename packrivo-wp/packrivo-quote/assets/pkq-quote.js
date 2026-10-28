@@ -121,13 +121,39 @@
       Object.keys(incoming).forEach(function (key) {
         var local = groups[group][key];
         if (!local) return;
-        if (incoming[key].label) local.label = incoming[key].label;
+        if (incoming[key].label) local.label = t(incoming[key].label);
         if (typeof incoming[key].factor === 'number') local.factor = incoming[key].factor;
         if (typeof incoming[key].add === 'number') local.add = incoming[key].add;
       });
     });
 
     return cfg;
+  }
+
+  // English source text => current-language text, supplied by the plugin.
+  // The widget is rendered client-side, so it cannot rely on the page-level
+  // HTML translation pass; every literal goes through here instead.
+  var STRINGS = {};
+
+  function t(s) {
+    return Object.prototype.hasOwnProperty.call(STRINGS, s) ? STRINGS[s] : s;
+  }
+
+  function tf(template, vars) {
+    var out = t(template);
+    Object.keys(vars).forEach(function (k) {
+      out = out.split('{' + k + '}').join(vars[k]);
+    });
+    return out;
+  }
+
+  // Server errors arrive as English text, some with numbers interpolated.
+  function serverText(msg) {
+    var s = String(msg || '');
+    if (t(s) !== s) return t(s);
+    var m = /^Quantity must be between (\d+) and (\d+)\.$/.exec(s);
+    if (m) return tf('Quantity must be between {min} and {max}.', { min: m[1], max: m[2] });
+    return s;
   }
 
   function el(tag, cls, text) {
@@ -140,6 +166,7 @@
   function mount(root) {
     var cfg = window.PKQ;
     if (!cfg) return;
+    STRINGS = cfg.strings || {};
     normaliseConfig(cfg);
 
     var requestedStyle = root.getAttribute('data-style') || '';
@@ -174,14 +201,14 @@
     root.innerHTML = '';
     var shell = el('div', 'pkq-shell');
     var head = el('div', 'pkq-head');
-    head.appendChild(el('p', 'pkq-eyebrow', 'Instant quote'));
+    head.appendChild(el('p', 'pkq-eyebrow', t('Instant quote')));
     head.appendChild(el('h2', 'pkq-title', cfg.i18n.title));
     head.appendChild(el('p', 'pkq-sub', cfg.i18n.sub));
     shell.appendChild(head);
 
     var steps = el('div', 'pkq-steps');
     ['Style', 'Size', 'Material', 'Quantity', 'Details'].forEach(function (label, i) {
-      var b = el('button', 'pkq-step', String(i + 1).padStart(2, '0') + ' ' + label);
+      var b = el('button', 'pkq-step', String(i + 1).padStart(2, '0') + ' ' + t(label));
       b.type = 'button';
       b.addEventListener('click', function () {
         state.step = i;
@@ -204,7 +231,7 @@
       wrap.appendChild(el('p', 'pkq-label', title));
       var row = el('div', 'pkq-chips');
       entries.forEach(function (entry) {
-        var b = el('button', 'pkq-chip' + (entry.key === activeKey ? ' is-active' : ''), entry.label);
+        var b = el('button', 'pkq-chip' + (entry.key === activeKey ? ' is-active' : ''), t(entry.label));
         b.type = 'button';
         b.addEventListener('click', function () {
           onPick(entry.key);
@@ -213,7 +240,7 @@
         row.appendChild(b);
       });
       wrap.appendChild(row);
-      if (note) wrap.appendChild(el('p', 'pkq-note', note));
+      if (note) wrap.appendChild(el('p', 'pkq-note', t(note)));
       return wrap;
     }
 
@@ -227,14 +254,16 @@
       var p = price(state, cfg);
 
       if (state.step === 0) {
-        main.appendChild(el('h3', 'pkq-h3', 'What are we making?'));
+        main.appendChild(el('h3', 'pkq-h3', t('What are we making?')));
         var tiles = el('div', 'pkq-tiles');
         Object.keys(cfg.styles).forEach(function (key) {
           var s = cfg.styles[key];
           var b = el('button', 'pkq-tile' + (key === state.style ? ' is-active' : ''));
           b.type = 'button';
-          b.appendChild(el('span', 'pkq-tile-name', s.label));
-          b.appendChild(el('span', 'pkq-tile-price', 'from ' + money(price(Object.assign({}, state, { style: key, qty: 500 }), cfg).unit)));
+          b.appendChild(el('span', 'pkq-tile-name', t(s.label)));
+          b.appendChild(el('span', 'pkq-tile-price', tf('from {price}', {
+            price: money(price(Object.assign({}, state, { style: key, qty: 500 }), cfg).unit)
+          })));
           b.addEventListener('click', function () {
             state.style = key;
             if (key === 'rigid') state.material = 'rigidboard';
@@ -252,8 +281,8 @@
       }
 
       if (state.step === 1) {
-        main.appendChild(el('h3', 'pkq-h3', 'Size'));
-        main.appendChild(el('p', 'pkq-note', 'External dimensions in centimetres. Add 3–5 mm per axis for the product.'));
+        main.appendChild(el('h3', 'pkq-h3', t('Size')));
+        main.appendChild(el('p', 'pkq-note', t('External dimensions in centimetres. Add 3–5 mm per axis for the product.')));
         var presets = el('div', 'pkq-chips');
         (STYLE_DIMS[state.style] || STYLE_DIMS.mailer).forEach(function (d) {
           var active = state.length === d[0] && state.width === d[1];
@@ -270,9 +299,9 @@
         main.appendChild(presets);
 
         var dims = el('div', 'pkq-dims');
-        [['length', 'Length'], ['width', 'Width'], ['height', 'Height']].forEach(function (pair) {
+        [['length', 'Length (cm)'], ['width', 'Width (cm)'], ['height', 'Height (cm)']].forEach(function (pair) {
           var field = el('label', 'pkq-field');
-          field.appendChild(el('span', 'pkq-label', pair[1] + ' (cm)'));
+          field.appendChild(el('span', 'pkq-label', t(pair[1])));
           var input = el('input', 'pkq-input');
           input.type = 'number';
           input.min = '1';
@@ -290,20 +319,20 @@
       }
 
       if (state.step === 2) {
-        main.appendChild(el('h3', 'pkq-h3', 'Material, print and finish'));
-        main.appendChild(optionRow('Board', Object.keys(MATERIALS).map(function (k) {
+        main.appendChild(el('h3', 'pkq-h3', t('Material, print and finish')));
+        main.appendChild(optionRow(t('Board'), Object.keys(MATERIALS).map(function (k) {
           return { key: k, label: MATERIALS[k].label };
         }), state.material, function (k) {
           state.material = k;
         }, MATERIALS[state.material].note));
 
-        main.appendChild(optionRow('Print', Object.keys(PRINTS).map(function (k) {
+        main.appendChild(optionRow(t('Print'), Object.keys(PRINTS).map(function (k) {
           return { key: k, label: PRINTS[k].label };
         }), state.print, function (k) {
           state.print = k;
         }));
 
-        main.appendChild(optionRow('Finish', Object.keys(FINISHES).map(function (k) {
+        main.appendChild(optionRow(t('Finish'), Object.keys(FINISHES).map(function (k) {
           return { key: k, label: FINISHES[k].label };
         }), state.finish, function (k) {
           state.finish = k;
@@ -318,13 +347,13 @@
           render();
         });
         rushLabel.appendChild(rush);
-        rushLabel.appendChild(el('span', '', 'Rush production (+' + cfg.rushPercent + '%)'));
+        rushLabel.appendChild(el('span', '', tf('Rush production (+{percent}%)', { percent: cfg.rushPercent })));
         main.appendChild(rushLabel);
       }
 
       if (state.step === 3) {
-        main.appendChild(el('h3', 'pkq-h3', 'Quantity'));
-        main.appendChild(el('p', 'pkq-big', p.qty.toLocaleString() + ' units'));
+        main.appendChild(el('h3', 'pkq-h3', t('Quantity')));
+        main.appendChild(el('p', 'pkq-big', tf('{qty} units', { qty: p.qty.toLocaleString() })));
 
         var range = el('input', 'pkq-range');
         range.type = 'range';
@@ -342,7 +371,7 @@
         var thead = el('thead');
         var hr = el('tr');
         ['Quantity', 'Unit', 'Total'].forEach(function (h) {
-          hr.appendChild(el('th', '', h));
+          hr.appendChild(el('th', '', t(h)));
         });
         thead.appendChild(hr);
         table.appendChild(thead);
@@ -364,20 +393,25 @@
       }
 
       if (state.step === 4) {
-        main.appendChild(el('h3', 'pkq-h3', 'Where do we send it?'));
+        main.appendChild(el('h3', 'pkq-h3', t('Where do we send it?')));
         var form = el('form', 'pkq-form');
+        var field = function (name, label, extra, wide) {
+          return '<label class="pkq-field' + (wide ? ' pkq-field-wide' : '') + '"><span class="pkq-label">'
+            + t(label) + '</span><input name="' + name + '"' + extra + ' class="pkq-input" /></label>';
+        };
         form.innerHTML = [
-          '<label class="pkq-field"><span class="pkq-label">Full name</span><input name="name" class="pkq-input" required /></label>',
-          '<label class="pkq-field"><span class="pkq-label">Work email</span><input name="email" type="email" class="pkq-input" required /></label>',
-          '<label class="pkq-field"><span class="pkq-label">Company</span><input name="company" class="pkq-input" required /></label>',
-          '<label class="pkq-field"><span class="pkq-label">Country</span><input name="country" class="pkq-input" /></label>',
-          '<label class="pkq-field"><span class="pkq-label">Phone (optional)</span><input name="phone" class="pkq-input" /></label>',
-          '<label class="pkq-field pkq-field-wide"><span class="pkq-label">Notes</span><textarea name="notes" rows="3" class="pkq-input"></textarea></label>',
-          '<label class="pkq-hp"><span>Website</span><input name="website" tabindex="-1" autocomplete="off" /></label>'
+          field('name', 'Full name', ' required'),
+          field('email', 'Work email', ' type="email" required'),
+          field('company', 'Company', ' required'),
+          field('country', 'Country', ''),
+          field('phone', 'Phone (optional)', ''),
+          '<label class="pkq-field pkq-field-wide"><span class="pkq-label">' + t('Notes')
+            + '</span><textarea name="notes" rows="3" class="pkq-input"></textarea></label>',
+          '<label class="pkq-hp"><span>' + t('Website') + '</span><input name="website" tabindex="-1" autocomplete="off" /></label>'
         ].join('');
         main.appendChild(form);
 
-        var submit = el('button', 'pkq-submit', cfg.i18n.submit + ' · ' + money(p.total));
+        var submit = el('button', 'pkq-submit', tf('Request this quote · {total}', { total: money(p.total) }));
         submit.type = 'button';
         var status = el('p', 'pkq-status');
         submit.addEventListener('click', function () {
@@ -417,7 +451,7 @@
           })
             .then(function (r) {
               return r.json().then(function (j) {
-                if (!r.ok) throw new Error(j.message || cfg.i18n.error);
+                if (!r.ok) throw new Error(serverText(j.message) || cfg.i18n.error);
                 return j;
               });
             })
@@ -425,7 +459,7 @@
               main.innerHTML = '';
               main.appendChild(el('h3', 'pkq-h3', cfg.i18n.done));
               main.appendChild(el('p', 'pkq-big', j.ref));
-              main.appendChild(el('p', 'pkq-note', 'We reply within one business day with a proof timeline. Reference ' + j.ref + '.'));
+              main.appendChild(el('p', 'pkq-note', tf('We reply within one business day with a proof timeline. Reference {ref}.', { ref: j.ref })));
             })
             .catch(function (err) {
               status.textContent = err.message || cfg.i18n.error;
@@ -438,7 +472,7 @@
       }
 
       var nav = el('div', 'pkq-nav');
-      var back = el('button', 'pkq-btn-ghost', '← Back');
+      var back = el('button', 'pkq-btn-ghost', t('← Back'));
       back.type = 'button';
       back.disabled = state.step === 0;
       back.addEventListener('click', function () {
@@ -447,7 +481,7 @@
       });
       nav.appendChild(back);
       if (state.step < 4) {
-        var next = el('button', 'pkq-btn', 'Continue');
+        var next = el('button', 'pkq-btn', t('Continue'));
         next.type = 'button';
         next.disabled = !state.style;
         next.addEventListener('click', function () {
@@ -466,12 +500,12 @@
       var p = price(state, cfg);
       aside.innerHTML = '';
       var card = el('div', 'pkq-card');
-      card.appendChild(el('p', 'pkq-label', 'Live estimate'));
+      card.appendChild(el('p', 'pkq-label', t('Live estimate')));
       card.appendChild(el('p', 'pkq-price', money(p.unit)));
-      card.appendChild(el('p', 'pkq-note', 'per unit · ' + p.qty.toLocaleString() + ' units'));
+      card.appendChild(el('p', 'pkq-note', tf('per unit · {qty} units', { qty: p.qty.toLocaleString() })));
       var list = el('dl', 'pkq-specs');
       [
-        ['Style', (cfg.styles[state.style] || {}).label || state.style],
+        ['Style', t((cfg.styles[state.style] || {}).label || state.style)],
         ['Size', state.length + ' × ' + state.width + ' × ' + state.height + ' cm'],
         ['Material', MATERIALS[state.material].label],
         ['Print', PRINTS[state.print].label],
@@ -479,12 +513,12 @@
         ['Order total', money(p.total)]
       ].forEach(function (row) {
         var d = el('div');
-        d.appendChild(el('dt', '', row[0]));
+        d.appendChild(el('dt', '', t(row[0])));
         d.appendChild(el('dd', '', row[1]));
         list.appendChild(d);
       });
       card.appendChild(list);
-      card.appendChild(el('p', 'pkq-fine', 'Ex-works. Freight quoted separately. Setup amortised into the unit price.'));
+      card.appendChild(el('p', 'pkq-fine', t('Ex-works. Freight quoted separately. Setup amortised into the unit price.')));
       aside.appendChild(card);
     }
 

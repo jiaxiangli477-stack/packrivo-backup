@@ -1,0 +1,231 @@
+{
+ "englishPrice": "$2.83",
+ "englishTotal": "$1,417.43",
+ "priceCheck": [
+  {
+   "lang": "ar",
+   "price": "$2.83",
+   "total": "$1,417.43",
+   "sameAsEnglish": true
+  },
+  {
+   "lang": "de",
+   "price": "$2.83",
+   "total": "$1,417.43",
+   "sameAsEnglish": true
+  },
+  {
+   "lang": "es",
+   "price": "$2.83",
+   "total": "$1,417.43",
+   "sameAsEnglish": true
+  },
+  {
+   "lang": "fr",
+   "price": "$2.83",
+   "total": "$1,417.43",
+   "sameAsEnglish": true
+  },
+  {
+   "lang": "it",
+   "price": "$2.83",
+   "total": "$1,417.43",
+   "sameAsEnglish": true
+  },
+  {
+   "lang": "ja",
+   "price": "$2.83",
+   "total": "$1,417.43",
+   "sameAsEnglish": true
+  },
+  {
+   "lang": "ko",
+   "price": "$2.83",
+   "total": "$1,417.43",
+   "sameAsEnglish": true
+  },
+  {
+   "lang": "nl",
+   "price": "$2.83",
+   "total": "$1,417.43",
+   "sameAsEnglish": true
+  },
+  {
+   "lang": "pt",
+   "price": "$2.83",
+   "total": "$1,417.43",
+   "sameAsEnglish": true
+  },
+  {
+   "lang": "zh-CN",
+   "price": "$2.83",
+   "total": "$1,417.43",
+   "sameAsEnglish": true
+  },
+  {
+   "lang": "zh-TW",
+   "price": "$2.83",
+   "total": "$1,417.43",
+   "sameAsEnglish": true
+  }
+ ],
+ "allPricesEqual": true,
+ "leaks": [
+  {
+   "lang": "ar",
+   "total": 0,
+   "detail": []
+  },
+  {
+   "lang": "de",
+   "total": 0,
+   "detail": []
+  },
+  {
+   "lang": "es",
+   "total": 0,
+   "detail": []
+  },
+  {
+   "lang": "fr",
+   "total": 0,
+   "detail": []
+  },
+  {
+   "lang": "it",
+   "total": 0,
+   "detail": []
+  },
+  {
+   "lang": "ja",
+   "total": 0,
+   "detail": []
+  },
+  {
+   "lang": "ko",
+   "total": 0,
+   "detail": []
+  },
+  {
+   "lang": "nl",
+   "total": 0,
+   "detail": []
+  },
+  {
+   "lang": "pt",
+   "total": 0,
+   "detail": []
+  },
+  {
+   "lang": "zh-CN",
+   "total": 0,
+   "detail": []
+  },
+  {
+   "lang": "zh-TW",
+   "total": 0,
+   "detail": []
+  }
+ ],
+ "layout": [
+  {
+   "lang": "ar",
+   "htmlDir": "rtl",
+   "rootDir": "rtl",
+   "strings": 99,
+   "maxScroll": 375,
+   "innerWidth": 375,
+   "wide": []
+  },
+  {
+   "lang": "de",
+   "htmlDir": "(none)",
+   "rootDir": "(none)",
+   "strings": 99,
+   "maxScroll": 375,
+   "innerWidth": 375,
+   "wide": []
+  },
+  {
+   "lang": "es",
+   "htmlDir": "(none)",
+   "rootDir": "(none)",
+   "strings": 99,
+   "maxScroll": 375,
+   "innerWidth": 375,
+   "wide": []
+  },
+  {
+   "lang": "fr",
+   "htmlDir": "(none)",
+   "rootDir": "(none)",
+   "strings": 99,
+   "maxScroll": 375,
+   "innerWidth": 375,
+   "wide": []
+  },
+  {
+   "lang": "it",
+   "htmlDir": "(none)",
+   "rootDir": "(none)",
+   "strings": 99,
+   "maxScroll": 375,
+   "innerWidth": 375,
+   "wide": []
+  },
+  {
+   "lang": "ja",
+   "htmlDir": "(none)",
+   "rootDir": "(none)",
+   "strings": 99,
+   "maxScroll": 375,
+   "innerWidth": 375,
+   "wide": []
+  },
+  {
+   "lang": "ko",
+   "htmlDir": "(none)",
+   "rootDir": "(none)",
+   "strings": 99,
+   "maxScroll": 375,
+   "innerWidth": 375,
+   "wide": []
+  },
+  {
+   "lang": "nl",
+   "htmlDir": "(none)",
+   "rootDir": "(none)",
+   "strings": 99,
+   "maxScroll": 375,
+   "innerWidth": 375,
+   "wide": []
+  },
+  {
+   "lang": "pt",
+   "htmlDir": "(none)",
+   "rootDir": "(none)",
+   "strings": 99,
+   "maxScroll": 375,
+   "innerWidth": 375,
+   "wide": []
+  },
+  {
+   "lang": "zh-CN",
+   "htmlDir": "(none)",
+   "rootDir": "(none)",
+   "strings": 99,
+   "maxScroll": 375,
+   "innerWidth": 375,
+   "wide": []
+  },
+  {
+   "lang": "zh-TW",
+   "htmlDir": "(none)",
+   "rootDir": "(none)",
+   "strings": 99,
+   "maxScroll": 375,
+   "innerWidth": 375,
+   "wide": []
+  }
+ ]
+}

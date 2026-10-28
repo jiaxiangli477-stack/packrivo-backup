@@ -106,6 +106,39 @@ final class PKQ_Plugin
         wp_register_script('pkq-quote', PKQ_URL . 'assets/pkq-quote.js', [], PKQ_VERSION, true);
     }
 
+    /** Current site language, empty on English routes. */
+    public static function lang()
+    {
+        $lang = function_exists('packrivo_lang') ? packrivo_lang() : null;
+        if (!is_string($lang) || !preg_match('/^[a-z]{2}(?:-[A-Z]{2})?$/', $lang)) return '';
+        return $lang;
+    }
+
+    /**
+     * English source text => translated text for the language being served.
+     * Keyed by the English string so the JS keeps readable literals and falls
+     * back to them verbatim when a translation is missing.
+     */
+    public static function strings()
+    {
+        static $cache = [];
+        $lang = self::lang();
+        if ($lang === '' || !isset($cache[$lang])) {
+            if ($lang === '') return [];
+            $file = PKQ_DIR . 'includes/quote-i18n/' . $lang . '.json';
+            $data = is_readable($file) ? json_decode((string) file_get_contents($file), true) : null;
+            $cache[$lang] = is_array($data) ? $data : [];
+        }
+        return $cache[$lang];
+    }
+
+    /** Translate one front-end string; English is the key and the fallback. */
+    public static function t($en)
+    {
+        $map = self::strings();
+        return isset($map[$en]) ? (string) $map[$en] : __($en, 'packrivo-quote');
+    }
+
     public static function render_shortcode($atts = [])
     {
         $settings = self::settings();
@@ -138,13 +171,17 @@ final class PKQ_Plugin
                 return ['label' => (string) $s['label'], 'base' => (float) $s['base']];
             }, $settings['styles']),
             'i18n' => [
-                'title' => __('Build your quote', 'packrivo-quote'),
-                'sub' => __('Five steps. Live pricing. An engineer confirms the dieline before anything is cut.', 'packrivo-quote'),
-                'submit' => __('Request this quote', 'packrivo-quote'),
-                'sending' => __('Sending…', 'packrivo-quote'),
-                'done' => __('Quote requested', 'packrivo-quote'),
-                'error' => __('Something went wrong. Please email us instead.', 'packrivo-quote'),
+                'title' => self::t('Build your quote'),
+                'sub' => self::t('Five steps. Live pricing. An engineer confirms the dieline before anything is cut.'),
+                'submit' => self::t('Request this quote'),
+                'sending' => self::t('Sending…'),
+                'done' => self::t('Quote requested'),
+                'error' => self::t('Something went wrong. Please email us instead.'),
             ],
+            // Full per-language table; the JS looks every literal up in it so the
+            // widget does not depend on the page-level HTML translation pass.
+            'strings' => self::strings(),
+            'lang' => self::lang(),
         ]);
 
         $atts = shortcode_atts(['style' => '', 'qty' => '', 'product' => ''], $atts, 'packrivo_quote');
@@ -168,12 +205,13 @@ final class PKQ_Plugin
         }
 
         return sprintf(
-            '<div class="pkq-root" data-style="%s" data-qty="%d" data-product="%s"%s><noscript>%s</noscript></div>',
+            '<div class="pkq-root" data-style="%s" data-qty="%d" data-product="%s"%s%s><noscript>%s</noscript></div>',
             esc_attr($style),
             $qty,
             esc_attr($product),
             $spec_attrs,
-            esc_html__('This configurator needs JavaScript. Email hello@packrivo.com and we will quote manually.', 'packrivo-quote')
+            self::lang() === 'ar' ? ' dir="rtl"' : '',
+            esc_html(self::t('This configurator needs JavaScript. Email hello@packrivo.com and we will quote manually.'))
         );
     }
 }

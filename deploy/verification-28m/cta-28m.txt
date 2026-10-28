@@ -1,0 +1,299 @@
+## en /products/ (200)
+  /get-a-quote/   [Get a quote]
+  /get-a-quote/?style=shipping&qty=500&product=product-auto-bottom-slotted-outer-carton   [Configure →]
+  /get-a-quote/?style=&qty=500&product=product-auto-lock-bottom-carton   [Get a price →]
+  /get-a-quote/?style=rigid&qty=500&product=product-book-style-rigid-presentation-box   [Configure →]
+  /get-a-quote/?style=carton&qty=500&product=product-bookend-folding-carton   [Configure →]
+  /get-a-quote/?style=&qty=500&product=product-corrugated-bottle-gift-carrier   [Get a price →]
+  /get-a-quote/?style=&qty=500&product=product-cube-carry-carton   [Get a price →]
+  /get-a-quote/?style=&qty=500&product=product-rigid-chipboard-divider   [Get a price →]
+  /get-a-quote/?style=&qty=500&product=product-circle-roll-labels   [Get a price →]
+  /get-a-quote/?style=&qty=500&product=clear-display-box   [Get a price →]
+  /get-a-quote/?style=&qty=500&product=product-coated-labels   [Get a price →]
+  /get-a-quote/?style=rigid&qty=500&product=product-collapsible-magnetic-gift-box   [Configure →]
+  /get-a-quote/?style=&qty=500&product=product-corrugated-book-wrap-mailer   [Get a price →]
+  /get-a-quote/?style=&qty=500&product=product-corrugated-divider   [Get a price →]
+  /get-a-quote/?style=&qty=500&product=product-paired-corrugated-end-caps   [Get a price →]
+  /get-a-quote/?style=&qty=500&product=product-corrugated-gusset-folder   [Get a price →]
+  /get-a-quote/?style=&qty=500&product=product-double-wall-tray-lid   [Get a price →]
+  /get-a-quote/?style=&qty=500&product=product-counter-display-carton   [Get a price →]
+  /get-a-quote/?style=&qty=500&product=product-die-cut-insert   [Get a price →]
+  /get-a-quote/?style=&qty=500&product=product-die-cut-handle-paper-bag   [Get a price →]
+  /get-a-quote/?style=&qty=500&product=product-flip-out-dispenser-carton   [Get a price →]
+  /get-a-quote/?style=&qty=500&product=product-four-corner-display-tray   [Get a price →]
+  /get-a-quote/?style=&qty=500&product=product-shipping-document-window-pouch   [Get a price →]
+  /get-a-quote/?style=&qty=500&product=product-double-wall-frame-tray-lid   [Get a price →]
+  /get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box   [Configure →]
+## en /jewelry-boxes/ (200)
+  /get-a-quote/   [Get a quote]
+  https://www.packrivo.com/inquiry/?group=jewelry-boxes   [Discuss this presentation →]
+  /get-a-quote/?style=&qty=500&product=drawer-jewelry-box   [Request a drawer-box quote →]
+## en /product-drawer-jewelry-box/ (200)
+  /get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box   [Get a quote]
+## en /product-textile-jewelry-pouch/ (404)
+  /get-a-quote/   [Get a quote]
+## de /products/ (200)
+  /de/inquiry/   [Angebot einholen]
+  /de/get-a-quote/?style=shipping&qty=500&product=product-auto-bottom-slotted-outer-carton   [Konfigurieren →]
+  /de/inquiry/?product=auto-lock-bottom-carton   [Preis anfragen →]
+  /de/get-a-quote/?style=rigid&qty=500&product=product-book-style-rigid-presentation-box   [Konfigurieren →]
+  /de/get-a-quote/?style=carton&qty=500&product=product-bookend-folding-carton   [Konfigurieren →]
+  /de/inquiry/?product=corrugated-bottle-gift-carrier   [Preis anfragen →]
+  /de/inquiry/?product=cube-carry-carton   [Preis anfragen →]
+  /de/inquiry/?product=rigid-chipboard-divider   [Preis anfragen →]
+  /de/inquiry/?product=circle-roll-labels   [Preis anfragen →]
+  /de/inquiry/?product=clear-display-box   [Preis anfragen →]
+  /de/inquiry/?product=coated-labels   [Preis anfragen →]
+  /de/get-a-quote/?style=rigid&qty=500&product=product-collapsible-magnetic-gift-box   [Konfigurieren →]
+  /de/inquiry/?product=corrugated-book-wrap-mailer   [Preis anfragen →]
+  /de/inquiry/?product=corrugated-divider   [Preis anfragen →]
+  /de/inquiry/?product=paired-corrugated-end-caps   [Preis anfragen →]
+  /de/inquiry/?product=corrugated-gusset-folder   [Preis anfragen →]
+  /de/inquiry/?product=double-wall-tray-lid   [Preis anfragen →]
+  /de/inquiry/?product=counter-display-carton   [Preis anfragen →]
+  /de/inquiry/?product=die-cut-insert   [Preis anfragen →]
+  /de/inquiry/?product=die-cut-handle-paper-bag   [Preis anfragen →]
+  /de/inquiry/?product=flip-out-dispenser-carton   [Preis anfragen →]
+  /de/inquiry/?product=four-corner-display-tray   [Preis anfragen →]
+  /de/inquiry/?product=shipping-document-window-pouch   [Preis anfragen →]
+  /de/inquiry/?product=double-wall-frame-tray-lid   [Preis anfragen →]
+  /de/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box   [Konfigurieren →]
+## de /jewelry-boxes/ (200)
+  /de/inquiry/   [Angebot einholen]
+  /de/inquiry/?product=drawer-jewelry-box   [Angebot für eine Schubladenbox anfordern]
+## de /product-drawer-jewelry-box/ (200)
+  /de/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box   [Angebot einholen]
+## de /product-textile-jewelry-pouch/ (404)
+  (no quote/inquiry links)
+## ja /products/ (200)
+  /ja/inquiry/   [見積もりを取る]
+  /ja/get-a-quote/?style=shipping&qty=500&product=product-auto-bottom-slotted-outer-carton   [仕様を選ぶ →]
+  /ja/inquiry/?product=auto-lock-bottom-carton   [見積もりを依頼 →]
+  /ja/get-a-quote/?style=rigid&qty=500&product=product-book-style-rigid-presentation-box   [仕様を選ぶ →]
+  /ja/get-a-quote/?style=carton&qty=500&product=product-bookend-folding-carton   [仕様を選ぶ →]
+  /ja/inquiry/?product=corrugated-bottle-gift-carrier   [見積もりを依頼 →]
+  /ja/inquiry/?product=cube-carry-carton   [見積もりを依頼 →]
+  /ja/inquiry/?product=rigid-chipboard-divider   [見積もりを依頼 →]
+  /ja/inquiry/?product=circle-roll-labels   [見積もりを依頼 →]
+  /ja/inquiry/?product=clear-display-box   [見積もりを依頼 →]
+  /ja/inquiry/?product=coated-labels   [見積もりを依頼 →]
+  /ja/get-a-quote/?style=rigid&qty=500&product=product-collapsible-magnetic-gift-box   [仕様を選ぶ →]
+  /ja/inquiry/?product=corrugated-book-wrap-mailer   [見積もりを依頼 →]
+  /ja/inquiry/?product=corrugated-divider   [見積もりを依頼 →]
+  /ja/inquiry/?product=paired-corrugated-end-caps   [見積もりを依頼 →]
+  /ja/inquiry/?product=corrugated-gusset-folder   [見積もりを依頼 →]
+  /ja/inquiry/?product=double-wall-tray-lid   [見積もりを依頼 →]
+  /ja/inquiry/?product=counter-display-carton   [見積もりを依頼 →]
+  /ja/inquiry/?product=die-cut-insert   [見積もりを依頼 →]
+  /ja/inquiry/?product=die-cut-handle-paper-bag   [見積もりを依頼 →]
+  /ja/inquiry/?product=flip-out-dispenser-carton   [見積もりを依頼 →]
+  /ja/inquiry/?product=four-corner-display-tray   [見積もりを依頼 →]
+  /ja/inquiry/?product=shipping-document-window-pouch   [見積もりを依頼 →]
+  /ja/inquiry/?product=double-wall-frame-tray-lid   [見積もりを依頼 →]
+  /ja/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box   [仕様を選ぶ →]
+## ja /jewelry-boxes/ (200)
+  /ja/inquiry/   [見積もりを取る]
+  /ja/inquiry/?product=drawer-jewelry-box   [引き出し式ボックスの見積もりを依頼 →]
+## ja /product-drawer-jewelry-box/ (200)
+  /ja/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box   [見積もりを取る]
+## ja /product-textile-jewelry-pouch/ (404)
+  (no quote/inquiry links)
+## zh-CN /products/ (200)
+  /zh-CN/inquiry/   [获取报价]
+  /zh-CN/get-a-quote/?style=shipping&qty=500&product=product-auto-bottom-slotted-outer-carton   [配置 →]
+  /zh-CN/inquiry/?product=auto-lock-bottom-carton   [获取报价 →]
+  /zh-CN/get-a-quote/?style=rigid&qty=500&product=product-book-style-rigid-presentation-box   [配置 →]
+  /zh-CN/get-a-quote/?style=carton&qty=500&product=product-bookend-folding-carton   [配置 →]
+  /zh-CN/inquiry/?product=corrugated-bottle-gift-carrier   [获取报价 →]
+  /zh-CN/inquiry/?product=cube-carry-carton   [获取报价 →]
+  /zh-CN/inquiry/?product=rigid-chipboard-divider   [获取报价 →]
+  /zh-CN/inquiry/?product=circle-roll-labels   [获取报价 →]
+  /zh-CN/inquiry/?product=clear-display-box   [获取报价 →]
+  /zh-CN/inquiry/?product=coated-labels   [获取报价 →]
+  /zh-CN/get-a-quote/?style=rigid&qty=500&product=product-collapsible-magnetic-gift-box   [配置 →]
+  /zh-CN/inquiry/?product=corrugated-book-wrap-mailer   [获取报价 →]
+  /zh-CN/inquiry/?product=corrugated-divider   [获取报价 →]
+  /zh-CN/inquiry/?product=paired-corrugated-end-caps   [获取报价 →]
+  /zh-CN/inquiry/?product=corrugated-gusset-folder   [获取报价 →]
+  /zh-CN/inquiry/?product=double-wall-tray-lid   [获取报价 →]
+  /zh-CN/inquiry/?product=counter-display-carton   [获取报价 →]
+  /zh-CN/inquiry/?product=die-cut-insert   [获取报价 →]
+  /zh-CN/inquiry/?product=die-cut-handle-paper-bag   [获取报价 →]
+  /zh-CN/inquiry/?product=flip-out-dispenser-carton   [获取报价 →]
+  /zh-CN/inquiry/?product=four-corner-display-tray   [获取报价 →]
+  /zh-CN/inquiry/?product=shipping-document-window-pouch   [获取报价 →]
+  /zh-CN/inquiry/?product=double-wall-frame-tray-lid   [获取报价 →]
+  /zh-CN/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box   [配置 →]
+## zh-CN /jewelry-boxes/ (200)
+  /zh-CN/inquiry/   [获取报价]
+  /zh-CN/inquiry/?product=drawer-jewelry-box   [申请抽屉盒报价 →]
+## zh-CN /product-drawer-jewelry-box/ (200)
+  /zh-CN/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box   [获取报价]
+## zh-CN /product-textile-jewelry-pouch/ (404)
+  (no quote/inquiry links)
+## ar /products/ (200)
+  /ar/inquiry/   [اطلب عرض سعر]
+  /ar/get-a-quote/?style=shipping&qty=500&product=product-auto-bottom-slotted-outer-carton   [اختر المواصفات →]
+  /ar/inquiry/?product=auto-lock-bottom-carton   [اطلب عرض سعر →]
+  /ar/get-a-quote/?style=rigid&qty=500&product=product-book-style-rigid-presentation-box   [اختر المواصفات →]
+  /ar/get-a-quote/?style=carton&qty=500&product=product-bookend-folding-carton   [اختر المواصفات →]
+  /ar/inquiry/?product=corrugated-bottle-gift-carrier   [اطلب عرض سعر →]
+  /ar/inquiry/?product=cube-carry-carton   [اطلب عرض سعر →]
+  /ar/inquiry/?product=rigid-chipboard-divider   [اطلب عرض سعر →]
+  /ar/inquiry/?product=circle-roll-labels   [اطلب عرض سعر →]
+  /ar/inquiry/?product=clear-display-box   [اطلب عرض سعر →]
+  /ar/inquiry/?product=coated-labels   [اطلب عرض سعر →]
+  /ar/get-a-quote/?style=rigid&qty=500&product=product-collapsible-magnetic-gift-box   [اختر المواصفات →]
+  /ar/inquiry/?product=corrugated-book-wrap-mailer   [اطلب عرض سعر →]
+  /ar/inquiry/?product=corrugated-divider   [اطلب عرض سعر →]
+  /ar/inquiry/?product=paired-corrugated-end-caps   [اطلب عرض سعر →]
+  /ar/inquiry/?product=corrugated-gusset-folder   [اطلب عرض سعر →]
+  /ar/inquiry/?product=double-wall-tray-lid   [اطلب عرض سعر →]
+  /ar/inquiry/?product=counter-display-carton   [اطلب عرض سعر →]
+  /ar/inquiry/?product=die-cut-insert   [اطلب عرض سعر →]
+  /ar/inquiry/?product=die-cut-handle-paper-bag   [اطلب عرض سعر →]
+  /ar/inquiry/?product=flip-out-dispenser-carton   [اطلب عرض سعر →]
+  /ar/inquiry/?product=four-corner-display-tray   [اطلب عرض سعر →]
+  /ar/inquiry/?product=shipping-document-window-pouch   [اطلب عرض سعر →]
+  /ar/inquiry/?product=double-wall-frame-tray-lid   [اطلب عرض سعر →]
+  /ar/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box   [اختر المواصفات →]
+## ar /jewelry-boxes/ (200)
+  /ar/inquiry/   [اطلب عرض سعر]
+  /ar/inquiry/?product=drawer-jewelry-box   [اطلب عرض سعر لعلبة درج ←]
+## ar /product-drawer-jewelry-box/ (200)
+  /ar/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box   [اطلب عرض سعر]
+## ar /product-textile-jewelry-pouch/ (404)
+  (no quote/inquiry links)
+
+## 目标状态码
+  200  /get-a-quote/
+  200  /get-a-quote/?style=shipping&qty=500&product=product-auto-bottom-slotted-outer-carton
+  200  /get-a-quote/?style=&qty=500&product=product-auto-lock-bottom-carton
+  200  /get-a-quote/?style=rigid&qty=500&product=product-book-style-rigid-presentation-box
+  200  /get-a-quote/?style=carton&qty=500&product=product-bookend-folding-carton
+  200  /get-a-quote/?style=&qty=500&product=product-corrugated-bottle-gift-carrier
+  200  /get-a-quote/?style=&qty=500&product=product-cube-carry-carton
+  200  /get-a-quote/?style=&qty=500&product=product-rigid-chipboard-divider
+  200  /get-a-quote/?style=&qty=500&product=product-circle-roll-labels
+  200  /get-a-quote/?style=&qty=500&product=clear-display-box
+  200  /get-a-quote/?style=&qty=500&product=product-coated-labels
+  200  /get-a-quote/?style=rigid&qty=500&product=product-collapsible-magnetic-gift-box
+  200  /get-a-quote/?style=&qty=500&product=product-corrugated-book-wrap-mailer
+  200  /get-a-quote/?style=&qty=500&product=product-corrugated-divider
+  200  /get-a-quote/?style=&qty=500&product=product-paired-corrugated-end-caps
+  200  /get-a-quote/?style=&qty=500&product=product-corrugated-gusset-folder
+  200  /get-a-quote/?style=&qty=500&product=product-double-wall-tray-lid
+  200  /get-a-quote/?style=&qty=500&product=product-counter-display-carton
+  200  /get-a-quote/?style=&qty=500&product=product-die-cut-insert
+  200  /get-a-quote/?style=&qty=500&product=product-die-cut-handle-paper-bag
+  200  /get-a-quote/?style=&qty=500&product=product-flip-out-dispenser-carton
+  200  /get-a-quote/?style=&qty=500&product=product-four-corner-display-tray
+  200  /get-a-quote/?style=&qty=500&product=product-shipping-document-window-pouch
+  200  /get-a-quote/?style=&qty=500&product=product-double-wall-frame-tray-lid
+  200  /get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box
+  200  https://www.packrivo.com/inquiry/?group=jewelry-boxes
+  200  /get-a-quote/?style=&qty=500&product=drawer-jewelry-box
+  200  /de/inquiry/
+  200  /de/get-a-quote/?style=shipping&qty=500&product=product-auto-bottom-slotted-outer-carton
+  200  /de/inquiry/?product=auto-lock-bottom-carton
+  200  /de/get-a-quote/?style=rigid&qty=500&product=product-book-style-rigid-presentation-box
+  200  /de/get-a-quote/?style=carton&qty=500&product=product-bookend-folding-carton
+  200  /de/inquiry/?product=corrugated-bottle-gift-carrier
+  200  /de/inquiry/?product=cube-carry-carton
+  200  /de/inquiry/?product=rigid-chipboard-divider
+  200  /de/inquiry/?product=circle-roll-labels
+  200  /de/inquiry/?product=clear-display-box
+  200  /de/inquiry/?product=coated-labels
+  200  /de/get-a-quote/?style=rigid&qty=500&product=product-collapsible-magnetic-gift-box
+  200  /de/inquiry/?product=corrugated-book-wrap-mailer
+  200  /de/inquiry/?product=corrugated-divider
+  200  /de/inquiry/?product=paired-corrugated-end-caps
+  200  /de/inquiry/?product=corrugated-gusset-folder
+  200  /de/inquiry/?product=double-wall-tray-lid
+  200  /de/inquiry/?product=counter-display-carton
+  200  /de/inquiry/?product=die-cut-insert
+  200  /de/inquiry/?product=die-cut-handle-paper-bag
+  200  /de/inquiry/?product=flip-out-dispenser-carton
+  200  /de/inquiry/?product=four-corner-display-tray
+  200  /de/inquiry/?product=shipping-document-window-pouch
+  200  /de/inquiry/?product=double-wall-frame-tray-lid
+  200  /de/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box
+  200  /de/inquiry/?product=drawer-jewelry-box
+  200  /ja/inquiry/
+  200  /ja/get-a-quote/?style=shipping&qty=500&product=product-auto-bottom-slotted-outer-carton
+  200  /ja/inquiry/?product=auto-lock-bottom-carton
+  200  /ja/get-a-quote/?style=rigid&qty=500&product=product-book-style-rigid-presentation-box
+  200  /ja/get-a-quote/?style=carton&qty=500&product=product-bookend-folding-carton
+  200  /ja/inquiry/?product=corrugated-bottle-gift-carrier
+  200  /ja/inquiry/?product=cube-carry-carton
+  200  /ja/inquiry/?product=rigid-chipboard-divider
+  200  /ja/inquiry/?product=circle-roll-labels
+  200  /ja/inquiry/?product=clear-display-box
+  200  /ja/inquiry/?product=coated-labels
+  200  /ja/get-a-quote/?style=rigid&qty=500&product=product-collapsible-magnetic-gift-box
+  200  /ja/inquiry/?product=corrugated-book-wrap-mailer
+  200  /ja/inquiry/?product=corrugated-divider
+  200  /ja/inquiry/?product=paired-corrugated-end-caps
+  200  /ja/inquiry/?product=corrugated-gusset-folder
+  200  /ja/inquiry/?product=double-wall-tray-lid
+  200  /ja/inquiry/?product=counter-display-carton
+  200  /ja/inquiry/?product=die-cut-insert
+  200  /ja/inquiry/?product=die-cut-handle-paper-bag
+  200  /ja/inquiry/?product=flip-out-dispenser-carton
+  200  /ja/inquiry/?product=four-corner-display-tray
+  200  /ja/inquiry/?product=shipping-document-window-pouch
+  200  /ja/inquiry/?product=double-wall-frame-tray-lid
+  200  /ja/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box
+  200  /ja/inquiry/?product=drawer-jewelry-box
+  200  /zh-CN/inquiry/
+  200  /zh-CN/get-a-quote/?style=shipping&qty=500&product=product-auto-bottom-slotted-outer-carton
+  200  /zh-CN/inquiry/?product=auto-lock-bottom-carton
+  200  /zh-CN/get-a-quote/?style=rigid&qty=500&product=product-book-style-rigid-presentation-box
+  200  /zh-CN/get-a-quote/?style=carton&qty=500&product=product-bookend-folding-carton
+  200  /zh-CN/inquiry/?product=corrugated-bottle-gift-carrier
+  200  /zh-CN/inquiry/?product=cube-carry-carton
+  200  /zh-CN/inquiry/?product=rigid-chipboard-divider
+  200  /zh-CN/inquiry/?product=circle-roll-labels
+  200  /zh-CN/inquiry/?product=clear-display-box
+  200  /zh-CN/inquiry/?product=coated-labels
+  200  /zh-CN/get-a-quote/?style=rigid&qty=500&product=product-collapsible-magnetic-gift-box
+  200  /zh-CN/inquiry/?product=corrugated-book-wrap-mailer
+  200  /zh-CN/inquiry/?product=corrugated-divider
+  200  /zh-CN/inquiry/?product=paired-corrugated-end-caps
+  200  /zh-CN/inquiry/?product=corrugated-gusset-folder
+  200  /zh-CN/inquiry/?product=double-wall-tray-lid
+  200  /zh-CN/inquiry/?product=counter-display-carton
+  200  /zh-CN/inquiry/?product=die-cut-insert
+  200  /zh-CN/inquiry/?product=die-cut-handle-paper-bag
+  200  /zh-CN/inquiry/?product=flip-out-dispenser-carton
+  200  /zh-CN/inquiry/?product=four-corner-display-tray
+  200  /zh-CN/inquiry/?product=shipping-document-window-pouch
+  200  /zh-CN/inquiry/?product=double-wall-frame-tray-lid
+  200  /zh-CN/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box
+  200  /zh-CN/inquiry/?product=drawer-jewelry-box
+  200  /ar/inquiry/
+  200  /ar/get-a-quote/?style=shipping&qty=500&product=product-auto-bottom-slotted-outer-carton
+  200  /ar/inquiry/?product=auto-lock-bottom-carton
+  200  /ar/get-a-quote/?style=rigid&qty=500&product=product-book-style-rigid-presentation-box
+  200  /ar/get-a-quote/?style=carton&qty=500&product=product-bookend-folding-carton
+  200  /ar/inquiry/?product=corrugated-bottle-gift-carrier
+  200  /ar/inquiry/?product=cube-carry-carton
+  200  /ar/inquiry/?product=rigid-chipboard-divider
+  200  /ar/inquiry/?product=circle-roll-labels
+  200  /ar/inquiry/?product=clear-display-box
+  200  /ar/inquiry/?product=coated-labels
+  200  /ar/get-a-quote/?style=rigid&qty=500&product=product-collapsible-magnetic-gift-box
+  200  /ar/inquiry/?product=corrugated-book-wrap-mailer
+  200  /ar/inquiry/?product=corrugated-divider
+  200  /ar/inquiry/?product=paired-corrugated-end-caps
+  200  /ar/inquiry/?product=corrugated-gusset-folder
+  200  /ar/inquiry/?product=double-wall-tray-lid
+  200  /ar/inquiry/?product=counter-display-carton
+  200  /ar/inquiry/?product=die-cut-insert
+  200  /ar/inquiry/?product=die-cut-handle-paper-bag
+  200  /ar/inquiry/?product=flip-out-dispenser-carton
+  200  /ar/inquiry/?product=four-corner-display-tray
+  200  /ar/inquiry/?product=shipping-document-window-pouch
+  200  /ar/inquiry/?product=double-wall-frame-tray-lid
+  200  /ar/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box
+  200  /ar/inquiry/?product=drawer-jewelry-box
