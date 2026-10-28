@@ -37,15 +37,6 @@
  },
  {
   "lang": "en",
-  "name": "article",
-  "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
-  "status": 200,
-  "scrollWidth": 375,
-  "vw": 375,
-  "offenders": []
- },
- {
-  "lang": "en",
   "name": "product",
   "path": "/product-pillow-jewelry-box/",
   "status": 200,
@@ -100,15 +91,6 @@
  },
  {
   "lang": "ar",
-  "name": "article",
-  "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
-  "status": 404,
-  "scrollWidth": 981,
-  "vw": 981,
-  "offenders": []
- },
- {
-  "lang": "ar",
   "name": "product",
   "path": "/product-pillow-jewelry-box/",
   "status": 200,
@@ -118,6 +100,546 @@
  },
  {
   "lang": "ar",
+  "name": "quote",
+  "path": "/get-a-quote/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "de",
+  "name": "home",
+  "path": "/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "de",
+  "name": "products",
+  "path": "/products/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "de",
+  "name": "jewelry-boxes",
+  "path": "/jewelry-boxes/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "de",
+  "name": "blog",
+  "path": "/blog/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "de",
+  "name": "product",
+  "path": "/product-pillow-jewelry-box/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "de",
+  "name": "quote",
+  "path": "/get-a-quote/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "es",
+  "name": "home",
+  "path": "/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "es",
+  "name": "products",
+  "path": "/products/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "es",
+  "name": "jewelry-boxes",
+  "path": "/jewelry-boxes/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "es",
+  "name": "blog",
+  "path": "/blog/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "es",
+  "name": "product",
+  "path": "/product-pillow-jewelry-box/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "es",
+  "name": "quote",
+  "path": "/get-a-quote/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "fr",
+  "name": "home",
+  "path": "/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "fr",
+  "name": "products",
+  "path": "/products/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "fr",
+  "name": "jewelry-boxes",
+  "path": "/jewelry-boxes/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "fr",
+  "name": "blog",
+  "path": "/blog/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "fr",
+  "name": "product",
+  "path": "/product-pillow-jewelry-box/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "fr",
+  "name": "quote",
+  "path": "/get-a-quote/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "it",
+  "name": "home",
+  "path": "/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "it",
+  "name": "products",
+  "path": "/products/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "it",
+  "name": "jewelry-boxes",
+  "path": "/jewelry-boxes/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "it",
+  "name": "blog",
+  "path": "/blog/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "it",
+  "name": "product",
+  "path": "/product-pillow-jewelry-box/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "it",
+  "name": "quote",
+  "path": "/get-a-quote/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "ja",
+  "name": "home",
+  "path": "/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "ja",
+  "name": "products",
+  "path": "/products/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "ja",
+  "name": "jewelry-boxes",
+  "path": "/jewelry-boxes/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "ja",
+  "name": "blog",
+  "path": "/blog/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "ja",
+  "name": "product",
+  "path": "/product-pillow-jewelry-box/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "ja",
+  "name": "quote",
+  "path": "/get-a-quote/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "ko",
+  "name": "home",
+  "path": "/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "ko",
+  "name": "products",
+  "path": "/products/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "ko",
+  "name": "jewelry-boxes",
+  "path": "/jewelry-boxes/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "ko",
+  "name": "blog",
+  "path": "/blog/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "ko",
+  "name": "product",
+  "path": "/product-pillow-jewelry-box/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "ko",
+  "name": "quote",
+  "path": "/get-a-quote/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "nl",
+  "name": "home",
+  "path": "/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "nl",
+  "name": "products",
+  "path": "/products/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "nl",
+  "name": "jewelry-boxes",
+  "path": "/jewelry-boxes/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "nl",
+  "name": "blog",
+  "path": "/blog/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "nl",
+  "name": "product",
+  "path": "/product-pillow-jewelry-box/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "nl",
+  "name": "quote",
+  "path": "/get-a-quote/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "pt",
+  "name": "home",
+  "path": "/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "pt",
+  "name": "products",
+  "path": "/products/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "pt",
+  "name": "jewelry-boxes",
+  "path": "/jewelry-boxes/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "pt",
+  "name": "blog",
+  "path": "/blog/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "pt",
+  "name": "product",
+  "path": "/product-pillow-jewelry-box/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "pt",
+  "name": "quote",
+  "path": "/get-a-quote/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "zh-CN",
+  "name": "home",
+  "path": "/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "zh-CN",
+  "name": "products",
+  "path": "/products/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "zh-CN",
+  "name": "jewelry-boxes",
+  "path": "/jewelry-boxes/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "zh-CN",
+  "name": "blog",
+  "path": "/blog/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "zh-CN",
+  "name": "product",
+  "path": "/product-pillow-jewelry-box/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "zh-CN",
+  "name": "quote",
+  "path": "/get-a-quote/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "zh-TW",
+  "name": "home",
+  "path": "/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "zh-TW",
+  "name": "products",
+  "path": "/products/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "zh-TW",
+  "name": "jewelry-boxes",
+  "path": "/jewelry-boxes/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "zh-TW",
+  "name": "blog",
+  "path": "/blog/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "zh-TW",
+  "name": "product",
+  "path": "/product-pillow-jewelry-box/",
+  "status": 200,
+  "scrollWidth": 375,
+  "vw": 375,
+  "offenders": []
+ },
+ {
+  "lang": "zh-TW",
   "name": "quote",
   "path": "/get-a-quote/",
   "status": 200,

@@ -3,17 +3,80 @@ home,en,200,375,375,0
 products,en,200,375,375,0
 jewelry-boxes,en,200,375,375,0
 blog,en,200,375,375,0
-article,en,200,375,375,0
 product,en,200,375,375,0
 quote,en,200,375,375,0
 home,ar,200,375,375,0
 products,ar,200,375,375,0
 jewelry-boxes,ar,200,375,375,0
 blog,ar,200,375,375,0
-article,ar,404,981,981,0
 product,ar,200,375,375,0
 quote,ar,200,375,375,0
+home,de,200,375,375,0
+products,de,200,375,375,0
+jewelry-boxes,de,200,375,375,0
+blog,de,200,375,375,0
+product,de,200,375,375,0
+quote,de,200,375,375,0
+home,es,200,375,375,0
+products,es,200,375,375,0
+jewelry-boxes,es,200,375,375,0
+blog,es,200,375,375,0
+product,es,200,375,375,0
+quote,es,200,375,375,0
+home,fr,200,375,375,0
+products,fr,200,375,375,0
+jewelry-boxes,fr,200,375,375,0
+blog,fr,200,375,375,0
+product,fr,200,375,375,0
+quote,fr,200,375,375,0
+home,it,200,375,375,0
+products,it,200,375,375,0
+jewelry-boxes,it,200,375,375,0
+blog,it,200,375,375,0
+product,it,200,375,375,0
+quote,it,200,375,375,0
+home,ja,200,375,375,0
+products,ja,200,375,375,0
+jewelry-boxes,ja,200,375,375,0
+blog,ja,200,375,375,0
+product,ja,200,375,375,0
+quote,ja,200,375,375,0
+home,ko,200,375,375,0
+products,ko,200,375,375,0
+jewelry-boxes,ko,200,375,375,0
+blog,ko,200,375,375,0
+product,ko,200,375,375,0
+quote,ko,200,375,375,0
+home,nl,200,375,375,0
+products,nl,200,375,375,0
+jewelry-boxes,nl,200,375,375,0
+blog,nl,200,375,375,0
+product,nl,200,375,375,0
+quote,nl,200,375,375,0
+home,pt,200,375,375,0
+products,pt,200,375,375,0
+jewelry-boxes,pt,200,375,375,0
+blog,pt,200,375,375,0
+product,pt,200,375,375,0
+quote,pt,200,375,375,0
+home,zh-CN,200,375,375,0
+products,zh-CN,200,375,375,0
+jewelry-boxes,zh-CN,200,375,375,0
+blog,zh-CN,200,375,375,0
+product,zh-CN,200,375,375,0
+quote,zh-CN,200,375,375,0
+home,zh-TW,200,375,375,0
+products,zh-TW,200,375,375,0
+jewelry-boxes,zh-TW,200,375,375,0
+blog,zh-TW,200,375,375,0
+product,zh-TW,200,375,375,0
+quote,zh-TW,200,375,375,0
 
-询盘页：
-  plain: hasForm=true action= method= 可见控件=14 提交按钮=[] product值=""
-  ?product=product-drawer-jewelry-box: hasForm=true action= method= 可见控件=14 提交按钮=[] product值="drawer-jewelry-box"
+合计 72 个页面/语种组合；scrollWidth > 375 的 0 个
+
+home → en:375 ar:375 de:375 es:375 fr:375 it:375 ja:375 ko:375 nl:375 pt:375 zh-CN:375 zh-TW:375
+products → en:375 ar:375 de:375 es:375 fr:375 it:375 ja:375 ko:375 nl:375 pt:375 zh-CN:375 zh-TW:375
+jewelry-boxes → en:375 ar:375 de:375 es:375 fr:375 it:375 ja:375 ko:375 nl:375 pt:375 zh-CN:375 zh-TW:375
+blog → en:375 ar:375 de:375 es:375 fr:375 it:375 ja:375 ko:375 nl:375 pt:375 zh-CN:375 zh-TW:375
+product → en:375 ar:375 de:375 es:375 fr:375 it:375 ja:375 ko:375 nl:375 pt:375 zh-CN:375 zh-TW:375
+quote → en:375 ar:375 de:375 es:375 fr:375 it:375 ja:375 ko:375 nl:375 pt:375 zh-CN:375 zh-TW:375

@@ -1,7 +1,7 @@
 [
   {
     "lang": "ar",
-    "path": "/blog/",
+    "path": "/jewelry-boxes/",
     "status": 200,
     "fallback": null,
     "count": 0,
@@ -9,7 +9,7 @@
   },
   {
     "lang": "ar",
-    "path": "/jewelry-boxes/",
+    "path": "/blog/",
     "status": 200,
     "fallback": null,
     "count": 0,
@@ -60,6 +60,14 @@
   },
   {
     "lang": "de",
+    "path": "/jewelry-boxes/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "de",
     "path": "/",
     "status": 200,
     "fallback": null,
@@ -69,14 +77,6 @@
   {
     "lang": "de",
     "path": "/products/",
-    "status": 200,
-    "fallback": null,
-    "count": 0,
-    "nodes": []
-  },
-  {
-    "lang": "de",
-    "path": "/jewelry-boxes/",
     "status": 200,
     "fallback": null,
     "count": 0,
@@ -127,14 +127,6 @@
   },
   {
     "lang": "es",
-    "path": "/blog/",
-    "status": 200,
-    "fallback": null,
-    "count": 0,
-    "nodes": []
-  },
-  {
-    "lang": "es",
     "path": "/jewelry-boxes/",
     "status": 200,
     "fallback": null,
@@ -143,7 +135,7 @@
   },
   {
     "lang": "es",
-    "path": "/products/",
+    "path": "/blog/",
     "status": 200,
     "fallback": null,
     "count": 0,
@@ -170,6 +162,14 @@
   },
   {
     "lang": "es",
+    "path": "/products/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "es",
     "path": "/get-a-quote/",
     "status": 200,
     "fallback": null,
@@ -211,6 +211,14 @@
   {
     "lang": "fr",
     "path": "/product-pillow-jewelry-box/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "fr",
+    "path": "/get-a-quote/",
     "status": 200,
     "fallback": null,
     "count": 0,
@@ -228,14 +236,6 @@
     "nodes": []
   },
   {
-    "lang": "fr",
-    "path": "/get-a-quote/",
-    "status": 200,
-    "fallback": null,
-    "count": 0,
-    "nodes": []
-  },
-  {
     "lang": "it",
     "path": "/jewelry-boxes/",
     "status": 200,
@@ -253,14 +253,6 @@
   },
   {
     "lang": "it",
-    "path": "/products/",
-    "status": 200,
-    "fallback": null,
-    "count": 0,
-    "nodes": []
-  },
-  {
-    "lang": "it",
     "path": "/blog/",
     "status": 200,
     "fallback": null,
@@ -270,6 +262,14 @@
   {
     "lang": "it",
     "path": "/product-pillow-jewelry-box/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "it",
+    "path": "/products/",
     "status": 200,
     "fallback": null,
     "count": 0,
@@ -296,14 +296,6 @@
   },
   {
     "lang": "ja",
-    "path": "/",
-    "status": 200,
-    "fallback": null,
-    "count": 0,
-    "nodes": []
-  },
-  {
-    "lang": "ja",
     "path": "/jewelry-boxes/",
     "status": 200,
     "fallback": null,
@@ -313,6 +305,22 @@
   {
     "lang": "ja",
     "path": "/blog/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "ja",
+    "path": "/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "ja",
+    "path": "/products/",
     "status": 200,
     "fallback": null,
     "count": 0,
@@ -339,15 +347,15 @@
   },
   {
     "lang": "ja",
-    "path": "/products/",
+    "path": "/get-a-quote/",
     "status": 200,
     "fallback": null,
     "count": 0,
     "nodes": []
   },
   {
-    "lang": "ja",
-    "path": "/get-a-quote/",
+    "lang": "ko",
+    "path": "/",
     "status": 200,
     "fallback": null,
     "count": 0,
@@ -371,14 +379,6 @@
   },
   {
     "lang": "ko",
-    "path": "/",
-    "status": 200,
-    "fallback": null,
-    "count": 0,
-    "nodes": []
-  },
-  {
-    "lang": "ko",
     "path": "/products/",
     "status": 200,
     "fallback": null,
@@ -388,6 +388,14 @@
   {
     "lang": "ko",
     "path": "/product-pillow-jewelry-box/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "ko",
+    "path": "/get-a-quote/",
     "status": 200,
     "fallback": null,
     "count": 0,
@@ -405,8 +413,8 @@
     "nodes": []
   },
   {
-    "lang": "ko",
-    "path": "/get-a-quote/",
+    "lang": "nl",
+    "path": "/",
     "status": 200,
     "fallback": null,
     "count": 0,
@@ -422,7 +430,7 @@
   },
   {
     "lang": "nl",
-    "path": "/",
+    "path": "/blog/",
     "status": 200,
     "fallback": null,
     "count": 0,
@@ -438,23 +446,7 @@
   },
   {
     "lang": "nl",
-    "path": "/blog/",
-    "status": 200,
-    "fallback": null,
-    "count": 0,
-    "nodes": []
-  },
-  {
-    "lang": "nl",
     "path": "/product-pillow-jewelry-box/",
-    "status": 200,
-    "fallback": null,
-    "count": 0,
-    "nodes": []
-  },
-  {
-    "lang": "nl",
-    "path": "/get-a-quote/",
     "status": 200,
     "fallback": null,
     "count": 0,
@@ -472,8 +464,8 @@
     "nodes": []
   },
   {
-    "lang": "pt",
-    "path": "/",
+    "lang": "nl",
+    "path": "/get-a-quote/",
     "status": 200,
     "fallback": null,
     "count": 0,
@@ -497,7 +489,7 @@
   },
   {
     "lang": "pt",
-    "path": "/product-pillow-jewelry-box/",
+    "path": "/",
     "status": 200,
     "fallback": null,
     "count": 0,
@@ -506,6 +498,14 @@
   {
     "lang": "pt",
     "path": "/products/",
+    "status": 200,
+    "fallback": null,
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "pt",
+    "path": "/product-pillow-jewelry-box/",
     "status": 200,
     "fallback": null,
     "count": 0,
@@ -540,14 +540,6 @@
   },
   {
     "lang": "zh-CN",
-    "path": "/blog/",
-    "status": 200,
-    "fallback": null,
-    "count": 0,
-    "nodes": []
-  },
-  {
-    "lang": "zh-CN",
     "path": "/",
     "status": 200,
     "fallback": null,
@@ -564,7 +556,7 @@
   },
   {
     "lang": "zh-CN",
-    "path": "/product-pillow-jewelry-box/",
+    "path": "/blog/",
     "status": 200,
     "fallback": null,
     "count": 0,
@@ -578,6 +570,14 @@
       "status": 200,
       "url": "http://localhost:8081/zh-CN/?p=2937"
     },
+    "count": 0,
+    "nodes": []
+  },
+  {
+    "lang": "zh-CN",
+    "path": "/product-pillow-jewelry-box/",
+    "status": 200,
+    "fallback": null,
     "count": 0,
     "nodes": []
   },
