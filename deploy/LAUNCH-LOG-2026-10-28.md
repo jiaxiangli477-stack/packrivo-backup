@@ -650,3 +650,36 @@ r28q-net 演练栈五容器全部 Up：php(r28q-php:8.3) / nginx(nginx:alpine，
 
 - 仅只读命令：Get-Content/Select-String/Get-ChildItem/Get-Item/Get-FileHash、git show/diff/log/status、git apply --check（在 i667 工作目录 scratch 副本上验证补丁，未触碰仓库工作树）、docker ps -a、docker logs（只读）。未执行任何脚本、未启动/停止/接入任何容器、未修改/删除任何他人文件（含 .tmp\28q 全部在途文件、全部未跟踪文件与工作树 3 处改动）、未 SSH 生产、未重跑生产第 1 步、未执行第 2–8 步、未读取或打印任何密码/密钥/token（编排文件中的本地演练口令字段仅确认存在，不记录不打印）。
 - 本轮仓库变更：新增 `deploy/verification-28q/RUNBOOK-launch.28q-supplement2.patch` + 本节日志追加；只暂存并提交这两个文件并 push，其余改动与未跟踪文件保持原样。
+
+## 14 · 28q 第三/四遍演练逐项核查结论落盘（fact #673；2026-10-28 本机只读核查；未执行任何脚本、未启动/停止/接入容器、未修改/删除他人文件、未读任何凭据）
+
+### 14.1 第三遍（17:04:32 UTC 重启后，本地 10:07:30 起）逐项判定
+
+- 缺陷 1（`/pkg/prep-restore.php` 缺失 → 内容未复位）复现：reset.log 第 5 步仍两行 `Error: '/pkg/prep-restore.php' does not exist.`，DB 内容层（27g/27i 行）仍未复位，与第一/二遍一致；该文件始终未进 /pkg。
+- step3 首轮 `apply_updated=0` 复现（17:12:46 起，exit=0）：`apply_updated=0 already_current=134 URL_and_body_check=PASS`（27g）、`apply_updated=0 already_current=8`（27i）——种子库仍是上线后值，按 supplement2 D.2.3「首轮 apply_updated>0」判据本轮无效；rehearsal.sh 无 3.0 守卫，step3 仍 exit=0 静默。
+- 旧缺陷三项未复现：TLS 2026——step1 `wp db export` Success、backup/db.sql=32384985 B（--skip-ssl 包装仍属容器态遗留，rehearsal.sh step0 无探针/包装）；paths.json——step2 合并 146（生产 144+本地 146→146）、`*-dict.json`=11、`*-js.json`=11、paths ok（conflicts.json=[] 触发校验循环假阳性，非硬失败）；docker cp 卡死——step2 正常推进未卡。
+- 后置快照卡死：s-forward1.txt.raw 17:18:44 起卡在「== 插件 ==」后的 `wp plugin list`（≥4.5 分钟无新输出，仅 75 行 vs 基线 845 行），rollback.log 保持 0 字节 → run-all 未到第 9 步；并行链于 17:23:42 UTC 截断三份日志重启（第四遍）。
+
+### 14.2 第四遍（本地 10:23:42 = 17:23:42 UTC 重启，进行中）
+
+- 内容复位修复（并行链自有方案，非 supplement2 附录 D.1）：并行链自写 `prep-restore-slug.php`（按 slug 写回依据里的旧值）并重写 reset.sh（10:23:40）；reset.log 第 6 步实测 `restore_slug=130 missing=0 无正文依据=0`（27g）、`restore_slug=8 missing=0 无正文依据=8`（27i）→ 内容复位真实成功。
+- step3 首轮真实写入成立（17:31:41 起，exit=0）：`apply_updated=130 already_current=4 URL_and_body_check=PASS`（27g）、`apply_updated=7 already_current=1 H1_body_URL_check=PASS`（27i）——首轮 apply 真实改写 130/7 行，满足「首轮 apply_updated>0」语义（该语义出自拟制 supplement2 附录 D，尚未经负责人批准落地）。
+- 状态：第四遍仍在进行（forward1.log 10:36:36 仍在增长；forward2.log / rollback.log 0 字节）→ 未完成，不得判 PASS。
+
+### 14.3 补丁/脚本/五件套现状（截至本地 10:37:23 UTC-07）
+
+- supplement2 仍未落地：RUNBOOK 工作树 diff（30+/5−）为并行链在途改动，不含 2.5 硬 FAIL / 3.0 守卫 / prep-restore / 附录 D 字样；`RUNBOOK-launch.28q-supplement2.patch` 仍为未跟踪拟制件。
+- rehearsal.sh（9:29:37 起未变，12502 B）仍无 2.5 硬 FAIL、3.0 应用前守卫、step0 探针（--skip-ssl 包装/导出探针仍为容器态遗留）。
+- 五件套仍全部缺失：`rehearsal.log`、`rehearsal-verify.json`、三轮整轮 PASS、Claude 核验、新生产授权 → 生产第 1 步仍 FAIL，第 2–8 步与 SSH 生产继续禁止。
+
+### 14.4 未决审批项⑤–⑧最新状态（在 §13.5 之上更新）
+
+- ⑤ 0.1 判据 hunk 与在途 0.1 探针/包装改动的冲突合并口径：仍未决；RUNBOOK 工作树在途改动未提交、supplement2 未落地。
+- ⑥ 演练内容复位：并行链已用自有 slug 方案在第四遍实测修复（restore_slug=130/8 missing=0），但 supplement2 附录 D.1（prep-restore.php 进 /pkg）未落地；第 3/9 步判 PASS 须在负责人批准的落地版本上重新验证。
+- ⑦ 重启归属与轮次计数：并行链于 17:23:42 UTC 再次截断重启（现第四遍），其归属与轮次计数口径仍待负责人确认。
+- ⑧ 四边界批复（补丁落地/三轮重跑/Claude 核验/另行生产授权）：仍无新批复；§11 审批文本继续有效。
+
+### 14.5 本轮操作与边界
+
+- 仅只读命令（Get-Content/Select-String/Get-Item/Get-ChildItem/git status/log/diff/ls-files）+ 本节日志追加 + 复制本链证据摘录文件入库；未执行任何脚本、未启动/停止/接入容器、未修改/删除他人文件（工作树 3 处改动与 31 个未跟踪文件保持原样）、未 SSH 生产、未重跑生产第 1 步、未执行第 2–8 步、未读取或打印任何密码/密钥/token。
+- 本轮仓库变更：`deploy/LAUNCH-LOG-2026-10-28.md` 追加本节 + 新增 `deploy/verification-28q/round3-evidence-summary.md`（意图 672 所写独立只读证据摘录，原样入库未改动）；只暂存并提交这两个文件并 push。
