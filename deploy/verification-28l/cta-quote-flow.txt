@@ -1,0 +1,2 @@
+{"href":"/get-a-quote/?style=carton&qty=500&product=product-pillow-jewelry-box","status":200,"selected":"Folding carton","quote":"LIVE ESTIMATE $1.73 per unit · 500 units Style Folding carton Size 30 × 22 × 12 cm Material Kraft E-flute Print Full-colour CMYK Finish Matte varnish Order total $865.98 Ex-works. Freight quoted separately. Setup amortised into the unit price.","product":"product-pillow-jewelry-box","qty":"500","style":"carton"}
+PASS product CTA opens quote with carton / 500 / product

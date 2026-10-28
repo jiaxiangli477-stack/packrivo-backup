@@ -1,0 +1,5 @@
+{"width":375,"display":"block","cells":19,"allCellTextUnchanged":true,"scrollWidth":375}
+{"width":768,"display":"table","cells":19,"allCellTextUnchanged":true,"scrollWidth":768}
+{"width":1440,"display":"table","cells":19,"allCellTextUnchanged":true,"scrollWidth":1440}
+ar data-label=["الاستخدام والمدخلات","سؤال العينة"]
+PASS: all table cell text preserved, desktop remains table, Arabic card labels use existing translations

@@ -1,0 +1,2 @@
+[{"name":"production","status":200,"forms":1,"selects":1,"inputs":12,"textareas":1,"options":354,"selected":"pillow-jewelry-box"},{"name":"local","status":200,"forms":1,"selects":1,"inputs":12,"textareas":1,"options":162,"selected":"pillow-jewelry-box"}]
+PASS control parity and product preselection; option counts separately reported

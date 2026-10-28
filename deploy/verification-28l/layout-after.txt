@@ -1,0 +1,7 @@
+/ {"status":200,"scrollWidth":375,"viewport":375,"leakedCss":false,"heading":"Custom packaging for jewelry, candles & gifts.","tableCells":0,"pass":true}
+/products/ {"status":200,"scrollWidth":375,"viewport":375,"leakedCss":false,"heading":"Every structure we can source","tableCells":0,"pass":true}
+/jewelry-boxes/ {"status":200,"scrollWidth":375,"viewport":375,"leakedCss":false,"heading":"Custom Jewelry Boxes With Logo for Your Collection","tableCells":18,"pass":true}
+/ar/jewelry-boxes/ {"status":200,"scrollWidth":375,"viewport":375,"leakedCss":false,"heading":"علب مجوهرات مخصصة بشعارك لمجموعتك","tableCells":18,"pass":true}
+/product-pillow-jewelry-box/ {"status":200,"scrollWidth":375,"viewport":375,"leakedCss":false,"heading":"Custom Pillow Jewelry Boxes","tableCells":0,"pass":true}
+/get-a-quote/ {"status":200,"scrollWidth":375,"viewport":375,"leakedCss":false,"heading":"","tableCells":0,"pass":true}
+PASS all 6 pages

@@ -1,0 +1,3 @@
+before_choice {"href":"/get-a-quote/?style=&qty=500&product=product-shipping-document-window-pouch","selected":null,"asideVisible":false,"continueDisabled":true,"product":"product-shipping-document-window-pouch"}
+after_choice {"selected":"Mailer box","asideVisible":true,"continueDisabled":false}
+PASS unmapped product requires explicit buyer style choice; no form submission

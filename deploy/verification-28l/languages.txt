@@ -1,0 +1,12 @@
+ar inquiry=200 form=1 selected=pillow-jewelry-box jewelry=200 localized_labels=2
+de inquiry=200 form=1 selected=pillow-jewelry-box jewelry=200 localized_labels=2
+es inquiry=200 form=1 selected=pillow-jewelry-box jewelry=200 localized_labels=2
+fr inquiry=200 form=1 selected=pillow-jewelry-box jewelry=200 localized_labels=2
+it inquiry=200 form=1 selected=pillow-jewelry-box jewelry=200 localized_labels=2
+ja inquiry=200 form=1 selected=pillow-jewelry-box jewelry=200 localized_labels=2
+ko inquiry=200 form=1 selected=pillow-jewelry-box jewelry=200 localized_labels=2
+nl inquiry=200 form=1 selected=pillow-jewelry-box jewelry=200 localized_labels=2
+pt inquiry=200 form=1 selected=pillow-jewelry-box jewelry=200 localized_labels=2
+zh-CN inquiry=200 form=1 selected=pillow-jewelry-box jewelry=200 localized_labels=2
+zh-TW inquiry=200 form=1 selected=pillow-jewelry-box jewelry=200 localized_labels=2
+PASS 11 languages, no form submission

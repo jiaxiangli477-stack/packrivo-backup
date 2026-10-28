@@ -1,0 +1,12 @@
+ar /ar/inquiry/?product=pillow-jewelry-box 200
+de /de/inquiry/?product=pillow-jewelry-box 200
+es /es/inquiry/?product=pillow-jewelry-box 200
+fr /fr/inquiry/?product=pillow-jewelry-box 200
+it /it/inquiry/?product=pillow-jewelry-box 200
+ja /ja/inquiry/?product=pillow-jewelry-box 200
+ko /ko/inquiry/?product=pillow-jewelry-box 200
+nl /nl/inquiry/?product=pillow-jewelry-box 200
+pt /pt/inquiry/?product=pillow-jewelry-box 200
+zh-CN /zh-CN/inquiry/?product=pillow-jewelry-box 200
+zh-TW /zh-TW/inquiry/?product=pillow-jewelry-box 200
+PASS 11 language sticky quote targets /inquiry and local HTTP 200

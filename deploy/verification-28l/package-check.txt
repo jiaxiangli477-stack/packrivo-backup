@@ -1,0 +1,3 @@
+packrivo-home-v4 files=38 sha256=e8781440d1ed6de01a6df1336834dec49987cb4f576dd1ab7866fbb57b823c2e source_backup_zip=identical demo_excluded=False
+packrivo-quote files=8 sha256=e1e09498f439108fe9db2323b6a013d36c58d6de64617a763175995ca1aa1e60 source_backup_zip=identical demo_excluded=True
+PASS packages checked byte-for-byte; quote demo and its local data excluded

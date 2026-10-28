@@ -14,6 +14,12 @@ while (have_posts()) :
     $native = (string) get_post_meta(get_the_ID(), '_packrivo_native_page', true) === '1';
     $content = get_the_content();
 
+    if ($native && is_page('inquiry')) {
+        require_once get_stylesheet_directory() . '/inc/repair-inquiry.php';
+        $reference = get_template_directory() . '/packrivo-static/assets/inquiry-controls.html';
+        if (is_readable($reference)) $content = pk_repair_inquiry_controls($content, file_get_contents($reference));
+    }
+
     if ($native) {
         $content = preg_replace(
             [
@@ -29,6 +35,47 @@ while (have_posts()) :
             $content
         );
         $content = str_replace('id="main"', '', $content);
+        if (is_page('jewelry-boxes')) {
+            // The local native snapshot lost style tags but retained the exact
+            // stylesheet text. Rewrap the existing rules without rewriting them.
+            $leaked = '#jewelry-supplier-references .supplier-reference-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem}#jewelry-supplier-references figure{margin:0}#jewelry-supplier-references img{display:block;width:100%;height:auto}#jewelry-supplier-references figcaption{font-size:.9rem;line-height:1.5;overflow-wrap:anywhere;color:inherit}@media(max-width:767px){#jewelry-supplier-references .supplier-reference-grid{grid-template-columns:1fr}}';
+            $position = strpos($content, $leaked);
+            if ($position !== false) {
+                $before = substr($content, 0, $position);
+                $open = strripos($before, '<style');
+                $close = strripos($before, '</style>');
+                if ($open === false || ($close !== false && $close > $open)) {
+                    $content = substr_replace($content, '<style>' . $leaked . '</style>', $position, strlen($leaked));
+                }
+            }
+            $prefix = '</aside>.packrivo-table-wrap{';
+            $start = strpos($content, $prefix);
+            if ($start !== false) {
+                $start += strlen('</aside>');
+                $end = strpos($content, '<section class="packrivo-related-block"', $start);
+                if ($end !== false && $end - $start <= 4096) {
+                    $rules = substr($content, $start, $end - $start);
+                    if (strpos($rules, '<') === false && substr(rtrim($rules), -1) === '}') {
+                        $content = substr_replace($content, '<style>' . $rules . '</style>', $start, $end - $start);
+                    }
+                }
+            }
+            // The restored mobile-card CSS reads data-label. Reuse existing
+            // translations because the MU attribute pass does not inspect it.
+            if (function_exists('packrivo_lang') && packrivo_lang() !== null && function_exists('packrivo_i18n_lookup')) {
+                $localized = preg_replace_callback(
+                    '~<table\b(?=[^>]*\bclass=["\'][^"\']*\bcomparison-table\b)[^>]*>[\s\S]*?</table>~i',
+                    static function ($table) {
+                        return preg_replace_callback('~\bdata-label="([^"]*)"~i', static function ($m) {
+                            $translated = packrivo_i18n_lookup($m[1], ['attr', 'text', 'block']);
+                            return $translated === null ? $m[0] : 'data-label="' . esc_attr(html_entity_decode($translated, ENT_QUOTES | ENT_HTML5, 'UTF-8')) . '"';
+                        }, $table[0]);
+                    },
+                    $content
+                );
+                if ($localized !== null) $content = $localized;
+            }
+        }
     }
     ?>
     <main id="main" class="pk-main">

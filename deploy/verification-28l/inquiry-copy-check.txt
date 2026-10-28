@@ -1,0 +1,1 @@
+{"original_text_bytes_preserved":3046,"original_text_bytes_total":3046,"intact_form_unchanged":true,"missing_reference_noop":true,"repaired_counts":{"form":1,"select":1,"input":11,"textarea":1},"pass":true}

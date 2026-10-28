@@ -1,0 +1,57 @@
+[
+  {
+    "lang": "ar",
+    "href": "/ar/inquiry/?product=pillow-jewelry-box",
+    "status": 200
+  },
+  {
+    "lang": "de",
+    "href": "/de/inquiry/?product=pillow-jewelry-box",
+    "status": 200
+  },
+  {
+    "lang": "es",
+    "href": "/es/inquiry/?product=pillow-jewelry-box",
+    "status": 200
+  },
+  {
+    "lang": "fr",
+    "href": "/fr/inquiry/?product=pillow-jewelry-box",
+    "status": 200
+  },
+  {
+    "lang": "it",
+    "href": "/it/inquiry/?product=pillow-jewelry-box",
+    "status": 200
+  },
+  {
+    "lang": "ja",
+    "href": "/ja/inquiry/?product=pillow-jewelry-box",
+    "status": 200
+  },
+  {
+    "lang": "ko",
+    "href": "/ko/inquiry/?product=pillow-jewelry-box",
+    "status": 200
+  },
+  {
+    "lang": "nl",
+    "href": "/nl/inquiry/?product=pillow-jewelry-box",
+    "status": 200
+  },
+  {
+    "lang": "pt",
+    "href": "/pt/inquiry/?product=pillow-jewelry-box",
+    "status": 200
+  },
+  {
+    "lang": "zh-CN",
+    "href": "/zh-CN/inquiry/?product=pillow-jewelry-box",
+    "status": 200
+  },
+  {
+    "lang": "zh-TW",
+    "href": "/zh-TW/inquiry/?product=pillow-jewelry-box",
+    "status": 200
+  }
+]

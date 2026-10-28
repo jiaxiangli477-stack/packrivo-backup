@@ -1,0 +1,7 @@
+/ {"status":200,"scrollWidth":375,"viewport":375,"leakedCss":false,"pass":true}
+/products/ {"status":200,"scrollWidth":375,"viewport":375,"leakedCss":false,"pass":true}
+/jewelry-boxes/ {"status":200,"scrollWidth":650,"viewport":375,"leakedCss":true,"pass":false}
+/ar/jewelry-boxes/ {"status":200,"scrollWidth":650,"viewport":375,"leakedCss":true,"pass":false}
+/product-pillow-jewelry-box/ {"status":200,"scrollWidth":375,"viewport":375,"leakedCss":false,"pass":true}
+/get-a-quote/ {"status":200,"scrollWidth":375,"viewport":375,"leakedCss":false,"pass":true}
+FAIL pages=2

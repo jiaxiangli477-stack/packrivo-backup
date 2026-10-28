@@ -1,0 +1,94 @@
+{
+  "rows": [
+    {
+      "input": {
+        "style": "rigid",
+        "material": "rigidboard",
+        "print": "full-color",
+        "finish": "matte",
+        "quantity": 500,
+        "length": 9.5,
+        "width": 9.5,
+        "height": 4,
+        "rush": false
+      },
+      "typescript": {
+        "unit": 2.83,
+        "total": 1417.43
+      },
+      "php": {
+        "unit": 2.83,
+        "total": 1417.43
+      }
+    },
+    {
+      "input": {
+        "style": "mailer",
+        "material": "kraft",
+        "print": "full-color",
+        "finish": "matte",
+        "quantity": 500,
+        "length": 30,
+        "width": 22,
+        "height": 12,
+        "rush": false
+      },
+      "typescript": {
+        "unit": 2.48,
+        "total": 1239.04
+      },
+      "php": {
+        "unit": 2.48,
+        "total": 1239.04
+      }
+    },
+    {
+      "input": {
+        "style": "sticker",
+        "material": "kraft",
+        "print": "full-color",
+        "finish": "matte",
+        "quantity": 500,
+        "length": 15,
+        "width": 10,
+        "height": 2,
+        "rush": false
+      },
+      "typescript": {
+        "unit": 0.98,
+        "total": 488.77
+      },
+      "php": {
+        "unit": 0.98,
+        "total": 488.77
+      }
+    },
+    {
+      "input": {
+        "style": "shipping",
+        "material": "kraft",
+        "print": "full-color",
+        "finish": "matte",
+        "quantity": 500,
+        "length": 30,
+        "width": 25,
+        "height": 20,
+        "rush": false
+      },
+      "typescript": {
+        "unit": 2.31,
+        "total": 1156.69
+      },
+      "php": {
+        "unit": 2.31,
+        "total": 1156.69
+      }
+    }
+  ],
+  "hashes": {
+    "E:/破甲工作区/packrivo-v2/lib/pricing.ts": "88bbb4beb4331405e8a612d08efa8bffcb8ea8f4f39486047ac11221f2e28ec3",
+    "E:/破甲工作区/packrivo-wp/packrivo-quote/includes/class-pkq-pricing.php": "dc41149880ec88c86410b0573f01682f1bc70ec91adddd37dce38c46c073c53e",
+    "E:/破甲工作区/packrivo-wp/packrivo-quote/includes/pricing.json": "6d1e7ca3709d6b60a332be81599a2e6218ba76fa59244732aaf8d6645a645a1a",
+    "E:/破甲工作区/packrivo-wp/packrivo-quote/assets/pkq-quote.js": "122236084e8fb69301eca6208eb77542fd96b91e6039bfb99d9e5dc5abfd7483"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "rows": [
+    {
+      "width": 375,
+      "display": "block",
+      "cells": 19,
+      "allCellTextUnchanged": true,
+      "scrollWidth": 375
+    },
+    {
+      "width": 768,
+      "display": "table",
+      "cells": 19,
+      "allCellTextUnchanged": true,
+      "scrollWidth": 768
+    },
+    {
+      "width": 1440,
+      "display": "table",
+      "cells": 19,
+      "allCellTextUnchanged": true,
+      "scrollWidth": 1440
+    }
+  ],
+  "arLabels": [
+    "الاستخدام والمدخلات",
+    "سؤال العينة"
+  ]
+}

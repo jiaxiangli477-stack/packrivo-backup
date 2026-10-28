@@ -14,6 +14,18 @@ function pkv4_assets()
     wp_enqueue_style('pkv4-fonts', 'https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap', [], null);
     wp_enqueue_style('pkv4-site', get_stylesheet_directory_uri() . '/assets/site.css', ['pkv4-fonts'], PKV4_VERSION);
     wp_enqueue_script('pkv4-nav', get_stylesheet_directory_uri() . '/assets/nav.js', [], PKV4_VERSION, true);
+    wp_enqueue_script('pkv4-quote-targets', get_stylesheet_directory_uri() . '/assets/cta-28l.js', [], PKV4_VERSION, true);
+    $post_id = is_singular('page') ? get_queried_object_id() : 0;
+    $slug = $post_id ? (string) get_post_field('post_name', $post_id) : '';
+    // Nine existing product pages use legacy slugs without the product- prefix.
+    $is_product = strpos($slug, 'product-') === 0
+        || ($post_id && get_post_meta($post_id, '_packrivo_remediation_product', true) !== '');
+    $context = [
+        'base' => home_url('/'),
+        'product' => $is_product ? $slug : '',
+        'style' => $is_product ? (pk_engine_style_for($post_id) ?: '') : '',
+    ];
+    wp_add_inline_script('pkv4-quote-targets', 'window.pkv4QuoteTargets=' . wp_json_encode($context) . ';', 'before');
 }
 // Priority 20: the child functions.php loads before the parent, so the default 10
 // put our stylesheet *before* the parent's and lost every equal-specificity fight.

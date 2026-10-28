@@ -1,0 +1,9 @@
+after en / page 200 links 14 non200 0
+after en /product-pillow-jewelry-box/ page 200 links 8 non200 0
+after en /products/ page 200 links 31 non200 0
+after ar / page 200 links 14 non200 0
+after ar /product-pillow-jewelry-box/ page 200 links 8 non200 0
+after ar /products/ page 200 links 31 non200 0
+after de / page 200 links 14 non200 0
+after de /product-pillow-jewelry-box/ page 200 links 8 non200 0
+after de /products/ page 200 links 31 non200 0

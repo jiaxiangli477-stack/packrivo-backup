@@ -142,8 +142,10 @@
     if (!cfg) return;
     normaliseConfig(cfg);
 
+    var requestedStyle = root.getAttribute('data-style') || '';
+    var needsStyleChoice = !!root.getAttribute('data-product') && !cfg.styles[requestedStyle];
     var state = {
-      style: root.getAttribute('data-style') || 'mailer',
+      style: needsStyleChoice ? '' : (requestedStyle || 'mailer'),
       material: 'kraft',
       print: 'full-color',
       finish: 'matte',
@@ -155,7 +157,7 @@
       step: 0
     };
 
-    if (!cfg.styles[state.style]) state.style = Object.keys(cfg.styles)[0];
+    if (!cfg.styles[state.style] && !needsStyleChoice) state.style = Object.keys(cfg.styles)[0];
     if (state.style === 'rigid') state.material = 'rigidboard';
     if (state.style === 'pouch' || state.style === 'poly') state.material = 'kraftpoly';
 
@@ -208,6 +210,7 @@
     function render() {
       Array.prototype.forEach.call(steps.children, function (b, i) {
         b.className = 'pkq-step' + (i === state.step ? ' is-active' : '') + (i < state.step ? ' is-done' : '');
+        b.disabled = !state.style && i > 0;
       });
 
       main.innerHTML = '';
@@ -436,6 +439,7 @@
       if (state.step < 4) {
         var next = el('button', 'pkq-btn', 'Continue');
         next.type = 'button';
+        next.disabled = !state.style;
         next.addEventListener('click', function () {
           state.step = Math.min(4, state.step + 1);
           render();
@@ -444,7 +448,8 @@
       }
       main.appendChild(nav);
 
-      updateAside();
+      aside.hidden = !state.style;
+      if (state.style) updateAside();
     }
 
     function updateAside() {

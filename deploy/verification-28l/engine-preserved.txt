@@ -1,0 +1,2 @@
+{"browserPriceFunctionSHA256":"503f53649217efeffdd1490c6ea40a3347a46da30661b4f9cdf684ae8f5ba108","priceCasesUnchanged":4,"engineSourceFilesUnchanged":3,"knownSummaryStepsUnchanged":5}
+PASS price calculation byte-identical, four TS/PHP results and five known-style summaries unchanged

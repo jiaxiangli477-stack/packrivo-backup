@@ -1,0 +1,4 @@
+width=375 fields=14 keyboard_missing=0 product=pillow-jewelry-box status=200
+width=768 fields=14 keyboard_missing=0 product=pillow-jewelry-box status=200
+width=1440 fields=14 keyboard_missing=0 product=pillow-jewelry-box status=200
+PASS 3 viewports, keyboard reached every visible form field, no form submission

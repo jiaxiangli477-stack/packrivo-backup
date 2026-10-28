@@ -1,0 +1,10 @@
+import fs from 'node:fs';import assert from 'node:assert/strict';import crypto from 'node:crypto';
+const root='E:/破甲工作区/',tmp=root+'packrivo-backup/deploy/verification-28l/';
+const old=fs.readFileSync(root+'packrivo-backup/deploy/verification-28l/price-function-before.txt','utf8');
+const now=fs.readFileSync(root+'packrivo-wp/packrivo-quote/assets/pkq-quote.js','utf8');
+const section=s=>s.slice(s.indexOf('  function price(state, cfg) {'),s.indexOf('  function money(n) {'));
+assert(old.length>500);assert.equal(section(now),old,'browser price calculation changed');
+const a=JSON.parse(fs.readFileSync(tmp+'quote-prices-before.json','utf8')),b=JSON.parse(fs.readFileSync(tmp+'quote-prices-after.json','utf8'));assert.deepEqual(a.rows,b.rows,'four price cases changed');
+for(const key of Object.keys(a.hashes).filter(k=>!k.endsWith('/assets/pkq-quote.js')))assert.equal(a.hashes[key],b.hashes[key],key+' engine source changed');
+const q1=JSON.parse(fs.readFileSync(tmp+'quote-ui-before.json','utf8')),q2=JSON.parse(fs.readFileSync(tmp+'quote-ui-after.json','utf8'));assert.deepEqual(q1.map(x=>x.asideText),q2.map(x=>x.asideText),'known product summary changed');
+console.log(JSON.stringify({browserPriceFunctionSHA256:crypto.createHash('sha256').update(section(now)).digest('hex'),priceCasesUnchanged:4,engineSourceFilesUnchanged:3,knownSummaryStepsUnchanged:5}));console.log('PASS price calculation byte-identical, four TS/PHP results and five known-style summaries unchanged');

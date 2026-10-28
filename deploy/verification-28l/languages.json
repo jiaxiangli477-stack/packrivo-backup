@@ -1,0 +1,123 @@
+[
+  {
+    "lang": "ar",
+    "inquiry": 200,
+    "form": 1,
+    "selected": "pillow-jewelry-box",
+    "jewelry": 200,
+    "labels": [
+      "الاستخدام والمدخلات",
+      "سؤال العينة"
+    ]
+  },
+  {
+    "lang": "de",
+    "inquiry": 200,
+    "form": 1,
+    "selected": "pillow-jewelry-box",
+    "jewelry": 200,
+    "labels": [
+      "Verwendung und Eingaben",
+      "Musterfrage"
+    ]
+  },
+  {
+    "lang": "es",
+    "inquiry": 200,
+    "form": 1,
+    "selected": "pillow-jewelry-box",
+    "jewelry": 200,
+    "labels": [
+      "Uso y entradas",
+      "Pregunta sobre la muestra"
+    ]
+  },
+  {
+    "lang": "fr",
+    "inquiry": 200,
+    "form": 1,
+    "selected": "pillow-jewelry-box",
+    "jewelry": 200,
+    "labels": [
+      "Utilisation et entrées",
+      "Question sur l'échantillon"
+    ]
+  },
+  {
+    "lang": "it",
+    "inquiry": 200,
+    "form": 1,
+    "selected": "pillow-jewelry-box",
+    "jewelry": 200,
+    "labels": [
+      "Utilizzo e input",
+      "Domanda sul campione"
+    ]
+  },
+  {
+    "lang": "ja",
+    "inquiry": 200,
+    "form": 1,
+    "selected": "pillow-jewelry-box",
+    "jewelry": 200,
+    "labels": [
+      "使用と入力",
+      "サンプルに関する質問"
+    ]
+  },
+  {
+    "lang": "ko",
+    "inquiry": 200,
+    "form": 1,
+    "selected": "pillow-jewelry-box",
+    "jewelry": 200,
+    "labels": [
+      "사용 및 입력",
+      "샘플 질문"
+    ]
+  },
+  {
+    "lang": "nl",
+    "inquiry": 200,
+    "form": 1,
+    "selected": "pillow-jewelry-box",
+    "jewelry": 200,
+    "labels": [
+      "Gebruik en invoergegevens",
+      "Monstervraag"
+    ]
+  },
+  {
+    "lang": "pt",
+    "inquiry": 200,
+    "form": 1,
+    "selected": "pillow-jewelry-box",
+    "jewelry": 200,
+    "labels": [
+      "Utilize e insira",
+      "Pergunta sobre a amostra"
+    ]
+  },
+  {
+    "lang": "zh-CN",
+    "inquiry": 200,
+    "form": 1,
+    "selected": "pillow-jewelry-box",
+    "jewelry": 200,
+    "labels": [
+      "用途与输入",
+      "样品问题"
+    ]
+  },
+  {
+    "lang": "zh-TW",
+    "inquiry": 200,
+    "form": 1,
+    "selected": "pillow-jewelry-box",
+    "jewelry": 200,
+    "labels": [
+      "使用與輸入",
+      "樣品問題"
+    ]
+  }
+]

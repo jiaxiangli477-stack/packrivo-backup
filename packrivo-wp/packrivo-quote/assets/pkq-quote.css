@@ -369,6 +369,10 @@
   line-height: 1;
 }
 
+.pkq-card .pkq-price {
+  color: var(--pkq-paper);
+}
+
 .pkq-card .pkq-note {
   color: rgba(253, 252, 248, 0.7);
 }
@@ -400,7 +404,7 @@
   margin: 14px 0 0;
   font-size: 11px;
   line-height: 1.45;
-  color: rgba(253, 252, 248, 0.55);
+  color: rgba(253, 252, 248, 0.6);
 }
 
 @media (max-width: 860px) {
@@ -410,7 +414,7 @@
 
   .pkq-aside {
     position: static;
-    order: -1;
+    order: 0;
   }
 
   .pkq-tiles,

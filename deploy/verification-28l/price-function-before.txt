@@ -1,0 +1,24 @@
+  function price(state, cfg) {
+    var style = cfg.styles[state.style] || { base: 1.4 };
+    var mat = MATERIALS[state.material] || MATERIALS.kraft;
+    var print = PRINTS[state.print] || PRINTS.none;
+    var finish = FINISHES[state.finish] || FINISHES.none;
+    var qty = Math.min(cfg.maxQty, Math.max(cfg.minQty, Math.round(state.qty)));
+    var tier = quantityFactor(qty, cfg);
+    var size = sizeFactor(dim(state.length), dim(state.width), dim(state.height), cfg);
+    var printed = state.print !== 'none' || state.finish !== 'none';
+    var setup = 0;
+    if (printed) {
+      if (qty < Number((cfg.rules || {}).freePrintSetupFrom || 2500)) setup += cfg.setupPrint;
+      if (qty < Number((cfg.rules || {}).freeDieFrom || 5000)) setup += cfg.setupDie;
+    }
+    var rush = state.rush ? 1 + cfg.rushPercent / 100 : 1;
+    var unit = (style.base * mat.factor * size + print.add + finish.add) * tier * rush + setup / qty;
+    return {
+      unit: Math.round(unit * 100) / 100,
+      total: Math.round(unit * qty * 100) / 100,
+      setup: setup,
+      qty: qty
+    };
+  }
+

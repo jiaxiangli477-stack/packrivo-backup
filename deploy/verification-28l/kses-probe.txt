@@ -1,0 +1,1 @@
+{"input":"<form><select><option>One</option></select><input type=\"text\"><textarea>Note</textarea><style>.sample{color:red}</style></form>","wp_kses_post":"One<textarea>Note</textarea>.sample{color:red}","content_save_filter":10,"content_filtered_filter":10}

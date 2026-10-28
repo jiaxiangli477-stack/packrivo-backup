@@ -1,0 +1,2078 @@
+[
+  {
+    "lang": "en",
+    "route": "/",
+    "pageStatus": 200,
+    "links": [
+      {
+        "text": "Get a quote",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "",
+        "location": "header",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "Instant quote",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "pk-text-link",
+        "location": "header",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "Build a quote",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "pk-cta",
+        "location": "header",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "Build a quote →",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "pk-btn",
+        "location": "page",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "Configure →",
+        "href": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box"
+          }
+        ]
+      },
+      {
+        "text": "Configure →",
+        "href": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-lid-and-base-jewelry-box",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-lid-and-base-jewelry-box"
+          }
+        ]
+      },
+      {
+        "text": "Configure →",
+        "href": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-jewelry-box-with-insert",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-jewelry-box-with-insert"
+          }
+        ]
+      },
+      {
+        "text": "Configure →",
+        "href": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-window-lid-rigid-gift-box",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-window-lid-rigid-gift-box"
+          }
+        ]
+      },
+      {
+        "text": "Configure →",
+        "href": "http://localhost:8081/get-a-quote/?style=mailer&qty=500&product=product-corrugated-roll-end-hinged-lid",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?style=mailer&qty=500&product=product-corrugated-roll-end-hinged-lid"
+          }
+        ]
+      },
+      {
+        "text": "Open the quote builder",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "pk-btn",
+        "location": "page",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "Ask a question",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "pk-more pk-on-dark",
+        "location": "page",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "Ask a specific question →",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "pk-more",
+        "location": "page",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "Build a quote",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "pk-btn pk-btn-light",
+        "location": "page",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "Get a Quote",
+        "href": "http://localhost:8081/inquiry/",
+        "selector": "pr-quote-cta",
+        "location": "footer",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/inquiry/"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lang": "en",
+    "route": "/product-pillow-jewelry-box/",
+    "pageStatus": 200,
+    "links": [
+      {
+        "text": "Get a quote",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "",
+        "location": "header",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "Instant quote",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "pk-text-link",
+        "location": "header",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "Build a quote",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "pk-cta",
+        "location": "header",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "Get a Quote",
+        "href": "https://www.packrivo.com/inquiry/?product=pillow-jewelry-box",
+        "selector": "button",
+        "location": "page",
+        "http": "external"
+      },
+      {
+        "text": "Get a Quote",
+        "href": "https://www.packrivo.com/inquiry/?product=pillow-jewelry-box",
+        "selector": "",
+        "location": "page",
+        "http": "external"
+      },
+      {
+        "text": "Get a Quote",
+        "href": "https://www.packrivo.com/inquiry/?product=pillow-jewelry-box",
+        "selector": "button",
+        "location": "page",
+        "http": "external"
+      },
+      {
+        "text": "Get a Quote",
+        "href": "http://localhost:8081/inquiry/",
+        "selector": "pr-quote-cta",
+        "location": "footer",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/inquiry/"
+          }
+        ]
+      },
+      {
+        "text": "Get a quote · MOQ 500",
+        "href": "http://localhost:8081/inquiry/?product=pillow-jewelry-box",
+        "selector": "pr-sticky-main",
+        "location": "sticky",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/inquiry/?product=pillow-jewelry-box"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lang": "en",
+    "route": "/products/",
+    "pageStatus": 200,
+    "links": [
+      {
+        "text": "Get a quote",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "",
+        "location": "header",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "Instant quote",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "pk-text-link",
+        "location": "header",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "Build a quote",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "pk-cta",
+        "location": "header",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "Configure →",
+        "href": "http://localhost:8081/get-a-quote/?style=shipping&qty=500&product=product-auto-bottom-slotted-outer-carton",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?style=shipping&qty=500&product=product-auto-bottom-slotted-outer-carton"
+          }
+        ]
+      },
+      {
+        "text": "Get a price →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-auto-lock-bottom-carton",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-auto-lock-bottom-carton"
+          }
+        ]
+      },
+      {
+        "text": "Configure →",
+        "href": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-book-style-rigid-presentation-box",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-book-style-rigid-presentation-box"
+          }
+        ]
+      },
+      {
+        "text": "Configure →",
+        "href": "http://localhost:8081/get-a-quote/?style=carton&qty=500&product=product-bookend-folding-carton",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?style=carton&qty=500&product=product-bookend-folding-carton"
+          }
+        ]
+      },
+      {
+        "text": "Get a price →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-corrugated-bottle-gift-carrier",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-corrugated-bottle-gift-carrier"
+          }
+        ]
+      },
+      {
+        "text": "Get a price →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-cube-carry-carton",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-cube-carry-carton"
+          }
+        ]
+      },
+      {
+        "text": "Get a price →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-rigid-chipboard-divider",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-rigid-chipboard-divider"
+          }
+        ]
+      },
+      {
+        "text": "Get a price →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-circle-roll-labels",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-circle-roll-labels"
+          }
+        ]
+      },
+      {
+        "text": "Get a price →",
+        "href": "http://localhost:8081/get-a-quote/?product=clear-display-box",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=clear-display-box"
+          }
+        ]
+      },
+      {
+        "text": "Get a price →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-coated-labels",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-coated-labels"
+          }
+        ]
+      },
+      {
+        "text": "Configure →",
+        "href": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-collapsible-magnetic-gift-box",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-collapsible-magnetic-gift-box"
+          }
+        ]
+      },
+      {
+        "text": "Get a price →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-corrugated-book-wrap-mailer",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-corrugated-book-wrap-mailer"
+          }
+        ]
+      },
+      {
+        "text": "Get a price →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-corrugated-divider",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-corrugated-divider"
+          }
+        ]
+      },
+      {
+        "text": "Get a price →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-paired-corrugated-end-caps",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-paired-corrugated-end-caps"
+          }
+        ]
+      },
+      {
+        "text": "Get a price →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-corrugated-gusset-folder",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-corrugated-gusset-folder"
+          }
+        ]
+      },
+      {
+        "text": "Get a price →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-double-wall-tray-lid",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-double-wall-tray-lid"
+          }
+        ]
+      },
+      {
+        "text": "Get a price →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-counter-display-carton",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-counter-display-carton"
+          }
+        ]
+      },
+      {
+        "text": "Get a price →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-die-cut-insert",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-die-cut-insert"
+          }
+        ]
+      },
+      {
+        "text": "Get a price →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-die-cut-handle-paper-bag",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-die-cut-handle-paper-bag"
+          }
+        ]
+      },
+      {
+        "text": "Get a price →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-flip-out-dispenser-carton",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-flip-out-dispenser-carton"
+          }
+        ]
+      },
+      {
+        "text": "Get a price →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-four-corner-display-tray",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-four-corner-display-tray"
+          }
+        ]
+      },
+      {
+        "text": "Get a price →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-shipping-document-window-pouch",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-shipping-document-window-pouch"
+          }
+        ]
+      },
+      {
+        "text": "Get a price →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-double-wall-frame-tray-lid",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-double-wall-frame-tray-lid"
+          }
+        ]
+      },
+      {
+        "text": "Configure →",
+        "href": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box"
+          }
+        ]
+      },
+      {
+        "text": "Send a brief",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "pk-btn",
+        "location": "page",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "Start from a price",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "pk-btn-ghost",
+        "location": "page",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "Get a Quote",
+        "href": "http://localhost:8081/inquiry/",
+        "selector": "pr-quote-cta",
+        "location": "footer",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/inquiry/"
+          }
+        ]
+      },
+      {
+        "text": "Get a quote · MOQ 500",
+        "href": "http://localhost:8081/inquiry/",
+        "selector": "pr-sticky-main",
+        "location": "sticky",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/inquiry/"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lang": "ar",
+    "route": "/",
+    "pageStatus": 200,
+    "links": [
+      {
+        "text": "اطلب عرض سعر",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "",
+        "location": "header",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "Instant quote",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "pk-text-link",
+        "location": "header",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "أنشئ عرض سعر",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "pk-cta",
+        "location": "header",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "أنشئ عرض سعر →",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "pk-btn",
+        "location": "page",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "اختر المواصفات →",
+        "href": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box"
+          }
+        ]
+      },
+      {
+        "text": "اختر المواصفات →",
+        "href": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-lid-and-base-jewelry-box",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-lid-and-base-jewelry-box"
+          }
+        ]
+      },
+      {
+        "text": "اختر المواصفات →",
+        "href": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-jewelry-box-with-insert",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-jewelry-box-with-insert"
+          }
+        ]
+      },
+      {
+        "text": "اختر المواصفات →",
+        "href": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-window-lid-rigid-gift-box",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-window-lid-rigid-gift-box"
+          }
+        ]
+      },
+      {
+        "text": "اختر المواصفات →",
+        "href": "http://localhost:8081/get-a-quote/?style=mailer&qty=500&product=product-corrugated-roll-end-hinged-lid",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?style=mailer&qty=500&product=product-corrugated-roll-end-hinged-lid"
+          }
+        ]
+      },
+      {
+        "text": "افتح أداة إعداد عرض السعر",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "pk-btn",
+        "location": "page",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "اسأل عن تفصيل",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "pk-more pk-on-dark",
+        "location": "page",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "اسأل سؤالًا محددًا →",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "pk-more",
+        "location": "page",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "أنشئ عرض سعر",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "pk-btn pk-btn-light",
+        "location": "page",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "احصل على عرض سعر",
+        "href": "http://localhost:8081/inquiry/",
+        "selector": "pr-quote-cta",
+        "location": "footer",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/inquiry/"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lang": "ar",
+    "route": "/product-pillow-jewelry-box/",
+    "pageStatus": 200,
+    "links": [
+      {
+        "text": "اطلب عرض سعر",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "",
+        "location": "header",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "Instant quote",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "pk-text-link",
+        "location": "header",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "أنشئ عرض سعر",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "pk-cta",
+        "location": "header",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "احصل على عرض سعر",
+        "href": "https://www.packrivo.com/ar/inquiry/?product=product-pillow-jewelry-box",
+        "selector": "button",
+        "location": "page",
+        "http": "external"
+      },
+      {
+        "text": "احصل على عرض سعر",
+        "href": "https://www.packrivo.com/ar/inquiry/",
+        "selector": "",
+        "location": "page",
+        "http": "external"
+      },
+      {
+        "text": "احصل على عرض سعر",
+        "href": "https://www.packrivo.com/ar/inquiry/?product=product-pillow-jewelry-box",
+        "selector": "button",
+        "location": "page",
+        "http": "external"
+      },
+      {
+        "text": "احصل على عرض سعر",
+        "href": "http://localhost:8081/inquiry/",
+        "selector": "pr-quote-cta",
+        "location": "footer",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/inquiry/"
+          }
+        ]
+      },
+      {
+        "text": "اطلب عرض سعر · الحد الأدنى 500",
+        "href": "http://localhost:8081/ar/inquiry/?product=pillow-jewelry-box",
+        "selector": "pr-sticky-main",
+        "location": "sticky",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/ar/inquiry/?product=pillow-jewelry-box"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lang": "ar",
+    "route": "/products/",
+    "pageStatus": 200,
+    "links": [
+      {
+        "text": "اطلب عرض سعر",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "",
+        "location": "header",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "Instant quote",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "pk-text-link",
+        "location": "header",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "أنشئ عرض سعر",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "pk-cta",
+        "location": "header",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "اختر المواصفات →",
+        "href": "http://localhost:8081/get-a-quote/?style=shipping&qty=500&product=product-auto-bottom-slotted-outer-carton",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?style=shipping&qty=500&product=product-auto-bottom-slotted-outer-carton"
+          }
+        ]
+      },
+      {
+        "text": "اطلب عرض سعر →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-auto-lock-bottom-carton",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-auto-lock-bottom-carton"
+          }
+        ]
+      },
+      {
+        "text": "اختر المواصفات →",
+        "href": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-book-style-rigid-presentation-box",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-book-style-rigid-presentation-box"
+          }
+        ]
+      },
+      {
+        "text": "اختر المواصفات →",
+        "href": "http://localhost:8081/get-a-quote/?style=carton&qty=500&product=product-bookend-folding-carton",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?style=carton&qty=500&product=product-bookend-folding-carton"
+          }
+        ]
+      },
+      {
+        "text": "اطلب عرض سعر →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-corrugated-bottle-gift-carrier",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-corrugated-bottle-gift-carrier"
+          }
+        ]
+      },
+      {
+        "text": "اطلب عرض سعر →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-cube-carry-carton",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-cube-carry-carton"
+          }
+        ]
+      },
+      {
+        "text": "اطلب عرض سعر →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-rigid-chipboard-divider",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-rigid-chipboard-divider"
+          }
+        ]
+      },
+      {
+        "text": "اطلب عرض سعر →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-circle-roll-labels",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-circle-roll-labels"
+          }
+        ]
+      },
+      {
+        "text": "اطلب عرض سعر →",
+        "href": "http://localhost:8081/get-a-quote/?product=clear-display-box",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=clear-display-box"
+          }
+        ]
+      },
+      {
+        "text": "اطلب عرض سعر →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-coated-labels",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-coated-labels"
+          }
+        ]
+      },
+      {
+        "text": "اختر المواصفات →",
+        "href": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-collapsible-magnetic-gift-box",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-collapsible-magnetic-gift-box"
+          }
+        ]
+      },
+      {
+        "text": "اطلب عرض سعر →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-corrugated-book-wrap-mailer",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-corrugated-book-wrap-mailer"
+          }
+        ]
+      },
+      {
+        "text": "اطلب عرض سعر →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-corrugated-divider",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-corrugated-divider"
+          }
+        ]
+      },
+      {
+        "text": "اطلب عرض سعر →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-paired-corrugated-end-caps",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-paired-corrugated-end-caps"
+          }
+        ]
+      },
+      {
+        "text": "اطلب عرض سعر →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-corrugated-gusset-folder",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-corrugated-gusset-folder"
+          }
+        ]
+      },
+      {
+        "text": "اطلب عرض سعر →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-double-wall-tray-lid",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-double-wall-tray-lid"
+          }
+        ]
+      },
+      {
+        "text": "اطلب عرض سعر →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-counter-display-carton",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-counter-display-carton"
+          }
+        ]
+      },
+      {
+        "text": "اطلب عرض سعر →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-die-cut-insert",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-die-cut-insert"
+          }
+        ]
+      },
+      {
+        "text": "اطلب عرض سعر →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-die-cut-handle-paper-bag",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-die-cut-handle-paper-bag"
+          }
+        ]
+      },
+      {
+        "text": "اطلب عرض سعر →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-flip-out-dispenser-carton",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-flip-out-dispenser-carton"
+          }
+        ]
+      },
+      {
+        "text": "اطلب عرض سعر →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-four-corner-display-tray",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-four-corner-display-tray"
+          }
+        ]
+      },
+      {
+        "text": "اطلب عرض سعر →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-shipping-document-window-pouch",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-shipping-document-window-pouch"
+          }
+        ]
+      },
+      {
+        "text": "اطلب عرض سعر →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-double-wall-frame-tray-lid",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-double-wall-frame-tray-lid"
+          }
+        ]
+      },
+      {
+        "text": "اختر المواصفات →",
+        "href": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box"
+          }
+        ]
+      },
+      {
+        "text": "أرسل الطلب",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "pk-btn",
+        "location": "page",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "ابدأ من سعر",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "pk-btn-ghost",
+        "location": "page",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "احصل على عرض سعر",
+        "href": "http://localhost:8081/inquiry/",
+        "selector": "pr-quote-cta",
+        "location": "footer",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/inquiry/"
+          }
+        ]
+      },
+      {
+        "text": "اطلب عرض سعر · الحد الأدنى 500",
+        "href": "http://localhost:8081/ar/inquiry/",
+        "selector": "pr-sticky-main",
+        "location": "sticky",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/ar/inquiry/"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lang": "de",
+    "route": "/",
+    "pageStatus": 200,
+    "links": [
+      {
+        "text": "Angebot einholen",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "",
+        "location": "header",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "Instant quote",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "pk-text-link",
+        "location": "header",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "Angebot erstellen",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "pk-cta",
+        "location": "header",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "Angebot erstellen →",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "pk-btn",
+        "location": "page",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "Konfigurieren →",
+        "href": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box"
+          }
+        ]
+      },
+      {
+        "text": "Konfigurieren →",
+        "href": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-lid-and-base-jewelry-box",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-lid-and-base-jewelry-box"
+          }
+        ]
+      },
+      {
+        "text": "Konfigurieren →",
+        "href": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-jewelry-box-with-insert",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-jewelry-box-with-insert"
+          }
+        ]
+      },
+      {
+        "text": "Konfigurieren →",
+        "href": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-window-lid-rigid-gift-box",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-window-lid-rigid-gift-box"
+          }
+        ]
+      },
+      {
+        "text": "Konfigurieren →",
+        "href": "http://localhost:8081/get-a-quote/?style=mailer&qty=500&product=product-corrugated-roll-end-hinged-lid",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?style=mailer&qty=500&product=product-corrugated-roll-end-hinged-lid"
+          }
+        ]
+      },
+      {
+        "text": "Angebotsrechner öffnen",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "pk-btn",
+        "location": "page",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "Frage stellen",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "pk-more pk-on-dark",
+        "location": "page",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "Konkrete Frage stellen →",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "pk-more",
+        "location": "page",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "Angebot erstellen",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "pk-btn pk-btn-light",
+        "location": "page",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "Angebot anfordern",
+        "href": "http://localhost:8081/inquiry/",
+        "selector": "pr-quote-cta",
+        "location": "footer",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/inquiry/"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lang": "de",
+    "route": "/product-pillow-jewelry-box/",
+    "pageStatus": 200,
+    "links": [
+      {
+        "text": "Angebot einholen",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "",
+        "location": "header",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "Instant quote",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "pk-text-link",
+        "location": "header",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "Angebot erstellen",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "pk-cta",
+        "location": "header",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "Angebot anfordern",
+        "href": "https://www.packrivo.com/de/inquiry/?product=product-pillow-jewelry-box",
+        "selector": "button",
+        "location": "page",
+        "http": "external"
+      },
+      {
+        "text": "Angebot anfordern",
+        "href": "https://www.packrivo.com/de/inquiry/",
+        "selector": "",
+        "location": "page",
+        "http": "external"
+      },
+      {
+        "text": "Angebot anfordern",
+        "href": "https://www.packrivo.com/de/inquiry/?product=product-pillow-jewelry-box",
+        "selector": "button",
+        "location": "page",
+        "http": "external"
+      },
+      {
+        "text": "Angebot anfordern",
+        "href": "http://localhost:8081/inquiry/",
+        "selector": "pr-quote-cta",
+        "location": "footer",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/inquiry/"
+          }
+        ]
+      },
+      {
+        "text": "Angebot anfragen · Mindestmenge 500",
+        "href": "http://localhost:8081/de/inquiry/?product=pillow-jewelry-box",
+        "selector": "pr-sticky-main",
+        "location": "sticky",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/de/inquiry/?product=pillow-jewelry-box"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lang": "de",
+    "route": "/products/",
+    "pageStatus": 200,
+    "links": [
+      {
+        "text": "Angebot einholen",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "",
+        "location": "header",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "Instant quote",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "pk-text-link",
+        "location": "header",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "Angebot erstellen",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "pk-cta",
+        "location": "header",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "Konfigurieren →",
+        "href": "http://localhost:8081/get-a-quote/?style=shipping&qty=500&product=product-auto-bottom-slotted-outer-carton",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?style=shipping&qty=500&product=product-auto-bottom-slotted-outer-carton"
+          }
+        ]
+      },
+      {
+        "text": "Preis anfragen →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-auto-lock-bottom-carton",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-auto-lock-bottom-carton"
+          }
+        ]
+      },
+      {
+        "text": "Konfigurieren →",
+        "href": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-book-style-rigid-presentation-box",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-book-style-rigid-presentation-box"
+          }
+        ]
+      },
+      {
+        "text": "Konfigurieren →",
+        "href": "http://localhost:8081/get-a-quote/?style=carton&qty=500&product=product-bookend-folding-carton",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?style=carton&qty=500&product=product-bookend-folding-carton"
+          }
+        ]
+      },
+      {
+        "text": "Preis anfragen →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-corrugated-bottle-gift-carrier",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-corrugated-bottle-gift-carrier"
+          }
+        ]
+      },
+      {
+        "text": "Preis anfragen →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-cube-carry-carton",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-cube-carry-carton"
+          }
+        ]
+      },
+      {
+        "text": "Preis anfragen →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-rigid-chipboard-divider",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-rigid-chipboard-divider"
+          }
+        ]
+      },
+      {
+        "text": "Preis anfragen →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-circle-roll-labels",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-circle-roll-labels"
+          }
+        ]
+      },
+      {
+        "text": "Preis anfragen →",
+        "href": "http://localhost:8081/get-a-quote/?product=clear-display-box",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=clear-display-box"
+          }
+        ]
+      },
+      {
+        "text": "Preis anfragen →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-coated-labels",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-coated-labels"
+          }
+        ]
+      },
+      {
+        "text": "Konfigurieren →",
+        "href": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-collapsible-magnetic-gift-box",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-collapsible-magnetic-gift-box"
+          }
+        ]
+      },
+      {
+        "text": "Preis anfragen →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-corrugated-book-wrap-mailer",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-corrugated-book-wrap-mailer"
+          }
+        ]
+      },
+      {
+        "text": "Preis anfragen →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-corrugated-divider",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-corrugated-divider"
+          }
+        ]
+      },
+      {
+        "text": "Preis anfragen →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-paired-corrugated-end-caps",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-paired-corrugated-end-caps"
+          }
+        ]
+      },
+      {
+        "text": "Preis anfragen →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-corrugated-gusset-folder",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-corrugated-gusset-folder"
+          }
+        ]
+      },
+      {
+        "text": "Preis anfragen →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-double-wall-tray-lid",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-double-wall-tray-lid"
+          }
+        ]
+      },
+      {
+        "text": "Preis anfragen →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-counter-display-carton",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-counter-display-carton"
+          }
+        ]
+      },
+      {
+        "text": "Preis anfragen →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-die-cut-insert",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-die-cut-insert"
+          }
+        ]
+      },
+      {
+        "text": "Preis anfragen →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-die-cut-handle-paper-bag",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-die-cut-handle-paper-bag"
+          }
+        ]
+      },
+      {
+        "text": "Preis anfragen →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-flip-out-dispenser-carton",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-flip-out-dispenser-carton"
+          }
+        ]
+      },
+      {
+        "text": "Preis anfragen →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-four-corner-display-tray",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-four-corner-display-tray"
+          }
+        ]
+      },
+      {
+        "text": "Preis anfragen →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-shipping-document-window-pouch",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-shipping-document-window-pouch"
+          }
+        ]
+      },
+      {
+        "text": "Preis anfragen →",
+        "href": "http://localhost:8081/get-a-quote/?product=product-double-wall-frame-tray-lid",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?product=product-double-wall-frame-tray-lid"
+          }
+        ]
+      },
+      {
+        "text": "Konfigurieren →",
+        "href": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+        "selector": "",
+        "location": "product-card",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box"
+          }
+        ]
+      },
+      {
+        "text": "Briefing senden",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "pk-btn",
+        "location": "page",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "Mit einem Preis starten",
+        "href": "http://localhost:8081/get-a-quote/",
+        "selector": "pk-btn-ghost",
+        "location": "page",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/get-a-quote/"
+          }
+        ]
+      },
+      {
+        "text": "Angebot anfordern",
+        "href": "http://localhost:8081/inquiry/",
+        "selector": "pr-quote-cta",
+        "location": "footer",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/inquiry/"
+          }
+        ]
+      },
+      {
+        "text": "Angebot anfragen · Mindestmenge 500",
+        "href": "http://localhost:8081/de/inquiry/",
+        "selector": "pr-sticky-main",
+        "location": "sticky",
+        "http": 200,
+        "chain": [
+          {
+            "status": 200,
+            "url": "http://localhost:8081/de/inquiry/"
+          }
+        ]
+      }
+    ]
+  }
+]

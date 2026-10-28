@@ -1,0 +1,2 @@
+[{"name":"production","status":200,"forms":1,"selects":1,"inputs":12,"textareas":1,"options":354,"selected":"pillow-jewelry-box"},{"name":"local","status":200,"forms":0,"selects":0,"inputs":0,"textareas":1,"options":0,"selected":null}]
+FAIL local controls differ or product not selected

@@ -1,0 +1,4 @@
+en /get-a-quote/?style=&qty=500&product=clear-display-box 200
+ar /ar/inquiry/?product=clear-display-box 200
+de /de/inquiry/?product=clear-display-box 200
+PASS legacy non-prefix product retains product context, unknown style not guessed

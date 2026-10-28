@@ -1,0 +1,2 @@
+{"pages":9,"links":159,"labelsUnchanged":159,"productCardLinks":87,"non200":0}
+PASS: en quote path; ar/de localized inquiry; product context, style, quantity and existing button text checked
