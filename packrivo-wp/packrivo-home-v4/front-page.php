@@ -33,9 +33,18 @@ $steps = [
     ['04', 'Deliver', 'DDP or FOB, palletised, with photos and the material declaration per order.'],
 ];
 
+$faq_price_answer = 'The quote builder shows the full curve for your size.';
+if (pk_pricing_tables_ready()) {
+    $pk_faq_common = ['print'=>'full-color','finish'=>'matte','quantity'=>500,'rush'=>false];
+    $pk_faq_rigid = PKQ_Pricing::price(array_merge($pk_faq_common, ['style'=>'rigid','material'=>'rigidboard','length'=>9.5,'width'=>9.5,'height'=>4]), PKQ_Plugin::settings());
+    $pk_faq_mailer = PKQ_Pricing::price(array_merge($pk_faq_common, ['style'=>'mailer','material'=>'kraft','length'=>30,'width'=>22,'height'=>12]), PKQ_Plugin::settings());
+    if (!is_wp_error($pk_faq_rigid) && !is_wp_error($pk_faq_mailer)) {
+        $faq_price_answer = sprintf('At 500 pieces, a 9.5×9.5×4 cm rigid jewelry box is about $%s per unit and a 30×22×12 cm printed mailer box about $%s. The unit price drops as quantity goes up — the quote builder shows the full curve for your size.', number_format((float)$pk_faq_rigid['unit'],2), number_format((float)$pk_faq_mailer['unit'],2));
+    }
+}
 $faq = [
     ['What is the minimum order?', 'MOQ 500 pieces per design for printed boxes. Unprinted stock ships from 100 pieces.'],
-    ['How much does a custom box cost?', 'Reference prices run from about $0.27 for a small rigid jewelry box at 500 pieces to $2+ for a large magnetic box at low volume. Price depends on structure, size, board, print and quantity — the quote builder shows the curve.'],
+    ['How much does a custom box cost?', $faq_price_answer],
     ['How long does production take?', 'Stock styles ship in 1–15 days. Printed custom orders are scheduled after sample approval, usually 7–30 days depending on structure and finishing.'],
     ['Do you handle the whole supply chain?', 'We coordinate sampling, production, inspection and freight with vetted suppliers, and charge an 8–15% sourcing fee on the order value.'],
     ['Where do you ship from?', 'Shenzhen, China. DDP to the US and EU is standard; FOB is available if you consolidate.'],
