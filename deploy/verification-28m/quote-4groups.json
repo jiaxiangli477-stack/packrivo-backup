@@ -1,0 +1,154 @@
+{
+ "priceRows": [
+  {
+   "style": "rigid",
+   "lang": "en",
+   "unit": "$2.83",
+   "total": "$1,417.43",
+   "size": "Size9.5 × 9.5 × 4 cm"
+  },
+  {
+   "style": "rigid",
+   "lang": "ar",
+   "unit": "$2.83",
+   "total": "$1,417.43",
+   "size": "المقاس9.5 × 9.5 × 4 cm"
+  },
+  {
+   "style": "rigid",
+   "lang": "de",
+   "unit": "$2.83",
+   "total": "$1,417.43",
+   "size": "Größe9.5 × 9.5 × 4 cm"
+  },
+  {
+   "style": "rigid",
+   "lang": "ja",
+   "unit": "$2.83",
+   "total": "$1,417.43",
+   "size": "サイズ9.5 × 9.5 × 4 cm"
+  },
+  {
+   "style": "mailer",
+   "lang": "en",
+   "unit": "$2.48",
+   "total": "$1,239.04",
+   "size": "Size30 × 22 × 12 cm"
+  },
+  {
+   "style": "mailer",
+   "lang": "ar",
+   "unit": "$2.48",
+   "total": "$1,239.04",
+   "size": "المقاس30 × 22 × 12 cm"
+  },
+  {
+   "style": "mailer",
+   "lang": "de",
+   "unit": "$2.48",
+   "total": "$1,239.04",
+   "size": "Größe30 × 22 × 12 cm"
+  },
+  {
+   "style": "mailer",
+   "lang": "ja",
+   "unit": "$2.48",
+   "total": "$1,239.04",
+   "size": "サイズ30 × 22 × 12 cm"
+  },
+  {
+   "style": "sticker",
+   "lang": "en",
+   "unit": "$0.96",
+   "total": "$479.63",
+   "size": "Size8 × 8 × 0.1 cm"
+  },
+  {
+   "style": "sticker",
+   "lang": "ar",
+   "unit": "$0.96",
+   "total": "$479.63",
+   "size": "المقاس8 × 8 × 0.1 cm"
+  },
+  {
+   "style": "sticker",
+   "lang": "de",
+   "unit": "$0.96",
+   "total": "$479.63",
+   "size": "Größe8 × 8 × 0.1 cm"
+  },
+  {
+   "style": "sticker",
+   "lang": "ja",
+   "unit": "$0.96",
+   "total": "$479.63",
+   "size": "サイズ8 × 8 × 0.1 cm"
+  },
+  {
+   "style": "shipping",
+   "lang": "en",
+   "unit": "$2.31",
+   "total": "$1,156.69",
+   "size": "Size30 × 25 × 20 cm"
+  },
+  {
+   "style": "shipping",
+   "lang": "ar",
+   "unit": "$2.31",
+   "total": "$1,156.69",
+   "size": "المقاس30 × 25 × 20 cm"
+  },
+  {
+   "style": "shipping",
+   "lang": "de",
+   "unit": "$2.31",
+   "total": "$1,156.69",
+   "size": "Größe30 × 25 × 20 cm"
+  },
+  {
+   "style": "shipping",
+   "lang": "ja",
+   "unit": "$2.31",
+   "total": "$1,156.69",
+   "size": "サイズ30 × 25 × 20 cm"
+  }
+ ],
+ "sameNumbers": {
+  "rigid": {
+   "unit": [
+    "$2.83"
+   ],
+   "total": [
+    "$1,417.43"
+   ],
+   "identical": true
+  },
+  "mailer": {
+   "unit": [
+    "$2.48"
+   ],
+   "total": [
+    "$1,239.04"
+   ],
+   "identical": true
+  },
+  "sticker": {
+   "unit": [
+    "$0.96"
+   ],
+   "total": [
+    "$479.63"
+   ],
+   "identical": true
+  },
+  "shipping": {
+   "unit": [
+    "$2.31"
+   ],
+   "total": [
+    "$1,156.69"
+   ],
+   "identical": true
+  }
+ }
+}
