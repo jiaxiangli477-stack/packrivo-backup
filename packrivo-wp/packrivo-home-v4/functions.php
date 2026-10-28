@@ -101,6 +101,13 @@ function pk_engine_style_for($post_id)
     if (preg_match('/(?:velvet|fabric|textile|wooden|leather|polyurethane|foam|metal|pouch)/', $slug)) return null;
     $meta = get_post_meta($post_id, '_packrivo_engine_style', true);
     if ($meta !== '') return isset($settings['styles'][$meta]) ? $meta : null;
+    $explicit = [
+        'product-jewelry-box-with-insert'=>'rigid', 'product-foldable-lid-base-box'=>'rigid',
+        'product-finished-folding-gift-box'=>'carton', 'product-folding-gift-box'=>'carton',
+        'product-tuck-end-gift-box'=>'carton', 'product-pillow-jewelry-box'=>'carton',
+        'product-mailer-with-insert'=>'mailer', 'product-lightweight-mailer'=>'mailer',
+    ];
+    if (isset($explicit[$slug])) return isset($settings['styles'][$explicit[$slug]]) ? $explicit[$slug] : null;
     $rules = [
         'rigid' => '/(?:rigid-(?:box|gift|presentation)|magnetic-(?:jewelry|gift)-box|drawer-jewelry-box|lid-and-base-jewelry-box)/',
         'mailer' => '/(?:mailer-box|printed-mailer|front-tuck-mailer|corrugated-roll-end-hinged-lid)/',
