@@ -233,3 +233,14 @@ node E:\破甲工作区\packrivo-backup\scripts\hubs-27i\verify-sticky.cjs
 独立只读代码审查未发现可证实的 Critical / Important 问题，复核了备份/幂等/回滚、字段投影边界、基线值保留、32 行验收记录及例外。审查者没有改文件、操作数据库或访问网站。
 
 本轮没有执行生产内容导入、字典安装或回滚命令；对生产仅只读下载 runtime 字典和路径文件，没有修改 www.packrivo.com。
+
+## 提交与推送回执
+
+```text
+[main 77c9b9a] Import approved hub metadata and translate runtime quote CTA
+ 63 files changed, 15634 insertions(+), 83 deletions(-)
+To https://github.com/jiaxiangli477-stack/packrivo-backup.git
+   1a373d3..77c9b9a  main -> main
+```
+
+主交付提交 `77c9b9a`。本回执随后作为文档提交同步推送；没有执行生产部署。
