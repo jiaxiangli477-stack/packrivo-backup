@@ -1,3 +1,5 @@
+> **上线以 `deploy/RUNBOOK-launch.md` 为准，本文件里按轮次堆的旧记录只作历史。**
+
 # 27e / 27g / 27h / 27i 上线前检查与回滚方案（未执行）
 
 > **上线以 [`RUNBOOK-launch.md`](RUNBOOK-launch.md) 为准；本文件里 27g…28o 的分轮记录只作历史参考。**
@@ -178,12 +180,14 @@ node E:\破甲工作区\.tmp\packrivo-27h\verify-runtime.cjs
 
 | 包 | 文件数 | 大小 | SHA-256 |
 |---|---|---|---|
-| `packrivo-home-v4.zip`（子主题） | 38 | 770.2 KB（788,881 B） | `05de19e1e5072e4bda8e6d843824d915725a57732b4da728036c94e88cf8c3a8` |
-| `packrivo-quote.zip`（报价插件） | 19（含 `includes/quote-i18n/` 11 个语种文件；`demo/` 不进包） | 53.3 KB（54,512 B） | `8e62865ea202d7711b4f113390be898a64024648f348151e27f1dace54c3c05c` |
+| `packrivo-home-v4.zip`（子主题） | 38 | 770.5 KB（788,955 B） | `c3ed9d72254aa9146ea98990adca9d8bda88e6afce9cba67f7539a7df54dbf24` |
+| `packrivo-quote.zip`（报价插件） | 19（含 `includes/quote-i18n/` 11 个语种文件；`demo/` 不进包） | 53.3 KB（54,581 B） | `096d0c8e81360e7fc616e5d46c96088fc3a65ceb32daf9b78cf1e1de0bc52d93` |
 
 两个包都与 `packrivo-wp/` 下的工作源逐字节相同（`robocopy /E` 镜像后重打，2026-10-28 总回归最终态重打）。报价插件的报价计算文件 `includes/class-pkq-pricing.php`、`includes/pricing.json`、`includes/class-pkq-rest.php` 与 28m 段 1 结束时的副本 **SHA-256 完全一致**——价格逻辑一行未改；插件包未变化，哈希与第一版相同。子主题包相对第一版（`62a31fc2…`）只多了总回归中修复两处 header 横向溢出的 `assets/site.css` 改动（`.pk-section-head` 加 `flex-wrap: wrap`；6 条按语种隐藏 header 次要链接的媒体查询），其余文件未变。
 
 28n 之后重打成上面这版：子主题包更新了 `header.php`（语种前缀的报价链接）与 `assets/cta-28l.js`（语种页面报价按钮统一去本语种配置器）；插件包更新了 `assets/pkq-quote.css`（手机标题区 `padding-inline:20px`）、`assets/pkq-quote.js` 与 `includes/pricing.json` 的三个材料标签、`packrivo-quote.php` 的说明句，以及 `includes/quote-i18n/` 11 份译文的四个键。报价计算文件 `includes/class-pkq-pricing.php`、`includes/class-pkq-rest.php` 与第一版逐字节相同；`includes/pricing.json` 只改了 3 个 `label` 字符串，`factor`、系数表与公式未动（4 组价格 × 4 语种改前改后逐格一致，见 `verification-28n/price-diff.json`）。`demo/` 按 28l 约定不进包，所以插件包从 23 个文件变成 19 个。
+
+28o 修复 ZIP 条目路径分隔符后重打为本表所列版本：两个包改用正斜杠 arcname 重新打包（顶层 `packrivo-quote/`、`packrivo-home-v4/`，仍排除 `demo/`），包内文件名与上一版逐文件 SHA-256 一致（quote 19/19、home 38/38，0 差异），仅 ZIP 容器字节不同，故哈希更新。验收：`unzip -Z1` 列表无反斜杠；docker 内 PHP `ZipArchive` 解压产物与工作源逐字节一致；本地 localhost:8081 `wp plugin install --force` / `wp theme install --force` 安装成功后首页 200（len=102052）与 4 组价格 × en/ar/de/ja（rigid $2.83/$1,417.43、mailer $2.48/$1,239.04、sticker $0.96/$479.63、shipping $2.31/$1,156.69）与安装前逐项相同，插件/主题保持 active。`deploy/` 与 `packrivo-wp/` 镜像共 6 个 zip 副本均已替换为本表版本并两两字节一致。
 
 ### 上线顺序与命令（任一步失败就停，按回滚列恢复后再继续）
 
