@@ -1,6 +1,6 @@
 # 27e / 27g / 27h / 27i 上线前检查与回滚方案（未执行）
 
-> **上线以 [`RUNBOOK-launch.md`](RUNBOOK-launch.md) 为准；本文件里 27g…28o 的分轮记录只作历史参考。**
+> **上线以 [`RUNBOOK-launch.md`](RUNBOOK-launch.md) 为准；本文件里 27g…28q 的分轮记录只作历史参考。**
 
 **状态：27i 主页面元数据和按钮字典已完成本地准备，尚未部署。** 包含既有 134 个产品、60 条界面词及本轮 8 个 hub/1 条按钮译文；主字典累计 33 个冲突（27g 的 19 个 + 本轮新增 14 个 title 冲突）按生产优先保留，runtime 新键无冲突。32 个 hub 样本中 27 个严格 dsh 一致，5 个为 inquiry/生产译文保留例外，详见本轮结果。27h 已在本地修复重复 title、RTL skip-link 溢出及 Template 三项，并重新打包子主题；修复没有部署到生产。首页仍为 5/8 张卡片，报价重定向补丁仍待获授权上线时执行。
 
@@ -276,3 +276,18 @@ patch -p1         < /path/to/packrivo-i18n-404-viewport.patch
 
 - **语种文章路径 404**：`/ar/<文章路径>/` 这类地址仍返回 404（页面 `noindex,follow`，带英文版链接），属 27j 已记录的 `route-unavailable` 缺口。要修就得先有文章译文、再把路径加进 `paths.json`；只加路径会变成「阿语外壳 + 英文正文」，所以等文章翻译排期。
 - **`/contact/` 301**：生产与本地都把 `/contact/` 301 到 `/inquiry/`。若以后要独立联系页，再单独做，不动现有跳转。
+
+## 28q：RUNBOOK 改版落地与本地演练（本轮口径）
+
+2026-10-28 按任务单 `packrivo-v2/docs/DSH-TASK-2026-10-28q.md` §2.1–2.6 对 [`RUNBOOK-launch.md`](RUNBOOK-launch.md) 完成改版（修订补丁 `deploy/verification-28q/RUNBOOK-launch.28q.patch` 已 `git apply` 落地）：
+
+- **WP-CLI 走容器**：`WPCLI="docker exec php php -d disable_functions= /usr/local/bin/wp --path=$WPC --allow-root"`；新增 §0 宿主机 ↔ 容器路径对照（`$WP`/`$WPC`、`$PKG`/`$PKGC`、`$BACKUP`），包经 `docker cp` 进出容器；
+- **`$BACKUP` 固定**：第 1 步 1.1 生成一次并写 `/home/web/backups/CURRENT_LAUNCH`，之后每个会话 `BACKUP=/home/web/backups/$(cat …/CURRENT_LAUNCH)`，不再用 `$(date)`；
+- **备份/回滚路径一一对应**：mu 与 i18n 备份用 `/.` 摊平（`$BACKUP/mu/<文件名>`、`$BACKUP/i18n/<文件名>`），第 1 步判据逐文件核验，第 2/6/9 步按文件覆盖回滚；
+- **首次安装语义**：0.1 确认子主题与报价插件未安装；1.5 写 `INSTALL-STATE.txt`；第 4 步 `plugin install` → `activate`（判据 active，回滚 deactivate → delete 分条）；第 5 步 `theme install` → `activate packrivo-home-v4`（判据 stylesheet=子主题，回滚先 activate 父主题再删目录，分条）；
+- **版本 7.1.3**：目标站点行与 0.1 判据均为 WP 7.1.3；
+- **数据库备份**：`wp db export` → `docker cp` 到 `$BACKUP/db.sql`，判据非空且含 `CREATE TABLE`，第 9 步「最后手段」读同一份。
+
+**包哈希（2026-10-28 重新实测，与 RUNBOOK 上传表一致）**：`packrivo-home-v4.zip` = `5974ae0c208d03016701698c45dfbd467f7c24c6036fba120dccc01f72034bf9`（790,164 B）；`packrivo-quote.zip` = `096d0c8e81360e7fc616e5d46c96088fc3a65ceb32daf9b78cf1e1de0bc52d93`（54,581 B）。
+
+**本地演练状态**：RUNBOOK 附录 C 引用的 `deploy/verification-28q/rehearsal.log`、`rehearsal-verify.json` 尚不存在——正向 → 整体回滚 → 再正向三轮演练**尚未开始**，附录 C 在演练通过前不得作为「已演练」依据（LAUNCH-LOG §8.4.2）。上线仍以 RUNBOOK 为唯一口径；本文件其余各轮记录继续只作历史参考。
