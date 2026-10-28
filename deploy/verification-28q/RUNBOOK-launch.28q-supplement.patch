@@ -1,0 +1,88 @@
+diff --git a/deploy/RUNBOOK-launch.md b/deploy/RUNBOOK-launch.md
+index 6af59be..ed758de 100644
+--- a/deploy/RUNBOOK-launch.md
++++ b/deploy/RUNBOOK-launch.md
+@@ -61,6 +61,7 @@ $WPCLI plugin list --format=csv | grep '^packrivo-quote,'  || echo "报价插件
+ $WPCLI theme list --format=csv | grep packrivo-static-bridge | grep active
+ 
+ # 容器里要有 mysqldump，否则 wp db export 会失败（容器重建后会丢，所以每次上线都查一遍）
++# apk 兜底会写入 php 容器并需外网拉取 mariadb-client：属预期行为，负责人审批本修订时一并知悉；若触发必须在日志记一行
+ docker exec php sh -c 'command -v mysqldump || apk add --no-cache mariadb-client'
+ docker exec php mysqldump --version
+ 
+@@ -68,7 +69,7 @@ docker exec php mysqldump --version
+ mkdir -p "$PKG"
+ ```
+ 
+-**通过判据**：`docker ps` 里的 php/mysql/nginx 都在；`core version` = `7.1.3`；PHP = `8.3.x`；`template` = `packrivo-static-bridge-1.2.38`；子主题与报价插件都「未安装」；`mysqldump --version` 有输出。
++**通过判据**：`docker ps` 里的 php/mysql/nginx 都在；`core version` = `7.1.3`；PHP = `8.3.x`；`template` = `packrivo-static-bridge-1.2.38`；子主题与报价插件都「未安装」；`mysqldump --version` 有输出；若触发 apk 兜底，日志须记「mysqldump 由 apk 补装」一行。
+ 若子主题或报价插件**已经存在**，说明不是首次安装，**停下**，本手册的 4/5 步与 9 步不适用。
+ 
+ ### 0.2 从本机上传（**本机**执行，只在宿主机落地，不进 web 目录）
+@@ -114,7 +115,7 @@ LAUNCH=packrivo-launch-$(date +%Y%m%d-%H%M)
+ mkdir -p /home/web/backups
+ echo "$LAUNCH" > /home/web/backups/CURRENT_LAUNCH
+ BACKUP=/home/web/backups/$LAUNCH
+-mkdir -p "$BACKUP"/{mu,i18n,db,rollback}
++mkdir -p "$BACKUP"/{mu,i18n,db,rollback,parent-theme}
+ 
+ # 1.2 mu 与 i18n：用 "/." 摊平，保证 $BACKUP/mu/<文件名> 与 $BACKUP/i18n/<文件名>
+ cp -a "$WP/wp-content/mu-plugins/." "$BACKUP/mu/"
+@@ -122,6 +123,8 @@ cp -a "$I18N/."                     "$BACKUP/i18n/"
+ sha256sum "$WP/wp-content/mu-plugins/packrivo-i18n.php" \
+           "$WP/wp-content/mu-plugins/packrivo-site-remediation-20261022.php" > "$BACKUP/before-mu.sha256"
+ 
++# 1.2b 父主题兜底备份（第 2–8 步不写父主题目录，纵深防御；摊平到 parent-theme/）
++cp -a "$WP/wp-content/themes/packrivo-static-bridge-1.2.38/." "$BACKUP/parent-theme/"
+ # 1.3 数据库：wp 在容器里，导出文件先落容器 /tmp，再拉回宿主机
+ $WPCLI db export /tmp/packrivo-before-launch.sql --skip-plugins --skip-themes
+ docker cp php:/tmp/packrivo-before-launch.sql "$BACKUP/db.sql"
+@@ -162,6 +165,7 @@ test -s "$BACKUP/db.sql"                                      && echo "1e db.sql
+ [ "$(wc -l < "$BACKUP/before-mu.sha256")" -eq 2 ]             && echo "1g 两个 mu 哈希"
+ test -s "$BACKUP/before-sitemap.xml"                          && echo "1h sitemap 快照非空"
+ grep -q 'child_theme_present=no' "$BACKUP/INSTALL-STATE.txt"  && echo "1i 首装状态已记录"
++[ "$(ls "$BACKUP/parent-theme" | wc -l)" -ge 1 ]               && echo "1j 父主题兜底备份到位"
+ ```
+ 
+ 全都打印出来才算过。**备份只留在服务器这台机器上，不下载到本机。**
+@@ -181,8 +185,9 @@ grep -q 'child_theme_present=no' "$BACKUP/INSTALL-STATE.txt"  && echo "1i 首装
+ ```bash
+ BACKUP=/home/web/backups/$(cat /home/web/backups/CURRENT_LAUNCH)
+ 
+-# 2.1 当天生产字典快照（落在宿主机，平铺）
+-cp -a "$I18N" "$BACKUP/i18n-today"
++# 2.1 当天生产字典快照（落在宿主机，平铺；重跑幂等：/. 摊平不会嵌套 i18n-today/<子目录>/…）
++mkdir -p "$BACKUP/i18n-today"
++cp -a "$I18N/." "$BACKUP/i18n-today/"
+ ls "$BACKUP/i18n-today" | head
+ grep -c '"' "$BACKUP/i18n-today/de-dict.json"        # 粗略确认不是空文件
+ 
+@@ -509,6 +514,7 @@ $WPCLI plugin delete packrivo-quote
+ $WPCLI plugin list --format=csv | grep packrivo-quote || echo "报价插件已移除"
+ 
+ # 9.3 内容（134 产品页 + 8 主页面，先 rollback-check 再 rollback）
++docker exec php mkdir -p "$PKGC/rollback"     # 预建：第 3 步未执行或容器重建过时，docker cp 也能落位
+ docker cp "$BACKUP/rollback/rollback-27i.json" php:"$PKGC/rollback/"
+ docker cp "$BACKUP/rollback/rollback-27g.json" php:"$PKGC/rollback/"
+ $WPCLI eval-file "$PKGC/scripts/hubs-27i/import.php"          rollback-check "$PKGC" "$SITE" "$PKGC/rollback/rollback-27i.json"
+@@ -559,9 +565,18 @@ docker exec php rm -f /tmp/db.sql
+ | 8 | 复测 | 本机浏览器 + 生产 SSH | 20–30 min | 不可 |
+ | 9 | 整体回滚 | 生产 SSH（清缓存在本机） | 15 min | 只在出问题时执行 |
+ 
+-## 附录 C · 28q 本地演练
++## 附录 C · 28q 本地演练（状态：待演练）
+ 
+-本手册在 2026-10-28 于本地按「生产结构」完整演练过：WP 7.1.3 + PHP 8.3、`php` 容器、`/home/web/...` 宿主机目录、子主题与报价插件**未安装**的初始状态。演练记录（正向 → 整体回滚 → 再正向，逐条命令与输出）见：
++**本手册 28q 修订尚未在本地演练过**：`rehearsal.log`、`rehearsal-verify.json` 目前不存在，本附录在演练通过前不得作为「已演练」依据。按任务单 §3 在本地搭「生产结构」环境（WP 7.1.3 + PHP 8.3、`php` 容器、`/home/web/...` 宿主机目录、子主题与报价插件未安装的初始状态）完成演练，并产出以下两份文件：
+ 
+ - `deploy/verification-28q/rehearsal.log`
+ - `deploy/verification-28q/rehearsal-verify.json`
++
++**演练与核验判据（全部满足才算通过）**：
++
++1. 三轮：正向 0→8 → 第 9 步整体回滚验收 → 再正向 1→8；第 7 步只做服务器端（跳过 Cloudflare）；命令原样照抄本手册，要改命令先改本手册再重跑（任务单 §3.1）；
++2. 第 9 步验收：主题、插件、mu 文件、字典 sha256 与演练前一致，产品标题回原值（任务单 §3.3）；
++3. `rehearsal.log`：逐条命令与输出，三轮每一步都 PASS（任务单 §4）；
++4. `rehearsal-verify.json`：结构化机检结果，`steps` 覆盖第 0–9 步且逐项 `result=PASS`，含 `wp_core=7.1.3`、`php=8.3.x` 及第 9 步回滚后 sha256 一致、标题回原值的机检项；
++5. 演练通过 + Claude 核验 `rehearsal.log` 之后，由负责人**另行授权生产**（任务单答复 3）；演练通过不自动获得生产授权；
++6. 未决项：任务单 §1 的 663 网址检查中 `/sitemap_index.xml` 本地 404（本地无 Yoast，生产该项 200，属环境差异）——需负责人明确豁免口径后 §1 网址项方可判定整体通过；豁免记录写入 `DSH-RESULT-2026-10-28q.md` 或 LAUNCH-LOG。

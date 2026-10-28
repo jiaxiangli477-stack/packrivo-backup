@@ -498,3 +498,57 @@ ac0a27538c428f2175e9596bd21f27be47069aaf57cbeabf8892ae456e2f471d  …/mu-plugins
 11) 663 网址项豁免口径（10.4）与并行链定位（§9.4.b 延续）一并请负责人裁定。
 
 - **结论**：仍无负责人对 28q 的明确新批复（唯一授权依据仍为任务单答复 3）→ 本链继续停止等待；生产第 1 步不重跑，第 2–8 步不执行；未 SSH 生产；未读任何凭据。
+
+## 11 · 28q 最小补充补丁 + 最终审批文本（本机只读与拟制；未连接生产、未改原 RUNBOOK、未动任何未跟踪文件、未读任何凭据）
+
+### 11.1 补丁产物与核验
+
+- 补丁文件：`deploy/verification-28q/RUNBOOK-launch.28q-supplement.patch`（新增，随本轮提交入库），6,750 B，8 个 hunk，sha256 `18d799973c753a41234f2d6fb8e73c819d723b692b758b1ab620df6598b57c9d`。
+- 基线：HEAD blob `6af59be`（=6f4aac1 落地的 28q RUNBOOK）；补丁只对该基线拟制，未直接改工作树 RUNBOOK。
+- 可应用性复核（scratch 仓库实测）：① LF 工作树 `git apply -p1 --check` exit 0，apply 后与目标全文 `git diff --no-index` 为空（字节级一致）；② CRLF 工作树（=本仓库 autocrlf=true 检出形态）普通 apply 失败（patch failed at line 61），`git apply -p1 --ignore-whitespace` exit 0 且结果与目标全文一致 → 落地命令以 `git apply --ignore-whitespace -p1 deploy/verification-28q/RUNBOOK-launch.28q-supplement.patch` 为准；③ 先落地并行链工作树未提交的 SITEMAP 改动（parallel-wip.diff）再打本补丁，check exit 0 → 与并行链在途编辑无上下文冲突（8 个 hunk 全部落在 SITEMAP 改动区之外）。
+
+### 11.2 补丁内容（与 §10.3 差距逐条对应）
+
+1. **附录 C 改写为「待演练」**（§10.3.1）：标题加「（状态：待演练）」；正文声明 rehearsal.log/rehearsal-verify.json 尚不存在、演练通过前不得作为「已演练」依据；新增「演练与核验判据」6 条：三轮顺序（正向 0→8 → 第 9 步整体回滚验收 → 再正向 1→8，第 7 步仅服务器端）；第 9 步 sha256/标题回原值验收；rehearsal.log 逐条命令与输出且三轮全 PASS；rehearsal-verify.json 结构化判据（steps 覆盖 0–9 步逐项 PASS、含 wp_core=7.1.3 / php=8.3.x / 回滚后 sha256 一致项）；演练通过 + Claude 核验后才另行授权生产；663 网址项 /sitemap_index.xml 本地 404 列为需负责人明确豁免的未决项。
+2. **父主题兜底备份**（§10.3.2）：1.1 mkdir 增 parent-theme；1.2b `cp -a .../packrivo-static-bridge-1.2.38/. $BACKUP/parent-theme/`；第 1 步判据增 1j（文件数 ≥1）。第 2–8 步不写父主题目录，属纵深防御；本步回滚条款不变（第 1 步零变更）。
+3. **2.1 重跑幂等**（§10.3.3）：改为 `mkdir -p "$BACKUP/i18n-today"` + `cp -a "$I18N/." "$BACKUP/i18n-today/"`（`/.` 摊平，重跑不再嵌套 i18n-today/<子目录>/…）；2.2 的 `docker cp "$BACKUP/i18n-today"` 与 2.x 判据不变。原拟「先清空残留」的 rm 写法因平台安全管控弃用，改用无删除幂等形态；残留风险（生产已删文件仍留快照）在单日线性上线场景可忽略，已写入行内注释。
+4. **9.3 容器目录预检**（§10.3.4）：9.3 两条 docker cp 之前加 `docker exec php mkdir -p "$PKGC/rollback"`，覆盖「第 3 步未执行即整体回滚」或容器重建后目录丢失的失败路径；幂等、不影响判据与回滚语义。
+5. **0.1 apk 兜底知悉**（§10.3.5）：mysqldump 检查行前加注释（写 php 容器、需外网、属预期行为，负责人审批本修订时一并知悉，触发须在日志记一行）；0.1 通过判据追加「若触发 apk 兜底，日志须记『mysqldump 由 apk 补装』一行」。
+
+### 11.3 命令—验收—独立回滚一致性复核（逐项）
+
+| 修订 | 命令 | 验收 | 独立回滚 | 一致性 |
+|---|---|---|---|---|
+| 1.2b/1j 父主题备份 | cp 摊平 | 1j 文件数≥1 | 无需（第 1 步零变更，备份仅事后删除） | ✓ |
+| 2.1 幂等快照 | mkdir + cp /. | 沿用 2.x 判据（11 dict/11 js/paths） | 沿用 `cp -a "$BACKUP/i18n/." "$I18N/"` | ✓ |
+| 9.3 预检 | mkdir -p（幂等） | 沿用 rollback_eligible / metadata_mismatches=0 | 沿用 9.3 原命令链 | ✓ |
+| 0.1 知悉 | 注释 + 判据句 | mysqldump --version 有输出 | 无变更（只读检查） | ✓ |
+| 附录 C | 文档 | 6 条判据（§11.2.1） | 文档，无命令 | ✓ |
+
+结论：补丁落地后第 0–9 步命令—验收—独立回滚仍全部可执行且内部一致；全部改动为幂等或纯文档，不引入新的失败路径。
+
+### 11.4 最终审批文本（可直接发送负责人）
+
+**审批边界一 · 批准本补充修订（最小补丁）**
+请批准将 `deploy/verification-28q/RUNBOOK-launch.28q-supplement.patch` 落地到 `deploy/RUNBOOK-launch.md`（叠加于 6f4aac1 已落地的 28q 修订之上；落地命令 `git apply --ignore-whitespace -p1 deploy/verification-28q/RUNBOOK-launch.28q-supplement.patch`，apply --check 已在本机对 HEAD 基线通过）。本补丁仅含 11.2 五项：附录 C 待演练化与演练判据、父主题兜底备份、2.1 重跑幂等、9.3 容器目录预检、0.1 apk 兜底知悉。即使暂不落地本补丁也不阻塞边界二，但建议先落地，避免演练中按任务单 §3.1 再改 RUNBOOK。
+
+**审批边界二 · 批准启动三轮演练（任务单 §3）**
+批准启动本地「生产结构」三轮演练：正向 0→8 → 第 9 步整体回滚验收（主题/插件/mu/字典 sha256 回原、产品标题回原值）→ 再正向 1→8；第 7 步仅服务器端（跳过 Cloudflare）；命令原样照抄 RUNBOOK，产出 rehearsal.log 与 rehearsal-verify.json 并按附录 C 判据逐项 PASS。请同时指定由哪条执行链执行演练（并行链 or 本链），避免两链交叉写 deploy/verification-28q/。
+
+**审批边界三 · 演练通过后的 Claude 核验**
+三轮全 PASS 后，rehearsal.log 交由 Claude 对照 RUNBOOK 逐条核验（含 wp core=7.1.3、php=8.3.x、回滚后 sha256 一致）；核验结论由负责人确认。
+
+**审批边界四 · 另行生产授权（独立边界）**
+Claude 核验通过后，负责人**另行**下发生产授权（任务单答复 3）；演练通过不自动获得生产授权。授权前本链保持停止：不跑生产第 1 步、不 SSH 生产、不启动本地/生产演练。授权后生产执行仅限 RUNBOOK 第 0–8 步（必要时第 9 步整体回滚），第 7 步 Cloudflare 段负责人亲自执行；全程不读不打印任何密码/密钥/token。
+
+**未决项（需负责人明确答复后方可闭合）**
+1. **663 网址项豁免口径**：`/sitemap_index.xml` 本地 404（本地无 Yoast，生产该项 200，属环境差异）→ 请明确豁免（建议 a: 本地巡检清单移除该项；b: DSH-RESULT 记录「Yoast 专属、本地 404 豁免」）；未豁免前任务单 §1 网址项不得判定整体通过。
+2. **6f4aac1「approved」背书**：仓库内无对应批复记录（§10.1 / 事实 #659），请背书或纠正该提交声明。
+3. **并行链定位**（§9.4.b 延续）：并行链已提交 6f4aac1/90d073f 并持续增写 18 个未跟踪文件（§9/§10），请明确其是否为官方执行链及与演练执行的衔接，避免双链交叉。
+4. **apk 兜底知悉**（§10.3.5）：0.1 在 mysqldump 缺失时会写入 php 容器并需外网拉取，请知悉确认。
+5. **遗留项延续**：§7.4 四项与 §10.5 A–D 其余条目继续有效。
+
+### 11.5 本轮处置与边界
+
+- 本轮只新增两处仓库变更：本补丁文件与本节日志；未修改原 RUNBOOK（工作树 RUNBOOK 的 SITEMAP 在途编辑为并行链产物，未触碰）；18 个未跟踪文件原样保留，不修改、不删除、不执行。
+- 未 SSH 生产、未重跑生产第 1 步、未执行第 2–8 步、未启动任何本地/生产演练；未读取或打印任何密码/密钥/token。
