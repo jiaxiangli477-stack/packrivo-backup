@@ -1,0 +1,277 @@
+# Codex 结果 · 2026-10-27e
+
+## 总状态：部分完成，不可上线
+
+第 1、4、5 节完成；第 2 节部分完成（5/8 张卡片）；第 3 节仅完成 4/134 个产品，余下 130 个、27c 遗留字符串的 11 语种翻译尚未完成。原始页面没有因翻译未完成而被改写。生产仅做 HTTPS、SSH/SCP 只读核验；没有部署、上传生产文件或改动 www.packrivo.com。
+
+## 1. FAQ：完成，提交 `43483de`
+
+页面 FAQ 和 FAQPage schema 通过同一引擎结果生成；其余 4 条未更改。价格不可计算时不显示虚构价格。原始浏览器检查：
+
+```text
+$ node E:\破甲工作区\.tmp\pk27e-faq-test.cjs
+HTTP: 200
+HTML: At 500 pieces, a 9.5×9.5×4 cm rigid jewelry box is about $2.83 per unit and a 30×22×12 cm printed mailer box about $2.48. The unit price drops as quantity goes up — the quote builder shows the full curve for your size.
+JSON-LD: At 500 pieces, a 9.5×9.5×4 cm rigid jewelry box is about $2.83 per unit and a 30×22×12 cm printed mailer box about $2.48. The unit price drops as quantity goes up — the quote builder shows the full curve for your size.
+equal: true
+
+$ rg -n '\$[0-9]' E:\破甲工作区\packrivo-wp\packrivo-home-v4\front-page.php
+# 无输出，rg 退出码 1
+
+$ php -l E:\破甲工作区\packrivo-wp\packrivo-home-v4\front-page.php
+No syntax errors detected in E:\破甲工作区\packrivo-wp\packrivo-home-v4\front-page.php
+```
+
+## 2. 首页：部分完成，提交 `e5c3c59`、`ca1ef3e`
+
+From 标签、四格样品文案、天地盖标题和产品索引的价格标签已调整。四个已改写产品的简介来自新的本地数据库字段；首页现显示五张。仍缺三张具有可靠结构映射、已核对匹配且通过原图对照的封面。候选图 `rigid-lid-and-base-box-652818`、`rigid-lid-and-base-box-212049`、`rigid-lid-and-base-box-426639` 的产品上印字被移除，未用；`folding-carton-199330` 结构与待补 rigid 产品不能可靠对应，未用。
+
+本次新增封面为 `catalog-drawer-box-058021`，用于带内托首饰盒：原图和主图的抽屉、拉带、盒体颜色及内托经目视对照，产品本身未见印字/压纹删除；图外角标已清除。只批准主图，变体仍独立待核验。QA 表已按当前文件 SHA-256 更新。新增 800/1200 WebP 本地媒体 ID 3229/3230，alt 为 `Colorful drawer jewelry boxes with ribbon pulls and inserts`；caption 按站长确认的统一文案。媒体和数据库只在本地，不在 Git 中。
+
+```text
+$ node E:\破甲工作区\.tmp\pk27e-section2.cjs
+{"url":"http://localhost:8081/","status":200,"stats":["From · 500 pcs","MOQ","Production","Sourcing fee"],"sample":["Ring & necklace boxes / Rigid, magnetic, drawer","Jewelry pouches / Velvet, cotton, suede","Gift boxes / Lid-and-base, window","Mailer boxes / Printed inside and out"],"cards":["Custom Drawer Jewelry Boxes","Custom Lid-and-Base Jewelry Boxes","Custom Jewelry Boxes with Fitted Inserts","Custom Window Gift Boxes","Custom Mailer Boxes"],"live":false,"overflow":false}
+{"url":"http://localhost:8081/products/","status":200,"stats":[],"sample":[],"cards":["Custom Auto Bottom Display Carton Sourcing","Custom Auto Bottom Slotted Outer Carton Sourcing","Custom Auto-Lock Bottom Carton Sourcing","Custom Book-Style Rigid Presentation Box Sourcing","Custom Bookend Folding Carton Sourcing","Custom Box Bottom Fabric Tote Sourcing","Custom Circular Roll Labels Sourcing","Custom Clear Display Box Sourcing","Custom Coated Labels Sourcing","Custom Collapsible Magnetic Gift Box Sourcing","Custom Contour-Cut PU Foam Holder Sourcing","Custom Corrugated Book Wrap Mailer Sourcing","Custom Corrugated Bottle Gift Carrier Sourcing","Custom Corrugated Divider and Inlay Sourcing","Custom Corrugated Gusset Folder Sourcing","Custom Corrugated Mailer Inlay Sourcing","Custom Corrugated Reverse Tuck Pack Sourcing","Custom Corrugated Roll End Hinged Lid Sourcing","Custom Corrugated Tuck-Top Auto-Bottom Carton Sourcing","Custom Corrugated Tuck-Top Snap-Bottom Carton Sourcing","Custom Counter Display Carton Sourcing","Custom Die-Cut Handle Paper Bag Sourcing","Custom Die-Cut Insert Sourcing","Custom Double-Wall Frame Tray and Lid Sourcing"],"live":true,"overflow":false}
+```
+
+`live:false` 是该测试对首页是否包含产品索引新标签的布尔值；首页本来不显示该标签。375px 检查无溢出。
+
+## 3. 产品买家词与字典：部分完成，提交 `b2bfa5d`、`336f759`、`ca1ef3e`
+
+当前生产 11 份字典由只读 SCP 拉取成功，保存在 `E:\破甲工作区\.tmp\packrivo-27e-dictionaries`，不提交完整字典。以此为基线，在同次提交中保存 4 页 title/H1/meta 的 11 语种增量。每语言 20 个桶键（4 个 title、8 个 block、4 个 text、4 个 attr；并非 20 个不同页面）。字典已经仅在本地复制并合并做浏览器验证，生产字典未改。下列英文变更及翻译输出已验证，译文尚未做独立母语审校或搜索量验证。
+
+另外发现 Drawer 页的核心 title renderer 与产品工作区的 title renderer 均被移除，导致 HTML 没有 title；子主题只在目标原生产品页缺少两个 renderer 时恢复核心 title，已本地验证。
+
+```text
+$ node E:\破甲工作区\.tmp\pk27e-products-http.cjs
+{"slug":"product-drawer-jewelry-box","status":200,"title":"Custom Drawer Jewelry Boxes with Logo | Packrivo","h1":["Custom Drawer Jewelry Boxes with Logo"],"meta":["Custom drawer jewelry boxes for small brands, with logo options and a 500-piece minimum. Get a price."]}
+{"slug":"product-lid-and-base-jewelry-box","status":200,"title":"Custom Lid-and-Base Jewelry Boxes | Packrivo","h1":["Custom Lid-and-Base Jewelry Boxes"],"meta":["Custom lid-and-base jewelry boxes for small brands, with logo options and a 500-piece minimum. Get a price."]}
+{"slug":"product-magnetic-jewelry-box","status":200,"title":"Custom Magnetic Jewelry Boxes with Logo | Packrivo","h1":["Custom Magnetic Jewelry Boxes with Logo"],"meta":["Custom magnetic jewelry boxes for small brands, with logo options and a 500-piece minimum. Get a price."]}
+
+$ python <统计第四页 11 语种本地 HTTP 输出>
+responses: 11 200: 11 untranslated titles: 0 empty meta: 0
+```
+
+四页各 11 语种的页面均已打开检查；上方第二个统计只针对第四页，前三页对应的单独本地测试输出在 `E:\破甲工作区\.tmp\pk27e-locale-*-output.txt`（抽屉页输出直接显示于运行日志）。以下是每语种当前增量桶键数的原样输出：
+
+```text
+$ python <统计 i18n-delta>
+ar-dict 20
+de-dict 20
+es-dict 20
+fr-dict 20
+it-dict 20
+ja-dict 20
+ko-dict 20
+nl-dict 20
+pt-dict 20
+zh-CN-dict 20
+zh-TW-dict 20
+```
+
+本地 134 页审计输出：
+
+```text
+$ python E:\破甲工作区\packrivo-backup\scripts\product-buyers-27e\audit-local.py
+total: 134 changed: 4 unchanged: 130
+duplicate title groups: 0
+rows with banned terms: 0
+hits: []
+titles containing sourcing: 130
+```
+
+`banned terms` 扫描针对任务列出的明确技术/平台/消费词，不包含 Sourcing；130 个未完成页面仍有 Sourcing 和供应商导向简介，因此不满足第 3 节验收。禁用词扫描不等于标题都符合买家意图。完整 CSV 为 `E:\破甲工作区\packrivo-backup\scripts\product-buyers-27e\full-inventory.csv`，下面是原始标题与当前标题、当前描述；unchanged 行不是建议的新文案：
+
+| slug | 旧 title | 当前 title | 当前描述 | 状态 |
+| --- | --- | --- | --- | --- |
+| clear-display-box | Custom Clear Display Box Sourcing \| Packrivo | Custom Clear Display Box Sourcing \| Packrivo | Custom clear display box sourcing. Specify visible faces, panel joints and product access; include quantity and destination for supplier review. | unchanged |
+| gift-bag-tissue-set | Custom Gift Bag and Tissue Set Sourcing \| Packrivo | Custom Gift Bag and Tissue Set Sourcing \| Packrivo | Custom gift bag and tissue set sourcing. Specify boxed size, bag opening and tissue quantity; include quantity and destination for supplier review. | unchanged |
+| molded-pulp-insert | Custom Molded Pulp Insert Sourcing \| Packrivo | Custom Molded Pulp Insert Sourcing \| Packrivo | Custom molded pulp insert sourcing. Specify product contacts, cavity form and removal; include quantity and destination for supplier review. | unchanged |
+| paper-mailer-bag | Custom Paper Mailer Bag Sourcing \| Packrivo | Custom Paper Mailer Bag Sourcing \| Packrivo | Custom paper mailer bag sourcing. Specify filled size, paper layers and sealing; include quantity and destination for supplier review. | unchanged |
+| poly-mailer-bag | Custom Poly Mailer Bag Sourcing \| Packrivo | Custom Poly Mailer Bag Sourcing \| Packrivo | Custom poly mailer bag sourcing. Specify filled size, film construction and sealing; include quantity and destination for supplier review. | unchanged |
+| product-auto-bottom-display-carton | Custom Auto Bottom Display Carton Sourcing \| Packrivo | Custom Auto Bottom Display Carton Sourcing \| Packrivo | Custom auto bottom display carton sourcing. Specify base setup, display opening and contents; include quantity and destination for supplier review. | unchanged |
+| product-auto-bottom-slotted-outer-carton | Custom Auto Bottom Slotted Outer Carton Sourcing \| Packrivo | Custom Auto Bottom Slotted Outer Carton Sourcing \| Packrivo | Plan custom auto bottom slotted outer carton. Define automatic base setup, top flaps and loading, then request a project quotation through Packrivo. | unchanged |
+| product-auto-lock-bottom-carton | Custom Auto-Lock Bottom Carton Sourcing \| Packrivo | Custom Auto-Lock Bottom Carton Sourcing \| Packrivo | Custom auto-lock bottom carton sourcing. Specify pre-glued base, setup and loading sequence; include quantity and destination for supplier review. | unchanged |
+| product-book-style-rigid-presentation-box | Custom Book-Style Rigid Presentation Box Sourcing \| Packrivo | Custom Book-Style Rigid Presentation Box Sourcing \| Packrivo | Plan custom book-style rigid presentation box. Define spine movement, tray position and closure, then request a project quotation through Packrivo. | unchanged |
+| product-bookend-folding-carton | Custom Bookend Folding Carton Sourcing \| Packrivo | Custom Bookend Folding Carton Sourcing \| Packrivo | Custom bookend folding carton sourcing. Specify cover hinge, inner closure and access sequence; include quantity and destination for supplier review. | unchanged |
+| product-box-bottom-fabric-tote | Custom Box Bottom Fabric Tote Sourcing \| Packrivo | Custom Box Bottom Fabric Tote Sourcing \| Packrivo | Custom box bottom fabric tote sourcing. Specify base shape, handle attachment and contents; include quantity and destination for supplier review. | unchanged |
+| product-circle-roll-labels | Custom Circular Roll Labels Sourcing \| Packrivo | Custom Circular Roll Labels Sourcing \| Packrivo | Custom circular roll labels sourcing. Specify circle diameter, roll format and application; include quantity and destination for supplier review. | unchanged |
+| product-coated-labels | Custom Coated Labels Sourcing \| Packrivo | Custom Coated Labels Sourcing \| Packrivo | Custom coated labels sourcing. Specify surface, coating purpose and printed content; include quantity and destination for supplier review. | unchanged |
+| product-collapsible-magnetic-gift-box | Custom Collapsible Magnetic Gift Box Sourcing \| Packrivo | Custom Collapsible Magnetic Gift Box Sourcing \| Packrivo | Custom collapsible magnetic gift box sourcing. Specify folded size, setup sequence and closure; include quantity and destination for supplier review. | unchanged |
+| product-corrugated-book-wrap-mailer | Custom Corrugated Book Wrap Mailer Sourcing \| Packrivo | Custom Corrugated Book Wrap Mailer Sourcing \| Packrivo | Plan custom corrugated book wrap mailer. Define product thickness, fold positions and closure, then request a project quotation through Packrivo. | unchanged |
+| product-corrugated-bottle-gift-carrier | Custom Corrugated Bottle Gift Carrier Sourcing \| Packrivo | Custom Corrugated Bottle Gift Carrier Sourcing \| Packrivo | Plan custom corrugated bottle gift carrier. Define bottle arrangement, dividers and handle route, then request a project quotation through Packrivo. | unchanged |
+| product-corrugated-divider | Custom Corrugated Divider and Inlay Sourcing \| Packrivo | Custom Corrugated Divider and Inlay Sourcing \| Packrivo | Custom corrugated divider and inlay sourcing. Specify cell layout, divider height and assembly; include quantity and destination for supplier review. | unchanged |
+| product-corrugated-gusset-folder | Custom Corrugated Gusset Folder Sourcing \| Packrivo | Custom Corrugated Gusset Folder Sourcing \| Packrivo | Custom corrugated gusset folder sourcing. Specify gusset folds, loaded shape and closure; include quantity and destination for supplier review. | unchanged |
+| product-corrugated-inlay | Custom Corrugated Mailer Inlay Sourcing \| Packrivo | Custom Corrugated Mailer Inlay Sourcing \| Packrivo | Custom corrugated mailer inlay sourcing. Specify mailer interior, product position and loading; include quantity and destination for supplier review. | unchanged |
+| product-corrugated-reverse-tuck-pack | Custom Corrugated Reverse Tuck Pack Sourcing \| Packrivo | Custom Corrugated Reverse Tuck Pack Sourcing \| Packrivo | Plan custom corrugated reverse tuck pack. Define end-flap direction, front panel and loading, then request a project quotation through Packrivo. | unchanged |
+| product-corrugated-roll-end-hinged-lid | Custom Corrugated Roll End Hinged Lid Sourcing \| Packrivo | Custom Corrugated Roll End Hinged Lid Sourcing \| Packrivo | Custom corrugated roll end hinged lid sourcing. Specify roll-end walls, lid movement and sealing; include quantity and destination for supplier review. | unchanged |
+| product-corrugated-tuck-top-auto-bottom | Custom Corrugated Tuck-Top Auto-Bottom Carton Sourcing | Custom Corrugated Tuck-Top Auto-Bottom Carton Sourcing | Source custom corrugated tuck-top auto-bottom carton with Packrivo. Define base setup, tuck top and complete contents for a scoped project quotation. | unchanged |
+| product-corrugated-tuck-top-snap-bottom | Custom Corrugated Tuck-Top Snap-Bottom Carton Sourcing | Custom Corrugated Tuck-Top Snap-Bottom Carton Sourcing | Source custom corrugated tuck-top snap-bottom carton with Packrivo. Define manual base, tuck top and packed dimensions for a scoped project quotation. | unchanged |
+| product-counter-display-carton | Custom Counter Display Carton Sourcing \| Packrivo | Custom Counter Display Carton Sourcing \| Packrivo | Custom counter display carton sourcing. Specify display opening, stock layout and replenishment; include quantity and destination for supplier review. | unchanged |
+| product-cube-carry-carton | Custom Integrated-Handle Cube Carrier Sourcing \| Packrivo | Custom Integrated-Handle Cube Carrier Sourcing \| Packrivo | Custom integrated-handle cube carrier sourcing. Specify handle grip, cube size and contents; include quantity and destination for supplier review. | unchanged |
+| product-die-cut-handle-paper-bag | Custom Die-Cut Handle Paper Bag Sourcing \| Packrivo | Custom Die-Cut Handle Paper Bag Sourcing \| Packrivo | Custom die-cut handle paper bag sourcing. Specify handle cutout, reinforcement and loading; include quantity and destination for supplier review. | unchanged |
+| product-die-cut-insert | Custom Die-Cut Insert Sourcing \| Packrivo | Custom Die-Cut Insert Sourcing \| Packrivo | Custom die-cut insert sourcing. Specify product outline, contact areas and cut layout; include quantity and destination for supplier review. | unchanged |
+| product-double-wall-frame-tray-lid | Custom Double-Wall Frame Tray and Lid Sourcing \| Packrivo | Custom Double-Wall Frame Tray and Lid Sourcing \| Packrivo | Custom double-wall frame tray and lid sourcing. Specify frame walls, lid fit and product support; include quantity and destination for supplier review. | unchanged |
+| product-double-wall-frame-tray-sleeve | Custom Double-Wall Frame Tray and Sleeve Sourcing \| Packrivo | Custom Double-Wall Frame Tray and Sleeve Sourcing \| Packrivo | Plan custom double-wall frame tray and sleeve. Define frame walls, tray travel and sleeve fit, then request a project quotation through Packrivo. | unchanged |
+| product-double-wall-tray-lid | Custom Double-Wall Tray and Lid Sourcing \| Packrivo | Custom Double-Wall Tray and Lid Sourcing \| Packrivo | Custom double-wall tray and lid sourcing. Specify double walls, lid clearance and interior; include quantity and destination for supplier review. | unchanged |
+| product-drawer-jewelry-box | Custom Drawer Jewelry Box Sourcing \| Packrivo | Custom Drawer Jewelry Boxes with Logo \| Packrivo | Custom drawer jewelry boxes for small brands, with logo options and a 500-piece minimum. Get a price. | changed |
+| product-drawstring-fabric-gift-bag | Custom Drawstring Fabric Gift Bag Sourcing \| Packrivo | Custom Drawstring Fabric Gift Bag Sourcing \| Packrivo | Custom drawstring fabric gift bag sourcing. Specify fabric, drawstring route and product fit; include quantity and destination for supplier review. | unchanged |
+| product-euro-tote-paper-carrier | Custom Paper Gift Carrier Sourcing \| Packrivo | Custom Paper Gift Carrier Sourcing \| Packrivo | Compare paper gift carriers by loading mouth, gusset, handle joints and the complete boxed gift. Prepare quantity and destination for supplier review. | unchanged |
+| product-eva-foam-holder | Custom Through-Cut EVA Insert Sourcing \| Packrivo | Custom Through-Cut EVA Insert Sourcing \| Packrivo | Custom through-cut EVA insert sourcing. Specify through-cut cavities, thickness and removal; include quantity and destination for supplier review. | unchanged |
+| product-expandable-kraft-parcel-bag | Custom Expandable Kraft Parcel Bag Sourcing \| Packrivo | Custom Expandable Kraft Parcel Bag Sourcing \| Packrivo | Custom expandable kraft parcel bag sourcing. Specify gusset expansion, filled size and sealing; include quantity and destination for supplier review. | unchanged |
+| product-finished-folding-gift-box | Custom Folding Gift Box with Decorative Finish Sourcing | Custom Folding Gift Box with Decorative Finish Sourcing | Source custom folding gift box with decorative finish with Packrivo. Define board choice, finish location and artwork for a scoped project quotation. | unchanged |
+| product-five-panel-corrugated-folder | Custom FEFCO 0410 Five-Panel Corrugated Folder Sourcing | Custom FEFCO 0410 Five-Panel Corrugated Folder Sourcing | Plan custom FEFCO 0410 five-panel corrugated folder. Specify five-panel folds, product outline and closure before supplier quotation and sampling. | unchanged |
+| product-five-panel-hanger-carton | Custom Five-Panel Hanger Carton Sourcing \| Packrivo | Custom Five-Panel Hanger Carton Sourcing \| Packrivo | Custom five-panel hanger carton sourcing. Specify hanger panel, fixture fit and print layout; include quantity and destination for supplier review. | unchanged |
+| product-flat-delivery-mailer | Custom Flat-Delivery Mailer Box Sourcing \| Packrivo | Custom Flat-Delivery Mailer Box Sourcing \| Packrivo | Custom flat-delivery mailer box sourcing. Specify flat delivery state, assembly and packed size; include quantity and destination for supplier review. | unchanged |
+| product-flip-out-dispenser-carton | Custom Flip-Out Dispenser Carton Sourcing \| Packrivo | Custom Flip-Out Dispenser Carton Sourcing \| Packrivo | Custom flip-out dispenser carton sourcing. Specify panel travel, unit layout and refill route; include quantity and destination for supplier review. | unchanged |
+| product-flocked-foam-holder | Custom Flocked Foam Holder Sourcing \| Packrivo | Custom Flocked Foam Holder Sourcing \| Packrivo | Custom flocked foam holder sourcing. Specify flocked surface, holder form and product contact; include quantity and destination for supplier review. | unchanged |
+| product-flower-petal-top-gift-carton | Custom Flower Petal Top Gift Carton Sourcing \| Packrivo | Custom Flower Petal Top Gift Carton Sourcing \| Packrivo | Custom flower petal top gift carton sourcing. Specify petal folds, overlap and opening sequence; include quantity and destination for supplier review. | unchanged |
+| product-fold-over-flap-fabric-pouch | Custom Fold-Over Flap Fabric Pouch Sourcing \| Packrivo | Custom Fold-Over Flap Fabric Pouch Sourcing \| Packrivo | Custom fold-over flap fabric pouch sourcing. Specify flap reach, closure and usable space; include quantity and destination for supplier review. | unchanged |
+| product-foldable-lid-base-box | Custom Foldable Lid Base Box Sourcing \| Packrivo | Custom Foldable Lid Base Box Sourcing \| Packrivo | Custom foldable lid base box sourcing. Specify lid and base folds, wall build and usable space; include quantity and destination for supplier review. | unchanged |
+| product-folded-box-liner | Custom Folded Box Liner Sourcing \| Packrivo | Custom Folded Box Liner Sourcing \| Packrivo | Custom folded box liner sourcing. Specify liner folds, corner overlaps and usable space; include quantity and destination for supplier review. | unchanged |
+| product-folded-tray-sleeve-box | Custom Folded Tray and Sleeve Box Sourcing \| Packrivo | Custom Folded Tray and Sleeve Box Sourcing \| Packrivo | Plan custom folded tray and sleeve box. Define tray travel, sleeve seam and opening clearance, then request a project quotation through Packrivo. | unchanged |
+| product-folding-carton | Custom Folding Cartons and Gift Boxes Sourcing \| Packrivo | Custom Folding Cartons and Gift Boxes Sourcing \| Packrivo | Compare folding cartons and gift boxes by tuck closure, supplied state, assembly and finish. Prepare size, quantity and destination for supplier review. | unchanged |
+| product-folding-gift-box | Custom Folding Gift Box Sourcing \| Packrivo | Custom Folding Gift Box Sourcing \| Packrivo | Custom folding gift box sourcing. Specify fold sequence, box dimensions and decoration; include quantity and destination for supplier review. | unchanged |
+| product-four-corner-display-tray | Custom Four-Corner Display Tray Sourcing \| Packrivo | Custom Four-Corner Display Tray Sourcing \| Packrivo | Custom four-corner display tray sourcing. Specify corner folds, wall height and loading; include quantity and destination for supplier review. | unchanged |
+| product-four-corner-pre-glued-carton | Custom Four-Corner Pre-Glued Carton Sourcing \| Packrivo | Custom Four-Corner Pre-Glued Carton Sourcing \| Packrivo | Custom four-corner pre-glued carton sourcing. Specify corner joints, setup and supplied state; include quantity and destination for supplier review. | unchanged |
+| product-front-tuck-mailer | Custom Mailer Box Sourcing \| Packrivo | Custom Mailer Box Sourcing \| Packrivo | Compare mailer structures, weight, flat or formed delivery and print scope. Define the complete packed product, quantity and destination for supplier review. | unchanged |
+| product-full-flap-auto-bottom-carton | Custom Full-Flap Auto-Bottom Carton Sourcing \| Packrivo | Custom Full-Flap Auto-Bottom Carton Sourcing \| Packrivo | Plan custom full-flap auto-bottom carton. Define base coverage, pre-gluing and loading route, then request a project quotation through Packrivo. | unchanged |
+| product-full-overlap-seal-end-carton | Custom Full-Overlap Seal End Carton Sourcing \| Packrivo | Custom Full-Overlap Seal End Carton Sourcing \| Packrivo | Plan custom full-overlap seal end carton. Define end-flap coverage, sealing work and equipment, then request a project quotation through Packrivo. | unchanged |
+| product-full-overlap-slotted-outer-carton | Custom Full-Overlap Slotted Outer Carton Sourcing \| Packrivo | Custom Full-Overlap Slotted Outer Carton Sourcing \| Packrivo | Source custom full-overlap slotted outer carton with Packrivo. Define outer-flap overlap, closing order and sealing for a scoped project quotation. | unchanged |
+| product-gable-top-carry-carton | Custom Gable Top Carry Carton Sourcing \| Packrivo | Custom Gable Top Carry Carton Sourcing \| Packrivo | Custom gable top carry carton sourcing. Specify handle opening, top closure and loading route; include quantity and destination for supplier review. | unchanged |
+| product-gift-hang-tag | Custom Gift Hang Tag Sourcing \| Packrivo | Custom Gift Hang Tag Sourcing \| Packrivo | Custom gift hang tag sourcing. Specify tag size, attachment and changing content; include quantity and destination for supplier review. | unchanged |
+| product-gusset-folder-carton | Custom Gusset Folder Carton Sourcing \| Packrivo | Custom Gusset Folder Carton Sourcing \| Packrivo | Custom gusset folder carton sourcing. Specify gusset folds, filled shape and opening route; include quantity and destination for supplier review. | unchanged |
+| product-hanging-tab-retail-carton | Custom Hanging Tab Retail Carton Sourcing \| Packrivo | Custom Hanging Tab Retail Carton Sourcing \| Packrivo | Plan custom hanging tab retail carton. Define hanging feature, retail fixture and product fit, then request a project quotation through Packrivo. | unchanged |
+| product-header-card-bag-topper | Custom Header Card Bag Topper Sourcing \| Packrivo | Custom Header Card Bag Topper Sourcing \| Packrivo | Custom header card bag topper sourcing. Specify header size, bag attachment and printed content; include quantity and destination for supplier review. | unchanged |
+| product-hexagonal-folding-carton | Custom Hexagonal Folding Carton Sourcing \| Packrivo | Custom Hexagonal Folding Carton Sourcing \| Packrivo | Custom hexagonal folding carton sourcing. Specify six-panel layout, closure and product fit; include quantity and destination for supplier review. | unchanged |
+| product-hinged-metal-gift-container | Custom Hinged Metal Gift Container Sourcing \| Packrivo | Custom Hinged Metal Gift Container Sourcing \| Packrivo | Custom hinged metal gift container sourcing. Specify hinge travel, lining and dry-gift contents; include quantity and destination for supplier review. | unchanged |
+| product-hinged-nonmagnetic-rigid-box | Custom Ribbon-Tie Hinged Rigid Box Sourcing \| Packrivo | Custom Ribbon-Tie Hinged Rigid Box Sourcing \| Packrivo | Custom ribbon-tie hinged rigid box sourcing. Specify ribbon attachment, lid movement and insert; include quantity and destination for supplier review. | unchanged |
+| product-hinged-thermoformed-clamshell | Custom Hinged Thermoformed Clamshell Sourcing \| Packrivo | Custom Hinged Thermoformed Clamshell Sourcing \| Packrivo | Custom hinged thermoformed clamshell sourcing. Specify hinge movement, closure and cavity layout; include quantity and destination for supplier review. | unchanged |
+| product-hook-floor-gift-display | Custom Hook Floor Gift Display Sourcing \| Packrivo | Custom Hook Floor Gift Display Sourcing \| Packrivo | Custom hook floor gift display sourcing. Specify hook layout, hanger fit and display footprint; include quantity and destination for supplier review. | unchanged |
+| product-information-card | Custom Packaging Information Card Sourcing \| Packrivo | Custom Packaging Information Card Sourcing \| Packrivo | Custom packaging information card sourcing. Specify card size, printed content and box placement; include quantity and destination for supplier review. | unchanged |
+| product-jewelry-box-with-insert | Custom Jewelry Box with Fitted Insert Sourcing \| Packrivo | Custom Jewelry Boxes with Fitted Inserts \| Packrivo | Custom jewelry boxes with fitted inserts for small brands, with logo options and a 500-piece minimum. Get a price. | changed |
+| product-jewelry-mounting-card | Custom Jewelry Mounting Card Sourcing \| Packrivo | Custom Jewelry Mounting Card Sourcing \| Packrivo | Custom jewelry mounting card sourcing. Specify mounting points, jewelry backs and card size; include quantity and destination for supplier review. | unchanged |
+| product-kraft-bubble-parcel-envelope | Custom Kraft Bubble Parcel Envelope Sourcing \| Packrivo | Custom Kraft Bubble Parcel Envelope Sourcing \| Packrivo | Plan custom kraft bubble parcel envelope. Define paper exterior, bubble lining and usable space, then request a project quotation through Packrivo. | unchanged |
+| product-latch-metal-gift-container | Custom Latch Metal Gift Container Sourcing \| Packrivo | Custom Latch Metal Gift Container Sourcing \| Packrivo | Custom latch metal gift container sourcing. Specify latch release, lid movement and inner pack; include quantity and destination for supplier review. | unchanged |
+| product-lid-and-base-jewelry-box | Custom Lid-and-Base Jewelry Box Sourcing \| Packrivo | Custom Lid-and-Base Jewelry Boxes \| Packrivo | Custom lid-and-base jewelry boxes for small brands, with logo options and a 500-piece minimum. Get a price. | changed |
+| product-lightweight-mailer | Custom Lightweight Mailer Box Sourcing \| Packrivo | Custom Lightweight Mailer Box Sourcing \| Packrivo | Custom lightweight mailer box sourcing. Specify product weight, packed size and shipping route; include quantity and destination for supplier review. | unchanged |
+| product-lock-cap-auto-bottom-carton | Custom Lock-Cap Auto-Bottom Carton Sourcing \| Packrivo | Custom Lock-Cap Auto-Bottom Carton Sourcing \| Packrivo | Custom lock-cap auto-bottom carton sourcing. Specify base construction, lock features and setup; include quantity and destination for supplier review. | unchanged |
+| product-magnetic-jewelry-box | Custom Rigid Magnetic Jewelry Box Sourcing \| Packrivo | Custom Magnetic Jewelry Boxes with Logo \| Packrivo | Custom magnetic jewelry boxes for small brands, with logo options and a 500-piece minimum. Get a price. | changed |
+| product-mailer-with-insert | Custom Mailer Box with Fitted Insert Sourcing \| Packrivo | Custom Mailer Box with Fitted Insert Sourcing \| Packrivo | Source custom mailer box with fitted insert with Packrivo. Define product layout, insert fit and outer dimensions for a scoped project quotation. | unchanged |
+| product-molded-pulp-corner-cradle | Custom Molded Pulp Corner Cradle Sourcing \| Packrivo | Custom Molded Pulp Corner Cradle Sourcing \| Packrivo | Plan custom molded pulp corner cradle. Define corner contacts, cavity release and installation, then request a project quotation through Packrivo. | unchanged |
+| product-molded-pulp-end-support-pair | Custom Molded Pulp End Support Pair Sourcing \| Packrivo | Custom Molded Pulp End Support Pair Sourcing \| Packrivo | Custom molded pulp end support pair sourcing. Specify paired supports, end contacts and loading; include quantity and destination for supplier review. | unchanged |
+| product-multi-piece-pe-foam-support | Custom Multi-Piece PE Foam Support Sourcing \| Packrivo | Custom Multi-Piece PE Foam Support Sourcing \| Packrivo | Custom multi-piece PE foam support sourcing. Specify support parts, joining and product contacts; include quantity and destination for supplier review. | unchanged |
+| product-multi-tier-floor-gift-display | Custom Multi-Tier Floor Gift Display Sourcing \| Packrivo | Custom Multi-Tier Floor Gift Display Sourcing \| Packrivo | Custom multi-tier floor gift display sourcing. Specify tier spacing, stock positions and access; include quantity and destination for supplier review. | unchanged |
+| product-nest-stack-thermoformed-tray | Custom Nest-and-Stack Thermoformed Tray Sourcing \| Packrivo | Custom Nest-and-Stack Thermoformed Tray Sourcing \| Packrivo | Source custom nest-and-stack thermoformed tray with Packrivo. Define nesting state, stacking features and tray fit for a scoped project quotation. | unchanged |
+| product-paired-corrugated-end-caps | Custom Paired Corrugated End Caps Sourcing \| Packrivo | Custom Paired Corrugated End Caps Sourcing \| Packrivo | Plan custom paired corrugated end caps. Define left and right parts, product ends and loading, then request a project quotation through Packrivo. | unchanged |
+| product-paper-belly-band | Custom Paper Belly Band Sourcing \| Packrivo | Custom Paper Belly Band Sourcing \| Packrivo | Custom paper belly band sourcing. Specify band coverage, seam position and artwork; include quantity and destination for supplier review. | unchanged |
+| product-paper-carton-sealing-tape | Custom Pressure-Sensitive Paper Sealing Tape Sourcing | Custom Pressure-Sensitive Paper Sealing Tape Sourcing | Plan custom pressure-sensitive paper sealing tape. Specify tape width, receiving surface and sealing task before supplier quotation and sampling. | unchanged |
+| product-paper-merchandise-sleeve-bag | Custom Flat Merchandise Paper Bag Sourcing \| Packrivo | Custom Flat Merchandise Paper Bag Sourcing \| Packrivo | Custom flat merchandise paper bag sourcing. Specify bag opening, flat contents and closure; include quantity and destination for supplier review. | unchanged |
+| product-paper-padded-parcel-envelope | Custom Paper Padded Parcel Envelope Sourcing \| Packrivo | Custom Paper Padded Parcel Envelope Sourcing \| Packrivo | Plan custom paper padded parcel envelope. Define padding layers, seam boundaries and filled size, then request a project quotation through Packrivo. | unchanged |
+| product-paperboard-grid-divider | Custom Paperboard Grid Divider Sourcing \| Packrivo | Custom Paperboard Grid Divider Sourcing \| Packrivo | Custom paperboard grid divider sourcing. Specify cell sizes, strip slots and loading order; include quantity and destination for supplier review. | unchanged |
+| product-paperboard-insert | Custom Paperboard Insert Sourcing \| Packrivo | Custom Paperboard Insert Sourcing \| Packrivo | Custom paperboard insert sourcing. Specify folded form, contact points and removal route; include quantity and destination for supplier review. | unchanged |
+| product-paperboard-roll-end-dust-flap-carton | Custom Paperboard Roll End Dust Flap Carton Sourcing | Custom Paperboard Roll End Dust Flap Carton Sourcing | Plan custom paperboard roll end dust flap carton. Define end folds, dust flaps and loading route, then request a project quotation through Packrivo. | unchanged |
+| product-peg-hook-counter-display | Custom Peg Hook Counter Display Sourcing \| Packrivo | Custom Peg Hook Counter Display Sourcing \| Packrivo | Custom peg hook counter display sourcing. Specify hook spacing, product hangers and base layout; include quantity and destination for supplier review. | unchanged |
+| product-pillow-jewelry-box | Custom Pillow Jewelry Box Sourcing \| Packrivo | Custom Pillow Jewelry Box Sourcing \| Packrivo | Custom pillow jewelry box sourcing. Specify product thickness, end closures and artwork; include quantity and destination for supplier review. | unchanged |
+| product-pinch-lock-paperboard-tray | Custom Pinch Lock Paperboard Tray Sourcing \| Packrivo | Custom Pinch Lock Paperboard Tray Sourcing \| Packrivo | Custom pinch lock paperboard tray sourcing. Specify locking tabs, tray walls and assembly; include quantity and destination for supplier review. | unchanged |
+| product-pocket-floor-gift-display | Custom Pocket Floor Gift Display Sourcing \| Packrivo | Custom Pocket Floor Gift Display Sourcing \| Packrivo | Custom pocket floor gift display sourcing. Specify pocket sizes, stocking order and floor space; include quantity and destination for supplier review. | unchanged |
+| product-poly-bubble-parcel-envelope | Custom Poly Bubble Parcel Envelope Sourcing \| Packrivo | Custom Poly Bubble Parcel Envelope Sourcing \| Packrivo | Custom poly bubble parcel envelope sourcing. Specify outer film, lining and closing reach; include quantity and destination for supplier review. | unchanged |
+| product-polyurethane-foam-holder | Custom Contour-Cut PU Foam Holder Sourcing \| Packrivo | Custom Contour-Cut PU Foam Holder Sourcing \| Packrivo | Custom contour-cut PU foam holder sourcing. Specify cut contours, layer construction and contact; include quantity and destination for supplier review. | unchanged |
+| product-press-close-metal-gift-container | Custom Press-Close Metal Gift Container Sourcing \| Packrivo | Custom Press-Close Metal Gift Container Sourcing \| Packrivo | Source custom press-close metal gift container with Packrivo. Define rim engagement, release route and inner pack for a scoped project quotation. | unchanged |
+| product-printed-mailer | Custom Printed Mailer Box Sourcing \| Packrivo | Custom Printed Mailer Box Sourcing \| Packrivo | Custom printed mailer box sourcing. Specify print panels, packed dimensions and artwork; include quantity and destination for supplier review. | unchanged |
+| product-printed-tissue-sheet | Custom Printed Tissue Sheet Sourcing \| Packrivo | Custom Printed Tissue Sheet Sourcing \| Packrivo | Custom printed tissue sheet sourcing. Specify sheet size, fold sequence and print placement; include quantity and destination for supplier review. | unchanged |
+| product-rectangle-roll-labels | Custom Roll Labels Sourcing \| Packrivo | Custom Roll Labels Sourcing \| Packrivo | Compare rectangular, square and circular roll labels by size, content, application surface and dispensing requirements before requesting a quotation. | unchanged |
+| product-regular-slotted-shipping-carton | Custom Regular Slotted Shipping Carton Sourcing \| Packrivo | Custom Regular Slotted Shipping Carton Sourcing \| Packrivo | Plan custom regular slotted shipping carton. Define loaded dimensions, top flaps and sealing, then request a project quotation through Packrivo. | unchanged |
+| product-reinforced-paper-sealing-tape | Custom Reinforced Water-Activated Paper Tape Sourcing | Custom Reinforced Water-Activated Paper Tape Sourcing | Plan custom reinforced water-activated paper tape. Specify reinforcement, activation and sealing equipment before supplier quotation and sampling. | unchanged |
+| product-returnable-paper-parcel-bag | Custom Returnable Paper Parcel Bag Sourcing \| Packrivo | Custom Returnable Paper Parcel Bag Sourcing \| Packrivo | Custom returnable paper parcel bag sourcing. Specify first seal, opening path and return closure; include quantity and destination for supplier review. | unchanged |
+| product-returnable-poly-parcel-bag | Custom Returnable Poly Parcel Bag Sourcing \| Packrivo | Custom Returnable Poly Parcel Bag Sourcing \| Packrivo | Custom returnable poly parcel bag sourcing. Specify first seal, tear route and second seal; include quantity and destination for supplier review. | unchanged |
+| product-reverse-tuck-retail-carton | Custom Reverse Tuck Retail Carton Sourcing \| Packrivo | Custom Reverse Tuck Retail Carton Sourcing \| Packrivo | Custom reverse tuck retail carton sourcing. Specify opposite-end tucks, front panel and loading; include quantity and destination for supplier review. | unchanged |
+| product-rigid-chipboard-divider | Custom Fixed-Cell Chipboard Divider Sourcing \| Packrivo | Custom Fixed-Cell Chipboard Divider Sourcing \| Packrivo | Plan custom fixed-cell chipboard divider. Define fixed cells, divider height and product access, then request a project quotation through Packrivo. | unchanged |
+| product-rigid-paperboard-postal-envelope | Custom Rigid Paperboard Postal Envelope Sourcing \| Packrivo | Custom Rigid Paperboard Postal Envelope Sourcing \| Packrivo | Plan custom rigid paperboard postal envelope. Define filled thickness, flap reach and sealing, then request a project quotation through Packrivo. | unchanged |
+| product-round-metal-gift-container | Custom Slip-Lid Metal Gift Container Sourcing \| Packrivo | Custom Slip-Lid Metal Gift Container Sourcing \| Packrivo | Custom slip-lid metal gift container sourcing. Specify lid clearance, lining and removal space; include quantity and destination for supplier review. | unchanged |
+| product-screw-top-metal-gift-container | Custom Screw-Top Metal Gift Container Sourcing \| Packrivo | Custom Screw-Top Metal Gift Container Sourcing \| Packrivo | Plan custom screw-top metal gift container. Define thread travel, liner and dry-gift contents, then request a project quotation through Packrivo. | unchanged |
+| product-self-locking-corrugated-folder | Custom Self-Locking Corrugated Folder Sourcing \| Packrivo | Custom Self-Locking Corrugated Folder Sourcing \| Packrivo | Source custom self-locking corrugated folder with Packrivo. Define blank layout, locks and corrugated construction for a scoped project quotation. | unchanged |
+| product-sheet-labels | Custom Sheet Labels Sourcing \| Packrivo | Custom Sheet Labels Sourcing \| Packrivo | Custom sheet labels sourcing. Specify label shapes, sheet layout and application; include quantity and destination for supplier review. | unchanged |
+| product-shelf-counter-display | Custom Multi-Tier Counter Display Sourcing \| Packrivo | Custom Multi-Tier Counter Display Sourcing \| Packrivo | Plan custom multi-tier counter display. Define tier layout, product access and replenishment, then request a project quotation through Packrivo. | unchanged |
+| product-shipping-document-window-pouch | Custom Shipping Document Window Pouch Sourcing \| Packrivo | Custom Shipping Document Window Pouch Sourcing \| Packrivo | Plan custom shipping document window pouch. Define document size, window opening and attachment, then request a project quotation through Packrivo. | unchanged |
+| product-shoulder-neck-rigid-box | Custom Shoulder-Neck Rigid Box Sourcing \| Packrivo | Custom Shoulder-Neck Rigid Box Sourcing \| Packrivo | Custom shoulder-neck rigid box sourcing. Specify neck height, product display and lid fit; include quantity and destination for supplier review. | unchanged |
+| product-side-lock-display-carton | Custom Side-Lock Display Carton Sourcing \| Packrivo | Custom Side-Lock Display Carton Sourcing \| Packrivo | Custom side-lock display carton sourcing. Specify side locks, assembly and display opening; include quantity and destination for supplier review. | unchanged |
+| product-side-lock-hinged-gift-tray | Custom Side-Lock Hinged Gift Tray Sourcing \| Packrivo | Custom Side-Lock Hinged Gift Tray Sourcing \| Packrivo | Custom side-lock hinged gift tray sourcing. Specify side locks, lid travel and loaded access; include quantity and destination for supplier review. | unchanged |
+| product-six-corner-pre-glued-carton | Custom Six-Corner Pre-Glued Carton Sourcing \| Packrivo | Custom Six-Corner Pre-Glued Carton Sourcing \| Packrivo | Plan custom six-corner pre-glued carton. Define pre-glued corners, setup and delivered state, then request a project quotation through Packrivo. | unchanged |
+| product-slide-in-card-blister | Custom Slide In Card Blister Sourcing \| Packrivo | Custom Slide In Card Blister Sourcing \| Packrivo | Custom slide in card blister sourcing. Specify card path, blister flange and product access; include quantity and destination for supplier review. | unchanged |
+| product-snap-bottom-slotted-outer-carton | Custom Snap Bottom Slotted Outer Carton Sourcing \| Packrivo | Custom Snap Bottom Slotted Outer Carton Sourcing \| Packrivo | Plan custom snap bottom slotted outer carton. Define manual base sequence, top flaps and sealing, then request a project quotation through Packrivo. | unchanged |
+| product-snap-lock-bottom-carton | Custom Snap-Lock Bottom Carton Sourcing \| Packrivo | Custom Snap-Lock Bottom Carton Sourcing \| Packrivo | Custom snap-lock bottom carton sourcing. Specify bottom tabs, folding order and loaded fit; include quantity and destination for supplier review. | unchanged |
+| product-sos-paper-gift-bag | Custom SOS Paper Gift Bag Sourcing \| Packrivo | Custom SOS Paper Gift Bag Sourcing \| Packrivo | Custom SOS paper gift bag sourcing. Specify base size, opening clearance and contents; include quantity and destination for supplier review. | unchanged |
+| product-square-roll-labels | Custom Square Roll Labels Sourcing \| Packrivo | Custom Square Roll Labels Sourcing \| Packrivo | Custom square roll labels sourcing. Specify square size, roll format and artwork; include quantity and destination for supplier review. | unchanged |
+| product-straight-tuck-retail-carton | Custom Straight Tuck Retail Carton Sourcing \| Packrivo | Custom Straight Tuck Retail Carton Sourcing \| Packrivo | Custom straight tuck retail carton sourcing. Specify same-side end flaps, front face and loading; include quantity and destination for supplier review. | unchanged |
+| product-tab-lock-roll-end-corrugated-pack | Custom Tab Lock Roll End Corrugated Pack Sourcing \| Packrivo | Custom Tab Lock Roll End Corrugated Pack Sourcing \| Packrivo | Plan custom tab lock roll end corrugated pack. Define roll-end tabs, lock engagement and loading, then request a project quotation through Packrivo. | unchanged |
+| product-thermoformed-multi-cavity-tray | Custom Thermoformed Multi-Cavity Tray Sourcing \| Packrivo | Custom Thermoformed Multi-Cavity Tray Sourcing \| Packrivo | Plan custom thermoformed multi-cavity tray. Define cavity layout, spacing and loaded removal, then request a project quotation through Packrivo. | unchanged |
+| product-three-flap-lock-corrugated-pack | Custom Three Flap Lock Corrugated Pack Sourcing \| Packrivo | Custom Three Flap Lock Corrugated Pack Sourcing \| Packrivo | Plan custom three flap lock corrugated pack. Define three-flap locks, fold order and loaded fit, then request a project quotation through Packrivo. | unchanged |
+| product-tray-floor-gift-display | Custom Tray Floor Gift Display Sourcing \| Packrivo | Custom Tray Floor Gift Display Sourcing \| Packrivo | Custom tray floor gift display sourcing. Specify tray layout, shelf access and stocking; include quantity and destination for supplier review. | unchanged |
+| product-tuck-end-gift-box | Custom Tuck-End Carton Sourcing \| Packrivo | Custom Tuck-End Carton Sourcing \| Packrivo | Custom tuck-end carton sourcing. Specify tuck direction, product clearance and print panels; include quantity and destination for supplier review. | unchanged |
+| product-tuck-end-sleeve-carton | Custom Tuck-End Sleeve Carton Sourcing \| Packrivo | Custom Tuck-End Sleeve Carton Sourcing \| Packrivo | Custom tuck-end sleeve carton sourcing. Specify tuck ends, sleeve coverage and loading; include quantity and destination for supplier review. | unchanged |
+| product-two-door-rigid-presentation-box | Custom Two-Door Rigid Presentation Box Sourcing \| Packrivo | Custom Two-Door Rigid Presentation Box Sourcing \| Packrivo | Plan custom two-door rigid presentation box. Define door hinges, opening order and central tray, then request a project quotation through Packrivo. | unchanged |
+| product-wide-gusset-paper-carrier | Custom Wide Gusset Paper Carrier Sourcing \| Packrivo | Custom Wide Gusset Paper Carrier Sourcing \| Packrivo | Custom wide gusset paper carrier sourcing. Specify gusset width, box entry and handle clearance; include quantity and destination for supplier review. | unchanged |
+| product-window-lid-rigid-gift-box | Custom Window Lid Rigid Gift Box Sourcing \| Packrivo | Custom Window Lid Rigid Gift Box Sourcing \| Packrivo | Custom window lid rigid gift box sourcing. Specify lid window, product view and insert layout; include quantity and destination for supplier review. | unchanged |
+| product-zippered-fabric-gift-pouch | Custom Zippered Fabric Gift Pouch Sourcing \| Packrivo | Custom Zippered Fabric Gift Pouch Sourcing \| Packrivo | Custom zippered fabric gift pouch sourcing. Specify zip opening, lining and usable interior; include quantity and destination for supplier review. | unchanged |
+| round-cardboard-tube-box | Custom Round Cardboard Tube Gift Box Sourcing \| Packrivo | Custom Round Cardboard Tube Gift Box Sourcing \| Packrivo | Custom round cardboard tube gift box sourcing. Specify usable diameter, height and lid fit; include quantity and destination for supplier review. | unchanged |
+| textile-jewelry-pouch | Custom Textile Jewelry Pouch Sourcing \| Packrivo | Custom Textile Jewelry Pouch Sourcing \| Packrivo | Custom textile jewelry pouch sourcing. Specify jewelry shape, fabric and closure details; include quantity and destination for supplier review. | unchanged |
+| thermoformed-insert-tray | Custom Thermoformed Insert Tray Sourcing \| Packrivo | Custom Thermoformed Insert Tray Sourcing \| Packrivo | Custom thermoformed insert tray sourcing. Specify product contours, cavity depth and tray edges; include quantity and destination for supplier review. | unchanged |
+| windowed-folding-carton | Custom Windowed Folding Carton Sourcing \| Packrivo | Custom Windowed Folding Carton Sourcing \| Packrivo | Custom windowed folding carton sourcing. Specify window view, film patch and product position; include quantity and destination for supplier review. | unchanged |
+
+## 4. 八个引擎映射：完成，提交 `b7ef4a9`
+
+```text
+$ wp eval-file /tasktest/pk27e-mapping-test.php
+product-jewelry-box-with-insert => rigid 2.83 PASS
+product-foldable-lid-base-box => rigid 2.83 PASS
+product-finished-folding-gift-box => carton 1.28 PASS
+product-folding-gift-box => carton 1.28 PASS
+product-tuck-end-gift-box => carton 1.28 PASS
+product-pillow-jewelry-box => carton 1.28 PASS
+product-mailer-with-insert => mailer 2.48 PASS
+product-lightweight-mailer => mailer 2.48 PASS
+
+$ node -e "const fs=require('fs');const ts=require('typescript');let m={exports:{}};new Function('module','exports',ts.transpile(fs.readFileSync('lib/pricing.ts','utf8'),{module:ts.ModuleKind.CommonJS}))(m,m.exports);for(const [style,material,length,width,height] of [['carton','white',12,4,16],['mailer','kraft',30,22,12]]){let r=m.exports.priceQuote({style,material,print:'full-color',finish:'matte',quantity:500,length,width,height,rush:false});console.log(style,r.unit)}"
+carton 1.28
+mailer 2.48
+
+$ wp eval-file /tasktest/pk27e-exclusions.php
+textile-jewelry-pouch => null
+product-circle-roll-labels => null
+product-hinged-metal-gift-container => null
+product-counter-display-carton => null
+```
+
+WP 命令运行于 `E:\破甲工作区\packrivo-live`，使用 `docker compose -f docker-compose.yml -f E:\破甲工作区\.tmp\packrivo-27c-compose.yml run --rm --no-deps -v E:\破甲工作区\.tmp:/tasktest:ro cli ...`；Node 命令运行于 `E:\破甲工作区\packrivo-v2`。
+
+## 5. 上线前阻断项：准备完成，未执行，提交 `1fb19e0`
+
+生产只读核验，未写生产：
+
+```text
+$ curl.exe -sS -I --max-time 20 https://www.packrivo.com/get-a-quote/ | Select-String -Pattern '^HTTP/|^location:|^x-redirect-by:'
+HTTP/1.1 200 Connection established
+HTTP/1.1 301 Moved Permanently
+location: https://www.packrivo.com/inquiry/
+x-redirect-by: Packrivo
+
+$ python E:\破甲工作区\.tmp\pk27e-production-read.py
+ssh exit: 0
+theme:packrivo-static-bridge:absent
+theme:packrivo-static-bridge-1.2.38:present
+52:    $legacy = ['contact', 'contact-us', 'get-a-quote', 'get-quote', 'quote', 'rfq', 'enquiry', 'request-a-quote'];
+stderr: none
+
+$ git -C E:\破甲工作区\.tmp\pk27e-patch-check apply --check E:\破甲工作区\packrivo-backup\deploy\27e-quote-redirect.patch
+git apply --check: PASS
+```
+
+补丁基于只读下载的生产文件，只删除 `get-a-quote` 项；生产文件 SHA-256 记录于 deploy README。补丁、上线顺序、核验与回滚说明在 `E:\破甲工作区\packrivo-backup\deploy`。生产父主题实际目录为 `packrivo-static-bridge-1.2.38`，将来子主题包的 `Template:` 必须按实际目录重新核验后设置；当前源码仍是 `packrivo-static-bridge`。
+
+## 上线前站长要做的事
+
+- 完成剩余 130 个产品的买家标题、唯一简介、H1 与 11 语种同次更新；完成 27c 遗留新增字符串的全部翻译和复查。
+- 为首页补足 3 张结构、图片和价格都经核验的卡片；本地媒体必须单独准备迁移，不能复用本地附件 ID。
+- 对四页译文做当地买家词审校，并验证最终各语言页面输出。
+- 重新核对生产字典、父主题目录及重定向；取得独立部署授权后按 deploy README 备份、合并、复测与回滚。
