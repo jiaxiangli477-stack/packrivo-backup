@@ -81,8 +81,21 @@ HEAD RUNBOOK 只有并行链 cad8c62 自写的近似内容：§0.1 导出探针+
 - 仅 step9 含两条 `rollback-check`（原 RUNBOOK 27g/27i 命令，非 supplement2 site 守卫）；
 - 探针独立在 `scripts/step0-probe.sh`，本轮作为「阶段 4 补跑」在轮次之外执行。
 
-## 5. Claude 核验 / 新生产授权：均不存在
+## 5. Claude 核验 / 新生产授权（bd17806 之前：均不存在；bd17806 起：Claude 核验已出现，见 §6）
 
-- 全仓库检索：无任何 28q 演练的 Claude 核验结论（DSH-RESULT-2026-10-28q.md 无核验节）。
+- bd17806 之前全仓库检索：无任何 28q 演练的 Claude 核验结论（DSH-RESULT-2026-10-28q.md 无核验节）。
 - 任务单 28q 答复 3 仍为唯一口径：「先改 RUNBOOK，再在本地把整份 RUNBOOK 完整演练一遍，包括回滚。演练通过、Claude 核验之后，才会再授权上生产。」
-- cad8c62..HEAD 仅 3 文件变更，无任何新生产授权记录。
+- cad8c62..HEAD（截至 b155b40）仅 3 文件变更，无任何新生产授权记录。
+
+## 6. bd17806（11:10:02）新任务单 28r：Claude 核验结论出现、生产授权仍无
+
+`git show bd17806` 仅新增 `packrivo-v2/docs/DSH-TASK-2026-10-28r.md`（70 行）。要点：
+
+- Claude 对 28q 核验结论（28r「背景」节，Co-Authored-By: Claude Opus 5.5）：「**28q 基本通过**。哈希、版本、四份快照都独立核对过；在容器里重跑快照，结果 `4247693f…` 与正向一致。但有三处要处理」：
+  1. 最后手段没有演练过（`docker cp db.sql → db import` 一次没跑；28q 结果文档 §6 写的「db import 成功」不属实）；
+  2. `exit=0` 没有意义（rehearsal.sh 每步末条 `set +x`，exit 恒 0，「18 块全 exit=0」证明不了任何事）；
+  3. 包装可能不在（容器重建即丢，最后手段时包装在否未验证）。
+- 28r 任务单规则：「**本轮不碰生产**：不 SSH，不碰密码」→ 无新生产授权。
+- 28r §4.4：rehearsal.sh「每个 step 结束时统计本步 FAIL 的数量，有 FAIL 就 exit 1；或者至少不要再用 exit 码当证据（二选一）」；§4.1：RUNBOOK 最后手段加「先重跑 0.1 导出探针确认包装在位」前置。→ 与 supplement2 的 2.5 硬 FAIL / D.2.1 同向，已获任务单背书，但仓库尚未落地。
+- 28r §3：验收「每条判据都打印 PASS/FAIL，不能只靠 exit 码」→ 印证「三轮整轮 PASS」按严格口径仍不成立。
+- 结论：生产第 1 步重跑条件仍不满足（严格口径三轮整轮 PASS 无 / Claude 核验为「基本通过+三缺陷」有条件结论、未到另行授权 / 新生产授权无 / supplement2 与 rehearsal.sh 硬判未落地）→ 第 2–8 步与 SSH 生产继续禁止，继续停止等待。
