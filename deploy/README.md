@@ -1,5 +1,3 @@
-> **上线以 `deploy/RUNBOOK-launch.md` 为准，本文件里按轮次堆的旧记录只作历史。**
-
 # 27e / 27g / 27h / 27i 上线前检查与回滚方案（未执行）
 
 > **上线以 [`RUNBOOK-launch.md`](RUNBOOK-launch.md) 为准；本文件里 27g…28o 的分轮记录只作历史参考。**

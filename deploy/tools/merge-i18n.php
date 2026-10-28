@@ -302,6 +302,20 @@ function self_test(): void
     $check('js-exact 生产值优先（Diff=PROD）', ($js['exact']['Diff'] ?? '') === 'PROD');
     $check('js-exact 本地独有键保留（OnlyLocal）', ($js['exact']['OnlyLocal'] ?? '') === 'nur-lokal');
     $check('js-exact 生产独有键保留（OnlyProd）', ($js['exact']['OnlyProd'] ?? '') === 'nur-prod');
+    $jsConflict = null;
+    foreach ($conf as $c) {
+        if (($c['kind'] ?? '') === 'js-exact' && ($c['key'] ?? '') === 'Diff') {
+            $jsConflict = $c;
+            break;
+        }
+    }
+    $check(
+        'js-exact 键冲突记进清单且用生产值（Diff: LOCAL→PROD）',
+        $jsConflict !== null
+            && ($jsConflict['prod'] ?? null) === 'PROD'
+            && ($jsConflict['local'] ?? null) === 'LOCAL'
+            && ($jsConflict['used'] ?? null) === 'PROD'
+    );
     $check('js-patterns 生产优先、本地新正则追加', $js['patterns'] === [['^A$', 'a-prod'], ['^P$', 'p'], ['^B$', 'b-local']]);
     $check('js 其余顶层键生产优先（meta）', ($js['meta'] ?? '') === 'prod');
     echo $ok ? "自检通过\n" : "自检失败\n";
