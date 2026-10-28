@@ -11,6 +11,7 @@ $home_specs = [
     ['product-drawer-jewelry-box','Jewelry boxes','Custom Drawer Jewelry Boxes'],
     ['product-magnetic-jewelry-box','Jewelry boxes','Custom Magnetic Jewelry Boxes'],
     ['product-lid-and-base-jewelry-box','Jewelry boxes','Custom Lid-and-Base Jewelry Boxes'],
+    ['product-jewelry-box-with-insert','Jewelry boxes','Custom Jewelry Boxes with Fitted Inserts'],
     ['product-window-lid-rigid-gift-box','Gift boxes','Custom Window Gift Boxes'],
     ['product-corrugated-roll-end-hinged-lid','Mailer boxes','Custom Mailer Boxes'],
     ['product-sheet-labels','Labels','Custom Sheet Labels'],
