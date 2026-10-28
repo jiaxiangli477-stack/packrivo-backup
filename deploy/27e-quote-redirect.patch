@@ -1,0 +1,11 @@
+--- a/packrivo-site-remediation-20261022.php
++++ b/packrivo-site-remediation-20261022.php
+@@ -49,7 +49,7 @@
+ // Common contact URLs go to the inquiry page.
+ add_action('template_redirect', function () {
+     $path = trim((string) parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH), '/');
+-    $legacy = ['contact', 'contact-us', 'get-a-quote', 'get-quote', 'quote', 'rfq', 'enquiry', 'request-a-quote'];
++    $legacy = ['contact', 'contact-us', 'get-quote', 'quote', 'rfq', 'enquiry', 'request-a-quote'];
+     if (in_array(strtolower($path), $legacy, true)) {
+         wp_safe_redirect(home_url('/inquiry/'), 301, 'Packrivo');
+         exit;
