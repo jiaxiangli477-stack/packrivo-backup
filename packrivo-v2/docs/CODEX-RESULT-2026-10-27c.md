@@ -335,3 +335,23 @@ To https://github.com/jiaxiangli477-stack/packrivo-backup.git
 ```
 
 逐节提交：B `7f0ae15`、C `7bd2f34`、D `641238f`、E `d95beb8`、F `ba8439b`；报告提交 `66221c6`。本回执本身随后作为补充报告提交推送。
+
+## B 对照的可重放 Node 命令
+
+运行目录 `E:\破甲工作区\packrivo-v2`，直接读取现有 TypeScript 源码，不调用 `fromPrice()`：
+
+```powershell
+node -e "const fs=require('fs');const ts=require('typescript');let code=ts.transpile(fs.readFileSync('lib/pricing.ts','utf8'),{module:ts.ModuleKind.CommonJS});let m={exports:{}};new Function('module','exports',code)(m,m.exports);for(const [style,material,l,w,h] of [['rigid','rigidboard',9.5,9.5,4],['sticker','white',8,8,0.1],['shipping','kraft',30,25,20]]){let r=m.exports.priceQuote({style,material,print:'full-color',finish:'matte',quantity:500,length:l,width:w,height:h,rush:false});console.log(style,r.unit)}"
+```
+
+```text
+rigid 2.83
+sticker 0.96
+shipping 2.31
+```
+
+本地 WP 比较命令（运行目录 `E:\破甲工作区\packrivo-live`）：
+
+```powershell
+docker compose -f docker-compose.yml -f 'E:\破甲工作区\.tmp\packrivo-27c-compose.yml' run --rm --no-deps -v 'E:\破甲工作区\.tmp:/tasktest:ro' cli wp eval-file /tasktest/pk27c-mapping.php
+```
