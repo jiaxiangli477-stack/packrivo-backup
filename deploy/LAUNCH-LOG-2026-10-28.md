@@ -947,7 +947,9 @@ r28q-net 演练栈五容器全部 Up：php(r28q-php:8.3) / nginx(nginx:alpine，
 - **r28s-runner 容器 11:56:32 本机时间启动**（image r28q-host:7，镜像构建于 11:56:31，晚于 .tmp/28q/rehearsal.sh 最后编辑 11:56:24 → 大概率已含最新改写；镜像内字节一致性未验证、未 attach）。
 - runner 命令：清空并重建 /home/web/rehearsal-28s → bash /opt/x28r/run28s.sh > rehearsal.log 2>&1 → EXIT 追加。
 - 挂载 E:\破甲工作区\.tmp\28q\rehearsal\home\web（RW bind）→ 原始日志可主机侧只读核查：
-  - reset.log（12:00:09 完成）：site→http://nginx、mu/i18n/主题/插件复位、estore_slug=130 missing=0、estore_slug=8 missing=0、static-bridge 1.2.38。
+  - reset.log（12:00:09 完成）：site→http://nginx、mu/i18n/主题/插件复位、
+estore_slug=130 missing=0、
+estore_slug=8 missing=0、static-bridge 1.2.38。
   - 拆包装：grep -c mariadb = 0 →「包装已拆除」（满足 28s「探针失败→装包装→重探成功」路径前置）。
   - **s-reset.txt 快照：845 行，sha256 = 4972cd8195d7b40a10dac4140273ba7faef4e152b2b886489bfcc624f2773deb → PASS: 复位快照 = 基线**。
   - 正向 step0 于 12:02 开始，step0.log（采样时 1,832 B）：php/mysql/nginx/redis 在位、core 7.1.3、PHP 8.3.36、siteurl http://nginx、子主题/报价插件「未安装」（首次安装口径）；0f 探针段随后执行（采样未到）。
@@ -1138,3 +1140,32 @@ r28q-net 演练栈五容器全部 Up：php(r28q-php:8.3) / nginx(nginx:alpine，
 - **→ 生产第 1 步重跑条件仍不满足，生产第 1 步维持 FAIL；第 2–8 步与 SSH 生产继续禁止；本链继续停止等待，绝不执行第 2–8 步。**（tag10 运行中为真实进度，不构成整轮 PASS；本节只落盘既有事实（fact #699 观察截至 13:15:38），不等待运行结束、不替代下一轮完整验收。）
 - 待规划者/负责人关注：①tag10 整轮是否端到端跑完（第 9 步回滚判据、回滚后快照=基线 4972cd81…、negtest 3.0 反向自检产物），完成后交付 DSH-RESULT-28s + verification-28s/（含逐步 PASS/FAIL 表与 tag8/tag9 两轮失败说明）；②driver（host run28s.sh）仍未引用 negtest.sh（副本 11:46:47 未改）——28s 验收要求 3.0 反向自检，tag10 交付需含 negtest 产物或说明为何不跑；③28s 交付后仍需 Claude 对最终结果的复验与负责人新的生产授权，此前继续停止等待。
 - 操作边界：本意图全程只读（git ls-remote/log/status、文件读取、Test-Path）；未执行任何脚本、未启动/停止/接入容器、未修改/删除他人文件、未 SSH 生产、未重跑生产第 1 步、未读取或打印任何密码/密钥/token；仓库变更仅本节日志与独立只读证据摘录两个文件，在途 RUNBOOK-launch.md 改写与全部未跟踪/在途文件零触碰。
+
+
+## 26 · 28s 增量门禁核查（f8db215 之后）：tag10 整轮端到端完整结束——正向 step0–8 全 PASS、第 9 步回滚 PASS=8 FAIL=0（修复后 9.3 守卫真实解析、27g/27i import rollback 与 i18n 回拷实际执行）、回滚后快照逐字节=基线 4972cd81、negtest 3.0 反向自检真实执行并按预期硬 FAIL（step3 EXIT=1、bogus JSON 被拦、apply 未执行）、反向自检后快照仍=基线；并行链已提交 ba97e04/954793e（RUNBOOK 三守卫并入 + verification-28s 全套证据 + DSH-RESULT-2026-10-28s，本链逐项独立复核一致）；但 DSH-RESULT-28s 为工作台 #56 自述交付、Claude 对 28s 最终结果的明确复验与负责人新的生产上线授权仍不存在——生产第 1 步重跑条件仍不满足、继续停止（2026-10-28 13:27 本机只读核查；未执行任何脚本、未启动/停止/接入容器、未修改/删除他人文件、未读任何凭据）
+
+### 26.1 增量范围（f8db215 之后）
+- **两笔新提交（并行链，13:25–13:26 落盘）**：`ba97e04`（「28s: 并入 2.5/3.0/9.3 三个守卫（附录 D 不并）+ 用硬判据重跑一整轮正向+回滚」：.gitignore +6、deploy/RUNBOOK-launch.md +46/−20、deploy/verification-28q/scripts/rehearsal.sh +115、**deploy/verification-28s/ 全套 26 个证据文件、dsh-out/DSH-RESULT-2026-10-28s.md 185 行**，合计 32 文件 +6657/−20）；`954793e`（guard-selftest.log 转 UTF-8，752B）。两提交内容均与本链独立只读复核一致（见 §26.3）。
+- 落盘后工作树仅剩本链暂存的两文件（LAUNCH-LOG + 本证据摘录）；并行链此前在途的 RUNBOOK-launch.md / .gitignore / verification-28q scripts 已随 ba97e04 提交。
+- 无 Claude 对 28s 最终轮的复验、无新生产授权、无任务单新答复（28s 任务单仍为「本轮不碰生产」口径）。
+
+### 26.2 tag10 整轮终态：未重启/未截断/未清档，端到端完整结束
+- driver 日志 rehearsal.log（725 行）起止：`28s 开始 2026-10-28T19:51:17Z`（= 12:51:17 本机，接 12:51:16 tag10 启动）→ `28s 结束 2026-10-28T20:19:10Z`，末尾 `EXIT=0`。
+- 单一连续时间线：reset 12:54:53 → step0–8 12:58:23–13:10:35 → s-forward 13:12:29 → step9 13:17:19 → s-after-rollback 13:19:10 → rehearsal.log 13:19:10；negtest 13:22:14–13:24:09；guard-selftest 13:24:36。
+- `docker ps -a`：`r28s-runner | r28q-host:10 | Exited (0)`、`r28s-neg | r28q-host:11 | Exited (0)`，无运行中 r28s 容器 → 整轮已结束。
+
+### 26.3 目标问题逐项裁定（本机独立复核，与 DSH-RESULT-28s 对得上）
+- **同一整轮是否被重启/截断/清档或失败：否**——单一 reset.log、连续 step 时间线、driver 起止完整、EXIT=0、runner 已 Exited (0)。
+- **第 9 步回滚完整端到端且全部判据 PASS：成立**——`本步判据：PASS=8 FAIL=0`；9.3 守卫两文件 `PASS: 9.3 … site 与本轮一致`（无 PHP parse error、无 site 恒读空，12:50:54 转义修复生效并读取真实证据）；27i import rollback `rollback_updated=7 already_current=1 H1_body_URL_check=PASS`、27g `rollback_updated=130 already_current=4 URL_and_body_check=PASS`；i18n 回拷 `cp -a …/i18n/. …/uploads/packrivo-i18n/` 实际执行；9a–9f 全 PASS。
+- **回滚后快照逐字节=基线 4972cd81 且产品标题及 23 个 i18n 文件全部复位：成立**——Get-FileHash 独立复核 s-after-rollback.txt = `4972cd8195…`（快照 845 行覆盖 mu sha256、23 个 i18n 字典、主题/插件、723 行页面标题、关键选项）。
+- **negtest 是否纳入同一 driver 并真实执行、按预期硬 FAIL：实质执行成立、脚本层面未纳入**——negtest.sh 真实执行（13:22:14，独立容器 r28s-neg/镜像 r28q-host:11，driver 结束后 3 分钟）：step3 `EXIT=1`、`FAIL: 3.0 … rollback-bogus.json 非本轮产物（site=http://wrong-site.invalid，期望 http://nginx）`、`3.0 守卫拦截，apply 不执行`、apply_updated 计数 0、自判 `PASS: 3.0 守卫拦住他站 JSON，整步非零退出，apply 未执行`；反向自检后快照仍=基线、rollback-vs-negtest.diff=0 行。**非“未调用/缺失结果/恒 EXIT=0”**。DSH-RESULT §11 亦按 `docker exec r28q-host bash /opt/x28r/negtest.sh` 单列复现命令（driver run28s.sh 本体未引用）——「同一 driver」仅在独立编排层成立，如实记录为口径瑕疵。
+- **正向 step0–8 已观察全 PASS 证据仍属同一整轮且未被后续失败推翻：成立**——step-summary 逐步 PASS=6/10/8/11/3/4/5/1/9/8 全 FAIL=0 EXIT=0；step3 3a=134/134、总数 134/8、两项 apply_updated>0；0f 探针补救路径第 4 次实跑（39397375B）；2.5 逐条 2a–2h 全 PASS；与 §25 观察一致且其后无任何 FAIL。
+- guard-selftest.log（13:24:36）：合法 JSON PASS×2、bogus JSON FAIL、空目录场景 OK。
+- DSH-RESULT-2026-10-28s 与本链独立复核逐项一致（65 PASS/0 FAIL 合计、四快照 sha256、negtest 三行为、五轮重跑记录、两 zip 哈希 5974ae0c…/096d0c8e…）。
+- **Claude 对 28s 最终修正结果的明确复验：不存在**——DSH-RESULT-28s 由工作台 #56（监工 kimi-k3.1-pro / 执行 deepseek-v4-pro）自述交付，非 Claude 复验；零 Claude/负责人新提交。
+- **负责人新的生产上线授权：不存在**——DSH-RESULT-28s 自述「本轮不碰生产：无 SSH、无生产写入」，无任何新生产授权。
+
+### 26.4 门禁结论与操作边界
+- **→ 生产第 1 步重跑条件仍不满足，生产第 1 步维持 FAIL；第 2–8 步与 SSH 生产继续禁止；本链继续停止等待，绝不执行第 2–8 步。**（tag10 整轮端到端全 PASS（含回滚与 3.0 反向自检）与 DSH-RESULT-2026-10-28s 交付均已成立——这两项前置本次实质满足；但按门禁三前置：**Claude 对 28s 最终结果的明确复验与负责人新的生产上线授权仍不存在**，任一仍缺即生产第 1 步重跑条件不满足，继续停止等待。）
+- 待规划者/负责人关注：①DSH-RESULT-28s 为执行侧自述交付（工作台 #56），28s 任务单要求之外仍需 Claude 对最终修正结果的明确复验，以及负责人基于该复验的新的生产上线授权，此前继续停止等待；②negtest 未纳入 run28s.sh 驱动脚本本体（独立容器 r28s-neg 调用、DSH-RESULT §11 单列复现命令），28s 交付物应说明该编排方式或改由 driver 调用；③driver 仍不聚合各步退出码（依赖逐日志判据行，本轮各步均有真实 FAIL=0 判据行佐证）；④tag8/tag9 两轮失败及修复已在 DSH-RESULT §3 逐次记录。
+- 操作边界：本意图全程只读（git fetch/log/status/show/diff、文件读取、Get-FileHash、docker ps 只读列举）；未执行任何脚本、未启动/停止/接入容器、未修改/删除他人文件、未 SSH 生产、未重跑生产第 1 步、未读取或打印任何密码/密钥/token；仓库变更仅本节日志与独立只读证据摘录 gate-evidence-2026-10-28-after-f8db215.md 两个文件；ba97e04/954793e 与本链落盘并行发生时，本链仅暂存自身两文件、未触碰其提交内容。
