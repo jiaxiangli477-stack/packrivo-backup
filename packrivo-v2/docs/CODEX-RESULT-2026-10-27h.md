@@ -201,3 +201,14 @@ product_pages=134 content_and_meta_sha256=76e6c833d36af862f7daee6d1de1237357135f
 - **报价重定向补丁仍待上线时执行**。本地沿用早先的专用测试覆盖使报价 URL 可访问；不把该本地 200 当成生产重定向已经修复。
 
 只有三个子主题代码文件发生改动；报告、验收证据、部署说明和 ZIP 为交付产物。没有部署或修改 www.packrivo.com。
+
+## 提交和推送
+
+```text
+[main cf595fd] Fix child-theme title ownership, RTL skip link and parent Template
+ 29 files changed, 6556 insertions(+), 12 deletions(-)
+To https://github.com/jiaxiangli477-stack/packrivo-backup.git
+   17632ae..cf595fd  main -> main
+```
+
+主交付提交 `cf595fd`。本回执随后作为文档提交同步推送；工作源、子主题包和备份仓库一致。
