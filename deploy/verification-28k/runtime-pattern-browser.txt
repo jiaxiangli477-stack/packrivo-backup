@@ -1,0 +1,12 @@
+ar 96 PASS
+de 96 PASS
+es 96 PASS
+fr 96 PASS
+it 96 PASS
+ja 96 PASS
+ko 96 PASS
+nl 96 PASS
+pt 96 PASS
+zh-CN 96 PASS
+zh-TW 96 PASS
+PASS runtime_injected_patterns=1056

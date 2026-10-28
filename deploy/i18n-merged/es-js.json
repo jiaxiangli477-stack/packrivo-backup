@@ -118,7 +118,13 @@
     "Bags & pouches: help me choose": "Bolsas y fundas: ayúdame a elegir",
     "Choose option": "Elegir una opción",
     "Add company details, material and other preferences (optional)": "Añadir datos de la empresa, material y otras preferencias (opcional)",
-    "Get a quote · MOQ 500": "Solicitar presupuesto · Mínimo 500"
+    "Get a quote · MOQ 500": "Solicitar presupuesto · Mínimo 500",
+    "Open Abrir menú de productos": "Abrir menú de productos",
+    "Close Abrir menú de productos": "Cerrar menú de productos",
+    "Open Abrir menú del blog": "Abrir menú del blog",
+    "Close Abrir menú del blog": "Cerrar menú del blog",
+    "Open Abrir menú de recursos": "Abrir menú de recursos",
+    "Close Abrir menú de recursos": "Cerrar menú de recursos"
   },
   "patterns": [
     [
@@ -176,6 +182,390 @@
     [
       "^The receiving status is not confirmed\\.(.*)$",
       "No se ha confirmado la recepción.$1"
+    ],
+    [
+      "^Materials & print · (\\d+) min · Jan (\\d{1,2}), (\\d{4})$",
+      "Materiales e impresión · $1 min · $2 ene $3"
+    ],
+    [
+      "^Materials & print · (\\d+) min · Feb (\\d{1,2}), (\\d{4})$",
+      "Materiales e impresión · $1 min · $2 feb $3"
+    ],
+    [
+      "^Materials & print · (\\d+) min · Mar (\\d{1,2}), (\\d{4})$",
+      "Materiales e impresión · $1 min · $2 mar $3"
+    ],
+    [
+      "^Materials & print · (\\d+) min · Apr (\\d{1,2}), (\\d{4})$",
+      "Materiales e impresión · $1 min · $2 abr $3"
+    ],
+    [
+      "^Materials & print · (\\d+) min · May (\\d{1,2}), (\\d{4})$",
+      "Materiales e impresión · $1 min · $2 may $3"
+    ],
+    [
+      "^Materials & print · (\\d+) min · Jun (\\d{1,2}), (\\d{4})$",
+      "Materiales e impresión · $1 min · $2 jun $3"
+    ],
+    [
+      "^Materials & print · (\\d+) min · Jul (\\d{1,2}), (\\d{4})$",
+      "Materiales e impresión · $1 min · $2 jul $3"
+    ],
+    [
+      "^Materials & print · (\\d+) min · Aug (\\d{1,2}), (\\d{4})$",
+      "Materiales e impresión · $1 min · $2 ago $3"
+    ],
+    [
+      "^Materials & print · (\\d+) min · Sep (\\d{1,2}), (\\d{4})$",
+      "Materiales e impresión · $1 min · $2 sept $3"
+    ],
+    [
+      "^Materials & print · (\\d+) min · Oct (\\d{1,2}), (\\d{4})$",
+      "Materiales e impresión · $1 min · $2 oct $3"
+    ],
+    [
+      "^Materials & print · (\\d+) min · Nov (\\d{1,2}), (\\d{4})$",
+      "Materiales e impresión · $1 min · $2 nov $3"
+    ],
+    [
+      "^Materials & print · (\\d+) min · Dec (\\d{1,2}), (\\d{4})$",
+      "Materiales e impresión · $1 min · $2 dic $3"
+    ],
+    [
+      "^Materials & print · Jan (\\d{1,2}), (\\d{4})$",
+      "Materiales e impresión · $1 ene $2"
+    ],
+    [
+      "^Materials & print · Feb (\\d{1,2}), (\\d{4})$",
+      "Materiales e impresión · $1 feb $2"
+    ],
+    [
+      "^Materials & print · Mar (\\d{1,2}), (\\d{4})$",
+      "Materiales e impresión · $1 mar $2"
+    ],
+    [
+      "^Materials & print · Apr (\\d{1,2}), (\\d{4})$",
+      "Materiales e impresión · $1 abr $2"
+    ],
+    [
+      "^Materials & print · May (\\d{1,2}), (\\d{4})$",
+      "Materiales e impresión · $1 may $2"
+    ],
+    [
+      "^Materials & print · Jun (\\d{1,2}), (\\d{4})$",
+      "Materiales e impresión · $1 jun $2"
+    ],
+    [
+      "^Materials & print · Jul (\\d{1,2}), (\\d{4})$",
+      "Materiales e impresión · $1 jul $2"
+    ],
+    [
+      "^Materials & print · Aug (\\d{1,2}), (\\d{4})$",
+      "Materiales e impresión · $1 ago $2"
+    ],
+    [
+      "^Materials & print · Sep (\\d{1,2}), (\\d{4})$",
+      "Materiales e impresión · $1 sept $2"
+    ],
+    [
+      "^Materials & print · Oct (\\d{1,2}), (\\d{4})$",
+      "Materiales e impresión · $1 oct $2"
+    ],
+    [
+      "^Materials & print · Nov (\\d{1,2}), (\\d{4})$",
+      "Materiales e impresión · $1 nov $2"
+    ],
+    [
+      "^Materials & print · Dec (\\d{1,2}), (\\d{4})$",
+      "Materiales e impresión · $1 dic $2"
+    ],
+    [
+      "^Samples & approval · (\\d+) min · Jan (\\d{1,2}), (\\d{4})$",
+      "Muestras y aprobación · $1 min · $2 ene $3"
+    ],
+    [
+      "^Samples & approval · (\\d+) min · Feb (\\d{1,2}), (\\d{4})$",
+      "Muestras y aprobación · $1 min · $2 feb $3"
+    ],
+    [
+      "^Samples & approval · (\\d+) min · Mar (\\d{1,2}), (\\d{4})$",
+      "Muestras y aprobación · $1 min · $2 mar $3"
+    ],
+    [
+      "^Samples & approval · (\\d+) min · Apr (\\d{1,2}), (\\d{4})$",
+      "Muestras y aprobación · $1 min · $2 abr $3"
+    ],
+    [
+      "^Samples & approval · (\\d+) min · May (\\d{1,2}), (\\d{4})$",
+      "Muestras y aprobación · $1 min · $2 may $3"
+    ],
+    [
+      "^Samples & approval · (\\d+) min · Jun (\\d{1,2}), (\\d{4})$",
+      "Muestras y aprobación · $1 min · $2 jun $3"
+    ],
+    [
+      "^Samples & approval · (\\d+) min · Jul (\\d{1,2}), (\\d{4})$",
+      "Muestras y aprobación · $1 min · $2 jul $3"
+    ],
+    [
+      "^Samples & approval · (\\d+) min · Aug (\\d{1,2}), (\\d{4})$",
+      "Muestras y aprobación · $1 min · $2 ago $3"
+    ],
+    [
+      "^Samples & approval · (\\d+) min · Sep (\\d{1,2}), (\\d{4})$",
+      "Muestras y aprobación · $1 min · $2 sept $3"
+    ],
+    [
+      "^Samples & approval · (\\d+) min · Oct (\\d{1,2}), (\\d{4})$",
+      "Muestras y aprobación · $1 min · $2 oct $3"
+    ],
+    [
+      "^Samples & approval · (\\d+) min · Nov (\\d{1,2}), (\\d{4})$",
+      "Muestras y aprobación · $1 min · $2 nov $3"
+    ],
+    [
+      "^Samples & approval · (\\d+) min · Dec (\\d{1,2}), (\\d{4})$",
+      "Muestras y aprobación · $1 min · $2 dic $3"
+    ],
+    [
+      "^Samples & approval · Jan (\\d{1,2}), (\\d{4})$",
+      "Muestras y aprobación · $1 ene $2"
+    ],
+    [
+      "^Samples & approval · Feb (\\d{1,2}), (\\d{4})$",
+      "Muestras y aprobación · $1 feb $2"
+    ],
+    [
+      "^Samples & approval · Mar (\\d{1,2}), (\\d{4})$",
+      "Muestras y aprobación · $1 mar $2"
+    ],
+    [
+      "^Samples & approval · Apr (\\d{1,2}), (\\d{4})$",
+      "Muestras y aprobación · $1 abr $2"
+    ],
+    [
+      "^Samples & approval · May (\\d{1,2}), (\\d{4})$",
+      "Muestras y aprobación · $1 may $2"
+    ],
+    [
+      "^Samples & approval · Jun (\\d{1,2}), (\\d{4})$",
+      "Muestras y aprobación · $1 jun $2"
+    ],
+    [
+      "^Samples & approval · Jul (\\d{1,2}), (\\d{4})$",
+      "Muestras y aprobación · $1 jul $2"
+    ],
+    [
+      "^Samples & approval · Aug (\\d{1,2}), (\\d{4})$",
+      "Muestras y aprobación · $1 ago $2"
+    ],
+    [
+      "^Samples & approval · Sep (\\d{1,2}), (\\d{4})$",
+      "Muestras y aprobación · $1 sept $2"
+    ],
+    [
+      "^Samples & approval · Oct (\\d{1,2}), (\\d{4})$",
+      "Muestras y aprobación · $1 oct $2"
+    ],
+    [
+      "^Samples & approval · Nov (\\d{1,2}), (\\d{4})$",
+      "Muestras y aprobación · $1 nov $2"
+    ],
+    [
+      "^Samples & approval · Dec (\\d{1,2}), (\\d{4})$",
+      "Muestras y aprobación · $1 dic $2"
+    ],
+    [
+      "^Structures & fit · (\\d+) min · Jan (\\d{1,2}), (\\d{4})$",
+      "Estructuras y ajuste · $1 min · $2 ene $3"
+    ],
+    [
+      "^Structures & fit · (\\d+) min · Feb (\\d{1,2}), (\\d{4})$",
+      "Estructuras y ajuste · $1 min · $2 feb $3"
+    ],
+    [
+      "^Structures & fit · (\\d+) min · Mar (\\d{1,2}), (\\d{4})$",
+      "Estructuras y ajuste · $1 min · $2 mar $3"
+    ],
+    [
+      "^Structures & fit · (\\d+) min · Apr (\\d{1,2}), (\\d{4})$",
+      "Estructuras y ajuste · $1 min · $2 abr $3"
+    ],
+    [
+      "^Structures & fit · (\\d+) min · May (\\d{1,2}), (\\d{4})$",
+      "Estructuras y ajuste · $1 min · $2 may $3"
+    ],
+    [
+      "^Structures & fit · (\\d+) min · Jun (\\d{1,2}), (\\d{4})$",
+      "Estructuras y ajuste · $1 min · $2 jun $3"
+    ],
+    [
+      "^Structures & fit · (\\d+) min · Jul (\\d{1,2}), (\\d{4})$",
+      "Estructuras y ajuste · $1 min · $2 jul $3"
+    ],
+    [
+      "^Structures & fit · (\\d+) min · Aug (\\d{1,2}), (\\d{4})$",
+      "Estructuras y ajuste · $1 min · $2 ago $3"
+    ],
+    [
+      "^Structures & fit · (\\d+) min · Sep (\\d{1,2}), (\\d{4})$",
+      "Estructuras y ajuste · $1 min · $2 sept $3"
+    ],
+    [
+      "^Structures & fit · (\\d+) min · Oct (\\d{1,2}), (\\d{4})$",
+      "Estructuras y ajuste · $1 min · $2 oct $3"
+    ],
+    [
+      "^Structures & fit · (\\d+) min · Nov (\\d{1,2}), (\\d{4})$",
+      "Estructuras y ajuste · $1 min · $2 nov $3"
+    ],
+    [
+      "^Structures & fit · (\\d+) min · Dec (\\d{1,2}), (\\d{4})$",
+      "Estructuras y ajuste · $1 min · $2 dic $3"
+    ],
+    [
+      "^Structures & fit · Jan (\\d{1,2}), (\\d{4})$",
+      "Estructuras y ajuste · $1 ene $2"
+    ],
+    [
+      "^Structures & fit · Feb (\\d{1,2}), (\\d{4})$",
+      "Estructuras y ajuste · $1 feb $2"
+    ],
+    [
+      "^Structures & fit · Mar (\\d{1,2}), (\\d{4})$",
+      "Estructuras y ajuste · $1 mar $2"
+    ],
+    [
+      "^Structures & fit · Apr (\\d{1,2}), (\\d{4})$",
+      "Estructuras y ajuste · $1 abr $2"
+    ],
+    [
+      "^Structures & fit · May (\\d{1,2}), (\\d{4})$",
+      "Estructuras y ajuste · $1 may $2"
+    ],
+    [
+      "^Structures & fit · Jun (\\d{1,2}), (\\d{4})$",
+      "Estructuras y ajuste · $1 jun $2"
+    ],
+    [
+      "^Structures & fit · Jul (\\d{1,2}), (\\d{4})$",
+      "Estructuras y ajuste · $1 jul $2"
+    ],
+    [
+      "^Structures & fit · Aug (\\d{1,2}), (\\d{4})$",
+      "Estructuras y ajuste · $1 ago $2"
+    ],
+    [
+      "^Structures & fit · Sep (\\d{1,2}), (\\d{4})$",
+      "Estructuras y ajuste · $1 sept $2"
+    ],
+    [
+      "^Structures & fit · Oct (\\d{1,2}), (\\d{4})$",
+      "Estructuras y ajuste · $1 oct $2"
+    ],
+    [
+      "^Structures & fit · Nov (\\d{1,2}), (\\d{4})$",
+      "Estructuras y ajuste · $1 nov $2"
+    ],
+    [
+      "^Structures & fit · Dec (\\d{1,2}), (\\d{4})$",
+      "Estructuras y ajuste · $1 dic $2"
+    ],
+    [
+      "^Supplier briefs · (\\d+) min · Jan (\\d{1,2}), (\\d{4})$",
+      "Resúmenes de proveedores · $1 min · $2 ene $3"
+    ],
+    [
+      "^Supplier briefs · (\\d+) min · Feb (\\d{1,2}), (\\d{4})$",
+      "Resúmenes de proveedores · $1 min · $2 feb $3"
+    ],
+    [
+      "^Supplier briefs · (\\d+) min · Mar (\\d{1,2}), (\\d{4})$",
+      "Resúmenes de proveedores · $1 min · $2 mar $3"
+    ],
+    [
+      "^Supplier briefs · (\\d+) min · Apr (\\d{1,2}), (\\d{4})$",
+      "Resúmenes de proveedores · $1 min · $2 abr $3"
+    ],
+    [
+      "^Supplier briefs · (\\d+) min · May (\\d{1,2}), (\\d{4})$",
+      "Resúmenes de proveedores · $1 min · $2 may $3"
+    ],
+    [
+      "^Supplier briefs · (\\d+) min · Jun (\\d{1,2}), (\\d{4})$",
+      "Resúmenes de proveedores · $1 min · $2 jun $3"
+    ],
+    [
+      "^Supplier briefs · (\\d+) min · Jul (\\d{1,2}), (\\d{4})$",
+      "Resúmenes de proveedores · $1 min · $2 jul $3"
+    ],
+    [
+      "^Supplier briefs · (\\d+) min · Aug (\\d{1,2}), (\\d{4})$",
+      "Resúmenes de proveedores · $1 min · $2 ago $3"
+    ],
+    [
+      "^Supplier briefs · (\\d+) min · Sep (\\d{1,2}), (\\d{4})$",
+      "Resúmenes de proveedores · $1 min · $2 sept $3"
+    ],
+    [
+      "^Supplier briefs · (\\d+) min · Oct (\\d{1,2}), (\\d{4})$",
+      "Resúmenes de proveedores · $1 min · $2 oct $3"
+    ],
+    [
+      "^Supplier briefs · (\\d+) min · Nov (\\d{1,2}), (\\d{4})$",
+      "Resúmenes de proveedores · $1 min · $2 nov $3"
+    ],
+    [
+      "^Supplier briefs · (\\d+) min · Dec (\\d{1,2}), (\\d{4})$",
+      "Resúmenes de proveedores · $1 min · $2 dic $3"
+    ],
+    [
+      "^Supplier briefs · Jan (\\d{1,2}), (\\d{4})$",
+      "Resúmenes de proveedores · $1 ene $2"
+    ],
+    [
+      "^Supplier briefs · Feb (\\d{1,2}), (\\d{4})$",
+      "Resúmenes de proveedores · $1 feb $2"
+    ],
+    [
+      "^Supplier briefs · Mar (\\d{1,2}), (\\d{4})$",
+      "Resúmenes de proveedores · $1 mar $2"
+    ],
+    [
+      "^Supplier briefs · Apr (\\d{1,2}), (\\d{4})$",
+      "Resúmenes de proveedores · $1 abr $2"
+    ],
+    [
+      "^Supplier briefs · May (\\d{1,2}), (\\d{4})$",
+      "Resúmenes de proveedores · $1 may $2"
+    ],
+    [
+      "^Supplier briefs · Jun (\\d{1,2}), (\\d{4})$",
+      "Resúmenes de proveedores · $1 jun $2"
+    ],
+    [
+      "^Supplier briefs · Jul (\\d{1,2}), (\\d{4})$",
+      "Resúmenes de proveedores · $1 jul $2"
+    ],
+    [
+      "^Supplier briefs · Aug (\\d{1,2}), (\\d{4})$",
+      "Resúmenes de proveedores · $1 ago $2"
+    ],
+    [
+      "^Supplier briefs · Sep (\\d{1,2}), (\\d{4})$",
+      "Resúmenes de proveedores · $1 sept $2"
+    ],
+    [
+      "^Supplier briefs · Oct (\\d{1,2}), (\\d{4})$",
+      "Resúmenes de proveedores · $1 oct $2"
+    ],
+    [
+      "^Supplier briefs · Nov (\\d{1,2}), (\\d{4})$",
+      "Resúmenes de proveedores · $1 nov $2"
+    ],
+    [
+      "^Supplier briefs · Dec (\\d{1,2}), (\\d{4})$",
+      "Resúmenes de proveedores · $1 dic $2"
     ]
   ]
 }

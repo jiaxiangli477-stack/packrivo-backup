@@ -1,0 +1,12 @@
+ar 3 menus open/close PASS
+de 3 menus open/close PASS
+es 3 menus open/close PASS
+fr 3 menus open/close PASS
+it 3 menus open/close PASS
+ja 3 menus open/close PASS
+ko 3 menus open/close PASS
+nl 3 menus open/close PASS
+pt 3 menus open/close PASS
+zh-CN 3 menus open/close PASS
+zh-TW 3 menus open/close PASS
+PASS 33 menus / 66 actual click transitions

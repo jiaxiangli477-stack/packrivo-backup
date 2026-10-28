@@ -1,0 +1,60 @@
+{
+  "approvedSHA256": "edcadc0b117fa3a564c18c25c5b52b96d1917cf72e9777a6f80cd831d2792b3f",
+  "languages": {
+    "ar": {
+      "dictionaryBaselineSHA256": "5a7ca44bf2816af4a626cb4a4309de057f11fb350a1848fe76c352550b7ed36b",
+      "deltaBaselineSHA256": "6f29278373dc1416b4f500f9a55325e417dd6ddde469d13ecb68075d3d3f3b02",
+      "runtimeBaselineSHA256": "73e3dbe3e2fd837bfcaa378a1beef997ed5bb3d87900d0e6a6f557acb870d430"
+    },
+    "de": {
+      "dictionaryBaselineSHA256": "84c9f645036f6fcdda72035612549c79193910de6867df342ac0bef504114677",
+      "deltaBaselineSHA256": "916c96c9fb42671b088c505d662a220906481852e0c039ef98b46e2f42b3bdf3",
+      "runtimeBaselineSHA256": "c408f49c8992d11b424c649dcace2b1ff70ab4310d42a8c762f098d41640bb9c"
+    },
+    "es": {
+      "dictionaryBaselineSHA256": "9369801578425e49a6579a59b3100eb793fb77e962aebeeff52aea66eb9152eb",
+      "deltaBaselineSHA256": "38c8cfa8017fc5d1f1fbae792b555c752258d1838af245fb92d44f1dd014a40a",
+      "runtimeBaselineSHA256": "c4919e5812dc4d0fe3637605def1a71627e562b1e1758a0e26448bd255d18cd7"
+    },
+    "fr": {
+      "dictionaryBaselineSHA256": "42cbecca8bedb3df8042483c032c57466b3e603cd9e4d1563aba5dfa3f080219",
+      "deltaBaselineSHA256": "377d9bd2e0f88c6aac8f3deda46ef312f678d1d12c262a54c9e2a909ff1f1583",
+      "runtimeBaselineSHA256": "3f8ec163fa695e729e5ff87494a017c937c1e12fb68a2936e851995c2fdbf817"
+    },
+    "it": {
+      "dictionaryBaselineSHA256": "ab593bb49933a90524d6c7f53d9d66e971dae70a732ffaa795f61183281e157a",
+      "deltaBaselineSHA256": "5b19b36d4226528c9af169bdf1ef5a445fee9032029e4dc6584ba622e9fd675a",
+      "runtimeBaselineSHA256": "b6cf7e2e8f81c539bac3061b09d8226de7b9434730de00a28bd61b8e704c346b"
+    },
+    "ja": {
+      "dictionaryBaselineSHA256": "79144b0ebaeaa18ec0211294a90f0a24022c7f4a5fdf16c795a4a503a6f5ded0",
+      "deltaBaselineSHA256": "3b493b56fa86c21d2c79fbd433f0e6b614c4186be5bbffe5cc78af4f49d79b18",
+      "runtimeBaselineSHA256": "cda9eb7eb64d99d732740b1d2b5b82f64ea87a61e69e12530b01ead741e27b62"
+    },
+    "ko": {
+      "dictionaryBaselineSHA256": "2e8a8ba5b5ef4a4dc521208edfb395a599a913b413b3aeafadf65f3c0c0b338a",
+      "deltaBaselineSHA256": "af1035a66f6c90bde7999dcd56126458617edc401a0d7beaade890deaf172380",
+      "runtimeBaselineSHA256": "7fb53063d44cb10faf5fd60c88d81115ee679153ad674c729514e4466e85ac8a"
+    },
+    "nl": {
+      "dictionaryBaselineSHA256": "7993eee210626a833f79132fae02bc5d1a365980bdfd37812028251b25e22ffe",
+      "deltaBaselineSHA256": "c20d6032145239f70d49416cded1e611cd096b98b29e54ea7f18ba5c1b687307",
+      "runtimeBaselineSHA256": "76a21727edf0fe0f9ed856ac026fbc054978e2fbcdec796fb21ac2418a0f4d99"
+    },
+    "pt": {
+      "dictionaryBaselineSHA256": "e199e659b17d422fd1b8b4bde5ba54f762d790cfb2327a155bc4707edf6ff134",
+      "deltaBaselineSHA256": "73aa5c8e9fa7175db067a7d33619b30cb3577e9d88e960ae2acb7329a46d0cd3",
+      "runtimeBaselineSHA256": "9148b7ef9bc5d57c6499e3814a3dd64066577888bf48dc4ccfc9329d2cf39711"
+    },
+    "zh-CN": {
+      "dictionaryBaselineSHA256": "0354b54b74618904cd794b721ec62fbc9e539fc1d1fcd40e0b84ac6e52e226c5",
+      "deltaBaselineSHA256": "9d242ac44a07b22fc549082fed3f2dc5aa2cc67381434276bc31887b78d1afab",
+      "runtimeBaselineSHA256": "983153ab67b5ea2e9b746619d5259601916ebfc68bd7902a022395dc356027b6"
+    },
+    "zh-TW": {
+      "dictionaryBaselineSHA256": "9f4d9e4b7e20ba3506612ef66e6ec3c7e4ac42f3da258915798faa2181daf4cf",
+      "deltaBaselineSHA256": "eb76b2d7764dc91f80dc21895e458a7942be07d1486ed94dcaef01ff6e2b68bc",
+      "runtimeBaselineSHA256": "c1ed2d78c63e61ced857358ce066996e0e0f1095f1f10e0d5e8093a23f545fcc"
+    }
+  }
+}

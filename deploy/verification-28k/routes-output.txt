@@ -1,0 +1,8 @@
+local_ar_home_status=200
+local_ar_quote_status=404
+local_english_quote_href_count=13
+local_paths_get_a_quote_present=False
+production_ar_home_status=200
+production_ar_quote_status=404
+production_ar_inquiry_href_count=6
+production_ar_quote_inquiry_buttons=6

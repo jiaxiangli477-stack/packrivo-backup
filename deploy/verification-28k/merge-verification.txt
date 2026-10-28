@@ -1,0 +1,2 @@
+{"languages":11,"approvedEnglishKeys":207,"approvedSHA256":"edcadc0b117fa3a564c18c25c5b52b96d1917cf72e9777a6f80cd831d2792b3f","existingBucketValuesPreserved":80537,"syntheticDateCases":1056,"conflictCount":6,"pass":true}
+PASS: approved input unchanged; all baseline values and old runtime rules retained; each requested kind resolved; dynamic month/day/year patterns tested

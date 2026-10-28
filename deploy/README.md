@@ -40,7 +40,9 @@ wp --path="$WP" eval-file "$PKG/scripts/hubs-27i/import.php" backup "$PKG" "$SIT
 
 ```bash
 node "$PKG/scripts/hubs-27i/merge-i18n.mjs" --root "$PKG" --base "$BACKUP/i18n" --js-base "$BACKUP/i18n" --paths-base "$BACKUP/i18n/paths.json" --metadata-backup "$BACKUP/rollback-27i.json"
-# 审阅 i18n-statistics-27i.json 和 i18n-conflicts-27i.json 后，才进行以下安装。
+# 在 27i 结果之上合并 28k，仍保留部署时生产基线的冲突值。
+node "$PKG/scripts/ui-28k/merge-i18n.mjs" --root "$PKG" --base "$PKG/deploy/i18n-merged" --js-base "$PKG/deploy/i18n-merged" --delta-base "$PKG/i18n-delta"
+# 审阅 27i 和 28k 的 i18n-statistics / i18n-conflicts 后，才进行以下安装。
 for lang in ar de es fr it ja ko nl pt zh-CN zh-TW; do
   cp "$PKG/deploy/i18n-merged/$lang-dict.json" "$WP/wp-content/uploads/packrivo-i18n/$lang-dict.json"
   cp "$PKG/deploy/i18n-merged/$lang-js.json" "$WP/wp-content/uploads/packrivo-i18n/$lang-js.json"
@@ -148,3 +150,13 @@ node E:\破甲工作区\.tmp\packrivo-27h\verify-runtime.cjs
 本地浏览器扫描 7 类页面 × 11 语种：55 个正式路径 200；文章和 /get-a-quote/ 的 22 个正式语言路径仍 404，已用现有原生 WP 查询地址补查同一文档并验证 ID，不代表正式路由修复。父主题、插件、MU、字典未改；详细证据见 verification-27j 和 packrivo-v2/docs/CODEX-RESULT-2026-10-27j.md。
 
 该包没有部署。首页 5/8 卡片、报价重定向补丁、语言路径缺项等原有剩余项继续保留；上线仍需另行授权。
+
+## 28k：上线前事项与报价多语言缺口
+
+207 条已审子主题译文已并入 11 语种字典；本轮保留 27i 基线中已有的不同译文，6 条冲突详见 `i18n-conflicts-28k.json`。由于生产可能变化，后续实际部署必须先读取当时的生产基线，按上方顺序重新生成并复核冲突，不能把本地基线视为生产当前值。运行时增加按四个现有文章分类与 12 个月份限定的日期规则，以及三个菜单点击后动态 aria-label 的映射；后者复用已审或既有有效译文。既有 exact 和 patterns 保留，字典已有的逐条译文也保留。未知分类仍需后续补充。
+
+报价链接本轮不修：本地 `/ar/` 页面报价链接指向英文 `/get-a-quote/`，`/ar/get-a-quote/` 404；本轮只读核验生产 `/ar/get-a-quote/` 为 404、生产阿语首页存在指向 `/ar/inquiry/` 的链接。上线子主题前必须由站长决定阿语报价按钮应当指向现有 `/ar/inquiry/` 还是建设多语言新报价页；不要以本地 `/?page_id=3220` 临时验证地址替代正式路由。27e 的英文旧重定向补丁仍未在生产执行。
+
+若建设多语言报价页，需核对/更新多语言数据路径白名单 `wp-content/uploads/packrivo-i18n/paths.json` 对 `/get-a-quote/` 的支持及现有 MU 路由与链接逻辑；核对 `packrivo-quote/packrivo-quote.php` 的 6 个前台 i18n 配置项和 1 个 noscript 文案，`assets/pkq-quote.js` 动态界面、表单提示与返回状态，以及 `includes/pricing.json` 和现有配置中的可见选项标签。五个步骤的只读交互样本测得 **84 个不同的可见英文字符串**（含部分动态数值，展开了材料选项）；提交后的成功/失败、REST 错误和未覆盖状态不在该数内，不能把 84 当成全插件的完整总量。需再逐一盘点并决定翻译、参数化及逐语种回归，不能仅添加路径白名单即宣称报价页已翻译。
+
+本段仅供后续决策，本轮没有改报价插件、MU、路径表或生产网站，也没有执行上线命令。

@@ -1,0 +1,13 @@
+language added_english added_bucket production_conflicts prior_delta_or_runtime_conflicts runtime_exact runtime_patterns
+ar 181 369 0 0 6 96
+de 181 363 0 0 6 96
+es 181 365 0 0 6 96
+fr 181 365 0 0 6 96
+it 181 364 1 0 6 96
+ja 181 369 1 0 6 96
+ko 181 369 0 0 6 96
+nl 181 364 0 0 6 96
+pt 181 365 0 0 6 96
+zh-CN 181 363 2 0 6 96
+zh-TW 181 369 2 0 6 96
+PASS: reviewed source unchanged; existing production and prior delta values retained; October approved sample matched by runtime date pattern

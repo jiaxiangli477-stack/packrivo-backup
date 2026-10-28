@@ -1,0 +1,233 @@
+[
+  {
+    "lang": "ar",
+    "menu": "Products",
+    "initial": "فتح قائمة المنتجات",
+    "opened": "إغلاق قائمة المنتجات",
+    "reclosed": "فتح قائمة المنتجات"
+  },
+  {
+    "lang": "ar",
+    "menu": "Blog",
+    "initial": "فتح قائمة المدونة",
+    "opened": "إغلاق قائمة المدونة",
+    "reclosed": "فتح قائمة المدونة"
+  },
+  {
+    "lang": "ar",
+    "menu": "Resources",
+    "initial": "فتح قائمة الموارد",
+    "opened": "إغلاق قائمة الموارد",
+    "reclosed": "فتح قائمة الموارد"
+  },
+  {
+    "lang": "de",
+    "menu": "Products",
+    "initial": "Produktmenü öffnen",
+    "opened": "Produktmenü schließen",
+    "reclosed": "Produktmenü öffnen"
+  },
+  {
+    "lang": "de",
+    "menu": "Blog",
+    "initial": "Blog-Menü öffnen",
+    "opened": "Blog-Menü schließen",
+    "reclosed": "Blog-Menü öffnen"
+  },
+  {
+    "lang": "de",
+    "menu": "Resources",
+    "initial": "Ressourcenmenü öffnen",
+    "opened": "Ressourcenmenü schließen",
+    "reclosed": "Ressourcenmenü öffnen"
+  },
+  {
+    "lang": "es",
+    "menu": "Products",
+    "initial": "Abrir menú de productos",
+    "opened": "Cerrar menú de productos",
+    "reclosed": "Abrir menú de productos"
+  },
+  {
+    "lang": "es",
+    "menu": "Blog",
+    "initial": "Abrir menú del blog",
+    "opened": "Cerrar menú del blog",
+    "reclosed": "Abrir menú del blog"
+  },
+  {
+    "lang": "es",
+    "menu": "Resources",
+    "initial": "Abrir menú de recursos",
+    "opened": "Cerrar menú de recursos",
+    "reclosed": "Abrir menú de recursos"
+  },
+  {
+    "lang": "fr",
+    "menu": "Products",
+    "initial": "Ouvrir le menu des produits",
+    "opened": "Fermer le menu des produits",
+    "reclosed": "Ouvrir le menu des produits"
+  },
+  {
+    "lang": "fr",
+    "menu": "Blog",
+    "initial": "Ouvrir le menu du blog",
+    "opened": "Fermer le menu du blog",
+    "reclosed": "Ouvrir le menu du blog"
+  },
+  {
+    "lang": "fr",
+    "menu": "Resources",
+    "initial": "Ouvrir le menu des ressources",
+    "opened": "Fermer le menu des ressources",
+    "reclosed": "Ouvrir le menu des ressources"
+  },
+  {
+    "lang": "it",
+    "menu": "Products",
+    "initial": "Apri il menu Prodotti",
+    "opened": "Chiudi il menu Prodotti",
+    "reclosed": "Apri il menu Prodotti"
+  },
+  {
+    "lang": "it",
+    "menu": "Blog",
+    "initial": "Apri il menu Blog",
+    "opened": "Chiudi il menu Blog",
+    "reclosed": "Apri il menu Blog"
+  },
+  {
+    "lang": "it",
+    "menu": "Resources",
+    "initial": "Apri il menu Risorse",
+    "opened": "Chiudi il menu Risorse",
+    "reclosed": "Apri il menu Risorse"
+  },
+  {
+    "lang": "ja",
+    "menu": "Products",
+    "initial": "商品メニューを開く",
+    "opened": "商品メニューを閉じる",
+    "reclosed": "商品メニューを開く"
+  },
+  {
+    "lang": "ja",
+    "menu": "Blog",
+    "initial": "ブログメニューを開く",
+    "opened": "ブログメニューを閉じる",
+    "reclosed": "ブログメニューを開く"
+  },
+  {
+    "lang": "ja",
+    "menu": "Resources",
+    "initial": "資料メニューを開く",
+    "opened": "資料メニューを閉じる",
+    "reclosed": "資料メニューを開く"
+  },
+  {
+    "lang": "ko",
+    "menu": "Products",
+    "initial": "제품 메뉴 열기",
+    "opened": "제품 메뉴 닫기",
+    "reclosed": "제품 메뉴 열기"
+  },
+  {
+    "lang": "ko",
+    "menu": "Blog",
+    "initial": "블로그 메뉴 열기",
+    "opened": "블로그 메뉴 닫기",
+    "reclosed": "블로그 메뉴 열기"
+  },
+  {
+    "lang": "ko",
+    "menu": "Resources",
+    "initial": "자료 메뉴 열기",
+    "opened": "자료 메뉴 닫기",
+    "reclosed": "자료 메뉴 열기"
+  },
+  {
+    "lang": "nl",
+    "menu": "Products",
+    "initial": "Open het productmenu",
+    "opened": "Sluit het productmenu",
+    "reclosed": "Open het productmenu"
+  },
+  {
+    "lang": "nl",
+    "menu": "Blog",
+    "initial": "Open het blogmenu",
+    "opened": "Sluit het blogmenu",
+    "reclosed": "Open het blogmenu"
+  },
+  {
+    "lang": "nl",
+    "menu": "Resources",
+    "initial": "Open het bronnenmenu",
+    "opened": "Sluit het bronnenmenu",
+    "reclosed": "Open het bronnenmenu"
+  },
+  {
+    "lang": "pt",
+    "menu": "Products",
+    "initial": "Abrir menu de produtos",
+    "opened": "Fechar menu de produtos",
+    "reclosed": "Abrir menu de produtos"
+  },
+  {
+    "lang": "pt",
+    "menu": "Blog",
+    "initial": "Abrir menu do blog",
+    "opened": "Fechar menu do blog",
+    "reclosed": "Abrir menu do blog"
+  },
+  {
+    "lang": "pt",
+    "menu": "Resources",
+    "initial": "Abrir menu de recursos",
+    "opened": "Fechar menu de recursos",
+    "reclosed": "Abrir menu de recursos"
+  },
+  {
+    "lang": "zh-CN",
+    "menu": "Products",
+    "initial": "打开产品菜单",
+    "opened": "关闭产品菜单",
+    "reclosed": "打开产品菜单"
+  },
+  {
+    "lang": "zh-CN",
+    "menu": "Blog",
+    "initial": "打开博客菜单",
+    "opened": "关闭博客菜单",
+    "reclosed": "打开博客菜单"
+  },
+  {
+    "lang": "zh-CN",
+    "menu": "Resources",
+    "initial": "打开资源菜单",
+    "opened": "关闭资源菜单",
+    "reclosed": "打开资源菜单"
+  },
+  {
+    "lang": "zh-TW",
+    "menu": "Products",
+    "initial": "打開產品菜單",
+    "opened": "關閉產品菜單",
+    "reclosed": "打開產品菜單"
+  },
+  {
+    "lang": "zh-TW",
+    "menu": "Blog",
+    "initial": "打開博客菜單",
+    "opened": "關閉博客菜單",
+    "reclosed": "打開博客菜單"
+  },
+  {
+    "lang": "zh-TW",
+    "menu": "Resources",
+    "initial": "打開資源菜單",
+    "opened": "關閉資源菜單",
+    "reclosed": "打開資源菜單"
+  }
+]

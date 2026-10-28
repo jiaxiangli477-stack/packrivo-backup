@@ -1,0 +1,140 @@
+before ar /jewelry-boxes/ 65 canonical 200 
+before ar /blog/ 24 canonical 200 
+before ar / 61 canonical 200 
+before ar /products/ 10 canonical 200 
+before ar /product-pillow-jewelry-box/ 10 canonical 200 
+before ar /2026/10/26/jewelry-pouch-box-customer-handoff/ 6 canonical 404 query200
+before de / 61 canonical 200 
+before de /jewelry-boxes/ 65 canonical 200 
+before de /blog/ 24 canonical 200 
+before de /products/ 10 canonical 200 
+before de /product-pillow-jewelry-box/ 10 canonical 200 
+before de /2026/10/26/jewelry-pouch-box-customer-handoff/ 6 canonical 404 query200
+before es / 60 canonical 200 
+before es /jewelry-boxes/ 65 canonical 200 
+before es /blog/ 24 canonical 200 
+before es /products/ 10 canonical 200 
+before es /product-pillow-jewelry-box/ 10 canonical 200 
+before es /2026/10/26/jewelry-pouch-box-customer-handoff/ 6 canonical 404 query200
+before fr / 57 canonical 200 
+before fr /jewelry-boxes/ 65 canonical 200 
+before fr /blog/ 23 canonical 200 
+before fr /products/ 8 canonical 200 
+before fr /product-pillow-jewelry-box/ 10 canonical 200 
+before fr /2026/10/26/jewelry-pouch-box-customer-handoff/ 5 canonical 404 query200
+before it / 61 canonical 200 
+before it /jewelry-boxes/ 66 canonical 200 
+before it /blog/ 24 canonical 200 
+before it /products/ 10 canonical 200 
+before it /2026/10/26/jewelry-pouch-box-customer-handoff/ 7 canonical 404 query200
+before it /product-pillow-jewelry-box/ 11 canonical 200 
+before ja / 61 canonical 200 
+before ja /jewelry-boxes/ 65 canonical 200 
+before ja /blog/ 24 canonical 200 
+before ja /products/ 10 canonical 200 
+before ja /product-pillow-jewelry-box/ 10 canonical 200 
+before ja /2026/10/26/jewelry-pouch-box-customer-handoff/ 6 canonical 404 query200
+before ko / 61 canonical 200 
+before ko /jewelry-boxes/ 65 canonical 200 
+before ko /blog/ 24 canonical 200 
+before ko /products/ 10 canonical 200 
+before ko /2026/10/26/jewelry-pouch-box-customer-handoff/ 6 canonical 404 query200
+before ko /product-pillow-jewelry-box/ 10 canonical 200 
+before nl / 61 canonical 200 
+before nl /jewelry-boxes/ 65 canonical 200 
+before nl /blog/ 24 canonical 200 
+before nl /products/ 10 canonical 200 
+before nl /product-pillow-jewelry-box/ 10 canonical 200 
+before nl /2026/10/26/jewelry-pouch-box-customer-handoff/ 6 canonical 404 query200
+before pt / 60 canonical 200 
+before pt /jewelry-boxes/ 65 canonical 200 
+before pt /blog/ 24 canonical 200 
+before pt /products/ 10 canonical 200 
+before pt /2026/10/26/jewelry-pouch-box-customer-handoff/ 6 canonical 404 query200
+before pt /product-pillow-jewelry-box/ 10 canonical 200 
+before zh-CN / 61 canonical 200 
+before zh-CN /jewelry-boxes/ 65 canonical 200 
+before zh-CN /blog/ 24 canonical 200 
+before zh-CN /products/ 10 canonical 200 
+before zh-CN /2026/10/26/jewelry-pouch-box-customer-handoff/ 6 canonical 404 query200
+before zh-CN /product-pillow-jewelry-box/ 10 canonical 200 
+before zh-TW / 61 canonical 200 
+before zh-TW /jewelry-boxes/ 65 canonical 200 
+before zh-TW /blog/ 24 canonical 200 
+before zh-TW /products/ 10 canonical 200 
+before zh-TW /2026/10/26/jewelry-pouch-box-customer-handoff/ 6 canonical 404 query200
+before zh-TW /product-pillow-jewelry-box/ 10 canonical 200 
+after ar /blog/ 0 canonical 200 
+after ar /jewelry-boxes/ 0 canonical 200 
+after ar / 0 canonical 200 
+after ar /products/ 0 canonical 200 
+after ar /product-pillow-jewelry-box/ 0 canonical 200 
+after ar /2026/10/26/jewelry-pouch-box-customer-handoff/ 0 canonical 404 query200
+after de / 0 canonical 200 
+after de /jewelry-boxes/ 0 canonical 200 
+after de /blog/ 0 canonical 200 
+after de /products/ 0 canonical 200 
+after de /product-pillow-jewelry-box/ 0 canonical 200 
+after de /2026/10/26/jewelry-pouch-box-customer-handoff/ 0 canonical 404 query200
+after es / 0 canonical 200 
+after es /products/ 0 canonical 200 
+after es /jewelry-boxes/ 0 canonical 200 
+after es /blog/ 0 canonical 200 
+after es /2026/10/26/jewelry-pouch-box-customer-handoff/ 0 canonical 404 query200
+after es /product-pillow-jewelry-box/ 0 canonical 200 
+after fr / 0 canonical 200 
+after fr /products/ 0 canonical 200 
+after fr /jewelry-boxes/ 0 canonical 200 
+after fr /blog/ 0 canonical 200 
+after fr /2026/10/26/jewelry-pouch-box-customer-handoff/ 0 canonical 404 query200
+after fr /product-pillow-jewelry-box/ 0 canonical 200 
+after it / 0 canonical 200 
+after it /products/ 0 canonical 200 
+after it /jewelry-boxes/ 1 canonical 200 
+after it /blog/ 0 canonical 200 
+after it /product-pillow-jewelry-box/ 1 canonical 200 
+after it /2026/10/26/jewelry-pouch-box-customer-handoff/ 1 canonical 404 query200
+after ja / 0 canonical 200 
+after ja /products/ 0 canonical 200 
+after ja /blog/ 0 canonical 200 
+after ja /jewelry-boxes/ 0 canonical 200 
+after ja /2026/10/26/jewelry-pouch-box-customer-handoff/ 0 canonical 404 query200
+after ja /product-pillow-jewelry-box/ 0 canonical 200 
+after ko / 0 canonical 200 
+after ko /products/ 0 canonical 200 
+after ko /jewelry-boxes/ 0 canonical 200 
+after ko /blog/ 0 canonical 200 
+after ko /2026/10/26/jewelry-pouch-box-customer-handoff/ 0 canonical 404 query200
+after ko /product-pillow-jewelry-box/ 0 canonical 200 
+after nl / 0 canonical 200 
+after nl /products/ 0 canonical 200 
+after nl /jewelry-boxes/ 0 canonical 200 
+after nl /blog/ 0 canonical 200 
+after nl /2026/10/26/jewelry-pouch-box-customer-handoff/ 0 canonical 404 query200
+after nl /product-pillow-jewelry-box/ 0 canonical 200 
+after pt / 0 canonical 200 
+after pt /products/ 0 canonical 200 
+after pt /jewelry-boxes/ 0 canonical 200 
+after pt /blog/ 0 canonical 200 
+after pt /2026/10/26/jewelry-pouch-box-customer-handoff/ 0 canonical 404 query200
+after pt /product-pillow-jewelry-box/ 0 canonical 200 
+after zh-CN / 0 canonical 200 
+after zh-CN /products/ 0 canonical 200 
+after zh-CN /jewelry-boxes/ 0 canonical 200 
+after zh-CN /blog/ 0 canonical 200 
+after zh-CN /2026/10/26/jewelry-pouch-box-customer-handoff/ 0 canonical 404 query200
+after zh-CN /product-pillow-jewelry-box/ 0 canonical 200 
+after zh-TW / 0 canonical 200 
+after zh-TW /products/ 0 canonical 200 
+after zh-TW /jewelry-boxes/ 0 canonical 200 
+after zh-TW /blog/ 0 canonical 200 
+after zh-TW /product-pillow-jewelry-box/ 0 canonical 200 
+after zh-TW /2026/10/26/jewelry-pouch-box-customer-handoff/ 0 canonical 404 query200
+page,ar,de,es,fr,it,ja,ko,nl,pt,zh-CN,zh-TW
+"/",61→0,61→0,60→0,57→0,61→0,61→0,61→0,61→0,60→0,61→0,61→0
+"/products/",10→0,10→0,10→0,8→0,10→0,10→0,10→0,10→0,10→0,10→0,10→0
+"/jewelry-boxes/",65→0,65→0,65→0,65→0,66→1,65→0,65→0,65→0,65→0,65→0,65→0
+"/blog/",24→0,24→0,24→0,23→0,24→0,24→0,24→0,24→0,24→0,24→0,24→0
+"/2026/10/26/jewelry-pouch-box-customer-handoff/",6→0,6→0,6→0,5→0,7→1,6→0,6→0,6→0,6→0,6→0,6→0
+"/product-pillow-jewelry-box/",10→0,10→0,10→0,10→0,11→1,10→0,10→0,10→0,10→0,10→0,10→0
+PASS: 66 page/language node counts before and after; 22 mounted files restored and SHA-256 verified

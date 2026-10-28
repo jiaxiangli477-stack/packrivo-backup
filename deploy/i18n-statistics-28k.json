@@ -1,0 +1,101 @@
+[
+  {
+    "language": "ar",
+    "addedEnglishKeys": 181,
+    "addedBucketKeys": 369,
+    "productionConflicts": 0,
+    "priorDeltaConflicts": 0,
+    "newRuntimeExact": 6,
+    "newRuntimePatterns": 96
+  },
+  {
+    "language": "de",
+    "addedEnglishKeys": 181,
+    "addedBucketKeys": 363,
+    "productionConflicts": 0,
+    "priorDeltaConflicts": 0,
+    "newRuntimeExact": 6,
+    "newRuntimePatterns": 96
+  },
+  {
+    "language": "es",
+    "addedEnglishKeys": 181,
+    "addedBucketKeys": 365,
+    "productionConflicts": 0,
+    "priorDeltaConflicts": 0,
+    "newRuntimeExact": 6,
+    "newRuntimePatterns": 96
+  },
+  {
+    "language": "fr",
+    "addedEnglishKeys": 181,
+    "addedBucketKeys": 365,
+    "productionConflicts": 0,
+    "priorDeltaConflicts": 0,
+    "newRuntimeExact": 6,
+    "newRuntimePatterns": 96
+  },
+  {
+    "language": "it",
+    "addedEnglishKeys": 181,
+    "addedBucketKeys": 364,
+    "productionConflicts": 1,
+    "priorDeltaConflicts": 0,
+    "newRuntimeExact": 6,
+    "newRuntimePatterns": 96
+  },
+  {
+    "language": "ja",
+    "addedEnglishKeys": 181,
+    "addedBucketKeys": 369,
+    "productionConflicts": 1,
+    "priorDeltaConflicts": 0,
+    "newRuntimeExact": 6,
+    "newRuntimePatterns": 96
+  },
+  {
+    "language": "ko",
+    "addedEnglishKeys": 181,
+    "addedBucketKeys": 369,
+    "productionConflicts": 0,
+    "priorDeltaConflicts": 0,
+    "newRuntimeExact": 6,
+    "newRuntimePatterns": 96
+  },
+  {
+    "language": "nl",
+    "addedEnglishKeys": 181,
+    "addedBucketKeys": 364,
+    "productionConflicts": 0,
+    "priorDeltaConflicts": 0,
+    "newRuntimeExact": 6,
+    "newRuntimePatterns": 96
+  },
+  {
+    "language": "pt",
+    "addedEnglishKeys": 181,
+    "addedBucketKeys": 365,
+    "productionConflicts": 0,
+    "priorDeltaConflicts": 0,
+    "newRuntimeExact": 6,
+    "newRuntimePatterns": 96
+  },
+  {
+    "language": "zh-CN",
+    "addedEnglishKeys": 181,
+    "addedBucketKeys": 363,
+    "productionConflicts": 2,
+    "priorDeltaConflicts": 0,
+    "newRuntimeExact": 6,
+    "newRuntimePatterns": 96
+  },
+  {
+    "language": "zh-TW",
+    "addedEnglishKeys": 181,
+    "addedBucketKeys": 369,
+    "productionConflicts": 2,
+    "priorDeltaConflicts": 0,
+    "newRuntimeExact": 6,
+    "newRuntimePatterns": 96
+  }
+]

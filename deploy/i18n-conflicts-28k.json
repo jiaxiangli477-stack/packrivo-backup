@@ -1,0 +1,170 @@
+{
+  "ar": {
+    "production": [],
+    "priorDeltaAndPatterns": []
+  },
+  "de": {
+    "production": [],
+    "priorDeltaAndPatterns": []
+  },
+  "es": {
+    "production": [],
+    "priorDeltaAndPatterns": []
+  },
+  "fr": {
+    "production": [],
+    "priorDeltaAndPatterns": []
+  },
+  "it": {
+    "production": [
+      {
+        "key": "Home",
+        "production": [
+          {
+            "bucket": "block",
+            "value": "Home"
+          }
+        ],
+        "requested": [
+          {
+            "bucket": "block",
+            "value": "Pagina iniziale"
+          },
+          {
+            "bucket": "text",
+            "value": "Pagina iniziale"
+          }
+        ],
+        "resolution": "production retained"
+      }
+    ],
+    "priorDeltaAndPatterns": []
+  },
+  "ja": {
+    "production": [
+      {
+        "key": "Bulk Shipping Boxes with Logo",
+        "production": [
+          {
+            "bucket": "block",
+            "value": "オリジナル 発送用段ボール箱 名入れ"
+          },
+          {
+            "bucket": "text",
+            "value": "オリジナル 発送用段ボール箱 名入れ"
+          }
+        ],
+        "requested": [
+          {
+            "bucket": "attr",
+            "value": "ロゴ入り発送用段ボール箱（大量注文）"
+          }
+        ],
+        "resolution": "production retained"
+      }
+    ],
+    "priorDeltaAndPatterns": []
+  },
+  "ko": {
+    "production": [],
+    "priorDeltaAndPatterns": []
+  },
+  "nl": {
+    "production": [],
+    "priorDeltaAndPatterns": []
+  },
+  "pt": {
+    "production": [],
+    "priorDeltaAndPatterns": []
+  },
+  "zh-CN": {
+    "production": [
+      {
+        "key": "Bulk Shipping Boxes with Logo",
+        "production": [
+          {
+            "bucket": "block",
+            "value": "定制自动底物流箱"
+          },
+          {
+            "bucket": "text",
+            "value": "定制自动底物流箱"
+          }
+        ],
+        "requested": [
+          {
+            "bucket": "attr",
+            "value": "带标志的批量运输箱"
+          }
+        ],
+        "resolution": "production retained"
+      },
+      {
+        "key": "Custom Double-Wall Tray and Lid Sets",
+        "production": [
+          {
+            "bucket": "block",
+            "value": "定制双层围框托盘与盖"
+          },
+          {
+            "bucket": "text",
+            "value": "定制双层围框托盘与盖"
+          }
+        ],
+        "requested": [
+          {
+            "bucket": "attr",
+            "value": "定制双层壁托盘与盖套装"
+          }
+        ],
+        "resolution": "production retained"
+      }
+    ],
+    "priorDeltaAndPatterns": []
+  },
+  "zh-TW": {
+    "production": [
+      {
+        "key": "Bulk Shipping Boxes with Logo",
+        "production": [
+          {
+            "bucket": "block",
+            "value": "客製自動底出貨紙箱 含 logo"
+          },
+          {
+            "bucket": "text",
+            "value": "客製自動底出貨紙箱 含 logo"
+          }
+        ],
+        "requested": [
+          {
+            "bucket": "attr",
+            "value": "附標誌的批量出貨箱"
+          }
+        ],
+        "resolution": "production retained"
+      },
+      {
+        "key": "Custom Double-Wall Tray and Lid Sets",
+        "production": [
+          {
+            "bucket": "block",
+            "value": "客製雙層框盤與上蓋組"
+          },
+          {
+            "bucket": "text",
+            "value": "客製雙層框盤與上蓋組"
+          }
+        ],
+        "requested": [
+          {
+            "bucket": "attr",
+            "value": "客製雙層壁托盤與蓋套組"
+          }
+        ],
+        "resolution": "production retained"
+      }
+    ],
+    "priorDeltaAndPatterns": []
+  }
+}
