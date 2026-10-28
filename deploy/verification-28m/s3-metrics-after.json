@@ -618,10 +618,10 @@
     },
     {
      "label": "quote continue",
-     "w": 94,
+     "w": 96,
      "h": 44,
      "minH": "44px",
-     "border": "0px",
+     "border": "1px",
      "radius": "6px",
      "weight": "600"
     }
@@ -741,10 +741,10 @@
     },
     {
      "label": "quote continue",
-     "w": 94,
+     "w": 96,
      "h": 44,
      "minH": "44px",
-     "border": "0px",
+     "border": "1px",
      "radius": "6px",
      "weight": "600"
     }
