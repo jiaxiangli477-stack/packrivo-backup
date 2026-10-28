@@ -382,4 +382,9 @@ PASS packages checked byte-for-byte; quote demo and its local data excluded
 提交前 `git diff --cached --check` 对原样保存的改前 `price-function-before.txt` 提示末尾空行；该空行是 1,099 字节原始函数快照的一部分，未删改。排除该原样证据后其余文件检查为 0，再以仅忽略 EOF 空行的规则检查全部暂存文件也为 0。
 ## 提交与推送
 
-主交付和推送回执在实际执行后补入；本段不代表已推送。
+主交付提交 `0aedec2`。以下为首次推送原样输出；本回执随后作为文档提交同步推送。
+
+```text
+To https://github.com/jiaxiangli477-stack/packrivo-backup.git
+   cb24981..0aedec2  main -> main
+```
