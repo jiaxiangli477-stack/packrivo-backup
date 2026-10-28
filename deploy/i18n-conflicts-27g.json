@@ -1,0 +1,443 @@
+{
+  "ar": [
+    {
+      "key": "Jewelry boxes",
+      "production": [
+        {
+          "bucket": "block",
+          "value": "صناديق مجوهرات"
+        }
+      ],
+      "requested": [
+        {
+          "bucket": "block",
+          "value": "علب مجوهرات"
+        },
+        {
+          "bucket": "text",
+          "value": "علب مجوهرات"
+        }
+      ],
+      "resolution": "production retained"
+    },
+    {
+      "key": "Gift boxes",
+      "production": [
+        {
+          "bucket": "block",
+          "value": "صناديق هدايا"
+        }
+      ],
+      "requested": [
+        {
+          "bucket": "block",
+          "value": "علب هدايا"
+        },
+        {
+          "bucket": "text",
+          "value": "علب هدايا"
+        }
+      ],
+      "resolution": "production retained"
+    },
+    {
+      "key": "Mailer boxes",
+      "production": [
+        {
+          "bucket": "block",
+          "value": "صناديق بريدية"
+        }
+      ],
+      "requested": [
+        {
+          "bucket": "block",
+          "value": "علب بريدية"
+        },
+        {
+          "bucket": "text",
+          "value": "علب بريدية"
+        }
+      ],
+      "resolution": "production retained"
+    },
+    {
+      "key": "Samples",
+      "production": [
+        {
+          "bucket": "block",
+          "value": "عينات"
+        }
+      ],
+      "requested": [
+        {
+          "bucket": "block",
+          "value": "العينات"
+        },
+        {
+          "bucket": "text",
+          "value": "العينات"
+        }
+      ],
+      "resolution": "production retained"
+    }
+  ],
+  "de": [
+    {
+      "key": "Jewelry boxes",
+      "production": [
+        {
+          "bucket": "block",
+          "value": "Schmuckboxen"
+        },
+        {
+          "bucket": "text",
+          "value": "Schmuckboxen"
+        }
+      ],
+      "requested": [
+        {
+          "bucket": "block",
+          "value": "Schmuckschachteln"
+        },
+        {
+          "bucket": "text",
+          "value": "Schmuckschachteln"
+        }
+      ],
+      "resolution": "production retained"
+    },
+    {
+      "key": "Read the guide →",
+      "production": [
+        {
+          "bucket": "block",
+          "value": "Leitfaden lesen →"
+        }
+      ],
+      "requested": [
+        {
+          "bucket": "block",
+          "value": "Ratgeber lesen →"
+        },
+        {
+          "bucket": "text",
+          "value": "Ratgeber lesen →"
+        }
+      ],
+      "resolution": "production retained"
+    }
+  ],
+  "es": [
+    {
+      "key": "Jewelry boxes",
+      "production": [
+        {
+          "bucket": "block",
+          "value": "Cajas de joyería"
+        },
+        {
+          "bucket": "text",
+          "value": "Cajas de joyería"
+        }
+      ],
+      "requested": [
+        {
+          "bucket": "block",
+          "value": "Cajas para joyería"
+        },
+        {
+          "bucket": "text",
+          "value": "Cajas para joyería"
+        }
+      ],
+      "resolution": "production retained"
+    },
+    {
+      "key": "Mailer boxes",
+      "production": [
+        {
+          "bucket": "block",
+          "value": "Cajas mailer"
+        },
+        {
+          "bucket": "text",
+          "value": "Cajas mailer"
+        }
+      ],
+      "requested": [
+        {
+          "bucket": "block",
+          "value": "Cajas de envío"
+        },
+        {
+          "bucket": "text",
+          "value": "Cajas de envío"
+        }
+      ],
+      "resolution": "production retained"
+    },
+    {
+      "key": "Read the guide →",
+      "production": [
+        {
+          "bucket": "block",
+          "value": "Lea la guía →"
+        }
+      ],
+      "requested": [
+        {
+          "bucket": "block",
+          "value": "Leer la guía →"
+        },
+        {
+          "bucket": "text",
+          "value": "Leer la guía →"
+        }
+      ],
+      "resolution": "production retained"
+    }
+  ],
+  "fr": [
+    {
+      "key": "Mailer boxes",
+      "production": [
+        {
+          "bucket": "block",
+          "value": "Boîtes d’expédition"
+        },
+        {
+          "bucket": "text",
+          "value": "Boîtes d’expédition"
+        }
+      ],
+      "requested": [
+        {
+          "bucket": "block",
+          "value": "Boîtes d'expédition"
+        },
+        {
+          "bucket": "text",
+          "value": "Boîtes d'expédition"
+        }
+      ],
+      "resolution": "production retained"
+    }
+  ],
+  "it": [
+    {
+      "key": "Mailer boxes",
+      "production": [
+        {
+          "bucket": "block",
+          "value": "Scatole mailer"
+        },
+        {
+          "bucket": "text",
+          "value": "Scatole mailer"
+        }
+      ],
+      "requested": [
+        {
+          "bucket": "block",
+          "value": "Scatole da spedizione"
+        },
+        {
+          "bucket": "text",
+          "value": "Scatole da spedizione"
+        }
+      ],
+      "resolution": "production retained"
+    }
+  ],
+  "ja": [],
+  "ko": [
+    {
+      "key": "Gift boxes",
+      "production": [
+        {
+          "bucket": "block",
+          "value": "기프트 박스"
+        }
+      ],
+      "requested": [
+        {
+          "bucket": "block",
+          "value": "선물 상자"
+        },
+        {
+          "bucket": "text",
+          "value": "선물 상자"
+        }
+      ],
+      "resolution": "production retained"
+    }
+  ],
+  "nl": [
+    {
+      "key": "Samples",
+      "production": [
+        {
+          "bucket": "block",
+          "value": "Monsters"
+        },
+        {
+          "bucket": "text",
+          "value": "Monsters"
+        }
+      ],
+      "requested": [
+        {
+          "bucket": "block",
+          "value": "Stalen"
+        },
+        {
+          "bucket": "text",
+          "value": "Stalen"
+        }
+      ],
+      "resolution": "production retained"
+    }
+  ],
+  "pt": [
+    {
+      "key": "Jewelry boxes",
+      "production": [
+        {
+          "bucket": "block",
+          "value": "Caixas de joias"
+        },
+        {
+          "bucket": "text",
+          "value": "Caixas de joias"
+        }
+      ],
+      "requested": [
+        {
+          "bucket": "block",
+          "value": "Caixas para joias"
+        },
+        {
+          "bucket": "text",
+          "value": "Caixas para joias"
+        }
+      ],
+      "resolution": "production retained"
+    },
+    {
+      "key": "Read the guide →",
+      "production": [
+        {
+          "bucket": "block",
+          "value": "Leia o guia →"
+        }
+      ],
+      "requested": [
+        {
+          "bucket": "block",
+          "value": "Ler o guia →"
+        },
+        {
+          "bucket": "text",
+          "value": "Ler o guia →"
+        }
+      ],
+      "resolution": "production retained"
+    }
+  ],
+  "zh-CN": [
+    {
+      "key": "Jewelry boxes",
+      "production": [
+        {
+          "bucket": "block",
+          "value": "珠宝盒"
+        },
+        {
+          "bucket": "text",
+          "value": "珠宝盒"
+        }
+      ],
+      "requested": [
+        {
+          "bucket": "block",
+          "value": "首饰盒"
+        },
+        {
+          "bucket": "text",
+          "value": "首饰盒"
+        }
+      ],
+      "resolution": "production retained"
+    },
+    {
+      "key": "Gift boxes",
+      "production": [
+        {
+          "bucket": "block",
+          "value": "礼品盒"
+        },
+        {
+          "bucket": "text",
+          "value": "礼品盒"
+        }
+      ],
+      "requested": [
+        {
+          "bucket": "block",
+          "value": "礼盒"
+        },
+        {
+          "bucket": "text",
+          "value": "礼盒"
+        }
+      ],
+      "resolution": "production retained"
+    },
+    {
+      "key": "Mailer boxes",
+      "production": [
+        {
+          "bucket": "block",
+          "value": "邮寄盒"
+        },
+        {
+          "bucket": "text",
+          "value": "邮寄盒"
+        }
+      ],
+      "requested": [
+        {
+          "bucket": "block",
+          "value": "快递盒"
+        },
+        {
+          "bucket": "text",
+          "value": "快递盒"
+        }
+      ],
+      "resolution": "production retained"
+    }
+  ],
+  "zh-TW": [
+    {
+      "key": "Mailer boxes",
+      "production": [
+        {
+          "bucket": "block",
+          "value": "郵寄盒"
+        }
+      ],
+      "requested": [
+        {
+          "bucket": "block",
+          "value": "飛機盒"
+        },
+        {
+          "bucket": "text",
+          "value": "飛機盒"
+        }
+      ],
+      "resolution": "production retained"
+    }
+  ]
+}

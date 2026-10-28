@@ -1,0 +1,46 @@
+{
+  "ar": {
+    "file": "ar-dict.json",
+    "sha256": "04862116d35159db9587cce0e828f3425936abd98a981d79bbd877390a8e9103"
+  },
+  "de": {
+    "file": "de-dict.json",
+    "sha256": "99aea3ca6adcb1289e7b940d46261b7b2eea5d7adef34649ba09c1902a2e5611"
+  },
+  "es": {
+    "file": "es-dict.json",
+    "sha256": "fdb2da9a144c5c523691141622ef2cf0e34a019fc5a3daf2f008645e716350cf"
+  },
+  "fr": {
+    "file": "fr-dict.json",
+    "sha256": "293454bde6a6095b807a57cd2f1fe516650b29c55f933c8507a09f991a0af4cf"
+  },
+  "it": {
+    "file": "it-dict.json",
+    "sha256": "c48696170572f3c28691da757b206feccb3865b64efe2ecefd664b76d99a9eca"
+  },
+  "ja": {
+    "file": "ja-dict.json",
+    "sha256": "7362e91c4bb0a21f549da69bcc1433ea5442ba276323ddac791147eecc4d4058"
+  },
+  "ko": {
+    "file": "ko-dict.json",
+    "sha256": "4f3fe16fd2984c373224910d821fd0982d8b931208880359674b57b0b572bb06"
+  },
+  "nl": {
+    "file": "nl-dict.json",
+    "sha256": "3458d7c1efb7891574abd54b532283a02dfd7254d7cc02f2d7b1183380b5d057"
+  },
+  "pt": {
+    "file": "pt-dict.json",
+    "sha256": "18ea17e24eac64144048c397637b427d6d3931ed6e78748ed394ebb7f71e2955"
+  },
+  "zh-CN": {
+    "file": "zh-CN-dict.json",
+    "sha256": "3592141d100dd62bd50b20b2597f9214438a0de4b97eddca091b5c5ba99a6fda"
+  },
+  "zh-TW": {
+    "file": "zh-TW-dict.json",
+    "sha256": "c33e11a83b8720fe4607f9447e2f6284bfd0e2cc763c22e50ed9b02ff35c62b8"
+  }
+}

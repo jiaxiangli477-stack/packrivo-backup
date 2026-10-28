@@ -1,0 +1,248 @@
+{
+  "From · 500 pcs": [
+    "text",
+    "block"
+  ],
+  "from ${price} / unit": [
+    "text",
+    "block"
+  ],
+  "at 500 pcs · {dimensions} cm": [
+    "text",
+    "block"
+  ],
+  "MOQ 500": [
+    "text",
+    "block"
+  ],
+  "Configure →": [
+    "text",
+    "block"
+  ],
+  "Get a price →": [
+    "text",
+    "block"
+  ],
+  "Custom jewelry boxes, pouches and gift boxes with your logo": [
+    "text",
+    "block",
+    "attr"
+  ],
+  "Jewelry boxes": [
+    "text",
+    "block"
+  ],
+  "Gift boxes": [
+    "text",
+    "block"
+  ],
+  "Mailer boxes": [
+    "text",
+    "block"
+  ],
+  "Custom Drawer Jewelry Boxes": [
+    "text",
+    "block",
+    "attr"
+  ],
+  "Custom Magnetic Jewelry Boxes": [
+    "text",
+    "block",
+    "attr"
+  ],
+  "Custom Jewelry Boxes": [
+    "text",
+    "block",
+    "attr"
+  ],
+  "Custom Window Gift Boxes": [
+    "text",
+    "block",
+    "attr"
+  ],
+  "Custom Mailer Boxes": [
+    "text",
+    "block",
+    "attr"
+  ],
+  "Custom Sheet Labels": [
+    "text",
+    "block",
+    "attr"
+  ],
+  "Setup is itemised": [
+    "text",
+    "block"
+  ],
+  "and waived above {freePrintSetupFrom} printed pieces.": [
+    "text",
+    "block"
+  ],
+  "Freight is separate": [
+    "text",
+    "block"
+  ],
+  "quoted per shipment, never buried in the unit price.": [
+    "text",
+    "block"
+  ],
+  "No tooling surprise": [
+    "text",
+    "block"
+  ],
+  "one-time plate and die cost, shown before you submit.": [
+    "text",
+    "block"
+  ],
+  "Indicative, excludes freight. At 5,000 pieces the unit price is {N}% lower than at 500. Final price confirmed after dieline review.": [
+    "text",
+    "block"
+  ],
+  "Samples": [
+    "text",
+    "block"
+  ],
+  "Hold the board before you approve the board.": [
+    "text",
+    "block"
+  ],
+  "See the structure, board and finish in hand before you commit to a run.": [
+    "text",
+    "block"
+  ],
+  "Ring & necklace boxes / Rigid, magnetic, drawer": [
+    "text",
+    "block"
+  ],
+  "Jewelry pouches / Velvet, cotton, suede": [
+    "text",
+    "block"
+  ],
+  "Gift boxes / Lid-and-base, window": [
+    "text",
+    "block"
+  ],
+  "Mailer boxes / Printed inside and out": [
+    "text",
+    "block"
+  ],
+  "Order a sample": [
+    "text",
+    "block"
+  ],
+  "Ask a question": [
+    "text",
+    "block"
+  ],
+  "Ask a specific question →": [
+    "text",
+    "block"
+  ],
+  "Dielines included": [
+    "text",
+    "block"
+  ],
+  "Live prices in the quote builder": [
+    "text",
+    "block"
+  ],
+  "Search": [
+    "text",
+    "block",
+    "attr"
+  ],
+  "Price: low to high": [
+    "text",
+    "block"
+  ],
+  "Price: high to low": [
+    "text",
+    "block"
+  ],
+  "{N} structures": [
+    "text",
+    "block"
+  ],
+  "{N} structures matching “{q}”": [
+    "text",
+    "block"
+  ],
+  "Nothing matches that yet.": [
+    "text",
+    "block"
+  ],
+  "Describe what you need and we will source it.": [
+    "text",
+    "block"
+  ],
+  "Describe your pack": [
+    "text",
+    "block"
+  ],
+  "Need something not on this page?": [
+    "text",
+    "block"
+  ],
+  "Counter displays, rigid trays, book-style boxes — send a photo of the product and a rough volume, and we will come back with a structure and a price range.": [
+    "text",
+    "block"
+  ],
+  "Send a brief": [
+    "text",
+    "block"
+  ],
+  "Start from a price": [
+    "text",
+    "block"
+  ],
+  "Supplier briefs, material notes and pricing explainers for small brands sourcing custom packaging.": [
+    "text",
+    "block"
+  ],
+  "Featured": [
+    "text",
+    "block"
+  ],
+  "{N} min read": [
+    "text",
+    "block"
+  ],
+  "{N} min": [
+    "text",
+    "block"
+  ],
+  "Read the guide →": [
+    "text",
+    "block"
+  ],
+  "In this guide": [
+    "text",
+    "block"
+  ],
+  "Related structures": [
+    "text",
+    "block"
+  ],
+  "Put it to work on a real pack": [
+    "text",
+    "block"
+  ],
+  "The quote builder applies these numbers to your size and quantity. We confirm the dieline before anything is produced.": [
+    "text",
+    "block"
+  ],
+  "Build a quote": [
+    "text",
+    "block"
+  ],
+  "Supplier product photo, retouched (text and watermarks removed)": [
+    "text",
+    "block"
+  ],
+  "Red drawer jewelry box with ribbon pull and insert": [
+    "attr"
+  ],
+  "Black and white lid-and-base jewelry boxes with inserts": [
+    "attr"
+  ]
+}

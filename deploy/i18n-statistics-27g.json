@@ -1,0 +1,79 @@
+[
+  {
+    "language": "ar",
+    "deltaBucketKeys": 796,
+    "addedBucketKeys": 791,
+    "addedEnglishKeys": 457,
+    "conflictingEnglishKeys": 4
+  },
+  {
+    "language": "de",
+    "deltaBucketKeys": 796,
+    "addedBucketKeys": 787,
+    "addedEnglishKeys": 457,
+    "conflictingEnglishKeys": 2
+  },
+  {
+    "language": "es",
+    "deltaBucketKeys": 796,
+    "addedBucketKeys": 787,
+    "addedEnglishKeys": 457,
+    "conflictingEnglishKeys": 3
+  },
+  {
+    "language": "fr",
+    "deltaBucketKeys": 796,
+    "addedBucketKeys": 787,
+    "addedEnglishKeys": 457,
+    "conflictingEnglishKeys": 1
+  },
+  {
+    "language": "it",
+    "deltaBucketKeys": 796,
+    "addedBucketKeys": 787,
+    "addedEnglishKeys": 457,
+    "conflictingEnglishKeys": 1
+  },
+  {
+    "language": "ja",
+    "deltaBucketKeys": 796,
+    "addedBucketKeys": 791,
+    "addedEnglishKeys": 457,
+    "conflictingEnglishKeys": 0
+  },
+  {
+    "language": "ko",
+    "deltaBucketKeys": 796,
+    "addedBucketKeys": 791,
+    "addedEnglishKeys": 457,
+    "conflictingEnglishKeys": 1
+  },
+  {
+    "language": "nl",
+    "deltaBucketKeys": 796,
+    "addedBucketKeys": 787,
+    "addedEnglishKeys": 457,
+    "conflictingEnglishKeys": 1
+  },
+  {
+    "language": "pt",
+    "deltaBucketKeys": 796,
+    "addedBucketKeys": 787,
+    "addedEnglishKeys": 457,
+    "conflictingEnglishKeys": 2
+  },
+  {
+    "language": "zh-CN",
+    "deltaBucketKeys": 796,
+    "addedBucketKeys": 787,
+    "addedEnglishKeys": 457,
+    "conflictingEnglishKeys": 3
+  },
+  {
+    "language": "zh-TW",
+    "deltaBucketKeys": 796,
+    "addedBucketKeys": 791,
+    "addedEnglishKeys": 457,
+    "conflictingEnglishKeys": 1
+  }
+]
