@@ -10,7 +10,7 @@ $img = get_stylesheet_directory_uri() . '/assets/img';
 $home_specs = [
     ['product-drawer-jewelry-box','Jewelry boxes','Custom Drawer Jewelry Boxes'],
     ['product-magnetic-jewelry-box','Jewelry boxes','Custom Magnetic Jewelry Boxes'],
-    ['product-lid-and-base-jewelry-box','Jewelry boxes','Custom Jewelry Boxes'],
+    ['product-lid-and-base-jewelry-box','Jewelry boxes','Custom Lid-and-Base Jewelry Boxes'],
     ['product-window-lid-rigid-gift-box','Gift boxes','Custom Window Gift Boxes'],
     ['product-corrugated-roll-end-hinged-lid','Mailer boxes','Custom Mailer Boxes'],
     ['product-sheet-labels','Labels','Custom Sheet Labels'],
@@ -62,7 +62,7 @@ $faq = [
         <a class="pk-btn-ghost" href="<?php echo esc_url(home_url('/samples/')); ?>">Order a sample kit</a>
       </div>
       <dl class="pk-stats">
-        <?php if ($home_products) : ?><div><dt>From</dt><dd>$<?php echo esc_html(number_format(min(array_column($home_products,'price')),2)); ?> / unit</dd></div><?php endif; ?>
+        <?php if ($home_products) : ?><div><dt>From · 500 pcs</dt><dd>$<?php echo esc_html(number_format(min(array_column($home_products,'price')),2)); ?> / unit</dd></div><?php endif; ?>
         <div><dt>MOQ</dt><dd>500 / design</dd></div>
         <div><dt>Production</dt><dd>7–30 days</dd></div>
         <div><dt>Sourcing fee</dt><dd>8–15%</dd></div>
@@ -237,7 +237,7 @@ if ($posts) :
 <?php endif; ?>
 
 <section class="pk-section pk-dark pk-samples">
-  <div class="pk-wrap pk-split"><div><p class="pk-eyebrow pk-eyebrow-light">Samples</p><h2 class="pk-h2 pk-on-dark">Hold the board before you approve the board.</h2><p class="pk-lede pk-on-dark-muted">See the structure, board and finish in hand before you commit to a run.</p><a class="pk-btn pk-btn-light" href="<?php echo esc_url(home_url('/samples/')); ?>">Order a sample</a> <a class="pk-more pk-on-dark" href="<?php echo esc_url($contact_url); ?>">Ask a question</a></div><div class="pk-sample-grid"><div>Rigid / Greyboard 2 mm</div><div>Mailer / Kraft E-flute</div><div>Drawer / Rigid board</div><div>Pouch / Fabric</div></div></div>
+  <div class="pk-wrap pk-split"><div><p class="pk-eyebrow pk-eyebrow-light">Samples</p><h2 class="pk-h2 pk-on-dark">Hold the board before you approve the board.</h2><p class="pk-lede pk-on-dark-muted">See the structure, board and finish in hand before you commit to a run.</p><a class="pk-btn pk-btn-light" href="<?php echo esc_url(home_url('/samples/')); ?>">Order a sample</a> <a class="pk-more pk-on-dark" href="<?php echo esc_url($contact_url); ?>">Ask a question</a></div><div class="pk-sample-grid"><div>Ring &amp; necklace boxes / Rigid, magnetic, drawer</div><div>Jewelry pouches / Velvet, cotton, suede</div><div>Gift boxes / Lid-and-base, window</div><div>Mailer boxes / Printed inside and out</div></div></div>
 </section>
 
 <section class="pk-section pk-bordered">
