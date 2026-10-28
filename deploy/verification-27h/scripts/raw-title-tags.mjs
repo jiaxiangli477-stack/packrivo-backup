@@ -1,0 +1,3 @@
+import fs from 'node:fs';import {execFileSync} from 'node:child_process';
+const out='E:/破甲工作区/packrivo-backup/deploy/verification-27h';const entries=JSON.parse(fs.readFileSync(out+'/curl-after.json','utf8')).filter(x=>x.group==='products-i18n');const result=[];
+for(const r of entries){const raw=execFileSync('curl.exe',['-sS','--max-time','30',r.url],{encoding:'utf8',maxBuffer:8*1024*1024});const tags=[...raw.matchAll(/<title\b[^>]*>[^<]*<\/title>/gi)].map(m=>m[0]);console.log(r.url+' count='+tags.length);console.log(tags.join('\n'));if(tags.length!==1)throw new Error('Unexpected raw title count');result.push({url:r.url,tags});}fs.writeFileSync(out+'/curl-i18n-title-tags.json',JSON.stringify(result,null,2)+'\n');

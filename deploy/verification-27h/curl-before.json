@@ -1,0 +1,2012 @@
+[
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/clear-display-box/",
+    "expected": "Custom Clear Display Boxes with Logo | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Clear Display Boxes with Logo | Packrivo",
+      "Custom Clear Display Boxes with Logo | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/gift-bag-tissue-set/",
+    "expected": "Custom Gift Bag and Tissue Set Wholesale | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Gift Bag and Tissue Set Wholesale | Packrivo",
+      "Custom Gift Bag and Tissue Set Wholesale | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/molded-pulp-insert/",
+    "expected": "Custom Molded Pulp Packaging Inserts | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Molded Pulp Packaging Inserts | Packrivo",
+      "Custom Molded Pulp Packaging Inserts | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/paper-mailer-bag/",
+    "expected": "Custom Printed Paper Mailer Bags | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Printed Paper Mailer Bags | Packrivo",
+      "Custom Printed Paper Mailer Bags | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/poly-mailer-bag/",
+    "expected": "Custom Poly Mailer Bags Bulk | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Poly Mailer Bags Bulk | Packrivo",
+      "Custom Poly Mailer Bags Bulk | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-auto-bottom-display-carton/",
+    "expected": "Custom Printed Display Boxes | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Printed Display Boxes | Packrivo",
+      "Custom Printed Display Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-auto-bottom-slotted-outer-carton/",
+    "expected": "Bulk Shipping Boxes with Logo | Packrivo",
+    "status": 200,
+    "titles": [
+      "Bulk Shipping Boxes with Logo | Packrivo",
+      "Bulk Shipping Boxes with Logo | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-auto-lock-bottom-carton/",
+    "expected": "Custom Auto-Lock Bottom Boxes | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Auto-Lock Bottom Boxes | Packrivo",
+      "Custom Auto-Lock Bottom Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-book-style-rigid-presentation-box/",
+    "expected": "Custom Book-Style Rigid Gift Boxes | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Book-Style Rigid Gift Boxes | Packrivo",
+      "Custom Book-Style Rigid Gift Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-bookend-folding-carton/",
+    "expected": "Custom Bookend Folding Cartons | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Bookend Folding Cartons | Packrivo",
+      "Custom Bookend Folding Cartons | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-box-bottom-fabric-tote/",
+    "expected": "Custom Fabric Tote Bags with Logo | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Fabric Tote Bags with Logo | Packrivo",
+      "Custom Fabric Tote Bags with Logo | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-circle-roll-labels/",
+    "expected": "Custom Circle Roll Labels | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Circle Roll Labels | Packrivo",
+      "Custom Circle Roll Labels | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-coated-labels/",
+    "expected": "Custom Coated Labels with Logo | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Coated Labels with Logo | Packrivo",
+      "Custom Coated Labels with Logo | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-collapsible-magnetic-gift-box/",
+    "expected": "Custom Collapsible Magnetic Gift Boxes | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Collapsible Magnetic Gift Boxes | Packrivo",
+      "Custom Collapsible Magnetic Gift Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-corrugated-book-wrap-mailer/",
+    "expected": "Custom Corrugated Book Mailers | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Corrugated Book Mailers | Packrivo",
+      "Custom Corrugated Book Mailers | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-corrugated-bottle-gift-carrier/",
+    "expected": "Custom Bottle Gift Boxes with Handle | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Bottle Gift Boxes with Handle | Packrivo",
+      "Custom Bottle Gift Boxes with Handle | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-corrugated-divider/",
+    "expected": "Custom Corrugated Dividers and Inserts | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Corrugated Dividers and Inserts | Packrivo",
+      "Custom Corrugated Dividers and Inserts | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-corrugated-gusset-folder/",
+    "expected": "Custom Corrugated Gusset Folders | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Corrugated Gusset Folders | Packrivo",
+      "Custom Corrugated Gusset Folders | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-corrugated-inlay/",
+    "expected": "Custom Mailer Box Inserts | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Mailer Box Inserts | Packrivo",
+      "Custom Mailer Box Inserts | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-corrugated-reverse-tuck-pack/",
+    "expected": "Custom Reverse Tuck Boxes | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Reverse Tuck Boxes | Packrivo",
+      "Custom Reverse Tuck Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-corrugated-roll-end-hinged-lid/",
+    "expected": "Custom Hinged Lid Boxes with Logo | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Hinged Lid Boxes with Logo | Packrivo",
+      "Custom Hinged Lid Boxes with Logo | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-corrugated-tuck-top-auto-bottom/",
+    "expected": "Custom Tuck Top Auto Bottom Boxes | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Tuck Top Auto Bottom Boxes | Packrivo",
+      "Custom Tuck Top Auto Bottom Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-corrugated-tuck-top-snap-bottom/",
+    "expected": "Custom Snap Bottom Cartons | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Snap Bottom Cartons | Packrivo",
+      "Custom Snap Bottom Cartons | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-counter-display-carton/",
+    "expected": "Custom Counter Display Boxes | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Counter Display Boxes | Packrivo",
+      "Custom Counter Display Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-cube-carry-carton/",
+    "expected": "Custom Carry Boxes with Handle | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Carry Boxes with Handle | Packrivo",
+      "Custom Carry Boxes with Handle | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-die-cut-handle-paper-bag/",
+    "expected": "Custom Die-Cut Handle Paper Bags | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Die-Cut Handle Paper Bags | Packrivo",
+      "Custom Die-Cut Handle Paper Bags | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-die-cut-insert/",
+    "expected": "Custom Die-Cut Box Inserts | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Die-Cut Box Inserts | Packrivo",
+      "Custom Die-Cut Box Inserts | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-double-wall-frame-tray-lid/",
+    "expected": "Custom Double-Wall Tray and Lid Sets | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Double-Wall Tray and Lid Sets | Packrivo",
+      "Custom Double-Wall Tray and Lid Sets | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-double-wall-frame-tray-sleeve/",
+    "expected": "Custom Tray and Sleeve Boxes | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Tray and Sleeve Boxes | Packrivo",
+      "Custom Tray and Sleeve Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-double-wall-tray-lid/",
+    "expected": "Custom Corrugated Tray Boxes with Lid | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Corrugated Tray Boxes with Lid | Packrivo",
+      "Custom Corrugated Tray Boxes with Lid | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-drawstring-fabric-gift-bag/",
+    "expected": "Custom Drawstring Gift Bags Bulk | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Drawstring Gift Bags Bulk | Packrivo",
+      "Custom Drawstring Gift Bags Bulk | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-euro-tote-paper-carrier/",
+    "expected": "Custom Paper Gift Bags with Logo | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Paper Gift Bags with Logo | Packrivo",
+      "Custom Paper Gift Bags with Logo | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-eva-foam-holder/",
+    "expected": "Custom EVA Foam Inserts | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom EVA Foam Inserts | Packrivo",
+      "Custom EVA Foam Inserts | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-expandable-kraft-parcel-bag/",
+    "expected": "Custom Kraft Parcel Bags Bulk | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Kraft Parcel Bags Bulk | Packrivo",
+      "Custom Kraft Parcel Bags Bulk | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-finished-folding-gift-box/",
+    "expected": "Custom Printed Folding Gift Boxes | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Printed Folding Gift Boxes | Packrivo",
+      "Custom Printed Folding Gift Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-five-panel-corrugated-folder/",
+    "expected": "Custom Five-Panel Corrugated Folders | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Five-Panel Corrugated Folders | Packrivo",
+      "Custom Five-Panel Corrugated Folders | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-five-panel-hanger-carton/",
+    "expected": "Custom Hanger Boxes for Retail | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Hanger Boxes for Retail | Packrivo",
+      "Custom Hanger Boxes for Retail | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-flat-delivery-mailer/",
+    "expected": "Custom Flat-Pack Mailer Boxes | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Flat-Pack Mailer Boxes | Packrivo",
+      "Custom Flat-Pack Mailer Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-flip-out-dispenser-carton/",
+    "expected": "Custom Dispenser Boxes with Logo | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Dispenser Boxes with Logo | Packrivo",
+      "Custom Dispenser Boxes with Logo | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-flocked-foam-holder/",
+    "expected": "Custom Flocked Foam Inserts | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Flocked Foam Inserts | Packrivo",
+      "Custom Flocked Foam Inserts | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-flower-petal-top-gift-carton/",
+    "expected": "Custom Petal Top Gift Boxes | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Petal Top Gift Boxes | Packrivo",
+      "Custom Petal Top Gift Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-fold-over-flap-fabric-pouch/",
+    "expected": "Custom Fabric Pouches with Flap | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Fabric Pouches with Flap | Packrivo",
+      "Custom Fabric Pouches with Flap | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-foldable-lid-base-box/",
+    "expected": "Custom Foldable Lid and Base Boxes | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Foldable Lid and Base Boxes | Packrivo",
+      "Custom Foldable Lid and Base Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-folded-box-liner/",
+    "expected": "Custom Folded Box Liners | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Folded Box Liners | Packrivo",
+      "Custom Folded Box Liners | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-folded-tray-sleeve-box/",
+    "expected": "Custom Folded Tray and Sleeve Boxes | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Folded Tray and Sleeve Boxes | Packrivo",
+      "Custom Folded Tray and Sleeve Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-folding-carton/",
+    "expected": "Custom Folding Cartons Wholesale | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Folding Cartons Wholesale | Packrivo",
+      "Custom Folding Cartons Wholesale | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-folding-gift-box/",
+    "expected": "Custom Folding Gift Boxes with Logo | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Folding Gift Boxes with Logo | Packrivo",
+      "Custom Folding Gift Boxes with Logo | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-four-corner-display-tray/",
+    "expected": "Custom Display Trays for Retail | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Display Trays for Retail | Packrivo",
+      "Custom Display Trays for Retail | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-four-corner-pre-glued-carton/",
+    "expected": "Custom Pre-Glued Boxes Bulk | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Pre-Glued Boxes Bulk | Packrivo",
+      "Custom Pre-Glued Boxes Bulk | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-front-tuck-mailer/",
+    "expected": "Custom Front Tuck Mailer Boxes | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Front Tuck Mailer Boxes | Packrivo",
+      "Custom Front Tuck Mailer Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-full-flap-auto-bottom-carton/",
+    "expected": "Custom Full Flap Auto Bottom Boxes | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Full Flap Auto Bottom Boxes | Packrivo",
+      "Custom Full Flap Auto Bottom Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-full-overlap-seal-end-carton/",
+    "expected": "Custom Seal End Cartons Wholesale | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Seal End Cartons Wholesale | Packrivo",
+      "Custom Seal End Cartons Wholesale | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-full-overlap-slotted-outer-carton/",
+    "expected": "Custom Full Overlap Shipping Boxes | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Full Overlap Shipping Boxes | Packrivo",
+      "Custom Full Overlap Shipping Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-gable-top-carry-carton/",
+    "expected": "Custom Gable Boxes with Handle | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Gable Boxes with Handle | Packrivo",
+      "Custom Gable Boxes with Handle | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-gift-hang-tag/",
+    "expected": "Custom Printed Gift Hang Tags | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Printed Gift Hang Tags | Packrivo",
+      "Custom Printed Gift Hang Tags | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-gusset-folder-carton/",
+    "expected": "Custom Gusset Folder Boxes | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Gusset Folder Boxes | Packrivo",
+      "Custom Gusset Folder Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-hanging-tab-retail-carton/",
+    "expected": "Custom Hanging Retail Boxes | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Hanging Retail Boxes | Packrivo",
+      "Custom Hanging Retail Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-header-card-bag-topper/",
+    "expected": "Custom Header Card Bag Toppers | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Header Card Bag Toppers | Packrivo",
+      "Custom Header Card Bag Toppers | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-hexagonal-folding-carton/",
+    "expected": "Custom Hexagonal Gift Boxes | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Hexagonal Gift Boxes | Packrivo",
+      "Custom Hexagonal Gift Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-hinged-metal-gift-container/",
+    "expected": "Custom Hinged Metal Gift Tins | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Hinged Metal Gift Tins | Packrivo",
+      "Custom Hinged Metal Gift Tins | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-hinged-nonmagnetic-rigid-box/",
+    "expected": "Custom Hinged Rigid Gift Boxes | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Hinged Rigid Gift Boxes | Packrivo",
+      "Custom Hinged Rigid Gift Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-hinged-thermoformed-clamshell/",
+    "expected": "Custom Printed Clamshell Packaging | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Printed Clamshell Packaging | Packrivo",
+      "Custom Printed Clamshell Packaging | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-hook-floor-gift-display/",
+    "expected": "Custom Floor Display Stands | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Floor Display Stands | Packrivo",
+      "Custom Floor Display Stands | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-information-card/",
+    "expected": "Custom Printed Info Cards | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Printed Info Cards | Packrivo",
+      "Custom Printed Info Cards | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-jewelry-mounting-card/",
+    "expected": "Custom Jewelry Display Cards | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Jewelry Display Cards | Packrivo",
+      "Custom Jewelry Display Cards | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-kraft-bubble-parcel-envelope/",
+    "expected": "Custom Kraft Bubble Mailers | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Kraft Bubble Mailers | Packrivo",
+      "Custom Kraft Bubble Mailers | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-latch-metal-gift-container/",
+    "expected": "Custom Latch Metal Gift Boxes | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Latch Metal Gift Boxes | Packrivo",
+      "Custom Latch Metal Gift Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-lightweight-mailer/",
+    "expected": "Custom Lightweight Mailer Boxes | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Lightweight Mailer Boxes | Packrivo",
+      "Custom Lightweight Mailer Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-lock-cap-auto-bottom-carton/",
+    "expected": "Custom Lock Cap Auto Bottom Boxes | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Lock Cap Auto Bottom Boxes | Packrivo",
+      "Custom Lock Cap Auto Bottom Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-mailer-with-insert/",
+    "expected": "Custom Mailer Boxes with Inserts | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Mailer Boxes with Inserts | Packrivo",
+      "Custom Mailer Boxes with Inserts | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-molded-pulp-corner-cradle/",
+    "expected": "Custom Molded Pulp Corner Inserts | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Molded Pulp Corner Inserts | Packrivo",
+      "Custom Molded Pulp Corner Inserts | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-molded-pulp-end-support-pair/",
+    "expected": "Custom Molded Pulp End Caps | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Molded Pulp End Caps | Packrivo",
+      "Custom Molded Pulp End Caps | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-multi-piece-pe-foam-support/",
+    "expected": "Custom PE Foam Packaging Inserts | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom PE Foam Packaging Inserts | Packrivo",
+      "Custom PE Foam Packaging Inserts | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-multi-tier-floor-gift-display/",
+    "expected": "Custom Multi-Tier Display Stands | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Multi-Tier Display Stands | Packrivo",
+      "Custom Multi-Tier Display Stands | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-nest-stack-thermoformed-tray/",
+    "expected": "Custom Nest and Stack Trays | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Nest and Stack Trays | Packrivo",
+      "Custom Nest and Stack Trays | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-paired-corrugated-end-caps/",
+    "expected": "Custom Corrugated End Caps | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Corrugated End Caps | Packrivo",
+      "Custom Corrugated End Caps | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-paper-belly-band/",
+    "expected": "Custom Printed Belly Bands | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Printed Belly Bands | Packrivo",
+      "Custom Printed Belly Bands | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-paper-carton-sealing-tape/",
+    "expected": "Custom Printed Paper Tape | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Printed Paper Tape | Packrivo",
+      "Custom Printed Paper Tape | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-paper-merchandise-sleeve-bag/",
+    "expected": "Custom Flat Paper Merchandise Bags | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Flat Paper Merchandise Bags | Packrivo",
+      "Custom Flat Paper Merchandise Bags | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-paper-padded-parcel-envelope/",
+    "expected": "Custom Padded Paper Mailers | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Padded Paper Mailers | Packrivo",
+      "Custom Padded Paper Mailers | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-paperboard-grid-divider/",
+    "expected": "Custom Grid Dividers for Boxes | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Grid Dividers for Boxes | Packrivo",
+      "Custom Grid Dividers for Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-paperboard-insert/",
+    "expected": "Custom Paperboard Inserts | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Paperboard Inserts | Packrivo",
+      "Custom Paperboard Inserts | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-paperboard-roll-end-dust-flap-carton/",
+    "expected": "Custom Dust Flap Cartons | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Dust Flap Cartons | Packrivo",
+      "Custom Dust Flap Cartons | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-peg-hook-counter-display/",
+    "expected": "Custom Peg Hook Counter Displays | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Peg Hook Counter Displays | Packrivo",
+      "Custom Peg Hook Counter Displays | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-pillow-jewelry-box/",
+    "expected": "Custom Pillow Jewelry Boxes | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Pillow Jewelry Boxes | Packrivo",
+      "Custom Pillow Jewelry Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-pinch-lock-paperboard-tray/",
+    "expected": "Custom Pinch Lock Trays | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Pinch Lock Trays | Packrivo",
+      "Custom Pinch Lock Trays | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-pocket-floor-gift-display/",
+    "expected": "Custom Pocket Display Stands | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Pocket Display Stands | Packrivo",
+      "Custom Pocket Display Stands | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-poly-bubble-parcel-envelope/",
+    "expected": "Custom Poly Bubble Mailers | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Poly Bubble Mailers | Packrivo",
+      "Custom Poly Bubble Mailers | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-polyurethane-foam-holder/",
+    "expected": "Custom PU Foam Inserts | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom PU Foam Inserts | Packrivo",
+      "Custom PU Foam Inserts | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-press-close-metal-gift-container/",
+    "expected": "Custom Press-Close Metal Tins | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Press-Close Metal Tins | Packrivo",
+      "Custom Press-Close Metal Tins | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-printed-mailer/",
+    "expected": "Custom Printed Mailer Boxes | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Printed Mailer Boxes | Packrivo",
+      "Custom Printed Mailer Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-printed-tissue-sheet/",
+    "expected": "Custom Printed Tissue Paper | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Printed Tissue Paper | Packrivo",
+      "Custom Printed Tissue Paper | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-rectangle-roll-labels/",
+    "expected": "Custom Rectangle Roll Labels | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Rectangle Roll Labels | Packrivo",
+      "Custom Rectangle Roll Labels | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-regular-slotted-shipping-carton/",
+    "expected": "Custom Shipping Boxes with Logo | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Shipping Boxes with Logo | Packrivo",
+      "Custom Shipping Boxes with Logo | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-reinforced-paper-sealing-tape/",
+    "expected": "Custom Reinforced Paper Tape | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Reinforced Paper Tape | Packrivo",
+      "Custom Reinforced Paper Tape | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-returnable-paper-parcel-bag/",
+    "expected": "Custom Returnable Parcel Bags | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Returnable Parcel Bags | Packrivo",
+      "Custom Returnable Parcel Bags | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-returnable-poly-parcel-bag/",
+    "expected": "Custom Returnable Poly Mailers | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Returnable Poly Mailers | Packrivo",
+      "Custom Returnable Poly Mailers | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-reverse-tuck-retail-carton/",
+    "expected": "Custom Reverse Tuck Retail Boxes | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Reverse Tuck Retail Boxes | Packrivo",
+      "Custom Reverse Tuck Retail Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-rigid-chipboard-divider/",
+    "expected": "Custom Chipboard Dividers | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Chipboard Dividers | Packrivo",
+      "Custom Chipboard Dividers | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-rigid-paperboard-postal-envelope/",
+    "expected": "Custom Rigid Postal Envelopes | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Rigid Postal Envelopes | Packrivo",
+      "Custom Rigid Postal Envelopes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-round-metal-gift-container/",
+    "expected": "Custom Round Metal Gift Tins | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Round Metal Gift Tins | Packrivo",
+      "Custom Round Metal Gift Tins | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-screw-top-metal-gift-container/",
+    "expected": "Custom Screw-Top Metal Tins | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Screw-Top Metal Tins | Packrivo",
+      "Custom Screw-Top Metal Tins | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-self-locking-corrugated-folder/",
+    "expected": "Custom Self-Locking Mailers | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Self-Locking Mailers | Packrivo",
+      "Custom Self-Locking Mailers | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-sheet-labels/",
+    "expected": "Custom Printed Sheet Labels | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Printed Sheet Labels | Packrivo",
+      "Custom Printed Sheet Labels | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-shelf-counter-display/",
+    "expected": "Custom Tiered Counter Displays | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Tiered Counter Displays | Packrivo",
+      "Custom Tiered Counter Displays | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-shipping-document-window-pouch/",
+    "expected": "Custom Document Window Pouches | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Document Window Pouches | Packrivo",
+      "Custom Document Window Pouches | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-shoulder-neck-rigid-box/",
+    "expected": "Custom Shoulder Neck Rigid Boxes | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Shoulder Neck Rigid Boxes | Packrivo",
+      "Custom Shoulder Neck Rigid Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-side-lock-display-carton/",
+    "expected": "Custom Side Lock Display Boxes | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Side Lock Display Boxes | Packrivo",
+      "Custom Side Lock Display Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-side-lock-hinged-gift-tray/",
+    "expected": "Custom Hinged Gift Trays | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Hinged Gift Trays | Packrivo",
+      "Custom Hinged Gift Trays | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-six-corner-pre-glued-carton/",
+    "expected": "Custom Six-Corner Pre-Glued Boxes | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Six-Corner Pre-Glued Boxes | Packrivo",
+      "Custom Six-Corner Pre-Glued Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-slide-in-card-blister/",
+    "expected": "Custom Slide-In Blister Cards | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Slide-In Blister Cards | Packrivo",
+      "Custom Slide-In Blister Cards | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-snap-bottom-slotted-outer-carton/",
+    "expected": "Custom Snap Bottom Shipping Boxes | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Snap Bottom Shipping Boxes | Packrivo",
+      "Custom Snap Bottom Shipping Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-snap-lock-bottom-carton/",
+    "expected": "Custom Snap Lock Bottom Boxes | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Snap Lock Bottom Boxes | Packrivo",
+      "Custom Snap Lock Bottom Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-sos-paper-gift-bag/",
+    "expected": "Custom SOS Paper Bags Bulk | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom SOS Paper Bags Bulk | Packrivo",
+      "Custom SOS Paper Bags Bulk | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-square-roll-labels/",
+    "expected": "Custom Square Roll Labels | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Square Roll Labels | Packrivo",
+      "Custom Square Roll Labels | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-straight-tuck-retail-carton/",
+    "expected": "Custom Straight Tuck Boxes | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Straight Tuck Boxes | Packrivo",
+      "Custom Straight Tuck Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-tab-lock-roll-end-corrugated-pack/",
+    "expected": "Custom Tab Lock Corrugated Packs | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Tab Lock Corrugated Packs | Packrivo",
+      "Custom Tab Lock Corrugated Packs | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-thermoformed-multi-cavity-tray/",
+    "expected": "Custom Multi-Cavity Trays | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Multi-Cavity Trays | Packrivo",
+      "Custom Multi-Cavity Trays | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-three-flap-lock-corrugated-pack/",
+    "expected": "Custom Three Flap Lock Boxes | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Three Flap Lock Boxes | Packrivo",
+      "Custom Three Flap Lock Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-tray-floor-gift-display/",
+    "expected": "Custom Tray Floor Displays | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Tray Floor Displays | Packrivo",
+      "Custom Tray Floor Displays | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-tuck-end-gift-box/",
+    "expected": "Custom Tuck End Gift Boxes | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Tuck End Gift Boxes | Packrivo",
+      "Custom Tuck End Gift Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-tuck-end-sleeve-carton/",
+    "expected": "Custom Tuck End Sleeve Boxes | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Tuck End Sleeve Boxes | Packrivo",
+      "Custom Tuck End Sleeve Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-two-door-rigid-presentation-box/",
+    "expected": "Custom Two-Door Rigid Boxes | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Two-Door Rigid Boxes | Packrivo",
+      "Custom Two-Door Rigid Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-wide-gusset-paper-carrier/",
+    "expected": "Custom Wide Gusset Paper Bags | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Wide Gusset Paper Bags | Packrivo",
+      "Custom Wide Gusset Paper Bags | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-window-lid-rigid-gift-box/",
+    "expected": "Custom Window Lid Rigid Boxes | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Window Lid Rigid Boxes | Packrivo",
+      "Custom Window Lid Rigid Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-zippered-fabric-gift-pouch/",
+    "expected": "Custom Zippered Fabric Pouches | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Zippered Fabric Pouches | Packrivo",
+      "Custom Zippered Fabric Pouches | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/round-cardboard-tube-box/",
+    "expected": "Custom Round Tube Gift Boxes | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Round Tube Gift Boxes | Packrivo",
+      "Custom Round Tube Gift Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/textile-jewelry-pouch/",
+    "expected": "Custom Jewelry Pouches with Logo | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Jewelry Pouches with Logo | Packrivo",
+      "Custom Jewelry Pouches with Logo | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/thermoformed-insert-tray/",
+    "expected": "Custom Thermoformed Insert Trays | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Thermoformed Insert Trays | Packrivo",
+      "Custom Thermoformed Insert Trays | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/windowed-folding-carton/",
+    "expected": "Custom Windowed Folding Cartons | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Windowed Folding Cartons | Packrivo",
+      "Custom Windowed Folding Cartons | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-drawer-jewelry-box/",
+    "expected": "Custom Drawer Jewelry Boxes with Logo | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Drawer Jewelry Boxes with Logo | Packrivo"
+    ],
+    "titleCount": 1,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 2
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-lid-and-base-jewelry-box/",
+    "expected": "Custom Lid-and-Base Jewelry Boxes | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Lid-and-Base Jewelry Boxes | Packrivo",
+      "Custom Lid-and-Base Jewelry Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-magnetic-jewelry-box/",
+    "expected": "Custom Magnetic Jewelry Boxes with Logo | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Magnetic Jewelry Boxes with Logo | Packrivo",
+      "Custom Magnetic Jewelry Boxes with Logo | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 2
+  },
+  {
+    "group": "products-en",
+    "url": "http://localhost:8081/product-jewelry-box-with-insert/",
+    "expected": "Custom Jewelry Boxes with Fitted Inserts | Packrivo",
+    "status": 200,
+    "titles": [
+      "Custom Jewelry Boxes with Fitted Inserts | Packrivo",
+      "Custom Jewelry Boxes with Fitted Inserts | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-i18n",
+    "url": "http://localhost:8081/de/product-pillow-jewelry-box/",
+    "expected": "Kissenschachteln für Schmuck | Packrivo",
+    "status": 200,
+    "titles": [
+      "Kissenschachteln für Schmuck | Packrivo",
+      "Custom Pillow Jewelry Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-i18n",
+    "url": "http://localhost:8081/ja/product-pillow-jewelry-box/",
+    "expected": "ピローボックス ジュエリー用 | Packrivo",
+    "status": 200,
+    "titles": [
+      "ピローボックス ジュエリー用 | Packrivo",
+      "Custom Pillow Jewelry Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-i18n",
+    "url": "http://localhost:8081/ar/product-pillow-jewelry-box/",
+    "expected": "علب وسادة للمجوهرات | Packrivo",
+    "status": 200,
+    "titles": [
+      "علب وسادة للمجوهرات | Packrivo",
+      "Custom Pillow Jewelry Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-i18n",
+    "url": "http://localhost:8081/de/product-double-wall-tray-lid/",
+    "expected": "Wellpappe-Schalen mit Deckel | Packrivo",
+    "status": 200,
+    "titles": [
+      "Wellpappe-Schalen mit Deckel | Packrivo",
+      "Custom Corrugated Tray Boxes with Lid | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-i18n",
+    "url": "http://localhost:8081/ja/product-double-wall-tray-lid/",
+    "expected": "段ボール トレー箱 蓋付き | Packrivo",
+    "status": 200,
+    "titles": [
+      "段ボール トレー箱 蓋付き | Packrivo",
+      "Custom Corrugated Tray Boxes with Lid | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-i18n",
+    "url": "http://localhost:8081/ar/product-double-wall-tray-lid/",
+    "expected": "صواني مموجة بغطاء | Packrivo",
+    "status": 200,
+    "titles": [
+      "صواني مموجة بغطاء | Packrivo",
+      "Custom Corrugated Tray Boxes with Lid | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-i18n",
+    "url": "http://localhost:8081/de/product-hinged-nonmagnetic-rigid-box/",
+    "expected": "Hartschachteln mit Klappdeckel | Packrivo",
+    "status": 200,
+    "titles": [
+      "Hartschachteln mit Klappdeckel | Packrivo",
+      "Custom Hinged Rigid Gift Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-i18n",
+    "url": "http://localhost:8081/ja/product-hinged-nonmagnetic-rigid-box/",
+    "expected": "オリジナル 開き蓋 貼り箱 マグネットなし | Packrivo",
+    "status": 200,
+    "titles": [
+      "オリジナル 開き蓋 貼り箱 マグネットなし | Packrivo",
+      "Custom Hinged Rigid Gift Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-i18n",
+    "url": "http://localhost:8081/ar/product-hinged-nonmagnetic-rigid-box/",
+    "expected": "علب صلبة بغطاء مفصلي | Packrivo",
+    "status": 200,
+    "titles": [
+      "علب صلبة بغطاء مفصلي | Packrivo",
+      "Custom Hinged Rigid Gift Boxes | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-i18n",
+    "url": "http://localhost:8081/de/molded-pulp-insert/",
+    "expected": "Faserguss-Einlagen | Packrivo",
+    "status": 200,
+    "titles": [
+      "Faserguss-Einlagen | Packrivo",
+      "Custom Molded Pulp Packaging Inserts | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-i18n",
+    "url": "http://localhost:8081/ja/molded-pulp-insert/",
+    "expected": "オリジナル パルプモールド 中仕切り | Packrivo",
+    "status": 200,
+    "titles": [
+      "オリジナル パルプモールド 中仕切り | Packrivo",
+      "Custom Molded Pulp Packaging Inserts | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-i18n",
+    "url": "http://localhost:8081/ar/molded-pulp-insert/",
+    "expected": "حشوات لب مقولب للتغليف | Packrivo",
+    "status": 200,
+    "titles": [
+      "حشوات لب مقولب للتغليف | Packrivo",
+      "Custom Molded Pulp Packaging Inserts | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-i18n",
+    "url": "http://localhost:8081/de/product-hinged-thermoformed-clamshell/",
+    "expected": "Klappverpackungen (Clamshell) bedruckt | Packrivo",
+    "status": 200,
+    "titles": [
+      "Klappverpackungen (Clamshell) bedruckt | Packrivo",
+      "Custom Printed Clamshell Packaging | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-i18n",
+    "url": "http://localhost:8081/ja/product-hinged-thermoformed-clamshell/",
+    "expected": "オリジナル クラムシェル 印刷パッケージ | Packrivo",
+    "status": 200,
+    "titles": [
+      "オリジナル クラムシェル 印刷パッケージ | Packrivo",
+      "Custom Printed Clamshell Packaging | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "products-i18n",
+    "url": "http://localhost:8081/ar/product-hinged-thermoformed-clamshell/",
+    "expected": "عبوات مفصلية (Clamshell) | Packrivo",
+    "status": 200,
+    "titles": [
+      "عبوات مفصلية (Clamshell) | Packrivo",
+      "Custom Printed Clamshell Packaging | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "other",
+    "url": "http://localhost:8081/",
+    "status": 200,
+    "titles": [
+      "Custom Packaging Sourcing for Small Brands | Packrivo",
+      "Custom Packaging Sourcing for Small Brands | Packrivo"
+    ],
+    "titleCount": 2,
+    "metaDescriptionCount": 1,
+    "jsonLdCount": 3
+  },
+  {
+    "group": "other",
+    "url": "http://localhost:8081/products/",
+    "status": 200,
+    "titles": [],
+    "titleCount": 0,
+    "metaDescriptionCount": 0,
+    "jsonLdCount": 0
+  },
+  {
+    "group": "other",
+    "url": "http://localhost:8081/jewelry-boxes/",
+    "status": 200,
+    "titles": [],
+    "titleCount": 0,
+    "metaDescriptionCount": 0,
+    "jsonLdCount": 0
+  },
+  {
+    "group": "other",
+    "url": "http://localhost:8081/blog/",
+    "status": 200,
+    "titles": [
+      "Blog – Packrivo"
+    ],
+    "titleCount": 1,
+    "metaDescriptionCount": 0,
+    "jsonLdCount": 0
+  },
+  {
+    "group": "other",
+    "url": "http://localhost:8081/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "status": 200,
+    "titles": [
+      "Jewelry Pouch or Box: Four Customer Handoff Choices"
+    ],
+    "titleCount": 1,
+    "metaDescriptionCount": 0,
+    "jsonLdCount": 1
+  },
+  {
+    "group": "other",
+    "url": "http://localhost:8081/get-a-quote/",
+    "status": 200,
+    "titles": [
+      "Get a Quote – Packrivo"
+    ],
+    "titleCount": 1,
+    "metaDescriptionCount": 0,
+    "jsonLdCount": 0
+  },
+  {
+    "group": "other",
+    "url": "http://localhost:8081/__27h-missing-page__/",
+    "status": 404,
+    "titles": [
+      "Page not found – Packrivo"
+    ],
+    "titleCount": 1,
+    "metaDescriptionCount": 0,
+    "jsonLdCount": 0
+  }
+]

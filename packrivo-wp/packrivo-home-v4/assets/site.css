@@ -32,14 +32,27 @@
 
 .pk-skip {
   position: absolute;
-  left: -9999px;
   top: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
   background: var(--pk-ink);
   color: var(--pk-paper);
   padding: 10px 16px;
   z-index: 200;
 }
-.pk-skip:focus { left: 12px; top: 12px; }
+.pk-skip:focus {
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  clip-path: none;
+  inset-inline-start: 12px;
+  top: 12px;
+}
 
 .pk-wrap {
   width: 100%;

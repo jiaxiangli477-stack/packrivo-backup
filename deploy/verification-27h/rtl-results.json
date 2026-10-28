@@ -1,0 +1,71 @@
+{
+  "pages": [
+    {
+      "url": "http://localhost:8081/ar/product-pillow-jewelry-box/",
+      "status": 200,
+      "viewport": 375,
+      "scrollWidth": 375,
+      "dir": "rtl",
+      "direction": "rtl"
+    },
+    {
+      "url": "http://localhost:8081/ar/product-double-wall-tray-lid/",
+      "status": 200,
+      "viewport": 375,
+      "scrollWidth": 375,
+      "dir": "rtl",
+      "direction": "rtl"
+    },
+    {
+      "url": "http://localhost:8081/ar/product-hinged-nonmagnetic-rigid-box/",
+      "status": 200,
+      "viewport": 375,
+      "scrollWidth": 375,
+      "dir": "rtl",
+      "direction": "rtl"
+    },
+    {
+      "url": "http://localhost:8081/ar/molded-pulp-insert/",
+      "status": 200,
+      "viewport": 375,
+      "scrollWidth": 375,
+      "dir": "rtl",
+      "direction": "rtl"
+    },
+    {
+      "url": "http://localhost:8081/ar/product-hinged-thermoformed-clamshell/",
+      "status": 200,
+      "viewport": 375,
+      "scrollWidth": 375,
+      "dir": "rtl",
+      "direction": "rtl"
+    },
+    {
+      "url": "http://localhost:8081/ar/",
+      "status": 200,
+      "viewport": 375,
+      "scrollWidth": 375,
+      "dir": "rtl",
+      "direction": "rtl"
+    },
+    {
+      "url": "http://localhost:8081/ar/products/",
+      "status": 200,
+      "viewport": 375,
+      "scrollWidth": 375,
+      "dir": "rtl",
+      "direction": "rtl"
+    }
+  ],
+  "focus": {
+    "active": true,
+    "x": 217.328125,
+    "y": 12,
+    "width": 145.671875,
+    "height": 44.796875,
+    "clip": "auto",
+    "clipPath": "none",
+    "withinViewport": true,
+    "tabs": 1
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "home_status": 200,
+  "child_css": "http://localhost:8081/wp-content/themes/packrivo-home-v4/assets/site.css?ver=4.0.0",
+  "css_status": 200,
+  "child_css_matches_source": true,
+  "header_position": "sticky",
+  "skip_clip_path": "inset(50%)"
+}

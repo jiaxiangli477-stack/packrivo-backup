@@ -1,0 +1,92 @@
+[
+  {
+    "url": "http://localhost:8081/de/product-pillow-jewelry-box/",
+    "tags": [
+      "<title>Kissenschachteln für Schmuck | Packrivo</title>"
+    ]
+  },
+  {
+    "url": "http://localhost:8081/ja/product-pillow-jewelry-box/",
+    "tags": [
+      "<title>ピローボックス ジュエリー用 | Packrivo</title>"
+    ]
+  },
+  {
+    "url": "http://localhost:8081/ar/product-pillow-jewelry-box/",
+    "tags": [
+      "<title>علب وسادة للمجوهرات | Packrivo</title>"
+    ]
+  },
+  {
+    "url": "http://localhost:8081/de/product-double-wall-tray-lid/",
+    "tags": [
+      "<title>Wellpappe-Schalen mit Deckel | Packrivo</title>"
+    ]
+  },
+  {
+    "url": "http://localhost:8081/ja/product-double-wall-tray-lid/",
+    "tags": [
+      "<title>段ボール トレー箱 蓋付き | Packrivo</title>"
+    ]
+  },
+  {
+    "url": "http://localhost:8081/ar/product-double-wall-tray-lid/",
+    "tags": [
+      "<title>صواني مموجة بغطاء | Packrivo</title>"
+    ]
+  },
+  {
+    "url": "http://localhost:8081/de/product-hinged-nonmagnetic-rigid-box/",
+    "tags": [
+      "<title>Hartschachteln mit Klappdeckel | Packrivo</title>"
+    ]
+  },
+  {
+    "url": "http://localhost:8081/ja/product-hinged-nonmagnetic-rigid-box/",
+    "tags": [
+      "<title>オリジナル 開き蓋 貼り箱 マグネットなし | Packrivo</title>"
+    ]
+  },
+  {
+    "url": "http://localhost:8081/ar/product-hinged-nonmagnetic-rigid-box/",
+    "tags": [
+      "<title>علب صلبة بغطاء مفصلي | Packrivo</title>"
+    ]
+  },
+  {
+    "url": "http://localhost:8081/de/molded-pulp-insert/",
+    "tags": [
+      "<title>Faserguss-Einlagen | Packrivo</title>"
+    ]
+  },
+  {
+    "url": "http://localhost:8081/ja/molded-pulp-insert/",
+    "tags": [
+      "<title>オリジナル パルプモールド 中仕切り | Packrivo</title>"
+    ]
+  },
+  {
+    "url": "http://localhost:8081/ar/molded-pulp-insert/",
+    "tags": [
+      "<title>حشوات لب مقولب للتغليف | Packrivo</title>"
+    ]
+  },
+  {
+    "url": "http://localhost:8081/de/product-hinged-thermoformed-clamshell/",
+    "tags": [
+      "<title>Klappverpackungen (Clamshell) bedruckt | Packrivo</title>"
+    ]
+  },
+  {
+    "url": "http://localhost:8081/ja/product-hinged-thermoformed-clamshell/",
+    "tags": [
+      "<title>オリジナル クラムシェル 印刷パッケージ | Packrivo</title>"
+    ]
+  },
+  {
+    "url": "http://localhost:8081/ar/product-hinged-thermoformed-clamshell/",
+    "tags": [
+      "<title>عبوات مفصلية (Clamshell) | Packrivo</title>"
+    ]
+  }
+]

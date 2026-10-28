@@ -1,0 +1,6 @@
+import fs from 'node:fs';import path from 'node:path';import crypto from 'node:crypto';
+const phase=process.argv[2]??'before',out='E:/破甲工作区/packrivo-backup/deploy/verification-27h';
+const roots=['E:/破甲工作区/packrivo-live/themes/packrivo-static-bridge-1.2.38','E:/破甲工作区/packrivo-live/plugins/packrivo-quote','E:/破甲工作区/packrivo-live/plugins/packrivo-product-workspace','E:/破甲工作区/packrivo-live/mu-plugins','E:/破甲工作区/packrivo-backup/deploy/i18n-merged','E:/破甲工作区/packrivo-backup/i18n-delta','E:/破甲工作区/packrivo-backup/dsh-out'];
+const result={};function scan(dir){for(let e of fs.readdirSync(dir,{withFileTypes:true})){let f=path.join(dir,e.name);if(e.isDirectory())scan(f);else if(/\.(php|css|js|json)$/.test(e.name))result[f]=crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex');}}
+for(let r of roots)scan(r);fs.writeFileSync(out+`/protected-${phase}.json`,JSON.stringify(result,null,2)+'\n');
+if(phase==='after'){const before=JSON.parse(fs.readFileSync(out+'/protected-before.json','utf8'));const changed=Object.keys(before).filter(f=>before[f]!==result[f]);console.log('protected_files='+Object.keys(before).length+' changed='+changed.length);for(let f of changed)console.log(f);if(changed.length)process.exitCode=1;}else console.log('protected baseline files='+Object.keys(result).length);
