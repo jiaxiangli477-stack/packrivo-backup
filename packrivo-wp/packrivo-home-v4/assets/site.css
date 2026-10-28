@@ -692,15 +692,17 @@ body .pk-main {
 .pk-sample-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.pk-sample-grid div{border:1px solid #666;padding:20px;color:#fff}.pk-faq details{border-bottom:1px solid #ddd;padding:16px 0}.pk-faq summary{cursor:pointer;font-weight:600}.pk-faq p{margin-top:10px}
 @media(max-width:560px){.pk-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}}
 @media (min-width:901px) and (max-width:1350px){.pk-actions .pk-text-link{display:none}}
-/* 28m s4: long translated CTAs (and fallback font metrics) push the header row past the
+/* 28o: 28n 把 Sample kit 译成各语种后，it/pt/fr/es/nl 的标签比英文长 4–10 px，1351–1660 区间
+   又开始溢出；阈值按实测重设（标签何时开始放得下），其余语种与 <=1350 不动。
+   —— 28m s4: long translated CTAs (and fallback font metrics) push the header row past the
    viewport on desktop for these languages; hide the secondary text-links only in the
    width range where each language's row does not fit. en/ar/ja/ko/zh and <=1350 untouched. */
-@media (min-width:1351px) and (max-width:1500px){html[lang="it"] .pk-actions .pk-text-link{display:none}}
-@media (min-width:1351px) and (max-width:1540px){html[lang="pt"] .pk-actions .pk-text-link{display:none}}
-@media (min-width:1351px) and (max-width:1550px){html[lang="fr"] .pk-actions .pk-text-link{display:none}}
+@media (min-width:1351px) and (max-width:1620px){html[lang="it"] .pk-actions .pk-text-link{display:none}}
+@media (min-width:1351px) and (max-width:1680px){html[lang="pt"] .pk-actions .pk-text-link{display:none}}
+@media (min-width:1351px) and (max-width:1640px){html[lang="fr"] .pk-actions .pk-text-link{display:none}}
 @media (min-width:1351px) and (max-width:1575px){html[lang="de"] .pk-actions .pk-text-link{display:none}}
-@media (min-width:1351px) and (max-width:1595px){html[lang="es"] .pk-actions .pk-text-link{display:none}}
-@media (min-width:1351px) and (max-width:1655px){html[lang="nl"] .pk-actions .pk-text-link{display:none}}
+@media (min-width:1351px) and (max-width:1760px){html[lang="es"] .pk-actions .pk-text-link{display:none}}
+@media (min-width:1351px) and (max-width:1780px){html[lang="nl"] .pk-actions .pk-text-link{display:none}}
 @media (max-width:560px){.pk-actions .pk-cta{display:none}.pk-hd-inner{padding-left:16px;padding-right:16px}}
 .pk-empty{border:1px dashed #999;padding:28px;margin-top:18px}.pk-sort{flex-wrap:wrap;gap:8px}.pk-sort input{min-width:0;max-width:100%}.pk-pager .page-numbers{padding:8px}
 .pk-featured{display:grid;grid-template-columns:1fr 1fr;gap:32px;padding:28px;border:1px solid #ddd;margin:24px 0}.pk-featured img{width:100%;aspect-ratio:16/9;object-fit:cover}.pk-guide{padding:16px;background:#f4f3ef}.pk-journal-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.pk-journal-excerpt{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}@media(max-width:768px){.pk-featured{grid-template-columns:1fr}.pk-journal-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.pk-journal-grid{grid-template-columns:1fr}}
