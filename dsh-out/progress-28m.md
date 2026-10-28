@@ -366,3 +366,16 @@ en/blog=375  ar/blog=375      en/inquiry=375   ar/inquiry=375
 5. `/contact/` 与 `/inquiry/` 标题重复，待站长定。
 6. 英文源串里 `E-flute` / `2 mm` / `dieline` 仍在，待站长定口径。
 7. 页头「Get a Quote」在语种页仍去 `/{lang}/inquiry/`，是否改配置器待定。
+
+## 28n 收尾（2026-10-28）
+
+任务书 `packrivo-v2/docs/DSH-TASK-2026-10-28n.md`，6 项。只在本地，没有部署、没有碰生产站、没有碰任何密码。
+
+- 第 1 项：未提交改动已由 `13c7f1f` 解决，本轮未重做。
+- 第 2 项：`assets/pkq-quote.css` 的 ≤900px 媒体块加 `.pkq-head{padding-inline:20px}`。375 px 实测：en 小标题 x 0→20、说明段 0/375→20/335；ar 小标题右缘 375→355、说明段 20→355；页面 scrollWidth 仍 375。
+- 第 3 项：`pkq-quote.js` 与 `pricing.json` 的三个 label、`packrivo-quote.php:175` 的句子、11 份 `quote-i18n` 四键改完（键名同步改，译文取 28k 已审术语；es/fr/it 冠词已按名词性数修正）。插件目录 `E-flute`/`greyboard 2 mm`/`dieline` 各 0 命中，`cutting template` 13 命中。4 组价格 × 4 语种 = 16 格改前改后完全一致（`verification-28n/price-diff.json`）。
+- 第 4 项：`header.php` 的 `$quote_url` 加语种前缀；`assets/cta-28l.js` 让报价类链接在语种页面去 `/{lang}/get-a-quote/`（含父主题注入的页脚 `.pr-quote-cta`，按类名处理，未改 MU）；11 份主字典补 `Instant quote`。12 前缀 × 2 页 = 24 组审计：可见英文 0、href 不在本语种报价页 0。
+- 第 5 项：README 第 5 步写明「先报价重定向补丁、再 404 viewport 补丁，各自独立回滚」；本轮未应用。
+- 第 6 项：README 末尾新增「上线后再做」，记录语种文章 404 与 `/contact/` 301。
+- 重打包：子主题 38 文件 788,720 B `e7041551…`；插件 19 文件 54,581 B `6c225718…`（`demo/` 不进包）。解压后与工作源逐字节相同。
+- 额外发现（未改）：页头 `Sample kit` 仍无译文，1351 px 以上在语种页面显示英文；不属报价按钮，需站长给口径。

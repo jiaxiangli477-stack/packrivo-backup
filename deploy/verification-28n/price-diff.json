@@ -1,0 +1,161 @@
+{
+ "priceTable": [
+  {
+   "style": "rigid",
+   "lang": "en",
+   "beforeUnit": "$2.83",
+   "afterUnit": "$2.83",
+   "beforeTotal": "$1,417.43",
+   "afterTotal": "$1,417.43",
+   "same": true
+  },
+  {
+   "style": "rigid",
+   "lang": "ar",
+   "beforeUnit": "$2.83",
+   "afterUnit": "$2.83",
+   "beforeTotal": "$1,417.43",
+   "afterTotal": "$1,417.43",
+   "same": true
+  },
+  {
+   "style": "rigid",
+   "lang": "de",
+   "beforeUnit": "$2.83",
+   "afterUnit": "$2.83",
+   "beforeTotal": "$1,417.43",
+   "afterTotal": "$1,417.43",
+   "same": true
+  },
+  {
+   "style": "rigid",
+   "lang": "ja",
+   "beforeUnit": "$2.83",
+   "afterUnit": "$2.83",
+   "beforeTotal": "$1,417.43",
+   "afterTotal": "$1,417.43",
+   "same": true
+  },
+  {
+   "style": "mailer",
+   "lang": "en",
+   "beforeUnit": "$2.48",
+   "afterUnit": "$2.48",
+   "beforeTotal": "$1,239.04",
+   "afterTotal": "$1,239.04",
+   "same": true
+  },
+  {
+   "style": "mailer",
+   "lang": "ar",
+   "beforeUnit": "$2.48",
+   "afterUnit": "$2.48",
+   "beforeTotal": "$1,239.04",
+   "afterTotal": "$1,239.04",
+   "same": true
+  },
+  {
+   "style": "mailer",
+   "lang": "de",
+   "beforeUnit": "$2.48",
+   "afterUnit": "$2.48",
+   "beforeTotal": "$1,239.04",
+   "afterTotal": "$1,239.04",
+   "same": true
+  },
+  {
+   "style": "mailer",
+   "lang": "ja",
+   "beforeUnit": "$2.48",
+   "afterUnit": "$2.48",
+   "beforeTotal": "$1,239.04",
+   "afterTotal": "$1,239.04",
+   "same": true
+  },
+  {
+   "style": "sticker",
+   "lang": "en",
+   "beforeUnit": "$0.96",
+   "afterUnit": "$0.96",
+   "beforeTotal": "$479.63",
+   "afterTotal": "$479.63",
+   "same": true
+  },
+  {
+   "style": "sticker",
+   "lang": "ar",
+   "beforeUnit": "$0.96",
+   "afterUnit": "$0.96",
+   "beforeTotal": "$479.63",
+   "afterTotal": "$479.63",
+   "same": true
+  },
+  {
+   "style": "sticker",
+   "lang": "de",
+   "beforeUnit": "$0.96",
+   "afterUnit": "$0.96",
+   "beforeTotal": "$479.63",
+   "afterTotal": "$479.63",
+   "same": true
+  },
+  {
+   "style": "sticker",
+   "lang": "ja",
+   "beforeUnit": "$0.96",
+   "afterUnit": "$0.96",
+   "beforeTotal": "$479.63",
+   "afterTotal": "$479.63",
+   "same": true
+  },
+  {
+   "style": "shipping",
+   "lang": "en",
+   "beforeUnit": "$2.31",
+   "afterUnit": "$2.31",
+   "beforeTotal": "$1,156.69",
+   "afterTotal": "$1,156.69",
+   "same": true
+  },
+  {
+   "style": "shipping",
+   "lang": "ar",
+   "beforeUnit": "$2.31",
+   "afterUnit": "$2.31",
+   "beforeTotal": "$1,156.69",
+   "afterTotal": "$1,156.69",
+   "same": true
+  },
+  {
+   "style": "shipping",
+   "lang": "de",
+   "beforeUnit": "$2.31",
+   "afterUnit": "$2.31",
+   "beforeTotal": "$1,156.69",
+   "afterTotal": "$1,156.69",
+   "same": true
+  },
+  {
+   "style": "shipping",
+   "lang": "ja",
+   "beforeUnit": "$2.31",
+   "afterUnit": "$2.31",
+   "beforeTotal": "$1,156.69",
+   "afterTotal": "$1,156.69",
+   "same": true
+  }
+ ],
+ "priceSame": true,
+ "matBefore": {
+  "en": "MaterialKraft E-flute",
+  "ar": "المادةكرتون مموج كرافت (قناة E)",
+  "de": "MaterialKraftwellpappe (E-Welle)",
+  "ja": "材質クラフト段ボール（Eフルート）"
+ },
+ "matAfter": {
+  "en": "MaterialKraft corrugated",
+  "ar": "المادةكرتون كرافت مموج",
+  "de": "MaterialKraft-Wellpappe",
+  "ja": "材質クラフト段ボール"
+ }
+}

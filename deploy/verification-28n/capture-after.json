@@ -1,0 +1,896 @@
+{
+ "priceRows": [
+  {
+   "style": "rigid",
+   "lang": "en",
+   "unit": "$2.83",
+   "total": "$1,417.43",
+   "specs": [
+    "StyleRigid box",
+    "Size9.5 × 9.5 × 4 cm",
+    "MaterialRigid greyboard",
+    "PrintFull-colour CMYK",
+    "FinishMatte varnish",
+    "Order total$1,417.43"
+   ]
+  },
+  {
+   "style": "rigid",
+   "lang": "ar",
+   "unit": "$2.83",
+   "total": "$1,417.43",
+   "specs": [
+    "الشكلعلبة صلبة",
+    "المقاس9.5 × 9.5 × 4 cm",
+    "المادةورق مقوّى رمادي صلب",
+    "الطباعةأربعة ألوان CMYK",
+    "التشطيبورنيش مطفي",
+    "إجمالي الطلب$1,417.43"
+   ]
+  },
+  {
+   "style": "rigid",
+   "lang": "de",
+   "unit": "$2.83",
+   "total": "$1,417.43",
+   "specs": [
+    "FormHartschachtel",
+    "Größe9.5 × 9.5 × 4 cm",
+    "MaterialFeste Graupappe",
+    "Druck4-farbig CMYK",
+    "VeredelungMattlack",
+    "Bestellsumme$1,417.43"
+   ]
+  },
+  {
+   "style": "rigid",
+   "lang": "ja",
+   "unit": "$2.83",
+   "total": "$1,417.43",
+   "specs": [
+    "形状貼り箱",
+    "サイズ9.5 × 9.5 × 4 cm",
+    "材質硬質グレー板紙",
+    "印刷4色 CMYK",
+    "加工マットニス",
+    "ご注文合計$1,417.43"
+   ]
+  },
+  {
+   "style": "mailer",
+   "lang": "en",
+   "unit": "$2.48",
+   "total": "$1,239.04",
+   "specs": [
+    "StyleMailer box",
+    "Size30 × 22 × 12 cm",
+    "MaterialKraft corrugated",
+    "PrintFull-colour CMYK",
+    "FinishMatte varnish",
+    "Order total$1,239.04"
+   ]
+  },
+  {
+   "style": "mailer",
+   "lang": "ar",
+   "unit": "$2.48",
+   "total": "$1,239.04",
+   "specs": [
+    "الشكلعلبة شحن",
+    "المقاس30 × 22 × 12 cm",
+    "المادةكرتون كرافت مموج",
+    "الطباعةأربعة ألوان CMYK",
+    "التشطيبورنيش مطفي",
+    "إجمالي الطلب$1,239.04"
+   ]
+  },
+  {
+   "style": "mailer",
+   "lang": "de",
+   "unit": "$2.48",
+   "total": "$1,239.04",
+   "specs": [
+    "FormVersandschachtel",
+    "Größe30 × 22 × 12 cm",
+    "MaterialKraft-Wellpappe",
+    "Druck4-farbig CMYK",
+    "VeredelungMattlack",
+    "Bestellsumme$1,239.04"
+   ]
+  },
+  {
+   "style": "mailer",
+   "lang": "ja",
+   "unit": "$2.48",
+   "total": "$1,239.04",
+   "specs": [
+    "形状宅配ボックス",
+    "サイズ30 × 22 × 12 cm",
+    "材質クラフト段ボール",
+    "印刷4色 CMYK",
+    "加工マットニス",
+    "ご注文合計$1,239.04"
+   ]
+  },
+  {
+   "style": "sticker",
+   "lang": "en",
+   "unit": "$0.96",
+   "total": "$479.63",
+   "specs": [
+    "StyleSticker sheet",
+    "Size8 × 8 × 0.1 cm",
+    "MaterialWhite corrugated",
+    "PrintFull-colour CMYK",
+    "FinishMatte varnish",
+    "Order total$479.63"
+   ]
+  },
+  {
+   "style": "sticker",
+   "lang": "ar",
+   "unit": "$0.96",
+   "total": "$479.63",
+   "specs": [
+    "الشكلورقة ملصقات",
+    "المقاس8 × 8 × 0.1 cm",
+    "المادةكرتون مموج أبيض",
+    "الطباعةأربعة ألوان CMYK",
+    "التشطيبورنيش مطفي",
+    "إجمالي الطلب$479.63"
+   ]
+  },
+  {
+   "style": "sticker",
+   "lang": "de",
+   "unit": "$0.96",
+   "total": "$479.63",
+   "specs": [
+    "FormStickerbogen",
+    "Größe8 × 8 × 0.1 cm",
+    "MaterialWeiße Wellpappe",
+    "Druck4-farbig CMYK",
+    "VeredelungMattlack",
+    "Bestellsumme$479.63"
+   ]
+  },
+  {
+   "style": "sticker",
+   "lang": "ja",
+   "unit": "$0.96",
+   "total": "$479.63",
+   "specs": [
+    "形状シールシート",
+    "サイズ8 × 8 × 0.1 cm",
+    "材質白い段ボール",
+    "印刷4色 CMYK",
+    "加工マットニス",
+    "ご注文合計$479.63"
+   ]
+  },
+  {
+   "style": "shipping",
+   "lang": "en",
+   "unit": "$2.31",
+   "total": "$1,156.69",
+   "specs": [
+    "StyleShipping box",
+    "Size30 × 25 × 20 cm",
+    "MaterialKraft corrugated",
+    "PrintFull-colour CMYK",
+    "FinishMatte varnish",
+    "Order total$1,156.69"
+   ]
+  },
+  {
+   "style": "shipping",
+   "lang": "ar",
+   "unit": "$2.31",
+   "total": "$1,156.69",
+   "specs": [
+    "الشكلصندوق شحن",
+    "المقاس30 × 25 × 20 cm",
+    "المادةكرتون كرافت مموج",
+    "الطباعةأربعة ألوان CMYK",
+    "التشطيبورنيش مطفي",
+    "إجمالي الطلب$1,156.69"
+   ]
+  },
+  {
+   "style": "shipping",
+   "lang": "de",
+   "unit": "$2.31",
+   "total": "$1,156.69",
+   "specs": [
+    "FormVersandkarton",
+    "Größe30 × 25 × 20 cm",
+    "MaterialKraft-Wellpappe",
+    "Druck4-farbig CMYK",
+    "VeredelungMattlack",
+    "Bestellsumme$1,156.69"
+   ]
+  },
+  {
+   "style": "shipping",
+   "lang": "ja",
+   "unit": "$2.31",
+   "total": "$1,156.69",
+   "specs": [
+    "形状出荷箱",
+    "サイズ30 × 25 × 20 cm",
+    "材質クラフト段ボール",
+    "印刷4色 CMYK",
+    "加工マットニス",
+    "ご注文合計$1,156.69"
+   ]
+  }
+ ],
+ "buttonRows": [
+  {
+   "lang": "en",
+   "page": "home",
+   "links": [
+    {
+     "text": "Get a quote",
+     "href": "/get-a-quote/",
+     "cls": "",
+     "visible": false
+    },
+    {
+     "text": "Instant quote",
+     "href": "/get-a-quote/",
+     "cls": "pk-text-link",
+     "visible": false
+    },
+    {
+     "text": "Build a quote",
+     "href": "/get-a-quote/",
+     "cls": "pk-cta",
+     "visible": false
+    },
+    {
+     "text": "Build a quote →",
+     "href": "/get-a-quote/",
+     "cls": "pk-btn",
+     "visible": true
+    },
+    {
+     "text": "Configure →",
+     "href": "/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+     "cls": "",
+     "visible": true
+    },
+    {
+     "text": "Configure →",
+     "href": "/get-a-quote/?style=rigid&qty=500&product=product-lid-and-base-jewelry-box",
+     "cls": "",
+     "visible": true
+    },
+    {
+     "text": "Configure →",
+     "href": "/get-a-quote/?style=rigid&qty=500&product=product-jewelry-box-with-insert",
+     "cls": "",
+     "visible": true
+    },
+    {
+     "text": "Configure →",
+     "href": "/get-a-quote/?style=rigid&qty=500&product=product-window-lid-rigid-gift-box",
+     "cls": "",
+     "visible": true
+    },
+    {
+     "text": "Configure →",
+     "href": "/get-a-quote/?style=rigid&qty=500&product=product-hinged-nonmagnetic-rigid-box",
+     "cls": "",
+     "visible": true
+    },
+    {
+     "text": "Configure →",
+     "href": "/get-a-quote/?style=mailer&qty=500&product=product-corrugated-roll-end-hinged-lid",
+     "cls": "",
+     "visible": true
+    },
+    {
+     "text": "Configure →",
+     "href": "/get-a-quote/?style=bag&qty=500&product=product-euro-tote-paper-carrier",
+     "cls": "",
+     "visible": true
+    },
+    {
+     "text": "Configure →",
+     "href": "/get-a-quote/?style=bag&qty=500&product=product-sos-paper-gift-bag",
+     "cls": "",
+     "visible": true
+    },
+    {
+     "text": "Open the quote builder",
+     "href": "/get-a-quote/",
+     "cls": "pk-btn",
+     "visible": true
+    },
+    {
+     "text": "Ask a question",
+     "href": "/get-a-quote/",
+     "cls": "pk-more pk-on-dark",
+     "visible": true
+    },
+    {
+     "text": "Ask a specific question →",
+     "href": "/get-a-quote/",
+     "cls": "pk-more",
+     "visible": true
+    },
+    {
+     "text": "Get a Quote",
+     "href": "/get-a-quote/",
+     "cls": "pr-quote-cta",
+     "visible": true
+    }
+   ]
+  },
+  {
+   "lang": "en",
+   "page": "product",
+   "links": [
+    {
+     "text": "Get a quote",
+     "href": "/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+     "cls": "",
+     "visible": false
+    },
+    {
+     "text": "Instant quote",
+     "href": "/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+     "cls": "pk-text-link",
+     "visible": false
+    },
+    {
+     "text": "Build a quote",
+     "href": "/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+     "cls": "pk-cta",
+     "visible": false
+    },
+    {
+     "text": "Get a Quote",
+     "href": "/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+     "cls": "button pkpw-cta",
+     "visible": true
+    },
+    {
+     "text": "Get a quote · MOQ 500",
+     "href": "/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+     "cls": "pr-sticky-main",
+     "visible": true
+    }
+   ]
+  },
+  {
+   "lang": "ar",
+   "page": "home",
+   "links": [
+    {
+     "text": "اطلب عرض سعر",
+     "href": "/ar/get-a-quote/",
+     "cls": "",
+     "visible": false
+    },
+    {
+     "text": "عرض سعر فوري",
+     "href": "/ar/get-a-quote/",
+     "cls": "pk-text-link",
+     "visible": false
+    },
+    {
+     "text": "أنشئ عرض سعر",
+     "href": "/ar/get-a-quote/",
+     "cls": "pk-cta",
+     "visible": false
+    },
+    {
+     "text": "أنشئ عرض سعر →",
+     "href": "/ar/get-a-quote/",
+     "cls": "pk-btn",
+     "visible": true
+    },
+    {
+     "text": "اختر المواصفات →",
+     "href": "/ar/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+     "cls": "",
+     "visible": true
+    },
+    {
+     "text": "اختر المواصفات →",
+     "href": "/ar/get-a-quote/?style=rigid&qty=500&product=product-lid-and-base-jewelry-box",
+     "cls": "",
+     "visible": true
+    },
+    {
+     "text": "اختر المواصفات →",
+     "href": "/ar/get-a-quote/?style=rigid&qty=500&product=product-jewelry-box-with-insert",
+     "cls": "",
+     "visible": true
+    },
+    {
+     "text": "الحد الأدنى للطلب 500 قطعة صناديق هداياعلب هدايا",
+     "href": "http://localhost:8081/product-window-lid-rigid-gift-box/",
+     "cls": "pk-product-card-main",
+     "visible": true
+    },
+    {
+     "text": "اختر المواصفات →",
+     "href": "/ar/get-a-quote/?style=rigid&qty=500&product=product-window-lid-rigid-gift-box",
+     "cls": "",
+     "visible": true
+    },
+    {
+     "text": "الحد الأدنى للطلب 500 قطعة صناديق هداياعلب صلبة ",
+     "href": "http://localhost:8081/product-hinged-nonmagnetic-rigid-box/",
+     "cls": "pk-product-card-main",
+     "visible": true
+    },
+    {
+     "text": "اختر المواصفات →",
+     "href": "/ar/get-a-quote/?style=rigid&qty=500&product=product-hinged-nonmagnetic-rigid-box",
+     "cls": "",
+     "visible": true
+    },
+    {
+     "text": "الحد الأدنى للطلب 500 قطعة صناديق بريديةعلب بغطا",
+     "href": "http://localhost:8081/product-corrugated-roll-end-hinged-lid/",
+     "cls": "pk-product-card-main",
+     "visible": true
+    },
+    {
+     "text": "اختر المواصفات →",
+     "href": "/ar/get-a-quote/?style=mailer&qty=500&product=product-corrugated-roll-end-hinged-lid",
+     "cls": "",
+     "visible": true
+    },
+    {
+     "text": "الحد الأدنى للطلب 500 قطعة Paper bagsأكياس هدايا",
+     "href": "http://localhost:8081/product-euro-tote-paper-carrier/",
+     "cls": "pk-product-card-main",
+     "visible": true
+    },
+    {
+     "text": "اختر المواصفات →",
+     "href": "/ar/get-a-quote/?style=bag&qty=500&product=product-euro-tote-paper-carrier",
+     "cls": "",
+     "visible": true
+    },
+    {
+     "text": "الحد الأدنى للطلب 500 قطعة Paper bagsأكياس ورقية",
+     "href": "http://localhost:8081/product-sos-paper-gift-bag/",
+     "cls": "pk-product-card-main",
+     "visible": true
+    },
+    {
+     "text": "اختر المواصفات →",
+     "href": "/ar/get-a-quote/?style=bag&qty=500&product=product-sos-paper-gift-bag",
+     "cls": "",
+     "visible": true
+    },
+    {
+     "text": "افتح أداة إعداد عرض السعر",
+     "href": "/ar/get-a-quote/",
+     "cls": "pk-btn",
+     "visible": true
+    },
+    {
+     "text": "اسأل عن تفصيل",
+     "href": "/ar/get-a-quote/",
+     "cls": "pk-more pk-on-dark",
+     "visible": true
+    },
+    {
+     "text": "اسأل سؤالًا محددًا →",
+     "href": "/ar/get-a-quote/",
+     "cls": "pk-more",
+     "visible": true
+    },
+    {
+     "text": "احصل على عرض سعر",
+     "href": "/ar/get-a-quote/",
+     "cls": "pr-quote-cta",
+     "visible": true
+    }
+   ]
+  },
+  {
+   "lang": "ar",
+   "page": "product",
+   "links": [
+    {
+     "text": "اطلب عرض سعر",
+     "href": "/ar/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+     "cls": "",
+     "visible": false
+    },
+    {
+     "text": "عرض سعر فوري",
+     "href": "/ar/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+     "cls": "pk-text-link",
+     "visible": false
+    },
+    {
+     "text": "أنشئ عرض سعر",
+     "href": "/ar/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+     "cls": "pk-cta",
+     "visible": false
+    },
+    {
+     "text": "احصل على عرض سعر",
+     "href": "/ar/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+     "cls": "button pkpw-cta",
+     "visible": true
+    },
+    {
+     "text": "اطلب عرض سعر · الحد الأدنى 500",
+     "href": "/ar/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+     "cls": "pr-sticky-main",
+     "visible": true
+    }
+   ]
+  },
+  {
+   "lang": "de",
+   "page": "home",
+   "links": [
+    {
+     "text": "Angebot einholen",
+     "href": "/de/get-a-quote/",
+     "cls": "",
+     "visible": false
+    },
+    {
+     "text": "Sofortangebot",
+     "href": "/de/get-a-quote/",
+     "cls": "pk-text-link",
+     "visible": false
+    },
+    {
+     "text": "Angebot erstellen",
+     "href": "/de/get-a-quote/",
+     "cls": "pk-cta",
+     "visible": false
+    },
+    {
+     "text": "Angebot erstellen →",
+     "href": "/de/get-a-quote/",
+     "cls": "pk-btn",
+     "visible": true
+    },
+    {
+     "text": "Konfigurieren →",
+     "href": "/de/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+     "cls": "",
+     "visible": true
+    },
+    {
+     "text": "Konfigurieren →",
+     "href": "/de/get-a-quote/?style=rigid&qty=500&product=product-lid-and-base-jewelry-box",
+     "cls": "",
+     "visible": true
+    },
+    {
+     "text": "Konfigurieren →",
+     "href": "/de/get-a-quote/?style=rigid&qty=500&product=product-jewelry-box-with-insert",
+     "cls": "",
+     "visible": true
+    },
+    {
+     "text": "Konfigurieren →",
+     "href": "/de/get-a-quote/?style=rigid&qty=500&product=product-window-lid-rigid-gift-box",
+     "cls": "",
+     "visible": true
+    },
+    {
+     "text": "Konfigurieren →",
+     "href": "/de/get-a-quote/?style=rigid&qty=500&product=product-hinged-nonmagnetic-rigid-box",
+     "cls": "",
+     "visible": true
+    },
+    {
+     "text": "Konfigurieren →",
+     "href": "/de/get-a-quote/?style=mailer&qty=500&product=product-corrugated-roll-end-hinged-lid",
+     "cls": "",
+     "visible": true
+    },
+    {
+     "text": "Konfigurieren →",
+     "href": "/de/get-a-quote/?style=bag&qty=500&product=product-euro-tote-paper-carrier",
+     "cls": "",
+     "visible": true
+    },
+    {
+     "text": "Konfigurieren →",
+     "href": "/de/get-a-quote/?style=bag&qty=500&product=product-sos-paper-gift-bag",
+     "cls": "",
+     "visible": true
+    },
+    {
+     "text": "Angebotsrechner öffnen",
+     "href": "/de/get-a-quote/",
+     "cls": "pk-btn",
+     "visible": true
+    },
+    {
+     "text": "Frage stellen",
+     "href": "/de/get-a-quote/",
+     "cls": "pk-more pk-on-dark",
+     "visible": true
+    },
+    {
+     "text": "Konkrete Frage stellen →",
+     "href": "/de/get-a-quote/",
+     "cls": "pk-more",
+     "visible": true
+    },
+    {
+     "text": "Angebot anfordern",
+     "href": "/de/get-a-quote/",
+     "cls": "pr-quote-cta",
+     "visible": true
+    }
+   ]
+  },
+  {
+   "lang": "de",
+   "page": "product",
+   "links": [
+    {
+     "text": "Angebot einholen",
+     "href": "/de/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+     "cls": "",
+     "visible": false
+    },
+    {
+     "text": "Sofortangebot",
+     "href": "/de/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+     "cls": "pk-text-link",
+     "visible": false
+    },
+    {
+     "text": "Angebot erstellen",
+     "href": "/de/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+     "cls": "pk-cta",
+     "visible": false
+    },
+    {
+     "text": "Angebot anfordern",
+     "href": "/de/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+     "cls": "button pkpw-cta",
+     "visible": true
+    },
+    {
+     "text": "Angebot anfragen · Mindestmenge 500",
+     "href": "/de/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+     "cls": "pr-sticky-main",
+     "visible": true
+    }
+   ]
+  },
+  {
+   "lang": "ja",
+   "page": "home",
+   "links": [
+    {
+     "text": "見積もりを取る",
+     "href": "/ja/get-a-quote/",
+     "cls": "",
+     "visible": false
+    },
+    {
+     "text": "すぐに見積もり",
+     "href": "/ja/get-a-quote/",
+     "cls": "pk-text-link",
+     "visible": false
+    },
+    {
+     "text": "見積もりを作成",
+     "href": "/ja/get-a-quote/",
+     "cls": "pk-cta",
+     "visible": false
+    },
+    {
+     "text": "見積もりを作成 →",
+     "href": "/ja/get-a-quote/",
+     "cls": "pk-btn",
+     "visible": true
+    },
+    {
+     "text": "仕様を選ぶ →",
+     "href": "/ja/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+     "cls": "",
+     "visible": true
+    },
+    {
+     "text": "仕様を選ぶ →",
+     "href": "/ja/get-a-quote/?style=rigid&qty=500&product=product-lid-and-base-jewelry-box",
+     "cls": "",
+     "visible": true
+    },
+    {
+     "text": "仕様を選ぶ →",
+     "href": "/ja/get-a-quote/?style=rigid&qty=500&product=product-jewelry-box-with-insert",
+     "cls": "",
+     "visible": true
+    },
+    {
+     "text": "最小ロット 500個 ギフトボックスオリジナル 天面窓 貼り箱蓋に窓が付いた貼りギフトボックス。",
+     "href": "http://localhost:8081/product-window-lid-rigid-gift-box/",
+     "cls": "pk-product-card-main",
+     "visible": true
+    },
+    {
+     "text": "仕様を選ぶ →",
+     "href": "/ja/get-a-quote/?style=rigid&qty=500&product=product-window-lid-rigid-gift-box",
+     "cls": "",
+     "visible": true
+    },
+    {
+     "text": "最小ロット 500個 ギフトボックスオリジナル 開き蓋 貼り箱 マグネットなしマグネットを使わな",
+     "href": "http://localhost:8081/product-hinged-nonmagnetic-rigid-box/",
+     "cls": "pk-product-card-main",
+     "visible": true
+    },
+    {
+     "text": "仕様を選ぶ →",
+     "href": "/ja/get-a-quote/?style=rigid&qty=500&product=product-hinged-nonmagnetic-rigid-box",
+     "cls": "",
+     "visible": true
+    },
+    {
+     "text": "最小ロット 500個 メーラーボックスオリジナル 開き蓋 段ボール箱 名入れ重量物に向く巻き込み",
+     "href": "http://localhost:8081/product-corrugated-roll-end-hinged-lid/",
+     "cls": "pk-product-card-main",
+     "visible": true
+    },
+    {
+     "text": "仕様を選ぶ →",
+     "href": "/ja/get-a-quote/?style=mailer&qty=500&product=product-corrugated-roll-end-hinged-lid",
+     "cls": "",
+     "visible": true
+    },
+    {
+     "text": "最小ロット 500個 Paper bagsオリジナル 手提げ紙袋 名入れ折り返し取っ手付きの手提",
+     "href": "http://localhost:8081/product-euro-tote-paper-carrier/",
+     "cls": "pk-product-card-main",
+     "visible": true
+    },
+    {
+     "text": "仕様を選ぶ →",
+     "href": "/ja/get-a-quote/?style=bag&qty=500&product=product-euro-tote-paper-carrier",
+     "cls": "",
+     "visible": true
+    },
+    {
+     "text": "最小ロット 500個 Paper bagsオリジナル SOS 紙袋 ロット対応底が平らなSOS式",
+     "href": "http://localhost:8081/product-sos-paper-gift-bag/",
+     "cls": "pk-product-card-main",
+     "visible": true
+    },
+    {
+     "text": "仕様を選ぶ →",
+     "href": "/ja/get-a-quote/?style=bag&qty=500&product=product-sos-paper-gift-bag",
+     "cls": "",
+     "visible": true
+    },
+    {
+     "text": "見積もり作成ツールを開く",
+     "href": "/ja/get-a-quote/",
+     "cls": "pk-btn",
+     "visible": true
+    },
+    {
+     "text": "質問する",
+     "href": "/ja/get-a-quote/",
+     "cls": "pk-more pk-on-dark",
+     "visible": true
+    },
+    {
+     "text": "具体的に質問する →",
+     "href": "/ja/get-a-quote/",
+     "cls": "pk-more",
+     "visible": true
+    },
+    {
+     "text": "見積を取得",
+     "href": "/ja/get-a-quote/",
+     "cls": "pr-quote-cta",
+     "visible": true
+    }
+   ]
+  },
+  {
+   "lang": "ja",
+   "page": "product",
+   "links": [
+    {
+     "text": "見積もりを取る",
+     "href": "/ja/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+     "cls": "",
+     "visible": false
+    },
+    {
+     "text": "すぐに見積もり",
+     "href": "/ja/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+     "cls": "pk-text-link",
+     "visible": false
+    },
+    {
+     "text": "見積もりを作成",
+     "href": "/ja/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+     "cls": "pk-cta",
+     "visible": false
+    },
+    {
+     "text": "見積を取得",
+     "href": "/ja/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+     "cls": "button pkpw-cta",
+     "visible": true
+    },
+    {
+     "text": "見積もりを依頼 · 最低注文数500個",
+     "href": "/ja/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box",
+     "cls": "pr-sticky-main",
+     "visible": true
+    }
+   ]
+  }
+ ],
+ "head": {
+  "en": {
+   "head": {
+    "sel": ".pkq-head",
+    "x": 0,
+    "right": 375,
+    "w": 375,
+    "padInline": "20px/20px"
+   },
+   "eyebrow": {
+    "sel": ".pkq-eyebrow",
+    "x": 20,
+    "right": 138,
+    "w": 118,
+    "padInline": "0px/0px"
+   },
+   "h1": null,
+   "sub": {
+    "sel": ".pkq-sub",
+    "x": 20,
+    "right": 355,
+    "w": 335,
+    "padInline": "0px/0px"
+   },
+   "dir": "ltr",
+   "scrollWidth": 375
+  },
+  "ar": {
+   "head": {
+    "sel": ".pkq-head",
+    "x": 0,
+    "right": 375,
+    "w": 375,
+    "padInline": "20px/20px"
+   },
+   "eyebrow": {
+    "sel": ".pkq-eyebrow",
+    "x": 246,
+    "right": 355,
+    "w": 109,
+    "padInline": "0px/0px"
+   },
+   "h1": null,
+   "sub": {
+    "sel": ".pkq-sub",
+    "x": 20,
+    "right": 355,
+    "w": 335,
+    "padInline": "0px/0px"
+   },
+   "dir": "rtl",
+   "scrollWidth": 375
+  }
+ }
+}

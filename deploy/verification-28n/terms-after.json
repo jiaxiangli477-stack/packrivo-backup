@@ -1,0 +1,100 @@
+[
+ {
+  "lang": "en",
+  "sub": "Five steps. Live pricing. An engineer confirms the cutting template before anything is cut.",
+  "eyebrow": "Instant quote",
+  "chips": [],
+  "materialInSummary": [
+   "StyleRigid box",
+   "Size9.5 × 9.5 × 4 cm",
+   "MaterialRigid greyboard",
+   "PrintFull-colour CMYK",
+   "FinishMatte varnish",
+   "Order total$1,417.43"
+  ]
+ },
+ {
+  "lang": "ar",
+  "sub": "خمس خطوات. أسعار مباشرة. يتحقق مهندس من مخطط قص قبل بدء أي تقطيع.",
+  "eyebrow": "عرض سعر فوري",
+  "chips": [],
+  "materialInSummary": [
+   "الشكلعلبة صلبة",
+   "المقاس9.5 × 9.5 × 4 cm",
+   "المادةورق مقوّى رمادي صلب",
+   "الطباعةأربعة ألوان CMYK",
+   "التشطيبورنيش مطفي",
+   "إجمالي الطلب$1,417.43"
+  ]
+ },
+ {
+  "lang": "de",
+  "sub": "Fünf Schritte. Live-Preise. Ein Techniker prüft die Stanzvorlage, bevor geschnitten wird.",
+  "eyebrow": "Sofortangebot",
+  "chips": [],
+  "materialInSummary": [
+   "FormHartschachtel",
+   "Größe9.5 × 9.5 × 4 cm",
+   "MaterialFeste Graupappe",
+   "Druck4-farbig CMYK",
+   "VeredelungMattlack",
+   "Bestellsumme$1,417.43"
+  ]
+ },
+ {
+  "lang": "ja",
+  "sub": "5ステップ。価格はリアルタイム。切断前に技術者がカット用テンプレートを確認します。",
+  "eyebrow": "すぐに見積もり",
+  "chips": [],
+  "materialInSummary": [
+   "形状貼り箱",
+   "サイズ9.5 × 9.5 × 4 cm",
+   "材質硬質グレー板紙",
+   "印刷4色 CMYK",
+   "加工マットニス",
+   "ご注文合計$1,417.43"
+  ]
+ },
+ {
+  "lang": "zh-CN",
+  "sub": "五步完成。价格实时计算。开切之前由工程师确认刀模图。",
+  "eyebrow": "即时报价",
+  "chips": [],
+  "materialInSummary": [
+   "盒型精装盒",
+   "尺寸9.5 × 9.5 × 4 cm",
+   "材质硬质灰板",
+   "印刷四色 CMYK",
+   "表面处理哑光油",
+   "订单合计$1,417.43"
+  ]
+ },
+ {
+  "lang": "fr",
+  "sub": "Cinq étapes. Tarifs en direct. Un technicien valide le gabarit de découpe avant toute production.",
+  "eyebrow": "Devis immédiat",
+  "chips": [],
+  "materialInSummary": [
+   "TypeBoîte rigide",
+   "Dimensions9.5 × 9.5 × 4 cm",
+   "MatièreCarton gris rigide",
+   "ImpressionQuadrichromie CMYK",
+   "FinitionVernis mat",
+   "Total de la commande$1,417.43"
+  ]
+ },
+ {
+  "lang": "it",
+  "sub": "Cinque passaggi. Prezzi in tempo reale. Un tecnico conferma il tracciato di fustella prima di qualsiasi taglio.",
+  "eyebrow": "Preventivo immediato",
+  "chips": [],
+  "materialInSummary": [
+   "TipoScatola rigida",
+   "Misure9.5 × 9.5 × 4 cm",
+   "MaterialeCartone grigio rigido",
+   "StampaQuadricromia CMYK",
+   "FinituraVerniciatura opaca",
+   "Totale ordine$1,417.43"
+  ]
+ }
+]
