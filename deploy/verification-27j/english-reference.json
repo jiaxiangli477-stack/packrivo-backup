@@ -1,0 +1,6174 @@
+{
+  "/": {
+    "status": 200,
+    "url": "http://localhost:8081/",
+    "nodes": [
+      {
+        "text": "Packrivo",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-brand-word"
+      },
+      {
+        "text": "Products",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-nav-link"
+      },
+      {
+        "text": "Samples",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-nav-link"
+      },
+      {
+        "text": "Customization",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-nav-link"
+      },
+      {
+        "text": "Services",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Blog",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-nav-link"
+      },
+      {
+        "text": "Resources",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-nav-link"
+      },
+      {
+        "text": "About",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "EN",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": ""
+      },
+      {
+        "text": "Build a quote",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-btn pk-btn-light"
+      },
+      {
+        "text": "Custom packaging · MOQ 500 · 11 languages",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-eyebrow"
+      },
+      {
+        "text": "Custom packaging for",
+        "kind": "text",
+        "tag": "H1",
+        "cls": "pk-display"
+      },
+      {
+        "text": "jewelry, candles",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-accent"
+      },
+      {
+        "text": "& gifts.",
+        "kind": "text",
+        "tag": "H1",
+        "cls": "pk-display"
+      },
+      {
+        "text": "Sampling, production and freight handled end to end. Reference prices published, a cutting template with every quote, and a person on the other end of the quote — not a form that goes nowhere.",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-lede"
+      },
+      {
+        "text": "Order a sample kit",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-btn-ghost"
+      },
+      {
+        "text": "From · 500 pcs",
+        "kind": "text",
+        "tag": "DT",
+        "cls": ""
+      },
+      {
+        "text": "$2.48 / unit",
+        "kind": "text",
+        "tag": "DD",
+        "cls": ""
+      },
+      {
+        "text": "MOQ",
+        "kind": "text",
+        "tag": "DT",
+        "cls": ""
+      },
+      {
+        "text": "500 / design",
+        "kind": "text",
+        "tag": "DD",
+        "cls": ""
+      },
+      {
+        "text": "Production",
+        "kind": "text",
+        "tag": "DT",
+        "cls": ""
+      },
+      {
+        "text": "7–30 days",
+        "kind": "text",
+        "tag": "DD",
+        "cls": ""
+      },
+      {
+        "text": "Sourcing fee",
+        "kind": "text",
+        "tag": "DT",
+        "cls": ""
+      },
+      {
+        "text": "Rigid magnetic box · 9.5×9.5×4 cm",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-mono"
+      },
+      {
+        "text": "per unit at 1,000 pieces",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-mono pk-muted"
+      },
+      {
+        "text": "What we make",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-eyebrow"
+      },
+      {
+        "text": "Custom jewelry boxes, pouches and gift boxes with your logo",
+        "kind": "block",
+        "tag": "H2",
+        "cls": "pk-h2"
+      },
+      {
+        "text": "All products →",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-more"
+      },
+      {
+        "text": "MOQ 500",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-product-moq"
+      },
+      {
+        "text": "Jewelry boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Custom Drawer Jewelry Boxes",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-card-title"
+      },
+      {
+        "text": "Custom drawer jewelry boxes for small brands, with logo options and a 500-piece minimum. Get a price.",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-product-card-desc"
+      },
+      {
+        "text": "Supplier product photo, retouched (text and watermarks removed)",
+        "kind": "text",
+        "tag": "SMALL",
+        "cls": "pk-product-photo-caption"
+      },
+      {
+        "text": "from $2.83 / unit",
+        "kind": "text",
+        "tag": "STRONG",
+        "cls": ""
+      },
+      {
+        "text": "at 500 pcs · 9.5×9.5×4 cm",
+        "kind": "text",
+        "tag": "SMALL",
+        "cls": ""
+      },
+      {
+        "text": "Configure →",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Custom Lid-and-Base Jewelry Boxes",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-card-title"
+      },
+      {
+        "text": "Custom lid-and-base jewelry boxes for small brands, with logo options and a 500-piece minimum. Get a price.",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-product-card-desc"
+      },
+      {
+        "text": "Custom Jewelry Boxes with Fitted Inserts",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-card-title"
+      },
+      {
+        "text": "Custom jewelry boxes with fitted inserts for small brands, with logo options and a 500-piece minimum. Get a price.",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-product-card-desc"
+      },
+      {
+        "text": "Gift boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Custom Window Gift Boxes",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-card-title"
+      },
+      {
+        "text": "Rigid gift boxes with a window in the lid, printed with your logo and from 500 pieces. Get a price.",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-product-card-desc"
+      },
+      {
+        "text": "Mailer boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Custom Mailer Boxes",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-card-title"
+      },
+      {
+        "text": "Hinged lid boxes with rolled ends for heavier goods, printed with your logo from 500 pieces. Get a price.",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-product-card-desc"
+      },
+      {
+        "text": "from $2.48 / unit",
+        "kind": "text",
+        "tag": "STRONG",
+        "cls": ""
+      },
+      {
+        "text": "at 500 pcs · 30×22×12 cm",
+        "kind": "text",
+        "tag": "SMALL",
+        "cls": ""
+      },
+      {
+        "text": "How it works",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-eyebrow pk-eyebrow-light"
+      },
+      {
+        "text": "From brief to pallet in four steps",
+        "kind": "block",
+        "tag": "H2",
+        "cls": "pk-h2 pk-on-dark"
+      },
+      {
+        "text": "Brief",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-step-title"
+      },
+      {
+        "text": "Send the pack shot, target quantity and where it ships. We reply with a structure and a price range.",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-step-text"
+      },
+      {
+        "text": "Sample",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-step-title"
+      },
+      {
+        "text": "A physical sample in your artwork, produced in 5–10 days. Nothing is committed before you hold it.",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-step-text"
+      },
+      {
+        "text": "Produce",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-step-title"
+      },
+      {
+        "text": "Artwork goes to plate, the run is scheduled, and we send press sheets before packing.",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-step-text"
+      },
+      {
+        "text": "Deliver",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-step-title"
+      },
+      {
+        "text": "DDP or FOB, palletised, with photos and the material declaration per order.",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-step-text"
+      },
+      {
+        "text": "Price transparency",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-eyebrow"
+      },
+      {
+        "text": "A price curve, not a contact form",
+        "kind": "block",
+        "tag": "H2",
+        "cls": "pk-h2"
+      },
+      {
+        "text": "Every structure is priced against the same model: board, size, print, finish and quantity. Change the quantity and the unit price moves — so you can see where the break-even sits before you commit to a tooling cost.",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-lede"
+      },
+      {
+        "text": "Setup is itemised",
+        "kind": "text",
+        "tag": "STRONG",
+        "cls": ""
+      },
+      {
+        "text": "— and waived above 2,500 printed pieces.",
+        "kind": "text",
+        "tag": "LI",
+        "cls": ""
+      },
+      {
+        "text": "Freight is separate",
+        "kind": "text",
+        "tag": "STRONG",
+        "cls": ""
+      },
+      {
+        "text": "— quoted per shipment, never buried in the unit price.",
+        "kind": "text",
+        "tag": "LI",
+        "cls": ""
+      },
+      {
+        "text": "No tooling surprise",
+        "kind": "text",
+        "tag": "STRONG",
+        "cls": ""
+      },
+      {
+        "text": "— one-time plate and die cost, shown before you submit.",
+        "kind": "text",
+        "tag": "LI",
+        "cls": ""
+      },
+      {
+        "text": "Open the quote builder",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-btn"
+      },
+      {
+        "text": "Mailer box · 30×22×12 cm · kraft · full colour",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-mono pk-muted"
+      },
+      {
+        "text": "Qty",
+        "kind": "block",
+        "tag": "TH",
+        "cls": ""
+      },
+      {
+        "text": "Unit",
+        "kind": "block",
+        "tag": "TH",
+        "cls": ""
+      },
+      {
+        "text": "Total",
+        "kind": "block",
+        "tag": "TH",
+        "cls": ""
+      },
+      {
+        "text": "Indicative, excludes freight. At 5,000 pieces the unit price is 44% lower than at 500. Final price confirmed after dieline review.",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-fine"
+      },
+      {
+        "text": "Materials",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-eyebrow"
+      },
+      {
+        "text": "Say what the box is made of, in numbers",
+        "kind": "block",
+        "tag": "H2",
+        "cls": "pk-h2"
+      },
+      {
+        "text": "Recycled content, board weight, coating and end-of-life route are published per structure — because “eco-friendly” is not a specification.",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-lede"
+      },
+      {
+        "text": "Materials and sustainability →",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-more"
+      },
+      {
+        "text": "Board",
+        "kind": "block",
+        "tag": "TH",
+        "cls": ""
+      },
+      {
+        "text": "Recycled",
+        "kind": "block",
+        "tag": "TH",
+        "cls": ""
+      },
+      {
+        "text": "Use",
+        "kind": "block",
+        "tag": "TH",
+        "cls": ""
+      },
+      {
+        "text": "Kraft corrugated",
+        "kind": "block",
+        "tag": "TD",
+        "cls": ""
+      },
+      {
+        "text": "Mailers, shippers",
+        "kind": "block",
+        "tag": "TD",
+        "cls": ""
+      },
+      {
+        "text": "White corrugated",
+        "kind": "block",
+        "tag": "TD",
+        "cls": ""
+      },
+      {
+        "text": "Printed retail cartons",
+        "kind": "block",
+        "tag": "TD",
+        "cls": ""
+      },
+      {
+        "text": "Rigid greyboard",
+        "kind": "block",
+        "tag": "TD",
+        "cls": ""
+      },
+      {
+        "text": "Rigid, wrapped",
+        "kind": "block",
+        "tag": "TD",
+        "cls": ""
+      },
+      {
+        "text": "Molded pulp",
+        "kind": "block",
+        "tag": "TD",
+        "cls": ""
+      },
+      {
+        "text": "Inserts, trays",
+        "kind": "block",
+        "tag": "TD",
+        "cls": ""
+      },
+      {
+        "text": "Journal · 333 articles",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-eyebrow"
+      },
+      {
+        "text": "Packaging notes from the floor",
+        "kind": "block",
+        "tag": "H2",
+        "cls": "pk-h2"
+      },
+      {
+        "text": "All 333 articles →",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-more"
+      },
+      {
+        "text": "Structures & fit · Oct 26, 2026",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-post-meta pk-mono"
+      },
+      {
+        "text": "Materials & print · Oct 20, 2026",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-post-meta pk-mono"
+      },
+      {
+        "text": "Supplier briefs · Oct 20, 2026",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-post-meta pk-mono"
+      },
+      {
+        "text": "Samples & approval · Oct 15, 2026",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-post-meta pk-mono"
+      },
+      {
+        "text": "Supplier briefs · Oct 15, 2026",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-post-meta pk-mono"
+      },
+      {
+        "text": "Samples",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-eyebrow pk-eyebrow-light"
+      },
+      {
+        "text": "Hold the board before you approve the board.",
+        "kind": "block",
+        "tag": "H2",
+        "cls": "pk-h2 pk-on-dark"
+      },
+      {
+        "text": "See the structure, board and finish in hand before you commit to a run.",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-lede pk-on-dark-muted"
+      },
+      {
+        "text": "Order a sample",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-btn pk-btn-light"
+      },
+      {
+        "text": "Ask a question",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-more pk-on-dark"
+      },
+      {
+        "text": "Ring & necklace boxes / Rigid, magnetic, drawer",
+        "kind": "block",
+        "tag": "DIV",
+        "cls": ""
+      },
+      {
+        "text": "Jewelry pouches / Velvet, cotton, suede",
+        "kind": "block",
+        "tag": "DIV",
+        "cls": ""
+      },
+      {
+        "text": "Gift boxes / Lid-and-base, window",
+        "kind": "block",
+        "tag": "DIV",
+        "cls": ""
+      },
+      {
+        "text": "Mailer boxes / Printed inside and out",
+        "kind": "block",
+        "tag": "DIV",
+        "cls": ""
+      },
+      {
+        "text": "Questions",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-eyebrow"
+      },
+      {
+        "text": "Before you ask",
+        "kind": "block",
+        "tag": "H2",
+        "cls": "pk-h2"
+      },
+      {
+        "text": "Ask a specific question →",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-more"
+      },
+      {
+        "text": "What is the minimum order?",
+        "kind": "block",
+        "tag": "SUMMARY",
+        "cls": ""
+      },
+      {
+        "text": "MOQ 500 pieces per design for printed boxes. Unprinted stock ships from 100 pieces.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "How much does a custom box cost?",
+        "kind": "block",
+        "tag": "SUMMARY",
+        "cls": ""
+      },
+      {
+        "text": "At 500 pieces, a 9.5×9.5×4 cm rigid jewelry box is about $2.83 per unit and a 30×22×12 cm printed mailer box about $2.48. The unit price drops as quantity goes up — the quote builder shows the full curve for your size.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "How long does production take?",
+        "kind": "block",
+        "tag": "SUMMARY",
+        "cls": ""
+      },
+      {
+        "text": "Stock styles ship in 1–15 days. Printed custom orders are scheduled after sample approval, usually 7–30 days depending on structure and finishing.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Do you handle the whole supply chain?",
+        "kind": "block",
+        "tag": "SUMMARY",
+        "cls": ""
+      },
+      {
+        "text": "We coordinate sampling, production, inspection and freight with vetted suppliers, and charge an 8–15% sourcing fee on the order value.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Where do you ship from?",
+        "kind": "block",
+        "tag": "SUMMARY",
+        "cls": ""
+      },
+      {
+        "text": "Shenzhen, China. DDP to the US and EU is standard; FOB is available if you consolidate.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Start with the size you already know.",
+        "kind": "block",
+        "tag": "H2",
+        "cls": "pk-h2 pk-on-dark"
+      },
+      {
+        "text": "Five steps, live pricing, one business day reply.",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-lede pk-on-dark-muted"
+      },
+      {
+        "text": "Custom packaging sourcing.",
+        "kind": "text",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Clear specifications.",
+        "kind": "text",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Project coordination.",
+        "kind": "text",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Packrivo · Shenzhen, China",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Explore",
+        "kind": "block",
+        "tag": "H2",
+        "cls": ""
+      },
+      {
+        "text": "Labels",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Inserts",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Bags & pouches",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Contact Packrivo",
+        "kind": "block",
+        "tag": "H2",
+        "cls": ""
+      },
+      {
+        "text": "hello@packrivo.com",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "WhatsApp: +86 198 9984 6512",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Get a Quote",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pr-quote-cta"
+      },
+      {
+        "text": "Packrivo · Packaging sourcing & project coordination",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": ""
+      },
+      {
+        "text": "Privacy & inquiry data",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Terms of service",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Compare suppliers",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Cookie settings",
+        "kind": "text",
+        "tag": "BUTTON",
+        "cls": "pr-consent-reopen"
+      },
+      {
+        "text": "Packaging guides",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Switch color theme",
+        "kind": "text",
+        "tag": "BUTTON",
+        "cls": ""
+      },
+      {
+        "text": "Cookies on Packrivo",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pr-consent-title"
+      },
+      {
+        "text": "We use Google Analytics cookies to see which pages help buyers. No advertising cookies.",
+        "kind": "text",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Reject",
+        "kind": "text",
+        "tag": "BUTTON",
+        "cls": "secondary"
+      },
+      {
+        "text": "Accept",
+        "kind": "text",
+        "tag": "BUTTON",
+        "cls": "button"
+      },
+      {
+        "text": "Chat on WhatsApp",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": ""
+      },
+      {
+        "text": "Packrivo home",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "A",
+        "cls": "pk-brand"
+      },
+      {
+        "text": "Primary",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "NAV",
+        "cls": "pk-nav is-open"
+      },
+      {
+        "text": "Open Products menu",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": "pk-caret"
+      },
+      {
+        "text": "Open Blog menu",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": "pk-caret"
+      },
+      {
+        "text": "Open Resources menu",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": "pk-caret"
+      },
+      {
+        "text": "Choose language",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": ""
+      },
+      {
+        "text": "Search",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "A",
+        "cls": "pk-icon-btn"
+      },
+      {
+        "text": "Rigid gift box with insert, studio shot",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Red drawer jewelry box with ribbon pull and insert",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Black and white lid-and-base jewelry boxes with inserts",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Colorful drawer jewelry boxes with ribbon pulls and inserts",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Custom Window Gift Boxes",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Custom Mailer Boxes",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Packrivo",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": "brand-logo"
+      },
+      {
+        "text": "Contact options",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "NAV",
+        "cls": "contact-dock packrivo-global-contact"
+      },
+      {
+        "text": "Chat with Packrivo on WhatsApp (opens a new tab)",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "A",
+        "cls": "button contact-dock-chat"
+      },
+      {
+        "text": "Boxes",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-panel-title"
+      },
+      {
+        "text": "Foldable gift boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Rigid gift boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Print & finishing",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-panel-title"
+      },
+      {
+        "text": "Printing & finishes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Start here",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-panel-title"
+      },
+      {
+        "text": "All packaging products",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Get a quote",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Every structure is priced from 500 units. Dielines included.",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-panel-note"
+      },
+      {
+        "text": "Close Products menu",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": "pk-caret"
+      },
+      {
+        "text": "All articles",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Materials & print",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Supplier briefs",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Samples & approval",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Structures & fit",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Shipping & rules",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Close Blog menu",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": "pk-caret"
+      },
+      {
+        "text": "Guides",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Packaging examples",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Compare formats",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Price index",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Close Resources menu",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": "pk-caret"
+      },
+      {
+        "text": "Menu",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-burger-text"
+      },
+      {
+        "text": "Close",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-burger-text"
+      }
+    ]
+  },
+  "/products/": {
+    "status": 200,
+    "url": "http://localhost:8081/products/",
+    "nodes": [
+      {
+        "text": "Packrivo",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-brand-word"
+      },
+      {
+        "text": "Products",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-nav-link"
+      },
+      {
+        "text": "Samples",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-nav-link"
+      },
+      {
+        "text": "Customization",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-nav-link"
+      },
+      {
+        "text": "Services",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Blog",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-nav-link"
+      },
+      {
+        "text": "Resources",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-nav-link"
+      },
+      {
+        "text": "About",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "EN",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": ""
+      },
+      {
+        "text": "Build a quote",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-cta"
+      },
+      {
+        "text": "Catalogue · 134 structures",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-eyebrow"
+      },
+      {
+        "text": "Every structure we can source",
+        "kind": "block",
+        "tag": "H1",
+        "cls": "pk-display"
+      },
+      {
+        "text": "MOQ 500 · Dielines included · Live prices in the quote builder",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Filter by family, sort by newest or name, and open any structure for the specification, price range and dieline notes.",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-lede"
+      },
+      {
+        "text": "All",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-chip is-active"
+      },
+      {
+        "text": "Jewelry boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Gift & folding boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-chip "
+      },
+      {
+        "text": "Mailers & shippers",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-chip "
+      },
+      {
+        "text": "Bags & pouches",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Labels",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Inserts",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Search",
+        "kind": "block",
+        "tag": "LABEL",
+        "cls": ""
+      },
+      {
+        "text": "Sort",
+        "kind": "block",
+        "tag": "LABEL",
+        "cls": ""
+      },
+      {
+        "text": "Name A–Z",
+        "kind": "block",
+        "tag": "OPTION",
+        "cls": ""
+      },
+      {
+        "text": "Newest first",
+        "kind": "block",
+        "tag": "OPTION",
+        "cls": ""
+      },
+      {
+        "text": "Oldest first",
+        "kind": "block",
+        "tag": "OPTION",
+        "cls": ""
+      },
+      {
+        "text": "Recently updated",
+        "kind": "block",
+        "tag": "OPTION",
+        "cls": ""
+      },
+      {
+        "text": "Price: low to high",
+        "kind": "block",
+        "tag": "OPTION",
+        "cls": ""
+      },
+      {
+        "text": "Price: high to low",
+        "kind": "block",
+        "tag": "OPTION",
+        "cls": ""
+      },
+      {
+        "text": "Search",
+        "kind": "text",
+        "tag": "BUTTON",
+        "cls": ""
+      },
+      {
+        "text": "134 structures",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-fine"
+      },
+      {
+        "text": "MOQ 500",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-product-moq"
+      },
+      {
+        "text": "Bulk Shipping Boxes with Logo",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-card-title"
+      },
+      {
+        "text": "Shipping boxes with a glued auto bottom for fast packing, printed with your logo from 500 pieces. Get a price.",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-product-card-desc"
+      },
+      {
+        "text": "from $2.31 / unit",
+        "kind": "text",
+        "tag": "STRONG",
+        "cls": ""
+      },
+      {
+        "text": "at 500 pcs · 30×25×20 cm",
+        "kind": "text",
+        "tag": "SMALL",
+        "cls": ""
+      },
+      {
+        "text": "Configure →",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Custom Auto-Lock Bottom Boxes",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-card-title"
+      },
+      {
+        "text": "Auto-lock bottom cartons that assemble in one motion, printed with your logo from 500 pieces. Get a price.",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-product-card-desc"
+      },
+      {
+        "text": "Get a price →",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Custom Book-Style Rigid Gift Boxes",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-card-title"
+      },
+      {
+        "text": "Book-style rigid boxes that open like a book for premium sets, with your logo and from 500 pieces. Get a price.",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-product-card-desc"
+      },
+      {
+        "text": "from $2.83 / unit",
+        "kind": "text",
+        "tag": "STRONG",
+        "cls": ""
+      },
+      {
+        "text": "at 500 pcs · 9.5×9.5×4 cm",
+        "kind": "text",
+        "tag": "SMALL",
+        "cls": ""
+      },
+      {
+        "text": "Custom Bookend Folding Cartons",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-card-title"
+      },
+      {
+        "text": "Bookend folding cartons for retail packaging, printed with your logo from 500 pieces. Get a price.",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-product-card-desc"
+      },
+      {
+        "text": "from $1.28 / unit",
+        "kind": "text",
+        "tag": "STRONG",
+        "cls": ""
+      },
+      {
+        "text": "at 500 pcs · 12×4×16 cm",
+        "kind": "text",
+        "tag": "SMALL",
+        "cls": ""
+      },
+      {
+        "text": "Custom Bottle Gift Boxes with Handle",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-card-title"
+      },
+      {
+        "text": "Corrugated bottle carriers with a built-in handle, printed with your logo and available from 500 pieces. Get a price.",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-product-card-desc"
+      },
+      {
+        "text": "Custom Carry Boxes with Handle",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-card-title"
+      },
+      {
+        "text": "Cube carry boxes with an integrated handle, printed with your logo and available from 500 pieces. Get a price.",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-product-card-desc"
+      },
+      {
+        "text": "Custom Chipboard Dividers",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-card-title"
+      },
+      {
+        "text": "Chipboard dividers with fixed cells for boxed sets, made to your layout from 500 pieces. Get a price.",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-product-card-desc"
+      },
+      {
+        "text": "Custom Circle Roll Labels",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-card-title"
+      },
+      {
+        "text": "Round roll labels for jars, lids and seals, printed with your logo and available from 500 pieces. Get a price.",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-product-card-desc"
+      },
+      {
+        "text": "Custom Clear Display Boxes with Logo",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-card-title"
+      },
+      {
+        "text": "Clear display boxes for retail and gift sets, printed with your logo and available from 500 pieces. Get a price.",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-product-card-desc"
+      },
+      {
+        "text": "Custom Coated Labels with Logo",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-card-title"
+      },
+      {
+        "text": "Coated labels for bottles and boxes that need a smooth print, with your logo and from 500 pieces. Get a price.",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-product-card-desc"
+      },
+      {
+        "text": "Custom Collapsible Magnetic Gift Boxes",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-card-title"
+      },
+      {
+        "text": "Collapsible magnetic gift boxes that ship flat and snap open, with your logo and from 500 pieces. Get a price.",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-product-card-desc"
+      },
+      {
+        "text": "Custom Corrugated Book Mailers",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-card-title"
+      },
+      {
+        "text": "Corrugated book mailers that protect the corners, printed with your logo and available from 500 pieces. Get a price.",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-product-card-desc"
+      },
+      {
+        "text": "Custom Corrugated Dividers and Inserts",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-card-title"
+      },
+      {
+        "text": "Corrugated dividers and inlays that keep items apart, made to your layout from 500 pieces. Get a price.",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-product-card-desc"
+      },
+      {
+        "text": "Custom Corrugated End Caps",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-card-title"
+      },
+      {
+        "text": "Paired corrugated end caps that protect both ends, printed with your logo from 500 pieces. Get a price.",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-product-card-desc"
+      },
+      {
+        "text": "Custom Corrugated Gusset Folders",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-card-title"
+      },
+      {
+        "text": "Corrugated gusset folders for bulky gifts, printed with your logo and available from 500 pieces. Get a price.",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-product-card-desc"
+      },
+      {
+        "text": "Custom Corrugated Tray Boxes with Lid",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-card-title"
+      },
+      {
+        "text": "Corrugated tray boxes with a close-fitting lid, printed with your logo from 500 pieces. Get a price.",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-product-card-desc"
+      },
+      {
+        "text": "Custom Counter Display Boxes",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-card-title"
+      },
+      {
+        "text": "Counter display boxes that sell from the till point, printed with your logo and from 500 pieces. Get a price.",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-product-card-desc"
+      },
+      {
+        "text": "Custom Die-Cut Box Inserts",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-card-title"
+      },
+      {
+        "text": "Die-cut inserts that cradle each item in the box, made to your outline from 500 pieces. Get a price.",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-product-card-desc"
+      },
+      {
+        "text": "Custom Die-Cut Handle Paper Bags",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-card-title"
+      },
+      {
+        "text": "Paper bags with a die-cut handle for retail, printed with your logo and available from 500 pieces. Get a price.",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-product-card-desc"
+      },
+      {
+        "text": "Custom Dispenser Boxes with Logo",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-card-title"
+      },
+      {
+        "text": "Dispenser cartons with a flip-out front for retail, printed with your logo from 500 pieces. Get a price.",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-product-card-desc"
+      },
+      {
+        "text": "Custom Display Trays for Retail",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-card-title"
+      },
+      {
+        "text": "Display trays that hold stock on shelf, printed with your logo and available from 500 pieces. Get a price.",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-product-card-desc"
+      },
+      {
+        "text": "Custom Document Window Pouches",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-card-title"
+      },
+      {
+        "text": "Document pouches with a clear window for parcels, printed with your logo from 500 pieces. Get a price.",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-product-card-desc"
+      },
+      {
+        "text": "Custom Double-Wall Tray and Lid Sets",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-card-title"
+      },
+      {
+        "text": "Double-wall tray and lid sets for gift presentation, with your logo and from 500 pieces. Get a price.",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-product-card-desc"
+      },
+      {
+        "text": "Custom Drawer Jewelry Boxes with Logo",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-card-title"
+      },
+      {
+        "text": "Custom drawer jewelry boxes for small brands, with logo options and a 500-piece minimum. Get a price.",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-product-card-desc"
+      },
+      {
+        "text": "Supplier product photo, retouched (text and watermarks removed)",
+        "kind": "text",
+        "tag": "SMALL",
+        "cls": "pk-product-photo-caption"
+      },
+      {
+        "text": "Next »",
+        "kind": "text",
+        "tag": "A",
+        "cls": "next page-numbers"
+      },
+      {
+        "text": "Need something not on this page?",
+        "kind": "block",
+        "tag": "H2",
+        "cls": "pk-h2"
+      },
+      {
+        "text": "Counter displays, rigid trays, book-style boxes — send a photo of the product and a rough volume, and we will come back with a structure and a price range.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Send a brief",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-btn"
+      },
+      {
+        "text": "Start from a price",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-btn-ghost"
+      },
+      {
+        "text": "Custom packaging sourcing.",
+        "kind": "text",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Clear specifications.",
+        "kind": "text",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Project coordination.",
+        "kind": "text",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Packrivo · Shenzhen, China",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Explore",
+        "kind": "block",
+        "tag": "H2",
+        "cls": ""
+      },
+      {
+        "text": "Gift boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Mailer boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Contact Packrivo",
+        "kind": "block",
+        "tag": "H2",
+        "cls": ""
+      },
+      {
+        "text": "hello@packrivo.com",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "WhatsApp: +86 198 9984 6512",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Get a Quote",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pr-quote-cta"
+      },
+      {
+        "text": "Packrivo · Packaging sourcing & project coordination",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": ""
+      },
+      {
+        "text": "Privacy & inquiry data",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Terms of service",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Compare suppliers",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Cookie settings",
+        "kind": "text",
+        "tag": "BUTTON",
+        "cls": "pr-consent-reopen"
+      },
+      {
+        "text": "Packaging guides",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Switch color theme",
+        "kind": "text",
+        "tag": "BUTTON",
+        "cls": ""
+      },
+      {
+        "text": "Cookies on Packrivo",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pr-consent-title"
+      },
+      {
+        "text": "We use Google Analytics cookies to see which pages help buyers. No advertising cookies.",
+        "kind": "text",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Reject",
+        "kind": "text",
+        "tag": "BUTTON",
+        "cls": "secondary"
+      },
+      {
+        "text": "Accept",
+        "kind": "text",
+        "tag": "BUTTON",
+        "cls": "button"
+      },
+      {
+        "text": "Chat on WhatsApp",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": ""
+      },
+      {
+        "text": "Packrivo home",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "A",
+        "cls": "pk-brand"
+      },
+      {
+        "text": "Primary",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "NAV",
+        "cls": "pk-nav is-open"
+      },
+      {
+        "text": "Open Products menu",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": "pk-caret"
+      },
+      {
+        "text": "Open Blog menu",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": "pk-caret"
+      },
+      {
+        "text": "Open Resources menu",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": "pk-caret"
+      },
+      {
+        "text": "Choose language",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": ""
+      },
+      {
+        "text": "Search",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "A",
+        "cls": "pk-icon-btn"
+      },
+      {
+        "text": "Bulk Shipping Boxes with Logo",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Custom Auto-Lock Bottom Boxes",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Custom Book-Style Rigid Gift Boxes",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Custom Bookend Folding Cartons",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Custom Bottle Gift Boxes with Handle",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Custom Carry Boxes with Handle",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Custom Chipboard Dividers",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Custom Corrugated Book Mailers",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Custom Corrugated End Caps",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Custom Corrugated Gusset Folders",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Custom Corrugated Tray Boxes with Lid",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Custom Counter Display Boxes",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Custom Die-Cut Handle Paper Bags",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Custom Dispenser Boxes with Logo",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Custom Display Trays for Retail",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Custom Document Window Pouches",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Custom Double-Wall Tray and Lid Sets",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Red drawer jewelry box with ribbon pull and insert",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Packrivo",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": "brand-logo"
+      },
+      {
+        "text": "Contact options",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "NAV",
+        "cls": "contact-dock packrivo-global-contact"
+      },
+      {
+        "text": "Chat with Packrivo on WhatsApp (opens a new tab)",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "A",
+        "cls": "button contact-dock-chat"
+      },
+      {
+        "text": "Boxes",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-panel-title"
+      },
+      {
+        "text": "Foldable gift boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Rigid gift boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Print & finishing",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-panel-title"
+      },
+      {
+        "text": "Printing & finishes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Start here",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-panel-title"
+      },
+      {
+        "text": "All packaging products",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Order a sample",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Get a quote",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Every structure is priced from 500 units. Dielines included.",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-panel-note"
+      },
+      {
+        "text": "Close Products menu",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": "pk-caret"
+      },
+      {
+        "text": "All articles",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Materials & print",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Supplier briefs",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Samples & approval",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Structures & fit",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Shipping & rules",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Close Blog menu",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": "pk-caret"
+      },
+      {
+        "text": "Guides",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Packaging examples",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Compare formats",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Price index",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Close Resources menu",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": "pk-caret"
+      },
+      {
+        "text": "Menu",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-burger-text"
+      },
+      {
+        "text": "Get a quote · MOQ 500",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pr-sticky-main"
+      },
+      {
+        "text": "WA",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pr-sticky-wa"
+      },
+      {
+        "text": "Request a quote",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "DIV",
+        "cls": "pr-sticky"
+      },
+      {
+        "text": "Chat on WhatsApp",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "A",
+        "cls": "pr-sticky-wa"
+      },
+      {
+        "text": "Close",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-burger-text"
+      }
+    ]
+  },
+  "/jewelry-boxes/": {
+    "status": 200,
+    "url": "http://localhost:8081/jewelry-boxes/",
+    "nodes": [
+      {
+        "text": "Packrivo",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-brand-word"
+      },
+      {
+        "text": "Products",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Samples",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-nav-link"
+      },
+      {
+        "text": "Customization",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-nav-link"
+      },
+      {
+        "text": "Services",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Blog",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-nav-link"
+      },
+      {
+        "text": "Resources",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-nav-link"
+      },
+      {
+        "text": "About",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "EN",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": ""
+      },
+      {
+        "text": "Build a quote",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-cta"
+      },
+      {
+        "text": "Home",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Jewelry boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Custom Jewelry Boxes With Logo for Your Collection",
+        "kind": "block",
+        "tag": "H1",
+        "cls": ""
+      },
+      {
+        "text": "MOQ: 500 pieces per product / design.",
+        "kind": "text",
+        "tag": "STRONG",
+        "cls": ""
+      },
+      {
+        "text": "Plan the quantity for each design in your brief.",
+        "kind": "text",
+        "tag": "P",
+        "cls": "packrivo-moq"
+      },
+      {
+        "text": "Explore custom jewelry boxes with logo for rings, earrings, necklaces and coordinated collections. Choose a box or pouch direction, the opening you prefer and the brand surfaces you want customers to see. Packrivo helps prepare the brief and supplier questions for a project quotation.",
+        "kind": "block",
+        "tag": "P",
+        "cls": "lead"
+      },
+      {
+        "text": "Packaging sourcing and project coordination with independent suppliers.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Get a Quote",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pr-quote-cta"
+      },
+      {
+        "text": "Supplier photo reference. Original lettering shown.",
+        "kind": "text",
+        "tag": "FIGCAPTION",
+        "cls": ""
+      },
+      {
+        "text": "View source photograph",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Supplier photo references for your brief",
+        "kind": "block",
+        "tag": "H2",
+        "cls": ""
+      },
+      {
+        "text": "These photographs show supplier packaging references, with their original printed designs. Use them to describe an opening or presentation direction. They are not Packrivo customer projects or a stock list; sizes, materials and your own logo treatment need a separate proposal.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Ivory presentation reference",
+        "kind": "block",
+        "tag": "H3",
+        "cls": ""
+      },
+      {
+        "text": "Supplier photograph. Original lettering retained.",
+        "kind": "text",
+        "tag": "FIGCAPTION",
+        "cls": ""
+      },
+      {
+        "text": "Use the open and closed views to discuss the presentation at first opening. Identify the logo face you want, then request the offered closure, holder and finished dimensions for your own jewelry.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Discuss this presentation →",
+        "kind": "text",
+        "tag": "A",
+        "cls": "text-link"
+      },
+      {
+        "text": "Printed box references",
+        "kind": "block",
+        "tag": "H3",
+        "cls": ""
+      },
+      {
+        "text": "Supplier photograph. The pictured marks belong to the reference designs.",
+        "kind": "text",
+        "tag": "FIGCAPTION",
+        "cls": ""
+      },
+      {
+        "text": "Compare the visible color and artwork placement across these box forms. Choose the presentation you want to discuss; the photographed marks are not available artwork or evidence of a Packrivo brand relationship.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Discuss your logo and box style →",
+        "kind": "text",
+        "tag": "A",
+        "cls": "text-link"
+      },
+      {
+        "text": "Drawer box references",
+        "kind": "block",
+        "tag": "H3",
+        "cls": ""
+      },
+      {
+        "text": "Supplier photograph. Box forms and original decoration are shown for reference.",
+        "kind": "text",
+        "tag": "FIGCAPTION",
+        "cls": ""
+      },
+      {
+        "text": "Use the sliding-box direction to discuss the opening detail and main brand face. Request an open, loaded sample around your jewelry before choosing the interior or holder. The photograph does not identify your required size.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Request a drawer-box quote →",
+        "kind": "text",
+        "tag": "A",
+        "cls": "text-link"
+      },
+      {
+        "text": "Existing catalog images labeled AI-assisted concepts illustrate other directions; those labels still apply. The photographs above are reference groups, not three confirmed product SKUs.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Choose a direction to explore.",
+        "kind": "block",
+        "tag": "H2",
+        "cls": ""
+      },
+      {
+        "text": "All options require supplier feasibility confirmation. Category imagery illustrates a concept, not every listed construction.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "17 packaging directions in this group.",
+        "kind": "block",
+        "tag": "P",
+        "cls": "packrivo-directory-count"
+      },
+      {
+        "text": "AI concept · Not a physical sample",
+        "kind": "text",
+        "tag": "FIGCAPTION",
+        "cls": ""
+      },
+      {
+        "text": "Magnetic jewelry box",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "A hinged presentation direction for a coordinated jewelry set.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Explore specifications →",
+        "kind": "text",
+        "tag": "A",
+        "cls": "text-link"
+      },
+      {
+        "text": "AI-assisted packaging concept.",
+        "kind": "text",
+        "tag": "FIGCAPTION",
+        "cls": ""
+      },
+      {
+        "text": "Jewelry boxes",
+        "kind": "block",
+        "tag": "P",
+        "cls": "category-name"
+      },
+      {
+        "text": "Drawer Jewelry Box",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Plan a custom drawer jewelry box around the complete jewelry set. Choose the tray layout, usable interior and opening detail, then compare supplier proposals against the same requirements.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Packaging option · MOQ 500 pieces per product / design",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pkpw-card-fact"
+      },
+      {
+        "text": "View details →",
+        "kind": "text",
+        "tag": "A",
+        "cls": "text-link"
+      },
+      {
+        "text": "Lid and base jewelry box",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "A separate lid for a simple gift presentation.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Jewelry Box with Fitted Insert",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "A coordinated box and insert brief for holding small jewelry.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Pillow jewelry box",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "A folding presentation direction for small, lightweight accessories.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "AI-assisted concept · Not a physical sample",
+        "kind": "text",
+        "tag": "FIGCAPTION",
+        "cls": ""
+      },
+      {
+        "text": "Round Cardboard Tube Gift Box",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "A round cardboard tube box uses a cylindrical body with a lid.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "View specification direction →",
+        "kind": "text",
+        "tag": "A",
+        "cls": "text-link"
+      },
+      {
+        "text": "Textile Jewelry Pouch",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "A textile jewelry pouch is a soft packaging direction for presentation or storage.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "AI-assisted concept illustration. Review the neck, holder and closed-lid relationship with the actual contents.",
+        "kind": "text",
+        "tag": "FIGCAPTION",
+        "cls": ""
+      },
+      {
+        "text": "Jewelry Boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Shoulder-Neck Rigid Box",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Match neck exposure, lid overlap and holder height on one loaded section.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Explore this packaging direction",
+        "kind": "text",
+        "tag": "A",
+        "cls": "text-link"
+      },
+      {
+        "text": "AI-assisted concept illustration. Review aperture, patch and holder alignment together with the matching seated lid.",
+        "kind": "text",
+        "tag": "FIGCAPTION",
+        "cls": ""
+      },
+      {
+        "text": "Window Lid Rigid Gift Box",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Align the patched rigid-lid window with the holder in the fully seated box.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "AI-assisted concept illustration. Keep ribbon attachment and movement clear of the product arrangement.",
+        "kind": "text",
+        "tag": "FIGCAPTION",
+        "cls": ""
+      },
+      {
+        "text": "Ribbon-Tie Hinged Rigid Box",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Show how the ribbon closes the loaded hinged box and releases clear of the gift.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "AI-assisted concept illustration. Connect spine movement, tray placement and customer access on the loaded proposal.",
+        "kind": "text",
+        "tag": "FIGCAPTION",
+        "cls": ""
+      },
+      {
+        "text": "Book-Style Rigid Presentation Box",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Connect the spine opening arc to the installed tray and product access.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "AI-assisted concept illustration. Review both doors and their sequence around the loaded center.",
+        "kind": "text",
+        "tag": "FIGCAPTION",
+        "cls": ""
+      },
+      {
+        "text": "Two-Door Rigid Presentation Box",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Review both door arcs and their meeting edges around the central product.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "AI-assisted concept illustration. Keep the hinge sweep and insert/product envelope in one opening record.",
+        "kind": "text",
+        "tag": "FIGCAPTION",
+        "cls": ""
+      },
+      {
+        "text": "Hinged Metal Gift Container",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Review the hinge sweep and metal edge against the loaded holder.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "AI-assisted concept illustration. Define the offered rim overlap and customer removal grip with complete contents.",
+        "kind": "text",
+        "tag": "FIGCAPTION",
+        "cls": ""
+      },
+      {
+        "text": "Slip-Lid Metal Gift Container",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Review rim engagement and lid removal with the complete gift inside.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "AI-assisted concept illustration. Define the offered thread engagement and customer starting grip before review.",
+        "kind": "text",
+        "tag": "FIGCAPTION",
+        "cls": ""
+      },
+      {
+        "text": "Screw-Top Metal Gift Container",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Review thread engagement and dry-gift access as separate closure jobs.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "AI-assisted concept illustration. Keep the latch accessible and the hinge sweep clear of the complete contents.",
+        "kind": "text",
+        "tag": "FIGCAPTION",
+        "cls": ""
+      },
+      {
+        "text": "Latch Metal Gift Container",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Keep the latch release and lid travel clear of the complete inner gift pack.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "AI-assisted concept illustration. Review the proposed rim engagement and starting lift action separately.",
+        "kind": "text",
+        "tag": "FIGCAPTION",
+        "cls": ""
+      },
+      {
+        "text": "Press-Close Metal Gift Container",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Identify the proposed rim engagement before reviewing the loaded press and release action.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Compare jewelry packaging by opening and fit",
+        "kind": "block",
+        "tag": "H2",
+        "cls": ""
+      },
+      {
+        "text": "Compare your own SKU configurations in the",
+        "kind": "text",
+        "tag": "P",
+        "cls": "buyer-tool-note"
+      },
+      {
+        "text": "multi-SKU jewelry fit matrix",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "before asking suppliers which box or insert components can be shared.",
+        "kind": "text",
+        "tag": "P",
+        "cls": "buyer-tool-note"
+      },
+      {
+        "text": "Start with how the piece will sit, how the customer opens the package and how they remove it.",
+        "kind": "text",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Compare jewelry box structures",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "before choosing decoration.",
+        "kind": "text",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "On a small screen, each direction is grouped with its inputs and sample question.",
+        "kind": "block",
+        "tag": "P",
+        "cls": "helper"
+      },
+      {
+        "text": "Planning directions. Confirm the proposed construction and fit through supplier review and an appropriate sample.",
+        "kind": "block",
+        "tag": "CAPTION",
+        "cls": ""
+      },
+      {
+        "text": "Direction",
+        "kind": "block",
+        "tag": "TH",
+        "cls": ""
+      },
+      {
+        "text": "Use and inputs",
+        "kind": "block",
+        "tag": "TH",
+        "cls": ""
+      },
+      {
+        "text": "Sample question",
+        "kind": "block",
+        "tag": "TH",
+        "cls": ""
+      },
+      {
+        "text": "Magnetic lid",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Consider a hinged opening for a displayed piece or set.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Bring:",
+        "kind": "text",
+        "tag": "STRONG",
+        "cls": ""
+      },
+      {
+        "text": "Item layout, lid space, insert and closure preference.",
+        "kind": "text",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Does the lid clear the complete set and close as intended?",
+        "kind": "block",
+        "tag": "TD",
+        "cls": ""
+      },
+      {
+        "text": "Drawer",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Consider a sliding tray when the opening sequence is part of the presentation.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Tray layout, sleeve clearance, pull detail and any stop.",
+        "kind": "text",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Can the customer pull the loaded tray and remove the jewelry easily?",
+        "kind": "block",
+        "tag": "TD",
+        "cls": ""
+      },
+      {
+        "text": "Lid and base",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Consider a lift-off lid when the full set should be visible together.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Usable interior, lid depth and space needed to lift the lid.",
+        "kind": "text",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Is the lid fit comfortable, with enough room above the piece?",
+        "kind": "block",
+        "tag": "TD",
+        "cls": ""
+      },
+      {
+        "text": "Box with fitted insert",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Plan the box and holder together when position and removal need review.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Each item, clasp or post, contact surfaces and removal route.",
+        "kind": "text",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Does the actual jewelry stay in position without obstructing removal or closure?",
+        "kind": "block",
+        "tag": "TD",
+        "cls": ""
+      },
+      {
+        "text": "Textile pouch",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Consider a pouch for a handoff or as a separate part of a larger pack.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Item envelope, opening, closure, seams and intended use.",
+        "kind": "text",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Can the complete item enter and leave the pouch without unwanted contact?",
+        "kind": "block",
+        "tag": "TD",
+        "cls": ""
+      },
+      {
+        "text": "Prepare your logo and its surfaces",
+        "kind": "block",
+        "tag": "H2",
+        "cls": ""
+      },
+      {
+        "text": "Share the logo file you have, your brand colors and a marked view showing the face to decorate. An outer-lid mark and an inside message are separate surfaces. If you are choosing printing, foil or relief, describe the intended effect using the",
+        "kind": "text",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "packaging finish comparison",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": ". The proposed material and actual-size artwork determine the physical evidence needed next.",
+        "kind": "text",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Prepare the fit question",
+        "kind": "block",
+        "tag": "H2",
+        "cls": ""
+      },
+      {
+        "text": "Measure the jewelry and box interior",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "before sending a size. For a holder that must work inside a box, use",
+        "kind": "text",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "the insert material comparison",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "to describe the job first.",
+        "kind": "text",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Request a quote for the complete arrangement",
+        "kind": "block",
+        "tag": "H2",
+        "cls": ""
+      },
+      {
+        "text": "Include the complete jewelry measurements, quantity per design and destination country. List the box, holder, pouch or cards you want included. Add any target date as a requirement for review. Packrivo coordinates the sourcing questions; construction, sample scope, price and timing will be confirmed for the proposed project.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "A clear next step",
+        "kind": "block",
+        "tag": "P",
+        "cls": "category-name"
+      },
+      {
+        "text": "Request a quote for your jewelry packaging.",
+        "kind": "block",
+        "tag": "H2",
+        "cls": ""
+      },
+      {
+        "text": "Start with your chosen direction and the details you know. We will organize the open fit, logo and sample questions.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Chat on WhatsApp",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": ""
+      },
+      {
+        "text": "WhatsApp opens with a packaging topic. Add only what you want to share, and send it when you are ready.",
+        "kind": "block",
+        "tag": "P",
+        "cls": "helper"
+      },
+      {
+        "text": "Buying guides",
+        "kind": "block",
+        "tag": "H2",
+        "cls": ""
+      },
+      {
+        "text": "Jewelry box constructions and 500-unit cost",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "How much custom packaging costs",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Reference catalogue",
+        "kind": "block",
+        "tag": "H2",
+        "cls": ""
+      },
+      {
+        "text": "Supplier listings we recorded in October 2026 — real minimum quantities and lowest-tier prices, grouped by structure. Each group has its own specification pages.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Ring Boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Velvet Jewelry Boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Necklace Boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Jewelry Storage Boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Paper Jewelry Boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Jewelry Gift Boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Jewelry Pouches",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Rigid Lid-and-Base Boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Drawer Boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "PU Leather Cases",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Folding Cartons",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Wooden Jewelry Boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Jewelry Packaging Boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Other Jewelry Packaging",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Custom packaging sourcing.",
+        "kind": "text",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Clear specifications.",
+        "kind": "text",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Project coordination.",
+        "kind": "text",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Packrivo · Shenzhen, China",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Explore",
+        "kind": "block",
+        "tag": "H2",
+        "cls": ""
+      },
+      {
+        "text": "Gift boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Mailer boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Labels",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Inserts",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Bags & pouches",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Contact Packrivo",
+        "kind": "block",
+        "tag": "H2",
+        "cls": ""
+      },
+      {
+        "text": "hello@packrivo.com",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "WhatsApp: +86 198 9984 6512",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Packrivo · Packaging sourcing & project coordination",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": ""
+      },
+      {
+        "text": "Privacy & inquiry data",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Terms of service",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Compare suppliers",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Cookie settings",
+        "kind": "text",
+        "tag": "BUTTON",
+        "cls": "pr-consent-reopen"
+      },
+      {
+        "text": "Packaging guides",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Switch color theme",
+        "kind": "text",
+        "tag": "BUTTON",
+        "cls": ""
+      },
+      {
+        "text": "Cookies on Packrivo",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pr-consent-title"
+      },
+      {
+        "text": "We use Google Analytics cookies to see which pages help buyers. No advertising cookies.",
+        "kind": "text",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Reject",
+        "kind": "text",
+        "tag": "BUTTON",
+        "cls": "secondary"
+      },
+      {
+        "text": "Accept",
+        "kind": "text",
+        "tag": "BUTTON",
+        "cls": "button"
+      },
+      {
+        "text": "Packrivo home",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "A",
+        "cls": "pk-brand"
+      },
+      {
+        "text": "Primary",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "NAV",
+        "cls": "pk-nav is-open"
+      },
+      {
+        "text": "Open Products menu",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": "pk-caret"
+      },
+      {
+        "text": "Open Blog menu",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": "pk-caret"
+      },
+      {
+        "text": "Open Resources menu",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": "pk-caret"
+      },
+      {
+        "text": "Choose language",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": ""
+      },
+      {
+        "text": "Search",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "A",
+        "cls": "pk-icon-btn"
+      },
+      {
+        "text": "Breadcrumb",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "NAV",
+        "cls": "crumb"
+      },
+      {
+        "text": "View the source photograph for this jewelry box reference",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Supplier reference photograph of open and closed ivory presentation boxes, with original lettering retained",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "View the full-size ivory presentation reference photograph",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Open and closed ivory presentation boxes with the original FOREVER and FOR YOU lettering",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "View the full-size printed box reference photograph",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Collection of printed boxes in several colors with their original brand marks and patterns",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "View the full-size drawer box reference photograph",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Group of printed drawer-style box references with visible front pulls and original brand marks",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Magnetic jewelry box concept",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Drawer jewelry packaging concept with terracotta sleeve, ivory sliding tray and cream pull loop",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": "attachment-medium_large size-medium_large"
+      },
+      {
+        "text": "Lid and base jewelry box concept",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Jewelry box with fitted insert concept",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Pillow jewelry box concept",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "A cylindrical cardboard tube gift box with a removable lid and a bold cobalt and yellow exterior.",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "A plum textile jewelry pouch with a contrasting orange drawcord and unbranded jewelry nearby.",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Shoulder-neck rigid-box concept shows raised inner neck and separate lid overlap in a side detail.",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Separate rigid window lid aligns with a pendant holder, with wrap/core/patch section and fully seated closed view.",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Hinged rigid gift box shows an external ribbon bow, interior ribbon anchors and the tie path.",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Book-style rigid cover opens at the spine beside a separate tray and closed companion state.",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Two rigid doors open around a central framed ornament, with closed and partly opened states.",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Hinged metal gift container has a mechanical metal hinge, loaded jewelry holder and closing sweep view.",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Round metal slip-lid concept shows separate lid, rim engagement close-up and loaded/closed views.",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Round metal-container concept has visible proposed thread ridges, separated lid and two-hand turning view.",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Metal gift container shows front latch operation, real-looking mechanical hinge and loaded pouch removal.",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Metal-container rim and lid are shown in press-down closing and lift-off release states with edge details.",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Next step",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "ASIDE",
+        "cls": "contact-panel"
+      },
+      {
+        "text": "Packrivo",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": "brand-logo"
+      },
+      {
+        "text": "Contact options",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "NAV",
+        "cls": "contact-dock packrivo-global-contact"
+      },
+      {
+        "text": "Chat with Packrivo on WhatsApp (opens a new tab)",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "A",
+        "cls": "button contact-dock-chat"
+      },
+      {
+        "text": "Boxes",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-panel-title"
+      },
+      {
+        "text": "Foldable gift boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Rigid gift boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Print & finishing",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-panel-title"
+      },
+      {
+        "text": "Printing & finishes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Start here",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-panel-title"
+      },
+      {
+        "text": "All packaging products",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Order a sample",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Get a quote",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Every structure is priced from 500 units. Dielines included.",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-panel-note"
+      },
+      {
+        "text": "Close Products menu",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": "pk-caret"
+      },
+      {
+        "text": "All articles",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Materials & print",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Supplier briefs",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Samples & approval",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Structures & fit",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Shipping & rules",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Close Blog menu",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": "pk-caret"
+      },
+      {
+        "text": "Guides",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Packaging examples",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Compare formats",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Price index",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Close Resources menu",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": "pk-caret"
+      },
+      {
+        "text": "Menu",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-burger-text"
+      },
+      {
+        "text": "Close",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-burger-text"
+      }
+    ]
+  },
+  "/blog/": {
+    "status": 200,
+    "url": "http://localhost:8081/blog/",
+    "nodes": [
+      {
+        "text": "Packrivo",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-brand-word"
+      },
+      {
+        "text": "Products",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-nav-link"
+      },
+      {
+        "text": "Samples",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-nav-link"
+      },
+      {
+        "text": "Customization",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-nav-link"
+      },
+      {
+        "text": "Services",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Blog",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-nav-link"
+      },
+      {
+        "text": "Resources",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-nav-link"
+      },
+      {
+        "text": "About",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "EN",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": ""
+      },
+      {
+        "text": "Build a quote",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-cta"
+      },
+      {
+        "text": "Journal · 333 articles",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-eyebrow"
+      },
+      {
+        "text": "Packaging notes from the floor",
+        "kind": "block",
+        "tag": "H1",
+        "cls": "pk-display"
+      },
+      {
+        "text": "Supplier briefs, material notes and pricing explainers for small brands sourcing custom packaging.",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-lede"
+      },
+      {
+        "text": "All",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-chip is-active"
+      },
+      {
+        "text": "Materials & print",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-chip "
+      },
+      {
+        "text": "Supplier briefs",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-chip "
+      },
+      {
+        "text": "Samples & approval",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-chip "
+      },
+      {
+        "text": "Structures & fit",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-chip "
+      },
+      {
+        "text": "Shipping & rules",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-chip "
+      },
+      {
+        "text": "Sort",
+        "kind": "block",
+        "tag": "LABEL",
+        "cls": ""
+      },
+      {
+        "text": "Newest first",
+        "kind": "block",
+        "tag": "OPTION",
+        "cls": ""
+      },
+      {
+        "text": "Oldest first",
+        "kind": "block",
+        "tag": "OPTION",
+        "cls": ""
+      },
+      {
+        "text": "Sort",
+        "kind": "text",
+        "tag": "BUTTON",
+        "cls": ""
+      },
+      {
+        "text": "Featured · Structures & fit · 7 min read",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-eyebrow"
+      },
+      {
+        "text": "Read the guide →",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-more"
+      },
+      {
+        "text": "In this guide",
+        "kind": "text",
+        "tag": "STRONG",
+        "cls": ""
+      },
+      {
+        "text": "Structures & fit · 7 min · Oct 26, 2026",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-post-meta pk-mono"
+      },
+      {
+        "text": "Materials & print · 6 min · Oct 20, 2026",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-post-meta pk-mono"
+      },
+      {
+        "text": "Supplier briefs · 5 min · Oct 20, 2026",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-post-meta pk-mono"
+      },
+      {
+        "text": "Samples & approval · 6 min · Oct 15, 2026",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-post-meta pk-mono"
+      },
+      {
+        "text": "Supplier briefs · 5 min · Oct 15, 2026",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-post-meta pk-mono"
+      },
+      {
+        "text": "Supplier briefs · 6 min · Oct 15, 2026",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-post-meta pk-mono"
+      },
+      {
+        "text": "Structures & fit · 5 min · Oct 15, 2026",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-post-meta pk-mono"
+      },
+      {
+        "text": "Next »",
+        "kind": "text",
+        "tag": "A",
+        "cls": "next page-numbers"
+      },
+      {
+        "text": "Custom packaging sourcing.",
+        "kind": "text",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Clear specifications.",
+        "kind": "text",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Project coordination.",
+        "kind": "text",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Packrivo · Shenzhen, China",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Explore",
+        "kind": "block",
+        "tag": "H2",
+        "cls": ""
+      },
+      {
+        "text": "Jewelry boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Gift boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Mailer boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Labels",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Inserts",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Bags & pouches",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Contact Packrivo",
+        "kind": "block",
+        "tag": "H2",
+        "cls": ""
+      },
+      {
+        "text": "hello@packrivo.com",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "WhatsApp: +86 198 9984 6512",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Get a Quote",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pr-quote-cta"
+      },
+      {
+        "text": "Packrivo · Packaging sourcing & project coordination",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": ""
+      },
+      {
+        "text": "Privacy & inquiry data",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Terms of service",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Compare suppliers",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Cookie settings",
+        "kind": "text",
+        "tag": "BUTTON",
+        "cls": "pr-consent-reopen"
+      },
+      {
+        "text": "Packaging guides",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Switch color theme",
+        "kind": "text",
+        "tag": "BUTTON",
+        "cls": ""
+      },
+      {
+        "text": "Cookies on Packrivo",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pr-consent-title"
+      },
+      {
+        "text": "We use Google Analytics cookies to see which pages help buyers. No advertising cookies.",
+        "kind": "text",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Reject",
+        "kind": "text",
+        "tag": "BUTTON",
+        "cls": "secondary"
+      },
+      {
+        "text": "Accept",
+        "kind": "text",
+        "tag": "BUTTON",
+        "cls": "button"
+      },
+      {
+        "text": "Chat on WhatsApp",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": ""
+      },
+      {
+        "text": "Packrivo home",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "A",
+        "cls": "pk-brand"
+      },
+      {
+        "text": "Primary",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "NAV",
+        "cls": "pk-nav is-open"
+      },
+      {
+        "text": "Open Products menu",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": "pk-caret"
+      },
+      {
+        "text": "Open Blog menu",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": "pk-caret"
+      },
+      {
+        "text": "Open Resources menu",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": "pk-caret"
+      },
+      {
+        "text": "Choose language",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": ""
+      },
+      {
+        "text": "Search",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "A",
+        "cls": "pk-icon-btn"
+      },
+      {
+        "text": "One-Piece Trays vs Separate End Supports in Molded Pulp Packs",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Packrivo",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": "brand-logo"
+      },
+      {
+        "text": "Contact options",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "NAV",
+        "cls": "contact-dock packrivo-global-contact"
+      },
+      {
+        "text": "Chat with Packrivo on WhatsApp (opens a new tab)",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "A",
+        "cls": "button contact-dock-chat"
+      },
+      {
+        "text": "Boxes",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-panel-title"
+      },
+      {
+        "text": "Foldable gift boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Rigid gift boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Print & finishing",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-panel-title"
+      },
+      {
+        "text": "Printing & finishes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Start here",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-panel-title"
+      },
+      {
+        "text": "All packaging products",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Order a sample",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Get a quote",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Every structure is priced from 500 units. Dielines included.",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-panel-note"
+      },
+      {
+        "text": "Close Products menu",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": "pk-caret"
+      },
+      {
+        "text": "All articles",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Close Blog menu",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": "pk-caret"
+      },
+      {
+        "text": "Guides",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Packaging examples",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Compare formats",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Price index",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Close Resources menu",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": "pk-caret"
+      },
+      {
+        "text": "Menu",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-burger-text"
+      },
+      {
+        "text": "Close",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-burger-text"
+      }
+    ]
+  },
+  "/2026/10/26/jewelry-pouch-box-customer-handoff/": {
+    "status": 200,
+    "url": "http://localhost:8081/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "nodes": [
+      {
+        "text": "Packrivo",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-brand-word"
+      },
+      {
+        "text": "Products",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-nav-link"
+      },
+      {
+        "text": "Samples",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-nav-link"
+      },
+      {
+        "text": "Customization",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-nav-link"
+      },
+      {
+        "text": "Services",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Blog",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-nav-link"
+      },
+      {
+        "text": "Resources",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-nav-link"
+      },
+      {
+        "text": "About",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "EN",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": ""
+      },
+      {
+        "text": "Build a quote",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-btn pk-btn-light"
+      },
+      {
+        "text": "Home",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Journal",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Structures & fit",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Related structures",
+        "kind": "block",
+        "tag": "H2",
+        "cls": "pk-h2"
+      },
+      {
+        "text": "MOQ 500",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-product-moq"
+      },
+      {
+        "text": "jewelry",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-product-card-group"
+      },
+      {
+        "text": "Custom Drawer Jewelry Boxes with Logo",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-card-title"
+      },
+      {
+        "text": "Custom drawer jewelry boxes for small brands, with logo options and a 500-piece minimum. Get a price.",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-product-card-desc"
+      },
+      {
+        "text": "Supplier product photo, retouched (text and watermarks removed)",
+        "kind": "text",
+        "tag": "SMALL",
+        "cls": "pk-product-photo-caption"
+      },
+      {
+        "text": "from $2.83 / unit",
+        "kind": "text",
+        "tag": "STRONG",
+        "cls": ""
+      },
+      {
+        "text": "at 500 pcs · 9.5×9.5×4 cm",
+        "kind": "text",
+        "tag": "SMALL",
+        "cls": ""
+      },
+      {
+        "text": "Configure →",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Custom Jewelry Boxes with Fitted Inserts",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-card-title"
+      },
+      {
+        "text": "Custom jewelry boxes with fitted inserts for small brands, with logo options and a 500-piece minimum. Get a price.",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-product-card-desc"
+      },
+      {
+        "text": "Custom Lid-and-Base Jewelry Boxes",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-card-title"
+      },
+      {
+        "text": "Custom lid-and-base jewelry boxes for small brands, with logo options and a 500-piece minimum. Get a price.",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-product-card-desc"
+      },
+      {
+        "text": "Keep reading",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-eyebrow"
+      },
+      {
+        "text": "Oct 26, 2026",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-post-meta pk-mono"
+      },
+      {
+        "text": "Oct 15, 2026",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-post-meta pk-mono"
+      },
+      {
+        "text": "Put it to work on a real pack",
+        "kind": "block",
+        "tag": "H2",
+        "cls": "pk-h2 pk-on-dark"
+      },
+      {
+        "text": "The quote builder applies these numbers to your size and quantity. We confirm the dieline before anything is produced.",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-lede pk-on-dark-muted"
+      },
+      {
+        "text": "Order a sample",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-btn pk-btn-light"
+      },
+      {
+        "text": "Custom packaging sourcing.",
+        "kind": "text",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Clear specifications.",
+        "kind": "text",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Project coordination.",
+        "kind": "text",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Packrivo · Shenzhen, China",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Explore",
+        "kind": "block",
+        "tag": "H2",
+        "cls": ""
+      },
+      {
+        "text": "Jewelry boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Gift boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Mailer boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Labels",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Inserts",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Bags & pouches",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Contact Packrivo",
+        "kind": "block",
+        "tag": "H2",
+        "cls": ""
+      },
+      {
+        "text": "hello@packrivo.com",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "WhatsApp: +86 198 9984 6512",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Get a Quote",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pr-quote-cta"
+      },
+      {
+        "text": "Packrivo · Packaging sourcing & project coordination",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": ""
+      },
+      {
+        "text": "Privacy & inquiry data",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Terms of service",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Compare suppliers",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Cookie settings",
+        "kind": "text",
+        "tag": "BUTTON",
+        "cls": "pr-consent-reopen"
+      },
+      {
+        "text": "Packaging guides",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Switch color theme",
+        "kind": "text",
+        "tag": "BUTTON",
+        "cls": ""
+      },
+      {
+        "text": "Cookies on Packrivo",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pr-consent-title"
+      },
+      {
+        "text": "We use Google Analytics cookies to see which pages help buyers. No advertising cookies.",
+        "kind": "text",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Reject",
+        "kind": "text",
+        "tag": "BUTTON",
+        "cls": "secondary"
+      },
+      {
+        "text": "Accept",
+        "kind": "text",
+        "tag": "BUTTON",
+        "cls": "button"
+      },
+      {
+        "text": "Chat on WhatsApp",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": ""
+      },
+      {
+        "text": "Packrivo home",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "A",
+        "cls": "pk-brand"
+      },
+      {
+        "text": "Primary",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "NAV",
+        "cls": "pk-nav is-open"
+      },
+      {
+        "text": "Open Products menu",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": "pk-caret"
+      },
+      {
+        "text": "Open Blog menu",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": "pk-caret"
+      },
+      {
+        "text": "Open Resources menu",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": "pk-caret"
+      },
+      {
+        "text": "Choose language",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": ""
+      },
+      {
+        "text": "Search",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "A",
+        "cls": "pk-icon-btn"
+      },
+      {
+        "text": "Breadcrumb",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "NAV",
+        "cls": "pk-breadcrumb pk-mono"
+      },
+      {
+        "text": "Red drawer jewelry box with ribbon pull and insert",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Colorful drawer jewelry boxes with ribbon pulls and inserts",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Black and white lid-and-base jewelry boxes with inserts",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "Packrivo",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": "brand-logo"
+      },
+      {
+        "text": "Contact options",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "NAV",
+        "cls": "contact-dock packrivo-global-contact"
+      },
+      {
+        "text": "Chat with Packrivo on WhatsApp (opens a new tab)",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "A",
+        "cls": "button contact-dock-chat"
+      },
+      {
+        "text": "Boxes",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-panel-title"
+      },
+      {
+        "text": "Foldable gift boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Rigid gift boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Print & finishing",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-panel-title"
+      },
+      {
+        "text": "Printing & finishes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Start here",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-panel-title"
+      },
+      {
+        "text": "All packaging products",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Get a quote",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Every structure is priced from 500 units. Dielines included.",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-panel-note"
+      },
+      {
+        "text": "Close Products menu",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": "pk-caret"
+      },
+      {
+        "text": "All articles",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Materials & print",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Supplier briefs",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Samples & approval",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Shipping & rules",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Close Blog menu",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": "pk-caret"
+      },
+      {
+        "text": "Guides",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Packaging examples",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Compare formats",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Price index",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Close Resources menu",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": "pk-caret"
+      },
+      {
+        "text": "Menu",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-burger-text"
+      },
+      {
+        "text": "Close",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-burger-text"
+      }
+    ]
+  },
+  "/product-pillow-jewelry-box/": {
+    "status": 200,
+    "url": "http://localhost:8081/product-pillow-jewelry-box/",
+    "nodes": [
+      {
+        "text": "Packrivo",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-brand-word"
+      },
+      {
+        "text": "Products",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Samples",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-nav-link"
+      },
+      {
+        "text": "Customization",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-nav-link"
+      },
+      {
+        "text": "Services",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Blog",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-nav-link"
+      },
+      {
+        "text": "Resources",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-nav-link"
+      },
+      {
+        "text": "About",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "EN",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": ""
+      },
+      {
+        "text": "Build a quote",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-cta"
+      },
+      {
+        "text": "Home",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Jewelry boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Pillow Jewelry Box",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": ""
+      },
+      {
+        "text": "AI-assisted packaging concept. Review the actual materials and fit on a physical sample.",
+        "kind": "text",
+        "tag": "FIGCAPTION",
+        "cls": ""
+      },
+      {
+        "text": "Jewelry boxes",
+        "kind": "block",
+        "tag": "P",
+        "cls": "category-name"
+      },
+      {
+        "text": "Custom Pillow Jewelry Boxes",
+        "kind": "block",
+        "tag": "H1",
+        "cls": ""
+      },
+      {
+        "text": "MOQ: 500 pieces per product / design.",
+        "kind": "text",
+        "tag": "STRONG",
+        "cls": ""
+      },
+      {
+        "text": "Plan the quantity for each design in your brief.",
+        "kind": "text",
+        "tag": "P",
+        "cls": "packrivo-moq"
+      },
+      {
+        "text": "A pillow-style jewelry box uses a curved folded paperboard structure.",
+        "kind": "block",
+        "tag": "P",
+        "cls": "lead"
+      },
+      {
+        "text": "Inquiry direction · Supplier confirmation required",
+        "kind": "block",
+        "tag": "P",
+        "cls": "notice"
+      },
+      {
+        "text": "Quote Details",
+        "kind": "block",
+        "tag": "H2",
+        "cls": ""
+      },
+      {
+        "text": "Send the product dimensions, quantity by design and destination. Include the structure, material and artwork preferences you already know; flag open questions so supplier quotes use the same scope.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Get a Quote",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pr-quote-cta"
+      },
+      {
+        "text": "Explore customization →",
+        "kind": "text",
+        "tag": "A",
+        "cls": "text-link"
+      },
+      {
+        "text": "When it may fit",
+        "kind": "block",
+        "tag": "H2",
+        "cls": ""
+      },
+      {
+        "text": "It may suit small accessories or gift-card-sized items. It may not fit pieces that need a rigid insert or a defined square display cavity.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Details to define",
+        "kind": "block",
+        "tag": "H2",
+        "cls": ""
+      },
+      {
+        "text": "Product size, shape and orientation.",
+        "kind": "block",
+        "tag": "LI",
+        "cls": ""
+      },
+      {
+        "text": "Finished width, length and depth.",
+        "kind": "block",
+        "tag": "LI",
+        "cls": ""
+      },
+      {
+        "text": "Paper/board direction, print and closure detail.",
+        "kind": "block",
+        "tag": "LI",
+        "cls": ""
+      },
+      {
+        "text": "Whether an inner card, pouch or outer bag is needed.",
+        "kind": "block",
+        "tag": "LI",
+        "cls": ""
+      },
+      {
+        "text": "Artwork and presentation choices",
+        "kind": "block",
+        "tag": "H2",
+        "cls": ""
+      },
+      {
+        "text": "Place the intended artwork on the proposed curved-panel drawing. Review the front-facing motif and the end folds as separate areas, including what remains visible after closure.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Options to compare",
+        "kind": "block",
+        "tag": "H2",
+        "cls": ""
+      },
+      {
+        "text": "Compare a clean color block with a playful repeat pattern.",
+        "kind": "block",
+        "tag": "LI",
+        "cls": ""
+      },
+      {
+        "text": "Choose a tie, tuck or other closure only after supplier review.",
+        "kind": "block",
+        "tag": "LI",
+        "cls": ""
+      },
+      {
+        "text": "Use the curved silhouette as the visual focus.",
+        "kind": "block",
+        "tag": "LI",
+        "cls": ""
+      },
+      {
+        "text": "Supplier confirmation needed",
+        "kind": "block",
+        "tag": "H2",
+        "cls": ""
+      },
+      {
+        "text": "Confirm the dieline, fold behavior, closure and fit with a supplier. The shape alone does not prove strength or parcel suitability.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Project details to agree",
+        "kind": "block",
+        "tag": "H2",
+        "cls": ""
+      },
+      {
+        "text": "Final materials, construction, price, sample scope and delivery timing are confirmed for the agreed project with the relevant supplier.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Frequently asked questions",
+        "kind": "block",
+        "tag": "H2",
+        "cls": ""
+      },
+      {
+        "text": "Can a pillow box hold every jewelry type?",
+        "kind": "block",
+        "tag": "SUMMARY",
+        "cls": ""
+      },
+      {
+        "text": "No. Check the item dimensions, insertion and removal path for the exact piece before choosing this format.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Does this concept confirm supplier availability?",
+        "kind": "block",
+        "tag": "SUMMARY",
+        "cls": ""
+      },
+      {
+        "text": "No. Materials, construction, sampling, price, lead time and performance require supplier-specific confirmation.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Request a Quote",
+        "kind": "block",
+        "tag": "H2",
+        "cls": ""
+      },
+      {
+        "text": "Compare this inquiry direction with",
+        "kind": "text",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Packrivo product directions",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "and",
+        "kind": "text",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": ". This is a packaging concept, not a production offer.",
+        "kind": "text",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Back to packaging directions →",
+        "kind": "text",
+        "tag": "A",
+        "cls": "text-link"
+      },
+      {
+        "text": "What happens next?",
+        "kind": "block",
+        "tag": "H2",
+        "cls": ""
+      },
+      {
+        "text": "Share the product and the details you know.",
+        "kind": "block",
+        "tag": "LI",
+        "cls": ""
+      },
+      {
+        "text": "Organize open questions before supplier contact.",
+        "kind": "block",
+        "tag": "LI",
+        "cls": ""
+      },
+      {
+        "text": "Confirm feasibility, samples and commercial terms separately.",
+        "kind": "block",
+        "tag": "LI",
+        "cls": ""
+      },
+      {
+        "text": "Talk through your packaging",
+        "kind": "block",
+        "tag": "P",
+        "cls": "category-name"
+      },
+      {
+        "text": "Start with a conversation.",
+        "kind": "block",
+        "tag": "H2",
+        "cls": ""
+      },
+      {
+        "text": "A format, a quantity and a destination are enough to open the discussion. Technical details can follow.",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "A person reviews the brief; this page does not generate an automatic quote.",
+        "kind": "block",
+        "tag": "P",
+        "cls": "helper"
+      },
+      {
+        "text": "Before you request a quote",
+        "kind": "block",
+        "tag": "H2",
+        "cls": ""
+      },
+      {
+        "text": "What 500 units costs",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "How the 500-piece minimum works",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Sample types and timing",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Lead time by stage",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Custom packaging sourcing.",
+        "kind": "text",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Clear specifications.",
+        "kind": "text",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Project coordination.",
+        "kind": "text",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Packrivo · Shenzhen, China",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Explore",
+        "kind": "block",
+        "tag": "H2",
+        "cls": ""
+      },
+      {
+        "text": "Gift boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Mailer boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Labels",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Inserts",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Bags & pouches",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Contact Packrivo",
+        "kind": "block",
+        "tag": "H2",
+        "cls": ""
+      },
+      {
+        "text": "hello@packrivo.com",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "WhatsApp: +86 198 9984 6512",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Packrivo · Packaging sourcing & project coordination",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": ""
+      },
+      {
+        "text": "Privacy & inquiry data",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Terms of service",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Compare suppliers",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Cookie settings",
+        "kind": "text",
+        "tag": "BUTTON",
+        "cls": "pr-consent-reopen"
+      },
+      {
+        "text": "Packaging guides",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Switch color theme",
+        "kind": "text",
+        "tag": "BUTTON",
+        "cls": ""
+      },
+      {
+        "text": "Cookies on Packrivo",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pr-consent-title"
+      },
+      {
+        "text": "We use Google Analytics cookies to see which pages help buyers. No advertising cookies.",
+        "kind": "text",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Reject",
+        "kind": "text",
+        "tag": "BUTTON",
+        "cls": "secondary"
+      },
+      {
+        "text": "Accept",
+        "kind": "text",
+        "tag": "BUTTON",
+        "cls": "button"
+      },
+      {
+        "text": "Chat on WhatsApp",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": ""
+      },
+      {
+        "text": "Packrivo home",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "A",
+        "cls": "pk-brand"
+      },
+      {
+        "text": "Primary",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "NAV",
+        "cls": "pk-nav is-open"
+      },
+      {
+        "text": "Open Products menu",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": "pk-caret"
+      },
+      {
+        "text": "Open Blog menu",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": "pk-caret"
+      },
+      {
+        "text": "Open Resources menu",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": "pk-caret"
+      },
+      {
+        "text": "Choose language",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": ""
+      },
+      {
+        "text": "Search",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "A",
+        "cls": "pk-icon-btn"
+      },
+      {
+        "text": "Breadcrumb",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "NAV",
+        "cls": "crumb"
+      },
+      {
+        "text": "A curved pillow-shaped paper jewelry pack with a bright teal and pink graphic pattern.",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": ""
+      },
+      {
+        "text": "What happens next",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "SECTION",
+        "cls": "packrivo-next-steps"
+      },
+      {
+        "text": "Contact options",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "NAV",
+        "cls": "contact-dock packrivo-global-contact"
+      },
+      {
+        "text": "Packrivo",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": "brand-logo"
+      },
+      {
+        "text": "Chat with Packrivo on WhatsApp (opens a new tab)",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "A",
+        "cls": "button contact-dock-chat"
+      },
+      {
+        "text": "Boxes",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-panel-title"
+      },
+      {
+        "text": "Foldable gift boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Rigid gift boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Print & finishing",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-panel-title"
+      },
+      {
+        "text": "Printing & finishes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Start here",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-panel-title"
+      },
+      {
+        "text": "All packaging products",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Order a sample",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Get a quote",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Every structure is priced from 500 units. Dielines included.",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-panel-note"
+      },
+      {
+        "text": "Close Products menu",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": "pk-caret"
+      },
+      {
+        "text": "All articles",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Materials & print",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Supplier briefs",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Samples & approval",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Structures & fit",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Shipping & rules",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Close Blog menu",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": "pk-caret"
+      },
+      {
+        "text": "Guides",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Packaging examples",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Compare formats",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Price index",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Close Resources menu",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": "pk-caret"
+      },
+      {
+        "text": "Menu",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-burger-text"
+      },
+      {
+        "text": "Get a quote · MOQ 500",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pr-sticky-main"
+      },
+      {
+        "text": "WA",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pr-sticky-wa"
+      },
+      {
+        "text": "Request a quote",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "DIV",
+        "cls": "pr-sticky"
+      },
+      {
+        "text": "Chat on WhatsApp",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "A",
+        "cls": "pr-sticky-wa"
+      },
+      {
+        "text": "Close",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-burger-text"
+      }
+    ]
+  },
+  "/get-a-quote/": {
+    "status": 200,
+    "url": "http://localhost:8081/get-a-quote/",
+    "nodes": [
+      {
+        "text": "Packrivo",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-brand-word"
+      },
+      {
+        "text": "Products",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-nav-link"
+      },
+      {
+        "text": "Samples",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-nav-link"
+      },
+      {
+        "text": "Customization",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-nav-link"
+      },
+      {
+        "text": "Services",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Blog",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-nav-link"
+      },
+      {
+        "text": "Resources",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-nav-link"
+      },
+      {
+        "text": "About",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "EN",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": ""
+      },
+      {
+        "text": "Build a quote",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pk-cta"
+      },
+      {
+        "text": "Custom packaging sourcing.",
+        "kind": "text",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Clear specifications.",
+        "kind": "text",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Project coordination.",
+        "kind": "text",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Packrivo · Shenzhen, China",
+        "kind": "block",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Explore",
+        "kind": "block",
+        "tag": "H2",
+        "cls": ""
+      },
+      {
+        "text": "Jewelry boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Gift boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Mailer boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Labels",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Inserts",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Bags & pouches",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Contact Packrivo",
+        "kind": "block",
+        "tag": "H2",
+        "cls": ""
+      },
+      {
+        "text": "hello@packrivo.com",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "WhatsApp: +86 198 9984 6512",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Get a Quote",
+        "kind": "text",
+        "tag": "A",
+        "cls": "pr-quote-cta"
+      },
+      {
+        "text": "Packrivo · Packaging sourcing & project coordination",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": ""
+      },
+      {
+        "text": "Privacy & inquiry data",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Terms of service",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Compare suppliers",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Cookie settings",
+        "kind": "text",
+        "tag": "BUTTON",
+        "cls": "pr-consent-reopen"
+      },
+      {
+        "text": "Packaging guides",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Switch color theme",
+        "kind": "text",
+        "tag": "BUTTON",
+        "cls": ""
+      },
+      {
+        "text": "Cookies on Packrivo",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pr-consent-title"
+      },
+      {
+        "text": "We use Google Analytics cookies to see which pages help buyers. No advertising cookies.",
+        "kind": "text",
+        "tag": "P",
+        "cls": ""
+      },
+      {
+        "text": "Reject",
+        "kind": "text",
+        "tag": "BUTTON",
+        "cls": "secondary"
+      },
+      {
+        "text": "Accept",
+        "kind": "text",
+        "tag": "BUTTON",
+        "cls": "button"
+      },
+      {
+        "text": "Chat on WhatsApp",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": ""
+      },
+      {
+        "text": "Packrivo home",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "A",
+        "cls": "pk-brand"
+      },
+      {
+        "text": "Primary",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "NAV",
+        "cls": "pk-nav is-open"
+      },
+      {
+        "text": "Open Products menu",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": "pk-caret"
+      },
+      {
+        "text": "Open Blog menu",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": "pk-caret"
+      },
+      {
+        "text": "Open Resources menu",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": "pk-caret"
+      },
+      {
+        "text": "Choose language",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": ""
+      },
+      {
+        "text": "Search",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "A",
+        "cls": "pk-icon-btn"
+      },
+      {
+        "text": "Packrivo",
+        "kind": "attr",
+        "attr": "alt",
+        "tag": "IMG",
+        "cls": "brand-logo"
+      },
+      {
+        "text": "Contact options",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "NAV",
+        "cls": "contact-dock packrivo-global-contact"
+      },
+      {
+        "text": "Chat with Packrivo on WhatsApp (opens a new tab)",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "A",
+        "cls": "button contact-dock-chat"
+      },
+      {
+        "text": "Boxes",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-panel-title"
+      },
+      {
+        "text": "Foldable gift boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Rigid gift boxes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Print & finishing",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-panel-title"
+      },
+      {
+        "text": "Printing & finishes",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Start here",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-panel-title"
+      },
+      {
+        "text": "All packaging products",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Order a sample",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Get a quote",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Every structure is priced from 500 units. Dielines included.",
+        "kind": "block",
+        "tag": "P",
+        "cls": "pk-panel-note"
+      },
+      {
+        "text": "Close Products menu",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": "pk-caret"
+      },
+      {
+        "text": "All articles",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Materials & print",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Supplier briefs",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Samples & approval",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Structures & fit",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Shipping & rules",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Close Blog menu",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": "pk-caret"
+      },
+      {
+        "text": "Guides",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Packaging examples",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Compare formats",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Price index",
+        "kind": "text",
+        "tag": "A",
+        "cls": ""
+      },
+      {
+        "text": "Close Resources menu",
+        "kind": "attr",
+        "attr": "aria-label",
+        "tag": "BUTTON",
+        "cls": "pk-caret"
+      },
+      {
+        "text": "Menu",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-burger-text"
+      },
+      {
+        "text": "Close",
+        "kind": "text",
+        "tag": "SPAN",
+        "cls": "pk-burger-text"
+      }
+    ]
+  }
+}

@@ -1,0 +1,673 @@
+[
+  {
+    "path": "/",
+    "lang": "ar",
+    "status": 200,
+    "url": "http://localhost:8081/ar/",
+    "count": 84
+  },
+  {
+    "path": "/products/",
+    "lang": "ar",
+    "status": 200,
+    "url": "http://localhost:8081/ar/products/",
+    "count": 55
+  },
+  {
+    "path": "/jewelry-boxes/",
+    "lang": "ar",
+    "status": 200,
+    "url": "http://localhost:8081/ar/jewelry-boxes/",
+    "count": 82
+  },
+  {
+    "path": "/blog/",
+    "lang": "ar",
+    "status": 200,
+    "url": "http://localhost:8081/ar/blog/",
+    "count": 37
+  },
+  {
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "lang": "ar",
+    "status": 404,
+    "url": "http://localhost:8081/ar/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "count": 26,
+    "title": "404 — page not translated",
+    "fallback": {
+      "url": "http://localhost:8081/ar/?p=2937",
+      "status": 200,
+      "bodyClass": "post-template-default single single-post postid-2937 single-format-standard pk-body pr-page-pad has-contact-dock pr-consent-open pr-has-consent"
+    }
+  },
+  {
+    "path": "/product-pillow-jewelry-box/",
+    "lang": "ar",
+    "status": 200,
+    "url": "http://localhost:8081/ar/product-pillow-jewelry-box/",
+    "count": 34
+  },
+  {
+    "path": "/get-a-quote/",
+    "lang": "ar",
+    "status": 404,
+    "url": "http://localhost:8081/ar/get-a-quote/",
+    "count": 22,
+    "title": "404 — page not translated",
+    "fallback": {
+      "url": "http://localhost:8081/ar/?page_id=3220",
+      "status": 200,
+      "bodyClass": "page-template-default page page-id-3220 pk-body pr-page-pad has-contact-dock pr-consent-open pr-has-consent"
+    }
+  },
+  {
+    "path": "/",
+    "lang": "de",
+    "status": 200,
+    "url": "http://localhost:8081/de/",
+    "count": 85
+  },
+  {
+    "path": "/products/",
+    "lang": "de",
+    "status": 200,
+    "url": "http://localhost:8081/de/products/",
+    "count": 56
+  },
+  {
+    "path": "/jewelry-boxes/",
+    "lang": "de",
+    "status": 200,
+    "url": "http://localhost:8081/de/jewelry-boxes/",
+    "count": 83
+  },
+  {
+    "path": "/blog/",
+    "lang": "de",
+    "status": 200,
+    "url": "http://localhost:8081/de/blog/",
+    "count": 38
+  },
+  {
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "lang": "de",
+    "status": 404,
+    "url": "http://localhost:8081/de/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "count": 27,
+    "title": "404 — page not translated",
+    "fallback": {
+      "url": "http://localhost:8081/de/?p=2937",
+      "status": 200,
+      "bodyClass": "post-template-default single single-post postid-2937 single-format-standard pk-body pr-page-pad has-contact-dock pr-consent-open pr-has-consent"
+    }
+  },
+  {
+    "path": "/product-pillow-jewelry-box/",
+    "lang": "de",
+    "status": 200,
+    "url": "http://localhost:8081/de/product-pillow-jewelry-box/",
+    "count": 35
+  },
+  {
+    "path": "/get-a-quote/",
+    "lang": "de",
+    "status": 404,
+    "url": "http://localhost:8081/de/get-a-quote/",
+    "count": 23,
+    "title": "404 — page not translated",
+    "fallback": {
+      "url": "http://localhost:8081/de/?page_id=3220",
+      "status": 200,
+      "bodyClass": "page-template-default page page-id-3220 pk-body pr-page-pad has-contact-dock pr-consent-open pr-has-consent"
+    }
+  },
+  {
+    "path": "/",
+    "lang": "es",
+    "status": 200,
+    "url": "http://localhost:8081/es/",
+    "count": 84
+  },
+  {
+    "path": "/products/",
+    "lang": "es",
+    "status": 200,
+    "url": "http://localhost:8081/es/products/",
+    "count": 56
+  },
+  {
+    "path": "/jewelry-boxes/",
+    "lang": "es",
+    "status": 200,
+    "url": "http://localhost:8081/es/jewelry-boxes/",
+    "count": 83
+  },
+  {
+    "path": "/blog/",
+    "lang": "es",
+    "status": 200,
+    "url": "http://localhost:8081/es/blog/",
+    "count": 38
+  },
+  {
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "lang": "es",
+    "status": 404,
+    "url": "http://localhost:8081/es/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "count": 27,
+    "title": "404 — page not translated",
+    "fallback": {
+      "url": "http://localhost:8081/es/?p=2937",
+      "status": 200,
+      "bodyClass": "post-template-default single single-post postid-2937 single-format-standard pk-body pr-page-pad has-contact-dock pr-consent-open pr-has-consent"
+    }
+  },
+  {
+    "path": "/product-pillow-jewelry-box/",
+    "lang": "es",
+    "status": 200,
+    "url": "http://localhost:8081/es/product-pillow-jewelry-box/",
+    "count": 35
+  },
+  {
+    "path": "/get-a-quote/",
+    "lang": "es",
+    "status": 404,
+    "url": "http://localhost:8081/es/get-a-quote/",
+    "count": 23,
+    "title": "404 — page not translated",
+    "fallback": {
+      "url": "http://localhost:8081/es/?page_id=3220",
+      "status": 200,
+      "bodyClass": "page-template-default page page-id-3220 pk-body pr-page-pad has-contact-dock pr-consent-open pr-has-consent"
+    }
+  },
+  {
+    "path": "/",
+    "lang": "fr",
+    "status": 200,
+    "url": "http://localhost:8081/fr/",
+    "count": 87
+  },
+  {
+    "path": "/products/",
+    "lang": "fr",
+    "status": 200,
+    "url": "http://localhost:8081/fr/products/",
+    "count": 58
+  },
+  {
+    "path": "/jewelry-boxes/",
+    "lang": "fr",
+    "status": 200,
+    "url": "http://localhost:8081/fr/jewelry-boxes/",
+    "count": 86
+  },
+  {
+    "path": "/blog/",
+    "lang": "fr",
+    "status": 200,
+    "url": "http://localhost:8081/fr/blog/",
+    "count": 40
+  },
+  {
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "lang": "fr",
+    "status": 404,
+    "url": "http://localhost:8081/fr/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "count": 29,
+    "title": "404 — page not translated",
+    "fallback": {
+      "url": "http://localhost:8081/fr/?p=2937",
+      "status": 200,
+      "bodyClass": "post-template-default single single-post postid-2937 single-format-standard pk-body pr-page-pad has-contact-dock pr-consent-open pr-has-consent"
+    }
+  },
+  {
+    "path": "/product-pillow-jewelry-box/",
+    "lang": "fr",
+    "status": 200,
+    "url": "http://localhost:8081/fr/product-pillow-jewelry-box/",
+    "count": 37
+  },
+  {
+    "path": "/get-a-quote/",
+    "lang": "fr",
+    "status": 404,
+    "url": "http://localhost:8081/fr/get-a-quote/",
+    "count": 25,
+    "title": "404 — page not translated",
+    "fallback": {
+      "url": "http://localhost:8081/fr/?page_id=3220",
+      "status": 200,
+      "bodyClass": "page-template-default page page-id-3220 pk-body pr-page-pad has-contact-dock pr-consent-open pr-has-consent"
+    }
+  },
+  {
+    "path": "/",
+    "lang": "it",
+    "status": 200,
+    "url": "http://localhost:8081/it/",
+    "count": 85
+  },
+  {
+    "path": "/products/",
+    "lang": "it",
+    "status": 200,
+    "url": "http://localhost:8081/it/products/",
+    "count": 55
+  },
+  {
+    "path": "/jewelry-boxes/",
+    "lang": "it",
+    "status": 200,
+    "url": "http://localhost:8081/it/jewelry-boxes/",
+    "count": 83
+  },
+  {
+    "path": "/blog/",
+    "lang": "it",
+    "status": 200,
+    "url": "http://localhost:8081/it/blog/",
+    "count": 37
+  },
+  {
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "lang": "it",
+    "status": 404,
+    "url": "http://localhost:8081/it/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "count": 27,
+    "title": "404 — page not translated",
+    "fallback": {
+      "url": "http://localhost:8081/it/?p=2937",
+      "status": 200,
+      "bodyClass": "post-template-default single single-post postid-2937 single-format-standard pk-body pr-page-pad has-contact-dock pr-consent-open pr-has-consent"
+    }
+  },
+  {
+    "path": "/product-pillow-jewelry-box/",
+    "lang": "it",
+    "status": 200,
+    "url": "http://localhost:8081/it/product-pillow-jewelry-box/",
+    "count": 35
+  },
+  {
+    "path": "/get-a-quote/",
+    "lang": "it",
+    "status": 404,
+    "url": "http://localhost:8081/it/get-a-quote/",
+    "count": 22,
+    "title": "404 — page not translated",
+    "fallback": {
+      "url": "http://localhost:8081/it/?page_id=3220",
+      "status": 200,
+      "bodyClass": "page-template-default page page-id-3220 pk-body pr-page-pad has-contact-dock pr-consent-open pr-has-consent"
+    }
+  },
+  {
+    "path": "/",
+    "lang": "ja",
+    "status": 200,
+    "url": "http://localhost:8081/ja/",
+    "count": 84
+  },
+  {
+    "path": "/products/",
+    "lang": "ja",
+    "status": 200,
+    "url": "http://localhost:8081/ja/products/",
+    "count": 55
+  },
+  {
+    "path": "/jewelry-boxes/",
+    "lang": "ja",
+    "status": 200,
+    "url": "http://localhost:8081/ja/jewelry-boxes/",
+    "count": 82
+  },
+  {
+    "path": "/blog/",
+    "lang": "ja",
+    "status": 200,
+    "url": "http://localhost:8081/ja/blog/",
+    "count": 37
+  },
+  {
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "lang": "ja",
+    "status": 404,
+    "url": "http://localhost:8081/ja/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "count": 26,
+    "title": "404 — page not translated",
+    "fallback": {
+      "url": "http://localhost:8081/ja/?p=2937",
+      "status": 200,
+      "bodyClass": "post-template-default single single-post postid-2937 single-format-standard pk-body pr-page-pad has-contact-dock pr-consent-open pr-has-consent"
+    }
+  },
+  {
+    "path": "/product-pillow-jewelry-box/",
+    "lang": "ja",
+    "status": 200,
+    "url": "http://localhost:8081/ja/product-pillow-jewelry-box/",
+    "count": 34
+  },
+  {
+    "path": "/get-a-quote/",
+    "lang": "ja",
+    "status": 404,
+    "url": "http://localhost:8081/ja/get-a-quote/",
+    "count": 22,
+    "title": "404 — page not translated",
+    "fallback": {
+      "url": "http://localhost:8081/ja/?page_id=3220",
+      "status": 200,
+      "bodyClass": "page-template-default page page-id-3220 pk-body pr-page-pad has-contact-dock pr-consent-open pr-has-consent"
+    }
+  },
+  {
+    "path": "/",
+    "lang": "ko",
+    "status": 200,
+    "url": "http://localhost:8081/ko/",
+    "count": 84
+  },
+  {
+    "path": "/products/",
+    "lang": "ko",
+    "status": 200,
+    "url": "http://localhost:8081/ko/products/",
+    "count": 55
+  },
+  {
+    "path": "/jewelry-boxes/",
+    "lang": "ko",
+    "status": 200,
+    "url": "http://localhost:8081/ko/jewelry-boxes/",
+    "count": 82
+  },
+  {
+    "path": "/blog/",
+    "lang": "ko",
+    "status": 200,
+    "url": "http://localhost:8081/ko/blog/",
+    "count": 37
+  },
+  {
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "lang": "ko",
+    "status": 404,
+    "url": "http://localhost:8081/ko/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "count": 26,
+    "title": "404 — page not translated",
+    "fallback": {
+      "url": "http://localhost:8081/ko/?p=2937",
+      "status": 200,
+      "bodyClass": "post-template-default single single-post postid-2937 single-format-standard pk-body pr-page-pad has-contact-dock pr-consent-open pr-has-consent"
+    }
+  },
+  {
+    "path": "/product-pillow-jewelry-box/",
+    "lang": "ko",
+    "status": 200,
+    "url": "http://localhost:8081/ko/product-pillow-jewelry-box/",
+    "count": 34
+  },
+  {
+    "path": "/get-a-quote/",
+    "lang": "ko",
+    "status": 404,
+    "url": "http://localhost:8081/ko/get-a-quote/",
+    "count": 22,
+    "title": "404 — page not translated",
+    "fallback": {
+      "url": "http://localhost:8081/ko/?page_id=3220",
+      "status": 200,
+      "bodyClass": "page-template-default page page-id-3220 pk-body pr-page-pad has-contact-dock pr-consent-open pr-has-consent"
+    }
+  },
+  {
+    "path": "/",
+    "lang": "nl",
+    "status": 200,
+    "url": "http://localhost:8081/nl/",
+    "count": 86
+  },
+  {
+    "path": "/products/",
+    "lang": "nl",
+    "status": 200,
+    "url": "http://localhost:8081/nl/products/",
+    "count": 57
+  },
+  {
+    "path": "/jewelry-boxes/",
+    "lang": "nl",
+    "status": 200,
+    "url": "http://localhost:8081/nl/jewelry-boxes/",
+    "count": 84
+  },
+  {
+    "path": "/blog/",
+    "lang": "nl",
+    "status": 200,
+    "url": "http://localhost:8081/nl/blog/",
+    "count": 39
+  },
+  {
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "lang": "nl",
+    "status": 404,
+    "url": "http://localhost:8081/nl/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "count": 28,
+    "title": "404 — page not translated",
+    "fallback": {
+      "url": "http://localhost:8081/nl/?p=2937",
+      "status": 200,
+      "bodyClass": "post-template-default single single-post postid-2937 single-format-standard pk-body pr-page-pad has-contact-dock pr-consent-open pr-has-consent"
+    }
+  },
+  {
+    "path": "/product-pillow-jewelry-box/",
+    "lang": "nl",
+    "status": 200,
+    "url": "http://localhost:8081/nl/product-pillow-jewelry-box/",
+    "count": 36
+  },
+  {
+    "path": "/get-a-quote/",
+    "lang": "nl",
+    "status": 404,
+    "url": "http://localhost:8081/nl/get-a-quote/",
+    "count": 24,
+    "title": "404 — page not translated",
+    "fallback": {
+      "url": "http://localhost:8081/nl/?page_id=3220",
+      "status": 200,
+      "bodyClass": "page-template-default page page-id-3220 pk-body pr-page-pad has-contact-dock pr-consent-open pr-has-consent"
+    }
+  },
+  {
+    "path": "/",
+    "lang": "pt",
+    "status": 200,
+    "url": "http://localhost:8081/pt/",
+    "count": 85
+  },
+  {
+    "path": "/products/",
+    "lang": "pt",
+    "status": 200,
+    "url": "http://localhost:8081/pt/products/",
+    "count": 57
+  },
+  {
+    "path": "/jewelry-boxes/",
+    "lang": "pt",
+    "status": 200,
+    "url": "http://localhost:8081/pt/jewelry-boxes/",
+    "count": 84
+  },
+  {
+    "path": "/blog/",
+    "lang": "pt",
+    "status": 200,
+    "url": "http://localhost:8081/pt/blog/",
+    "count": 39
+  },
+  {
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "lang": "pt",
+    "status": 404,
+    "url": "http://localhost:8081/pt/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "count": 28,
+    "title": "404 — page not translated",
+    "fallback": {
+      "url": "http://localhost:8081/pt/?p=2937",
+      "status": 200,
+      "bodyClass": "post-template-default single single-post postid-2937 single-format-standard pk-body pr-page-pad has-contact-dock pr-consent-open pr-has-consent"
+    }
+  },
+  {
+    "path": "/product-pillow-jewelry-box/",
+    "lang": "pt",
+    "status": 200,
+    "url": "http://localhost:8081/pt/product-pillow-jewelry-box/",
+    "count": 36
+  },
+  {
+    "path": "/get-a-quote/",
+    "lang": "pt",
+    "status": 404,
+    "url": "http://localhost:8081/pt/get-a-quote/",
+    "count": 24,
+    "title": "404 — page not translated",
+    "fallback": {
+      "url": "http://localhost:8081/pt/?page_id=3220",
+      "status": 200,
+      "bodyClass": "page-template-default page page-id-3220 pk-body pr-page-pad has-contact-dock pr-consent-open pr-has-consent"
+    }
+  },
+  {
+    "path": "/",
+    "lang": "zh-CN",
+    "status": 200,
+    "url": "http://localhost:8081/zh-CN/",
+    "count": 84
+  },
+  {
+    "path": "/products/",
+    "lang": "zh-CN",
+    "status": 200,
+    "url": "http://localhost:8081/zh-CN/products/",
+    "count": 55
+  },
+  {
+    "path": "/jewelry-boxes/",
+    "lang": "zh-CN",
+    "status": 200,
+    "url": "http://localhost:8081/zh-CN/jewelry-boxes/",
+    "count": 82
+  },
+  {
+    "path": "/blog/",
+    "lang": "zh-CN",
+    "status": 200,
+    "url": "http://localhost:8081/zh-CN/blog/",
+    "count": 37
+  },
+  {
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "lang": "zh-CN",
+    "status": 404,
+    "url": "http://localhost:8081/zh-CN/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "count": 26,
+    "title": "404 — page not translated",
+    "fallback": {
+      "url": "http://localhost:8081/zh-CN/?p=2937",
+      "status": 200,
+      "bodyClass": "post-template-default single single-post postid-2937 single-format-standard pk-body pr-page-pad has-contact-dock pr-consent-open pr-has-consent"
+    }
+  },
+  {
+    "path": "/product-pillow-jewelry-box/",
+    "lang": "zh-CN",
+    "status": 200,
+    "url": "http://localhost:8081/zh-CN/product-pillow-jewelry-box/",
+    "count": 34
+  },
+  {
+    "path": "/get-a-quote/",
+    "lang": "zh-CN",
+    "status": 404,
+    "url": "http://localhost:8081/zh-CN/get-a-quote/",
+    "count": 22,
+    "title": "404 — page not translated",
+    "fallback": {
+      "url": "http://localhost:8081/zh-CN/?page_id=3220",
+      "status": 200,
+      "bodyClass": "page-template-default page page-id-3220 pk-body pr-page-pad has-contact-dock pr-consent-open pr-has-consent"
+    }
+  },
+  {
+    "path": "/",
+    "lang": "zh-TW",
+    "status": 200,
+    "url": "http://localhost:8081/zh-TW/",
+    "count": 84
+  },
+  {
+    "path": "/products/",
+    "lang": "zh-TW",
+    "status": 200,
+    "url": "http://localhost:8081/zh-TW/products/",
+    "count": 55
+  },
+  {
+    "path": "/jewelry-boxes/",
+    "lang": "zh-TW",
+    "status": 200,
+    "url": "http://localhost:8081/zh-TW/jewelry-boxes/",
+    "count": 82
+  },
+  {
+    "path": "/blog/",
+    "lang": "zh-TW",
+    "status": 200,
+    "url": "http://localhost:8081/zh-TW/blog/",
+    "count": 37
+  },
+  {
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "lang": "zh-TW",
+    "status": 404,
+    "url": "http://localhost:8081/zh-TW/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "count": 26,
+    "title": "404 — page not translated",
+    "fallback": {
+      "url": "http://localhost:8081/zh-TW/?p=2937",
+      "status": 200,
+      "bodyClass": "post-template-default single single-post postid-2937 single-format-standard pk-body pr-page-pad has-contact-dock pr-consent-open pr-has-consent"
+    }
+  },
+  {
+    "path": "/product-pillow-jewelry-box/",
+    "lang": "zh-TW",
+    "status": 200,
+    "url": "http://localhost:8081/zh-TW/product-pillow-jewelry-box/",
+    "count": 34
+  },
+  {
+    "path": "/get-a-quote/",
+    "lang": "zh-TW",
+    "status": 404,
+    "url": "http://localhost:8081/zh-TW/get-a-quote/",
+    "count": 22,
+    "title": "404 — page not translated",
+    "fallback": {
+      "url": "http://localhost:8081/zh-TW/?page_id=3220",
+      "status": 200,
+      "bodyClass": "page-template-default page page-id-3220 pk-body pr-page-pad has-contact-dock pr-consent-open pr-has-consent"
+    }
+  }
+]

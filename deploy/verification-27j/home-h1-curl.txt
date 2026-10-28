@@ -1,0 +1,13 @@
+en <h1 class="pk-display">Custom packaging for <span class="pk-accent">jewelry, candles</span> &amp; gifts.</h1>
+ar <h1 class="pk-display">تغليف مخصص للمجوهرات والشموع والهدايا.</h1>
+de <h1 class="pk-display">Kundenspezifische Verpackungen für Schmuck, Kerzen &amp; Geschenke.</h1>
+es <h1 class="pk-display">Embalaje personalizado para joyería, velas y regalos.</h1>
+fr <h1 class="pk-display">Emballages personnalisés pour bijoux, bougies et cadeaux.</h1>
+it <h1 class="pk-display">Imballaggi personalizzati per gioielli, candele e regali.</h1>
+ja <h1 class="pk-display">ジュエリー、キャンドル、ギフト用のオーダーメイド包装。</h1>
+ko <h1 class="pk-display">주얼리, 캔들 및 선물용 맞춤 제작 포장.</h1>
+nl <h1 class="pk-display">Op maat gemaakte verpakkingen voor sieraden, kaarsen en geschenken.</h1>
+pt <h1 class="pk-display">Embalagens personalizadas para joias, velas e presentes.</h1>
+zh-CN <h1 class="pk-display">定制首饰、蜡烛和礼品包装。</h1>
+zh-TW <h1 class="pk-display">珠寶、蠟燭與禮品客製包裝。</h1>
+PASS: 11 existing H1 translations; English emphasis markup unchanged; confirmed claims preserved

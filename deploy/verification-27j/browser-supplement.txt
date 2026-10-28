@@ -1,0 +1,23 @@
+QUERY ar /2026/10/26/jewelry-pouch-box-customer-handoff/ 200 postid-2937 29
+QUERY ar /get-a-quote/ 200 page-id-3220 23
+QUERY de /2026/10/26/jewelry-pouch-box-customer-handoff/ 200 postid-2937 30
+QUERY de /get-a-quote/ 200 page-id-3220 24
+QUERY es /2026/10/26/jewelry-pouch-box-customer-handoff/ 200 postid-2937 30
+QUERY es /get-a-quote/ 200 page-id-3220 24
+QUERY fr /2026/10/26/jewelry-pouch-box-customer-handoff/ 200 postid-2937 32
+QUERY fr /get-a-quote/ 200 page-id-3220 26
+QUERY it /2026/10/26/jewelry-pouch-box-customer-handoff/ 200 postid-2937 30
+QUERY it /get-a-quote/ 200 page-id-3220 23
+QUERY ja /2026/10/26/jewelry-pouch-box-customer-handoff/ 200 postid-2937 29
+QUERY ja /get-a-quote/ 200 page-id-3220 23
+QUERY ko /2026/10/26/jewelry-pouch-box-customer-handoff/ 200 postid-2937 29
+QUERY ko /get-a-quote/ 200 page-id-3220 23
+QUERY nl /2026/10/26/jewelry-pouch-box-customer-handoff/ 200 postid-2937 31
+QUERY nl /get-a-quote/ 200 page-id-3220 25
+QUERY pt /2026/10/26/jewelry-pouch-box-customer-handoff/ 200 postid-2937 31
+QUERY pt /get-a-quote/ 200 page-id-3220 25
+QUERY zh-CN /2026/10/26/jewelry-pouch-box-customer-handoff/ 200 postid-2937 29
+QUERY zh-CN /get-a-quote/ 200 page-id-3220 23
+QUERY zh-TW /2026/10/26/jewelry-pouch-box-customer-handoff/ 200 postid-2937 29
+QUERY zh-TW /get-a-quote/ 200 page-id-3220 23
+FINAL INVENTORY 219 CANONICAL 200 55 CANONICAL 404 WITH VERIFIED QUERY FALLBACK 22

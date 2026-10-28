@@ -1,0 +1,14 @@
+{
+  "uniqueEnglishStrings": 207,
+  "pages": 7,
+  "languages": 11,
+  "canonical200": 55,
+  "canonical404": 22,
+  "verifiedNativeQuery200": 22,
+  "byKind": {
+    "block": 82,
+    "text": 88,
+    "attr": 37
+  },
+  "excludedOccurrences": 243
+}

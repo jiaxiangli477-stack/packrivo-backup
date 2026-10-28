@@ -1,0 +1,1 @@
+186:      <?php if (isset($by_qty[500],$by_qty[5000]) && $by_qty[500] > 0) : ?><p class="pk-fine">Indicative, excludes freight. At 5,000 pieces the unit price is <?php echo esc_html(round(100 * (1 - $by_qty[5000]/$by_qty[500]))); ?>% lower than at 500. Final price confirmed after dieline review.</p><?php endif; ?>

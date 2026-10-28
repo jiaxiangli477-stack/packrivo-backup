@@ -1,0 +1,74 @@
+[
+  {
+    "language": "en",
+    "url": "http://localhost:8081/",
+    "rawH1": "<h1 class=\"pk-display\">Custom packaging for <span class=\"pk-accent\">jewelry, candles</span> &amp; gifts.</h1>",
+    "text": "Custom packaging for jewelry, candles & gifts."
+  },
+  {
+    "language": "ar",
+    "url": "http://localhost:8081/ar/",
+    "rawH1": "<h1 class=\"pk-display\">تغليف مخصص للمجوهرات والشموع والهدايا.</h1>",
+    "text": "تغليف مخصص للمجوهرات والشموع والهدايا."
+  },
+  {
+    "language": "de",
+    "url": "http://localhost:8081/de/",
+    "rawH1": "<h1 class=\"pk-display\">Kundenspezifische Verpackungen für Schmuck, Kerzen &amp; Geschenke.</h1>",
+    "text": "Kundenspezifische Verpackungen für Schmuck, Kerzen & Geschenke."
+  },
+  {
+    "language": "es",
+    "url": "http://localhost:8081/es/",
+    "rawH1": "<h1 class=\"pk-display\">Embalaje personalizado para joyería, velas y regalos.</h1>",
+    "text": "Embalaje personalizado para joyería, velas y regalos."
+  },
+  {
+    "language": "fr",
+    "url": "http://localhost:8081/fr/",
+    "rawH1": "<h1 class=\"pk-display\">Emballages personnalisés pour bijoux, bougies et cadeaux.</h1>",
+    "text": "Emballages personnalisés pour bijoux, bougies et cadeaux."
+  },
+  {
+    "language": "it",
+    "url": "http://localhost:8081/it/",
+    "rawH1": "<h1 class=\"pk-display\">Imballaggi personalizzati per gioielli, candele e regali.</h1>",
+    "text": "Imballaggi personalizzati per gioielli, candele e regali."
+  },
+  {
+    "language": "ja",
+    "url": "http://localhost:8081/ja/",
+    "rawH1": "<h1 class=\"pk-display\">ジュエリー、キャンドル、ギフト用のオーダーメイド包装。</h1>",
+    "text": "ジュエリー、キャンドル、ギフト用のオーダーメイド包装。"
+  },
+  {
+    "language": "ko",
+    "url": "http://localhost:8081/ko/",
+    "rawH1": "<h1 class=\"pk-display\">주얼리, 캔들 및 선물용 맞춤 제작 포장.</h1>",
+    "text": "주얼리, 캔들 및 선물용 맞춤 제작 포장."
+  },
+  {
+    "language": "nl",
+    "url": "http://localhost:8081/nl/",
+    "rawH1": "<h1 class=\"pk-display\">Op maat gemaakte verpakkingen voor sieraden, kaarsen en geschenken.</h1>",
+    "text": "Op maat gemaakte verpakkingen voor sieraden, kaarsen en geschenken."
+  },
+  {
+    "language": "pt",
+    "url": "http://localhost:8081/pt/",
+    "rawH1": "<h1 class=\"pk-display\">Embalagens personalizadas para joias, velas e presentes.</h1>",
+    "text": "Embalagens personalizadas para joias, velas e presentes."
+  },
+  {
+    "language": "zh-CN",
+    "url": "http://localhost:8081/zh-CN/",
+    "rawH1": "<h1 class=\"pk-display\">定制首饰、蜡烛和礼品包装。</h1>",
+    "text": "定制首饰、蜡烛和礼品包装。"
+  },
+  {
+    "language": "zh-TW",
+    "url": "http://localhost:8081/zh-TW/",
+    "rawH1": "<h1 class=\"pk-display\">珠寶、蠟燭與禮品客製包裝。</h1>",
+    "text": "珠寶、蠟燭與禮品客製包裝。"
+  }
+]

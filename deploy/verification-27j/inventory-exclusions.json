@@ -1,0 +1,2233 @@
+[
+  {
+    "lang": "ar",
+    "path": "/",
+    "text": "500 / design",
+    "kind": "text",
+    "tag": "DD",
+    "cls": "",
+    "reason": "quantity unit"
+  },
+  {
+    "lang": "ar",
+    "path": "/",
+    "text": "7–30 days",
+    "kind": "text",
+    "tag": "DD",
+    "cls": "",
+    "reason": "duration unit"
+  },
+  {
+    "lang": "ar",
+    "path": "/",
+    "text": "per unit at 1,000 pieces",
+    "kind": "block",
+    "tag": "P",
+    "cls": "pk-mono pk-muted",
+    "reason": "price quantity unit"
+  },
+  {
+    "lang": "ar",
+    "path": "/",
+    "text": "from $2.83 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "ar",
+    "path": "/",
+    "text": "at 500 pcs · 9.5×9.5×4 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "ar",
+    "path": "/",
+    "text": "from $2.48 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "ar",
+    "path": "/",
+    "text": "at 500 pcs · 30×22×12 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "ar",
+    "path": "/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "ar",
+    "path": "/products/",
+    "text": "from $2.31 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "ar",
+    "path": "/products/",
+    "text": "at 500 pcs · 30×25×20 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "ar",
+    "path": "/products/",
+    "text": "from $2.83 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "ar",
+    "path": "/products/",
+    "text": "at 500 pcs · 9.5×9.5×4 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "ar",
+    "path": "/products/",
+    "text": "from $1.28 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "ar",
+    "path": "/products/",
+    "text": "at 500 pcs · 12×4×16 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "ar",
+    "path": "/products/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "ar",
+    "path": "/jewelry-boxes/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "ar",
+    "path": "/blog/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "ar",
+    "path": "/product-pillow-jewelry-box/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "de",
+    "path": "/",
+    "text": "500 / design",
+    "kind": "text",
+    "tag": "DD",
+    "cls": "",
+    "reason": "quantity unit"
+  },
+  {
+    "lang": "de",
+    "path": "/",
+    "text": "7–30 days",
+    "kind": "text",
+    "tag": "DD",
+    "cls": "",
+    "reason": "duration unit"
+  },
+  {
+    "lang": "de",
+    "path": "/",
+    "text": "per unit at 1,000 pieces",
+    "kind": "block",
+    "tag": "P",
+    "cls": "pk-mono pk-muted",
+    "reason": "price quantity unit"
+  },
+  {
+    "lang": "de",
+    "path": "/",
+    "text": "from $2.83 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "de",
+    "path": "/",
+    "text": "at 500 pcs · 9.5×9.5×4 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "de",
+    "path": "/",
+    "text": "from $2.48 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "de",
+    "path": "/",
+    "text": "at 500 pcs · 30×22×12 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "de",
+    "path": "/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "de",
+    "path": "/products/",
+    "text": "from $2.31 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "de",
+    "path": "/products/",
+    "text": "at 500 pcs · 30×25×20 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "de",
+    "path": "/products/",
+    "text": "from $2.83 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "de",
+    "path": "/products/",
+    "text": "at 500 pcs · 9.5×9.5×4 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "de",
+    "path": "/products/",
+    "text": "from $1.28 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "de",
+    "path": "/products/",
+    "text": "at 500 pcs · 12×4×16 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "de",
+    "path": "/products/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "de",
+    "path": "/jewelry-boxes/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "de",
+    "path": "/blog/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "de",
+    "path": "/product-pillow-jewelry-box/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "es",
+    "path": "/",
+    "text": "500 / design",
+    "kind": "text",
+    "tag": "DD",
+    "cls": "",
+    "reason": "quantity unit"
+  },
+  {
+    "lang": "es",
+    "path": "/",
+    "text": "7–30 days",
+    "kind": "text",
+    "tag": "DD",
+    "cls": "",
+    "reason": "duration unit"
+  },
+  {
+    "lang": "es",
+    "path": "/",
+    "text": "per unit at 1,000 pieces",
+    "kind": "block",
+    "tag": "P",
+    "cls": "pk-mono pk-muted",
+    "reason": "price quantity unit"
+  },
+  {
+    "lang": "es",
+    "path": "/",
+    "text": "from $2.83 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "es",
+    "path": "/",
+    "text": "at 500 pcs · 9.5×9.5×4 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "es",
+    "path": "/",
+    "text": "from $2.48 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "es",
+    "path": "/",
+    "text": "at 500 pcs · 30×22×12 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "es",
+    "path": "/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "es",
+    "path": "/products/",
+    "text": "from $2.31 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "es",
+    "path": "/products/",
+    "text": "at 500 pcs · 30×25×20 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "es",
+    "path": "/products/",
+    "text": "from $2.83 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "es",
+    "path": "/products/",
+    "text": "at 500 pcs · 9.5×9.5×4 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "es",
+    "path": "/products/",
+    "text": "from $1.28 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "es",
+    "path": "/products/",
+    "text": "at 500 pcs · 12×4×16 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "es",
+    "path": "/products/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "es",
+    "path": "/jewelry-boxes/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "es",
+    "path": "/blog/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "es",
+    "path": "/product-pillow-jewelry-box/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "fr",
+    "path": "/",
+    "text": "500 / design",
+    "kind": "text",
+    "tag": "DD",
+    "cls": "",
+    "reason": "quantity unit"
+  },
+  {
+    "lang": "fr",
+    "path": "/",
+    "text": "7–30 days",
+    "kind": "text",
+    "tag": "DD",
+    "cls": "",
+    "reason": "duration unit"
+  },
+  {
+    "lang": "fr",
+    "path": "/",
+    "text": "per unit at 1,000 pieces",
+    "kind": "block",
+    "tag": "P",
+    "cls": "pk-mono pk-muted",
+    "reason": "price quantity unit"
+  },
+  {
+    "lang": "fr",
+    "path": "/",
+    "text": "from $2.83 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "fr",
+    "path": "/",
+    "text": "at 500 pcs · 9.5×9.5×4 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "fr",
+    "path": "/",
+    "text": "from $2.48 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "fr",
+    "path": "/",
+    "text": "at 500 pcs · 30×22×12 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "fr",
+    "path": "/",
+    "text": "Total",
+    "kind": "block",
+    "tag": "TH",
+    "cls": "",
+    "reason": "native French homograph"
+  },
+  {
+    "lang": "fr",
+    "path": "/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "fr",
+    "path": "/products/",
+    "text": "from $2.31 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "fr",
+    "path": "/products/",
+    "text": "at 500 pcs · 30×25×20 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "fr",
+    "path": "/products/",
+    "text": "from $2.83 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "fr",
+    "path": "/products/",
+    "text": "at 500 pcs · 9.5×9.5×4 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "fr",
+    "path": "/products/",
+    "text": "from $1.28 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "fr",
+    "path": "/products/",
+    "text": "at 500 pcs · 12×4×16 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "fr",
+    "path": "/products/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "fr",
+    "path": "/jewelry-boxes/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "fr",
+    "path": "/blog/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "fr",
+    "path": "/product-pillow-jewelry-box/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "it",
+    "path": "/",
+    "text": "500 / design",
+    "kind": "text",
+    "tag": "DD",
+    "cls": "",
+    "reason": "quantity unit"
+  },
+  {
+    "lang": "it",
+    "path": "/",
+    "text": "7–30 days",
+    "kind": "text",
+    "tag": "DD",
+    "cls": "",
+    "reason": "duration unit"
+  },
+  {
+    "lang": "it",
+    "path": "/",
+    "text": "per unit at 1,000 pieces",
+    "kind": "block",
+    "tag": "P",
+    "cls": "pk-mono pk-muted",
+    "reason": "price quantity unit"
+  },
+  {
+    "lang": "it",
+    "path": "/",
+    "text": "from $2.83 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "it",
+    "path": "/",
+    "text": "at 500 pcs · 9.5×9.5×4 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "it",
+    "path": "/",
+    "text": "from $2.48 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "it",
+    "path": "/",
+    "text": "at 500 pcs · 30×22×12 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "it",
+    "path": "/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "it",
+    "path": "/products/",
+    "text": "from $2.31 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "it",
+    "path": "/products/",
+    "text": "at 500 pcs · 30×25×20 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "it",
+    "path": "/products/",
+    "text": "from $2.83 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "it",
+    "path": "/products/",
+    "text": "at 500 pcs · 9.5×9.5×4 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "it",
+    "path": "/products/",
+    "text": "from $1.28 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "it",
+    "path": "/products/",
+    "text": "at 500 pcs · 12×4×16 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "it",
+    "path": "/products/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "it",
+    "path": "/jewelry-boxes/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "it",
+    "path": "/blog/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "it",
+    "path": "/product-pillow-jewelry-box/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "ja",
+    "path": "/",
+    "text": "500 / design",
+    "kind": "text",
+    "tag": "DD",
+    "cls": "",
+    "reason": "quantity unit"
+  },
+  {
+    "lang": "ja",
+    "path": "/",
+    "text": "7–30 days",
+    "kind": "text",
+    "tag": "DD",
+    "cls": "",
+    "reason": "duration unit"
+  },
+  {
+    "lang": "ja",
+    "path": "/",
+    "text": "per unit at 1,000 pieces",
+    "kind": "block",
+    "tag": "P",
+    "cls": "pk-mono pk-muted",
+    "reason": "price quantity unit"
+  },
+  {
+    "lang": "ja",
+    "path": "/",
+    "text": "from $2.83 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "ja",
+    "path": "/",
+    "text": "at 500 pcs · 9.5×9.5×4 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "ja",
+    "path": "/",
+    "text": "from $2.48 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "ja",
+    "path": "/",
+    "text": "at 500 pcs · 30×22×12 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "ja",
+    "path": "/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "ja",
+    "path": "/products/",
+    "text": "from $2.31 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "ja",
+    "path": "/products/",
+    "text": "at 500 pcs · 30×25×20 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "ja",
+    "path": "/products/",
+    "text": "from $2.83 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "ja",
+    "path": "/products/",
+    "text": "at 500 pcs · 9.5×9.5×4 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "ja",
+    "path": "/products/",
+    "text": "from $1.28 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "ja",
+    "path": "/products/",
+    "text": "at 500 pcs · 12×4×16 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "ja",
+    "path": "/products/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "ja",
+    "path": "/jewelry-boxes/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "ja",
+    "path": "/blog/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "ja",
+    "path": "/product-pillow-jewelry-box/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "ko",
+    "path": "/",
+    "text": "500 / design",
+    "kind": "text",
+    "tag": "DD",
+    "cls": "",
+    "reason": "quantity unit"
+  },
+  {
+    "lang": "ko",
+    "path": "/",
+    "text": "7–30 days",
+    "kind": "text",
+    "tag": "DD",
+    "cls": "",
+    "reason": "duration unit"
+  },
+  {
+    "lang": "ko",
+    "path": "/",
+    "text": "per unit at 1,000 pieces",
+    "kind": "block",
+    "tag": "P",
+    "cls": "pk-mono pk-muted",
+    "reason": "price quantity unit"
+  },
+  {
+    "lang": "ko",
+    "path": "/",
+    "text": "from $2.83 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "ko",
+    "path": "/",
+    "text": "at 500 pcs · 9.5×9.5×4 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "ko",
+    "path": "/",
+    "text": "from $2.48 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "ko",
+    "path": "/",
+    "text": "at 500 pcs · 30×22×12 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "ko",
+    "path": "/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "ko",
+    "path": "/products/",
+    "text": "from $2.31 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "ko",
+    "path": "/products/",
+    "text": "at 500 pcs · 30×25×20 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "ko",
+    "path": "/products/",
+    "text": "from $2.83 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "ko",
+    "path": "/products/",
+    "text": "at 500 pcs · 9.5×9.5×4 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "ko",
+    "path": "/products/",
+    "text": "from $1.28 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "ko",
+    "path": "/products/",
+    "text": "at 500 pcs · 12×4×16 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "ko",
+    "path": "/products/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "ko",
+    "path": "/jewelry-boxes/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "ko",
+    "path": "/blog/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "ko",
+    "path": "/product-pillow-jewelry-box/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "nl",
+    "path": "/",
+    "text": "500 / design",
+    "kind": "text",
+    "tag": "DD",
+    "cls": "",
+    "reason": "quantity unit"
+  },
+  {
+    "lang": "nl",
+    "path": "/",
+    "text": "7–30 days",
+    "kind": "text",
+    "tag": "DD",
+    "cls": "",
+    "reason": "duration unit"
+  },
+  {
+    "lang": "nl",
+    "path": "/",
+    "text": "per unit at 1,000 pieces",
+    "kind": "block",
+    "tag": "P",
+    "cls": "pk-mono pk-muted",
+    "reason": "price quantity unit"
+  },
+  {
+    "lang": "nl",
+    "path": "/",
+    "text": "from $2.83 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "nl",
+    "path": "/",
+    "text": "at 500 pcs · 9.5×9.5×4 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "nl",
+    "path": "/",
+    "text": "from $2.48 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "nl",
+    "path": "/",
+    "text": "at 500 pcs · 30×22×12 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "nl",
+    "path": "/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "nl",
+    "path": "/products/",
+    "text": "from $2.31 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "nl",
+    "path": "/products/",
+    "text": "at 500 pcs · 30×25×20 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "nl",
+    "path": "/products/",
+    "text": "from $2.83 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "nl",
+    "path": "/products/",
+    "text": "at 500 pcs · 9.5×9.5×4 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "nl",
+    "path": "/products/",
+    "text": "from $1.28 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "nl",
+    "path": "/products/",
+    "text": "at 500 pcs · 12×4×16 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "nl",
+    "path": "/products/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "nl",
+    "path": "/jewelry-boxes/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "nl",
+    "path": "/blog/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "nl",
+    "path": "/product-pillow-jewelry-box/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "pt",
+    "path": "/",
+    "text": "500 / design",
+    "kind": "text",
+    "tag": "DD",
+    "cls": "",
+    "reason": "quantity unit"
+  },
+  {
+    "lang": "pt",
+    "path": "/",
+    "text": "7–30 days",
+    "kind": "text",
+    "tag": "DD",
+    "cls": "",
+    "reason": "duration unit"
+  },
+  {
+    "lang": "pt",
+    "path": "/",
+    "text": "per unit at 1,000 pieces",
+    "kind": "block",
+    "tag": "P",
+    "cls": "pk-mono pk-muted",
+    "reason": "price quantity unit"
+  },
+  {
+    "lang": "pt",
+    "path": "/",
+    "text": "from $2.83 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "pt",
+    "path": "/",
+    "text": "at 500 pcs · 9.5×9.5×4 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "pt",
+    "path": "/",
+    "text": "from $2.48 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "pt",
+    "path": "/",
+    "text": "at 500 pcs · 30×22×12 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "pt",
+    "path": "/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "pt",
+    "path": "/products/",
+    "text": "from $2.31 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "pt",
+    "path": "/products/",
+    "text": "at 500 pcs · 30×25×20 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "pt",
+    "path": "/products/",
+    "text": "from $2.83 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "pt",
+    "path": "/products/",
+    "text": "at 500 pcs · 9.5×9.5×4 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "pt",
+    "path": "/products/",
+    "text": "from $1.28 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "pt",
+    "path": "/products/",
+    "text": "at 500 pcs · 12×4×16 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "pt",
+    "path": "/products/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "pt",
+    "path": "/jewelry-boxes/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "pt",
+    "path": "/blog/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "pt",
+    "path": "/product-pillow-jewelry-box/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "zh-CN",
+    "path": "/",
+    "text": "500 / design",
+    "kind": "text",
+    "tag": "DD",
+    "cls": "",
+    "reason": "quantity unit"
+  },
+  {
+    "lang": "zh-CN",
+    "path": "/",
+    "text": "7–30 days",
+    "kind": "text",
+    "tag": "DD",
+    "cls": "",
+    "reason": "duration unit"
+  },
+  {
+    "lang": "zh-CN",
+    "path": "/",
+    "text": "per unit at 1,000 pieces",
+    "kind": "block",
+    "tag": "P",
+    "cls": "pk-mono pk-muted",
+    "reason": "price quantity unit"
+  },
+  {
+    "lang": "zh-CN",
+    "path": "/",
+    "text": "from $2.83 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "zh-CN",
+    "path": "/",
+    "text": "at 500 pcs · 9.5×9.5×4 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "zh-CN",
+    "path": "/",
+    "text": "from $2.48 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "zh-CN",
+    "path": "/",
+    "text": "at 500 pcs · 30×22×12 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "zh-CN",
+    "path": "/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "zh-CN",
+    "path": "/products/",
+    "text": "from $2.31 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "zh-CN",
+    "path": "/products/",
+    "text": "at 500 pcs · 30×25×20 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "zh-CN",
+    "path": "/products/",
+    "text": "from $2.83 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "zh-CN",
+    "path": "/products/",
+    "text": "at 500 pcs · 9.5×9.5×4 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "zh-CN",
+    "path": "/products/",
+    "text": "from $1.28 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "zh-CN",
+    "path": "/products/",
+    "text": "at 500 pcs · 12×4×16 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "zh-CN",
+    "path": "/products/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "zh-CN",
+    "path": "/jewelry-boxes/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "zh-CN",
+    "path": "/blog/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "zh-CN",
+    "path": "/product-pillow-jewelry-box/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "zh-TW",
+    "path": "/",
+    "text": "500 / design",
+    "kind": "text",
+    "tag": "DD",
+    "cls": "",
+    "reason": "quantity unit"
+  },
+  {
+    "lang": "zh-TW",
+    "path": "/",
+    "text": "7–30 days",
+    "kind": "text",
+    "tag": "DD",
+    "cls": "",
+    "reason": "duration unit"
+  },
+  {
+    "lang": "zh-TW",
+    "path": "/",
+    "text": "per unit at 1,000 pieces",
+    "kind": "block",
+    "tag": "P",
+    "cls": "pk-mono pk-muted",
+    "reason": "price quantity unit"
+  },
+  {
+    "lang": "zh-TW",
+    "path": "/",
+    "text": "from $2.83 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "zh-TW",
+    "path": "/",
+    "text": "at 500 pcs · 9.5×9.5×4 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "zh-TW",
+    "path": "/",
+    "text": "from $2.48 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "zh-TW",
+    "path": "/",
+    "text": "at 500 pcs · 30×22×12 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "zh-TW",
+    "path": "/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "zh-TW",
+    "path": "/products/",
+    "text": "from $2.31 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "zh-TW",
+    "path": "/products/",
+    "text": "at 500 pcs · 30×25×20 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "zh-TW",
+    "path": "/products/",
+    "text": "from $2.83 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "zh-TW",
+    "path": "/products/",
+    "text": "at 500 pcs · 9.5×9.5×4 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "zh-TW",
+    "path": "/products/",
+    "text": "from $1.28 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "zh-TW",
+    "path": "/products/",
+    "text": "at 500 pcs · 12×4×16 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "zh-TW",
+    "path": "/products/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "zh-TW",
+    "path": "/jewelry-boxes/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "zh-TW",
+    "path": "/blog/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "zh-TW",
+    "path": "/product-pillow-jewelry-box/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "ar",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "text": "from $2.83 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "viaQuery": "?p=2937",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "ar",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "text": "at 500 pcs · 9.5×9.5×4 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "viaQuery": "?p=2937",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "ar",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "viaQuery": "?p=2937",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "ar",
+    "path": "/get-a-quote/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "viaQuery": "?page_id=3220",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "de",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "text": "from $2.83 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "viaQuery": "?p=2937",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "de",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "text": "at 500 pcs · 9.5×9.5×4 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "viaQuery": "?p=2937",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "de",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "viaQuery": "?p=2937",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "de",
+    "path": "/get-a-quote/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "viaQuery": "?page_id=3220",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "es",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "text": "from $2.83 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "viaQuery": "?p=2937",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "es",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "text": "at 500 pcs · 9.5×9.5×4 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "viaQuery": "?p=2937",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "es",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "viaQuery": "?p=2937",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "es",
+    "path": "/get-a-quote/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "viaQuery": "?page_id=3220",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "fr",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "text": "from $2.83 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "viaQuery": "?p=2937",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "fr",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "text": "at 500 pcs · 9.5×9.5×4 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "viaQuery": "?p=2937",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "fr",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "viaQuery": "?p=2937",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "fr",
+    "path": "/get-a-quote/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "viaQuery": "?page_id=3220",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "it",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "text": "from $2.83 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "viaQuery": "?p=2937",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "it",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "text": "at 500 pcs · 9.5×9.5×4 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "viaQuery": "?p=2937",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "it",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "viaQuery": "?p=2937",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "it",
+    "path": "/get-a-quote/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "viaQuery": "?page_id=3220",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "ja",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "text": "from $2.83 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "viaQuery": "?p=2937",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "ja",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "text": "at 500 pcs · 9.5×9.5×4 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "viaQuery": "?p=2937",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "ja",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "viaQuery": "?p=2937",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "ja",
+    "path": "/get-a-quote/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "viaQuery": "?page_id=3220",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "ko",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "text": "from $2.83 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "viaQuery": "?p=2937",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "ko",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "text": "at 500 pcs · 9.5×9.5×4 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "viaQuery": "?p=2937",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "ko",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "viaQuery": "?p=2937",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "ko",
+    "path": "/get-a-quote/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "viaQuery": "?page_id=3220",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "nl",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "text": "from $2.83 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "viaQuery": "?p=2937",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "nl",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "text": "at 500 pcs · 9.5×9.5×4 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "viaQuery": "?p=2937",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "nl",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "viaQuery": "?p=2937",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "nl",
+    "path": "/get-a-quote/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "viaQuery": "?page_id=3220",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "pt",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "text": "from $2.83 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "viaQuery": "?p=2937",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "pt",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "text": "at 500 pcs · 9.5×9.5×4 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "viaQuery": "?p=2937",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "pt",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "viaQuery": "?p=2937",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "pt",
+    "path": "/get-a-quote/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "viaQuery": "?page_id=3220",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "zh-CN",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "text": "from $2.83 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "viaQuery": "?p=2937",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "zh-CN",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "text": "at 500 pcs · 9.5×9.5×4 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "viaQuery": "?p=2937",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "zh-CN",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "viaQuery": "?p=2937",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "zh-CN",
+    "path": "/get-a-quote/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "viaQuery": "?page_id=3220",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "zh-TW",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "text": "from $2.83 / unit",
+    "kind": "text",
+    "tag": "STRONG",
+    "cls": "",
+    "viaQuery": "?p=2937",
+    "reason": "price and unit"
+  },
+  {
+    "lang": "zh-TW",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "text": "at 500 pcs · 9.5×9.5×4 cm",
+    "kind": "text",
+    "tag": "SMALL",
+    "cls": "",
+    "viaQuery": "?p=2937",
+    "reason": "quantity and dimensions"
+  },
+  {
+    "lang": "zh-TW",
+    "path": "/2026/10/26/jewelry-pouch-box-customer-handoff/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "viaQuery": "?p=2937",
+    "reason": "contact brand and phone number"
+  },
+  {
+    "lang": "zh-TW",
+    "path": "/get-a-quote/",
+    "text": "WhatsApp: +86 198 9984 6512",
+    "kind": "text",
+    "tag": "A",
+    "cls": "",
+    "viaQuery": "?page_id=3220",
+    "reason": "contact brand and phone number"
+  }
+]

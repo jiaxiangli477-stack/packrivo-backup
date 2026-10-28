@@ -1,0 +1,7 @@
+独立只读审查 /root/review_27g（修正后的复核）
+
+原 P2 已修复，未发现新的 Critical / Important 问题。
+
+只读复核确认：207 个清单键不含文章标题或四处旧用词；统计与 occurrences 一致。55 个 canonical 200、22 个 canonical 404 保留区分，后者均有正确文档 ID 的 query 200 证据及 viaQuery 标记。
+
+字典和已审翻译未变；工作源、备份及 ZIP 的 36 个文件一致，三个采集脚本语法检查通过。

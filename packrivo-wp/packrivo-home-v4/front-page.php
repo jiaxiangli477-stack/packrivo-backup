@@ -56,8 +56,13 @@ $faq = [
   <div class="pk-wrap pk-hero-grid">
     <div>
       <p class="pk-eyebrow">Custom packaging · MOQ 500 · 11 languages</p>
-      <h1 class="pk-display">Custom packaging for <span class="pk-accent">jewelry, candles</span> &amp; gifts.</h1>
-      <p class="pk-lede">Sampling, production and freight handled end to end. Reference prices published, dielines included, and a person on the other end of the quote — not a form that goes nowhere.</p>
+      <h1 class="pk-display"><?php
+      $pk_home_h1_translation = function_exists('packrivo_lang') && packrivo_lang() !== null && function_exists('packrivo_i18n_lookup')
+          ? packrivo_i18n_lookup('Custom packaging for jewelry, candles & gifts.', ['block', 'text']) : null;
+      if ($pk_home_h1_translation !== null) :
+          echo esc_html($pk_home_h1_translation);
+      else : ?>Custom packaging for <span class="pk-accent">jewelry, candles</span> &amp; gifts.<?php endif; ?></h1>
+      <p class="pk-lede">Sampling, production and freight handled end to end. Reference prices published, a cutting template with every quote, and a person on the other end of the quote — not a form that goes nowhere.</p>
       <div class="pk-hero-cta">
         <a class="pk-btn" href="<?php echo esc_url(home_url('/get-a-quote/')); ?>">Build a quote <span aria-hidden="true">→</span></a>
         <a class="pk-btn-ghost" href="<?php echo esc_url(home_url('/samples/')); ?>">Order a sample kit</a>
@@ -194,9 +199,9 @@ $faq = [
     <table class="pk-table pk-table-plain">
       <thead><tr><th>Board</th><th>Recycled</th><th>Use</th></tr></thead>
       <tbody>
-        <tr><td>Kraft E-flute</td><td>70–90%</td><td>Mailers, shippers</td></tr>
-        <tr><td>White E-flute</td><td>60%</td><td>Printed retail cartons</td></tr>
-        <tr><td>Greyboard 2 mm</td><td>100%</td><td>Rigid, wrapped</td></tr>
+        <tr><td>Kraft corrugated</td><td>70–90%</td><td>Mailers, shippers</td></tr>
+        <tr><td>White corrugated</td><td>60%</td><td>Printed retail cartons</td></tr>
+        <tr><td>Rigid greyboard</td><td>100%</td><td>Rigid, wrapped</td></tr>
         <tr><td>Molded pulp</td><td>100%</td><td>Inserts, trays</td></tr>
       </tbody>
     </table>
