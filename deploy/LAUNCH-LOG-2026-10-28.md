@@ -552,3 +552,59 @@ Claude 核验通过后，负责人**另行**下发生产授权（任务单答复
 
 - 本轮只新增两处仓库变更：本补丁文件与本节日志；未修改原 RUNBOOK（工作树 RUNBOOK 的 SITEMAP 在途编辑为并行链产物，未触碰）；18 个未跟踪文件原样保留，不修改、不删除、不执行。
 - 未 SSH 生产、未重跑生产第 1 步、未执行第 2–8 步、未启动任何本地/生产演练；未读取或打印任何密码/密钥/token。
+
+
+---
+
+## 12 · 28q 演练环境/执行进展与批准依据复核（2026-10-28 本机只读；未执行任何脚本、未启动/停止容器、未改动/删除任何文件、未读任何凭据）
+
+### 12.1 未跟踪材料清单与在途工作树改动（全部未触碰）
+
+deploy/verification-28q/ 现有 **31 个未跟踪文件**（上一轮 §9 核查时 18 个：post-upgrade-scan.json、burger-functional.json、16 张 header png；**本轮新增 13 个**，mtime 09:29–09:35 本地 PDT）：
+
+| 文件 | mtime | 大小 | 内容性质 |
+|---|---|---|---|
+| check-0.1.rehearsal.sh | 09:29:26 | 2,167 B | 演练版 0.1 上线前检查脚本（本地同构版，siteurl=http://nginx） |
+| docker-compose.rehearsal-28q.yml | 09:31:44 | 2,083 B | r28q-net 演练栈编排（php/nginx/mysql/redis/r28q-host；含本地演练数据库口令字段，按约束不记录不打印） |
+| wp-theme-list.csv/.txt | 09:32:33 / 09:32:55 | 229 B | 演练 php 容器 wp theme list 实录（仅父主题 1.2.38 active） |
+| wp-plugin-list.csv/.txt | 09:32:43 / 09:33:06 | 2,325 B | 演练 php 容器 wp plugin list 实录（无 packrivo-quote） |
+| docker-ps.txt | 09:33:16 | 1,346 B | 演练容器 docker ps 快照 |
+| docker-mounts.txt | 09:33:16 | 816 B | 演练容器挂载清单（bind: E:\破甲工作区\.tmp\28q\rehearsal\…） |
+| active-plugins.txt | 09:33:16 | 857 B | packrivo-live（28p 环境）active_plugins 实录，含 packrivo-quote/wordpress-seo——与演练栈首装态无关，勿与演练栈混淆 |
+| r28q-net-members.txt | 09:33:16 | 33 B | r28q-net 网络成员清单 |
+| check-0.1-output.txt | 09:34:41 | 2,744 B | 0.1 检查实际执行输出（各项 PASS，见 12.3） |
+| INSTALL-STATE-basis.txt | 09:35:21 | 467 B | RUNBOOK 1.5 INSTALL-STATE.txt 判定依据（首装态四行） |
+| env-inventory-28q.md | 09:35:17 | 5,802 B | 演练环境清单（容器/路径对照/0.1 结果/首装态结论） |
+
+工作树在途改动（未提交，非本链，未触碰）：RUNBOOK-launch.md +35/−5（09:42:52：新增 SITEMAP 变量并替换第 1/8 步 sitemap 快照；0.1 新增 db export 探针与 mariadb 11.x `--skip-ssl` 客户端包装；merge-i18n.php 哈希备注 4316c4c8…）；README.md +2（09:31:24：28q 双栏说明）；tools/merge-i18n.php +5（09:41:14：空/空白字典文件按空字典容错，与 RUNBOOK 备注互证）。
+
+### 12.2 演练容器：实际运行中（live `docker ps -a` 实测）
+
+r28q-net 演练栈五容器全部 Up：php(r28q-php:8.3) / nginx(nginx:alpine，0.0.0.0:8091→80) / mysql(mariadb:10.11) / redis(redis:alpine) / r28q-host(docker:27-cli，挂载 /var/run/docker.sock，模拟生产 SSH 宿主机)。另有 28p 验收环境 packrivo-live-wp-1(wordpress:7.1.3-php8.3-apache，8081) 与 packrivo-live-db-1 仍在 Up，packrivo-live-cli-1 Exited。演练栈目录 E:\破甲工作区\.tmp\28q\rehearsal（仓库外），站点入口 http://localhost:8091。→ 环境准备已完成且容器实际运行中。
+
+### 12.3 实际执行进展：三轮演练已被并行链实际启动、进行中，但无最终产物与 PASS 结论
+
+- **0.1 上线前检查已实际跑过且全 PASS**（check-0.1-output.txt）：wp core 7.1.3、PHP 8.3.36、siteurl=http://nginx（本地适配）、template=stylesheet=packrivo-static-bridge-1.2.38、子主题 packrivo-home-v4 未安装、报价插件未安装、i18n 23 文件、mysqldump 在位、宿主机 NO-PHP-ON-HOST/NO-WP-ON-HOST。
+- **INSTALL-STATE 判定依据已生成**（INSTALL-STATE-basis.txt）：theme_before=parent_before=packrivo-static-bridge-1.2.38、child_theme_present=no、quote_plugin_present=no（首装态成立）。
+- **演练执行日志（E:\破甲工作区\.tmp\28q，只读观察）**：forward1-partial.log 09:38:27、forward1.log 09:39:55（29,607 B）、rehearsal\home\web\rehearsal-28q\reset.log 09:44:19、s-baseline.txt 09:45:44、rehearsal-28q\forward1.log 09:46:20（30,792 B，仍在增写）→ **第一遍正向已跑完、环境 reset 已执行、第二遍正向进行中**。
+- forward1.log 内实际观察到的执行问题（演练价值所在）：`mariadb-dump: Got error: 2026 TLS/SSL error: SSL is required, but the server does not support it`（与 RUNBOOK 在途新增的 `--skip-ssl` 包装对应）；`file_get_contents(/pkg/merged/paths.json): No such file or directory`；`Error: Backup input/site mismatch; original backup was not changed.`（rollback-27g/27i 站点校验因 siteurl 差异报错）；`Plugin updated successfully.` / `Success: Installed 1 of 1 plugins.`（第 4 步已执行到插件安装）。reset.log 第 5 步报 `'/pkg/prep-restore.php' does not exist.`。
+- **rehearsal.log 与 rehearsal-verify.json：仓库（含全部未跟踪文件）与 .tmp\28q 全范围均不存在；无任何一轮的整体 PASS 结论**（仅 0.1 单项检查全 PASS）。→ §3/§4 要求的最终产物与三轮 PASS 尚未产生，三轮演练处于「实际执行中」而非「已通过」。
+
+### 12.4 批准依据核查（任务单答复/仓库提交/日志/现有记录逐项）
+
+- 唯一 28q 授权依据仍为任务单 `packrivo-v2/docs/DSH-TASK-2026-10-28q.md`（30927ec）中的负责人答复：① 是首次安装，按首次安装改写备份与回滚；② WP 7.1.3 先在本地验，不在生产试；③ **先改 RUNBOOK，再在本地把整份 RUNBOOK 完整演练一遍（含回滚）；演练通过、Claude 核验之后，才会再授权上生产**。任务单 §3/§4 本身即规定了三轮演练的程序与 `deploy/verification-28q/rehearsal.log` 输出位置 → 该任务单构成负责人对「改 RUNBOOK + 本地完整演练」的**原始指示**，并行链正据此执行（环境准备=实际执行=均落在任务单授权内）。
+- 但**没有**针对 §11 四审批边界（补丁落地背书 / 批准启动三轮演练 / Claude 核验方式 / 另行生产授权）的任何新答复；6f4aac1 的「land approved」仍无仓库内批复记录背书；remote main == 01fc211、git log --all 无新提交、无 DSH-RESULT-2026-10-28q.md。
+- **结论**：负责人对「启动三轮演练」的明确批准=仅任务单答复 3/§3 的原始指示（并行链的执行依据）；该指示与并行链进展均**不构成本链的行动授权**，本链不把 approved 字样或他人进展当作本链授权。
+
+### 12.5 前置条件结论
+
+- **进入本地演练（本链）**：环境已备齐且在跑，但由哪条链执行、本链是否参与仍无负责人指定；补充补丁仍未落地（untracked）→ 本链继续不启动、不接入、不参与任何本地/生产演练。
+- **Claude 核验**：前置 rehearsal.log + rehearsal-verify.json 不存在 → 不满足。
+- **生产第 1 步重跑**：需三轮全 PASS + Claude 核验 + 另行生产授权，三者均无 → 不满足；本链继续停止等待，第 2–8 步、SSH 生产仍禁止。
+- **保留未决项（需负责人明确）**：① 并行链归属与双链衔接（避免交叉写 deploy/verification-28q/）；② §11 四审批边界逐项批复；③ 663 网址项 /sitemap_index.xml 本地 404 豁免口径；④ 6f4aac1「approved」背书或纠正。
+
+### 12.6 本轮操作与边界
+
+- 仅只读命令：git status/log/ls-remote/diff/grep/hash-object、Get-Content/Select-String/Get-Item、docker ps -a、docker network ls、文件列举与 mtime 统计。未执行任何脚本、未启动/停止任何容器、未修改/删除/格式化任何文件（含 31 个未跟踪文件、工作树 3 处改动及 .tmp\28q 全部在途文件）、未 SSH 生产、未重跑生产第 1 步、未执行第 2–8 步、未读取或打印任何密码/密钥/token（编排文件中的本地演练数据库口令字段仅确认存在，不记录不打印）。
+- 本轮唯一仓库变更：本节日志追加。只暂存并提交 `deploy/LAUNCH-LOG-2026-10-28.md`，其余改动与未跟踪文件保持原样。
+
