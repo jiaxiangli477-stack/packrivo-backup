@@ -1,0 +1,18 @@
+﻿=== 1) 报价 4 组价格 + 7 个关键页 ===
+rigid     $2.83 / $1,417.43
+mailer    $2.48 / $1,239.04
+sticker   $0.96 / $479.63
+shipping  $2.31 / $1,156.69
+200 /  Custom Jewelry Boxes & Packaging with Logo | Packrivo
+200 /products/  Custom Packaging: 134 Styles, MOQ 500 | Packrivo
+200 /jewelry-boxes/  Custom Jewelry Boxes: Rigid, Drawer, MOQ 500 | Packrivo
+200 /blog/  Custom Packaging Guides for Small Brands | Packrivo
+200 /get-a-quote/  Get a Quote – Packrivo
+200 /inquiry/  Request a Custom Packaging Quote | Packrivo
+200 /product-drawer-jewelry-box/  Custom Drawer Jewelry Boxes with Logo | Packrivo
+
+=== 2) ar 1440 RTL 页头 + 汉堡开菜单状态 0 溢出（768 / 1024 / 1294，12 语种）===
+ar@1440: {"sw":1440,"iw":1440,"dir":"rtl","headerH":65,"cta":{"text":"أنشئ عرض سعر","right":227,"left":101,"visible":true},"brandLeft":1162}
+开菜单 768px：12 语种全部 0 溢出，菜单均打开
+开菜单 1024px：12 语种全部 0 溢出，菜单均打开
+开菜单 1294px：12 语种全部 0 溢出，菜单均打开

@@ -58,6 +58,12 @@
     }
   });
 
+  // 28p: 汉堡断点由 CSS 决定（site.css 里是 max-width:1294px）。这里不再写死宽度数字，
+  // 直接看汉堡按钮是否可见——以后调断点只改 CSS 一处，JS 不会和它脱节。
+  function drawerMode() {
+    return !!burger && window.getComputedStyle(burger).display !== 'none';
+  }
+
   if (burger && nav) {
     var burgerText = burger.querySelector('.pk-burger-text');
     burger.addEventListener('click', function () {
@@ -69,7 +75,7 @@
 
     nav.addEventListener('click', function (e) {
       var link = e.target.closest('a');
-      if (link && window.matchMedia('(max-width: 900px)').matches) {
+      if (link && drawerMode()) {
         nav.classList.remove('is-open');
         burger.setAttribute('aria-expanded', 'false');
         if (burgerText) burgerText.textContent = 'Menu';
@@ -78,7 +84,7 @@
   }
 
   window.addEventListener('resize', function () {
-    if (window.innerWidth > 900 && nav) {
+    if (!drawerMode() && nav) {
       nav.classList.remove('is-open');
       if (burger) burger.setAttribute('aria-expanded', 'false');
       closeAll();

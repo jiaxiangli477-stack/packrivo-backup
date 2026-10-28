@@ -1,0 +1,307 @@
+{
+ "W": 1294,
+ "result": {
+  "en": {
+   "minWidth": 1212,
+   "at": {
+    "ok": true,
+    "sw": 1212,
+    "iw": 1212,
+    "maxRight": 1196,
+    "burger": false
+   },
+   "below": {
+    "ok": false,
+    "sw": 1211,
+    "iw": 1211,
+    "maxRight": 1196,
+    "burger": false
+   },
+   "slackAtMin": 16
+  },
+  "ar": {
+   "minWidth": 1212,
+   "at": {
+    "ok": true,
+    "sw": 1212,
+    "iw": 1212,
+    "maxRight": 1196,
+    "burger": false
+   },
+   "below": {
+    "ok": false,
+    "sw": 1211,
+    "iw": 1211,
+    "maxRight": 1196,
+    "burger": false
+   },
+   "slackAtMin": 16
+  },
+  "de": {
+   "minWidth": 1215,
+   "at": {
+    "ok": true,
+    "sw": 1215,
+    "iw": 1215,
+    "maxRight": 1199,
+    "burger": false
+   },
+   "below": {
+    "ok": false,
+    "sw": 1214,
+    "iw": 1214,
+    "maxRight": 1198,
+    "burger": false
+   },
+   "slackAtMin": 16
+  },
+  "es": {
+   "minWidth": 1235,
+   "at": {
+    "ok": true,
+    "sw": 1235,
+    "iw": 1235,
+    "maxRight": 1219,
+    "burger": false
+   },
+   "below": {
+    "ok": false,
+    "sw": 1234,
+    "iw": 1234,
+    "maxRight": 1218,
+    "burger": false
+   },
+   "slackAtMin": 16
+  },
+  "fr": {
+   "minWidth": 1212,
+   "at": {
+    "ok": true,
+    "sw": 1212,
+    "iw": 1212,
+    "maxRight": 1196,
+    "burger": false
+   },
+   "below": {
+    "ok": false,
+    "sw": 1211,
+    "iw": 1211,
+    "maxRight": 1196,
+    "burger": false
+   },
+   "slackAtMin": 16
+  },
+  "it": {
+   "minWidth": 1212,
+   "at": {
+    "ok": true,
+    "sw": 1212,
+    "iw": 1212,
+    "maxRight": 1196,
+    "burger": false
+   },
+   "below": {
+    "ok": false,
+    "sw": 1211,
+    "iw": 1211,
+    "maxRight": 1196,
+    "burger": false
+   },
+   "slackAtMin": 16
+  },
+  "ja": {
+   "minWidth": 1212,
+   "at": {
+    "ok": true,
+    "sw": 1212,
+    "iw": 1212,
+    "maxRight": 1196,
+    "burger": false
+   },
+   "below": {
+    "ok": false,
+    "sw": 1211,
+    "iw": 1211,
+    "maxRight": 1196,
+    "burger": false
+   },
+   "slackAtMin": 16
+  },
+  "ko": {
+   "minWidth": 1212,
+   "at": {
+    "ok": true,
+    "sw": 1212,
+    "iw": 1212,
+    "maxRight": 1196,
+    "burger": false
+   },
+   "below": {
+    "ok": false,
+    "sw": 1211,
+    "iw": 1211,
+    "maxRight": 1196,
+    "burger": false
+   },
+   "slackAtMin": 16
+  },
+  "nl": {
+   "minWidth": 1294,
+   "at": {
+    "ok": true,
+    "sw": 1294,
+    "iw": 1294,
+    "maxRight": 1278,
+    "burger": false
+   },
+   "below": {
+    "ok": false,
+    "sw": 1293,
+    "iw": 1293,
+    "maxRight": 1277,
+    "burger": false
+   },
+   "slackAtMin": 16
+  },
+  "pt": {
+   "minWidth": 1212,
+   "at": {
+    "ok": true,
+    "sw": 1212,
+    "iw": 1212,
+    "maxRight": 1196,
+    "burger": false
+   },
+   "below": {
+    "ok": false,
+    "sw": 1211,
+    "iw": 1211,
+    "maxRight": 1196,
+    "burger": false
+   },
+   "slackAtMin": 16
+  },
+  "zh-CN": {
+   "minWidth": 1212,
+   "at": {
+    "ok": true,
+    "sw": 1212,
+    "iw": 1212,
+    "maxRight": 1196,
+    "burger": false
+   },
+   "below": {
+    "ok": false,
+    "sw": 1211,
+    "iw": 1211,
+    "maxRight": 1196,
+    "burger": false
+   },
+   "slackAtMin": 16
+  },
+  "zh-TW": {
+   "minWidth": 1212,
+   "at": {
+    "ok": true,
+    "sw": 1212,
+    "iw": 1212,
+    "maxRight": 1196,
+    "burger": false
+   },
+   "below": {
+    "ok": false,
+    "sw": 1211,
+    "iw": 1211,
+    "maxRight": 1196,
+    "burger": false
+   },
+   "slackAtMin": 16
+  }
+ },
+ "verify": {
+  "en": {
+   "ok": true,
+   "sw": 1295,
+   "iw": 1295,
+   "maxRight": 1238,
+   "slack": 57
+  },
+  "ar": {
+   "ok": true,
+   "sw": 1295,
+   "iw": 1295,
+   "maxRight": 1238,
+   "slack": 57
+  },
+  "de": {
+   "ok": true,
+   "sw": 1295,
+   "iw": 1295,
+   "maxRight": 1239,
+   "slack": 56
+  },
+  "es": {
+   "ok": true,
+   "sw": 1295,
+   "iw": 1295,
+   "maxRight": 1249,
+   "slack": 46
+  },
+  "fr": {
+   "ok": true,
+   "sw": 1295,
+   "iw": 1295,
+   "maxRight": 1238,
+   "slack": 57
+  },
+  "it": {
+   "ok": true,
+   "sw": 1295,
+   "iw": 1295,
+   "maxRight": 1238,
+   "slack": 57
+  },
+  "ja": {
+   "ok": true,
+   "sw": 1295,
+   "iw": 1295,
+   "maxRight": 1238,
+   "slack": 57
+  },
+  "ko": {
+   "ok": true,
+   "sw": 1295,
+   "iw": 1295,
+   "maxRight": 1238,
+   "slack": 57
+  },
+  "nl": {
+   "ok": true,
+   "sw": 1295,
+   "iw": 1295,
+   "maxRight": 1278,
+   "slack": 17
+  },
+  "pt": {
+   "ok": true,
+   "sw": 1295,
+   "iw": 1295,
+   "maxRight": 1238,
+   "slack": 57
+  },
+  "zh-CN": {
+   "ok": true,
+   "sw": 1295,
+   "iw": 1295,
+   "maxRight": 1238,
+   "slack": 57
+  },
+  "zh-TW": {
+   "ok": true,
+   "sw": 1295,
+   "iw": 1295,
+   "maxRight": 1238,
+   "slack": 57
+  }
+ }
+}

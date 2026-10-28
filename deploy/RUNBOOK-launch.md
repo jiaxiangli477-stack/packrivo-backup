@@ -24,7 +24,7 @@ SITE=https://www.packrivo.com                          # 导入脚本的站点�
 
 | 文件（本机仓库 `E:\破甲工作区\packrivo-backup\` 下的路径） | 文件数 | 大小 | SHA-256 |
 |---|---|---|---|
-| `deploy/packrivo-home-v4.zip` | 38 | 788,955 B | `c3ed9d72254aa9146ea98990adca9d8bda88e6afce9cba67f7539a7df54dbf24` |
+| `deploy/packrivo-home-v4.zip` | 38 | 790,164 B | `5974ae0c208d03016701698c45dfbd467f7c24c6036fba120dccc01f72034bf9` |
 | `deploy/packrivo-quote.zip` | 19（`demo/` 不进包） | 54,581 B | `096d0c8e81360e7fc616e5d46c96088fc3a65ceb32daf9b78cf1e1de0bc52d93` |
 | `deploy/27e-quote-redirect.patch` | — | 647 B | 见第 6 步 |
 | `deploy/patches-28m/packrivo-i18n-404-viewport.patch` | — | 1018 B | 见第 6 步 |
@@ -197,7 +197,7 @@ $WPCLI plugin list --format=csv | grep packrivo-quote    # 状态必须是 activ
 ```bash
 # 5.1 先核对父主题没被换掉（目录名必须是 packrivo-static-bridge-1.2.38）
 $WPCLI theme list --format=csv | grep packrivo-static-bridge
-sha256sum "$PKG/packrivo-home-v4.zip"                            # 必须等于 c3ed9d72…
+sha256sum "$PKG/packrivo-home-v4.zip"                            # 必须等于 5974ae0c…
 
 # 5.2 安装
 $WPCLI theme install "$PKG/packrivo-home-v4.zip" --force
@@ -371,10 +371,10 @@ cp -a "$BACKUP/i18n"/* "$I18N"/
 
 ## 附录 A · 已知问题（不在本次上线范围）
 
+> **28p 已修**：页头在 768 px 和 1024 px 的横向溢出。做法是把汉堡断点统一到实测得到的 W=1294（12 语种桌面页头右侧留 16 px 余量放得下的最大宽度），1024 及以下全语种进汉堡；768 那一档的溢出其实在页脚底部（`.footer-bottom` 在 768–940 之间不换行，`.footer-bottom` 现在允许换行）。验证见 `deploy/verification-28p/`（960 组扫描 0 溢出 + 16 张截图）。
+
 | 问题 | 实测 | 影响 | 何时处理 |
 |---|---|---|---|
-| 页头在 768 px 横向溢出（de 801、nl 896） | 28o 本机实测，溢出元素是配色切换按钮与一条导航链接 | iPad 竖屏下德/荷语首页出现横向滚动 | 下一轮单独修（要动页头结构，需视觉确认） |
-| 页头在 1024 px 横向溢出（7 个语种，en 1117 / nl 1221） | 同上，溢出元素是 `.pk-actions` 那一簇（语言选择 + 阅读链接 + CTA） | 1024 宽平板/小笔记本上出现横向滚动 | 下一轮单独修 |
 | `/ar/<文章路径>/` 返回 404 | 页面 `noindex,follow` 并链到英文版 | 阿语站内文章入口只能跳英文 | 等文章翻译排期 |
 | `/contact/` 301 到 `/inquiry/` | 生产与本地一致 | 不构成重复标题页 | 若要做独立联系页再说 |
 | 语种页 `Sample kit` 链接在 1351–1780 px 间按语种隐藏 | `.pk-actions .pk-text-link` 的按语种媒体查询 | 副链接在这些宽度不显示（不影响报价按钮） | 已按实测调过阈值，属预期行为 |

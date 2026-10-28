@@ -1,0 +1,26 @@
+﻿$ unzip -Z1 /tmp/packrivo-home-v4.zip  →  条目数与反斜杠
+unzip -Z1 条目数: 38
+条目名里反斜杠字符总数: 0
+packrivo-home-v4/README.md
+packrivo-home-v4/assets/cta-28l.js
+packrivo-home-v4/assets/img/gift-480.webp
+
+
+$ php /tmp/verify-one.php /tmp/packrivo-home-v4.zip packrivo-home-v4 /tmp/src/packrivo-home-v4
+条目 38，条目名含反斜杠 0
+解压后文件 38，工作源文件 38
+只在包里 0，只在源里 0，内容不同 0
+结论: 通过（逐字节一致，无反斜杠条目）
+
+$ wp theme install /tmp/packrivo-home-v4.zip --force --path=/tmp/wp2
+Unpacking the package...
+Installing the theme...
+Removing the old version of the theme...
+This theme requires a parent theme. Checking if it is installed...
+The parent theme, Packrivo Static Bridge 1.2.38, is currently installed.
+Theme updated successfully.
+Success: Installed 1 of 1 themes.
+packrivo-home-v4,active,none,4.0.1,,off
+packrivo-static-bridge-1.2.38,parent,none,1.2.38,,off
+$ diff -r /tmp/wp2/wp-content/themes/packrivo-home-v4 /tmp/src/packrivo-home-v4
+diff exit=0

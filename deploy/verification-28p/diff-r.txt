@@ -1,0 +1,2 @@
+﻿$ diff -r packrivo-backup/packrivo-wp/packrivo-home-v4  ←→  packrivo-wp/packrivo-home-v4
+diff exit=0

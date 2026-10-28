@@ -745,3 +745,176 @@ commit 5b2c77c5d41969f034979cdb27aa2b7528c55240
 ```
 
 以上四件事仍然只在本地做：没有 SSH、没有碰生产、没有读取或打印任何密码与凭据。
+
+---
+
+# 28p 上线前修页头溢出（768 / 1024 px）
+
+任务书 `packrivo-v2/docs/DSH-TASK-2026-10-28p.md`。只在本地做：没部署、没 SSH、没碰 `www.packrivo.com`、没读任何密码。所有验证都跑在本机 Docker 站点 `http://localhost:8081`（WP 6.7.2 / PHP 8.2.28）与容器里的独立 WP 根 `/tmp/wp2` 上。
+
+## 0 · 先把两处溢出量清楚
+
+用 Playwright 逐元素量右缘（`getBoundingClientRect().right > innerWidth` 即溢出），带上父链与计算样式。
+
+**1024 px：是页头的 `.pk-actions` 撑出去的**（en 1117 / de 1181 / nl 1221）。溢出元素清单里同时出现 `.pk-actions` 和 `.pk-cta`，说明整行在 1024 放不下、把右侧动作区顶出视口：
+
+```
+### en @1024px  scrollWidth=1117（溢出 93px）  burger=false nav=true
+   div.pk-actions L847 R1117 W270  static/flex
+   a.pk-cta L990 R1117 W127 「Build a quote」
+### nl @1024px  scrollWidth=1221（溢出 197px）  burger=false nav=true
+   div.pk-actions L857 R1221 W364
+   a.pk-cta L999 R1221 W222 「Stel een prijsopgave samen」
+```
+
+**768 px：不在页头，在页脚**。任务书怀疑是「配色按钮 + 一条导航链接」，实测父链证明它们都在 `.footer-bottom` 里：
+
+```
+溢出: button#theme-toggle. 「Farbschema wechseln」 right=801
+   ↑ button#theme-toggle.[705,801] block
+   ↑ div.footer-bottom[40,728] flex        ← display:flex，flex-wrap:nowrap
+   ↑ footer.[0,768] block
+.footer-bottom: { display: flex, wrap: nowrap, gap: 25px, width: 688 }，
+ 子项 7 个：Packrivo · Verpackungsbe… / Datenschutz / AGB / Vergleichen / Cookie-Einstellungen /
+           Verpackungsleitfäden(124) / #theme-toggle(96)
+```
+
+三个来源都对上了：`.footer-bottom` 的 `flex + nowrap` 来自**父主题** `packrivo-static-bridge-1.2.38/packrivo-static/assets/site.css:592`；它只在 `@media (max-width: 767px)` 才把子项堆成 `block`（同文件 1195 行），所以 **768 这一档正好卡在断点外**；`#theme-toggle`（「配色切换按钮」）是父主题 `assets/site.js:196-204` 在运行时 `createElement` 后 `append` 进 `.footer-bottom` 的；「Verpakkingshandleidingen」是同一行里的「Packaging guides」链接（i18n 运行时翻译）。
+
+## 1 · 修法
+
+### 1.1 1024：汉堡断点统一到实测 W
+
+不再按语种分设断点。对 12 个语种逐个测「桌面页头右侧留 16 px 余量放得下的最小宽度」：
+
+| 语种 | 最小宽度 | 语种 | 最小宽度 |
+|---|---|---|---|
+| en / ar / fr / it / ja / ko / pt / zh-CN / zh-TW | **1212** | de | 1215 |
+| es | 1235 | nl | **1294** |
+
+取最大 → **W = 1294**。1295 起桌面（12 语种右侧余量 17–57 px），1294 及以下全语种进汉堡。
+
+```css
+@media (max-width: 1294px) {          /* 原 900px */
+```
+```css
+@media (min-width:1295px) and (max-width:1439px){.pk-actions .pk-text-link{display:none}}   /* 原 901–1350 */
+```
+
+第二条的上限从 1350 抬到 1439，是因为桌面页头带两条副链接时 en 的固有宽度是 1417：原规则在 1351 就放开链接，结果 1351/1400 又溢出（实测 1385 / 1409）。改成 1440 起才显示副链接后，en 在 1440 有 23 px 余量。语种专属阈值（1351–1620/1680/1640/1575/1760/1780）原样保留，它们都在 1440 之后生效。
+
+`assets/nav.js` 里原来写死两处 `900`（点导航链接后关抽屉、resize 时关抽屉），断点一改就会和 CSS 脱节。改成看汉堡按钮是否可见，以后只改 CSS 一处：
+
+```js
+function drawerMode() {
+  return !!burger && window.getComputedStyle(burger).display !== 'none';
+}
+```
+`PKV4_VERSION` 与 `style.css` 的 `Version` 同步 4.0.0 → 4.0.1，否则线上浏览器还会拿旧 CSS/JS。
+
+### 1.2 768：把溢出源头（页脚那一行）改成可换行
+
+```css
+/* 28p：父主题 .footer-bottom 是 flex+nowrap，只在 ≤767 才堆叠，768–~940 正好放不下 */
+.footer-bottom { flex-wrap: wrap; row-gap: 10px; }
+.footer-bottom > * { min-width: 0; }
+```
+
+规则与语种、宽度都无关，也没有用 `overflow-x: hidden`、没有隐藏报价 CTA、没有动价格文件。
+
+## 2 · 验收
+
+### 2.1 溢出扫描（`deploy/verification-28p/header-scan.json`）
+
+12 语种 × 20 宽度 × 4 页面（首页 / `/inquiry/` / `/get-a-quote/` / `/product-drawer-jewelry-box/`）= **960 组**，宽度：375、560、561、768、820、900、901、1024、1100、1293（W−1）、1294（W）、1295（W+1）、1280、1440、1700、1920，另加 1350、1351、1400、1560 守住副链接重新出现的边界。
+
+```
+扫描组合：960（12 语种 × 20 宽度 × 4 页面）
+溢出条数：0
+  375   OK 48/48      560   OK 48/48      561   OK 48/48      768   OK 48/48
+  820   OK 48/48      900   OK 48/48      901   OK 48/48      1024  OK 48/48
+  1100  OK 48/48      1293  OK 48/48      1294  OK 48/48      1295  OK 48/48
+  1280  OK 48/48      1440  OK 48/48      1700  OK 48/48      1920  OK 48/48
+  1350  OK 48/48      1351  OK 48/48      1400  OK 48/48      1560  OK 48/48
+结论：0 处溢出，scrollWidth === innerWidth 全部成立
+```
+
+另外加密扫了 **1295–1800 每 5 px（102 个宽度 × 12 语种 = 1224 组）**：0 溢出——因为 28m/28o 那些按语种的阈值规则还在这段区间里生效，改断点没有把它们撞坏。
+
+> 扫描脚本第一版在 1920→1024 这种大跳变后只等 30 ms 就读 `scrollWidth`，读到过一次假溢出（zh-TW 首页读出 3188，实际是旧视口下的网格）。已改为 `waitForFunction(innerWidth === w)` + 双 `requestAnimationFrame`，同一条重复 9 次都是 1024。
+
+### 2.2 汉堡模式功能（`deploy/verification-28p/burger-functional.json`）
+
+en / de / nl / ar × 768 / 1024 共 8 组：
+
+| 语种 | 宽 | 菜单打开 | 菜单关闭 | 点导航链接自动关 | 报价按钮 | 语言切换 |
+|---|---|---|---|---|---|---|
+| en | 768 / 1024 | is-open，7 项，高 836 px | is-open=false，按钮文字回 Menu | 关闭 | 可见、在视口内（右缘 515） | 点 `Deutsch` → `/de/` |
+| de | 768 / 1024 | 同上 | 同上 | 关闭 | 可见、在视口内 | 点 `English` → `/` |
+| nl | 768 / 1024 | 同上 | 同上 | 关闭 | 可见、在视口内 | 点 `English` → `/` |
+| ar | 768 / 1024 | 同上 | 同上 | 关闭 | 可见、在视口内 | 点 `English` → `/` |
+
+语言切换并不是新入口：原来的语言选择器是插件 `packrivo-language-selector` 注入到 `.pk-actions` 里的 `#packrivo-language-root`（**不是**被汉堡模式隐藏的 `.pk-lang` 那个 span），汉堡模式下它一直在，点开是 `<dialog>`，里面是 `button[data-lang]`，点一下直接跳语种页。
+
+汉堡**打开**状态下也在 768 / 1024 / 1294 各扫了 12 个语种：全部 0 溢出且菜单确实打开。
+
+### 2.3 截图（`deploy/verification-28p/` 共 16 张）
+
+`header-{en,de,nl,ar}-{768,1024}-{closed,open}.png`，关闭态裁 420 px 高、打开态裁 720 px 高。因为不能靠肉眼判图，对打开态做了像素统计确认菜单真的画出来了：每张 11–15 个文字横条、顶部 400 行 4,200–6,400 个暗像素（背景灰 252，95% 为背景色，说明是浅色抽屉 + 深色菜单文字）。
+
+### 2.4 回归（`deploy/verification-28p/regression.txt`）
+
+```
+rigid     $2.83 / $1,417.43      mailer    $2.48 / $1,239.04
+sticker   $0.96 / $479.63        shipping  $2.31 / $1,156.69
+200 /  200 /products/  200 /jewelry-boxes/  200 /blog/  200 /get-a-quote/  200 /inquiry/  200 /product-drawer-jewelry-box/
+ar@1440: {"sw":1440,"iw":1440,"dir":"rtl","headerH":65,"brandLeft":1162,"cta":{"text":"أنشئ عرض سعر","left":101,"right":227,"visible":true}}
+```
+
+ar 在 1440 仍是 RTL（品牌在右、CTA 在左），0 溢出。
+
+### 2.5 重新打包（`deploy/verification-28p/zip-check.txt`）
+
+子主题重打成 38 条目 / 790,164 B / `5974ae0c208d03016701698c45dfbd467f7c24c6036fba120dccc01f72034bf9`，三份副本（`deploy/`、`packrivo-backup/packrivo-wp/`、`packrivo-wp/`）同一哈希。
+
+```
+$ unzip -Z1 /tmp/packrivo-home-v4.zip      → 条目数 38，条目名里反斜杠字符总数 0
+$ php verify-one.php …（容器里 PHP ZipArchive 解压后与工作源比对）
+条目 38，条目名含反斜杠 0 / 解压后文件 38，工作源文件 38 / 只在包里 0，只在源里 0，内容不同 0
+结论: 通过（逐字节一致，无反斜杠条目）
+$ wp theme install /tmp/packrivo-home-v4.zip --force --path=/tmp/wp2
+The parent theme, Packrivo Static Bridge 1.2.38, is currently installed.
+Theme updated successfully.  Success: Installed 1 of 1 themes.
+packrivo-home-v4,active,none,4.0.1,,off
+packrivo-static-bridge-1.2.38,parent,none,1.2.38,,off
+$ diff -r /tmp/wp2/wp-content/themes/packrivo-home-v4 /tmp/src/packrivo-home-v4   → exit 0
+```
+
+装之前按 RUNBOOK 第 5 步的坑先做了目录级备份（`/tmp/backup-theme-28p`，16 个顶层项）。报价插件**没有重打**，哈希仍是 `096d0c8e81360e7fc616e5d46c96088fc3a65ceb32daf9b78cf1e1de0bc52d93`。
+
+### 2.6 文档与源码同步
+
+- `deploy/RUNBOOK-launch.md`：包表与第 5 步校验值换成 `790,164 B` / `5974ae0c…`；附录 A 删掉那两行页头溢出，并在表格上方注明「28p 已修」写清修法与验证位置。
+- `deploy/README.md`：子主题包那行换成 `771.6 KB（790,164 B）` / `5974ae0c…`。
+- `packrivo-backup/packrivo-wp/packrivo-home-v4/` 与工作源 `diff -r`：**exit 0，0 差异**（`deploy/verification-28p/diff-r.txt`）。
+
+一个流程上的发现：本机测试站点的 bind mount 指向 `packrivo-live/themes/packrivo-home-v4`，而打包源是 `packrivo-wp/packrivo-home-v4`——两份是独立目录。改完源码必须同步到测试副本再量，否则量到的是旧 CSS（本轮第一次扫描就是这么读到 1024 还溢出 93 px 的，`site.css?ver=` 还是 4.0.0）。
+
+## 3 · 提交
+
+```
+$ sha256sum deploy/packrivo-home-v4.zip
+5974ae0c208d03016701698c45dfbd467f7c24c6036fba120dccc01f72034bf9  deploy/packrivo-home-v4.zip
+$ sha256sum deploy/packrivo-quote.zip
+096d0c8e81360e7fc616e5d46c96088fc3a65ceb32daf9b78cf1e1de0bc52d93  deploy/packrivo-quote.zip
+```
+
+（`git status` 与 `git log -3 --stat` 原文见本节末尾的收尾记录。）
+
+## 4 · 剩下的已知问题
+
+| 问题 | 实测 | 何时处理 |
+|---|---|---|
+| `/ar/<文章路径>/` 返回 404 | `noindex,follow` + 英文版链接 | 等文章翻译排期 |
+| `/contact/` 301 到 `/inquiry/` | 生产与本地一致 | 若要做独立联系页再说 |
+| 副链接在 1440–1780 之间按语种隐藏 | 桌面页头放不下时的既有规则（本轮把下限接到 1295、上限接到 1439） | 属预期行为 |
