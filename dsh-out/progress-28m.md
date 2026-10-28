@@ -355,7 +355,7 @@ en/blog=375  ar/blog=375      en/inquiry=375   ar/inquiry=375
 ### 4.7 结果与提交
 
 - `packrivo-v2\docs\DSH-RESULT-2026-10-28m.md` 已补记两处 header 修复与最终复验，同步到 `packrivo-backup\dsh-out\DSH-RESULT-2026-10-28m.md`。
-- 提交（packrivo-backup，见 git log 最新两条）：一条为最终证据 + 重打上线包 + README 哈希 + 结果/进度更新，一条为结果文档补记提交哈希。
+- 提交（packrivo-backup）：13c7f1f 最终证据 + 重打上线包 + README 哈希 + 结果/进度更新；其前 \e9fd9a8\/\ed2c30b\ 为 72 行溢出证据与结果文档补记。
 
 ### 还剩什么（同 DSH-RESULT 结尾 7 条，照实）
 

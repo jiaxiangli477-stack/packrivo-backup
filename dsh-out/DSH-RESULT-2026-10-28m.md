@@ -11,7 +11,7 @@
 | 2 证据 | `4e916ca` | 4 组价格 × 4 语种、ar 375 两图、105 条按钮 href |
 | 3 | `b818176` | P2 视觉（手机首屏 / 列表密度 / 控件系统） |
 | 4 | `0b36b5e` | 总回归第一轮、上线包、本文件（第一版） |
-| 4 终态 | 见 `packrivo-backup` 最新提交 | 两处 header 溢出修复、142 页标题最终复验、重打上线包、本文件更新 |
+| 4 终态 | `13c7f1f` | 两处 header 溢出修复、142 页标题最终复验、重打上线包、本文件更新 |
 
 进度与原始输出：`packrivo-backup/dsh-out/progress-28m.md`；证据目录：`packrivo-backup/deploy/verification-28m/`。
 
