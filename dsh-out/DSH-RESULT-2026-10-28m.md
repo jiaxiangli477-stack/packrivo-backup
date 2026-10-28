@@ -918,3 +918,76 @@ $ sha256sum deploy/packrivo-quote.zip
 | `/ar/<文章路径>/` 返回 404 | `noindex,follow` + 英文版链接 | 等文章翻译排期 |
 | `/contact/` 301 到 `/inquiry/` | 生产与本地一致 | 若要做独立联系页再说 |
 | 副链接在 1440–1780 之间按语种隐藏 | 桌面页头放不下时的既有规则（本轮把下限接到 1295、上限接到 1439） | 属预期行为 |
+
+### 3.1 收尾记录（提交后原样粘贴）
+
+```
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+```
+
+```
+$ git log -3 --stat   （HEAD = 63a5214026a9aa577aa0c852fe9674f4782b7a6d）
+commit 63a5214026a9aa577aa0c852fe9674f4782b7a6d
+Author: jiaxiangli477-stack <jiaxiangli477@gmail.com>
+Date:   Wed Oct 28 08:18:57 2026 -0700
+
+
+ deploy/README.md                                  |    2 +-
+ deploy/RUNBOOK-launch.md                          |    8 +-
+ deploy/packrivo-home-v4.zip                       |  Bin 788955 -> 790164 bytes
+ deploy/verification-28p/breakpoint-W.json         |  307 +
+ deploy/verification-28p/burger-functional.json    |  418 +
+ deploy/verification-28p/diff-r.txt                |    2 +
+ deploy/verification-28p/header-ar-1024-closed.png |  Bin 0 -> 122973 bytes
+ deploy/verification-28p/header-ar-1024-open.png   |  Bin 0 -> 16977 bytes
+ deploy/verification-28p/header-ar-768-closed.png  |  Bin 0 -> 44633 bytes
+ deploy/verification-28p/header-ar-768-open.png    |  Bin 0 -> 16271 bytes
+ deploy/verification-28p/header-de-1024-closed.png |  Bin 0 -> 122237 bytes
+ deploy/verification-28p/header-de-1024-open.png   |  Bin 0 -> 17323 bytes
+ deploy/verification-28p/header-de-768-closed.png  |  Bin 0 -> 39469 bytes
+ deploy/verification-28p/header-de-768-open.png    |  Bin 0 -> 16613 bytes
+ deploy/verification-28p/header-en-1024-closed.png |  Bin 0 -> 85730 bytes
+ deploy/verification-28p/header-en-1024-open.png   |  Bin 0 -> 16830 bytes
+ deploy/verification-28p/header-en-768-closed.png  |  Bin 0 -> 35906 bytes
+ deploy/verification-28p/header-en-768-open.png    |  Bin 0 -> 16119 bytes
+ deploy/verification-28p/header-nl-1024-closed.png |  Bin 0 -> 62145 bytes
+ deploy/verification-28p/header-nl-1024-open.png   |  Bin 0 -> 17313 bytes
+ deploy/verification-28p/header-nl-768-closed.png  |  Bin 0 -> 40113 bytes
+ deploy/verification-28p/header-nl-768-open.png    |  Bin 0 -> 16590 bytes
+ deploy/verification-28p/header-scan.json          | 9653 +++++++++++++++++++++
+ deploy/verification-28p/regression.txt            |   18 +
+ deploy/verification-28p/zip-check.txt             |   26 +
+ dsh-out/DSH-RESULT-2026-10-28m.md                 |  173 +
+ packrivo-wp/packrivo-home-v4.zip                  |  Bin 788955 -> 790164 bytes
+ packrivo-wp/packrivo-home-v4/assets/nav.js        |   10 +-
+ packrivo-wp/packrivo-home-v4/assets/site.css      |   20 +-
+ packrivo-wp/packrivo-home-v4/functions.php        |    2 +-
+ packrivo-wp/packrivo-home-v4/style.css            |    2 +-
+ 31 files changed, 10630 insertions(+), 11 deletions(-)
+
+commit 416b6dbc1223a7a05e087260a5de2581b80d0d41
+Author: jiaxiangli477-stack <jiaxiangli477@gmail.com>
+Date:   Wed Oct 28 07:01:40 2026 -0700
+
+
+ packrivo-v2/docs/DSH-TASK-2026-10-28p.md | 52 ++++++++++++++++++++++++++++++++
+ 1 file changed, 52 insertions(+)
+
+commit 57f6d26ae60b7f739b84f9adc0e17117646891c6
+Author: jiaxiangli477-stack <jiaxiangli477@gmail.com>
+Date:   Wed Oct 28 06:53:17 2026 -0700
+
+
+ dsh-out/DSH-RESULT-2026-10-28m.md | 96 +++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 96 insertions(+)
+```
+
+```
+$ sha256sum deploy/packrivo-home-v4.zip deploy/packrivo-quote.zip
+5974ae0c208d03016701698c45dfbd467f7c24c6036fba120dccc01f72034bf9  deploy/packrivo-home-v4.zip
+096d0c8e81360e7fc616e5d46c96088fc3a65ceb32daf9b78cf1e1de0bc52d93  deploy/packrivo-quote.zip
+```
