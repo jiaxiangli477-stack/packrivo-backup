@@ -1,0 +1,1 @@
+nginx mysql r28q-host redis php 

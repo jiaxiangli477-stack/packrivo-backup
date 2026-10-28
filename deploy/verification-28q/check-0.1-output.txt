@@ -1,0 +1,42 @@
+== [0.1] 容器与版本 ==
+redis	redis:alpine
+php	r28q-php:8.3
+nginx	nginx:alpine
+mysql	mariadb:10.11
+-- core version (期望 7.1.3):
+7.1.3
+-- php version (期望 8.3.x):
+PHP 8.3.36 (cli) (built: Oct 21 2026 22:54:11) (NTS)
+-- siteurl (本地演练适配为 http://nginx):
+http://nginx
+-- template (期望 packrivo-static-bridge-1.2.38):
+packrivo-static-bridge-1.2.38
+-- stylesheet (期望与 template 相同=子主题未装):
+packrivo-static-bridge-1.2.38
+== [0.1] 首次安装现状确认（两条 grep 都应无输出） ==
+Warning: wp_update_themes(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
+子主题未安装 → 首次安装
+Warning: wp_update_plugins(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
+报价插件未安装 → 首次安装
+-- 活跃主题（父主题可回切）:
+Warning: wp_update_themes(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
+packrivo-static-bridge-1.2.38,active,none,1.2.38,,off
+== [0.1] mysqldump 与目录 ==
+/usr/bin/mysqldump
+mysqldump: Deprecated program name. It will be removed in a future release, use '/usr/bin/mariadb-dump' instead
+mysqldump from 11.8.9-MariaDB, client 10.20 for Linux (x86_64)
+-- 宿主侧目录:
+/home/web/backups
+/home/web/html/www.packrivo.com/wordpress
+/home/web/html/www.packrivo.com/wordpress/wp-content/uploads/packrivo-i18n
+/home/web/packrivo-packages
+-- i18n 字典文件数 (期望 23):
+23
+-- 宿主无 php/wp（RUNBOOK 前提）:
+NO-PHP-ON-HOST
+NO-WP-ON-HOST
+== [1.5] INSTALL-STATE 判定依据 ==
+theme_before=packrivo-static-bridge-1.2.38
+parent_before=packrivo-static-bridge-1.2.38
+child_theme_present=no
+quote_plugin_present=no

@@ -1,0 +1,18 @@
+array (
+  0 => 'fluent-smtp/fluent-smtp.php',
+  1 => 'google-site-kit/google-site-kit.php',
+  2 => 'google-website-translator/google-website-translator.php',
+  3 => 'packrivo-buyer-experience/packrivo-buyer-experience.php',
+  4 => 'packrivo-language-selector/packrivo-language-selector.php',
+  5 => 'packrivo-lead-intake/packrivo-lead-intake.php',
+  6 => 'packrivo-operations/packrivo-operations.php',
+  7 => 'packrivo-product-workspace/packrivo-product-workspace.php',
+  8 => 'packrivo-publishing-workbench/packrivo-publishing-workbench.php',
+  9 => 'packrivo-quote/packrivo-quote.php',
+  10 => 'packrivo-workbench/packrivo-workbench.php',
+  11 => 'updraftplus/updraftplus.php',
+  12 => 'webp-converter-for-media/webp-converter-for-media.php',
+  13 => 'wordpress-seo/wp-seo.php',
+  14 => 'wp-2fa/wp-2fa.php',
+  15 => 'wps-hide-login/wps-hide-login.php',
+)

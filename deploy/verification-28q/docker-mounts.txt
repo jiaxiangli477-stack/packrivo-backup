@@ -1,0 +1,5 @@
+/php | image=r28q-php:8.3 | binds=["E:\\破甲工作区\\.tmp\\28q\\rehearsal\\home\\web\\html:/var/www/html"] | ports={"9000/tcp":null}
+/nginx | image=nginx:alpine | binds=["E:\\破甲工作区\\.tmp\\28q\\rehearsal\\nginx\\default.conf:/etc/nginx/conf.d/default.conf:ro","E:\\破甲工作区\\.tmp\\28q\\rehearsal\\home\\web\\html:/var/www/html:ro"] | ports={"80/tcp":[{"HostIp":"0.0.0.0","HostPort":"8091"},{"HostIp":"::","HostPort":"8091"}]}
+/mysql | image=mariadb:10.11 | binds=["E:\\破甲工作区\\.tmp\\28q\\rehearsal\\home\\web\\html:/var/www/html"] | ports={"3306/tcp":null}
+/redis | image=redis:alpine | binds=null | ports={"6379/tcp":null}
+/r28q-host | image=docker:27-cli | binds=["E:\\破甲工作区\\.tmp\\28q\\rehearsal\\home\\web:/home/web","/var/run/docker.sock:/var/run/docker.sock"] | ports={}

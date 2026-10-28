@@ -40,6 +40,7 @@ I18N=$WP/wp-content/uploads/packrivo-i18n
 PKG=/home/web/packrivo-packages
 PKGC=/pkg
 SITE=https://www.packrivo.com
+SITEMAP=/sitemap_index.xml    # Yoast 站点地图；若站点只用 WP 核心地图就改成 /wp-sitemap.xml
 WPCLI="docker exec php php -d disable_functions= /usr/local/bin/wp --path=$WPC --allow-root"
 # $BACKUP 不在这里生成：第 1 步定一次，之后永远从文件读
 ```
@@ -64,12 +65,35 @@ $WPCLI theme list --format=csv | grep packrivo-static-bridge | grep active
 docker exec php sh -c 'command -v mysqldump || apk add --no-cache mariadb-client'
 docker exec php mysqldump --version
 
+# 数据库导出探针：wp-cli 调 mariadb-dump 时带 --no-defaults，会忽略 /etc/my.cnf.d；
+# 若 mysql 侧没开 TLS 而客户端是 mariadb 11.x，导出会报 TLS/SSL error
+$WPCLI db export /tmp/probe.sql --skip-plugins --skip-themes
+docker exec php sh -c 'wc -c /tmp/probe.sql'
+docker exec php rm -f /tmp/probe.sql
+
 # 包目录
 mkdir -p "$PKG"
 ```
 
-**通过判据**：`docker ps` 里的 php/mysql/nginx 都在；`core version` = `7.1.3`；PHP = `8.3.x`；`template` = `packrivo-static-bridge-1.2.38`；子主题与报价插件都「未安装」；`mysqldump --version` 有输出。
+**通过判据**：`docker ps` 里的 php/mysql/nginx 都在；`core version` = `7.1.3`；PHP = `8.3.x`；`template` = `packrivo-static-bridge-1.2.38`；子主题与报价插件都「未安装」；`mysqldump --version` 有输出；**导出探针的字节数 > 0**。
 若子主题或报价插件**已经存在**，说明不是首次安装，**停下**，本手册的 4/5 步与 9 步不适用。
+
+**若导出探针报 `TLS/SSL error: SSL is required, but the server does not support it`**（`mysql` 侧没开 TLS + 客户端是 mariadb 11.x 时的典型症状），做一次容器内的客户端包装再重探。要点：`--skip-ssl` 必须**追加在参数末尾**，因为 wp-cli 传的 `--no-defaults` 必须保持在第一位，放前面会被拒。
+
+```bash
+docker exec php sh -c 'cat > /usr/local/bin/mariadb-dump <<EOF
+#!/bin/sh
+exec /usr/bin/mariadb-dump "\$@" --skip-ssl
+EOF
+chmod +x /usr/local/bin/mariadb-dump'
+docker exec php sh -c 'cat > /usr/local/bin/mariadb <<EOF
+#!/bin/sh
+exec /usr/bin/mariadb "\$@" --skip-ssl
+EOF
+chmod +x /usr/local/bin/mariadb'
+docker exec php sh -c 'command -v mariadb-dump'
+# 然后重跑上面的导出探针，必须看到字节数 > 0
+```
 
 ### 0.2 从本机上传（**本机**执行，只在宿主机落地，不进 web 目录）
 
@@ -80,7 +104,7 @@ mkdir -p "$PKG"
 | `deploy/27e-quote-redirect.patch` | — | 647 B | 见第 6 步 |
 | `deploy/patches-28m/packrivo-i18n-404-viewport.patch` | — | 1018 B | 见第 6 步 |
 | `deploy/i18n-merged/`（11 份 `*-dict.json` + 11 份 `*-js.json` + `paths.json`） | 23 | — | 合并底稿 |
-| `deploy/tools/merge-i18n.php` | 1 | — | 第 2 步合并工具 |
+| `deploy/tools/merge-i18n.php` | 1 | 13,108 B | 第 2 步合并工具；`4316c4c8cdc618cd228d6b54b1af3e462973263149a8127b1bbc01d39be454fa`（28q 加了 0 字节文件容错） |
 | `dsh-out/batch-01.json` … `batch-05.json`、`dsh-out/hubs-27i.json` | 6 | — | 第 3 步导入输入 |
 | `scripts/product-buyers-27g/import.php` + `lib.php` | 2 | — | 第 3 步 |
 | `scripts/product-buyers-27e/full-inventory.csv` + `products.json` + `third.json` + `fourth.json` | 4 | — | 第 3 步 `all134` 用 |
@@ -133,7 +157,7 @@ $WPCLI theme  list --format=csv > "$BACKUP/before-theme-list.csv"
 $WPCLI option get template   > "$BACKUP/before-template.txt"
 $WPCLI option get stylesheet > "$BACKUP/before-stylesheet.txt"
 $WPCLI post list --post_type=page --post_status=publish --fields=ID,post_name,post_title --format=csv > "$BACKUP/before-pages.csv"
-curl -s "$SITE/sitemap_index.xml" > "$BACKUP/before-sitemap.xml"
+curl -s "$SITE$SITEMAP" > "$BACKUP/before-sitemap.xml"
 curl -s "$SITE/robots.txt"        > "$BACKUP/before-robots.txt"
 
 # 1.5 首次安装的书面记录（第 9 步、以及事后审计都看这一份）
@@ -448,7 +472,7 @@ $WPCLI cache flush || echo "no object cache plugin"     # 有对象缓存插件�
 | 8.3 | 询盘页 | `/inquiry/` 和 `/inquiry/?product=product-drawer-jewelry-box` | 字段齐全（姓名、邮箱、数量、产品）；带 `?product=` 时产品已预选；**只读不提交** |
 | 8.4 | 横向溢出 | 375 / 768 / 1024 三个宽度各看首页、`/products/`、1 个产品页、`/get-a-quote/`、`/ar/` | 都没有横向滚动条（`document.documentElement.scrollWidth` = 视口宽）；28p 起 768/1024 也在范围内 |
 | 8.5 | 每页 1 个 title | `curl -s <URL> \| grep -c '<title>'`，抽 5 个 URL | 每个都是 **1** |
-| 8.6 | sitemap / robots 没变 | `curl -s "$SITE/sitemap_index.xml"`、`robots.txt`，与第 1 步的 `before-*.xml/txt` diff | sitemap 仍有语种子图；`robots.txt` 与上线前逐字一致 |
+| 8.6 | sitemap / robots 没变 | `curl -s "$SITE$SITEMAP"`、`robots.txt`，与第 1 步的 `before-*.xml/txt` diff | sitemap 仍有语种子图；`robots.txt` 与上线前逐字一致 |
 | 8.7 | 语种报价按钮 | en / ar / de / ja 首页与 1 个产品页，看页头与页脚的报价按钮 | 文字是各自语言（`عرض سعر فوري` / `Sofortangebot` / `すぐに見積もり`），链接都指向 `/{lang}/get-a-quote/` |
 
 固定命令部分：
@@ -462,7 +486,7 @@ for u in "$SITE/" "$SITE/products/" "$SITE/de/" "$SITE/ar/" "$SITE/product-drawe
 done
 
 # 8.6 sitemap / robots 与第 1 步快照对比
-diff "$BACKUP/before-sitemap.xml" <(curl -s "$SITE/sitemap_index.xml") && echo "sitemap 未变"
+diff "$BACKUP/before-sitemap.xml" <(curl -s "$SITE$SITEMAP") && echo "sitemap 未变"
 diff "$BACKUP/before-robots.txt"  <(curl -s "$SITE/robots.txt")       && echo "robots 未变"
 ```
 
@@ -481,6 +505,7 @@ I18N=$WP/wp-content/uploads/packrivo-i18n
 PKG=/home/web/packrivo-packages
 PKGC=/pkg
 SITE=https://www.packrivo.com
+SITEMAP=/sitemap_index.xml    # Yoast 站点地图；若站点只用 WP 核心地图就改成 /wp-sitemap.xml
 WPCLI="docker exec php php -d disable_functions= /usr/local/bin/wp --path=$WPC --allow-root"
 LAUNCH=$(cat /home/web/backups/CURRENT_LAUNCH)     # ← 固定来源，绝不用 $(date) 重算
 BACKUP=/home/web/backups/$LAUNCH
@@ -559,9 +584,20 @@ docker exec php rm -f /tmp/db.sql
 | 8 | 复测 | 本机浏览器 + 生产 SSH | 20–30 min | 不可 |
 | 9 | 整体回滚 | 生产 SSH（清缓存在本机） | 15 min | 只在出问题时执行 |
 
-## 附录 C · 28q 本地演练
+## 附录 C · 28q 本地演练（已跑通）
 
-本手册在 2026-10-28 于本地按「生产结构」完整演练过：WP 7.1.3 + PHP 8.3、`php` 容器、`/home/web/...` 宿主机目录、子主题与报价插件**未安装**的初始状态。演练记录（正向 → 整体回滚 → 再正向，逐条命令与输出）见：
+本手册在 2026-10-28 于本地按「生产结构」完整演练过：WP **7.1.3** + PHP **8.3.36**、`php` / `mysql` / `nginx` 三个容器、宿主机目录 `/home/web/...`、子主题与报价插件**未安装**的首装前状态，内容也摆回上线前（27g/27i 的旧标题、旧正文）。
 
-- `deploy/verification-28q/rehearsal.log`
-- `deploy/verification-28q/rehearsal-verify.json`
+**三轮结果**（逐条命令与输出在 `deploy/verification-28q/rehearsal.log`）：
+
+| 轮次 | 覆盖步骤 | 结果 |
+|---|---|---|
+| 正向 | 第 0–8 步 | 9 个步骤块全部 exit=0 |
+| 回滚 | 第 9 步 | exit=0，站点快照与基线**逐字节一致**（sha256 `4972cd81…`） |
+| 再正向 | 第 1–8 步 | 8 个步骤块全部 exit=0，站点快照与第一次正向**逐字节一致**（sha256 `4247693f…`） |
+
+正向后的快照（`4247693f…`）与基线（`4972cd81…`）**不同**，说明第 3 步确实改了内容、第 9 步确实改了回来；两次正向哈希相同，说明每一步都可重复执行。
+
+演练还补跑了第 0.1 步新加的**数据库导出探针**：拆掉客户端包装时探针报 `TLS/SSL error: SSL is required`、导出 0 字节；按本手册打包装后导出 36,381,501 B、40 张表。
+
+结构化摘要：`deploy/verification-28q/rehearsal-verify.json`；演练脚本（复位 / 快照 / 逐步执行）：`deploy/verification-28q/scripts/`。

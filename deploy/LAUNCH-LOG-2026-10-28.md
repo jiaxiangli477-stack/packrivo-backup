@@ -683,3 +683,43 @@ r28q-net 演练栈五容器全部 Up：php(r28q-php:8.3) / nginx(nginx:alpine，
 
 - 仅只读命令（Get-Content/Select-String/Get-Item/Get-ChildItem/git status/log/diff/ls-files）+ 本节日志追加 + 复制本链证据摘录文件入库；未执行任何脚本、未启动/停止/接入容器、未修改/删除他人文件（工作树 3 处改动与 31 个未跟踪文件保持原样）、未 SSH 生产、未重跑生产第 1 步、未执行第 2–8 步、未读取或打印任何密码/密钥/token。
 - 本轮仓库变更：`deploy/LAUNCH-LOG-2026-10-28.md` 追加本节 + 新增 `deploy/verification-28q/round3-evidence-summary.md`（意图 672 所写独立只读证据摘录，原样入库未改动）；只暂存并提交这两个文件并 push。
+
+## 15 · 28q 第四遍演练完整结束核查与五件套最新状态（2026-10-28 本机只读核查；未执行任何脚本、未启动/停止/接入容器、未修改/删除他人文件、未读任何凭据）
+
+### 15.1 第四遍是否真正结束
+- 第四遍由并行链以新 runner 容器 `r28q-runner`（镜像 r28q-host:3，Cmd=`/opt/x28q/run-all.sh`，挂载 .tmp\28q\rehearsal\home\web → /home/web）于本地 10:23:42（17:23:42 UTC）启动，17:54:55 UTC `DONE`，容器 `exited exit=0`。**未被截断、真正结束**（前三次分别被并行链 17:04:32 UTC 重启、step2 docker cp 卡死、s-forward 快照卡死截断）。
+- 六阶段序列（docker logs r28q-runner + rehearsal-28q/ 日志目录实读，全部只读）：
+  1) 复位到首装前（reset.log 10:26:41）：siteurl=http://nginx；i18n 23 文件；`子主题未安装 ✓`；`报价插件未安装 ✓`；`get-a-quote 301（期望 301）`；`首页 200（期望 200）`。
+  2) 基线快照 s-baseline.txt：845 行，sha256 `4972cd8195d7b40a10dac4140273ba7faef4e152b2b886489bfcc624f2773deb`。
+  3) 正向 0-8（forward1.log 10:36:36，471 行）：step0–step8 全部 `exit=0`；step3 `apply_updated=130 already_current=4 URL_and_body_check=PASS`、`apply_updated=7 already_current=1 H1_body_URL_check=PASS`；step4/5 安装+激活成功；step8 `sitemap 未变`、`robots 未变`、inquiry 200；快照 s-forward1.txt：847 行，sha256 `4247693fa3a31f35477dcb059ad79e4ae5c13de861f94dfcc3848fe57f81b392`。
+  4) 整体回滚 9（rollback.log 10:41:27，93 行）：`exit=0`；mu `sha256sum -c` 两项 OK、主题回切 static-bridge、home-v4 移除、quote 插件 deactivate+delete；27g `rollback_updated=130 already_current=4 URL_and_body_check=PASS`、27i `rollback_updated=7 already_current=1 H1_body_URL_check=PASS`；s-after-rollback.txt 845 行，sha256 `4972cd81…3deb` **与基线 IDENTICAL ✓**。
+  5) 再正向 1-8（forward2.log 10:53:02，411 行）：step1–step8 全部 `exit=0`；**step3 再次 `apply_updated=130/4`、`apply_updated=7/1` 真实写入复现** → 第四遍内 reset/回滚的内容层复位持续成立、可重复；s-forward2.txt 847 行，sha256 `4247693f…b392` **与 s-forward1 IDENTICAL ✓**。
+  6) 对比（diff.txt 10:54:55）：`回滚后 vs 基线 IDENTICAL ✓`、`第二次正向 vs 第一次正向 IDENTICAL ✓`。
+- 结论：第四遍自身全部判据（reset/forward/rollback/快照一致性）逐项 exit=0 且快照一致；`prep-restore-slug.php` 的 `restore_slug=130/8 missing=0` 与 step3/step9 的 apply/rollback_updated=130/7 真实写入在整遍内持续成立。**但第四遍完成 ≠ 三轮整轮 PASS**（见 15.4）。
+
+### 15.2 第四遍结构注意点（口径项，需负责人确认）
+- 第四遍 = 复位 + 正向0-8 + 回滚9 + 再次正向1-8（**2 次正向 + 1 次回滚**）；未见第 3 轮完整循环。任务单 §3“三轮演练”口径是否由该结构满足，仍需负责人确认（原 §13.5⑦ 延续）。
+- reset 第 6 步 27i 输出 `restore_slug=8 missing=0 无正文依据=8`：27i 回滚证据只存正文哈希、不存正文，8 个主页面正文未按 slug 写回（27g 130 页已真实写回）；该缺口由第 3/9 步 import.php 的 `H1_body_URL_check=PASS` 间接覆盖，reset 层语义建议列入负责人确认项。
+- 0.1 导出探针为演练结束后的**补跑**（probe.log 10:56:50，非 forward1 step0 内）：裸探针复现 `TLS/SSL error 2026` → /tmp/probe.sql=0 字节；按 RUNBOOK 包装 `--skip-ssl`（追加参数末尾）后导出 `Success` 36,381,501 B / 40 CREATE TABLE → 探针正反路径实测成立；但 `--skip-ssl` 包装仍为容器态遗留，rehearsal.sh 自身仍无 step0 探针/包装步骤。
+
+### 15.3 supplement2 / rehearsal.sh 现状（截至本地 10:57）
+- supplement2（`deploy/verification-28q/RUNBOOK-launch.28q-supplement2.patch`，本链拟制）仍为未跟踪拟制文件：**未按原样、也未经负责人批准合并**。工作树 RUNBOOK 在途改动（并行链、未提交，+40/−5 量级）仍只含 SITEMAP 变量 / 0.1 导出探针+mariadb `--skip-ssl` 包装指引 / merge-i18n 哈希备注，**不含 2.5 硬 FAIL、3.0 应用前守卫、附录 D 复位判据**。
+- rehearsal.sh（9:29:37 起未变，12502 B）：仍无 2.5 硬 FAIL、无 3.0 守卫、无 step0 探针；第四遍实际由容器内 `/opt/x28q/run-all.sh` 驱动（rehearsal.sh 未参与本轮）。
+
+### 15.4 五件套最新状态（发生变化的项）
+- **rehearsal.log：10:57:00 起存在**（`deploy/verification-28q/`，69090 B，并行链生成，未跟踪未提交；内容为第四遍各阶段日志汇总）。
+- **rehearsal-verify.json：10:57:00 起存在**（6646 B，未跟踪未提交；generatedAt 2026-10-28T17:57:00.019Z；含 5 阶段 step 级 exit=0、判据行、4 快照哈希与两项 IDENTICAL；**无“整轮/三轮 PASS”结论字段**）。
+- 三轮整轮 PASS：**仍不存在**（第四遍完成 ≠ 三轮完成；verify.json 无三轮判定；轮次口径待负责人确认）。
+- Claude 核验：**仍不存在**（全盘搜索无任何核验产物/记录）。
+- 新生产授权：**仍不存在**（remote main == 0070926 无新提交；DSH-TASK-2026-10-28q.md mtime 8:48:45 未变；无 DSH-RESULT-2026-10-28q.md）。
+- 门禁结论：进入本地演练（本链）/ Claude 核验 / 生产第 1 步重跑的前置仍不满足 → 生产第 1 步仍 FAIL；第 2–8 步与 SSH 生产继续禁止；本链继续停止等待。
+
+### 15.5 未决审批项⑤–⑧最新状态（在 §14.4 之上更新）
+- ⑤ 0.1 判据 hunk 与在途 0.1 探针/包装改动的冲突合并口径：仍未决；在途改动未提交、supplement2 未落地、supplement 的 0.1 判据 hunk 冲突未合并（§13.3）。
+- ⑥ 演练内容复位：第四遍用并行链自有 slug 方案实测成立（restore_slug=130/8 missing=0，且第二正向 apply_updated 复现真实写入）；supplement2 附录 D.1（prep-restore.php 进 /pkg）未落地；27i“无正文依据=8”口径仍待负责人；第 3/9 步判 PASS 须在负责人批准的落地版本上重新验证。
+- ⑦ 重启归属与轮次计数：第四遍（17:23:42–17:54:55 UTC）未再截断、完整结束；但“三轮”计数口径（第四遍内 2 正向 + 1 回滚 vs 三轮完整循环）仍待负责人确认。
+- ⑧ 四边界批复（补丁落地 / 三轮重跑 / Claude 核验 / 另行生产授权）：仍无新批复；§11 审批文本继续有效。
+
+### 15.6 本轮操作与边界
+- 只读命令：Get-ChildItem / Get-Content / Select-String / Get-Item / git status / git log / git ls-remote、docker ps / docker logs / docker inspect（全部只读）。未执行任何脚本、未启动/停止/接入容器、未修改/删除他人文件、未 SSH 生产、未重跑生产第 1 步、未执行第 2–8 步、未读取或打印任何密码/密钥/token。
+- 本轮仓库变更：`deploy/LAUNCH-LOG-2026-10-28.md` 追加本节 + 新增 `deploy/verification-28q/round4-evidence-summary.md`（本链独立只读证据摘录）；只暂存并提交这两个文件并 push。并行链工作树 3 处修改（README.md / RUNBOOK-launch.md / tools/merge-i18n.php）与 33 个未跟踪文件（含并行链新生成的 rehearsal.log、rehearsal-verify.json 及本链拟制补丁等）保持零触碰。

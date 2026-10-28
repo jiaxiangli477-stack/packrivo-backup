@@ -1,6 +1,8 @@
 # 27e / 27g / 27h / 27i 上线前检查与回滚方案（未执行）
 
 > **上线以 [`RUNBOOK-launch.md`](RUNBOOK-launch.md) 为准；本文件里 27g…28q 的分轮记录只作历史参考。**
+>
+> **28q（2026-10-28）**：生产站跑在 Docker 里（`php` / `mysql` / `nginx`），RUNBOOK 已按「宿主机 / 容器内」双栏重写，第 4、5 步按**首次安装**写，`$BACKUP` 用 `CURRENT_LAUNCH` 固定。本文件下面 27g/27i 命令块里的 `WPCLI="wp --path=$WP"`、`$BACKUP/i18n/*` 摊平写法**都已过时**，一律以 RUNBOOK 为准。包哈希未变：`packrivo-home-v4.zip` = `5974ae0c…`（790,164 B）、`packrivo-quote.zip` = `096d0c8e…`（54,581 B）。
 
 **状态：27i 主页面元数据和按钮字典已完成本地准备，尚未部署。** 包含既有 134 个产品、60 条界面词及本轮 8 个 hub/1 条按钮译文；主字典累计 33 个冲突（27g 的 19 个 + 本轮新增 14 个 title 冲突）按生产优先保留，runtime 新键无冲突。32 个 hub 样本中 27 个严格 dsh 一致，5 个为 inquiry/生产译文保留例外，详见本轮结果。27h 已在本地修复重复 title、RTL skip-link 溢出及 Template 三项，并重新打包子主题；修复没有部署到生产。首页仍为 5/8 张卡片，报价重定向补丁仍待获授权上线时执行。
 

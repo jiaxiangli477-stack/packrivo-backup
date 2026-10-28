@@ -1,0 +1,7 @@
+# RUNBOOK 1.5 INSTALL-STATE.txt 所需判定依据（演练首装态，2026-10-28 实测）
+launch=<待 RUNBOOK 第 1.1 步生成并写入 /home/web/backups/CURRENT_LAUNCH>
+theme_before=packrivo-static-bridge-1.2.38
+parent_before=packrivo-static-bridge-1.2.38
+child_theme_present=no
+quote_plugin_present=no
+# 依据：wp theme list 无 packrivo-home-v4；wp plugin list 无 packrivo-quote；themes/plugins 目录均无对应目录；active_plugins 无 packrivo-quote

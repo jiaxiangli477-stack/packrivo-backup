@@ -35,6 +35,11 @@ function read_dict(string $file): array
     if (str_starts_with($raw, "\xEF\xBB\xBF")) {
         $raw = substr($raw, 3);
     }
+    // 0 字节 / 只有空白＝这一档还没有内容（新语种尚未写入），不是损坏，按空字典处理
+    if (trim($raw) === '') {
+        fwrite(STDERR, "空文件，按空字典处理: {$file}\n");
+        return [];
+    }
     $data = json_decode($raw, true);
     if (!is_array($data)) {
         fwrite(STDERR, "不是合法 JSON: {$file}\n");

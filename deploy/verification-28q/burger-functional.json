@@ -1,0 +1,418 @@
+[
+ {
+  "lang": "en",
+  "width": 768,
+  "closed": {
+   "navOpen": false,
+   "navDisplay": "none",
+   "burgerVisible": true,
+   "burgerExpanded": "false",
+   "ctaVisible": true,
+   "ctaText": "Build a quote",
+   "ctaHref": "/get-a-quote/",
+   "ctaInViewport": true,
+   "langVisible": true,
+   "langInViewport": true,
+   "sw": 768,
+   "iw": 768
+  },
+  "opened": {
+   "isOpen": true,
+   "display": "block",
+   "height": 836,
+   "visibleLinks": 7,
+   "burgerExpanded": "true",
+   "burgerText": "Close",
+   "sw": 768,
+   "iw": 768
+  },
+  "reclosed": {
+   "isOpen": false,
+   "display": "none",
+   "burgerExpanded": "false",
+   "burgerText": "Menu"
+  },
+  "linkClickCloses": {
+   "open": false
+  },
+  "langSwitch": {
+   "ok": true,
+   "dialog": {
+    "found": true,
+    "open": true,
+    "width": 540,
+    "height": 667
+   },
+   "clicked": {
+    "lang": "de",
+    "text": "DeutschGerman"
+   },
+   "landed": "http://localhost:8081/de/",
+   "htmlLang": "de"
+  }
+ },
+ {
+  "lang": "en",
+  "width": 1024,
+  "closed": {
+   "navOpen": false,
+   "navDisplay": "none",
+   "burgerVisible": true,
+   "burgerExpanded": "false",
+   "ctaVisible": true,
+   "ctaText": "Build a quote",
+   "ctaHref": "/get-a-quote/",
+   "ctaInViewport": true,
+   "langVisible": true,
+   "langInViewport": true,
+   "sw": 1024,
+   "iw": 1024
+  },
+  "opened": {
+   "isOpen": true,
+   "display": "block",
+   "height": 836,
+   "visibleLinks": 7,
+   "burgerExpanded": "true",
+   "burgerText": "Close",
+   "sw": 1024,
+   "iw": 1024
+  },
+  "reclosed": {
+   "isOpen": false,
+   "display": "none",
+   "burgerExpanded": "false",
+   "burgerText": "Menu"
+  },
+  "linkClickCloses": {
+   "open": false
+  },
+  "langSwitch": {
+   "ok": true,
+   "dialog": {
+    "found": true,
+    "open": true,
+    "width": 540,
+    "height": 667
+   },
+   "clicked": {
+    "lang": "de",
+    "text": "DeutschGerman"
+   },
+   "landed": "http://localhost:8081/de/",
+   "htmlLang": "de"
+  }
+ },
+ {
+  "lang": "de",
+  "width": 768,
+  "closed": {
+   "navOpen": false,
+   "navDisplay": "none",
+   "burgerVisible": true,
+   "burgerExpanded": "false",
+   "ctaVisible": true,
+   "ctaText": "Build a quote",
+   "ctaHref": "/de/get-a-quote/",
+   "ctaInViewport": true,
+   "langVisible": true,
+   "langInViewport": true,
+   "sw": 768,
+   "iw": 768
+  },
+  "opened": {
+   "isOpen": true,
+   "display": "block",
+   "height": 836,
+   "visibleLinks": 7,
+   "burgerExpanded": "true",
+   "burgerText": "Close",
+   "sw": 768,
+   "iw": 768
+  },
+  "reclosed": {
+   "isOpen": false,
+   "display": "none",
+   "burgerExpanded": "false",
+   "burgerText": "Menu"
+  },
+  "linkClickCloses": {
+   "open": false
+  },
+  "langSwitch": {
+   "ok": true,
+   "dialog": {
+    "found": true,
+    "open": true,
+    "width": 540,
+    "height": 667
+   },
+   "clicked": {
+    "lang": "en",
+    "text": "EnglishEnglish"
+   },
+   "landed": "http://localhost:8081/",
+   "htmlLang": "en"
+  }
+ },
+ {
+  "lang": "de",
+  "width": 1024,
+  "closed": {
+   "navOpen": false,
+   "navDisplay": "none",
+   "burgerVisible": true,
+   "burgerExpanded": "false",
+   "ctaVisible": true,
+   "ctaText": "Build a quote",
+   "ctaHref": "/de/get-a-quote/",
+   "ctaInViewport": true,
+   "langVisible": true,
+   "langInViewport": true,
+   "sw": 1024,
+   "iw": 1024
+  },
+  "opened": {
+   "isOpen": true,
+   "display": "block",
+   "height": 836,
+   "visibleLinks": 7,
+   "burgerExpanded": "true",
+   "burgerText": "Close",
+   "sw": 1024,
+   "iw": 1024
+  },
+  "reclosed": {
+   "isOpen": false,
+   "display": "none",
+   "burgerExpanded": "false",
+   "burgerText": "Menu"
+  },
+  "linkClickCloses": {
+   "open": false
+  },
+  "langSwitch": {
+   "ok": true,
+   "dialog": {
+    "found": true,
+    "open": true,
+    "width": 540,
+    "height": 667
+   },
+   "clicked": {
+    "lang": "en",
+    "text": "EnglishEnglish"
+   },
+   "landed": "http://localhost:8081/",
+   "htmlLang": "en"
+  }
+ },
+ {
+  "lang": "nl",
+  "width": 768,
+  "closed": {
+   "navOpen": false,
+   "navDisplay": "none",
+   "burgerVisible": true,
+   "burgerExpanded": "false",
+   "ctaVisible": true,
+   "ctaText": "Build a quote",
+   "ctaHref": "/nl/get-a-quote/",
+   "ctaInViewport": true,
+   "langVisible": true,
+   "langInViewport": true,
+   "sw": 768,
+   "iw": 768
+  },
+  "opened": {
+   "isOpen": true,
+   "display": "block",
+   "height": 836,
+   "visibleLinks": 7,
+   "burgerExpanded": "true",
+   "burgerText": "Close",
+   "sw": 768,
+   "iw": 768
+  },
+  "reclosed": {
+   "isOpen": false,
+   "display": "none",
+   "burgerExpanded": "false",
+   "burgerText": "Menu"
+  },
+  "linkClickCloses": {
+   "open": false
+  },
+  "langSwitch": {
+   "ok": true,
+   "dialog": {
+    "found": true,
+    "open": true,
+    "width": 540,
+    "height": 667
+   },
+   "clicked": {
+    "lang": "en",
+    "text": "EnglishEnglish"
+   },
+   "landed": "http://localhost:8081/",
+   "htmlLang": "en"
+  }
+ },
+ {
+  "lang": "nl",
+  "width": 1024,
+  "closed": {
+   "navOpen": false,
+   "navDisplay": "none",
+   "burgerVisible": true,
+   "burgerExpanded": "false",
+   "ctaVisible": true,
+   "ctaText": "Build a quote",
+   "ctaHref": "/nl/get-a-quote/",
+   "ctaInViewport": true,
+   "langVisible": true,
+   "langInViewport": true,
+   "sw": 1024,
+   "iw": 1024
+  },
+  "opened": {
+   "isOpen": true,
+   "display": "block",
+   "height": 836,
+   "visibleLinks": 7,
+   "burgerExpanded": "true",
+   "burgerText": "Close",
+   "sw": 1024,
+   "iw": 1024
+  },
+  "reclosed": {
+   "isOpen": false,
+   "display": "none",
+   "burgerExpanded": "false",
+   "burgerText": "Menu"
+  },
+  "linkClickCloses": {
+   "open": false
+  },
+  "langSwitch": {
+   "ok": true,
+   "dialog": {
+    "found": true,
+    "open": true,
+    "width": 540,
+    "height": 667
+   },
+   "clicked": {
+    "lang": "en",
+    "text": "EnglishEnglish"
+   },
+   "landed": "http://localhost:8081/",
+   "htmlLang": "en"
+  }
+ },
+ {
+  "lang": "ar",
+  "width": 768,
+  "closed": {
+   "navOpen": false,
+   "navDisplay": "none",
+   "burgerVisible": true,
+   "burgerExpanded": "false",
+   "ctaVisible": true,
+   "ctaText": "Build a quote",
+   "ctaHref": "/ar/get-a-quote/",
+   "ctaInViewport": true,
+   "langVisible": true,
+   "langInViewport": true,
+   "sw": 768,
+   "iw": 768
+  },
+  "opened": {
+   "isOpen": true,
+   "display": "block",
+   "height": 836,
+   "visibleLinks": 7,
+   "burgerExpanded": "true",
+   "burgerText": "Close",
+   "sw": 768,
+   "iw": 768
+  },
+  "reclosed": {
+   "isOpen": false,
+   "display": "none",
+   "burgerExpanded": "false",
+   "burgerText": "Menu"
+  },
+  "linkClickCloses": {
+   "open": false
+  },
+  "langSwitch": {
+   "ok": true,
+   "dialog": {
+    "found": true,
+    "open": true,
+    "width": 540,
+    "height": 667
+   },
+   "clicked": {
+    "lang": "en",
+    "text": "EnglishEnglish"
+   },
+   "landed": "http://localhost:8081/",
+   "htmlLang": "en"
+  }
+ },
+ {
+  "lang": "ar",
+  "width": 1024,
+  "closed": {
+   "navOpen": false,
+   "navDisplay": "none",
+   "burgerVisible": true,
+   "burgerExpanded": "false",
+   "ctaVisible": true,
+   "ctaText": "Build a quote",
+   "ctaHref": "/ar/get-a-quote/",
+   "ctaInViewport": true,
+   "langVisible": true,
+   "langInViewport": true,
+   "sw": 1024,
+   "iw": 1024
+  },
+  "opened": {
+   "isOpen": true,
+   "display": "block",
+   "height": 836,
+   "visibleLinks": 7,
+   "burgerExpanded": "true",
+   "burgerText": "Close",
+   "sw": 1024,
+   "iw": 1024
+  },
+  "reclosed": {
+   "isOpen": false,
+   "display": "none",
+   "burgerExpanded": "false",
+   "burgerText": "Menu"
+  },
+  "linkClickCloses": {
+   "open": false
+  },
+  "langSwitch": {
+   "ok": true,
+   "dialog": {
+    "found": true,
+    "open": true,
+    "width": 540,
+    "height": 667
+   },
+   "clicked": {
+    "lang": "en",
+    "text": "EnglishEnglish"
+   },
+   "landed": "http://localhost:8081/",
+   "htmlLang": "en"
+  }
+ }
+]
