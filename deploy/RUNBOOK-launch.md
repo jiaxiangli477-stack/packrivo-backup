@@ -549,13 +549,55 @@ cp -a "$BACKUP/i18n/." "$I18N/"
 
 **判据**：`sha256sum -c "$BACKUP/before-mu.sha256"` 全 OK；`option get stylesheet` 回到 `packrivo-static-bridge-1.2.38`；`plugin list | grep packrivo-quote` 无输出；27g/27i `rollback-check` 输出 `rollback_eligible` 且 rollback 后 `verify` 的 `metadata_mismatches=0`；8.1/8.2/8.6 与上线前一致。
 
-**最后手段**（分步回滚都不灵时；数据库回滚会丢掉上线后新增的询盘，用之前先确认这段时间没有新数据）：
+**最后手段**（分步回滚都不灵时）：把数据库整个换成第 1 步导出的 `db.sql`。
+
+> **这一招只回滚数据库。** 上线后新增的询盘、表单提交、评论、订单会一起消失——28r 实测：导入前新建的草稿 `28r-canary`，导入后查不到。用之前先确认这段时间没有新数据，或者先把新数据单独导出。
+> **它不回滚文件。** 子主题目录、插件目录、mu 文件、i18n 字典仍是「上线后」的版本，所以最后手段必须和 9.6 / 9.5 / 9.4 / 9.2 一起做，顺序见 L3。
+
+**前置检查（必做）**：`wp db import` 和 `wp db export` 一样走 `mariadb` 客户端、同样带 `--no-defaults`，**没有第 0.1 步那个客户端包装就会失败**。28r 实测：拆掉包装时 `db import` 退出码 1（导入没发生——表数仍是 40、`option get siteurl` 仍读得到，数据库没被导坏）；装上包装后同一份 `db.sql` 导入成功。所以先重跑 0.1 的导出探针确认包装在位：
 
 ```bash
+$WPCLI db export /tmp/probe.sql --skip-plugins --skip-themes
+docker exec php sh -c 'wc -c /tmp/probe.sql'      # 必须 > 0；若是 0 或报 TLS/SSL error，按 0.1 的补救块把包装装上再重探
+docker exec php rm -f /tmp/probe.sql
+```
+
+```bash
+LAUNCH=$(cat /home/web/backups/CURRENT_LAUNCH)
+BACKUP=/home/web/backups/$LAUNCH
+
+# L1 整库导入（容器内临时文件，用完就删）
 docker cp "$BACKUP/db.sql" php:/tmp/db.sql
 $WPCLI db import /tmp/db.sql
 docker exec php rm -f /tmp/db.sql
+
+# L2 导入后清 transient 与缓存
+$WPCLI transient delete --all
+$WPCLI cache flush || echo "no object cache plugin"
+
+# L3 文件部分：9.6 → 9.5 → 9.4 → 9.2，顺序不能反，删和恢复不要串成一行
+cp -a "$BACKUP/mu/packrivo-i18n.php"                      "$WP/wp-content/mu-plugins/"
+cp -a "$BACKUP/mu/packrivo-site-remediation-20261022.php" "$WP/wp-content/mu-plugins/"
+sha256sum -c "$BACKUP/before-mu.sha256"
+$WPCLI theme activate packrivo-static-bridge-1.2.38
+rm -r "$WP/wp-content/themes/packrivo-home-v4"
+$WPCLI plugin deactivate packrivo-quote
+$WPCLI plugin delete packrivo-quote
+cp -a "$BACKUP/i18n/." "$I18N/"
 ```
+
+**判据（逐条打勾，不看 exit 码）**：
+
+| # | 判据 | 怎么查 |
+|---|---|---|
+| L-1 | 表数 = `db.sql` 里 `CREATE TABLE` 的条数（演练是 40） | `grep -c 'CREATE TABLE' "$BACKUP/db.sql"` 与库里 `information_schema.tables` 的计数相等 |
+| L-2 | 上线后新增的数据确实没了 | 导入前建的草稿按 slug 查：`$WPCLI post list --name=<slug> --post_status=any --format=count` 为 `0` |
+| L-3 | `stylesheet` 与 `template` 都是 `packrivo-static-bridge-1.2.38` | `$WPCLI option get stylesheet` / `template` |
+| L-4 | `packrivo-quote` 不再**激活** | `$WPCLI plugin list --status=active --format=csv \| grep '^packrivo-quote,'` 无输出。**只看 active**：导入后插件文件还在，`plugin list` 里当然还看得到它，要等 L3 的 9.4 删目录才彻底消失 |
+| L-5 | 页面标题回到上线前 | 与 `$BACKUP/before-pages.csv`（或演练基线快照的「页面标题」一节）逐行一致 |
+| L-6 | 首页 / `/products/` / `/de/` 200，`/get-a-quote/` 301 | `curl -s -o /dev/null -w '%{http_code}'`。**301 必须在 L3 的 9.6 之后判**：27e 补丁还在时 `/get-a-quote/` 是 200（渲染报价页），这不是故障是顺序 |
+
+28r 本地实测（`deploy/verification-28r/lastresort.log`，复核在 `acceptance-recheck.log`）：L-1 / L-2 / L-3 / L-5 一次 PASS；**L-4、L-6 首次执行时打印 FAIL**，原因就是上表这两条注记——L-4 当时写成了「在不在列表里」，L-6 在 9.6 之前判。按上表改写后复核：L-4 PASS、L-6 PASS（301 → `/inquiry/`）。原始一轮 PASS=16 FAIL=2（`EXIT=1`），复核 PASS=11 FAIL=0（`EXIT=0`），L3 做完后整站快照 sha256 与 28q 基线 `4972cd81…` **逐字节一致**。
 
 ---
 
@@ -584,20 +626,25 @@ docker exec php rm -f /tmp/db.sql
 | 8 | 复测 | 本机浏览器 + 生产 SSH | 20–30 min | 不可 |
 | 9 | 整体回滚 | 生产 SSH（清缓存在本机） | 15 min | 只在出问题时执行 |
 
-## 附录 C · 28q 本地演练（已跑通）
+## 附录 C · 本地演练（28q 正反向 + 28r 最后手段，均已跑通）
 
 本手册在 2026-10-28 于本地按「生产结构」完整演练过：WP **7.1.3** + PHP **8.3.36**、`php` / `mysql` / `nginx` 三个容器、宿主机目录 `/home/web/...`、子主题与报价插件**未安装**的首装前状态，内容也摆回上线前（27g/27i 的旧标题、旧正文）。
 
-**三轮结果**（逐条命令与输出在 `deploy/verification-28q/rehearsal.log`）：
+**判据以行为准，不看 exit 码。** 28q 当时记的「9 个步骤块全部 exit=0」现在已经不算证据：`rehearsal.sh` 每个 step 结尾都是 `set +x`，脚本恒返回 0。28r 起改成——每一步的判据打印 `PASS:` / `FAIL:`，`step_end` 统计本步 `PASS=n FAIL=m`，有 FAIL 就 `exit 1`（`bash rehearsal.sh selftest` 可自检这套机制）。
 
-| 轮次 | 覆盖步骤 | 结果 |
+| 轮次 | 覆盖步骤 | 结果（按判据行） |
 |---|---|---|
-| 正向 | 第 0–8 步 | 9 个步骤块全部 exit=0 |
-| 回滚 | 第 9 步 | exit=0，站点快照与基线**逐字节一致**（sha256 `4972cd81…`） |
-| 再正向 | 第 1–8 步 | 8 个步骤块全部 exit=0，站点快照与第一次正向**逐字节一致**（sha256 `4247693f…`） |
+| 正向（28q） | 第 0–8 步 | 当时只记了 exit 码（已作废，见上）；可复算的证据是正向快照 `4247693f…` 与基线 `4972cd81…` 不同（第 3 步确实改了内容） |
+| 回滚（28q） | 第 9 步 | 站点快照与基线**逐字节一致**（`4972cd81…`）；注意这一步**没有导入数据库**，整库回滚见 28r |
+| 再正向（28q） | 第 1–8 步 | 站点快照与第一次正向**逐字节一致**（`4247693f…`），说明每步可重复执行 |
+| **最后手段（28r）** | 第 9 步末尾的整库导入 + 9.6/9.5/9.4/9.2 文件部分 | 原始一轮 `PASS=16 FAIL=2 EXIT=1`（L-4/L-6 判据写法与顺序都错了，见该节注记），按改写的判据复核 `PASS=11 FAIL=0 EXIT=0`；整站快照回到基线 `4972cd81…`（逐字节一致） |
 
-正向后的快照（`4247693f…`）与基线（`4972cd81…`）**不同**，说明第 3 步确实改了内容、第 9 步确实改了回来；两次正向哈希相同，说明每一步都可重复执行。
+28q 补跑过第 0.1 步新加的**数据库导出探针**：拆掉客户端包装时探针报 `TLS/SSL error: SSL is required`、导出 0 字节；按本手册打包装后导出 36,381,501 B、40 张表。
 
-演练还补跑了第 0.1 步新加的**数据库导出探针**：拆掉客户端包装时探针报 `TLS/SSL error: SSL is required`、导出 0 字节；按本手册打包装后导出 36,381,501 B、40 张表。
+28r 把**最后手段**跑了两遍（这就是它必须演练的理由）：
+- **包装不在时** `db import` 退出码 1，导入没有发生（表数仍是 40、`option get siteurl` 仍读得到，数据库没被导坏）；
+- **包装在时**同一份 `db.sql` 导入成功，40 张表，导入前建的草稿 `28r-canary` 消失（证明最后手段会丢掉上线后新增数据），页面标题一节与基线 726 行逐行一致；
+- 文件部分按 9.6 → 9.5 → 9.4 → 9.2 做完后，整站快照 sha256 与 28q 基线 `4972cd81…` **逐字节一致**。
 
-结构化摘要：`deploy/verification-28q/rehearsal-verify.json`；演练脚本（复位 / 快照 / 逐步执行）：`deploy/verification-28q/scripts/`。
+结构化摘要：`deploy/verification-28q/rehearsal-verify.json`；演练脚本（复位 / 快照 / 逐步执行）：`deploy/verification-28q/scripts/`。最后手段的完整日志、三份快照与 diff：`deploy/verification-28r/`。
+

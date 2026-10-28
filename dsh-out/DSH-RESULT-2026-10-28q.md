@@ -95,7 +95,7 @@ RUNBOOK 现在 603 行，附 `§0.1` 上线前检查（含新加的 DB 导出探
 - 第 2 步合并：11 个语种全部出 `*-dict.json` + `*-js.json`，`paths.json：生产 144 + 本地 146 → 合并 146`，`paths ok` / `paths count ok`，冲突 0。
 - 第 3 步：`input_pages=134 preflight=PASS`、`apply_updated=130 already_current=4 URL_and_body_check=PASS`；hubs `hub_pages=8 preflight=PASS`、`apply_updated=7 already_current=1 H1_body_URL_check=PASS`、`verified_hubs=8 metadata_mismatches=0 H1_body_URL_unchanged=8/8`。
 - 第 6 步：两个补丁 `git apply --check` → `CHECK-OK` → apply → `No syntax errors detected`；`/get-a-quote/` 200、`/de/get-a-quote/` 200、ar 文章页 viewport meta 存在。
-- 第 9 步：`8 transients deleted`、`The cache was flushed`、两个 mu `php -l OK`、`Switched to 'Packrivo Static Bridge'`、`rm -r` 子主题、`Deleted 'packrivo-quote' plugin`、`db import` 成功。
+- 第 9 步：`8 transients deleted`、`The cache was flushed`、两个 mu `php -l OK`、`Switched to 'Packrivo Static Bridge'`、`rm -r` 子主题、`Deleted 'packrivo-quote' plugin`。**第 9 步的分步回滚没有导入数据库**（28q 的 `reset.sh` 也不导入），`db import` 这条「最后手段」当时一次都没跑过——28r 已补跑，见 `DSH-RESULT-2026-10-28r.md`。
 
 **正向快照 `4247693f…` ≠ 基线 `4972cd81…`，回滚后回到 `4972cd81…`** —— 这条差值说明第 3 步和第 9 步都真的动了数据，不是空转通过。
 

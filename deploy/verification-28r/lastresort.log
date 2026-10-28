@@ -1,0 +1,172 @@
+############ 28r 开始 2026-10-28T18:15:53Z ############
++ echo '=========== 阶段 0 · 起点确认 ==========='
+=========== 阶段 0 · 起点确认 ===========
+++ cat /home/web/backups/CURRENT_LAUNCH
++ LAUNCH=packrivo-launch-20261028-1743
++ BACKUP=/home/web/backups/packrivo-launch-20261028-1743
++ echo CURRENT_LAUNCH=packrivo-launch-20261028-1743
+CURRENT_LAUNCH=packrivo-launch-20261028-1743
++ echo BACKUP=/home/web/backups/packrivo-launch-20261028-1743
+BACKUP=/home/web/backups/packrivo-launch-20261028-1743
++ set +x
+-- 起点快照 --
+snapshot: /home/web/rehearsal-28r/s-start.txt
+行数: 847
+整份 sha256: 4247693fa3a31f35477dcb059ad79e4ae5c13de861f94dfcc3848fe57f81b392
+起点整份 sha256 = 4247693fa3a31f35477dcb059ad79e4ae5c13de861f94dfcc3848fe57f81b392
+PASS: 起点快照 = 4247693fa3a31f35477dcb059ad79e4ae5c13de861f94dfcc3848fe57f81b392
+-- db.sql --
++ ls -l /home/web/backups/packrivo-launch-20261028-1743/db.sql
+-rw-r--r--    1 root     root      35409451 Oct 28 17:43 /home/web/backups/packrivo-launch-20261028-1743/db.sql
++ + tee sha256sum /home/web/backups/packrivo-launch-20261028-1743/db.sql/home/web/rehearsal-28r/db.sql.sha256
+
+c5486baf0797e8e70bbaedaf11402789ebfdebecd15b260f86470bad1da0d9a7  /home/web/backups/packrivo-launch-20261028-1743/db.sql
++ set +x
+db.sql 字节数 = 35409451；CREATE TABLE 行数 = 40
+PASS: db.sql 非空（35409451 B）
+PASS: db.sql 含 CREATE TABLE（40 条）
+=========== 阶段 1 · 造一条上线后新数据（canary）===========
+++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root post create --post_type=page --post_status=draft --post_title=28r-canary --post_name=28r-canary --porcelain
++ CANARY_ID=3883
++ set +x
+canary post ID = 3883
+PASS: canary 创建（ID=3883）
+=========== 阶段 2 · 最后手段（包装不在）===========
++ docker exec php sh -c 'rm -f /usr/local/bin/mariadb-dump /usr/local/bin/mariadb; ls /usr/local/bin | grep -c mariadb || echo "包装已拆除"'
+0
+包装已拆除
++ docker cp /home/web/backups/packrivo-launch-20261028-1743/db.sql php:/tmp/db.sql
++ set +x
+-- 原样执行 RUNBOOK 最后手段 3 条（第 1 条已在上方）--
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root db import /tmp/db.sql
+Error: Failed to get current SQL modes. Reason: ERROR 2026 (HY000): TLS/SSL error: SSL is required, but the server does not support it
+
++ RC_NOWRAP=1
++ set +x
+db import（无包装）退出码 = 1
++ docker exec php rm -f /tmp/db.sql
++ set +x
+-- 导入失败后：数据库有没有被导到一半 --
+表数（导入失败后）= 40
+http://nginx
+PASS: 无包装时 db import 失败（rc=1）—— 证明导入依赖包装
+=========== 阶段 3 · 按 0.1 补救块装上包装 ===========
++ docker exec php sh -c 'cat > /usr/local/bin/mariadb-dump <<EOF
+#!/bin/sh
+exec /usr/bin/mariadb-dump "\$@" --skip-ssl
+EOF
+chmod +x /usr/local/bin/mariadb-dump'
++ docker exec php sh -c 'cat > /usr/local/bin/mariadb <<EOF
+#!/bin/sh
+exec /usr/bin/mariadb "\$@" --skip-ssl
+EOF
+chmod +x /usr/local/bin/mariadb'
++ docker exec php sh -c 'command -v mariadb-dump; command -v mariadb'
+/usr/local/bin/mariadb-dump
+/usr/local/bin/mariadb
++ set +x
+-- 重探导出（判据：字节数 > 0）--
++ docker + exec php tail -2php -d 
+disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root db export /tmp/probe.sql --skip-plugins --skip-themes
+Success: Exported to '/tmp/probe.sql'.
++ set +x
+探针导出字节数 = 35265982
+PASS: 导出探针 > 0 字节（35265982）
++ docker exec php rm -f /tmp/probe.sql
++ set +x
+-- 原样再执行最后手段 3 条（包装在）--
++ docker cp /home/web/backups/packrivo-launch-20261028-1743/db.sql php:/tmp/db.sql
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root db import /tmp/db.sql
+Success: Imported from '/tmp/db.sql'.
++ RC_WRAP=0
++ set +x
+db import（有包装）退出码 = 0
++ docker exec php rm -f /tmp/db.sql
++ set +x
+PASS: 有包装时 db import 成功（rc=0）
+=========== 阶段 4 · 导入后清理 ===========
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root transient delete --all
+Success: 2 transients deleted from the database.
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root cache flush
+Success: The cache was flushed.
++ set +x
+=========== 阶段 5 · 验收（逐条 PASS/FAIL）===========
+验收用表数 = 40；db.sql 里 CREATE TABLE = 40
+PASS: 表数 = db.sql 的 CREATE TABLE 数（40）
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root post list --post_type=page,post --post_status=any --name=28r-canary --fields=ID,post_title --format=csv
+ID,post_title
+++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root post list --post_type=page,post --post_status=any --name=28r-canary --format=count
++ CAN_LEFT=0
++ set +x
+canary 剩余条数 = 0（期望 0）
+PASS: canary 已被整库导入覆盖掉（证明会丢上线后新数据）
+stylesheet=packrivo-static-bridge-1.2.38 template=packrivo-static-bridge-1.2.38
+PASS: stylesheet/template 都是父主题 1.2.38
++ docker + grep exec php '^packrivo-quote,'
+php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root plugin list --format=csv
+Warning: wp_update_plugins(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
++ QACT=0
++ set +x
+FAIL: packrivo-quote 仍在插件列表
+-- 导入后快照 --
+snapshot: /home/web/rehearsal-28r/s-after-import.txt
+行数: 847
+整份 sha256: a84ef535857c7a2c27772ff9a639b5af88783c95d23659144dc8f7bf3713abfe
+PASS: 页面标题一节与基线逐行一致（726 行）
++ for u in "/" "/products/" "/de/"
++ curl -s -o /dev/null -w '%{http_code} /\n' http://nginx/
+200 /
++ for u in "/" "/products/" "/de/"
++ curl -s -o /dev/null -w '%{http_code} /products/\n' http://nginx/products/
+200 /products/
++ for u in "/" "/products/" "/de/"
++ curl -s -o /dev/null -w '%{http_code} /de/\n' http://nginx/de/
+200 /de/
++ curl -s -o /dev/null -w '%{http_code} /get-a-quote/\n' http://nginx/get-a-quote/
+200 /get-a-quote/
++ set +x
+PASS: 首页 200
+PASS: /products/ 200
+PASS: /de/ 200
+FAIL: /get-a-quote/ 200
+=========== 阶段 6 · 文件部分（9.6 / 9.5 / 9.4 / 9.2）===========
++ cp -a /home/web/backups/packrivo-launch-20261028-1743/mu/packrivo-i18n.php /home/web/html/www.packrivo.com/wordpress/wp-content/mu-plugins/
++ cp -a /home/web/backups/packrivo-launch-20261028-1743/mu/packrivo-site-remediation-20261022.php /home/web/html/www.packrivo.com/wordpress/wp-content/mu-plugins/
++ sha256sum -c /home/web/backups/packrivo-launch-20261028-1743/before-mu.sha256
+/home/web/html/www.packrivo.com/wordpress/wp-content/mu-plugins/packrivo-i18n.php: OK
+/home/web/html/www.packrivo.com/wordpress/wp-content/mu-plugins/packrivo-site-remediation-20261022.php: OK
++ set +x
+PASS: 9.6 mu 恢复且 before-mu.sha256 全 OK
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root theme activate packrivo-static-bridge-1.2.38
+Warning: The 'Packrivo Static Bridge' theme is already active.
++ rm -r /home/web/html/www.packrivo.com/wordpress/wp-content/themes/packrivo-home-v4
++ docker + grep exec packrivo-home-v4
+php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root theme list --format=csv
+Warning: wp_update_themes(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
++ echo 子主题已移除
+子主题已移除
++ set +x
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root plugin deactivate packrivo-quote
+Warning: Plugin 'packrivo-quote' isn't active.
+Success: Plugin already deactivated.
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root plugin delete packrivo-quote
+Deleted 'packrivo-quote' plugin.
+Success: Deleted 1 of 1 plugins.
++ docker + grep exec php packrivo-quote
+php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root plugin list --format=csv
+Warning: wp_update_plugins(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
++ echo 报价插件已移除
+报价插件已移除
++ set +x
++ cp -a /home/web/backups/packrivo-launch-20261028-1743/i18n/. /home/web/html/www.packrivo.com/wordpress/wp-content/uploads/packrivo-i18n/
++ set +x
+=========== 阶段 7 · 最终快照 vs 基线 ===========
+snapshot: /home/web/rehearsal-28r/s-final.txt
+行数: 845
+整份 sha256: 4972cd8195d7b40a10dac4140273ba7faef4e152b2b886489bfcc624f2773deb
+最终整份 sha256 = 4972cd8195d7b40a10dac4140273ba7faef4e152b2b886489bfcc624f2773deb
+基线整份 sha256 = 4972cd8195d7b40a10dac4140273ba7faef4e152b2b886489bfcc624f2773deb
+PASS: 最终快照 = 基线 4972cd8195d7b40a10dac4140273ba7faef4e152b2b886489bfcc624f2773deb
+############ 汇总：PASS=16 FAIL=2 ############
+CURRENT_LAUNCH=packrivo-launch-20261028-1743
+EXIT=1

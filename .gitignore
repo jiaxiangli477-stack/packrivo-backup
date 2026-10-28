@@ -1,4 +1,7 @@
 node_modules/
 *.log
 !deploy/verification-28q/rehearsal.log
+!deploy/verification-28r/lastresort.log
+!deploy/verification-28r/acceptance-recheck.log
+!deploy/verification-28r/step0-proof.log
 .env*

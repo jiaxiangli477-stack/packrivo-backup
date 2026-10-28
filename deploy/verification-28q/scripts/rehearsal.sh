@@ -20,6 +20,38 @@ WPCLI="docker exec php php -d disable_functions= /usr/local/bin/wp --path=$WPC -
 
 hr() { echo; echo "############### $* ###############"; echo; }
 
+# ---- 判据记账（28r 改）：每一步的判据都打印 PASS/FAIL，本步有 FAIL 就 exit 1 ----
+# 以前每个 step 结尾都是 set +x，脚本恒返回 0，exit 码证明不了任何事。
+NP=0; NF=0
+ckp() { NP=$((NP+1)); echo "PASS: $1"; }
+ckf() { NF=$((NF+1)); echo "FAIL: $1"; }
+ck()  { local d="$1"; shift; if "$@" >/dev/null 2>&1; then ckp "$d"; else ckf "$d"; fi; }
+step_end() {
+  local rc=0
+  if [ $((NP+NF)) -eq 0 ]; then
+    echo "本步判据：0 条（该步没有可机检判据）"
+  else
+    echo "本步判据：PASS=$NP FAIL=$NF"
+    [ "$NF" -eq 0 ] || rc=1
+  fi
+  NP=0; NF=0
+  return $rc
+}
+
+if [ "$STEP" = "selftest" ]; then
+  echo "-- 自检：应当 PASS 的判据 --"
+  ck "必然成立（true）" true
+  echo "-- 自检：应当 FAIL 的判据 --"
+  ck "必然不成立（false）" false
+  echo "小结：PASS=$NP FAIL=$NF（期望 PASS=1 FAIL=1）"
+  if step_end; then
+    echo "!! step_end 未报错，机制有问题"
+    exit 1
+  fi
+  echo "step_end 按预期返回非零 → 机制可用"
+  exit 0
+fi
+
 case "$STEP" in
 
 step0)
@@ -45,6 +77,13 @@ step0)
   ls "$PKG"/dsh-out | wc -l
   ls "$PKG"/scripts
   set +x
+  hr "STEP 0 通过判据"
+  ck "0a core version = 7.1.3"   test "$($WPCLI core version)" = "7.1.3"
+  ck "0b PHP = 8.3.x"            docker exec php php -r 'exit(PHP_VERSION_ID>=80300 && PHP_VERSION_ID<80400 ? 0 : 1);'
+  ck "0c 首装：子主题未安装"      test ! -d "$WP/wp-content/themes/packrivo-home-v4"
+  ck "0d 首装：报价插件未安装"    test ! -d "$WP/wp-content/plugins/packrivo-quote"
+  ck "0e mysqldump 可用"         docker exec php mysqldump --version
+  step_end || exit 1
   ;;
 
 step1)
@@ -81,18 +120,20 @@ EOF
   set +x
   hr "STEP 1 通过判据"
   set -x
-  test -s /home/web/backups/CURRENT_LAUNCH && echo "CURRENT_LAUNCH ok"
   BACKUP=/home/web/backups/$(cat /home/web/backups/CURRENT_LAUNCH)
-  test -f "$BACKUP/mu/packrivo-i18n.php"                       && echo "1a mu 文件到位"
-  test -f "$BACKUP/mu/packrivo-site-remediation-20261022.php"   && echo "1b mu 文件到位"
-  test -f "$BACKUP/i18n/de-dict.json"                           && echo "1c i18n 文件到位"
-  [ "$(ls "$BACKUP/i18n" | wc -l)" -ge 12 ]                     && echo "1d i18n 数量 ≥12"
-  test -s "$BACKUP/db.sql"                                      && echo "1e db.sql 非空"
-  [ "$(grep -c 'CREATE TABLE' "$BACKUP/db.sql")" -gt 0 ]        && echo "1f db.sql 含 CREATE TABLE"
-  [ "$(wc -l < "$BACKUP/before-mu.sha256")" -eq 2 ]             && echo "1g 两个 mu 哈希"
-  test -s "$BACKUP/before-sitemap.xml"                          && echo "1h sitemap 快照非空"
-  grep -q 'child_theme_present=no' "$BACKUP/INSTALL-STATE.txt"  && echo "1i 首装状态已记录"
   set +x
+  hr "STEP 1 通过判据"
+  ck "1a mu 文件到位"          test -f "$BACKUP/mu/packrivo-i18n.php"
+  ck "1b mu 文件到位"          test -f "$BACKUP/mu/packrivo-site-remediation-20261022.php"
+  ck "1c i18n 文件到位"        test -f "$BACKUP/i18n/de-dict.json"
+  ck "1d i18n 数量 >= 12"      test "$(ls "$BACKUP/i18n" | wc -l)" -ge 12
+  ck "1e db.sql 非空"          test -s "$BACKUP/db.sql"
+  ck "1f db.sql 含 CREATE TABLE" test "$(grep -c 'CREATE TABLE' "$BACKUP/db.sql")" -gt 0
+  ck "1g 两个 mu 哈希"         test "$(wc -l < "$BACKUP/before-mu.sha256")" -eq 2
+  ck "1h sitemap 快照非空"     test -s "$BACKUP/before-sitemap.xml"
+  ck "1i 首装状态已记录"       grep -q 'child_theme_present=no' "$BACKUP/INSTALL-STATE.txt"
+  ck "1j CURRENT_LAUNCH 可读"  test -s /home/web/backups/CURRENT_LAUNCH
+  step_end || exit 1
   ;;
 
 step2)
@@ -129,6 +170,12 @@ step2)
   set -x
   curl -s "$SITE/de/" | grep -c 'lang="de"'
   set +x
+  ck "2a dict 11 个"        test "$(docker exec php sh -c 'ls /pkg/merged/*-dict.json | wc -l' | tr -d ' ')" = "11"
+  ck "2b js 11 个"          test "$(docker exec php sh -c 'ls /pkg/merged/*-js.json | wc -l' | tr -d ' ')" = "11"
+  ck "2c paths.json >= 146" test "$(docker exec php php -r 'echo count(json_decode(file_get_contents("/pkg/merged/paths.json"), true));')" -ge 146
+  ck "2d 冲突 0"            test "$(docker exec php php -r '$c=json_decode(file_get_contents("/pkg/merged/conflicts.json"), true); echo is_array($c)?count($c):-1;')" = "0"
+  ck "2e de 站 lang=de"     sh -c "curl -s \"$SITE/de/\" | grep -q 'lang=\"de\"'"
+  step_end || exit 1
   ;;
 
 step3)
@@ -150,6 +197,16 @@ step3)
   curl -s "$SITE/products/"                   | grep -o '<title>[^<]*</title>'
   curl -s "$SITE/jewelry-boxes/"              | grep -o '<title>[^<]*</title>'
   set +x
+  V3G=$($WPCLI eval-file "$PKGC/scripts/product-buyers-27g/import.php" verify "$PKGC" "$SITE" "$PKGC/rollback/rollback-27g.json" all134 2>&1 | tail -1)
+  echo "27g verify: $V3G"
+  case "$V3G" in *metadata_mismatches=0*) ckp "3a 27g verify metadata_mismatches=0" ;; *) ckf "3a 27g verify（$V3G）" ;; esac
+  V3I=$($WPCLI eval-file "$PKGC/scripts/hubs-27i/import.php" verify "$PKGC" "$SITE" "$PKGC/rollback/rollback-27i.json" 2>&1 | tail -1)
+  echo "27i verify: $V3I"
+  case "$V3I" in *metadata_mismatches=0*) ckp "3b 27i verify metadata_mismatches=0" ;; *) ckf "3b 27i verify（$V3I）" ;; esac
+  ck "3c 27g rollback 依据非空" test -s "$BACKUP/rollback/rollback-27g.json"
+  ck "3d 27i rollback 依据非空" test -s "$BACKUP/rollback/rollback-27i.json"
+  ck "3e 产品页 200"           test "$(curl -s -o /dev/null -w '%{http_code}' "$SITE/product-drawer-jewelry-box/")" = "200"
+  step_end || exit 1
   ;;
 
 step4)
@@ -163,6 +220,10 @@ step4)
   $WPCLI plugin list --format=csv | grep packrivo-quote
   curl -s -o /dev/null -w '%{http_code}\n' "$SITE/"
   set +x
+  ck "4a 插件已激活"   sh -c "$WPCLI plugin list --format=csv | grep -q '^packrivo-quote,active'"
+  ck "4b 插件目录存在" test -d "$WP/wp-content/plugins/packrivo-quote"
+  ck "4c 首页 200"     test "$(curl -s -o /dev/null -w '%{http_code}' "$SITE/")" = "200"
+  step_end || exit 1
   ;;
 
 step5)
@@ -178,6 +239,11 @@ step5)
   $WPCLI option get template
   curl -s -o /dev/null -w '%{http_code}\n' "$SITE/"
   set +x
+  ck "5a stylesheet = packrivo-home-v4"      test "$($WPCLI option get stylesheet)" = "packrivo-home-v4"
+  ck "5b template = packrivo-static-bridge-1.2.38" test "$($WPCLI option get template)" = "packrivo-static-bridge-1.2.38"
+  ck "5c 子主题目录存在"                      test -d "$WP/wp-content/themes/packrivo-home-v4"
+  ck "5d 首页 200"                            test "$(curl -s -o /dev/null -w '%{http_code}' "$SITE/")" = "200"
+  step_end || exit 1
   ;;
 
 step6)
@@ -201,6 +267,12 @@ step6)
   curl -sI "$SITE/de/get-a-quote/" | head -3
   curl -s "$SITE/ar/2026/10/26/jewelry-pouch-box-customer-handoff/" | grep -c 'name="viewport"'
   set +x
+  ck "6a /get-a-quote/ 200"     test "$(curl -s -o /dev/null -w '%{http_code}' "$SITE/get-a-quote/")" = "200"
+  ck "6b /de/get-a-quote/ 200"  test "$(curl -s -o /dev/null -w '%{http_code}' "$SITE/de/get-a-quote/")" = "200"
+  ck "6c ar 文章页有 viewport"  sh -c "curl -s \"$SITE/ar/2026/10/26/jewelry-pouch-box-customer-handoff/\" | grep -q 'name=\"viewport\"'"
+  ck "6d mu 语法 OK"            docker exec php php -l "$WPC/wp-content/mu-plugins/packrivo-i18n.php"
+  ck "6e 27e 语法 OK"           docker exec php php -l "$WPC/wp-content/mu-plugins/packrivo-site-remediation-20261022.php"
+  step_end || exit 1
   ;;
 
 step7)
@@ -212,6 +284,8 @@ step7)
   curl -sI "$SITE/de/" | head -5
   curl -s "$SITE/de/" | grep -c 'lang="de"'
   set +x
+  ck "7a /de/ 200"  test "$(curl -s -o /dev/null -w '%{http_code}' "$SITE/de/")" = "200"
+  step_end || exit 1
   ;;
 
 step8)
@@ -226,6 +300,14 @@ step8)
   curl -s "$SITE/get-a-quote/?style=rigid&qty=500" | grep -c 'pkq-root'
   curl -s -o /dev/null -w 'inquiry %{http_code}\n' "$SITE/inquiry/"
   set +x
+  for u in / /products/ /de/ /ar/ /product-drawer-jewelry-box/; do
+    ck "8· $u 200" test "$(curl -s -o /dev/null -w '%{http_code}' "$SITE$u")" = "200"
+  done
+  ck "8· sitemap 未变"         sh -c "diff -q \"$BACKUP/before-sitemap.xml\" <(curl -s \"$SITE$SITEMAP\")"
+  ck "8· robots 未变"          sh -c "diff -q \"$BACKUP/before-robots.txt\" <(curl -s \"$SITE/robots.txt\")"
+  ck "8· 报价页渲染 pkq-root"  sh -c "curl -s \"$SITE/get-a-quote/?style=rigid&qty=500\" | grep -q 'pkq-root'"
+  ck "8· /inquiry/ 200"        test "$(curl -s -o /dev/null -w '%{http_code}' "$SITE/inquiry/")" = "200"
+  step_end || exit 1
   ;;
 
 step9)
@@ -261,6 +343,13 @@ step9)
   for u in "$SITE/" "$SITE/products/" "$SITE/de/"; do echo -n "$u  title数="; curl -s "$u" | grep -c '<title>'; done
   curl -s "$SITE/product-drawer-jewelry-box/" | grep -o '<title>[^<]*</title>'
   set +x
+  ck "9a before-mu.sha256 全 OK"  sha256sum -c "$BACKUP/before-mu.sha256"
+  ck "9b stylesheet 回到父主题"    test "$($WPCLI option get stylesheet)" = "packrivo-static-bridge-1.2.38"
+  ck "9c 子主题目录已删"          test ! -d "$WP/wp-content/themes/packrivo-home-v4"
+  ck "9d 报价插件已移除"          sh -c "! $WPCLI plugin list --format=csv | grep -q '^packrivo-quote,'"
+  ck "9e 首页 200"                test "$(curl -s -o /dev/null -w '%{http_code}' "$SITE/")" = "200"
+  ck "9f /get-a-quote/ 回到 301"  test "$(curl -s -o /dev/null -w '%{http_code}' "$SITE/get-a-quote/")" = "301"
+  step_end || exit 1
   ;;
 
 *)
