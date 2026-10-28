@@ -361,3 +361,47 @@ ac0a27538c428f2175e9596bd21f27be47069aaf57cbeabf8892ae456e2f471d  …/mu-plugins
 2. 生产上两个遗留备份目录 `/home/web/backups/packrivo-launch-20261028-1648/` 与上轮 1629 目录：按 RUNBOOK L71 保留至上线确认后再清，还是现在清理。
 3. 生产 `/tmp/` 下 `pre-check.sh`、`probe-db.sh`、`step1-backup.sh` 三个无敏感内容辅助脚本：上次清理被平台拦下，下次会话是否顺手清掉。
 4. db 导出路径若按 §2.6 改为 `$BACKUP/db.sql`，第 9 步「最后手段」需读同一份，改 RUNBOOK 时需一并核对第 1 步落点（`$BACKUP/db/`）与判据引用。
+
+---
+
+## 8 · 28q RUNBOOK 修订补丁（拟制，待负责人批准；本机，未连生产、未改原 RUNBOOK、未启动任何演练）
+
+### 8.1 产物与位置
+
+- 补丁文件：`deploy/verification-28q/RUNBOOK-launch.28q.patch`（统一 diff，737 行 / 48,838 B，sha256 `02ea9faf…52a3`）。对 HEAD（`8c3b06e`）做 `git apply --check` 通过，落地方式：`git apply deploy/verification-28q/RUNBOOK-launch.28q.patch`。
+- 原 RUNBOOK（`deploy/RUNBOOK-launch.md`，295 行 28o 版，sha256 `7c1f3396…4cf`）**未做任何改动**，保持与 HEAD 一致；修订全部沉淀在补丁里，批准前不落地。
+- 补丁不含任何密码/密钥/token（grep 命中的 `token` 均为「本文件不含凭据、只引用路径」的声明句）。
+- 本轮未启动本地或生产演练（演练属 28q 后续步骤，待批准），未 SSH 生产，未读取任何凭据。
+
+### 8.2 对照任务单 §2.1–2.6 的逐项落实
+
+| 任务单要求（DSH-TASK-2026-10-28q §2） | 补丁落实 | 机检证据（补丁内计数） |
+|---|---|---|
+| 2.1 容器 WP-CLI、区分宿主机/容器路径 | `WPCLI="docker exec php php -d disable_functions= /usr/local/bin/wp --path=$WPC --allow-root"`；新增 §0「宿主机 ↔ 容器」路径对照表（$WP/$WPC、$PKG/$PKGC、$BACKUP）；包经 `docker cp` 进出容器 | `docker exec php php -d disable_functions=` ×2；`docker cp php:` ×3 |
+| 2.2 `$BACKUP` 固定、CURRENT_LAUNCH | 第 1 步 1.1 生成一次并写 `/home/web/backups/CURRENT_LAUNCH`；之后每个会话 `BACKUP=/home/web/backups/$(cat …/CURRENT_LAUNCH)`，不再 `$(date)` | `CURRENT_LAUNCH` ×12 |
+| 2.3 mu/i18n 摊平、回滚路径一一对应 | 1.2 `cp -a "$WP/wp-content/mu-plugins/." "$BACKUP/mu/"`、`cp -a "$I18N/." "$BACKUP/i18n/"`；第 1 步判据逐项查 `$BACKUP/mu/<文件名>`、`$BACKUP/i18n/<文件名>`；第 2/6/9 步回滚按文件覆盖 | `mu-plugins/.` ×1；`I18N/.` ×3 |
+| 2.4 首次安装语义 | 0.1 先确认子主题/插件未安装（装了则停下）；1.5 写 `INSTALL-STATE.txt`（child_theme_present / quote_plugin_present = no）替代目录备份判据；第 4 步 `install --force` 后 `plugin activate`，回滚 = `deactivate` → `delete`（分条，无 `&&` 串联）；第 5 步 `install` 后 `theme activate packrivo-home-v4`，回滚 = `activate packrivo-static-bridge-1.2.38` → `rm -r` 子主题目录（分条） | `INSTALL-STATE` ×3；`plugin activate packrivo-quote` ×3；`theme activate packrivo-home-v4` ×3；`theme activate packrivo-static-bridge-1.2.38` ×2 |
+| 2.5 版本号改 7.1.3 | 页首目标站点行、0.1 检查（`core version`=7.1.3） | `7.1.3` ×4 |
+| 2.6 db 导出 `$BACKUP/db.sql`、判据非空且含 CREATE TABLE、第 9 步读同一份 | 1.3 `wp db export /tmp/…` → `docker cp` 到 `$BACKUP/db.sql`；判据 1e/1f 非空 + CREATE TABLE；第 9 步「最后手段」`docker cp "$BACKUP/db.sql"` → `wp db import` | `db.sql` ×9；`--skip-plugins --skip-themes` ×2 |
+
+### 8.3 逐步命令—验收—回滚对照（补丁内第 0–9 步）
+
+| 步 | 命令执行侧 | 验收判据 | 回滚 |
+|---|---|---|---|
+| 0.1 上线前检查 | 宿主机 `docker` + 容器 `wp`/`php` | php/mysql/nginx/redis 容器在；core=7.1.3、PHP=8.3.x；template=1.2.38；子主题与报价插件均未安装；mysqldump 在位 | 无变更 |
+| 0.2 上传 | 本机 `scp` → 宿主机 `$PKG` | zip 哈希逐字一致；i18n-merged=23 个文件 | 无变更 |
+| 1 备份 | 宿主机 `cp/sha256sum/curl` + 容器 `wp db export`→`docker cp` | CURRENT_LAUNCH 非空；`$BACKUP/mu/`、`$BACKUP/i18n/` 摊平文件在位；db.sql 非空且含 CREATE TABLE；before-mu.sha256 两条；sitemap/robots 快照；INSTALL-STATE 记录 child_theme_present=no | 无变更 |
+| 2 字典+路径表 | 宿主机 `docker cp` 进出 + 容器 `php merge-i18n.php` | 11 dict + 11 js、JSON 全可解析；paths.json 含 `/get-a-quote/` 且 ≥146；conflicts.json 人工看过；`/de/` 正常 | `cp -a "$BACKUP/i18n/." "$I18N/"` |
+| 3 内容导入 | 容器 `wp eval-file`（plan/apply/verify） | plan preflight PASS；apply_updated=134/8；verify metadata_mismatches=0；两份 rollback JSON 拉回 `$BACKUP/rollback/` | JSON 推回容器 → rollback-check → rollback（27i 先、27g 后） |
+| 4 报价插件（首装） | 容器 `wp`（zip 经 `docker cp`+sha256） | `plugin list` 中 packrivo-quote=active；站点 200 | `deactivate` → `delete`（分条） |
+| 5 子主题（首装） | 容器 `wp` + 宿主机 `rm` | stylesheet=packrivo-home-v4、template=父主题；200 | activate 父主题 → 删子主题目录（分条） |
+| 6 mu 补丁 | 宿主机 `git apply` + 容器 `php -l` | 基线 sha256 一致；apply --check OK；php -l 无语法错；`/get-a-quote/` 200；ar 404 有 viewport | `cp -a "$BACKUP/mu/<文件>"` 回覆盖 + `sha256sum -c` |
+| 7 清缓存 | 本机 Cloudflare（负责人亲自）+ 容器 transient | 清缓存后 `/de/` 正常、报价价格复现 | 缓存无需回滚 |
+| 8 复测 | 本机浏览器 + 宿主机 `curl` | 8.1–8.7 逐条通过 | 按映射回滚对应步（8.1/8.5/8.6→第 3、2 步；8.2/8.7→第 4、6 步；8.3→第 5 步；8.4→第 5、6 步） |
+| 9 整体回滚（逆序） | 宿主机 + 容器（9.7 缓存→9.2 字典） | `sha256sum -c` 全 OK；stylesheet 回父主题；plugin grep 无输出；rollback-check eligible；8.1/8.2/8.6 与上线前一致 | 本身即回滚；最后手段 = `db import $BACKUP/db.sql` |
+
+### 8.4 待负责人批准事项（新清单，§7.4 四项继续有效）
+
+1. **批准本补丁**作为 28q 对 RUNBOOK 的修订（含 8.2/8.3 口径），随后 `git apply` 落地并进入 28q §1–§3 本地演练。
+2. **附录 C 以演练结果为准**：补丁内附录 C 引用 `deploy/verification-28q/rehearsal.log`、`rehearsal-verify.json`，两文件目前尚不存在（演练未启动）；演练三轮全部 PASS 并写出这两份文件之前，附录 C 不得作为「已演练」依据。
+3. **批准顺序**：按任务单 §4，本地环境对齐（WP 7.1.3/PHP 8.3）→ 28p 验收复跑 → 生产同构环境三轮演练（正向→回滚→再正向）→ 验收与 Claude 核验 → 才授权生产。本补丁只是第一步，其余各步未经批准均不启动。
