@@ -1,0 +1,22 @@
+=== 28q 本地环境版本实证（localhost:8081，container packrivo-live-wp-1）===
+generatedAt: 2026-10-28T16:25Z
+镜像:        wordpress:7.1.3-php8.3-apache（docker-compose.yml wp 服务）
+
+$ docker exec packrivo-live-wp-1 php -v
+PHP 8.3.36 (cli) (built: Oct 28 2026 01:26:59) (NTS)
+Zend Engine v4.3.36
+
+$ docker exec packrivo-live-wp-1 sh -c "grep wp_version /var/www/html/wp-includes/version.php"
+$wp_version = '7.1.3';
+
+$ docker run --volumes-from packrivo-live-wp-1 --entrypoint /usr/local/bin/wp wordpress:cli-php8.3 core version --allow-root --path=/var/www/html
+7.1.3
+
+$ docker run --volumes-from packrivo-live-wp-1 --entrypoint php wordpress:cli-php8.3 -v
+PHP 8.3.36 (cli) (built: Oct 21 2026 22:53:43) (NTS)
+
+HTTP 响应头（curl -I http://localhost:8081/）：
+X-Powered-By: PHP/8.3.36
+Server: Apache/2.4.69 (Debian)
+
+判定: wp core version = 7.1.3 PASS；PHP = 8.3.36（8.3.x）PASS。与任务单 §4 判据一致。

@@ -1,0 +1,28 @@
+=== 28q /sitemap_index.xml 404 判定（.tmp\28q\url-check.json 中唯一 nonOk）===
+generatedAt: 2026-10-28T16:30Z
+
+1) 实测（localhost:8081，本轮复测）
+   GET /sitemap_index.xml   -> 404
+   GET /wp-sitemap.xml      -> 200 (len 527)
+   GET /robots.txt          -> 200；其 Sitemap 行指向 http://localhost:8081/wp-sitemap.xml
+
+2) 任务单允许的排除范围（DSH-TASK-2026-10-28q.md §1 第 5 条）
+   "663 个线上网址在本地全部返回 200（10-27、10-28 新发的 4 篇文章本地没有，可以除外）"
+   => 允许排除的只有 4 篇 10-27/10-28 新发文章。/sitemap_index.xml 不是文章。
+
+3) 判定
+   a) 严格按任务单字面：/sitemap_index.xml 404 不在允许排除范围内（不属于那 4 篇新文章）。
+   b) 但成因是环境差异而非回归：
+      - 本地未安装 Yoast（plugins 目录仅 akismet + 6 个 packrivo-*；无 wordpress-seo），
+        站点启用 WordPress 核心 sitemap（/wp-sitemap.xml 200，robots.txt 也指向它）；
+      - 生产用 Yoast：sitemap_index.xml 200（MIGRATION.md §67 抓取状态 200；
+        LAUNCH-LOG L302：L59 抓取 sitemap 1789 B、<sitemapindex …> 合法）。
+      - url-check.mjs 是把它作为手工附加检查项加入的（脚本第 30 行），并非来自
+        "663 线上网址"清单；该清单来自本地核心 sitemap，且非 200 只有这一条（nonOk=1）。
+   c) 结论：此项 404 不构成 28p 验收失败，但若严格按任务单字面执行"663 全部 200"，
+      需要负责人明确豁免口径：建议 a) 把 /sitemap_index.xml 从本地巡检清单移除
+      （Yoast 只在生产，属环境差异）；或 b) 在 DSH-RESULT-2026-10-28q.md 中记录
+      "sitemap_index.xml 为 Yoast 专属，本地无 Yoast 故 404，生产该项为 200，豁免"。
+
+4) 其他确认：url-check.json 总 744 条、nonOk=1（即只有 /sitemap_index.xml），
+   4 篇新文章未出现在本地 sitemap（本地无该 4 篇），自动满足除外条件。

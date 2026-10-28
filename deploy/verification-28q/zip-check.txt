@@ -1,0 +1,21 @@
+﻿================================================================
+packrivo-home-v4.zip
+zip SHA256: 5974ae0c208d03016701698c45dfbd467f7c24c6036fba120dccc01f72034bf9  (与 28p/LAUNCH-LOG 记录一致)
+条目总数: 38，文件条目: 38，条目名含反斜杠: 0
+解压条目 38，工作源文件 38
+只在包里 0，只在源里 0（其中按打包约定跳过 0），内容不同 0
+工作源 vs backup 镜像(38 文件): 差异 0
+工作源 vs live 挂载目录(38 文件): 差异 0
+结论: 通过（zip 与工作源逐字节一致，无反斜杠条目，哈希与 README/RUNBOOK 记录一致）
+================================================================
+packrivo-quote.zip
+zip SHA256: 096d0c8e81360e7fc616e5d46c96088fc3a65ceb32daf9b78cf1e1de0bc52d93  (与 28p/LAUNCH-LOG 记录一致)
+条目总数: 19，文件条目: 19，条目名含反斜杠: 0
+解压条目 19，工作源文件 23
+只在包里 0，只在源里 4（其中按打包约定跳过 4），内容不同 0
+只在源里(打包约定跳过, 如 demo/): demo/parity.php, demo/orders.jsonl, demo/order.php, demo/index.php
+工作源 vs backup 镜像(23 文件): 差异 0
+工作源 vs live 挂载目录(19 文件): 差异 4
+demo/parity.php (live 缺), demo/orders.jsonl (live 缺), demo/order.php (live 缺), demo/index.php (live 缺)
+结论: 通过（zip 与工作源逐字节一致，无反斜杠条目，哈希与 README/RUNBOOK 记录一致）
+

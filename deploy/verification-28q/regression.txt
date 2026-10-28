@@ -1,0 +1,14 @@
+=== 1) 报价 4 组价格 + 7 个关键页 ===
+rigid     $2.83 / $1,417.43   PASS
+mailer     $2.48 / $1,239.04   PASS
+sticker     $0.96 / $479.63   PASS
+shipping     $2.31 / $1,156.69   PASS
+200 /  Custom Jewelry Boxes & Packaging with Logo | Packrivo   PASS
+200 /products/  Custom Packaging: 134 Styles, MOQ 500 | Packrivo   PASS
+200 /jewelry-boxes/  Custom Jewelry Boxes: Rigid, Drawer, MOQ 500 | Packrivo   PASS
+200 /blog/  Custom Packaging Guides for Small Brands | Packrivo   PASS
+200 /get-a-quote/  Get a Quote – Packrivo   PASS
+200 /inquiry/  Request a Custom Packaging Quote | Packrivo   PASS
+200 /product-drawer-jewelry-box/  Custom Drawer Jewelry Boxes with Logo | Packrivo   PASS
+
+结论: 11 项全部 PASS（4 组价格 + 7 关键页，0 失败）
