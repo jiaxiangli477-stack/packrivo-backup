@@ -43,6 +43,8 @@
 
 关于那 1 个非 200：本地没装 Yoast，走的是 WordPress 核心 sitemap（`/wp-sitemap.xml` 200、`robots.txt` 也指向它），生产用 Yoast 所以 `sitemap_index.xml` 是 200。这是**环境差异不是回归**，但严格按任务单字面它不属于「4 篇新发文章」的排除范围，判定与成因都写在 `url-check-verdict.txt` 里，由负责人拍板是否需要额外补一条。
 
+补充一条本地状态说明：本地站点的 `/get-a-quote/` 原本 301 到 `/inquiry/`，为了能跑报价判据，27e 补丁是**打在本地 mu 副本上**的（原文件留档在 `E:\破甲工作区\.tmp\28q\backup\packrivo-live\mu-plugins\`，sha256 `abe6f134…`），**生产那份没有动**。
+
 **结论：不需要重打包。** 两个 zip 的实际哈希与 RUNBOOK、README 里写的一致：
 
 | 包 | 大小 | SHA-256（实测 = 文档） |
