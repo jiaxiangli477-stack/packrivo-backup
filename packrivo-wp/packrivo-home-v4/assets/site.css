@@ -663,3 +663,7 @@ body .pk-main {
 .pk-product-card-desc{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:13px;margin-top:6px}
 .pk-product-card-footer{padding:0 16px 16px;display:flex;justify-content:space-between;gap:8px;align-items:end;font-size:12px}
 .pk-product-card-footer strong,.pk-product-card-footer small{display:block}.pk-product-card-footer a{white-space:nowrap}
+.pk-sample-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.pk-sample-grid div{border:1px solid #666;padding:20px;color:#fff}.pk-faq details{border-bottom:1px solid #ddd;padding:16px 0}.pk-faq summary{cursor:pointer;font-weight:600}.pk-faq p{margin-top:10px}
+@media(max-width:560px){.pk-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}}
+@media (min-width:901px) and (max-width:1350px){.pk-actions .pk-text-link{display:none}}
+@media (max-width:560px){.pk-actions .pk-cta{display:none}.pk-hd-inner{padding-left:16px;padding-right:16px}}

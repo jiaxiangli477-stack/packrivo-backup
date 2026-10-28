@@ -120,22 +120,30 @@ function pk_card_reference($style)
     return $rows[$style] ?? null;
 }
 
-function pk_from_price($post_id)
+function pk_pricing_tables_ready()
 {
-    if (!class_exists('PKQ_Plugin') || !class_exists('PKQ_Pricing') || !defined('PKQ_DIR')) return null;
-    $style = pk_engine_style_for($post_id);
-    $reference = pk_card_reference($style);
+    if (!class_exists('PKQ_Plugin') || !class_exists('PKQ_Pricing') || !defined('PKQ_DIR')) return false;
     $file = PKQ_DIR . 'includes/pricing.json';
-    if (!$style || !$reference || !is_readable($file)) return null;
+    if (!is_readable($file)) return false;
     $raw = file_get_contents($file);
     $tables = json_decode($raw, true);
-    if (!is_array($tables) || empty($tables['materials']) || empty($tables['prints']) || empty($tables['finishes']) || !isset($tables['tiers']) || !is_array($tables['tiers']) || count($tables['tiers']) < 2) return null;
+    if (!is_array($tables) || empty($tables['materials']) || empty($tables['prints']) || empty($tables['finishes']) || !isset($tables['tiers']) || !is_array($tables['tiers']) || count($tables['tiers']) < 2) return false;
     foreach (['materials'=>'factor','prints'=>'add','finishes'=>'add'] as $group=>$field) {
-        if (!is_array($tables[$group])) return null;
+        if (!is_array($tables[$group])) return false;
         foreach ($tables[$group] as $row) {
-            if (!is_array($row) || !isset($row[$field]) || !is_numeric($row[$field]) || !is_finite((float) $row[$field])) return null;
+            if (!is_array($row) || !isset($row[$field]) || !is_numeric($row[$field]) || !is_finite((float) $row[$field])) return false;
         }
     }
+    return true;
+}
+
+function pk_from_price($post_id)
+{
+    if (!pk_pricing_tables_ready()) return null;
+    $style = pk_engine_style_for($post_id);
+    $reference = pk_card_reference($style);
+    if (!$style || !$reference) return null;
+    $raw = file_get_contents(PKQ_DIR . 'includes/pricing.json');
     $settings = PKQ_Plugin::settings();
     $input = ['style'=>$style,'material'=>$reference[3],'print'=>'full-color','finish'=>'matte','quantity'=>500,'length'=>$reference[0],'width'=>$reference[1],'height'=>$reference[2],'rush'=>false];
     $key = 'pk_card_' . md5($raw . wp_json_encode([$input,$settings]));

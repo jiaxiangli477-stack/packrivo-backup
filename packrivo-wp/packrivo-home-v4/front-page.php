@@ -7,38 +7,25 @@ get_header();
 
 $img = get_stylesheet_directory_uri() . '/assets/img';
 
-/**
- * Category cards come from the real pages, not a literal array: title, blurb and
- * cover all live in the CMS. The local asset is only a fallback for the dev copy
- * where /uploads is not synced.
- */
-$category_spec = [
-    ['jewelry-boxes', 'jewelry'],
-    ['foldable-gift-boxes', 'gift'],
-    ['mailer-boxes', 'mailer'],
-    ['labels', 'labels'],
-    ['inserts', 'inserts'],
+$home_specs = [
+    ['product-drawer-jewelry-box','Jewelry boxes','Custom Drawer Jewelry Boxes'],
+    ['product-magnetic-jewelry-box','Jewelry boxes','Custom Magnetic Jewelry Boxes'],
+    ['product-lid-and-base-jewelry-box','Jewelry boxes','Custom Jewelry Boxes'],
+    ['product-window-lid-rigid-gift-box','Gift boxes','Custom Window Gift Boxes'],
+    ['product-corrugated-roll-end-hinged-lid','Mailer boxes','Custom Mailer Boxes'],
+    ['product-sheet-labels','Labels','Custom Sheet Labels'],
 ];
-$categories = [];
-foreach ($category_spec as [$slug, $fallback_key]) {
+$home_products = [];
+foreach ($home_specs as [$slug,$group,$label]) {
     $page = get_page_by_path($slug);
-    if (!$page) {
-        continue;
-    }
-    $desc = (string) get_post_meta($page->ID, '_packrivo_description', true);
-    $cover = (string) get_post_meta($page->ID, '_packrivo_article_cover_url', true);
-    if (!$cover) {
-        $thumb = get_the_post_thumbnail_url($page, 'medium_large');
-        $cover = $thumb ?: $img . '/' . $fallback_key . '.webp';
-    }
-    $categories[] = [
-        'title' => get_the_title($page),
-        'url' => get_permalink($page),
-        'blurb' => $desc ? wp_trim_words(wp_strip_all_tags($desc), 14) : '',
-        'image' => $cover,
-    ];
+    if (!$page || $page->post_status !== 'publish') continue;
+    $cover = get_the_post_thumbnail_url($page,'medium_large') ?: get_post_meta($page->ID,'_packrivo_article_cover_url',true);
+    $price = pk_from_price($page->ID);
+    if ($cover && $price !== null) $home_products[] = ['product'=>$page,'group'=>$group,'title'=>$label,'price'=>$price];
+    if (count($home_products) === 8) break;
 }
-
+$contact = get_page_by_path('contact');
+$contact_url = $contact && $contact->post_status === 'publish' ? get_permalink($contact) : home_url('/get-a-quote/');
 $steps = [
     ['01', 'Brief', 'Send the pack shot, target quantity and where it ships. We reply with a structure and a price range.'],
     ['02', 'Sample', 'A physical sample in your artwork, produced in 5–10 days. Nothing is committed before you hold it.'],
@@ -66,6 +53,7 @@ $faq = [
         <a class="pk-btn-ghost" href="<?php echo esc_url(home_url('/samples/')); ?>">Order a sample kit</a>
       </div>
       <dl class="pk-stats">
+        <?php if ($home_products) : ?><div><dt>From</dt><dd>$<?php echo esc_html(number_format(min(array_column($home_products,'price')),2)); ?> / unit</dd></div><?php endif; ?>
         <div><dt>MOQ</dt><dd>500 / design</dd></div>
         <div><dt>Production</dt><dd>7–30 days</dd></div>
         <div><dt>Sourcing fee</dt><dd>8–15%</dd></div>
@@ -77,8 +65,8 @@ $faq = [
         <p class="pk-mono">Rigid magnetic box · 9.5×9.5×4 cm</p>
         <?php
         // Priced by the same engine as the configurator, at 1,000 units.
-        $pk_hero_unit = 0.54;
-        if (class_exists('PKQ_Pricing')) {
+        $pk_hero_unit = null;
+        if (pk_pricing_tables_ready()) {
             $pk_hero = PKQ_Pricing::price([
                 'style' => 'rigid',
                 'material' => 'rigidboard',
@@ -94,7 +82,7 @@ $faq = [
             }
         }
         ?>
-        <p class="pk-price">$<?php echo esc_html(number_format($pk_hero_unit, 2)); ?></p>
+        <?php if ($pk_hero_unit !== null) : ?><p class="pk-price">$<?php echo esc_html(number_format($pk_hero_unit, 2)); ?></p><?php endif; ?>
         <p class="pk-mono pk-muted">per unit at 1,000 pieces</p>
       </figcaption>
     </figure>
@@ -106,38 +94,12 @@ $faq = [
     <div class="pk-section-head">
       <div>
         <p class="pk-eyebrow">What we make</p>
-        <h2 class="pk-h2">Five formats cover most launches</h2>
+        <h2 class="pk-h2">Custom jewelry boxes, pouches and gift boxes with your logo</h2>
       </div>
       <a class="pk-more" href="<?php echo esc_url(home_url('/products/')); ?>">All products →</a>
     </div>
-    <div class="pk-cards">
-      <?php foreach ($categories as $cat) : ?>
-        <a class="pk-card" href="<?php echo esc_url($cat['url']); ?>">
-          <?php
-          // Local assets have 480/800 variants; CMS covers may not, so only add
-          // srcset when the file actually lives in the theme.
-          $is_local = strpos($cat['image'], '/assets/img/') !== false;
-          $srcset = '';
-          if ($is_local) {
-              $base = preg_replace('/\.webp$/', '', $cat['image']);
-              $srcset = sprintf('%s-480.webp 480w, %s-800.webp 800w, %s 1200w', $base, $base, $cat['image']);
-          }
-          ?>
-          <img
-            src="<?php echo esc_url($cat['image']); ?>"
-            <?php if ($srcset) : ?>srcset="<?php echo esc_attr($srcset); ?>" sizes="(max-width:560px) 100vw, (max-width:900px) 50vw, 20vw"<?php endif; ?>
-            alt=""
-            loading="lazy"
-            decoding="async"
-            width="1200"
-            height="1200"
-          />
-          <span class="pk-card-body">
-            <span class="pk-card-title"><?php echo esc_html($cat['title']); ?></span>
-            <span class="pk-card-text"><?php echo esc_html($cat['blurb']); ?></span>
-          </span>
-        </a>
-      <?php endforeach; ?>
+    <div class="pk-cards pk-cards-4">
+      <?php foreach ($home_products as $card) : get_template_part('template-parts/product-card', null, $card); endforeach; ?>
     </div>
   </div>
 </section>
@@ -169,9 +131,10 @@ $faq = [
       <h2 class="pk-h2">A price curve, not a contact form</h2>
       <p class="pk-lede">Every structure is priced against the same model: board, size, print, finish and quantity. Change the quantity and the unit price moves — so you can see where the break-even sits before you commit to a tooling cost.</p>
       <ul class="pk-list">
-        <li>Reference ranges published per product page</li>
-        <li>Setup itemised: plates and die, waived above 2,500 and 5,000 pieces</li>
-        <li>Freight quoted separately, DDP or FOB</li>
+        <?php $pk_tables = pk_pricing_tables_ready() ? PKQ_Pricing::tables() : null; ?>
+        <?php if (isset($pk_tables['rules']['freePrintSetupFrom'])) : ?><li><strong>Setup is itemised</strong> — and waived above <?php echo esc_html(number_format_i18n($pk_tables['rules']['freePrintSetupFrom'])); ?> printed pieces.</li><?php endif; ?>
+        <li><strong>Freight is separate</strong> — quoted per shipment, never buried in the unit price.</li>
+        <li><strong>No tooling surprise</strong> — one-time plate and die cost, shown before you submit.</li>
       </ul>
       <a class="pk-btn" href="<?php echo esc_url(home_url('/get-a-quote/')); ?>">Open the quote builder</a>
     </div>
@@ -183,7 +146,7 @@ $faq = [
           <?php
           // Same engine the configurator uses, so the table cannot drift from it.
           $ladder = [];
-          if (class_exists('PKQ_Pricing')) {
+          if (pk_pricing_tables_ready()) {
               $ladder = PKQ_Pricing::ladder([
                   'style' => 'mailer',
                   'material' => 'kraft',
@@ -193,15 +156,6 @@ $faq = [
                   'width' => 22,
                   'height' => 12,
               ], PKQ_Plugin::settings());
-          }
-          if (!$ladder) {
-              $ladder = [
-                  ['quantity' => 500, 'unit' => 2.34, 'total' => 1170],
-                  ['quantity' => 1000, 'unit' => 1.88, 'total' => 1884],
-                  ['quantity' => 2500, 'unit' => 1.46, 'total' => 3648],
-                  ['quantity' => 5000, 'unit' => 1.29, 'total' => 6474],
-                  ['quantity' => 10000, 'unit' => 1.20, 'total' => 11952],
-              ];
           }
           foreach (array_slice($ladder, 0, 5) as $row) :
               ?>
@@ -213,7 +167,8 @@ $faq = [
           <?php endforeach; ?>
         </tbody>
       </table>
-      <p class="pk-fine">Indicative. Final price confirmed after dieline review.</p>
+      <?php $by_qty = []; foreach ($ladder as $r) $by_qty[(int)$r['quantity']] = $r['unit']; ?>
+      <?php if (isset($by_qty[500],$by_qty[5000]) && $by_qty[500] > 0) : ?><p class="pk-fine">Indicative, excludes freight. At 5,000 pieces the unit price is <?php echo esc_html(round(100 * (1 - $by_qty[5000]/$by_qty[500]))); ?>% lower than at 500. Final price confirmed after dieline review.</p><?php endif; ?>
     </div>
   </div>
 </section>
@@ -272,20 +227,22 @@ if ($posts) :
 </section>
 <?php endif; ?>
 
+<section class="pk-section pk-dark pk-samples">
+  <div class="pk-wrap pk-split"><div><p class="pk-eyebrow pk-eyebrow-light">Samples</p><h2 class="pk-h2 pk-on-dark">Hold the board before you approve the board.</h2><p class="pk-lede pk-on-dark-muted">See the structure, board and finish in hand before you commit to a run.</p><a class="pk-btn pk-btn-light" href="<?php echo esc_url(home_url('/samples/')); ?>">Order a sample</a> <a class="pk-more pk-on-dark" href="<?php echo esc_url($contact_url); ?>">Ask a question</a></div><div class="pk-sample-grid"><div>Rigid / Greyboard 2 mm</div><div>Mailer / Kraft E-flute</div><div>Drawer / Rigid board</div><div>Pouch / Fabric</div></div></div>
+</section>
+
 <section class="pk-section pk-bordered">
   <div class="pk-wrap pk-split">
     <div>
       <p class="pk-eyebrow">Questions</p>
       <h2 class="pk-h2">Before you ask</h2>
+      <a class="pk-more" href="<?php echo esc_url($contact_url); ?>">Ask a specific question →</a>
     </div>
-    <dl class="pk-faq">
+    <div class="pk-faq">
       <?php foreach ($faq as [$q, $a]) : ?>
-        <div>
-          <dt><?php echo esc_html($q); ?></dt>
-          <dd><?php echo esc_html($a); ?></dd>
-        </div>
+        <details><summary><?php echo esc_html($q); ?></summary><p><?php echo esc_html($a); ?></p></details>
       <?php endforeach; ?>
-    </dl>
+    </div>
   </div>
 </section>
 
