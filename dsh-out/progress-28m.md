@@ -378,4 +378,5 @@ en/blog=375  ar/blog=375      en/inquiry=375   ar/inquiry=375
 - 第 5 项：README 第 5 步写明「先报价重定向补丁、再 404 viewport 补丁，各自独立回滚」；本轮未应用。
 - 第 6 项：README 末尾新增「上线后再做」，记录语种文章 404 与 `/contact/` 301。
 - 重打包：子主题 38 文件 788,720 B `e7041551…`；插件 19 文件 54,581 B `6c225718…`（`demo/` 不进包）。解压后与工作源逐字节相同。
-- 额外发现（未改）：页头 `Sample kit` 仍无译文，1351 px 以上在语种页面显示英文；不属报价按钮，需站长给口径。
+- 额外发现 → 已处理：页头 `Sample kit` 原无译文（1351 px 以上在语种页面显示英文，不属报价按钮）；最终收尾阶段已按 11 份主字典补齐译文（每份 `text` 加一键）随最终提交入库。
+- 最终收尾（commit `45e2616` + 文档提交）：item4 终验产物 `verification-28n/buttons-28n-item4.{txt,json}`（16 组 `englishLeak=0`/`wrongHref=0`）；`packrivo-backup/packrivo-wp/` 镜像 `robocopy /MIR` 同步、`packrivo-wp/*.zip` 与镜像 zip 副本同步为新包字节；重跑 `pack-zips.ps1` 两个 zip 哈希不变（`e7041551…`/`6c225718…`），解压后与工作源逐字节相同（主题 38 / 插件 19，`demo/` 0 进包）；`pricing.json` 与 28n 前提交版逐路径 diff 仅 3 个 `label`、33 个数值字段 0 变化，4 组价格数字完全一致；除并行 28o 会话未跟踪的 `deploy/verification-28o/` 外，工作树干净。
