@@ -1025,3 +1025,45 @@ r28q-net 演练栈五容器全部 Up：php(r28q-php:8.3) / nginx(nginx:alpine，
 - **→ 生产第 1 步重跑条件仍不满足，生产第 1 步维持 FAIL；第 2–8 步与 SSH 生产继续禁止；本链继续停止等待，绝不执行第 2–8 步。**（整轮重启非失败亦非通过：仅记录真实进度，继续停止等待。）
 - 待规划者/负责人关注：①28s 新轮（镜像 tag8）是否完整跑完正向 0–8（每步 PASS=n FAIL=0 EXIT=0）+ 正向快照 4247693f + 第 9 步回滚 + 回滚后快照=基线 + negtest 3.0 反向自检，完成后交付 DSH-RESULT-28s + verification-28s/ 并如实给逐步 PASS/FAIL 表；②旧实例为何于 step2 后被 kill（12:07:02/12:07:20 两份诊断脚本指向 /pkg/merged 校验，12:07:13 改 rehearsal.sh、12:07:33 重建 tag8）——无书面重启原因记录，建议并行链在交付物中说明；③新镜像 tag8 内 /opt/x28r/rehearsal.sh 是否与 .tmp/28q/rehearsal.sh（12:07:13）逐字节一致，需镜像层证据或同步入库；④在途 RUNBOOK（+28/−8）与 .tmp rehearsal.sh 是否随 28s 交付一并提交；⑤28s 交付后仍需 Claude 对最终结果的复验与负责人新的生产授权，此前继续停止等待。
 - 操作边界：本轮全程只读（git fetch/log/status/diff、文件读取、docker ps/inspect 只读列举）；未执行任何脚本、未启动/停止/接入容器、未修改/删除他人文件、未 SSH 生产、未重跑生产第 1 步、未读取或打印任何密码/密钥/token；仓库变更仅本节日志与独立只读证据摘录两个文件，在途 RUNBOOK-launch.md 改写与全部未跟踪/在途文件零触碰。
+
+## 23 · 28s 增量门禁核查（785e034 之后）：零新提交 / tag8 轮 step3 真实 FAIL=1 后第二次重启 / tag9 第三次重跑运行中（step0–4 全 PASS、整轮未完成）/ 门禁结论不变：生产第 1 步重跑条件仍不满足（2026-10-28 本机只读核查；未执行任何脚本、未启动/停止/接入容器、未修改/删除他人文件、未读任何凭据）
+
+### 23.1 增量范围（785e034 之后）
+- **零新提交**：git fetch 后 origin/main == HEAD == 785e034（本意图开始与结束各核一次）；无新任务单/新答复（fact #693 核查：dsh-in 最新仍为 28m 时代 03:12/00:33 文件）；无 `dsh-out/DSH-RESULT-2026-10-28s.md`（本意图 Test-Path False）；无 `deploy/verification-28s/`（本意图 Test-Path False）。
+- 工作树仍仅 ` M deploy/RUNBOOK-launch.md` 一条（并行链在途改写，零触碰）；`git ls-files --others` 仍为 0。
+- 本意图落盘时 docker ps -a 只读采样：`r28s-runner|r28q-host:9|Up`（Created 2026-10-28 12:23:53 -0700 PDT，即 fact #693 所述第三次启动仍在运行）。
+
+### 23.2 tag8 轮（12:07:34 起）实况：step0/1/2 全 PASS、step3 PASS=10 FAIL=1 EXIT=1（3a 判据模式错配）、step4 进行中被杀且日志被清空（fact #693 留证；原日志已被 tag9 重启清空，仅此留证）
+- 主机侧 bind 挂载 .tmp/28q/rehearsal/home/web/rehearsal-28s 全程只读观察：reset exit=0（restore_slug=130 missing=0 / 8 missing=0，i18n 23 文件）；s-reset.txt 845 行 sha256=4972cd8195d7…de3b=基线 PASS（Get-FileHash 独立复核一致）。
+- step0 PASS=6 FAIL=0（0f 探针：mariadb-dump TLS/SSL 2026 失败 0 字节→装 /usr/local/bin mariadb-dump/mariadb --skip-ssl 包装→重探 35409451B→PASS，首探失败不算 FAIL）。
+- step1 PASS=10（备份 packrivo-launch-20261028-1915 完整，INSTALL-STATE 非空）；step2 PASS=8（2a–2h 逐条 PASS:，2.5 机制真实生效）。
+- **step3 判据 PASS=10 FAIL=1 EXIT=1**：FAIL 行=「3a 27g verify（URL_and_non_H1_body_unchanged=134/134）」——27g verify 输出末行是 URL_and_non_H1_body_unchanged=134/134（本身是正向结果），脚本 case 匹配 *metadata_mismatches=0* 不命中致 FAIL；其余 10 条 PASS（27g 130+4=134、27i 7+1=8、两 apply_updated>0、URL_and_body_check=PASS、H1_body_URL_check=PASS、3c/3d rollback 依据非空、3e 产品页 200）。
+- runner 循环不因 EXIT=1 停，step4 12:20:29 进行中，~12:23:53 被杀、rehearsal-28s 日志目录被清空重建（step-summary 等全部消失）→ 该轮被截断、其日志仅本节留证。
+
+### 23.3 tag9 轮（12:23:53 第三次启动）观察时点状态（fact #693 早段观察 + 本意图 §23 落盘时 ~12:39 采样）
+- 修复链：.tmp/28q/rehearsal.sh 12:23:47 再编辑（413→417 行，唯一实质变化=3a 模式改为 *URL_and_non_H1_body_unchanged=134/134*）→ 镜像 r28q-host:9 12:23:53 重建 → runner 第三次启动。
+- fact #693 早段观察：reset 12:27:30 完成（restore_slug=130/8 missing=0）、s-reset.txt sha256=基线（独立复核）、step0 12:30:58 PASS=6 FAIL=0 且 0f 补救路径再次完整实跑（TLS 2026→装包装→37403413B PASS）、step1 12:32:40 进行中；预算耗尽时无 s-forward、无 step9、无 negtest 产物、无 DSH-RESULT-28s、无 verification-28s。
+- **本意图 §23 落盘时采样（~12:39）**：s-reset.txt Get-FileHash = 4972CD8195D7B40A10DAC4140273BA7FAEF4E152B2B886489BFCC624F2773DEB = 基线 PASS（独立复核）；step-summary.txt 实况：
+  - step0 PASS=6 FAIL=0 EXIT=0；step1 PASS=10 FAIL=0 EXIT=0；step2 PASS=8 FAIL=0 EXIT=0；
+  - **step3 PASS=11 FAIL=0 EXIT=0**（3a 修复生效，与 tag8 轮 FAIL=1 形成对照）：step3.log 可见 `PASS: 3b 27i verify metadata_mismatches=0`、`PASS: 3·27g 总数 = 134（130+4=134）`、`PASS: 3·27i 总数 = 8（7+1=8）`、`PASS: 3·27g apply_updated > 0（演练要求真实写入）`、`PASS: 3·27i apply_updated > 0（演练要求真实写入）`、`PASS: 3·27g URL_and_body_check=PASS`、`PASS: 3·27i H1_body_URL_check=PASS`、`PASS: 3c 27g rollback 依据非空`、`PASS: 3d 27i rollback 依据非空`、`PASS: 3e 产品页 200`、`本步判据：PASS=11 FAIL=0`；
+  - step4 PASS=3 FAIL=0（12:37:41）；step5.log 已生成（3,430B，12:38:53）而 step-summary 尚未写入 step5 → step5 进行中。
+- **不得把 tag9 运行中状态写成整轮 PASS**：截至采样无 s-forward、无第 9 步回滚、无 negtest 产物、无 DSH-RESULT-28s、无 verification-28s——整轮仍远未完成，正向快照 4247693f、回滚后快照=基线、3.0 反向自检均待验证。
+
+### 23.4 旧 SIGKILL 残留闭环与硬判据独立核验
+- 旧 SIGKILL(137) 残留已闭环：tag8/tag9 两轮 reset 均按 slug 写回（130/8 missing=0）+ 快照=基线，旧 1903 备份与 merged/ 产物为惰性留存（备份目录按设计不删），CURRENT_LAUNCH 已被新轮覆盖；未发现未闭环判据。
+- 脚本级核验（在途未提交，均真实观察）：§0.1 探针标签仅「0f」、无字面 0g（0g 已并入 0f 补救重探路径，与 §21.4/§22.4 结论一致）；2.5 逐条 PASS:/FAIL: 已由 tag8/tag9 两轮 step2 实况证明（各 PASS=8）；3.0 GUARD30（step3 应用前）与 9.3 GUARD93（step9 回滚前）在位、3.0 守卫两轮实跑通过（/pkg/rollback 为空）；step3 总数口径 134/8+apply_updated>0 已由 tag8 轮 10 条 PASS 与 tag9 轮 11 条 PASS 实况证明；negtest.sh（3.0 反向自检：放 wrong-site JSON→期望 3.0 FAIL+EXIT≠0+apply 未执行→快照仍基线）存在于 .tmp/28s 但两轮均未跑到、host run28s.sh 未引用 negtest（容器内 /opt/x28r/run28s.sh 是否调用未验证）；回滚后快照=基线未及验证。
+
+### 23.5 目标问题逐项裁定（截至 §23 落盘采样 ~12:39）
+- **28s 一整轮正向+回滚+3.0 反向自检完整端到端且每阶段全判据 PASS：尚不存在**（tag9 运行中：step0–4 全 PASS、step5 进行中，但无 s-forward/step9/negtest/DSH-RESULT-28s/verification-28s；tag8 轮已被杀，其 step3 FAIL=1 为判据模式错配的真实 FAIL）。不得以 tag8 轮的局部 PASS、tag9 轮的运行中进度、acceptance-recheck、局部复跑或最终快照替代整轮验收。
+- §0.1 0f --skip-ssl 探针每轮生效：**已两轮实况证明**（tag8 与 tag9 的 step0 均走 TLS2026→装包装→重探 PASS 路径；tag8 重探 35409451B、tag9 重探 37403413B 均 PASS）。
+- 2.5 逐条 PASS/FAIL、3.0 守卫真实生效：**已实况证明**（tag8/tag9 step2 各 8 条逐条 PASS；3.0 守卫两轮实跑通过）。
+- 9.3 守卫真实生效：改写到位（GUARD93 在 rehearsal.sh），待第 9 步回滚实证。
+- 新口径 apply_updated+already_current=134/8 且演练 apply_updated>0：**已实况证明**（tag9 step3 PASS=11 含 27g 总数 134、27i 总数 8、两 apply_updated>0；tag8 step3 的 10 条 PASS 亦含同口径总数）。
+- 最终复位与基线一致：两轮 reset 后快照均=基线（4972cd81…）已证；整轮结束后的回滚后快照=基线仍待验证。
+- **Claude 对 28s 最终修正结果的明确复验：不存在**（零新提交/新答复；28s 整轮未完成，无从复验）。
+- **负责人新的生产上线授权：不存在**（28s 任务单明确「本轮不碰生产：不 SSH，不碰密码，不打开 .cf.env」）。
+
+### 23.6 门禁结论与操作边界
+- **→ 生产第 1 步重跑条件仍不满足，生产第 1 步维持 FAIL；第 2–8 步与 SSH 生产继续禁止；本链继续停止等待，绝不执行第 2–8 步。**（tag9 运行中为真实进度，不构成整轮 PASS；tag8 轮 step3 曾现真实 FAIL——判据模式错配，tag9 已修 3a 并第三次重跑，门禁须等 tag9 整轮（正向+回滚+negtest）端到端全 PASS 且 DSH-RESULT-28s/verification-28s 交付后再评估。）
+- 待规划者/负责人关注：①tag9 整轮是否完整跑完正向 0–8 + 第 9 步回滚 + negtest 3.0 反向自检（3a 修复后 step3 已 PASS=11），完成后交付 DSH-RESULT-28s + verification-28s/ 并如实给逐步 PASS/FAIL 表；②tag8 轮 3a 判据模式错配（脚本找 metadata_mismatches=0，27g verify 实际输出 URL_and_non_H1_body_unchanged=134/134）已由 12:23:47 脚本修改修复，建议并行链在交付物中说明该修复；③在途 RUNBOOK（+28/−8）与 .tmp rehearsal.sh 是否随 28s 交付一并提交；④28s 交付后仍需 Claude 对最终结果的复验与负责人新的生产授权，此前继续停止等待。
+- 操作边界：本意图全程只读（git fetch/log/status/diff、文件读取、docker ps 只读列举）；未执行任何脚本、未启动/停止/接入容器、未修改/删除他人文件、未 SSH 生产、未重跑生产第 1 步、未读取或打印任何密码/密钥/token；仓库变更仅本节日志与独立只读证据摘录两个文件，在途 RUNBOOK-launch.md 改写与全部未跟踪/在途文件零触碰。
