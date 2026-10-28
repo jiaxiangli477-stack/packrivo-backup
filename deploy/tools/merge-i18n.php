@@ -75,9 +75,55 @@ function merge_dict(array $prod, array $local): array
                 $merged[$key] = $pval;           // 生产独有的键也保留
             }
         }
-        ksort($merged, SORT_STRING);
+        // 不重新排序：保持本地文件的插入顺序，便于 diff
         $out[$kind] = $merged;
     }
+    return [$out, $conflicts];
+}
+
+/**
+ * 合并运行时字典 *-js.json：exact 取并集、同一键生产值优先；patterns 生产在前、
+ * 本地正则不在生产时才追加；其余顶层键生产值优先。
+ * @return array{0: array, 1: array}
+ */
+function merge_js(array $prod, array $local): array
+{
+    $conflicts = [];
+    $prodExact = isset($prod['exact']) && is_array($prod['exact']) ? $prod['exact'] : [];
+    $localExact = isset($local['exact']) && is_array($local['exact']) ? $local['exact'] : [];
+    $exact = $localExact;
+    foreach ($prodExact as $key => $pval) {
+        if (array_key_exists($key, $localExact)) {
+            if (norm_value($localExact[$key]) !== norm_value($pval)) {
+                $conflicts[] = ['kind' => 'js-exact', 'key' => $key, 'prod' => $pval, 'local' => $localExact[$key], 'used' => $pval];
+            }
+            $exact[$key] = $pval;
+        } else {
+            $exact[$key] = $pval;
+        }
+    }
+    $prodPat = isset($prod['patterns']) && is_array($prod['patterns']) ? $prod['patterns'] : [];
+    $localPat = isset($local['patterns']) && is_array($local['patterns']) ? $local['patterns'] : [];
+    $patterns = $prodPat;
+    $prodRegex = array_map(fn($p) => is_array($p) ? (string) ($p[0] ?? '') : '', $prodPat);
+    foreach ($localPat as $lp) {
+        $re = is_array($lp) ? (string) ($lp[0] ?? '') : '';
+        $idx = array_search($re, $prodRegex, true);
+        if ($idx === false) {
+            $patterns[] = $lp;
+        } elseif (is_array($lp) && isset($lp[1]) && $lp[1] !== ($prodPat[$idx][1] ?? null)) {
+            $conflicts[] = ['kind' => 'js-pattern', 'key' => $re, 'prod' => $prodPat[$idx], 'local' => $lp, 'used' => $prodPat[$idx]];
+        }
+    }
+    $out = $local;
+    foreach ($prod as $key => $pval) {
+        if ($key === 'exact' || $key === 'patterns') {
+            continue;
+        }
+        $out[$key] = $pval; // 其余顶层键：生产值优先
+    }
+    $out['exact'] = $exact;
+    $out['patterns'] = $patterns;
     return [$out, $conflicts];
 }
 
@@ -130,6 +176,23 @@ function run(string $prodDir, string $localDir, string $outDir, array $require):
             count($conflicts)
         );
         foreach ($conflicts as $c) {
+            $allConflicts[] = ['lang' => $lang] + $c;
+        }
+    }
+
+    foreach ($langs as $lang) {
+        $prodJs = $prodDir . '/' . $lang . '-js.json';
+        $localJs = $localDir . '/' . $lang . '-js.json';
+        if (!is_file($localJs)) {
+            fwrite(STDERR, "本地缺运行时字典: {$localJs}\n");
+            continue;
+        }
+        [$mergedJs, $jsConflicts] = merge_js(read_dict($prodJs), read_dict($localJs));
+        file_put_contents($outDir . '/' . $lang . '-js.json', encode($mergedJs));
+        $exact = count($mergedJs['exact'] ?? []);
+        $patterns = count($mergedJs['patterns'] ?? []);
+        printf("%-6s js：exact=%d patterns=%d，冲突 %d\n", $lang, $exact, $patterns, count($jsConflicts));
+        foreach ($jsConflicts as $c) {
             $allConflicts[] = ['lang' => $lang] + $c;
         }
     }
@@ -206,12 +269,24 @@ function self_test(): void
     file_put_contents($root . '/local/de-dict.json', encode($local));
     file_put_contents($root . '/prod/paths.json', encode(['/', '/products/']));
     file_put_contents($root . '/local/paths.json', encode(['/', '/about/']));
+    $prodJs = [
+        'exact'    => ['Same' => 'gleich', 'OnlyProd' => 'nur-prod', 'Diff' => 'PROD'],
+        'patterns' => [['^A$', 'a-prod'], ['^P$', 'p']],
+        'meta'     => 'prod',
+    ];
+    $localJs = [
+        'exact'    => ['Same' => 'gleich', 'Diff' => 'LOCAL', 'OnlyLocal' => 'nur-lokal'],
+        'patterns' => [['^A$', 'a-local'], ['^B$', 'b-local']],
+    ];
+    file_put_contents($root . '/prod/de-js.json', encode($prodJs));
+    file_put_contents($root . '/local/de-js.json', encode($localJs));
 
     run($root . '/prod', $root . '/local', $root . '/out', ['/get-a-quote/']);
 
     $merged = read_dict($root . '/out/de-dict.json');
     $conf = read_dict($root . '/out/conflicts.json');
     $paths = read_dict($root . '/out/paths.json');
+    $js = read_dict($root . '/out/de-js.json');
     $ok = true;
     $check = function (string $label, bool $cond) use (&$ok) {
         printf("  %s %s\n", $cond ? 'OK  ' : 'FAIL', $label);
@@ -222,8 +297,13 @@ function self_test(): void
     $check('本地独有键保留（OnlyLocal）', ($merged['title']['OnlyLocal'] ?? '') === 'nur-lokal');
     $check('生产独有键保留（OnlyProd）', ($merged['title']['OnlyProd'] ?? '') === 'nur-prod');
     $check('两边相同不记冲突（Same）', !array_filter($conf, fn($c) => $c['key'] === 'Same'));
-    $check('两个真冲突都记下来', count($conf) === 2);
+    $check('四个真冲突都记下来', count($conf) === 4);
     $check('paths 取并集', $paths === ['/', '/about/', '/get-a-quote/', '/products/']);
+    $check('js-exact 生产值优先（Diff=PROD）', ($js['exact']['Diff'] ?? '') === 'PROD');
+    $check('js-exact 本地独有键保留（OnlyLocal）', ($js['exact']['OnlyLocal'] ?? '') === 'nur-lokal');
+    $check('js-exact 生产独有键保留（OnlyProd）', ($js['exact']['OnlyProd'] ?? '') === 'nur-prod');
+    $check('js-patterns 生产优先、本地新正则追加', $js['patterns'] === [['^A$', 'a-prod'], ['^P$', 'p'], ['^B$', 'b-local']]);
+    $check('js 其余顶层键生产优先（meta）', ($js['meta'] ?? '') === 'prod');
     echo $ok ? "自检通过\n" : "自检失败\n";
     exit($ok ? 0 : 1);
 }
