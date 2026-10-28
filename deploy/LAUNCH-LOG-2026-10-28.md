@@ -723,3 +723,34 @@ r28q-net 演练栈五容器全部 Up：php(r28q-php:8.3) / nginx(nginx:alpine，
 ### 15.6 本轮操作与边界
 - 只读命令：Get-ChildItem / Get-Content / Select-String / Get-Item / git status / git log / git ls-remote、docker ps / docker logs / docker inspect（全部只读）。未执行任何脚本、未启动/停止/接入容器、未修改/删除他人文件、未 SSH 生产、未重跑生产第 1 步、未执行第 2–8 步、未读取或打印任何密码/密钥/token。
 - 本轮仓库变更：`deploy/LAUNCH-LOG-2026-10-28.md` 追加本节 + 新增 `deploy/verification-28q/round4-evidence-summary.md`（本链独立只读证据摘录）；只暂存并提交这两个文件并 push。并行链工作树 3 处修改（README.md / RUNBOOK-launch.md / tools/merge-i18n.php）与 33 个未跟踪文件（含并行链新生成的 rehearsal.log、rehearsal-verify.json 及本链拟制补丁等）保持零触碰。
+
+## 16 · 28q 增量门禁核查：cad8c62 之后的新提交 / 任务单 / 产物与四前置判定（2026-10-28 本机只读核查；未执行任何脚本、未启动/停止/接入容器、未修改/删除他人文件、未读任何凭据）
+
+### 16.1 增量范围（cad8c62..HEAD，仅 3 文件）
+- `e68b87a`（10:59:49）：`.gitignore` 加白名单 `!deploy/verification-28q/rehearsal.log`，`deploy/verification-28q/rehearsal.log`（69,090 B / 1063 行）正式入库。
+- `b155b40`（11:00:11）：`dsh-out/DSH-RESULT-2026-10-28q.md` 追加 2 行——27e 补丁只打在本地 mu 副本（原文件留档 `.tmp\28q\backup\packrivo-live\mu-plugins\`，sha256 `abe6f134…`），生产那份没有动。
+- 任务单新答复：**无**。`packrivo-v2/docs/` 零变更，无新任务单（无 28r）。
+- 新产物：仅 rehearsal.log 入库，内容与 §15 已核验的第四遍一致；工作区干净、无新增未跟踪文件。
+
+### 16.2 三轮整轮 PASS 判定（严格口径）
+- 新入库 log 的阶段结构不变：复位 → **正向 0-8** → **回滚 9** → **再正向 1-8** → 0.1 探针补跑，即 **2 次正向 + 1 次回滚**；无第 2 次整体回滚、无第 3 个完整循环。按「三轮整轮（每轮含回滚）」口径**仍不成立，不得以 2 次正向+1 次回滚替代**。
+- 单遍判据属实（可复核）：18 个步骤块全部 exit=0；`apply_updated=130 already_current=4` + `apply_updated=7 already_current=1` 真实写入；回滚后快照==基线（`4972cd81…3deb`）IDENTICAL；再正向后==首正向（`4247693f…b392`）IDENTICAL；探针补跑：裸报 `TLS/SSL error 2026`→0 字节，`--skip-ssl` 包装后 36,381,501 B / 40 表。
+- RUNBOOK 附录 C 的「三轮结果（正向/回滚/再正向）」为并行链 cad8c62 自改口径，且该次 RUNBOOK 重写未经 supplement2 或审批流程落地——「符合 RUNBOOK 口径的三轮整轮 PASS」仍缺；轮次计数口径仍待负责人确认（审批项⑦）。
+- **新发现（轮内 step0 未跑探针）**：forward1 的 step0 止于「STEP 0.2 上传清单核对」即 `exit=0`，**未执行 §0.1 导出探针**；轮内 step1 db export 直接 Success，依赖容器上一轮遗留的 `--skip-ssl` 包装（阶段 4 补跑先拆包装、裸探针复现 TLS 2026→0 字节证明）。与 supplement2 D.2.1「每轮先跑 0.1 探针、不得依赖上次遗留包装」不符；探针仅轮后补跑。
+
+### 16.3 Claude 核验 / 新生产授权
+- Claude 核验：**仍不存在**。全仓库（含 150 行 DSH-RESULT-2026-10-28q.md）无任何 28q 演练核验结论；任务单 28q 答复 3 仍为唯一口径「演练通过、Claude 核验之后，才会再授权上生产」。
+- 新生产授权：**仍不存在**。cad8c62..HEAD 仅 3 文件变更，无任何新批复/授权记录。
+
+### 16.4 supplement2 / rehearsal.sh 守卫落地核查
+- supplement2（本链拟制）**未落地、未获批准**：HEAD RUNBOOK 无「2.5 硬 FAIL」、无「3.0 应用前守卫」、无「9.3 回滚前 site 守卫」、无「附录 D」（`grep -E "守卫|FAIL|3\.0|附录 D"` 零命中）。现有 §0.1 探针、2.5 校验行、9.3 rollback-check 为并行链 cad8c62 自写近似，均无硬 FAIL 语义。
+- `scripts/rehearsal.sh`（自 cad8c62 后未变，256 行）：首行 `set -u` 无 `set -e`；无 `exit 1`/`FAIL` 硬判；step0 无探针；step9 仅原 RUNBOOK 的两条 rollback-check；探针独立在 `scripts/step0-probe.sh`，本轮作为「阶段 4 补跑」在轮次之外执行。
+
+### 16.5 门禁结论
+- 四前置——①严格口径三轮整轮 PASS、②真实 Claude 核验结论、③负责人新的生产授权、④supplement2 与 rehearsal.sh 守卫按批准落地——**全部仍缺**。
+- 因此：**生产第 1 步重跑条件不满足**，生产第 1 步维持 FAIL；**第 2–8 步与 SSH 生产继续禁止**；本链继续停止等待。
+- 未决审批项⑤–⑧状态无变化；⑥新增口径点：轮内 step0 未跑 0.1 探针、step1 依赖容器遗留 `--skip-ssl` 包装，需并入口径确认。
+
+### 16.6 本轮操作与边界
+- 只读命令：`git log/show/diff/ls-files/grep/status` + 文件读取（含 rehearsal.log、rehearsal-verify.json、RUNBOOK、rehearsal.sh、DSH-RESULT/DSH-TASK）。未执行任何脚本、未启动/停止/接入容器、未修改/删除他人文件、未 SSH 生产、未重跑生产第 1 步、未执行第 2–8 步、未读取或打印任何密码/密钥/token。
+- 本轮仓库变更：仅 `deploy/LAUNCH-LOG-2026-10-28.md` 追加本节 + 新增 `deploy/verification-28q/gate-evidence-2026-10-28-after-cad8c62.md`（本链独立只读证据摘录）；只暂存这两个文件、commit 并 push。在途改动与未跟踪文件零触碰（当前工作区本身干净）。
