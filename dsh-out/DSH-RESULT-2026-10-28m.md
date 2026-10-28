@@ -1,4 +1,4 @@
-# DSH 结果 · 2026-10-28m
+﻿# DSH 结果 · 2026-10-28m
 
 任务书：`packrivo-v2/docs/DSH-TASK-2026-10-28m.md`（第 1→4 段）
 范围：只本地。没有部署、没有 SSH/SCP、没有碰 `www.packrivo.com`（只读 GET 除外）、没有读取或记录任何密码、没有提交任何真实询盘或报价。
@@ -117,8 +117,9 @@ ar 0  de 0  es 0  fr 0  it 0  ja 0  ko 0  nl 0  pt 0  zh-CN 0  zh-TW 0
 
 | 量（375） | 改前 | 改后 |
 |---|---|---|
-| 筛选栏高度 | 451 px | **202 px** |
-| 第一张卡顶点 | 944 px | **651 px** |
+| 目录页 hero | 67–445（378 高） | **65–310（245 高）** |
+| 筛选栏 | 445–896（**451 px**） | **310–512（202 px）** |
+| 第一张卡顶点 | **944 px** | **560 px** |
 | 桌面第一张卡 | 619 | 619（未变） |
 
 - 分类 chips 改**一行横向滚动**（`clientWidth 327 / scrollWidth 794`，页面本身不溢出）
@@ -145,7 +146,7 @@ ar 0  de 0  es 0  fr 0  it 0  ja 0  ko 0  nl 0  pt 0  zh-CN 0  zh-TW 0
 ### 验收
 
 - 截图 16 张（4 页 × 375/1440 × 改前/改后）+ 2 张固定条图，在 `deploy/verification-28m/`
-- **375 px `scrollWidth` 14 行全部 375**（7 页 × en/ar；`/ar/` 文章路径是 404，见阻断项）
+- **375 px `scrollWidth` 12 行全部 375**（6 页 × en/ar：首页、/products/、产品页、报价页、/blog/、/inquiry/）
 - 桌面 hero 仍是左右分栏（`sideBySide=true`、`statsBelowCopy=true`）
 
 ---
