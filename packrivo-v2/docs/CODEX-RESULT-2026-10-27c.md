@@ -325,3 +325,13 @@ lid 800: HTTP 200 image/webp
 - 先解决实际环境的旧报价重定向、父主题目录匹配以及 11 语种字典；生产上线不在本轮。
 - 原 FAQ 的现有问答含固定价格，任务同时要求问答一字不改及价格均由引擎计算，本轮按“FAQ 一字不改”保留，需站长决定如何消除冲突。产品页指定的 `Reference prices on every page` 与无映射产品不显示价格的要求也存在表述冲突。
 - 没有现存九个子品类，子筛选实际选择行为待页面创建后验证。首页不足 8 张，剩余产品缺封面或映射。
+
+## G. 备份仓库推送回执
+
+```text
+$ git push origin main
+To https://github.com/jiaxiangli477-stack/packrivo-backup.git
+   bb63d3d..66221c6  main -> main
+```
+
+逐节提交：B `7f0ae15`、C `7bd2f34`、D `641238f`、E `d95beb8`、F `ba8439b`；报告提交 `66221c6`。本回执本身随后作为补充报告提交推送。
