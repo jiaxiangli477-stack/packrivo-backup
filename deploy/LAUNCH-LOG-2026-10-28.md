@@ -1220,3 +1220,30 @@ estore_slug=8 missing=0、static-bridge 1.2.38。
 - **⇒ 两项外部前置（Claude 复验、负责人新生产授权）仍缺：生产第 1 步重跑条件不满足，生产第 1 步维持 FAIL；第 2–8 步与 SSH 生产继续禁止；本链继续停止等待，绝不执行第 2–8 步。**（tag10 整轮全 PASS 与 DSH-RESULT-28s 交付继续成立，但门禁三前置中两项外部前置仍缺，任一缺即不满足；仅当两项均获明确证据时才可确认进入生产第 1 步，等待下一意图执行。）
 - 待规划者/负责人关注：仍待 Claude 对 28s 最终修正结果的明确复验，以及负责人基于该复验给出的新生产上线授权（并明确覆盖第 1–8 步与 Cloudflare 清缓存复测）；此前本链继续停止等待。
 - 操作边界：本意图全程只读（git fetch/log/rev-parse/status、文件读取、Get-FileHash、docker ps 只读枚举、目录列举）；未执行任何脚本、未启动/停止/接入容器、未修改/删除他人文件、未 SSH 生产、未重跑生产第 1 步、未读取或打印任何密码/密钥/token；仓库变更仅本节日志与独立只读证据摘录 gate-evidence-2026-10-28-after-1536f5d.md 两个文件，其余文件与未跟踪文件零触碰。
+
+## 29 · 28s 增量门禁核查（46c0dac 之后）：tag10 整轮全 PASS 证据仍未被推翻；Claude 复验与新生产授权仍缺——生产第 1 步重跑条件仍不满足（2026-10-28 13:52 本机只读核查）
+
+### 29.1 增量范围（46c0dac 之后）
+- **零新提交**：`git rev-parse HEAD == origin/main == 46c0dac358614846134aef443996924f9c4b82f5`（46c0dac 提交于 2026-10-28 13:47:47 -0700）；`git fetch` 后 `git rev-list --left-right --count HEAD...origin/main = 0  0`；`git status` 干净（nothing to commit, working tree clean）、无未跟踪文件。
+- **无 28s 新任务单答复**：dsh-in/ 无新文件（最新仍 03:12:22 quote-strings-28m.json，与 §27/§28 相同）。
+- **dsh-out/DSH-RESULT-2026-10-28s.md 仍为 13:25:39 版（14087 B）**，`git hash-object` = `7e92a2c534a06add877842f0c25a557985d8e321`，内容未变：仍自述「本轮不碰生产：无 SSH、无生产写入、未读未打印任何密码/密钥/token」（L5）、step7「Cloudflare 项在本地跳过」（L95）、结尾「生产未动」（L161）——无任何 Claude 复验文本、无新生产授权。
+- deploy/verification-28s/ 与 E:\破甲工作区\.tmp\28s\art/ 全部产物 mtime ≤ 13:26:09（guard-selftest.log 为最新），13:47:31 之后无新产物。
+- 全工作区 13:47:31 之后零新文件写入（深度扫描仅命中上一节落盘的本日志 13:47:31 本身，另有工作台自身运行日志位于仓库外与本门禁无关）。
+
+### 29.2 tag10 整轮全 PASS 证据未被重启/失败/清档/后续提交推翻（本机独立复检，13:49—13:52）
+- **无新一轮运行、无重启**：`docker ps -a` 仍仅 `r28s-runner(r28q-host:10) Exited (0)`（12:51:16 创建）与 `r28s-neg(r28q-host:11) Exited (0)`（13:22:14 创建），无新 runner/negtest 容器、无运行中 28s 容器。
+- rehearsal.log 首尾完整：`28s 开始 2026-10-28T19:51:17Z` → `28s 结束 2026-10-28T20:19:10Z`，末行 `EXIT=0`；无清档迹象。
+- step-summary.txt：step0–9 逐行 `PASS=6/10/8/11/3/4/5/1/9/8 :: FAIL=0 :: EXIT=0`（合计 65 PASS / 0 FAIL）。
+- **四快照本机 Get-FileHash 复检**：s-reset.txt / s-after-rollback.txt / s-after-negtest.txt 三者 sha256 = `4972CD8195D7B40A10DAC4140273BA7FAEF4E152B2B886489BFCC624F2773DEB`（= 基线 4972cd81…）；s-forward.txt = `4247693FA3A31F35477DCB059AD79E4AE5C13DE861F94DFCC3848FE57F81B392`——与 §26/§27/§28 及 DSH-RESULT-28s §5 一致。
+- guard-selftest.log：合法 JSON `PASS: … site 与本轮一致`×2、他站 JSON `FAIL: …非本轮产物`、空目录场景计数 0。
+- negtest.log：3.0 守卫真实拦截 bogus JSON（site=http://wrong-site.invalid，期望 http://nginx），`negtest step3 EXIT=1`、「3.0 守卫拦截，apply 不执行」、apply 计数 0、反向自检后快照 sha256=`4972cd81…`=基线、`PASS: 反向自检没有改动站点（仍 = 基线）`、`EXIT=0`。
+- **结论：fact #707 的「tag10 整轮全 PASS」证据链在本节核查时点（13:52）仍成立，未被任何重启、失败、清档或新提交推翻。**
+
+### 29.3 两项外部前置核查（Claude 复验 / 新生产授权）
+- **Claude 对 28s 最终修正结果的明确复验：仍不存在**——零新提交/零新答复/零新文件；DSH-RESULT-28s 仍由工作台 #56 自述交付，无 Claude 复验文本。
+- **负责人新的生产上线授权：仍不存在**——无任何新授权文件/提交/答复；DSH-RESULT-28s 仍自述「本轮不碰生产：无 SSH、无生产写入」。「授权是否明确覆盖本次 RUNBOOK 第 1–8 步及 Cloudflare 清缓存复测」：无授权对象、无从核对，判定不满足。（维持原口径：不得以既有任务描述、28s「本轮不碰生产」、整轮 PASS 或他人自述替代新授权。）
+
+### 29.4 门禁结论与操作边界
+- **⇒ 两项外部前置（Claude 复验、负责人新生产授权）仍缺：生产第 1 步重跑条件不满足，生产第 1 步维持 FAIL；第 2–8 步与 SSH 生产继续禁止；本链继续停止等待，绝不执行第 2–8 步。**（tag10 整轮全 PASS 与 DSH-RESULT-28s 交付继续成立，但门禁三前置中两项外部前置仍缺，任一缺即不满足；仅当两项均获明确证据时才可确认进入生产第 1 步，等待下一意图执行。）
+- 待规划者/负责人关注：仍待 Claude 对 28s 最终修正结果的明确复验，以及负责人基于该复验给出的新生产上线授权（并明确覆盖第 1–8 步与 Cloudflare 清缓存复测）；此前本链继续停止等待。
+- 操作边界：本意图全程只读（git fetch/log/rev-parse/status、文件读取、Get-FileHash、docker ps 只读枚举、目录列举）；未执行任何脚本、未启动/停止/接入容器、未修改/删除他人文件、未 SSH 生产、未重跑生产第 1 步、未读取或打印任何密码/密钥/token；仓库变更仅本节日志与独立只读证据摘录 gate-evidence-2026-10-28-after-46c0dac.md 两个文件，其余文件与未跟踪文件零触碰。
