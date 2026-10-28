@@ -427,6 +427,14 @@ zh-TW home 16 条 / product 5 条 | 可见英文 0 | href 不在本语种报价�
 
 两个包解压后与 `packrivo-wp/` 工作源逐字节相同（`header.php`、`cta-28l.js`、`site.css`、`pkq-quote.css`、`pkq-quote.js`、`pricing.json`、`packrivo-quote.php`、`quote-i18n/de.json`、`quote-i18n/zh-CN.json` 九个文件逐一比对 `same=True`）。README 里的哈希已同步。
 
+### 最终收尾 · 最终重打包复验与提交（commit `45e2616`）
+
+- 第 4 项终验（06:02）：`deploy/verification-28n/buttons-28n-item4.{txt,json}`，en/ar/de/ja 首页+产品页 × 1440/375 共 16 组 post-JS 采集，`englishLeak=0`、`wrongHref=0`，无需任何修复；与上表 24 组审计结论一致。
+- `Sample kit`：11 份主字典 `deploy/i18n-merged/*-dict.json` 各补 1 条译文（`text` 键），随最终提交入库；上节「额外发现」的初版结论相应作废。
+- 最终重打包（`pack-zips.ps1`：`robocopy /E` 镜像 → `Compress-Archive`）：两个 zip 哈希与上表**完全一致**（`e7041551…` / `6c225718…`），解压后与 `packrivo-wp/` 工作源逐字节相同（主题 38 文件、插件 19 文件、`demo/` 0 个进包）；`packrivo-backup/packrivo-wp/` 仓库镜像已 `robocopy /MIR` 同步，`packrivo-wp/*.zip` 与镜像内 zip 副本已同步为新包字节；`deploy/README.md` 哈希表无需改动。
+- 价格复核：`includes/pricing.json` 与 28n 前提交版（HEAD 基线）逐路径 diff 仅 3 个 `label` 字符串（`Kraft E-flute→Kraft corrugated`、`White E-flute→White corrugated`、`Rigid greyboard 2 mm→Rigid greyboard`），全部 33 个数值字段 0 变化；报价计算两文件与第一版逐字节相同——4 组价格数字完全一致。
+- 提交：`45e2616`（28n final）及本文件更新提交；除并行 28o 会话未跟踪的 `deploy/verification-28o/` 外，`git status` 干净。
+
 ### 额外发现（不在 6 项内，没改）
 
-页头还有一个 `Sample kit` 链接同样没进字典。它在 1350 px 以下被 13c7f1f 的媒体查询隐藏，但在 1351 px 以上（阿语、德语、中文等）会以英文出现。它不是报价按钮，也不在任务书范围内；11 语种里只有 `Order a sample kit` 的整句译文，直接截短会改文案口径，所以留着由站长定。同位置的两个报价按钮现在已经全部是译文（见上表）。
+页头还有一个 `Sample kit` 链接同样没进字典。它在 1350 px 以下被 13c7f1f 的媒体查询隐藏，但在 1351 px 以上（阿语、德语、中文等）会以英文出现。它不是报价按钮，也不在任务书范围内；11 语种里只有 `Order a sample kit` 的整句译文，直接截短会改文案口径，所以初版没有动；最终收尾阶段已按 11 份主字典补齐 `Sample kit` 译文（每份 `text` 加一键）随最终提交入库。同位置的两个报价按钮现在已经全部是译文（见上表）。
