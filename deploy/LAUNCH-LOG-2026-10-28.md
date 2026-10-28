@@ -1067,3 +1067,40 @@ r28q-net 演练栈五容器全部 Up：php(r28q-php:8.3) / nginx(nginx:alpine，
 - **→ 生产第 1 步重跑条件仍不满足，生产第 1 步维持 FAIL；第 2–8 步与 SSH 生产继续禁止；本链继续停止等待，绝不执行第 2–8 步。**（tag9 运行中为真实进度，不构成整轮 PASS；tag8 轮 step3 曾现真实 FAIL——判据模式错配，tag9 已修 3a 并第三次重跑，门禁须等 tag9 整轮（正向+回滚+negtest）端到端全 PASS 且 DSH-RESULT-28s/verification-28s 交付后再评估。）
 - 待规划者/负责人关注：①tag9 整轮是否完整跑完正向 0–8 + 第 9 步回滚 + negtest 3.0 反向自检（3a 修复后 step3 已 PASS=11），完成后交付 DSH-RESULT-28s + verification-28s/ 并如实给逐步 PASS/FAIL 表；②tag8 轮 3a 判据模式错配（脚本找 metadata_mismatches=0，27g verify 实际输出 URL_and_non_H1_body_unchanged=134/134）已由 12:23:47 脚本修改修复，建议并行链在交付物中说明该修复；③在途 RUNBOOK（+28/−8）与 .tmp rehearsal.sh 是否随 28s 交付一并提交；④28s 交付后仍需 Claude 对最终结果的复验与负责人新的生产授权，此前继续停止等待。
 - 操作边界：本意图全程只读（git fetch/log/status/diff、文件读取、docker ps 只读列举）；未执行任何脚本、未启动/停止/接入容器、未修改/删除他人文件、未 SSH 生产、未重跑生产第 1 步、未读取或打印任何密码/密钥/token；仓库变更仅本节日志与独立只读证据摘录两个文件，在途 RUNBOOK-launch.md 改写与全部未跟踪/在途文件零触碰。
+
+## 24 · 28s 增量门禁核查（7ef4bf5 之后）：tag9 整轮终态 = 正向全 PASS 但第 9 步回滚 FAIL=2 EXIT=1（9.3 守卫 php 转义缺陷拦截本轮合法回滚）、回滚后快照≠基线、negtest 未执行；并行链已修复并启动 tag10（12:51:16）；门禁结论不变：生产第 1 步重跑条件仍不满足（2026-10-28 12:43–12:52 本机只读核查；未执行任何脚本、未启动/停止/接入容器、未修改/删除他人文件、未读任何凭据）
+
+### 24.1 增量范围（7ef4bf5 之后）
+- **零新提交**：git ls-remote origin main == HEAD == 7ef4bf5（本意图开始 12:43 与结束 12:52 各核一次）；无新任务单答复（12:48 后仅并行链自己的 .tmp/28q/rehearsal.sh 12:50:54、guard-selftest.sh 12:51:05、wrapper-check.sh 12:50:43 与在途 RUNBOOK-launch.md 12:50:59）。
+- `dsh-out/DSH-RESULT-2026-10-28s.md` 不存在（Test-Path False）；`deploy/verification-28s/` 不存在（Test-Path False）。
+- 工作树仍仅 ` M deploy/RUNBOOK-launch.md` 一条（并行链在途改写，零触碰）；仓库内无未跟踪文件（git ls-files --others 空）。
+
+### 24.2 tag9 轮（12:23:53 第三次启动）整轮终态：**跑完但第 9 步真实 FAIL，回滚不完整，整轮不成立**
+- runner（镜像 r28q-host:9）12:23:53 启动，12:48:54 正常 Exited——**本轮未被重启/截断/中途清档**，是三次启动中第一次完整走到结束的一轮；tag9 日志随后于 12:51:17 被 tag10 启动命令清空重建，本链已在其被清空前完整留证（见 §24.4 与独立证据摘录 gate-evidence-2026-10-28-after-7ef4bf5.md）。
+- step-summary.txt 原文（唯一留存）：step0 PASS=6 / step1 PASS=10 / step2 PASS=8 / step3 PASS=11 / step4 PASS=3 / step5 PASS=4 / step6 PASS=5 / step7 PASS=1 / step8 PASS=9——**正向 0–8 全 FAIL=0 EXIT=0**；**step9 PASS=0 FAIL=2 EXIT=1**。
+- **step9 失败根因（新缺陷）**：9.3 守卫 `php -r '\$j=json_decode(file_get_contents(\$argv[1]),true); echo \$j["site"] ?? "";'` 单引号内字面反斜杠传入 PHP → `Parse error: syntax error, unexpected token "\"` → $S 恒空 → 两条 `FAIL: 9.3 … site=` → GUARD93=1 → 「9.3 守卫拦截，rollback 不执行」→ step_end 后 EXIT=1。结果：27g/27i 的 import.php rollback、i18n 回拷、9a–9f 判据**全部未执行**。
+- 快照链：复位快照=基线 PASS（s-reset.txt 845 行 4972cd81…，Get-FileHash 独立复核一致）；正向快照=4247693f… PASS；**回滚后快照=0f5ab240… ≠ 基线 FAIL**。s-reset 与 s-after-rollback 逐行比对：23 个 i18n 文件（11 dict+11 js+paths.json）哈希全部不同、多个产品页标题行不同（如 `14,product-pillow-jewelry-box,"Custom Pillow Jewelry Boxes"`）→ 站点未回到基线（现场探针：nginx:8091 Host=nginx 首页/product 页 200，内容仍为 apply 后状态）。**28s 任务单要求「结束状态=回滚之后=基线 4972cd81…」不满足。**
+- 28s 任务单要求的**3.0 反向自检（negtest）未执行**：host run28s.sh 驱动未引用 negtest.sh（后者存在于 .tmp/28s），tag9 轮无任何 negtest 产物；容器内 /opt/x28r/run28s.sh 是否调用未验证（不接入容器）。
+- 驱动层佐证「EXIT 不能当证据」：runner 命令以 `echo EXIT=$? >> rehearsal.log` 收尾、run28s.sh 不聚合各步退出码 → step9 EXIT=1 时整轮 rehearsal.log 尾部仍为 `EXIT=0`。
+
+### 24.3 目标问题逐项裁定（tag9 整轮终态）
+- **28s 一整轮正向+回滚+3.0 反向自检完整端到端且每阶段全判据 PASS：不成立**——正向 0–8 全 PASS，但第 9 步回滚 FAIL=2 EXIT=1 且未执行到底、回滚后快照≠基线、negtest 未跑。不得以正向全 PASS 或部分阶段替代整轮验收。
+- **修复后的 step3 3a 判据与真实输出一致：成立**——tag9 step3 PASS=11 FAIL=0，`PASS: 3a 27g verify URL_and_non_H1_body_unchanged=134/134`（12:23:47 修复生效，tag8 轮 FAIL=1 闭环）；后续步骤无新增 FAIL。
+- §0.1 探针（0f 补救路径）：**第三次实况成立**——step0 探针 TLS/SSL 2026 失败 0 字节 → 装 --skip-ssl 包装 → 重探 37403413B `PASS: 0f`；脚本中无字面 0g 标签（0g 并入 0f 补救重探路径，与 §21.4/§22.4/§23.4 结论一致）。
+- 2.5 逐条 PASS/FAIL：**第三次实况成立**（step2 2a–2h 逐条 PASS=8）。
+- 3.0 硬守卫：在 script 中在位；本轮实跑为空转通过（/pkg/rollback 本轮为空、无 PASS/FAIL 行输出），其对「他站 JSON」的拦截力正是 negtest 要证的事——negtest 未执行 → **3.0 守卫有效性未经反向实证**。
+- 9.3 硬守卫：**真实生效但以缺陷方式**——拦截发生了（EXIT=1），但拦截原因不是 site 不一致而是自身 php 转义缺陷，且误伤了本轮合法回滚。
+- apply_updated+already_current=134/8 且演练 apply_updated>0：**第三次实况成立**（27g 130+4=134、27i 7+1=8、两 apply_updated>0）。
+- 最终复位快照与基线一致：轮初复位=基线已证；**整轮结束状态≠基线（0f5ab240…）**，28s 任务单「结束状态=基线」不满足。
+- 旧 SIGKILL 残留闭环：**持续成立**（tag9 reset.log restore_slug=130/8 missing=0、快照=基线；未发现未闭环判据）。
+- **Claude 对 28s 最终修正结果的明确复验：不存在**（零新提交/新答复）。**负责人新的生产上线授权：不存在**（28s 任务单仍为「本轮不碰生产」口径）。
+
+### 24.4 tag9 之后并行链动作（只读观察，非本链结论背书）
+- 12:50:54 .tmp/28q/rehearsal.sh 修改：3.0/9.3 两处守卫改为 `php -r '$j=json_decode(file_get_contents($argv[1]),true); exit((($j["site"]??"")===$argv[2])?0:1);'`（去反斜杠、直接退出码比较），442→452 行；3.0 守卫通过时开始输出 `PASS: 3.0 … site 与本轮一致`。
+- 12:51:16 新 runner 启动（镜像 r28q-host:10 = tag10 第四次启动）；12:51:17 tag9 的 rehearsal-28s 目录被清空重建（tag9 原始日志仅剩本链 §24.2 与证据摘录留证）。
+- 12:50:43/12:51:05 新增 wrapper-check.sh、guard-selftest.sh；在途 RUNBOOK-launch.md 12:50:59 再改（全部零触碰）。
+
+### 24.5 门禁结论与操作边界
+- **→ 生产第 1 步重跑条件仍不满足，生产第 1 步维持 FAIL；第 2–8 步与 SSH 生产继续禁止；本链继续停止等待，绝不执行第 2–8 步。**（28s tag9 整轮正向全 PASS 但回滚 FAIL=2 EXIT=1、回滚后快照≠基线、negtest 未执行——按 28s 任务单验收与 RUNBOOK 附录 C 判据，28s 整轮验收不成立；tag10 已重启为新的观察对象，须等其端到端全 PASS + DSH-RESULT-28s + verification-28s 交付后再评估。）
+- 待规划者/负责人关注：①tag10 是否完整跑完正向 0–8 + 第 9 步回滚 + negtest 3.0 反向自检，且回滚后快照回到 4972cd81…，交付 DSH-RESULT-28s + verification-28s/（含逐步 PASS/FAIL 表与 tag8/tag9 两轮失败说明）；②tag9 的 9.3 守卫 php 转义缺陷（`'\$j'` 字面反斜杠）已由并行链 12:50:54 修复，建议交付物写明该缺陷与修复；③driver（run28s.sh）不聚合各步退出码、整轮 EXIT 恒 0，且未调用 negtest.sh——28s 验收要求反向自检，tag10 交付需含 negtest 产物或说明为何不跑；④tag9 原始日志已被 tag10 清档，唯一完整留存为本链证据摘录 gate-evidence-2026-10-28-after-7ef4bf5.md；⑤28s 交付后仍需 Claude 对最终结果的复验与负责人新的生产授权，此前继续停止等待。
+- 操作边界：本意图全程只读（git ls-remote/log/status、文件读取、docker ps/inspect 只读列举、本地 HTTP 探针一次）；未执行任何脚本、未启动/停止/接入容器、未修改/删除他人文件、未 SSH 生产、未重跑生产第 1 步、未读取或打印任何密码/密钥/token；仓库变更仅本节日志与独立只读证据摘录两个文件，在途 RUNBOOK-launch.md 改写与全部未跟踪/在途文件零触碰。
