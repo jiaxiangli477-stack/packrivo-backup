@@ -1,0 +1,182 @@
+{
+  "exact": {
+    "Menu": "メニュー",
+    "Close": "閉じる",
+    "Close image ×": "画像を閉じる ×",
+    "Switch color theme": "配色テーマを切り替え",
+    "Open navigation menu": "ナビゲーションを開く",
+    "Close navigation menu": "ナビゲーションを閉じる",
+    "Presentation boxes and insert options": "プレゼンテーション箱と中敷きの選択肢",
+    "AI concept of a forest-green drawer jewelry box with a separate ivory insert": "アイボリーの中敷きを備えたフォレストグリーンの引き出し式ジュエリーボックスのAIコンセプト",
+    "Folding formats and gift presentation": "折りたたみ形状とギフトの演出",
+    "AI concept of an ivory folding gift carton beside its flat structure": "平面構造を添えたアイボリーの折りたたみギフト箱のAIコンセプト",
+    "Box, insert and packed size together": "箱・中敷き・梱包サイズをまとめて確認",
+    "AI concept of an open kraft mailer with a fitted insert": "中敷きを備えた開いたクラフト製メールボックスのAIコンセプト",
+    "Roll or sheet formats for packaging": "ロールまたはシート形式の包装",
+    "AI concept comparing blank roll and sheet packaging labels": "無地のロールラベルとシートラベルを比べるAIコンセプト",
+    "Fit and presentation inside an outer pack": "外装内でのフィット感と見せ方",
+    "AI concept of paperboard, corrugated and molded-pulp inserts": "板紙・段ボール・成形パルプ製中敷きのAIコンセプト",
+    "AI styled concept of green drawer boxes with ivory trays": "アイボリーのトレイを備えたグリーンの引き出し箱のAI案",
+    "Separate AI drawer-box concept exploration, not the same physical product": "別途検討したAI引き出し箱案です。同じ実物商品ではありません",
+    "Packaging concept enlarged view": "拡大した包装コンセプト",
+    "Supplier and physical sample review required.": "サプライヤーと実物サンプルによる確認が必要です。",
+    "Review or edit material & finish below ↓": "下の素材と仕上げを確認または編集 ↓",
+    "No material or finish specified.": "素材または仕上げが指定されていません。",
+    "Your reference choices": "参考として選んだ内容",
+    "Packaging option changed. Review your material, print and notes for this new selection.": "包装オプションが変更されました。新しい選択に合わせて素材、印刷、メモを確認してください。",
+    "Enter a value, or say not sure where appropriate.": "値を入力するか、該当する場合は「未定」と記入してください。",
+    "Prepared for review. Subject to feasibility and sample review.": "確認用に準備しました。実現可能性とサンプルの確認が必要です。",
+    "Copied to your clipboard. Copying does not send another request.": "クリップボードにコピーしました。コピーで別の問い合わせは送信されません。",
+    "Clipboard access is unavailable. Select the summary text or download the file instead.": "クリップボードを利用できません。要約を選択するかファイルをダウンロードしてください。",
+    "Contact options": "接触オプション",
+    "Forest-green sleeve with an ivory tray. AI-assisted colour concept.": "アイボリーのトレイを合わせたフォレストグリーンのスリーブ。AIカラー案です。",
+    "The same drawer-box concept in warm ivory. Actual colour needs a physical reference.": "同じ引き出し箱の温かみのあるアイボリー案。実際の色は現物見本で確認してください。",
+    "Illustrative YOUR BRAND placement on the sleeve, with a gold-foil appearance. Artwork and process need review.": "スリーブに金箔風のYOUR BRANDを配置した例です。デザインと加工の確認が必要です。",
+    "Filter by category": "カテゴリーで絞り込む",
+    "Chat with Packrivo on WhatsApp (opens a new tab)": "WhatsAppでPackrivoに問い合わせる（新しいタブで開きます）",
+    "Get a Quote": "見積を取得",
+    "e.g. rigid board and removable insert": "例：硬質ボードと取り外し可能な中敷き",
+    "e.g. rigid board and magnetic flap": "例：硬質ボードとマグネット式フラップ",
+    "e.g. printed wrap and foil logo": "例：印刷ラップと箔押しロゴ",
+    "e.g. full-color print and foil logo": "例：フルカラー印刷と箔押しロゴ",
+    "Have a dieline or artwork? Upload it here. Files are sent only after you review the brief and choose Send My Packaging Request.": "抜き型データまたはアートワークをアップロードしてください。ブリーフを確認して「包装の問い合わせを送信」を選ぶまでファイルは送信されません。",
+    "Review the summary before sending. Packrivo stores submitted requests for 180 days so a person can review and respond. The details stay on this device until you select Send My Packaging Request.": "送信前に要約を確認してください。Packrivoは担当者が確認して返信できるよう、送信された問い合わせを180日間保管します。「包装の問い合わせを送信」を選ぶまでは詳細情報はこの端末に残ります。",
+    "Send My Packaging Request": "包装の問い合わせを送信",
+    "Send New Packaging Request": "新しい包装の問い合わせを送信",
+    "Contact Packrivo": "Packrivoへお問い合わせ",
+    "Contact name": "担当者名",
+    "Company": "会社",
+    "Company website": "会社ウェブサイト",
+    "No reference files selected.": "参考ファイルは選択されていません。",
+    "Choose up to three reference files.": "参考ファイルを最大3件選択できます。",
+    "Each file must contain data and be no larger than 2 MiB.": "各ファイルにデータが含まれ、2 MiB以下である必要があります。",
+    "Reference files must total no more than 5 MiB.": "参考ファイルの合計は5 MiB以下にしてください。",
+    "A reference file could not be read. Please select it again.": "参考ファイルを読み込めませんでした。もう一度選択してください。",
+    "Review the details below before sending.": "送信前に以下の詳細を確認してください。",
+    "Your request was not sent. Check the reference files.": "問い合わせは送信されませんでした。参考ファイルを確認してください。",
+    "The request could not be prepared. Your details are still here; use the copy and contact options below.": "問い合わせを準備できませんでした。入力内容は残っています。下のコピーと連絡方法を利用してください。",
+    "Sending your request…": "問い合わせを送信しています…",
+    "The earlier request has expired. Review the details and selected files. Choose Send New Packaging Request only if you want to create a new request. Nothing has been resent.": "先ほどの問い合わせは期限切れです。詳細とファイルを確認してください。新しい問い合わせを作成する場合だけ「新しい包装の問い合わせを送信」を選んでください。再送信はされていません。",
+    "Your request was not saved. Please correct the highlighted fields and review your brief again.": "問い合わせは保存されませんでした。強調表示された項目を修正し、ブリーフを再確認してください。",
+    "Request saved": "問い合わせを保存しました",
+    "Your request was saved. The summary below is for your records.": "問い合わせを保存しました。以下の要約は記録用です。",
+    "Scrollable packaging comparison table": "横スクロール可能な包装比較表",
+    "Scroll horizontally if columns extend beyond the view.": "列が画面幅を超える場合は横にスクロールしてください。",
+    "Clear search": "検索をクリア",
+    "Share or export": "共有またはエクスポート",
+    "Labels": "ラベル",
+    "All products": "すべての製品",
+    "Matching packaging guides": "該当する包装ガイド",
+    "Product catalogue pages": "商品カタログページ",
+    "Filter products by category": "カテゴリーで商品を絞り込む",
+    "Categories": "カテゴリー",
+    "Categories · All products": "カテゴリー · すべての商品",
+    "No packaging options match these filters.": "一致する包装オプションはありません。",
+    "Clear search and category": "検索とカテゴリーをクリア",
+    "Refine your search to narrow these guide results.": "検索条件を調整してガイドを絞り込んでください。",
+    "No guides match this search. Try another term or browse the journal.": "一致するガイドはありません。別の語句を試すか記事一覧をご覧ください。",
+    "Browse all packaging articles": "包装に関するすべての記事を見る",
+    "All packaging options": "すべての包装オプション",
+    "Find or change packaging option": "包装オプションを検索または変更",
+    "Find a packaging option": "包装オプションを検索",
+    "Search by name or structure": "名前または構造で検索",
+    "Change option": "オプションを変更",
+    "No packaging option selected yet.": "包装オプションはまだ選択されていません。",
+    "That packaging option is not available. Choose another option, or select “Not sure yet”.": "この包装オプションは利用できません。別の選択肢か「まだわからない」を選んでください。",
+    "Concept render": "コンセプトレンダー",
+    "Open WhatsApp ↗": "WhatsAppを開く ↗",
+    "Read the article ↗": "記事を読む ↗",
+    "Jewelry boxes": "ジュエリーボックス",
+    "Foldable gift boxes": "折りたたみ式ギフトボックス",
+    "Mailer boxes": "メーラーボックス",
+    "Inserts": "インサート",
+    "Packaging categories": "包装カテゴリー",
+    "Other guides": "その他のガイド",
+    "Your name": "お名前",
+    "Approximate dimensions": "おおよその寸法",
+    "Expected quantity": "予定数量",
+    "Destination": "納品先",
+    "Work email": "業務用メールアドレス",
+    "Material": "素材",
+    "Target date": "目標日",
+    "Notes": "メモ",
+    "Not specified": "指定なし",
+    "Search narrows the choices below; your current selection stays available.": "検索すると候補が絞り込まれます。現在の選択は引き続き利用できます。",
+    "Examples help you write a brief; they are not product specifications. Include a unit and state whether you measured the product, usable inside space or box exterior.": "例はブリーフ作成の参考であり、製品仕様ではありません。単位を記入し、製品・使用可能な内寸・箱の外寸のどれを測ったか明記してください。",
+    "Submission sends the reviewed fields and any selected reference files to Packrivo for inquiry handling. Reference files are stored privately with the request for up to 180 days. No marketing subscription is added. See our": "送信すると、確認済みの項目と選択した参考ファイルが問い合わせ対応のためPackrivoに送られます。ファイルは問い合わせとともに非公開で最長180日保管されます。マーケティング購読には登録されません。詳しくは",
+    "privacy notice": "プライバシーに関するお知らせ",
+    "for retention and deletion requests.": "保管および削除の依頼についてご確認ください。",
+    "PACKRIVO PACKAGING BRIEF": "PACKRIVO 包装ブリーフ",
+    "Packaging option": "包装オプション",
+    "Printing / finish": "印刷 / 仕上げ",
+    "Overall": "全体",
+    "Open Closed": "開 閉",
+    "Side Back": "側面背面",
+    "Interior Insert": "内装インサート",
+    "Material Finish": "材料の仕上げ",
+    "Structure": "構造",
+    "Bags & pouches: help me choose": "バッグ・ポーチ：選択を手伝ってください",
+    "Choose option": "オプションを選択",
+    "Add company details, material and other preferences (optional)": "会社情報、素材、その他の希望を追加（任意）",
+    "Reject": "拒否",
+    "Get a quote · MOQ 500": "見積もりを依頼 · 最低注文数500個"
+  },
+  "patterns": [
+    [
+      "^(\\d+) packaging options?$",
+      "包装オプション$1件"
+    ],
+    [
+      "^Selected option: (.+)$",
+      "選択したオプション: $1"
+    ],
+    [
+      "^(\\d+) matching choices\\. Your current selection stays available\\.$",
+      "$1件の候補が一致します。現在の選択は引き続き利用できます。"
+    ],
+    [
+      "^(\\d+) guides · Matches guide titles and opening text$",
+      "$1件のガイド · タイトルと冒頭文が一致します"
+    ],
+    [
+      "^(\\d+) packaging options · Page (\\d+) of (\\d+)$",
+      "$1件の包装オプション · ページ$2（全$3ページ）"
+    ],
+    [
+      "^(\\d+) products · Showing (\\d+)[–-](\\d+)(.*)$",
+      "$1件の商品 · $2～$3を表示$4"
+    ],
+    [
+      "^Category: (.+)$",
+      "カテゴリー：$1"
+    ],
+    [
+      "^Directions page (\\d+)$",
+      "案内ページ $1"
+    ],
+    [
+      "^Packaging option: (.+)$",
+      "包装オプション：$1"
+    ],
+    [
+      "^(.+): AI concept only$",
+      "$1：AIコンセプトのみ"
+    ],
+    [
+      "^Selected reference files \\((\\d+)\\): (.+)\\. Files are sent only when you choose Send My Packaging Request\\.$",
+      "選択した参考ファイル（$1）：$2。包装の問い合わせを送信するまで送信されません。"
+    ],
+    [
+      "^Your request has been received\\. Reference: (\\S+)\\. (\\d+) reference files? saved privately with this request\\. Packrivo will review the details and confirm the next step\\. This is not a quotation or order confirmation\\.$",
+      "お問い合わせを受け付けました。参照番号：$1。参考ファイル$2件をこの問い合わせとともに非公開で保存しました。Packrivoが確認して次の手順をご連絡します。見積もりや注文確定ではありません。"
+    ],
+    [
+      "^(.*)Retry with the same details or use the copy and contact options below\\.$",
+      "$1同じ内容で再試行するか、下のコピーと連絡方法をご利用ください。"
+    ],
+    [
+      "^The receiving status is not confirmed\\.(.*)$",
+      "受信状況は確認されていません。$1"
+    ]
+  ]
+}

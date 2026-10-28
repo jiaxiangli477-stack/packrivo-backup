@@ -133,7 +133,15 @@
     "Custom Round Tube Gift Boxes | Packrivo": "Runde Geschenkröhren | Packrivo",
     "Custom Jewelry Pouches with Logo | Packrivo": "Schmuckbeutel aus Stoff mit Logo | Packrivo",
     "Custom Thermoformed Insert Trays | Packrivo": "Tiefzieh-Einlegetabletts | Packrivo",
-    "Custom Windowed Folding Cartons | Packrivo": "Faltschachteln mit Sichtfenster | Packrivo"
+    "Custom Windowed Folding Cartons | Packrivo": "Faltschachteln mit Sichtfenster | Packrivo",
+    "Custom Jewelry Boxes & Packaging with Logo | Packrivo": "Schmuckschachteln & Verpackungen mit Logo | Packrivo",
+    "Custom Packaging: 134 Styles, MOQ 500 | Packrivo": "Verpackungen nach Maß: 134 Arten, MOQ 500 | Packrivo",
+    "Custom Jewelry Boxes: Rigid, Drawer, MOQ 500 | Packrivo": "Schmuckschachteln: Hartbox, Schublade, ab 500 | Packrivo",
+    "Custom Mailer Boxes & Shipping Boxes with Logo | Packrivo": "Versandschachteln & Versandkartons mit Logo | Packrivo",
+    "Custom Packaging Samples Before You Order | Packrivo": "Individuelle Verpackungsmuster vor Bestellung | Packrivo",
+    "Custom Packaging Guides for Small Brands | Packrivo": "Verpackungsratgeber für kleine Marken | Packrivo",
+    "About Packrivo | Custom Packaging from Shenzhen": "Über Packrivo | Verpackungen nach Maß aus Shenzhen",
+    "Request a Custom Packaging Quote | Packrivo": "Angebot für Verpackungen nach Maß anfragen | Packrivo"
   },
   "block": {
     "Custom Drawer Jewelry Boxes with Logo": "Schmuckschachteln mit Schublade und Logo",
@@ -461,7 +469,16 @@
     "Put it to work on a real pack": "Direkt auf eine echte Verpackung anwenden",
     "The quote builder applies these numbers to your size and quantity. We confirm the dieline before anything is produced.": "Der Angebotsrechner überträgt diese Werte auf Ihre Größe und Stückzahl. Die Stanzkontur bestätigen wir, bevor produziert wird.",
     "Build a quote": "Angebot erstellen",
-    "Supplier product photo, retouched (text and watermarks removed)": "Produktfoto des Lieferanten, retuschiert (Text und Wasserzeichen entfernt)"
+    "Supplier product photo, retouched (text and watermarks removed)": "Produktfoto des Lieferanten, retuschiert (Text und Wasserzeichen entfernt)",
+    "Custom jewelry boxes, pouches and gift boxes printed with your logo, from 500 pieces. Order a sample first and see live prices in the quote builder.": "Schmuckschachteln, Beutel und Geschenkboxen mit Ihrem Logo, ab 500 Stück. Erst ein Muster bestellen und Live-Preise im Angebotsrechner sehen.",
+    "Browse 134 custom packaging styles, from jewelry boxes and pouches to mailers and gift boxes, printed with your logo from 500 pieces. Get a price.": "134 Verpackungsvarianten nach Maß entdecken: Schmuckschachteln, Beutel, Versand- und Geschenkboxen, mit Ihrem Logo ab 500 Stück. Preis anfragen.",
+    "Custom jewelry boxes with your logo: rigid, magnetic, drawer and pillow styles for rings, necklaces and bracelets, from 500 pieces. Get a price.": "Schmuckschachteln mit Ihrem Logo: Hartboxen, Magnet-, Schubladen- und Kissenschachteln für Ringe, Ketten und Armbänder, ab 500 Stück. Preis anfragen.",
+    "Custom printed mailer boxes and shipping boxes for ecommerce brands, with your logo from 500 pieces. Get a price.": "Individuell bedruckte Versandschachteln und Versandkartons für E-Commerce-Marken, mit Ihrem Logo ab 500 Stück. Preis anfragen.",
+    "Order a sample of your custom box or pouch to check size, print and finish before your 500-piece order. Get a price.": "Bestellen Sie ein Muster Ihrer individuellen Schachtel oder Ihres Beutels. Prüfen Sie Größe, Druck und Veredelung vor Ihrer Bestellung über 500 Stück. Preis anfragen.",
+    "Practical guides for small brands on jewelry boxes, mailers and gift packaging: sizes, materials, costs and how to order.": "Praktische Ratgeber für kleine Marken zu Schmuckschachteln, Versandboxen und Geschenkverpackungen: Größen, Materialien, Kosten und Bestellung.",
+    "Packrivo helps small brands order custom packaging from Shenzhen, working with independent suppliers on samples, printing and shipping.": "Packrivo hilft kleinen Marken, individuelle Verpackungen aus Shenzhen zu bestellen, und arbeitet bei Mustern, Druck und Versand mit unabhängigen Lieferanten.",
+    "Request a packaging quotation with your product, dimensions, quantity and destination. MOQ 500 per design.": "Fordern Sie ein Verpackungsangebot mit Produkt, Abmessungen, Menge und Zielort an. Mindestmenge: 500 Stück pro Design.",
+    "Get a quote · MOQ 500": "Angebot anfragen · Mindestmenge 500"
   },
   "text": {
     "Custom Drawer Jewelry Boxes with Logo": "Schmuckschachteln mit Schublade und Logo",
@@ -655,7 +672,8 @@
     "Put it to work on a real pack": "Direkt auf eine echte Verpackung anwenden",
     "The quote builder applies these numbers to your size and quantity. We confirm the dieline before anything is produced.": "Der Angebotsrechner überträgt diese Werte auf Ihre Größe und Stückzahl. Die Stanzkontur bestätigen wir, bevor produziert wird.",
     "Build a quote": "Angebot erstellen",
-    "Supplier product photo, retouched (text and watermarks removed)": "Produktfoto des Lieferanten, retuschiert (Text und Wasserzeichen entfernt)"
+    "Supplier product photo, retouched (text and watermarks removed)": "Produktfoto des Lieferanten, retuschiert (Text und Wasserzeichen entfernt)",
+    "Get a quote · MOQ 500": "Angebot anfragen · Mindestmenge 500"
   },
   "attr": {
     "Custom drawer jewelry boxes for small brands, with logo options and a 500-piece minimum. Get a price.": "Schmuckschachteln mit Schublade für kleine Marken, mit Logo und ab 500 Stück. Preis anfragen.",
@@ -801,6 +819,14 @@
     "Custom Sheet Labels": "Etikettenbögen nach Maß",
     "Search": "Suchen",
     "Red drawer jewelry box with ribbon pull and insert": "Rote Schmuckschachtel mit Schublade, Bändchen und Einlage",
-    "Black and white lid-and-base jewelry boxes with inserts": "Schwarz-weiße Schmuckschachteln mit Deckel und Boden und Einlagen"
+    "Black and white lid-and-base jewelry boxes with inserts": "Schwarz-weiße Schmuckschachteln mit Deckel und Boden und Einlagen",
+    "Custom jewelry boxes, pouches and gift boxes printed with your logo, from 500 pieces. Order a sample first and see live prices in the quote builder.": "Schmuckschachteln, Beutel und Geschenkboxen mit Ihrem Logo, ab 500 Stück. Erst ein Muster bestellen und Live-Preise im Angebotsrechner sehen.",
+    "Browse 134 custom packaging styles, from jewelry boxes and pouches to mailers and gift boxes, printed with your logo from 500 pieces. Get a price.": "134 Verpackungsvarianten nach Maß entdecken: Schmuckschachteln, Beutel, Versand- und Geschenkboxen, mit Ihrem Logo ab 500 Stück. Preis anfragen.",
+    "Custom jewelry boxes with your logo: rigid, magnetic, drawer and pillow styles for rings, necklaces and bracelets, from 500 pieces. Get a price.": "Schmuckschachteln mit Ihrem Logo: Hartboxen, Magnet-, Schubladen- und Kissenschachteln für Ringe, Ketten und Armbänder, ab 500 Stück. Preis anfragen.",
+    "Custom printed mailer boxes and shipping boxes for ecommerce brands, with your logo from 500 pieces. Get a price.": "Individuell bedruckte Versandschachteln und Versandkartons für E-Commerce-Marken, mit Ihrem Logo ab 500 Stück. Preis anfragen.",
+    "Order a sample of your custom box or pouch to check size, print and finish before your 500-piece order. Get a price.": "Bestellen Sie ein Muster Ihrer individuellen Schachtel oder Ihres Beutels. Prüfen Sie Größe, Druck und Veredelung vor Ihrer Bestellung über 500 Stück. Preis anfragen.",
+    "Practical guides for small brands on jewelry boxes, mailers and gift packaging: sizes, materials, costs and how to order.": "Praktische Ratgeber für kleine Marken zu Schmuckschachteln, Versandboxen und Geschenkverpackungen: Größen, Materialien, Kosten und Bestellung.",
+    "Packrivo helps small brands order custom packaging from Shenzhen, working with independent suppliers on samples, printing and shipping.": "Packrivo hilft kleinen Marken, individuelle Verpackungen aus Shenzhen zu bestellen, und arbeitet bei Mustern, Druck und Versand mit unabhängigen Lieferanten.",
+    "Request a packaging quotation with your product, dimensions, quantity and destination. MOQ 500 per design.": "Fordern Sie ein Verpackungsangebot mit Produkt, Abmessungen, Menge und Zielort an. Mindestmenge: 500 Stück pro Design."
   }
 }

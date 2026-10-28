@@ -1,0 +1,154 @@
+[
+    {
+        "path": "/",
+        "id": 7,
+        "post_title": "Custom Packaging Sourcing for Small Brands",
+        "slug": "home",
+        "meta": {
+            "_packrivo_document_title": "Custom Packaging Sourcing for Small Brands | Packrivo",
+            "_packrivo_description": "Explore packaging styles for jewelry, candle and gift brands. Prepare specifications, compare supplier quotations and review samples with Packrivo.",
+            "_yoast_wpseo_title": "Custom Packaging Sourcing for Small Brands | Packrivo",
+            "_yoast_wpseo_metadesc": "Explore packaging styles for jewelry, candle and gift brands. Prepare specifications, compare supplier quotations and review samples with Packrivo.",
+            "_packrivo_native_page": "1",
+            "_wp_page_template": "",
+            "_r4_revision": ""
+        },
+        "stored_h1": [
+            "Custom packaging for jewelry, candles &amp; gifts."
+        ],
+        "content_sha256": "7dad5e26848cd13cb7d5f441dff5337641fad3b1daf11f52b6dae4ce033f56a7"
+    },
+    {
+        "path": "/products/",
+        "id": 8,
+        "post_title": "Custom Packaging Products",
+        "slug": "products",
+        "meta": {
+            "_packrivo_document_title": "Custom Packaging & Wholesale Sourcing Services | Packrivo",
+            "_packrivo_description": "Explore custom boxes, bags, labels and inserts with Packrivo in Shenzhen. Prepare your packaging brief and compare supplier proposals. MOQ 500 pieces per design.",
+            "_yoast_wpseo_title": "Custom Packaging: 134 Styles, MOQ 500 | Packrivo",
+            "_yoast_wpseo_metadesc": "Browse 134 packaging styles — boxes, bags, labels and inserts. MOQ 500 pieces per design; supplier quotes compared before you commit.",
+            "_packrivo_native_page": "1",
+            "_wp_page_template": "template-products-v4.php",
+            "_r4_revision": ""
+        },
+        "stored_h1": [
+            "Custom packaging products."
+        ],
+        "content_sha256": "1830472fd66330613548919eebb3020093822735a076164312762913ca931574"
+    },
+    {
+        "path": "/jewelry-boxes/",
+        "id": 9,
+        "post_title": "Custom Jewelry Boxes With Logo for Your Collection",
+        "slug": "jewelry-boxes",
+        "meta": {
+            "_packrivo_document_title": "Custom Jewelry Boxes & Pouches | Packrivo",
+            "_packrivo_description": "Custom jewelry boxes and pouches: compare openings, insert layouts and materials. Define your complete jewelry set before requesting a supplier quote.",
+            "_yoast_wpseo_title": "Custom Jewelry Boxes: Rigid, Drawer, MOQ 500 | Packrivo",
+            "_yoast_wpseo_metadesc": "Rigid, drawer and lid-and-base jewelry boxes with inserts. Reference prices US$0.10–0.98 per box at 500 pcs, ex-works Shenzhen.",
+            "_packrivo_native_page": "1",
+            "_wp_page_template": "",
+            "_r4_revision": ""
+        },
+        "stored_h1": [
+            "Custom Jewelry Boxes With Logo for Your Collection"
+        ],
+        "content_sha256": "c3abda750ca973461ffd2eaf2668e2d6f5f7a6ba4d0db6b59dcb22a2899d5356"
+    },
+    {
+        "path": "/mailer-boxes/",
+        "id": 21,
+        "post_title": "Shipping Boxes &amp; Mailers",
+        "slug": "mailer-boxes",
+        "meta": {
+            "_packrivo_document_title": "Custom Shipping Boxes & Mailers | Packrivo",
+            "_packrivo_description": "Compare custom shipping boxes, mailers and parcel bags for packed products. Specify contents, closure and destination before requesting supplier quotes.",
+            "_yoast_wpseo_title": "Custom Mailer Boxes: Printed, MOQ 500 | Packrivo",
+            "_yoast_wpseo_metadesc": "Corrugated mailer boxes and parcel bags with insert options. MOQ 500 per design; sizes and print reviewed on a sample before production.",
+            "_packrivo_native_page": "1",
+            "_wp_page_template": "",
+            "_r4_revision": ""
+        },
+        "stored_h1": [
+            "Shipping Boxes &amp; Mailers"
+        ],
+        "content_sha256": "ed0a6588556ca2eac1f47fbb730bcdd1187b9b4d9910d4df2963fce3442d686d"
+    },
+    {
+        "path": "/samples/",
+        "id": 2884,
+        "post_title": "Packaging Samples",
+        "slug": "samples",
+        "meta": {
+            "_packrivo_document_title": "Custom Packaging Samples: Structure & Finish | Packrivo",
+            "_packrivo_description": "Compare structural and printed packaging sample options. Confirm product fit, materials, artwork, fees and timing for your project before payment.",
+            "_yoast_wpseo_title": "Custom Packaging Samples: Structure & Finish | Packrivo",
+            "_yoast_wpseo_metadesc": "Compare structural and printed packaging sample options. Confirm product fit, materials, artwork, fees and timing for your project before payment.",
+            "_packrivo_native_page": "",
+            "_wp_page_template": "",
+            "_r4_revision": ""
+        },
+        "stored_h1": [
+            "Packaging samples"
+        ],
+        "content_sha256": "3d25d5ff860ec9c8e0a963fdaecbf6b1c28a1dae8d34d1220388396491076716"
+    },
+    {
+        "path": "/blog/",
+        "id": 53,
+        "post_title": "Blog",
+        "slug": "blog",
+        "meta": {
+            "_packrivo_document_title": "Packaging Sourcing Blog for Small Brands | Packrivo",
+            "_packrivo_description": "Read packaging sourcing articles for small brands on structures, materials, samples, supplier briefs and shipping. Search by question or browse by topic.",
+            "_yoast_wpseo_title": "Packaging Sourcing Blog for Small Brands | Packrivo",
+            "_yoast_wpseo_metadesc": "Read packaging sourcing articles for small brands on structures, materials, samples, supplier briefs and shipping. Search by question or browse by topic.",
+            "_packrivo_native_page": "1",
+            "_wp_page_template": "",
+            "_r4_revision": ""
+        },
+        "stored_h1": [
+            "Packaging decisions, explained clearly."
+        ],
+        "content_sha256": "8ac3137e7b1dd6470a993731d24a0ea1264e13dcd5ce01c7c56f05afb5a31486"
+    },
+    {
+        "path": "/about/",
+        "id": 39,
+        "post_title": "About Packrivo",
+        "slug": "about",
+        "meta": {
+            "_packrivo_document_title": "About Packrivo: Packaging Sourcing in Shenzhen, China",
+            "_packrivo_description": "Learn about Packrivo's Shenzhen packaging sourcing service, independent supplier roles and editorial method for jewelry, candle and gift brands.",
+            "_yoast_wpseo_title": "About Packrivo: Packaging Sourcing in Shenzhen, China",
+            "_yoast_wpseo_metadesc": "Learn about Packrivo's Shenzhen packaging sourcing service, independent supplier roles and editorial method for jewelry, candle and gift brands.",
+            "_packrivo_native_page": "1",
+            "_wp_page_template": "",
+            "_r4_revision": ""
+        },
+        "stored_h1": [
+            "About Packrivo"
+        ],
+        "content_sha256": "33344204e8b6bd95bf5252e77d8f32e8a679bf012ee1cf230604ba2f12a7809e"
+    },
+    {
+        "path": "/inquiry/",
+        "id": 49,
+        "post_title": "Get a Packaging Quote",
+        "slug": "inquiry",
+        "meta": {
+            "_packrivo_document_title": "Request a Custom Packaging Quote | Packrivo",
+            "_packrivo_description": "Request a packaging quotation with your product, dimensions, quantity and destination. MOQ 500 per design. Add artwork or reference files for Packrivo review.",
+            "_yoast_wpseo_title": "Request a Custom Packaging Quote | Packrivo",
+            "_yoast_wpseo_metadesc": "Request a packaging quotation with your product, dimensions, quantity and destination. MOQ 500 per design. Add artwork or reference files for Packrivo review.",
+            "_packrivo_native_page": "1",
+            "_wp_page_template": "",
+            "_r4_revision": ""
+        },
+        "stored_h1": [
+            "Get a packaging quote."
+        ],
+        "content_sha256": "6edbf51d61bf8a38c84460a3b6ba234d8caa26154f3da40e490efaf911d0921a"
+    }
+]

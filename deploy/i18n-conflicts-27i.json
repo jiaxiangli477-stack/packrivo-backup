@@ -1,0 +1,781 @@
+{
+  "ar": {
+    "server": [
+      {
+        "key": "Request a Custom Packaging Quote | Packrivo",
+        "production": [
+          {
+            "bucket": "title",
+            "value": "اطلب عرض سعر لتغليف مخصص | Packrivo"
+          },
+          {
+            "bucket": "block",
+            "value": "اطلب عرض سعر لتغليف مخصص | Packrivo"
+          },
+          {
+            "bucket": "attr",
+            "value": "اطلب عرض سعر لتغليف مخصص | Packrivo"
+          }
+        ],
+        "requested": [
+          {
+            "bucket": "title",
+            "value": "اطلب عرض سعر للتغليف المخصص | Packrivo"
+          }
+        ],
+        "resolution": "production retained"
+      },
+      {
+        "key": "Jewelry boxes",
+        "production": [
+          {
+            "bucket": "block",
+            "value": "صناديق مجوهرات"
+          }
+        ],
+        "requested": [
+          {
+            "bucket": "block",
+            "value": "علب مجوهرات"
+          },
+          {
+            "bucket": "text",
+            "value": "علب مجوهرات"
+          }
+        ],
+        "resolution": "production retained"
+      },
+      {
+        "key": "Gift boxes",
+        "production": [
+          {
+            "bucket": "block",
+            "value": "صناديق هدايا"
+          }
+        ],
+        "requested": [
+          {
+            "bucket": "block",
+            "value": "علب هدايا"
+          },
+          {
+            "bucket": "text",
+            "value": "علب هدايا"
+          }
+        ],
+        "resolution": "production retained"
+      },
+      {
+        "key": "Mailer boxes",
+        "production": [
+          {
+            "bucket": "block",
+            "value": "صناديق بريدية"
+          }
+        ],
+        "requested": [
+          {
+            "bucket": "block",
+            "value": "علب بريدية"
+          },
+          {
+            "bucket": "text",
+            "value": "علب بريدية"
+          }
+        ],
+        "resolution": "production retained"
+      },
+      {
+        "key": "Samples",
+        "production": [
+          {
+            "bucket": "block",
+            "value": "عينات"
+          }
+        ],
+        "requested": [
+          {
+            "bucket": "block",
+            "value": "العينات"
+          },
+          {
+            "bucket": "text",
+            "value": "العينات"
+          }
+        ],
+        "resolution": "production retained"
+      }
+    ],
+    "runtime": []
+  },
+  "de": {
+    "server": [
+      {
+        "key": "Custom Jewelry Boxes: Rigid, Drawer, MOQ 500 | Packrivo",
+        "production": [
+          {
+            "bucket": "title",
+            "value": "Schmuckschachteln mit Logo – ab 500 Stück"
+          }
+        ],
+        "requested": [
+          {
+            "bucket": "title",
+            "value": "Schmuckschachteln: Hartbox, Schublade, ab 500 | Packrivo"
+          }
+        ],
+        "resolution": "production retained"
+      },
+      {
+        "key": "Request a Custom Packaging Quote | Packrivo",
+        "production": [
+          {
+            "bucket": "title",
+            "value": "Kundenspezifisches Verpackungsangebot anfordern | Packrivo"
+          },
+          {
+            "bucket": "block",
+            "value": "Kundenspezifisches Verpackungsangebot anfordern | Packrivo"
+          },
+          {
+            "bucket": "attr",
+            "value": "Kundenspezifisches Verpackungsangebot anfordern | Packrivo"
+          }
+        ],
+        "requested": [
+          {
+            "bucket": "title",
+            "value": "Angebot für Verpackungen nach Maß anfragen | Packrivo"
+          }
+        ],
+        "resolution": "production retained"
+      },
+      {
+        "key": "Jewelry boxes",
+        "production": [
+          {
+            "bucket": "block",
+            "value": "Schmuckboxen"
+          },
+          {
+            "bucket": "text",
+            "value": "Schmuckboxen"
+          }
+        ],
+        "requested": [
+          {
+            "bucket": "block",
+            "value": "Schmuckschachteln"
+          },
+          {
+            "bucket": "text",
+            "value": "Schmuckschachteln"
+          }
+        ],
+        "resolution": "production retained"
+      },
+      {
+        "key": "Read the guide →",
+        "production": [
+          {
+            "bucket": "block",
+            "value": "Leitfaden lesen →"
+          }
+        ],
+        "requested": [
+          {
+            "bucket": "block",
+            "value": "Ratgeber lesen →"
+          },
+          {
+            "bucket": "text",
+            "value": "Ratgeber lesen →"
+          }
+        ],
+        "resolution": "production retained"
+      }
+    ],
+    "runtime": []
+  },
+  "es": {
+    "server": [
+      {
+        "key": "Request a Custom Packaging Quote | Packrivo",
+        "production": [
+          {
+            "bucket": "title",
+            "value": "Solicite una cotización de embalaje a medida | Packrivo"
+          },
+          {
+            "bucket": "block",
+            "value": "Solicite una cotización de embalaje a medida | Packrivo"
+          },
+          {
+            "bucket": "attr",
+            "value": "Solicite una cotización de embalaje a medida | Packrivo"
+          }
+        ],
+        "requested": [
+          {
+            "bucket": "title",
+            "value": "Solicita presupuesto de packaging | Packrivo"
+          }
+        ],
+        "resolution": "production retained"
+      },
+      {
+        "key": "Jewelry boxes",
+        "production": [
+          {
+            "bucket": "block",
+            "value": "Cajas de joyería"
+          },
+          {
+            "bucket": "text",
+            "value": "Cajas de joyería"
+          }
+        ],
+        "requested": [
+          {
+            "bucket": "block",
+            "value": "Cajas para joyería"
+          },
+          {
+            "bucket": "text",
+            "value": "Cajas para joyería"
+          }
+        ],
+        "resolution": "production retained"
+      },
+      {
+        "key": "Mailer boxes",
+        "production": [
+          {
+            "bucket": "block",
+            "value": "Cajas mailer"
+          },
+          {
+            "bucket": "text",
+            "value": "Cajas mailer"
+          }
+        ],
+        "requested": [
+          {
+            "bucket": "block",
+            "value": "Cajas de envío"
+          },
+          {
+            "bucket": "text",
+            "value": "Cajas de envío"
+          }
+        ],
+        "resolution": "production retained"
+      },
+      {
+        "key": "Read the guide →",
+        "production": [
+          {
+            "bucket": "block",
+            "value": "Lea la guía →"
+          }
+        ],
+        "requested": [
+          {
+            "bucket": "block",
+            "value": "Leer la guía →"
+          },
+          {
+            "bucket": "text",
+            "value": "Leer la guía →"
+          }
+        ],
+        "resolution": "production retained"
+      }
+    ],
+    "runtime": []
+  },
+  "fr": {
+    "server": [
+      {
+        "key": "Custom Jewelry Boxes: Rigid, Drawer, MOQ 500 | Packrivo",
+        "production": [
+          {
+            "bucket": "title",
+            "value": "Boîtes à bijoux personnalisées avec logo – dès 500 pièces"
+          }
+        ],
+        "requested": [
+          {
+            "bucket": "title",
+            "value": "Boîtes à bijoux : rigides, tiroir, MOQ 500 | Packrivo"
+          }
+        ],
+        "resolution": "production retained"
+      },
+      {
+        "key": "Request a Custom Packaging Quote | Packrivo",
+        "production": [
+          {
+            "bucket": "title",
+            "value": "Demandez un devis d'emballage personnalisé | Packrivo"
+          },
+          {
+            "bucket": "block",
+            "value": "Demandez un devis d'emballage personnalisé | Packrivo"
+          },
+          {
+            "bucket": "attr",
+            "value": "Demandez un devis d'emballage personnalisé | Packrivo"
+          }
+        ],
+        "requested": [
+          {
+            "bucket": "title",
+            "value": "Devis d’emballage personnalisé | Packrivo"
+          }
+        ],
+        "resolution": "production retained"
+      },
+      {
+        "key": "Mailer boxes",
+        "production": [
+          {
+            "bucket": "block",
+            "value": "Boîtes d’expédition"
+          },
+          {
+            "bucket": "text",
+            "value": "Boîtes d’expédition"
+          }
+        ],
+        "requested": [
+          {
+            "bucket": "block",
+            "value": "Boîtes d'expédition"
+          },
+          {
+            "bucket": "text",
+            "value": "Boîtes d'expédition"
+          }
+        ],
+        "resolution": "production retained"
+      }
+    ],
+    "runtime": []
+  },
+  "it": {
+    "server": [
+      {
+        "key": "Custom Jewelry Boxes: Rigid, Drawer, MOQ 500 | Packrivo",
+        "production": [
+          {
+            "bucket": "title",
+            "value": "Scatole per gioielli personalizzate con logo – da 500 pz"
+          }
+        ],
+        "requested": [
+          {
+            "bucket": "title",
+            "value": "Scatole per gioielli: rigide, a cassetto, MOQ 500 | Packrivo"
+          }
+        ],
+        "resolution": "production retained"
+      },
+      {
+        "key": "Request a Custom Packaging Quote | Packrivo",
+        "production": [
+          {
+            "bucket": "title",
+            "value": "Richiedi un preventivo per packaging personalizzato | Packrivo"
+          },
+          {
+            "bucket": "block",
+            "value": "Richiedi un preventivo per packaging personalizzato | Packrivo"
+          },
+          {
+            "bucket": "attr",
+            "value": "Richiedi un preventivo per packaging personalizzato | Packrivo"
+          }
+        ],
+        "requested": [
+          {
+            "bucket": "title",
+            "value": "Richiedi un preventivo per il packaging | Packrivo"
+          }
+        ],
+        "resolution": "production retained"
+      },
+      {
+        "key": "Mailer boxes",
+        "production": [
+          {
+            "bucket": "block",
+            "value": "Scatole mailer"
+          },
+          {
+            "bucket": "text",
+            "value": "Scatole mailer"
+          }
+        ],
+        "requested": [
+          {
+            "bucket": "block",
+            "value": "Scatole da spedizione"
+          },
+          {
+            "bucket": "text",
+            "value": "Scatole da spedizione"
+          }
+        ],
+        "resolution": "production retained"
+      }
+    ],
+    "runtime": []
+  },
+  "ja": {
+    "server": [
+      {
+        "key": "Request a Custom Packaging Quote | Packrivo",
+        "production": [
+          {
+            "bucket": "title",
+            "value": "カスタム包装の見積を依頼 | Packrivo"
+          },
+          {
+            "bucket": "block",
+            "value": "カスタム包装の見積を依頼 | Packrivo"
+          },
+          {
+            "bucket": "attr",
+            "value": "カスタム包装の見積を依頼 | Packrivo"
+          }
+        ],
+        "requested": [
+          {
+            "bucket": "title",
+            "value": "オリジナル包装の見積もり依頼 | Packrivo"
+          }
+        ],
+        "resolution": "production retained"
+      }
+    ],
+    "runtime": []
+  },
+  "ko": {
+    "server": [
+      {
+        "key": "Gift boxes",
+        "production": [
+          {
+            "bucket": "block",
+            "value": "기프트 박스"
+          }
+        ],
+        "requested": [
+          {
+            "bucket": "block",
+            "value": "선물 상자"
+          },
+          {
+            "bucket": "text",
+            "value": "선물 상자"
+          }
+        ],
+        "resolution": "production retained"
+      }
+    ],
+    "runtime": []
+  },
+  "nl": {
+    "server": [
+      {
+        "key": "Custom Jewelry Boxes: Rigid, Drawer, MOQ 500 | Packrivo",
+        "production": [
+          {
+            "bucket": "title",
+            "value": "Sieradendoos op maat met logo – vanaf 500 stuks"
+          }
+        ],
+        "requested": [
+          {
+            "bucket": "title",
+            "value": "Sieradendoosjes: hardbox, lade, MOQ 500 | Packrivo"
+          }
+        ],
+        "resolution": "production retained"
+      },
+      {
+        "key": "Request a Custom Packaging Quote | Packrivo",
+        "production": [
+          {
+            "bucket": "title",
+            "value": "Vraag een offerte voor Custom Packaging aan | Packrivo"
+          },
+          {
+            "bucket": "block",
+            "value": "Vraag een offerte voor Custom Packaging aan | Packrivo"
+          },
+          {
+            "bucket": "attr",
+            "value": "Vraag een offerte voor Custom Packaging aan | Packrivo"
+          }
+        ],
+        "requested": [
+          {
+            "bucket": "title",
+            "value": "Offerte voor verpakkingen op maat | Packrivo"
+          }
+        ],
+        "resolution": "production retained"
+      },
+      {
+        "key": "Samples",
+        "production": [
+          {
+            "bucket": "block",
+            "value": "Monsters"
+          },
+          {
+            "bucket": "text",
+            "value": "Monsters"
+          }
+        ],
+        "requested": [
+          {
+            "bucket": "block",
+            "value": "Stalen"
+          },
+          {
+            "bucket": "text",
+            "value": "Stalen"
+          }
+        ],
+        "resolution": "production retained"
+      }
+    ],
+    "runtime": []
+  },
+  "pt": {
+    "server": [
+      {
+        "key": "Request a Custom Packaging Quote | Packrivo",
+        "production": [
+          {
+            "bucket": "title",
+            "value": "Solicite uma cotação de embalagem personalizada | Packrivo"
+          },
+          {
+            "bucket": "block",
+            "value": "Solicite uma cotação de embalagem personalizada | Packrivo"
+          },
+          {
+            "bucket": "attr",
+            "value": "Solicite uma cotação de embalagem personalizada | Packrivo"
+          }
+        ],
+        "requested": [
+          {
+            "bucket": "title",
+            "value": "Peça um orçamento de embalagem | Packrivo"
+          }
+        ],
+        "resolution": "production retained"
+      },
+      {
+        "key": "Jewelry boxes",
+        "production": [
+          {
+            "bucket": "block",
+            "value": "Caixas de joias"
+          },
+          {
+            "bucket": "text",
+            "value": "Caixas de joias"
+          }
+        ],
+        "requested": [
+          {
+            "bucket": "block",
+            "value": "Caixas para joias"
+          },
+          {
+            "bucket": "text",
+            "value": "Caixas para joias"
+          }
+        ],
+        "resolution": "production retained"
+      },
+      {
+        "key": "Read the guide →",
+        "production": [
+          {
+            "bucket": "block",
+            "value": "Leia o guia →"
+          }
+        ],
+        "requested": [
+          {
+            "bucket": "block",
+            "value": "Ler o guia →"
+          },
+          {
+            "bucket": "text",
+            "value": "Ler o guia →"
+          }
+        ],
+        "resolution": "production retained"
+      }
+    ],
+    "runtime": []
+  },
+  "zh-CN": {
+    "server": [
+      {
+        "key": "Request a Custom Packaging Quote | Packrivo",
+        "production": [
+          {
+            "bucket": "title",
+            "value": "申请定制包装报价 | Packrivo"
+          },
+          {
+            "bucket": "block",
+            "value": "申请定制包装报价 | Packrivo"
+          },
+          {
+            "bucket": "attr",
+            "value": "申请定制包装报价 | Packrivo"
+          }
+        ],
+        "requested": [
+          {
+            "bucket": "title",
+            "value": "定制包装询价 | Packrivo"
+          }
+        ],
+        "resolution": "production retained"
+      },
+      {
+        "key": "Jewelry boxes",
+        "production": [
+          {
+            "bucket": "block",
+            "value": "珠宝盒"
+          },
+          {
+            "bucket": "text",
+            "value": "珠宝盒"
+          }
+        ],
+        "requested": [
+          {
+            "bucket": "block",
+            "value": "首饰盒"
+          },
+          {
+            "bucket": "text",
+            "value": "首饰盒"
+          }
+        ],
+        "resolution": "production retained"
+      },
+      {
+        "key": "Gift boxes",
+        "production": [
+          {
+            "bucket": "block",
+            "value": "礼品盒"
+          },
+          {
+            "bucket": "text",
+            "value": "礼品盒"
+          }
+        ],
+        "requested": [
+          {
+            "bucket": "block",
+            "value": "礼盒"
+          },
+          {
+            "bucket": "text",
+            "value": "礼盒"
+          }
+        ],
+        "resolution": "production retained"
+      },
+      {
+        "key": "Mailer boxes",
+        "production": [
+          {
+            "bucket": "block",
+            "value": "邮寄盒"
+          },
+          {
+            "bucket": "text",
+            "value": "邮寄盒"
+          }
+        ],
+        "requested": [
+          {
+            "bucket": "block",
+            "value": "快递盒"
+          },
+          {
+            "bucket": "text",
+            "value": "快递盒"
+          }
+        ],
+        "resolution": "production retained"
+      }
+    ],
+    "runtime": []
+  },
+  "zh-TW": {
+    "server": [
+      {
+        "key": "Request a Custom Packaging Quote | Packrivo",
+        "production": [
+          {
+            "bucket": "title",
+            "value": "索取客製化包裝報價 | Packrivo"
+          },
+          {
+            "bucket": "block",
+            "value": "索取客製化包裝報價 | Packrivo"
+          },
+          {
+            "bucket": "attr",
+            "value": "索取客製化包裝報價 | Packrivo"
+          }
+        ],
+        "requested": [
+          {
+            "bucket": "title",
+            "value": "客製包裝詢價 | Packrivo"
+          }
+        ],
+        "resolution": "production retained"
+      },
+      {
+        "key": "Mailer boxes",
+        "production": [
+          {
+            "bucket": "block",
+            "value": "郵寄盒"
+          }
+        ],
+        "requested": [
+          {
+            "bucket": "block",
+            "value": "飛機盒"
+          },
+          {
+            "bucket": "text",
+            "value": "飛機盒"
+          }
+        ],
+        "resolution": "production retained"
+      }
+    ],
+    "runtime": []
+  }
+}

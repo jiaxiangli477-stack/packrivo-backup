@@ -1,0 +1,29 @@
+services:
+  wp:
+    volumes:
+      - 'E:/破甲工作区/packrivo-backup/deploy/i18n-merged/paths.json:/var/www/html/wp-content/uploads/packrivo-i18n/paths.json:ro'
+      - 'E:/破甲工作区/packrivo-backup/deploy/i18n-merged/ar-js.json:/var/www/html/wp-content/uploads/packrivo-i18n/ar-js.json:ro'
+      - 'E:/破甲工作区/packrivo-backup/deploy/i18n-merged/de-js.json:/var/www/html/wp-content/uploads/packrivo-i18n/de-js.json:ro'
+      - 'E:/破甲工作区/packrivo-backup/deploy/i18n-merged/es-js.json:/var/www/html/wp-content/uploads/packrivo-i18n/es-js.json:ro'
+      - 'E:/破甲工作区/packrivo-backup/deploy/i18n-merged/fr-js.json:/var/www/html/wp-content/uploads/packrivo-i18n/fr-js.json:ro'
+      - 'E:/破甲工作区/packrivo-backup/deploy/i18n-merged/it-js.json:/var/www/html/wp-content/uploads/packrivo-i18n/it-js.json:ro'
+      - 'E:/破甲工作区/packrivo-backup/deploy/i18n-merged/ja-js.json:/var/www/html/wp-content/uploads/packrivo-i18n/ja-js.json:ro'
+      - 'E:/破甲工作区/packrivo-backup/deploy/i18n-merged/ko-js.json:/var/www/html/wp-content/uploads/packrivo-i18n/ko-js.json:ro'
+      - 'E:/破甲工作区/packrivo-backup/deploy/i18n-merged/nl-js.json:/var/www/html/wp-content/uploads/packrivo-i18n/nl-js.json:ro'
+      - 'E:/破甲工作区/packrivo-backup/deploy/i18n-merged/pt-js.json:/var/www/html/wp-content/uploads/packrivo-i18n/pt-js.json:ro'
+      - 'E:/破甲工作区/packrivo-backup/deploy/i18n-merged/zh-CN-js.json:/var/www/html/wp-content/uploads/packrivo-i18n/zh-CN-js.json:ro'
+      - 'E:/破甲工作区/packrivo-backup/deploy/i18n-merged/zh-TW-js.json:/var/www/html/wp-content/uploads/packrivo-i18n/zh-TW-js.json:ro'
+  cli:
+    volumes:
+      - 'E:/破甲工作区/packrivo-backup/deploy/i18n-merged/paths.json:/var/www/html/wp-content/uploads/packrivo-i18n/paths.json:ro'
+      - 'E:/破甲工作区/packrivo-backup/deploy/i18n-merged/ar-js.json:/var/www/html/wp-content/uploads/packrivo-i18n/ar-js.json:ro'
+      - 'E:/破甲工作区/packrivo-backup/deploy/i18n-merged/de-js.json:/var/www/html/wp-content/uploads/packrivo-i18n/de-js.json:ro'
+      - 'E:/破甲工作区/packrivo-backup/deploy/i18n-merged/es-js.json:/var/www/html/wp-content/uploads/packrivo-i18n/es-js.json:ro'
+      - 'E:/破甲工作区/packrivo-backup/deploy/i18n-merged/fr-js.json:/var/www/html/wp-content/uploads/packrivo-i18n/fr-js.json:ro'
+      - 'E:/破甲工作区/packrivo-backup/deploy/i18n-merged/it-js.json:/var/www/html/wp-content/uploads/packrivo-i18n/it-js.json:ro'
+      - 'E:/破甲工作区/packrivo-backup/deploy/i18n-merged/ja-js.json:/var/www/html/wp-content/uploads/packrivo-i18n/ja-js.json:ro'
+      - 'E:/破甲工作区/packrivo-backup/deploy/i18n-merged/ko-js.json:/var/www/html/wp-content/uploads/packrivo-i18n/ko-js.json:ro'
+      - 'E:/破甲工作区/packrivo-backup/deploy/i18n-merged/nl-js.json:/var/www/html/wp-content/uploads/packrivo-i18n/nl-js.json:ro'
+      - 'E:/破甲工作区/packrivo-backup/deploy/i18n-merged/pt-js.json:/var/www/html/wp-content/uploads/packrivo-i18n/pt-js.json:ro'
+      - 'E:/破甲工作区/packrivo-backup/deploy/i18n-merged/zh-CN-js.json:/var/www/html/wp-content/uploads/packrivo-i18n/zh-CN-js.json:ro'
+      - 'E:/破甲工作区/packrivo-backup/deploy/i18n-merged/zh-TW-js.json:/var/www/html/wp-content/uploads/packrivo-i18n/zh-TW-js.json:ro'

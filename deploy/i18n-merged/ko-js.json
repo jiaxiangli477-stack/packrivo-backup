@@ -1,0 +1,181 @@
+{
+  "exact": {
+    "Menu": "메뉴",
+    "Close": "닫기",
+    "Close image ×": "이미지 닫기 ×",
+    "Switch color theme": "색상 테마 전환",
+    "Open navigation menu": "탐색 메뉴 열기",
+    "Close navigation menu": "탐색 메뉴 닫기",
+    "Presentation boxes and insert options": "프레젠테이션 박스 및 인서트 옵션",
+    "AI concept of a forest-green drawer jewelry box with a separate ivory insert": "별도의 아이보리 인서트가 있는 포레스트 그린 서랍형 주얼리 박스의 AI 콘셉트",
+    "Folding formats and gift presentation": "접이식 형태와 선물 연출",
+    "AI concept of an ivory folding gift carton beside its flat structure": "평면 구조를 함께 보여주는 아이보리 접이식 선물 상자의 AI 콘셉트",
+    "Box, insert and packed size together": "박스, 인서트, 포장 크기를 함께 확인",
+    "AI concept of an open kraft mailer with a fitted insert": "맞춤 인서트가 있는 열린 크라프트 메일러의 AI 콘셉트",
+    "Roll or sheet formats for packaging": "롤 또는 시트 형태 포장",
+    "AI concept comparing blank roll and sheet packaging labels": "무지 롤 라벨과 시트 라벨을 비교하는 AI 콘셉트",
+    "Fit and presentation inside an outer pack": "외부 포장 안의 맞춤 및 연출",
+    "AI concept of paperboard, corrugated and molded-pulp inserts": "판지, 골판지, 성형 펄프 인서트의 AI 콘셉트",
+    "AI styled concept of green drawer boxes with ivory trays": "아이보리 트레이가 있는 그린 서랍형 박스의 AI 콘셉트",
+    "Separate AI drawer-box concept exploration, not the same physical product": "별도로 검토한 AI 서랍형 박스 콘셉트이며 같은 실물 제품이 아닙니다",
+    "Packaging concept enlarged view": "확대한 포장 콘셉트",
+    "Supplier and physical sample review required.": "공급업체 검토와 실물 샘플 확인이 필요합니다.",
+    "Review or edit material & finish below ↓": "아래 소재와 마감을 검토하거나 수정하세요 ↓",
+    "No material or finish specified.": "소재 또는 마감이 지정되지 않았습니다.",
+    "Your reference choices": "선택한 참고 사항",
+    "Packaging option changed. Review your material, print and notes for this new selection.": "포장 옵션이 변경되었습니다. 새 선택에 맞게 소재, 인쇄, 메모를 검토하세요.",
+    "Enter a value, or say not sure where appropriate.": "값을 입력하거나 해당하는 경우 미정이라고 적어 주세요.",
+    "Prepared for review. Subject to feasibility and sample review.": "검토용으로 준비되었습니다. 실행 가능성 및 샘플 검토가 필요합니다.",
+    "Copied to your clipboard. Copying does not send another request.": "클립보드에 복사했습니다. 복사해도 추가 요청은 전송되지 않습니다.",
+    "Clipboard access is unavailable. Select the summary text or download the file instead.": "클립보드에 접근할 수 없습니다. 요약 텍스트를 선택하거나 파일을 다운로드하세요.",
+    "Contact options": "접촉부 옵션",
+    "Forest-green sleeve with an ivory tray. AI-assisted colour concept.": "아이보리 트레이가 있는 포레스트 그린 슬리브. AI 지원 색상 콘셉트입니다.",
+    "The same drawer-box concept in warm ivory. Actual colour needs a physical reference.": "따뜻한 아이보리 색상의 동일한 서랍형 박스 콘셉트입니다. 실제 색상은 실물 샘플로 확인해야 합니다.",
+    "Illustrative YOUR BRAND placement on the sleeve, with a gold-foil appearance. Artwork and process need review.": "슬리브에 금박 느낌의 YOUR BRAND를 배치한 예시입니다. 아트워크와 공정을 검토해야 합니다.",
+    "Filter by category": "카테고리별 필터",
+    "Chat with Packrivo on WhatsApp (opens a new tab)": "WhatsApp에서 Packrivo와 채팅 (새 탭에서 열림)",
+    "Get a Quote": "견적 받기",
+    "e.g. rigid board and removable insert": "예: 경질 판지와 분리형 인서트",
+    "e.g. rigid board and magnetic flap": "예: 경질 판지와 자석 플랩",
+    "e.g. printed wrap and foil logo": "예: 인쇄 랩과 포일 로고",
+    "e.g. full-color print and foil logo": "예: 풀컬러 인쇄와 포일 로고",
+    "Have a dieline or artwork? Upload it here. Files are sent only after you review the brief and choose Send My Packaging Request.": "다이라인 또는 아트워크를 업로드하세요. 브리프를 검토하고 포장 요청 보내기를 선택한 후에만 파일이 전송됩니다.",
+    "Review the summary before sending. Packrivo stores submitted requests for 180 days so a person can review and respond. The details stay on this device until you select Send My Packaging Request.": "보내기 전에 요약을 검토하세요. Packrivo는 담당자가 검토하고 답변할 수 있도록 제출 요청을 180일 보관합니다. 포장 요청 보내기를 선택하기 전까지 세부 정보는 이 기기에 남아 있습니다.",
+    "Send My Packaging Request": "포장 요청 보내기",
+    "Send New Packaging Request": "새 포장 요청 보내기",
+    "Contact Packrivo": "Packrivo에 연락하십시오",
+    "Contact name": "담당자 이름",
+    "Company": "회사",
+    "Company website": "회사 웹사이트",
+    "No reference files selected.": "참고 파일이 선택되지 않았습니다.",
+    "Choose up to three reference files.": "참고 파일을 최대 3개까지 선택하세요.",
+    "Each file must contain data and be no larger than 2 MiB.": "각 파일에는 데이터가 있어야 하며 2 MiB 이하여야 합니다.",
+    "Reference files must total no more than 5 MiB.": "참고 파일의 총 크기는 5 MiB 이하여야 합니다.",
+    "A reference file could not be read. Please select it again.": "참고 파일을 읽을 수 없습니다. 다시 선택해 주세요.",
+    "Review the details below before sending.": "보내기 전에 아래 세부 정보를 검토하세요.",
+    "Your request was not sent. Check the reference files.": "요청이 전송되지 않았습니다. 참고 파일을 확인하세요.",
+    "The request could not be prepared. Your details are still here; use the copy and contact options below.": "요청을 준비하지 못했습니다. 입력 내용은 남아 있습니다. 아래의 복사 및 연락 옵션을 이용하세요.",
+    "Sending your request…": "요청을 보내는 중…",
+    "The earlier request has expired. Review the details and selected files. Choose Send New Packaging Request only if you want to create a new request. Nothing has been resent.": "이전 요청이 만료되었습니다. 세부 정보와 선택 파일을 검토하세요. 새 요청을 만들 때만 새 포장 요청 보내기를 선택하세요. 다시 전송되지 않았습니다.",
+    "Your request was not saved. Please correct the highlighted fields and review your brief again.": "요청이 저장되지 않았습니다. 강조 표시된 필드를 수정하고 브리프를 다시 검토하세요.",
+    "Request saved": "요청 저장됨",
+    "Your request was saved. The summary below is for your records.": "요청이 저장되었습니다. 아래 요약은 기록용입니다.",
+    "Scrollable packaging comparison table": "가로 스크롤 가능한 포장 비교 표",
+    "Scroll horizontally if columns extend beyond the view.": "열이 화면을 벗어나면 가로로 스크롤하세요.",
+    "Clear search": "검색 지우기",
+    "Share or export": "공유 또는 내보내기",
+    "Labels": "라벨",
+    "All products": "모든 제품",
+    "Matching packaging guides": "일치하는 포장 가이드",
+    "Product catalogue pages": "제품 카탈로그 페이지",
+    "Filter products by category": "카테고리별 제품 필터",
+    "Categories": "카테고리",
+    "Categories · All products": "카테고리 · 모든 제품",
+    "No packaging options match these filters.": "필터와 일치하는 포장 옵션이 없습니다.",
+    "Clear search and category": "검색 및 카테고리 지우기",
+    "Refine your search to narrow these guide results.": "검색을 구체화하여 가이드 결과를 좁히세요.",
+    "No guides match this search. Try another term or browse the journal.": "일치하는 가이드가 없습니다. 다른 용어를 시도하거나 저널을 둘러보세요.",
+    "Browse all packaging articles": "모든 포장 관련 글 보기",
+    "All packaging options": "모든 포장 옵션",
+    "Find or change packaging option": "포장 옵션 찾기 또는 변경",
+    "Find a packaging option": "포장 옵션 찾기",
+    "Search by name or structure": "이름 또는 구조로 검색",
+    "Change option": "옵션 변경",
+    "No packaging option selected yet.": "아직 포장 옵션을 선택하지 않았습니다.",
+    "That packaging option is not available. Choose another option, or select “Not sure yet”.": "해당 포장 옵션은 사용할 수 없습니다. 다른 옵션 또는 아직 잘 모르겠음을 선택하세요.",
+    "Concept render": "컨셉 렌더",
+    "Open WhatsApp ↗": "WhatsApp 열기 ↗",
+    "Read the article ↗": "기사 읽기 ↗",
+    "Jewelry boxes": "주얼리 박스",
+    "Foldable gift boxes": "접이식 선물 상자",
+    "Mailer boxes": "메일러 박스",
+    "Inserts": "인서트",
+    "Packaging categories": "포장 카테고리",
+    "Other guides": "기타 가이드",
+    "Your name": "귀하의 이름",
+    "Approximate dimensions": "대략적인 치수",
+    "Expected quantity": "예상 수량",
+    "Destination": "배송지",
+    "Work email": "업무용 이메일",
+    "Material": "소재",
+    "Target date": "목표 날짜",
+    "Notes": "메모",
+    "Not specified": "지정되지 않음",
+    "Search narrows the choices below; your current selection stays available.": "검색하면 아래 선택지가 좁혀집니다. 현재 선택은 계속 사용할 수 있습니다.",
+    "Examples help you write a brief; they are not product specifications. Include a unit and state whether you measured the product, usable inside space or box exterior.": "예시는 브리프 작성에 도움이 되며 제품 사양이 아닙니다. 단위와 제품, 사용 가능한 내부 공간 또는 박스 외부 중 측정 대상을 표시하세요.",
+    "Submission sends the reviewed fields and any selected reference files to Packrivo for inquiry handling. Reference files are stored privately with the request for up to 180 days. No marketing subscription is added. See our": "제출하면 검토한 항목과 선택한 참고 파일이 문의 처리를 위해 Packrivo로 전송됩니다. 참고 파일은 요청과 함께 비공개로 최대 180일 보관됩니다. 마케팅 구독은 추가되지 않습니다. 자세한 내용은",
+    "privacy notice": "개인정보 안내",
+    "for retention and deletion requests.": "보관 및 삭제 요청에 관한 내용을 확인하세요.",
+    "PACKRIVO PACKAGING BRIEF": "PACKRIVO 포장 브리프",
+    "Packaging option": "포장 옵션",
+    "Printing / finish": "인쇄 / 마감",
+    "Overall": "전체",
+    "Open Closed": "열림 닫힘",
+    "Side Back": "측면 후면",
+    "Interior Insert": "내부 인서트",
+    "Material Finish": "재질 마감",
+    "Structure": "구조",
+    "Bags & pouches: help me choose": "가방 및 파우치: 선택을 도와주세요",
+    "Choose option": "옵션 선택",
+    "Add company details, material and other preferences (optional)": "회사 정보, 소재 및 기타 요청 사항 추가(선택)",
+    "Get a quote · MOQ 500": "견적 요청 · 최소 주문 500개"
+  },
+  "patterns": [
+    [
+      "^(\\d+) packaging options?$",
+      "포장 옵션 $1개"
+    ],
+    [
+      "^Selected option: (.+)$",
+      "선택한 옵션: $1"
+    ],
+    [
+      "^(\\d+) matching choices\\. Your current selection stays available\\.$",
+      "일치하는 항목 $1개입니다. 현재 선택은 계속 사용할 수 있습니다."
+    ],
+    [
+      "^(\\d+) guides · Matches guide titles and opening text$",
+      "가이드 $1개 · 제목 및 도입 문구 일치"
+    ],
+    [
+      "^(\\d+) packaging options · Page (\\d+) of (\\d+)$",
+      "포장 옵션 $1개 · $2페이지 / 총 $3페이지"
+    ],
+    [
+      "^(\\d+) products · Showing (\\d+)[–-](\\d+)(.*)$",
+      "$1개 제품 · $2–$3 표시$4"
+    ],
+    [
+      "^Category: (.+)$",
+      "카테고리: $1"
+    ],
+    [
+      "^Directions page (\\d+)$",
+      "안내 페이지 $1"
+    ],
+    [
+      "^Packaging option: (.+)$",
+      "포장 옵션: $1"
+    ],
+    [
+      "^(.+): AI concept only$",
+      "$1: AI 콘셉트 전용"
+    ],
+    [
+      "^Selected reference files \\((\\d+)\\): (.+)\\. Files are sent only when you choose Send My Packaging Request\\.$",
+      "선택한 참고 파일 ($1): $2. 포장 요청 보내기를 선택할 때만 전송됩니다."
+    ],
+    [
+      "^Your request has been received\\. Reference: (\\S+)\\. (\\d+) reference files? saved privately with this request\\. Packrivo will review the details and confirm the next step\\. This is not a quotation or order confirmation\\.$",
+      "요청이 접수되었습니다. 참조 번호: $1. 참고 파일 $2개가 요청과 함께 비공개로 저장되었습니다. Packrivo가 검토 후 다음 단계를 확인합니다. 견적 또는 주문 확인이 아닙니다."
+    ],
+    [
+      "^(.*)Retry with the same details or use the copy and contact options below\\.$",
+      "$1같은 세부 정보로 다시 시도하거나 아래 복사 및 연락 옵션을 이용하세요."
+    ],
+    [
+      "^The receiving status is not confirmed\\.(.*)$",
+      "수신 상태가 확인되지 않았습니다.$1"
+    ]
+  ]
+}

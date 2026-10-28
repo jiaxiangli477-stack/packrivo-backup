@@ -1,0 +1,14 @@
+import fs from 'node:fs';import path from 'node:path';import assert from 'node:assert/strict';import crypto from 'node:crypto';import {fileURLToPath} from 'node:url';import {LANGS} from '../product-buyers-27g/merge-i18n.mjs';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..'),base=process.argv[2],jsBase=process.argv[3],pathsBase=process.argv[4];if(!base||!jsBase||!pathsBase)throw new Error('Pass dict baseline, runtime baseline and path baseline.');
+const read=f=>JSON.parse(fs.readFileSync(f,'utf8').replace(/^\uFEFF/,'')),sha=f=>crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex');
+const inputFile=path.join(root,'dsh-out/hubs-27i.json'),input=read(inputFile),rows=input.filter(r=>r.path),ui=input.find(r=>r.ui),backup=read(path.join(root,'deploy/rollback-27i.json'));
+assert.equal(sha(inputFile),backup.input_hash,'Approved copy changed');
+const prior=read(path.join(root,'scripts/hubs-27i/prior-i18n-27g.json'));let production=0,runtime=0,source=0;
+for(const lang of LANGS){const before=read(path.join(base,lang+'-dict.json')),merged=read(path.join(root,'deploy/i18n-merged',lang+'-dict.json')),delta=read(path.join(root,'i18n-delta',lang+'-dict.json'));
+ for(const bucket of ['title','block','text','attr']){for(const [k,v] of Object.entries(before[bucket])){assert.equal(merged[bucket][k],v);production++;}for(const [k,v] of Object.entries(prior[lang][bucket]))assert.equal(delta[bucket][k],v);}
+ for(const r of rows){assert.equal(delta.title[r.title],r.i18n[lang].title);for(const b of ['block','attr'])assert.equal(delta[b][r.description],r.i18n[lang].description);source+=3;}
+ for(const b of ['block','text'])assert.equal(delta[b][ui.ui],ui.i18n[lang]);
+ const js=read(path.join(jsBase,lang+'-js.json')),after=read(path.join(root,'deploy/i18n-merged',lang+'-js.json'));for(const [k,v] of Object.entries(js.exact)){assert.equal(after.exact[k],v);runtime++;}for(const [k,v] of Object.entries(js))if(k!=='exact')assert.deepEqual(after[k],v);assert.equal(after.exact[ui.ui],ui.i18n[lang]);
+}
+const beforePaths=read(pathsBase),afterPaths=read(path.join(root,'deploy/i18n-merged/paths.json'));assert.deepEqual(afterPaths.slice(0,beforePaths.length),beforePaths);for(const r of rows)assert(afterPaths.includes(r.path));assert.deepEqual(afterPaths.filter(p=>!beforePaths.includes(p)),['/blog/']);
+const result={approvedInputUnchanged:true,hubTranslationChecks:source,productionServerValuesPreserved:production,productionRuntimeValuesPreserved:runtime,runtimeButtonLanguages:LANGS.length,pathsBefore:beforePaths.length,pathsAfter:afterPaths.length};fs.writeFileSync(path.join(root,'deploy/verification-27i/merge-audit.json'),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));console.log('PASS: approved hub translations, baseline values, runtime patterns and path whitelist preserved');

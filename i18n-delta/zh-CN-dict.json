@@ -133,7 +133,15 @@
     "Custom Round Tube Gift Boxes | Packrivo": "定制圆形纸管礼盒 | Packrivo",
     "Custom Jewelry Pouches with Logo | Packrivo": "定制布质首饰袋 可印 logo | Packrivo",
     "Custom Thermoformed Insert Trays | Packrivo": "定制吸塑内托托盘 | Packrivo",
-    "Custom Windowed Folding Cartons | Packrivo": "定制开窗折叠盒 | Packrivo"
+    "Custom Windowed Folding Cartons | Packrivo": "定制开窗折叠盒 | Packrivo",
+    "Custom Jewelry Boxes & Packaging with Logo | Packrivo": "定制首饰盒与包装，可印标志 | Packrivo",
+    "Custom Packaging: 134 Styles, MOQ 500 | Packrivo": "定制包装：134种款式，500件起订 | Packrivo",
+    "Custom Jewelry Boxes: Rigid, Drawer, MOQ 500 | Packrivo": "定制首饰盒：精装、抽屉，500件起订 | Packrivo",
+    "Custom Mailer Boxes & Shipping Boxes with Logo | Packrivo": "定制快递盒与运输箱，可印标志 | Packrivo",
+    "Custom Packaging Samples Before You Order | Packrivo": "下单前先看定制包装样品 | Packrivo",
+    "Custom Packaging Guides for Small Brands | Packrivo": "小品牌定制包装指南 | Packrivo",
+    "About Packrivo | Custom Packaging from Shenzhen": "关于 Packrivo | 来自深圳的定制包装",
+    "Request a Custom Packaging Quote | Packrivo": "定制包装询价 | Packrivo"
   },
   "block": {
     "Custom Drawer Jewelry Boxes with Logo": "定制抽屉式首饰盒，可印标志",
@@ -461,7 +469,16 @@
     "Put it to work on a real pack": "用到真实包装上",
     "The quote builder applies these numbers to your size and quantity. We confirm the dieline before anything is produced.": "报价器会把这些数据套到你的尺寸与数量上。正式生产前我们会先确认刀模。",
     "Build a quote": "生成报价",
-    "Supplier product photo, retouched (text and watermarks removed)": "供应商产品图，已修图（去除文字与水印）"
+    "Supplier product photo, retouched (text and watermarks removed)": "供应商产品图，已修图（去除文字与水印）",
+    "Custom jewelry boxes, pouches and gift boxes printed with your logo, from 500 pieces. Order a sample first and see live prices in the quote builder.": "定制首饰盒、首饰袋和礼盒，可印您的标志，500件起订。先订样品，并通过报价器查看实时价格。",
+    "Browse 134 custom packaging styles, from jewelry boxes and pouches to mailers and gift boxes, printed with your logo from 500 pieces. Get a price.": "浏览134种定制包装，从首饰盒、首饰袋到快递盒和礼盒，可印您的标志，500件起订。欢迎询价。",
+    "Custom jewelry boxes with your logo: rigid, magnetic, drawer and pillow styles for rings, necklaces and bracelets, from 500 pieces. Get a price.": "可印您标志的定制首饰盒，包含精装、磁吸、抽屉和枕头盒款式，适合戒指、项链和手链，500件起订。欢迎询价。",
+    "Custom printed mailer boxes and shipping boxes for ecommerce brands, with your logo from 500 pieces. Get a price.": "面向电商品牌的定制印刷快递盒与运输箱，可印您的标志，500件起订。欢迎询价。",
+    "Order a sample of your custom box or pouch to check size, print and finish before your 500-piece order. Get a price.": "先订定制盒或包装袋样品，在下单500件前检查尺寸、印刷和表面处理。欢迎询价。",
+    "Practical guides for small brands on jewelry boxes, mailers and gift packaging: sizes, materials, costs and how to order.": "为小品牌提供首饰盒、快递盒和礼品包装的实用指南，涵盖尺寸、材料、成本及下单方法。",
+    "Packrivo helps small brands order custom packaging from Shenzhen, working with independent suppliers on samples, printing and shipping.": "Packrivo帮助小品牌订购来自深圳的定制包装，与独立供应商合作推进打样、印刷和运输。",
+    "Request a packaging quotation with your product, dimensions, quantity and destination. MOQ 500 per design.": "提供您的产品、尺寸、数量和目的地，获取包装报价。每款设计起订500件。",
+    "Get a quote · MOQ 500": "获取报价 · 起订量500件"
   },
   "text": {
     "Custom Drawer Jewelry Boxes with Logo": "定制抽屉式首饰盒，可印标志",
@@ -655,7 +672,8 @@
     "Put it to work on a real pack": "用到真实包装上",
     "The quote builder applies these numbers to your size and quantity. We confirm the dieline before anything is produced.": "报价器会把这些数据套到你的尺寸与数量上。正式生产前我们会先确认刀模。",
     "Build a quote": "生成报价",
-    "Supplier product photo, retouched (text and watermarks removed)": "供应商产品图，已修图（去除文字与水印）"
+    "Supplier product photo, retouched (text and watermarks removed)": "供应商产品图，已修图（去除文字与水印）",
+    "Get a quote · MOQ 500": "获取报价 · 起订量500件"
   },
   "attr": {
     "Custom drawer jewelry boxes for small brands, with logo options and a 500-piece minimum. Get a price.": "适合小品牌的抽屉式首饰盒，可选印标志，每款起订500件。欢迎询价。",
@@ -801,6 +819,14 @@
     "Custom Sheet Labels": "定制片装标签",
     "Search": "搜索",
     "Red drawer jewelry box with ribbon pull and insert": "红色抽屉式首饰盒，配丝带拉手与内托",
-    "Black and white lid-and-base jewelry boxes with inserts": "黑白天地盖首饰盒，配内托"
+    "Black and white lid-and-base jewelry boxes with inserts": "黑白天地盖首饰盒，配内托",
+    "Custom jewelry boxes, pouches and gift boxes printed with your logo, from 500 pieces. Order a sample first and see live prices in the quote builder.": "定制首饰盒、首饰袋和礼盒，可印您的标志，500件起订。先订样品，并通过报价器查看实时价格。",
+    "Browse 134 custom packaging styles, from jewelry boxes and pouches to mailers and gift boxes, printed with your logo from 500 pieces. Get a price.": "浏览134种定制包装，从首饰盒、首饰袋到快递盒和礼盒，可印您的标志，500件起订。欢迎询价。",
+    "Custom jewelry boxes with your logo: rigid, magnetic, drawer and pillow styles for rings, necklaces and bracelets, from 500 pieces. Get a price.": "可印您标志的定制首饰盒，包含精装、磁吸、抽屉和枕头盒款式，适合戒指、项链和手链，500件起订。欢迎询价。",
+    "Custom printed mailer boxes and shipping boxes for ecommerce brands, with your logo from 500 pieces. Get a price.": "面向电商品牌的定制印刷快递盒与运输箱，可印您的标志，500件起订。欢迎询价。",
+    "Order a sample of your custom box or pouch to check size, print and finish before your 500-piece order. Get a price.": "先订定制盒或包装袋样品，在下单500件前检查尺寸、印刷和表面处理。欢迎询价。",
+    "Practical guides for small brands on jewelry boxes, mailers and gift packaging: sizes, materials, costs and how to order.": "为小品牌提供首饰盒、快递盒和礼品包装的实用指南，涵盖尺寸、材料、成本及下单方法。",
+    "Packrivo helps small brands order custom packaging from Shenzhen, working with independent suppliers on samples, printing and shipping.": "Packrivo帮助小品牌订购来自深圳的定制包装，与独立供应商合作推进打样、印刷和运输。",
+    "Request a packaging quotation with your product, dimensions, quantity and destination. MOQ 500 per design.": "提供您的产品、尺寸、数量和目的地，获取包装报价。每款设计起订500件。"
   }
 }

@@ -32,6 +32,40 @@ function pkv4_menus()
 }
 add_action('after_setup_theme', 'pkv4_menus');
 
+/** Metadata-only projection for the eight approved hub pages; never changes H1/body. */
+function pkv4_hub_metadata_id()
+{
+    if (is_front_page()) return (int) get_option('page_on_front');
+    if (is_home()) return (int) get_option('page_for_posts');
+    if (!is_singular('page')) return 0;
+    $id = get_queried_object_id();
+    return in_array(get_page_uri($id), ['products','jewelry-boxes','mailer-boxes','samples','blog','about','inquiry'], true) ? $id : 0;
+}
+
+function pkv4_hub_document_title($title)
+{
+    $id = pkv4_hub_metadata_id();
+    $value = $id ? get_post_meta($id, '_packrivo_document_title', true) : '';
+    return is_string($value) && $value !== '' ? html_entity_decode($value, ENT_QUOTES | ENT_HTML5, 'UTF-8') : $title;
+}
+add_filter('pre_get_document_title', 'pkv4_hub_document_title', 1100);
+add_filter('wpseo_title', 'pkv4_hub_document_title', 1100);
+add_filter('wpseo_metadesc', function ($description) {
+    $id = pkv4_hub_metadata_id();
+    $value = $id ? get_post_meta($id, '_packrivo_description', true) : '';
+    return is_string($value) && $value !== '' ? $value : $description;
+}, 1100);
+add_action('wp_head', function () {
+    $id = pkv4_hub_metadata_id();
+    if (!$id || defined('WPSEO_VERSION')) return;
+    $parent_owns_description = is_singular('page')
+        && get_post_meta($id, '_packrivo_native_page', true) === '1'
+        && has_action('wp_head', 'packrivo_output_page_metadata') !== false;
+    if ($parent_owns_description) return;
+    $value = get_post_meta($id, '_packrivo_description', true);
+    if (is_string($value) && $value !== '') echo '<meta name="description" content="' . esc_attr($value) . '" />' . "\n";
+}, 3);
+
 // Keep one title owner after the parent and product workspace finish routing.
 add_action('wp', function () {
     $parent_renders_title = is_singular('page')

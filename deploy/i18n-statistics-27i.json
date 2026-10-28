@@ -1,0 +1,90 @@
+[
+  {
+    "language": "ar",
+    "addedBucketKeys": 816,
+    "addedEnglishKeys": 473,
+    "serverConflictKeys": 5,
+    "runtimeAddedKeys": 1,
+    "runtimeConflicts": 0
+  },
+  {
+    "language": "de",
+    "addedBucketKeys": 811,
+    "addedEnglishKeys": 472,
+    "serverConflictKeys": 4,
+    "runtimeAddedKeys": 1,
+    "runtimeConflicts": 0
+  },
+  {
+    "language": "es",
+    "addedBucketKeys": 812,
+    "addedEnglishKeys": 473,
+    "serverConflictKeys": 4,
+    "runtimeAddedKeys": 1,
+    "runtimeConflicts": 0
+  },
+  {
+    "language": "fr",
+    "addedBucketKeys": 811,
+    "addedEnglishKeys": 472,
+    "serverConflictKeys": 3,
+    "runtimeAddedKeys": 1,
+    "runtimeConflicts": 0
+  },
+  {
+    "language": "it",
+    "addedBucketKeys": 811,
+    "addedEnglishKeys": 472,
+    "serverConflictKeys": 3,
+    "runtimeAddedKeys": 1,
+    "runtimeConflicts": 0
+  },
+  {
+    "language": "ja",
+    "addedBucketKeys": 816,
+    "addedEnglishKeys": 473,
+    "serverConflictKeys": 1,
+    "runtimeAddedKeys": 1,
+    "runtimeConflicts": 0
+  },
+  {
+    "language": "ko",
+    "addedBucketKeys": 816,
+    "addedEnglishKeys": 473,
+    "serverConflictKeys": 1,
+    "runtimeAddedKeys": 1,
+    "runtimeConflicts": 0
+  },
+  {
+    "language": "nl",
+    "addedBucketKeys": 811,
+    "addedEnglishKeys": 472,
+    "serverConflictKeys": 3,
+    "runtimeAddedKeys": 1,
+    "runtimeConflicts": 0
+  },
+  {
+    "language": "pt",
+    "addedBucketKeys": 812,
+    "addedEnglishKeys": 473,
+    "serverConflictKeys": 3,
+    "runtimeAddedKeys": 1,
+    "runtimeConflicts": 0
+  },
+  {
+    "language": "zh-CN",
+    "addedBucketKeys": 812,
+    "addedEnglishKeys": 473,
+    "serverConflictKeys": 4,
+    "runtimeAddedKeys": 1,
+    "runtimeConflicts": 0
+  },
+  {
+    "language": "zh-TW",
+    "addedBucketKeys": 816,
+    "addedEnglishKeys": 473,
+    "serverConflictKeys": 2,
+    "runtimeAddedKeys": 1,
+    "runtimeConflicts": 0
+  }
+]

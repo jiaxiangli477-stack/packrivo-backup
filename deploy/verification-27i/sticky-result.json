@@ -1,0 +1,10 @@
+{
+  "status": 200,
+  "button": "اطلب عرض سعر · الحد الأدنى 500",
+  "expected": "اطلب عرض سعر · الحد الأدنى 500",
+  "postload_textContent_translated": true,
+  "runtimeInjected": true,
+  "viewport": 375,
+  "scrollWidth": 375,
+  "direction": "rtl"
+}

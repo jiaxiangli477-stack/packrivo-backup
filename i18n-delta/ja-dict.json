@@ -133,7 +133,15 @@
     "Custom Round Tube Gift Boxes | Packrivo": "オリジナル 丸筒 ギフトボックス | Packrivo",
     "Custom Jewelry Pouches with Logo | Packrivo": "オリジナル ジュエリーポーチ 名入れ | Packrivo",
     "Custom Thermoformed Insert Trays | Packrivo": "オリジナル 熱成形 インサートトレー | Packrivo",
-    "Custom Windowed Folding Cartons | Packrivo": "オリジナル 窓付き 化粧箱 | Packrivo"
+    "Custom Windowed Folding Cartons | Packrivo": "オリジナル 窓付き 化粧箱 | Packrivo",
+    "Custom Jewelry Boxes & Packaging with Logo | Packrivo": "ロゴ入りジュエリーボックス・オリジナル包装 | Packrivo",
+    "Custom Packaging: 134 Styles, MOQ 500 | Packrivo": "オリジナル包装134種類・最低注文数500個 | Packrivo",
+    "Custom Jewelry Boxes: Rigid, Drawer, MOQ 500 | Packrivo": "ジュエリーボックス：貼り箱・引き出し式・500個から | Packrivo",
+    "Custom Mailer Boxes & Shipping Boxes with Logo | Packrivo": "ロゴ入りメーラーボックス・配送箱 | Packrivo",
+    "Custom Packaging Samples Before You Order | Packrivo": "注文前に確認するオリジナル包装サンプル | Packrivo",
+    "Custom Packaging Guides for Small Brands | Packrivo": "小規模ブランド向けオリジナル包装ガイド | Packrivo",
+    "About Packrivo | Custom Packaging from Shenzhen": "Packrivoについて | 深圳発のオリジナル包装",
+    "Request a Custom Packaging Quote | Packrivo": "オリジナル包装の見積もり依頼 | Packrivo"
   },
   "block": {
     "Custom Drawer Jewelry Boxes with Logo": "ロゴ入りオーダーメイド引き出し式ジュエリーボックス",
@@ -461,7 +469,16 @@
     "Put it to work on a real pack": "実際のパッケージで試算する",
     "The quote builder applies these numbers to your size and quantity. We confirm the dieline before anything is produced.": "見積もりツールにサイズと数量を入れると、この数字で試算できます。製造前に抜き型データを確認します。",
     "Build a quote": "見積もりを作成",
-    "Supplier product photo, retouched (text and watermarks removed)": "仕入先の商品写真（文字と透かしを消して修正済み）"
+    "Supplier product photo, retouched (text and watermarks removed)": "仕入先の商品写真（文字と透かしを消して修正済み）",
+    "Custom jewelry boxes, pouches and gift boxes printed with your logo, from 500 pieces. Order a sample first and see live prices in the quote builder.": "ジュエリーボックス、ポーチ、ギフトボックスにロゴ印刷、500個から。まずサンプルを注文し、見積もり作成ツールでリアルタイムの価格をご確認ください。",
+    "Browse 134 custom packaging styles, from jewelry boxes and pouches to mailers and gift boxes, printed with your logo from 500 pieces. Get a price.": "ジュエリーボックスやポーチから宅配箱、ギフトボックスまで、134種類のオリジナル包装をご覧ください。ロゴ印刷は500個から。価格をお問い合わせください。",
+    "Custom jewelry boxes with your logo: rigid, magnetic, drawer and pillow styles for rings, necklaces and bracelets, from 500 pieces. Get a price.": "ロゴ入りジュエリーボックスを500個から。リング、ネックレス、ブレスレット向けに、貼り箱、マグネット式、引き出し式、ピローボックスをご用意。価格をお問い合わせください。",
+    "Custom printed mailer boxes and shipping boxes for ecommerce brands, with your logo from 500 pieces. Get a price.": "ECブランド向けに、メーラーボックスや配送箱をオリジナル印刷。ロゴ入りで500個から。価格をお問い合わせください。",
+    "Order a sample of your custom box or pouch to check size, print and finish before your 500-piece order. Get a price.": "オーダーメイドの箱やポーチのサンプルを注文し、500個の注文前にサイズ、印刷、仕上がりをご確認ください。価格をお問い合わせください。",
+    "Practical guides for small brands on jewelry boxes, mailers and gift packaging: sizes, materials, costs and how to order.": "小規模ブランド向けに、ジュエリーボックス、宅配箱、ギフト包装を解説。サイズ、素材、費用、注文方法がわかる実用ガイドです。",
+    "Packrivo helps small brands order custom packaging from Shenzhen, working with independent suppliers on samples, printing and shipping.": "Packrivoは、小規模ブランドによる深圳からのオリジナル包装の注文を支援します。独立したサプライヤーと連携し、サンプル、印刷、発送を進めます。",
+    "Request a packaging quotation with your product, dimensions, quantity and destination. MOQ 500 per design.": "商品、寸法、数量、配送先を添えて包装の見積もりをご依頼ください。デザインごとの最低注文数は500個です。",
+    "Get a quote · MOQ 500": "見積もりを依頼 · 最低注文数500個"
   },
   "text": {
     "Custom Drawer Jewelry Boxes with Logo": "ロゴ入りオーダーメイド引き出し式ジュエリーボックス",
@@ -655,7 +672,8 @@
     "Put it to work on a real pack": "実際のパッケージで試算する",
     "The quote builder applies these numbers to your size and quantity. We confirm the dieline before anything is produced.": "見積もりツールにサイズと数量を入れると、この数字で試算できます。製造前に抜き型データを確認します。",
     "Build a quote": "見積もりを作成",
-    "Supplier product photo, retouched (text and watermarks removed)": "仕入先の商品写真（文字と透かしを消して修正済み）"
+    "Supplier product photo, retouched (text and watermarks removed)": "仕入先の商品写真（文字と透かしを消して修正済み）",
+    "Get a quote · MOQ 500": "見積もりを依頼 · 最低注文数500個"
   },
   "attr": {
     "Custom drawer jewelry boxes for small brands, with logo options and a 500-piece minimum. Get a price.": "小規模ブランド向けの引き出し式ジュエリーボックス。ロゴ対応、最低注文数500個。価格をお問い合わせください。",
@@ -801,6 +819,14 @@
     "Custom Sheet Labels": "オリジナル シートラベル",
     "Search": "検索",
     "Red drawer jewelry box with ribbon pull and insert": "リボン付き引き出し式ジュエリーボックス（赤、インサート入り）",
-    "Black and white lid-and-base jewelry boxes with inserts": "白と黒の蓋付きジュエリーボックス（インサート入り）"
+    "Black and white lid-and-base jewelry boxes with inserts": "白と黒の蓋付きジュエリーボックス（インサート入り）",
+    "Custom jewelry boxes, pouches and gift boxes printed with your logo, from 500 pieces. Order a sample first and see live prices in the quote builder.": "ジュエリーボックス、ポーチ、ギフトボックスにロゴ印刷、500個から。まずサンプルを注文し、見積もり作成ツールでリアルタイムの価格をご確認ください。",
+    "Browse 134 custom packaging styles, from jewelry boxes and pouches to mailers and gift boxes, printed with your logo from 500 pieces. Get a price.": "ジュエリーボックスやポーチから宅配箱、ギフトボックスまで、134種類のオリジナル包装をご覧ください。ロゴ印刷は500個から。価格をお問い合わせください。",
+    "Custom jewelry boxes with your logo: rigid, magnetic, drawer and pillow styles for rings, necklaces and bracelets, from 500 pieces. Get a price.": "ロゴ入りジュエリーボックスを500個から。リング、ネックレス、ブレスレット向けに、貼り箱、マグネット式、引き出し式、ピローボックスをご用意。価格をお問い合わせください。",
+    "Custom printed mailer boxes and shipping boxes for ecommerce brands, with your logo from 500 pieces. Get a price.": "ECブランド向けに、メーラーボックスや配送箱をオリジナル印刷。ロゴ入りで500個から。価格をお問い合わせください。",
+    "Order a sample of your custom box or pouch to check size, print and finish before your 500-piece order. Get a price.": "オーダーメイドの箱やポーチのサンプルを注文し、500個の注文前にサイズ、印刷、仕上がりをご確認ください。価格をお問い合わせください。",
+    "Practical guides for small brands on jewelry boxes, mailers and gift packaging: sizes, materials, costs and how to order.": "小規模ブランド向けに、ジュエリーボックス、宅配箱、ギフト包装を解説。サイズ、素材、費用、注文方法がわかる実用ガイドです。",
+    "Packrivo helps small brands order custom packaging from Shenzhen, working with independent suppliers on samples, printing and shipping.": "Packrivoは、小規模ブランドによる深圳からのオリジナル包装の注文を支援します。独立したサプライヤーと連携し、サンプル、印刷、発送を進めます。",
+    "Request a packaging quotation with your product, dimensions, quantity and destination. MOQ 500 per design.": "商品、寸法、数量、配送先を添えて包装の見積もりをご依頼ください。デザインごとの最低注文数は500個です。"
   }
 }

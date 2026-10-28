@@ -1,0 +1,566 @@
+[
+  {
+    "path": "/",
+    "lang": "en",
+    "url": "http://localhost:8081/",
+    "status": 200,
+    "titleTags": [
+      "<title>Custom Jewelry Boxes &amp; Packaging with Logo | Packrivo</title>"
+    ],
+    "titles": [
+      "Custom Jewelry Boxes & Packaging with Logo | Packrivo"
+    ],
+    "descriptions": [
+      "Custom jewelry boxes, pouches and gift boxes printed with your logo, from 500 pieces. Order a sample first and see live prices in the quote builder."
+    ],
+    "h1": [
+      "Custom packaging for jewelry, candles & gifts."
+    ]
+  },
+  {
+    "path": "/",
+    "lang": "ar",
+    "url": "http://localhost:8081/ar/",
+    "status": 200,
+    "titleTags": [
+      "<title>Custom Jewelry Boxes &amp; Packaging with Logo | Packrivo</title>"
+    ],
+    "titles": [
+      "Custom Jewelry Boxes & Packaging with Logo | Packrivo"
+    ],
+    "descriptions": [
+      "Custom jewelry boxes, pouches and gift boxes printed with your logo, from 500 pieces. Order a sample first and see live prices in the quote builder."
+    ],
+    "h1": [
+      "Custom packaging for jewelry, candles & gifts."
+    ]
+  },
+  {
+    "path": "/",
+    "lang": "de",
+    "url": "http://localhost:8081/de/",
+    "status": 200,
+    "titleTags": [
+      "<title>Custom Jewelry Boxes &amp; Packaging with Logo | Packrivo</title>"
+    ],
+    "titles": [
+      "Custom Jewelry Boxes & Packaging with Logo | Packrivo"
+    ],
+    "descriptions": [
+      "Custom jewelry boxes, pouches and gift boxes printed with your logo, from 500 pieces. Order a sample first and see live prices in the quote builder."
+    ],
+    "h1": [
+      "Custom packaging for jewelry, candles & gifts."
+    ]
+  },
+  {
+    "path": "/",
+    "lang": "ja",
+    "url": "http://localhost:8081/ja/",
+    "status": 200,
+    "titleTags": [
+      "<title>Custom Jewelry Boxes &amp; Packaging with Logo | Packrivo</title>"
+    ],
+    "titles": [
+      "Custom Jewelry Boxes & Packaging with Logo | Packrivo"
+    ],
+    "descriptions": [
+      "Custom jewelry boxes, pouches and gift boxes printed with your logo, from 500 pieces. Order a sample first and see live prices in the quote builder."
+    ],
+    "h1": [
+      "Custom packaging for jewelry, candles & gifts."
+    ]
+  },
+  {
+    "path": "/products/",
+    "lang": "en",
+    "url": "http://localhost:8081/products/",
+    "status": 200,
+    "titleTags": [
+      "<title>Custom Packaging: 134 Styles, MOQ 500 | Packrivo</title>"
+    ],
+    "titles": [
+      "Custom Packaging: 134 Styles, MOQ 500 | Packrivo"
+    ],
+    "descriptions": [
+      "Browse 134 custom packaging styles, from jewelry boxes and pouches to mailers and gift boxes, printed with your logo from 500 pieces. Get a price."
+    ],
+    "h1": [
+      "Every structure we can source"
+    ]
+  },
+  {
+    "path": "/products/",
+    "lang": "ar",
+    "url": "http://localhost:8081/ar/products/",
+    "status": 200,
+    "titleTags": [
+      "<title>Custom Packaging: 134 Styles, MOQ 500 | Packrivo</title>"
+    ],
+    "titles": [
+      "Custom Packaging: 134 Styles, MOQ 500 | Packrivo"
+    ],
+    "descriptions": [
+      "Browse 134 custom packaging styles, from jewelry boxes and pouches to mailers and gift boxes, printed with your logo from 500 pieces. Get a price."
+    ],
+    "h1": [
+      "Every structure we can source"
+    ]
+  },
+  {
+    "path": "/products/",
+    "lang": "de",
+    "url": "http://localhost:8081/de/products/",
+    "status": 200,
+    "titleTags": [
+      "<title>Custom Packaging: 134 Styles, MOQ 500 | Packrivo</title>"
+    ],
+    "titles": [
+      "Custom Packaging: 134 Styles, MOQ 500 | Packrivo"
+    ],
+    "descriptions": [
+      "Browse 134 custom packaging styles, from jewelry boxes and pouches to mailers and gift boxes, printed with your logo from 500 pieces. Get a price."
+    ],
+    "h1": [
+      "Every structure we can source"
+    ]
+  },
+  {
+    "path": "/products/",
+    "lang": "ja",
+    "url": "http://localhost:8081/ja/products/",
+    "status": 200,
+    "titleTags": [
+      "<title>Custom Packaging: 134 Styles, MOQ 500 | Packrivo</title>"
+    ],
+    "titles": [
+      "Custom Packaging: 134 Styles, MOQ 500 | Packrivo"
+    ],
+    "descriptions": [
+      "Browse 134 custom packaging styles, from jewelry boxes and pouches to mailers and gift boxes, printed with your logo from 500 pieces. Get a price."
+    ],
+    "h1": [
+      "Every structure we can source"
+    ]
+  },
+  {
+    "path": "/jewelry-boxes/",
+    "lang": "en",
+    "url": "http://localhost:8081/jewelry-boxes/",
+    "status": 200,
+    "titleTags": [
+      "<title>Custom Jewelry Boxes: Rigid, Drawer, MOQ 500 | Packrivo</title>"
+    ],
+    "titles": [
+      "Custom Jewelry Boxes: Rigid, Drawer, MOQ 500 | Packrivo"
+    ],
+    "descriptions": [
+      "Custom jewelry boxes with your logo: rigid, magnetic, drawer and pillow styles for rings, necklaces and bracelets, from 500 pieces. Get a price."
+    ],
+    "h1": [
+      "Custom Jewelry Boxes With Logo for Your Collection"
+    ]
+  },
+  {
+    "path": "/jewelry-boxes/",
+    "lang": "ar",
+    "url": "http://localhost:8081/ar/jewelry-boxes/",
+    "status": 200,
+    "titleTags": [
+      "<title>Custom Jewelry Boxes: Rigid, Drawer, MOQ 500 | Packrivo</title>"
+    ],
+    "titles": [
+      "Custom Jewelry Boxes: Rigid, Drawer, MOQ 500 | Packrivo"
+    ],
+    "descriptions": [
+      "Custom jewelry boxes with your logo: rigid, magnetic, drawer and pillow styles for rings, necklaces and bracelets, from 500 pieces. Get a price."
+    ],
+    "h1": [
+      "Custom Jewelry Boxes With Logo for Your Collection"
+    ]
+  },
+  {
+    "path": "/jewelry-boxes/",
+    "lang": "de",
+    "url": "http://localhost:8081/de/jewelry-boxes/",
+    "status": 200,
+    "titleTags": [
+      "<title>Schmuckschachteln mit Logo – ab 500 Stück</title>"
+    ],
+    "titles": [
+      "Schmuckschachteln mit Logo – ab 500 Stück"
+    ],
+    "descriptions": [
+      "Custom jewelry boxes with your logo: rigid, magnetic, drawer and pillow styles for rings, necklaces and bracelets, from 500 pieces. Get a price."
+    ],
+    "h1": [
+      "Custom Jewelry Boxes With Logo for Your Collection"
+    ]
+  },
+  {
+    "path": "/jewelry-boxes/",
+    "lang": "ja",
+    "url": "http://localhost:8081/ja/jewelry-boxes/",
+    "status": 200,
+    "titleTags": [
+      "<title>Custom Jewelry Boxes: Rigid, Drawer, MOQ 500 | Packrivo</title>"
+    ],
+    "titles": [
+      "Custom Jewelry Boxes: Rigid, Drawer, MOQ 500 | Packrivo"
+    ],
+    "descriptions": [
+      "Custom jewelry boxes with your logo: rigid, magnetic, drawer and pillow styles for rings, necklaces and bracelets, from 500 pieces. Get a price."
+    ],
+    "h1": [
+      "Custom Jewelry Boxes With Logo for Your Collection"
+    ]
+  },
+  {
+    "path": "/mailer-boxes/",
+    "lang": "en",
+    "url": "http://localhost:8081/mailer-boxes/",
+    "status": 200,
+    "titleTags": [
+      "<title>Custom Mailer Boxes &amp; Shipping Boxes with Logo | Packrivo</title>"
+    ],
+    "titles": [
+      "Custom Mailer Boxes & Shipping Boxes with Logo | Packrivo"
+    ],
+    "descriptions": [
+      "Custom printed mailer boxes and shipping boxes for ecommerce brands, with your logo from 500 pieces. Get a price."
+    ],
+    "h1": [
+      "Shipping Boxes & Mailers"
+    ]
+  },
+  {
+    "path": "/mailer-boxes/",
+    "lang": "ar",
+    "url": "http://localhost:8081/ar/mailer-boxes/",
+    "status": 200,
+    "titleTags": [
+      "<title>Custom Mailer Boxes &amp; Shipping Boxes with Logo | Packrivo</title>"
+    ],
+    "titles": [
+      "Custom Mailer Boxes & Shipping Boxes with Logo | Packrivo"
+    ],
+    "descriptions": [
+      "Custom printed mailer boxes and shipping boxes for ecommerce brands, with your logo from 500 pieces. Get a price."
+    ],
+    "h1": [
+      "صناديق الشحن والعبوات البريدية"
+    ]
+  },
+  {
+    "path": "/mailer-boxes/",
+    "lang": "de",
+    "url": "http://localhost:8081/de/mailer-boxes/",
+    "status": 200,
+    "titleTags": [
+      "<title>Custom Mailer Boxes &amp; Shipping Boxes with Logo | Packrivo</title>"
+    ],
+    "titles": [
+      "Custom Mailer Boxes & Shipping Boxes with Logo | Packrivo"
+    ],
+    "descriptions": [
+      "Custom printed mailer boxes and shipping boxes for ecommerce brands, with your logo from 500 pieces. Get a price."
+    ],
+    "h1": [
+      "Versandkartons & Versandtaschen"
+    ]
+  },
+  {
+    "path": "/mailer-boxes/",
+    "lang": "ja",
+    "url": "http://localhost:8081/ja/mailer-boxes/",
+    "status": 200,
+    "titleTags": [
+      "<title>Custom Mailer Boxes &amp; Shipping Boxes with Logo | Packrivo</title>"
+    ],
+    "titles": [
+      "Custom Mailer Boxes & Shipping Boxes with Logo | Packrivo"
+    ],
+    "descriptions": [
+      "Custom printed mailer boxes and shipping boxes for ecommerce brands, with your logo from 500 pieces. Get a price."
+    ],
+    "h1": [
+      "配送箱 & メーラー"
+    ]
+  },
+  {
+    "path": "/samples/",
+    "lang": "en",
+    "url": "http://localhost:8081/samples/",
+    "status": 200,
+    "titleTags": [
+      "<title>Custom Packaging Samples Before You Order | Packrivo</title>"
+    ],
+    "titles": [
+      "Custom Packaging Samples Before You Order | Packrivo"
+    ],
+    "descriptions": [
+      "Order a sample of your custom box or pouch to check size, print and finish before your 500-piece order. Get a price."
+    ],
+    "h1": [
+      "Packaging samples"
+    ]
+  },
+  {
+    "path": "/samples/",
+    "lang": "ar",
+    "url": "http://localhost:8081/ar/samples/",
+    "status": 200,
+    "titleTags": [
+      "<title>Custom Packaging Samples Before You Order | Packrivo</title>"
+    ],
+    "titles": [
+      "Custom Packaging Samples Before You Order | Packrivo"
+    ],
+    "descriptions": [
+      "Order a sample of your custom box or pouch to check size, print and finish before your 500-piece order. Get a price."
+    ],
+    "h1": [
+      "عينات التغليف"
+    ]
+  },
+  {
+    "path": "/samples/",
+    "lang": "de",
+    "url": "http://localhost:8081/de/samples/",
+    "status": 200,
+    "titleTags": [
+      "<title>Custom Packaging Samples Before You Order | Packrivo</title>"
+    ],
+    "titles": [
+      "Custom Packaging Samples Before You Order | Packrivo"
+    ],
+    "descriptions": [
+      "Order a sample of your custom box or pouch to check size, print and finish before your 500-piece order. Get a price."
+    ],
+    "h1": [
+      "Verpackungsmuster"
+    ]
+  },
+  {
+    "path": "/samples/",
+    "lang": "ja",
+    "url": "http://localhost:8081/ja/samples/",
+    "status": 200,
+    "titleTags": [
+      "<title>Custom Packaging Samples Before You Order | Packrivo</title>"
+    ],
+    "titles": [
+      "Custom Packaging Samples Before You Order | Packrivo"
+    ],
+    "descriptions": [
+      "Order a sample of your custom box or pouch to check size, print and finish before your 500-piece order. Get a price."
+    ],
+    "h1": [
+      "包装サンプル"
+    ]
+  },
+  {
+    "path": "/blog/",
+    "lang": "en",
+    "url": "http://localhost:8081/blog/",
+    "status": 200,
+    "titleTags": [
+      "<title>Custom Packaging Guides for Small Brands | Packrivo</title>"
+    ],
+    "titles": [
+      "Custom Packaging Guides for Small Brands | Packrivo"
+    ],
+    "descriptions": [
+      "Practical guides for small brands on jewelry boxes, mailers and gift packaging: sizes, materials, costs and how to order."
+    ],
+    "h1": [
+      "Packaging notes from the floor"
+    ]
+  },
+  {
+    "path": "/blog/",
+    "lang": "ar",
+    "url": "http://localhost:8081/ar/blog/",
+    "status": 404,
+    "titleTags": [
+      "<title>404 — page not translated</title>"
+    ],
+    "titles": [
+      "404 — page not translated"
+    ],
+    "descriptions": [],
+    "h1": []
+  },
+  {
+    "path": "/blog/",
+    "lang": "de",
+    "url": "http://localhost:8081/de/blog/",
+    "status": 404,
+    "titleTags": [
+      "<title>404 — page not translated</title>"
+    ],
+    "titles": [
+      "404 — page not translated"
+    ],
+    "descriptions": [],
+    "h1": []
+  },
+  {
+    "path": "/blog/",
+    "lang": "ja",
+    "url": "http://localhost:8081/ja/blog/",
+    "status": 404,
+    "titleTags": [
+      "<title>404 — page not translated</title>"
+    ],
+    "titles": [
+      "404 — page not translated"
+    ],
+    "descriptions": [],
+    "h1": []
+  },
+  {
+    "path": "/about/",
+    "lang": "en",
+    "url": "http://localhost:8081/about/",
+    "status": 200,
+    "titleTags": [
+      "<title>About Packrivo | Custom Packaging from Shenzhen</title>"
+    ],
+    "titles": [
+      "About Packrivo | Custom Packaging from Shenzhen"
+    ],
+    "descriptions": [
+      "Packrivo helps small brands order custom packaging from Shenzhen, working with independent suppliers on samples, printing and shipping."
+    ],
+    "h1": [
+      "About Packrivo"
+    ]
+  },
+  {
+    "path": "/about/",
+    "lang": "ar",
+    "url": "http://localhost:8081/ar/about/",
+    "status": 200,
+    "titleTags": [
+      "<title>About Packrivo | Custom Packaging from Shenzhen</title>"
+    ],
+    "titles": [
+      "About Packrivo | Custom Packaging from Shenzhen"
+    ],
+    "descriptions": [
+      "Packrivo helps small brands order custom packaging from Shenzhen, working with independent suppliers on samples, printing and shipping."
+    ],
+    "h1": [
+      "حول Packrivo"
+    ]
+  },
+  {
+    "path": "/about/",
+    "lang": "de",
+    "url": "http://localhost:8081/de/about/",
+    "status": 200,
+    "titleTags": [
+      "<title>About Packrivo | Custom Packaging from Shenzhen</title>"
+    ],
+    "titles": [
+      "About Packrivo | Custom Packaging from Shenzhen"
+    ],
+    "descriptions": [
+      "Packrivo helps small brands order custom packaging from Shenzhen, working with independent suppliers on samples, printing and shipping."
+    ],
+    "h1": [
+      "Über Packrivo"
+    ]
+  },
+  {
+    "path": "/about/",
+    "lang": "ja",
+    "url": "http://localhost:8081/ja/about/",
+    "status": 200,
+    "titleTags": [
+      "<title>About Packrivo | Custom Packaging from Shenzhen</title>"
+    ],
+    "titles": [
+      "About Packrivo | Custom Packaging from Shenzhen"
+    ],
+    "descriptions": [
+      "Packrivo helps small brands order custom packaging from Shenzhen, working with independent suppliers on samples, printing and shipping."
+    ],
+    "h1": [
+      "Packrivoについて"
+    ]
+  },
+  {
+    "path": "/inquiry/",
+    "lang": "en",
+    "url": "http://localhost:8081/inquiry/",
+    "status": 200,
+    "titleTags": [
+      "<title>Request a Custom Packaging Quote | Packrivo</title>"
+    ],
+    "titles": [
+      "Request a Custom Packaging Quote | Packrivo"
+    ],
+    "descriptions": [
+      "Request a packaging quotation with your product, dimensions, quantity and destination. MOQ 500 per design. Add artwork or reference files for Packrivo review."
+    ],
+    "h1": [
+      "Get a packaging quote."
+    ]
+  },
+  {
+    "path": "/inquiry/",
+    "lang": "ar",
+    "url": "http://localhost:8081/ar/inquiry/",
+    "status": 200,
+    "titleTags": [
+      "<title>اطلب عرض سعر لتغليف مخصص | Packrivo</title>"
+    ],
+    "titles": [
+      "اطلب عرض سعر لتغليف مخصص | Packrivo"
+    ],
+    "descriptions": [
+      "اطلب عرض سعر للتغليف مع منتجك وأبعاده والكمية والوجهة. MOQ (الحد الأدنى للطلب) 500 لكل تصميم. أضف ملفات التصميم أو الملفات المرجعية لمراجعة Packrivo."
+    ],
+    "h1": [
+      "احصل على عرض سعر للتغليف."
+    ]
+  },
+  {
+    "path": "/inquiry/",
+    "lang": "de",
+    "url": "http://localhost:8081/de/inquiry/",
+    "status": 200,
+    "titleTags": [
+      "<title>Kundenspezifisches Verpackungsangebot anfordern | Packrivo</title>"
+    ],
+    "titles": [
+      "Kundenspezifisches Verpackungsangebot anfordern | Packrivo"
+    ],
+    "descriptions": [
+      "Ein Verpackungsangebot mit Ihrem Produkt, den Abmessungen, der Menge und dem Bestimmungsort anfordern. MOQ 500 pro Design. Druckdaten oder Referenzdateien zur Prüfung durch Packrivo hinzufügen."
+    ],
+    "h1": [
+      "Fordern Sie ein Verpackungsangebot an."
+    ]
+  },
+  {
+    "path": "/inquiry/",
+    "lang": "ja",
+    "url": "http://localhost:8081/ja/inquiry/",
+    "status": 200,
+    "titleTags": [
+      "<title>カスタム包装の見積を依頼 | Packrivo</title>"
+    ],
+    "titles": [
+      "カスタム包装の見積を依頼 | Packrivo"
+    ],
+    "descriptions": [
+      "製品、寸法、数量、仕向地を添えて包装見積を依頼する。デザインあたり MOQ 500。Packrivo のレビュー用にアートワークまたは参照ファイルを追加する。"
+    ],
+    "h1": [
+      "包装見積を取得。"
+    ]
+  }
+]

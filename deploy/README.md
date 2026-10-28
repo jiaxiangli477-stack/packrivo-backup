@@ -1,6 +1,6 @@
-# 27e / 27g / 27h 上线前检查与回滚方案（未执行）
+# 27e / 27g / 27h / 27i 上线前检查与回滚方案（未执行）
 
-**状态：27g 文案导入和字典包已完成本地准备，尚未部署。** 134 个产品的本地字段已一致，60 条界面字符串和 11 语种完整字典已合并；19 个翻译冲突按生产优先保留。27h 已在本地修复重复 title、RTL skip-link 溢出及 Template 三项，并重新打包子主题；修复没有部署到生产。首页仍为 5/8 张卡片，报价重定向补丁仍待获授权上线时执行。
+**状态：27i 主页面元数据和按钮字典已完成本地准备，尚未部署。** 包含既有 134 个产品、60 条界面词及本轮 8 个 hub/1 条按钮译文；主字典累计 33 个冲突（27g 的 19 个 + 本轮新增 14 个 title 冲突）按生产优先保留，runtime 新键无冲突。32 个 hub 样本中 27 个严格 dsh 一致，5 个为 inquiry/生产译文保留例外，详见本轮结果。27h 已在本地修复重复 title、RTL skip-link 溢出及 Template 三项，并重新打包子主题；修复没有部署到生产。首页仍为 5/8 张卡片，报价重定向补丁仍待获授权上线时执行。
 
 只读核验：生产主题目录 `packrivo-static-bridge-1.2.38` 存在、`packrivo-static-bridge` 不存在。将来构建子主题包时，`style.css` 的 `Template:` 应为 `packrivo-static-bridge-1.2.38`，并在部署前重新核验。27h 当前源码已改为该值，本地测试已移除临时父主题别名挂载，实际加载同名父主题目录。
 
@@ -11,7 +11,7 @@
 1. **备份**：先记录当前主题、插件、MU 文件、11 个字典及目标产品的 post_title、post_content 和相关 meta；验证备份可恢复。核对产品和字典范围，保护无关内容。
 2. **字典合并**：以部署前新读的生产字典为基线，检查 `i18n-delta/` 仅覆盖经审核键；备份旧文件，检查 text/block/attr 冲突、11 语种完整性及实际页面。27g 增量现覆盖全部 134 页和 60 条界面字符串；具体合并和回滚命令见下节。
 3. **插件**：经审核后部署报价插件，核对版本与文件哈希、测试 style/qty/product，保留旧包。
-4. **子主题**：使用本目录 27h 重打的 `packrivo-home-v4.zip`；Template 已指向 `packrivo-static-bridge-1.2.38`，部署前仍需核对生产目录没有漂移。测试前台、移动端、产品筛选和博客；保留旧主题包。
+4. **子主题**：使用本目录当前 27i 重打的 `packrivo-home-v4.zip`（保留 27h 修复，增加八个 hub 的元数据读取）；Template 已指向 `packrivo-static-bridge-1.2.38`，部署前仍需核对生产目录没有漂移。测试前台、移动端、产品筛选和博客；保留旧主题包。
 5. **MU 补丁**：比对生产基线和补丁，移除 `get-a-quote` 这一项，不动其他重定向；保留并验证原文件恢复方式。
 6. **内容**：27g 已审文案通过 `scripts/product-buyers-27g/import.php` 批量应用；执行前以实际生产原值创建新的 rollback-27g.json，不能用本地备份覆盖生产。具体命令见下节。媒体 ID 和附件均为本地记录，不能在生产复用 ID。
 7. **清缓存**：按实际站点缓存方案执行；无可用凭据时如实记录，不假定清除成功。
@@ -31,6 +31,7 @@ SITE=https://www.packrivo.com
 BACKUP=/home/web/backups/packrivo-27g-before
 mkdir -p "$BACKUP"
 cp -a "$WP/wp-content/uploads/packrivo-i18n" "$BACKUP/i18n"
+wp --path="$WP" eval-file "$PKG/scripts/hubs-27i/import.php" backup "$PKG" "$SITE" "$BACKUP/rollback-27i.json"
 ```
 
 `PKG` 必须是审核过的完整包路径；确认 BACKUP 是新的独立目录，保留数据库与主题/MU 原文件备份。操作者使用对目标站点有相应权限的账号。以上路径是未来命令示例，不是本轮上传结果。
@@ -38,21 +39,25 @@ cp -a "$WP/wp-content/uploads/packrivo-i18n" "$BACKUP/i18n"
 ### 字典合并、安装与回滚
 
 ```bash
-node "$PKG/scripts/product-buyers-27g/merge-i18n.mjs" --root "$PKG" --base "$BACKUP/i18n"
-# 审阅 i18n-statistics-27g.json 和 i18n-conflicts-27g.json 后，才进行以下安装。
+node "$PKG/scripts/hubs-27i/merge-i18n.mjs" --root "$PKG" --base "$BACKUP/i18n" --js-base "$BACKUP/i18n" --paths-base "$BACKUP/i18n/paths.json" --metadata-backup "$BACKUP/rollback-27i.json"
+# 审阅 i18n-statistics-27i.json 和 i18n-conflicts-27i.json 后，才进行以下安装。
 for lang in ar de es fr it ja ko nl pt zh-CN zh-TW; do
   cp "$PKG/deploy/i18n-merged/$lang-dict.json" "$WP/wp-content/uploads/packrivo-i18n/$lang-dict.json"
+  cp "$PKG/deploy/i18n-merged/$lang-js.json" "$WP/wp-content/uploads/packrivo-i18n/$lang-js.json"
 done
+cp "$PKG/deploy/i18n-merged/paths.json" "$WP/wp-content/uploads/packrivo-i18n/paths.json"
 ```
 
-冲突保留部署时生产基线，不能直接用增量替换完整字典。完整字典与增量在冲突键上有意不同；原有 paths.json 和运行时文件不在这段安装命令的替换范围内。安装后核对目标文件权限及 11 语种实际输出。
+冲突保留部署时生产基线，不能直接用增量替换完整字典。完整字典与增量在冲突键上有意不同；27i 同时安装保留原值后的 runtime exact 字典及路径表：每语种仅加底部按钮键，路径仅补 /blog/。安装后核对目标文件权限及 11 语种实际输出。
 
 字典回滚命令（使用部署前实际字典备份）：
 
 ```bash
 for lang in ar de es fr it ja ko nl pt zh-CN zh-TW; do
   cp "$BACKUP/i18n/$lang-dict.json" "$WP/wp-content/uploads/packrivo-i18n/$lang-dict.json"
+  cp "$BACKUP/i18n/$lang-js.json" "$WP/wp-content/uploads/packrivo-i18n/$lang-js.json"
 done
+cp "$BACKUP/i18n/paths.json" "$WP/wp-content/uploads/packrivo-i18n/paths.json"
 ```
 
 ### 内容计划、应用、验证与回滚
@@ -63,6 +68,9 @@ done
 wp --path="$WP" eval-file "$PKG/scripts/product-buyers-27g/import.php" plan "$PKG" "$SITE" "$BACKUP/rollback-27g.json" all134
 wp --path="$WP" eval-file "$PKG/scripts/product-buyers-27g/import.php" apply "$PKG" "$SITE" "$BACKUP/rollback-27g.json" all134
 wp --path="$WP" eval-file "$PKG/scripts/product-buyers-27g/import.php" verify "$PKG" "$SITE" "$BACKUP/rollback-27g.json" all134
+wp --path="$WP" eval-file "$PKG/scripts/hubs-27i/import.php" plan "$PKG" "$SITE" "$BACKUP/rollback-27i.json"
+wp --path="$WP" eval-file "$PKG/scripts/hubs-27i/import.php" apply "$PKG" "$SITE" "$BACKUP/rollback-27i.json"
+wp --path="$WP" eval-file "$PKG/scripts/hubs-27i/import.php" verify "$PKG" "$SITE" "$BACKUP/rollback-27i.json"
 ```
 
 应用前脚本先写回滚文件，后开启数据库事务；要求目标 WordPress 表支持事务。若源文件、旧标题、站点、slug 或正文发生不符合预期的漂移，停止应用并重新审阅，不要删备份强行重跑。重复应用已一致的内容跳过，不覆盖原备份。
@@ -70,6 +78,8 @@ wp --path="$WP" eval-file "$PKG/scripts/product-buyers-27g/import.php" verify "$
 回滚先检查，再由操作者决定执行；只恢复本次备份的标题、H1/原内容和所列 meta，不覆盖其他页面：
 
 ```bash
+wp --path="$WP" eval-file "$PKG/scripts/hubs-27i/import.php" rollback-check "$PKG" "$SITE" "$BACKUP/rollback-27i.json"
+wp --path="$WP" eval-file "$PKG/scripts/hubs-27i/import.php" rollback "$PKG" "$SITE" "$BACKUP/rollback-27i.json"
 wp --path="$WP" eval-file "$PKG/scripts/product-buyers-27g/import.php" rollback-check "$PKG" "$SITE" "$BACKUP/rollback-27g.json" all134
 wp --path="$WP" eval-file "$PKG/scripts/product-buyers-27g/import.php" rollback "$PKG" "$SITE" "$BACKUP/rollback-27g.json" all134
 ```
@@ -112,3 +122,19 @@ node E:\破甲工作区\.tmp\packrivo-27h\verify-runtime.cjs
 对应脚本副本、改前改后数据、meta/JSON-LD 数量、两张默认视口阿语截图及 Tab 聚焦截图保存在 `deploy/verification-27h/`。本次截图由默认 375×900 视口直接取得，没有裁切大画布。
 
 父主题、插件、MU、字典及已审文案相关 135 个保护文件哈希未变；134 个产品页内容与 meta 的指纹也未变。为移除别名，本地仅重新激活了子主题，使本地 template 配置指向真实父目录；没有修改生产配置。
+
+## 27i：八个主页面及动态按钮
+
+本地 metadata 导入、合并和验证已完成，未部署。27i 的 `backup/apply/verify/rollback-check/rollback` 命令已补入上方内容步骤；主页面原值使用独立 `rollback-27i.json`。仓库内的该文件仅适用于 localhost:8081，生产必须在备份步骤先生成自己的同名文件。
+
+当前子主题包已重打，含 27h 修复及只针对八页的元数据字段读取，未改 H1、正文或 URL。当前 ZIP SHA-256：
+
+```text
+1446420DE7263EAFA962859FC0CE9B6B245AF403B540663FD3BBD499DD177F33
+```
+
+上节 27h 的 ZIP 哈希是历史包的记录，当前以本节为准。父主题、插件和 MU 源码未变。动态按钮由已有多语言 runtime 的 MutationObserver 翻译，不另加子主题按钮脚本；每语种 `*-js.json` 的 exact 只新增 `Get a quote · MOQ 500`。完整保留原 exact/patterns。生产当前路径表无 `/blog/`，包内路径表仅补该项，其余 144 项不动。
+
+验收边界：32 个 en/ar/de/ja 响应都为一个 title、一个 description，标题禁用词为 0，八页英文 H1 未变；27 个响应与 dsh 完全一致，5 个存在明确保留例外。`/inquiry/` 英文现有描述多一句附件说明，按任务例外保留，使用生产现有完整译文；jewelry de 及 inquiry 的部分 title 译文按生产优先保留。不要把该 5 行冒称为逐字 dsh 一致。冲突及例外详见 27i 结果文件和 `verification-27i/comparison.json`，实际值表供 Claude 复核。
+
+原有剩余项仍然保留：首页 5/8 卡片；报价重定向补丁等获授权上线时执行。本轮没有执行上方生产应用或回滚命令。

@@ -1,0 +1,181 @@
+{
+  "exact": {
+    "Menu": "菜单",
+    "Close": "关闭",
+    "Close image ×": "关闭图片 ×",
+    "Switch color theme": "切换配色主题",
+    "Open navigation menu": "打开导航菜单",
+    "Close navigation menu": "关闭导航菜单",
+    "Presentation boxes and insert options": "礼盒与内衬展示方案",
+    "AI concept of a forest-green drawer jewelry box with a separate ivory insert": "森林绿抽屉式珠宝盒搭配独立象牙白内衬的 AI 概念图",
+    "Folding formats and gift presentation": "折叠结构与礼品展示",
+    "AI concept of an ivory folding gift carton beside its flat structure": "象牙白折叠礼盒及其平铺结构的 AI 概念图",
+    "Box, insert and packed size together": "盒体、内衬与包装尺寸一览",
+    "AI concept of an open kraft mailer with a fitted insert": "打开的牛皮纸邮寄盒搭配适配内衬的 AI 概念图",
+    "Roll or sheet formats for packaging": "卷材或片材包装形式",
+    "AI concept comparing blank roll and sheet packaging labels": "空白卷筒与片状包装标签对比的 AI 概念图",
+    "Fit and presentation inside an outer pack": "外包装内的适配与展示",
+    "AI concept of paperboard, corrugated and molded-pulp inserts": "纸板、瓦楞纸与模塑纸浆内衬的 AI 概念图",
+    "AI styled concept of green drawer boxes with ivory trays": "绿色抽屉盒搭配象牙白托盘的 AI 风格概念图",
+    "Separate AI drawer-box concept exploration, not the same physical product": "独立的 AI 抽屉盒概念探索图，并非同一件实物产品",
+    "Packaging concept enlarged view": "包装概念放大图",
+    "Supplier and physical sample review required.": "需要供应商确认并审核实物样品。",
+    "Review or edit material & finish below ↓": "请在下方查看或编辑材料与表面工艺 ↓",
+    "No material or finish specified.": "尚未指定材料或表面工艺。",
+    "Your reference choices": "你的参考选项",
+    "Packaging option changed. Review your material, print and notes for this new selection.": "包装选项已更改。请针对新的选项检查材料、印刷和备注。",
+    "Enter a value, or say not sure where appropriate.": "请填写具体数值；不确定时可在相应位置注明。",
+    "Prepared for review. Subject to feasibility and sample review.": "已准备好供审核，最终以可行性评估和样品审核为准。",
+    "Copied to your clipboard. Copying does not send another request.": "已复制到剪贴板。复制操作不会再次发送询盘。",
+    "Clipboard access is unavailable. Select the summary text or download the file instead.": "无法使用剪贴板。请选中摘要文字，或改为下载文件。",
+    "Contact options": "接触选项",
+    "Forest-green sleeve with an ivory tray. AI-assisted colour concept.": "森林绿外套盒搭配象牙白托盘。AI 辅助配色概念。",
+    "The same drawer-box concept in warm ivory. Actual colour needs a physical reference.": "同款抽屉盒概念的暖象牙白配色。实际颜色需以实物为准。",
+    "Illustrative YOUR BRAND placement on the sleeve, with a gold-foil appearance. Artwork and process need review.": "外套盒上的 YOUR BRAND 烫金效果示意。图稿和工艺仍需审核。",
+    "Filter by category": "按类别筛选",
+    "Chat with Packrivo on WhatsApp (opens a new tab)": "通过 WhatsApp 联系 Packrivo（将在新标签页打开）",
+    "Get a Quote": "获取报价",
+    "e.g. rigid board and removable insert": "例如：硬纸板盒和可拆卸内衬",
+    "e.g. rigid board and magnetic flap": "例如：硬纸板盒和磁吸翻盖",
+    "e.g. printed wrap and foil logo": "例如：印刷裱纸和烫金标志",
+    "e.g. full-color print and foil logo": "例如：全彩印刷和烫金标志",
+    "Have a dieline or artwork? Upload it here. Files are sent only after you review the brief and choose Send My Packaging Request.": "有刀模线稿或设计图稿吗？可在此上传。只有在你审核需求摘要并选择“发送包装询盘”后，文件才会发送。",
+    "Review the summary before sending. Packrivo stores submitted requests for 180 days so a person can review and respond. The details stay on this device until you select Send My Packaging Request.": "发送前请检查摘要。Packrivo 会保存已提交的询盘 180 天，以便工作人员审核并回复。在你选择“发送包装询盘”前，填写的信息仅保留在此设备上。",
+    "Send My Packaging Request": "发送包装询盘",
+    "Send New Packaging Request": "发送新的包装询盘",
+    "Contact Packrivo": "联系 Packrivo",
+    "Contact name": "联系人姓名",
+    "Company": "公司",
+    "Company website": "公司网站",
+    "No reference files selected.": "尚未选择参考文件。",
+    "Choose up to three reference files.": "最多可选择 3 个参考文件。",
+    "Each file must contain data and be no larger than 2 MiB.": "每个文件都必须包含数据，且大小不得超过 2 MiB。",
+    "Reference files must total no more than 5 MiB.": "参考文件总大小不得超过 5 MiB。",
+    "A reference file could not be read. Please select it again.": "无法读取某个参考文件，请重新选择。",
+    "Review the details below before sending.": "发送前请检查以下信息。",
+    "Your request was not sent. Check the reference files.": "询盘未发送，请检查参考文件。",
+    "The request could not be prepared. Your details are still here; use the copy and contact options below.": "无法准备询盘。你填写的信息仍在此处；请使用下方的复制或联系选项。",
+    "Sending your request…": "正在发送询盘…",
+    "The earlier request has expired. Review the details and selected files. Choose Send New Packaging Request only if you want to create a new request. Nothing has been resent.": "之前的询盘已过期。请检查信息和所选文件。只有要创建新询盘时才选择“发送新的包装询盘”。系统尚未重新发送任何内容。",
+    "Your request was not saved. Please correct the highlighted fields and review your brief again.": "询盘未保存。请更正标出的字段，并重新检查需求摘要。",
+    "Request saved": "询盘已保存",
+    "Your request was saved. The summary below is for your records.": "询盘已保存。以下摘要供你留存。",
+    "Scrollable packaging comparison table": "可横向滚动的包装对比表",
+    "Scroll horizontally if columns extend beyond the view.": "如果列超出屏幕范围，请横向滚动查看。",
+    "Clear search": "清除搜索",
+    "Share or export": "分享或导出",
+    "Labels": "标签",
+    "All products": "所有产品",
+    "Matching packaging guides": "匹配的包装指南",
+    "Product catalogue pages": "产品目录页",
+    "Filter products by category": "按类别筛选产品",
+    "Categories": "类别",
+    "Categories · All products": "类别 · 所有产品",
+    "No packaging options match these filters.": "没有符合这些筛选条件的包装选项。",
+    "Clear search and category": "清除搜索和类别筛选",
+    "Refine your search to narrow these guide results.": "调整搜索条件以缩小指南结果范围。",
+    "No guides match this search. Try another term or browse the journal.": "没有符合此搜索条件的指南。请尝试其他关键词，或浏览博客。",
+    "Browse all packaging articles": "浏览全部包装文章",
+    "All packaging options": "所有包装选项",
+    "Find or change packaging option": "查找或更换包装选项",
+    "Find a packaging option": "查找包装选项",
+    "Search by name or structure": "按名称或结构搜索",
+    "Change option": "更换选项",
+    "No packaging option selected yet.": "尚未选择包装选项。",
+    "That packaging option is not available. Choose another option, or select “Not sure yet”.": "此包装选项不可用。请选择其他选项，或选择“暂不确定”。",
+    "Concept render": "概念效果图",
+    "Open WhatsApp ↗": "打开 WhatsApp ↗",
+    "Read the article ↗": "阅读文章 ↗",
+    "Jewelry boxes": "珠宝盒",
+    "Foldable gift boxes": "可折叠礼品盒",
+    "Mailer boxes": "邮寄盒",
+    "Inserts": "内衬",
+    "Packaging categories": "包装类别",
+    "Other guides": "其他指南",
+    "Your name": "您的姓名",
+    "Approximate dimensions": "大致尺寸",
+    "Expected quantity": "预估数量",
+    "Destination": "目的地",
+    "Work email": "工作邮箱",
+    "Material": "材料",
+    "Target date": "目标日期",
+    "Notes": "备注",
+    "Not specified": "未指定",
+    "Search narrows the choices below; your current selection stays available.": "搜索会缩小下方选项范围；你当前的选择仍可保留。",
+    "Examples help you write a brief; they are not product specifications. Include a unit and state whether you measured the product, usable inside space or box exterior.": "这些示例用于帮助你填写需求，并非产品规格。请注明计量单位，并说明测量的是产品、可用内部空间还是盒子外部尺寸。",
+    "Submission sends the reviewed fields and any selected reference files to Packrivo for inquiry handling. Reference files are stored privately with the request for up to 180 days. No marketing subscription is added. See our": "提交后，已审核的字段和所选参考文件会发送给 Packrivo 以处理询盘。参考文件会与询盘一同私密保存，最长 180 天。我们不会为你添加营销订阅。请参阅我们的",
+    "privacy notice": "隐私声明",
+    "for retention and deletion requests.": "，了解数据保留和删除请求。",
+    "PACKRIVO PACKAGING BRIEF": "PACKRIVO 包装需求摘要",
+    "Packaging option": "包装选项",
+    "Printing / finish": "印刷 / 表面工艺",
+    "Overall": "整体",
+    "Open Closed": "开启 关闭",
+    "Side Back": "侧背面",
+    "Interior Insert": "内部内衬",
+    "Material Finish": "材料与表面处理",
+    "Structure": "结构",
+    "Bags & pouches: help me choose": "袋子与收纳袋：帮我选择",
+    "Choose option": "选择选项",
+    "Add company details, material and other preferences (optional)": "补充公司信息、材料和其他偏好（可选）",
+    "Get a quote · MOQ 500": "获取报价 · 起订量500件"
+  },
+  "patterns": [
+    [
+      "^(\\d+) packaging options?$",
+      "$1 个包装选项"
+    ],
+    [
+      "^Selected option: (.+)$",
+      "已选选项：$1"
+    ],
+    [
+      "^(\\d+) matching choices\\. Your current selection stays available\\.$",
+      "找到 $1 个匹配选项。你当前的选择仍可保留。"
+    ],
+    [
+      "^(\\d+) guides · Matches guide titles and opening text$",
+      "$1 篇指南 · 匹配指南标题和开头内容"
+    ],
+    [
+      "^(\\d+) packaging options · Page (\\d+) of (\\d+)$",
+      "$1 个包装选项 · 第 $2 页，共 $3 页"
+    ],
+    [
+      "^(\\d+) products · Showing (\\d+)[–-](\\d+)(.*)$",
+      "$1 个产品 · 显示 $2–$3$4"
+    ],
+    [
+      "^Category: (.+)$",
+      "类别：$1"
+    ],
+    [
+      "^Directions page (\\d+)$",
+      "说明第 $1 页"
+    ],
+    [
+      "^Packaging option: (.+)$",
+      "包装选项：$1"
+    ],
+    [
+      "^(.+): AI concept only$",
+      "$1：仅为 AI 概念"
+    ],
+    [
+      "^Selected reference files \\((\\d+)\\): (.+)\\. Files are sent only when you choose Send My Packaging Request\\.$",
+      "已选择 $1 个参考文件：$2。只有选择“发送包装询盘”后才会发送文件。"
+    ],
+    [
+      "^Your request has been received\\. Reference: (\\S+)\\. (\\d+) reference files? saved privately with this request\\. Packrivo will review the details and confirm the next step\\. This is not a quotation or order confirmation\\.$",
+      "已收到你的询盘。参考编号：$1。$2 个参考文件已与此询盘一并私密保存。Packrivo 将审核信息并确认下一步。这不是报价或订单确认。"
+    ],
+    [
+      "^(.*)Retry with the same details or use the copy and contact options below\\.$",
+      "$1请使用相同信息重试，或使用下方的复制和联系选项。"
+    ],
+    [
+      "^The receiving status is not confirmed\\.(.*)$",
+      "尚未确认接收状态。$1"
+    ]
+  ]
+}

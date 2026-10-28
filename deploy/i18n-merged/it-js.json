@@ -1,0 +1,181 @@
+{
+  "exact": {
+    "Menu": "Menu",
+    "Close": "Chiudi",
+    "Close image ×": "Chiudi immagine ×",
+    "Switch color theme": "Interruttore tema colore",
+    "Open navigation menu": "Menu di navigazione aperto",
+    "Close navigation menu": "Chiudi menu di navigazione",
+    "Presentation boxes and insert options": "Scatole di presentazione e opzioni di inserto",
+    "AI concept of a forest-green drawer jewelry box with a separate ivory insert": "Concetto AI di una scatola di gioielli cassetto verde foresta con un inserto avorio separato",
+    "Folding formats and gift presentation": "Formati pieghevoli e presentazione regalo",
+    "AI concept of an ivory folding gift carton beside its flat structure": "concetto AI di un cartone regalo pieghevole avorio accanto alla sua struttura piana",
+    "Box, insert and packed size together": "Scatola, inserto e dimensioni imballate insieme",
+    "AI concept of an open kraft mailer with a fitted insert": "Concetto AI di un mailer kraft aperto con un inserto montato",
+    "Roll or sheet formats for packaging": "Formati rotolo o foglio per imballaggio",
+    "AI concept comparing blank roll and sheet packaging labels": "Concetto AI che confronta le etichette di confezionamento di rotoli e fogli vuoti",
+    "Fit and presentation inside an outer pack": "Montare e presentare all'interno di un pacchetto esterno",
+    "AI concept of paperboard, corrugated and molded-pulp inserts": "Concetto AI di cartoncino, inserti ondulati e stampati",
+    "AI styled concept of green drawer boxes with ivory trays": "Concetto in stile AI di cassetti verdi con vassoi avorio",
+    "Separate AI drawer-box concept exploration, not the same physical product": "esplorazione del concetto del cassetto-box AI separata, non lo stesso prodotto fisico",
+    "Packaging concept enlarged view": "Concetto di imballaggio ingrandito vista",
+    "Supplier and physical sample review required.": "Fornitore e revisione del campione fisico richiesto.",
+    "Review or edit material & finish below ↓": "Recensione o modifica materiale & finitura sotto ↓",
+    "No material or finish specified.": "Nessun materiale o finitura specificata.",
+    "Your reference choices": "Le tue scelte di riferimento",
+    "Packaging option changed. Review your material, print and notes for this new selection.": "Opzione di imballaggio cambiata. Esamina il tuo materiale, stampa e note per questa nuova selezione.",
+    "Enter a value, or say not sure where appropriate.": "Inserire un valore, o dire non sicuro se necessario.",
+    "Prepared for review. Subject to feasibility and sample review.": "Preparato per la revisione. Fatto salvo la fattibilità e la revisione dei campioni.",
+    "Copied to your clipboard. Copying does not send another request.": "Affrontato il tuo appunti. La copia non invia un'altra richiesta.",
+    "Clipboard access is unavailable. Select the summary text or download the file instead.": "L'accesso al tabellone non è disponibile. Selezionare il testo di sintesi o scaricare il file invece.",
+    "Contact options": "Opzioni di contatto",
+    "Forest-green sleeve with an ivory tray. AI-assisted colour concept.": "Manica verde forestale con vassoio avorio. Concetto di colore assistita dall'IA.",
+    "The same drawer-box concept in warm ivory. Actual colour needs a physical reference.": "Lo stesso concetto di cassettiera in avorio caldo. Il colore reale ha bisogno di un riferimento fisico.",
+    "Illustrative YOUR BRAND placement on the sleeve, with a gold-foil appearance. Artwork and process need review.": "Illustrativo Il tuo posizionamento BRAND sulla manica, con un aspetto oro-foil. Opera e processo bisogno di revisione.",
+    "Filter by category": "Filtra per categoria",
+    "Chat with Packrivo on WhatsApp (opens a new tab)": "Chatta con Packrivo su WhatsApp (apre una nuova scheda)",
+    "Get a Quote": "Richiedi un preventivo",
+    "e.g. rigid board and removable insert": "ad esempio bordo rigido e inserto rimovibile",
+    "e.g. rigid board and magnetic flap": "ad esempio bordo rigido e pattina magnetica",
+    "e.g. printed wrap and foil logo": "ad es. involucro stampato e logo della lamina",
+    "e.g. full-color print and foil logo": "ad esempio stampa a colori e logo della lamina",
+    "Have a dieline or artwork? Upload it here. Files are sent only after you review the brief and choose Send My Packaging Request.": "Hai una linea o un'opera d'arte? Caricalo qui. I file vengono inviati solo dopo aver esaminato il breve e scegliere Invia la mia richiesta di imballaggio.",
+    "Review the summary before sending. Packrivo stores submitted requests for 180 days so a person can review and respond. The details stay on this device until you select Send My Packaging Request.": "Rivedere il sommario prima dell'invio. Packrivo memorizza le richieste presentate per 180 giorni in modo che una persona possa rivedere e rispondere. I dettagli rimangono su questo dispositivo finché non si seleziona Invia la mia richiesta di imballaggio.",
+    "Send My Packaging Request": "Invia la mia richiesta di imballaggio",
+    "Send New Packaging Request": "Invia nuova richiesta di imballaggio",
+    "Contact Packrivo": "Contatta Packrivo",
+    "Contact name": "Nome del contatto",
+    "Company": "Azienda",
+    "Company website": "Sito web aziendale",
+    "No reference files selected.": "Nessun file di riferimento selezionato.",
+    "Choose up to three reference files.": "Scegliere fino a tre file di riferimento.",
+    "Each file must contain data and be no larger than 2 MiB.": "Ogni file deve contenere i dati e non essere più grande di 2 MiB.",
+    "Reference files must total no more than 5 MiB.": "I file di riferimento devono essere totali non più di 5 MiB.",
+    "A reference file could not be read. Please select it again.": "Un file di riferimento non poteva essere letto. Si prega di selezionare di nuovo.",
+    "Review the details below before sending.": "Rivedere i dettagli qui sotto prima dell'invio.",
+    "Your request was not sent. Check the reference files.": "La sua richiesta non e' stata inviata. Controlla i file di riferimento.",
+    "The request could not be prepared. Your details are still here; use the copy and contact options below.": "La richiesta non poteva essere preparata. I tuoi dati sono ancora qui; utilizzare le opzioni di copia e contatto qui sotto.",
+    "Sending your request…": "Invia la tua richiesta...",
+    "The earlier request has expired. Review the details and selected files. Choose Send New Packaging Request only if you want to create a new request. Nothing has been resent.": "La richiesta precedente è scaduta. Rivedere i dettagli e i file selezionati. Scegliere Invia nuova richiesta di imballaggio solo se si desidera creare una nuova richiesta. Niente e' stato risentito.",
+    "Your request was not saved. Please correct the highlighted fields and review your brief again.": "La vostra richiesta non è stata salvata. Si prega di correggere i campi evidenziati e rivedere il vostro breve di nuovo.",
+    "Request saved": "Richiesta salvata",
+    "Your request was saved. The summary below is for your records.": "La tua richiesta e' stata salvata. Il riassunto qui sotto è per i vostri record.",
+    "Scrollable packaging comparison table": "Tavolino di confronto per imballaggi scorrevoli",
+    "Scroll horizontally if columns extend beyond the view.": "Scorrere orizzontalmente se le colonne si estendono oltre la vista.",
+    "Clear search": "Ricerca chiara",
+    "Share or export": "Condividere o esportare",
+    "Labels": "Etichette",
+    "All products": "Tutti i prodotti",
+    "Matching packaging guides": "Guide di confezionamento abbinate",
+    "Product catalogue pages": "Catalogo prodotti",
+    "Filter products by category": "Filtra i prodotti per categoria",
+    "Categories": "Categorie",
+    "Categories · All products": "Categorie · Tutti i prodotti",
+    "No packaging options match these filters.": "Nessuna opzione di imballaggio corrisponde a questi filtri.",
+    "Clear search and category": "Ricerca e categoria",
+    "Refine your search to narrow these guide results.": "Affina la tua ricerca per restringere questi risultati.",
+    "No guides match this search. Try another term or browse the journal.": "Nessuna guida corrisponde a questa ricerca. Prova un altro termine o sfoglia il diario.",
+    "Browse all packaging articles": "Sfoglia tutti gli articoli di imballaggio",
+    "All packaging options": "Tutte le opzioni di imballaggio",
+    "Find or change packaging option": "Trovare o modificare l'opzione di imballaggio",
+    "Find a packaging option": "Trova un'opzione di imballaggio",
+    "Search by name or structure": "Ricerca per nome o struttura",
+    "Change option": "Modifica opzione",
+    "No packaging option selected yet.": "Non è ancora selezionata l'opzione di imballaggio.",
+    "That packaging option is not available. Choose another option, or select “Not sure yet”.": "Quell'opzione di imballaggio non è disponibile. Scegliere un'altra opzione, o selezionare \"Non sicuro ancora\".",
+    "Concept render": "Render concettuale",
+    "Open WhatsApp ↗": "Apri WhatsApp ↗",
+    "Read the article ↗": "Leggi l'articolo ↗",
+    "Jewelry boxes": "Scatole per gioielli",
+    "Foldable gift boxes": "Scatole regalo pieghevoli",
+    "Mailer boxes": "Scatole mailer",
+    "Inserts": "Inserti",
+    "Packaging categories": "Categorie di imballaggio",
+    "Other guides": "Altre guide",
+    "Your name": "Il tuo nome",
+    "Approximate dimensions": "Dimensioni approssimative",
+    "Expected quantity": "Quantità prevista",
+    "Destination": "Destinazione",
+    "Work email": "E-mail di lavoro",
+    "Material": "Materiale",
+    "Target date": "Data obiettivo",
+    "Notes": "Note",
+    "Not specified": "Non specificato",
+    "Search narrows the choices below; your current selection stays available.": "La ricerca restringe le opzioni qui sotto; la selezione attuale resta disponibile.",
+    "Examples help you write a brief; they are not product specifications. Include a unit and state whether you measured the product, usable inside space or box exterior.": "Esempi ti aiutano a scrivere un breve; non sono specifiche del prodotto. Includere un'unità e dichiarare se misurato il prodotto, utilizzabile all'interno dello spazio o all'esterno della scatola.",
+    "Submission sends the reviewed fields and any selected reference files to Packrivo for inquiry handling. Reference files are stored privately with the request for up to 180 days. No marketing subscription is added. See our": "La sottomissione invia i campi esaminati e tutti i file di riferimento selezionati a Packrivo per la gestione delle richieste. I file di riferimento vengono archiviati in privato con la richiesta fino a 180 giorni. Nessun abbonamento di marketing è aggiunto. Guarda la nostra",
+    "privacy notice": "Informativa sulla privacy",
+    "for retention and deletion requests.": "per le richieste di ritenzione e cancellazione.",
+    "PACKRIVO PACKAGING BRIEF": "BRIEF DI IMBALLAGGIO PACKRIVO",
+    "Packaging option": "Opzione di imballaggio",
+    "Printing / finish": "Stampa / finitura",
+    "Overall": "Complessivo",
+    "Open Closed": "Aperto Chiuso",
+    "Side Back": "Lato posteriore",
+    "Interior Insert": "Inserto interno",
+    "Material Finish": "Finitura del materiale",
+    "Structure": "Struttura",
+    "Bags & pouches: help me choose": "Borse e sacchetti: aiutami a scegliere",
+    "Choose option": "Scegli un’opzione",
+    "Add company details, material and other preferences (optional)": "Aggiungi i dati aziendali, il materiale e altre preferenze (facoltativo)",
+    "Get a quote · MOQ 500": "Richiedi un preventivo · Minimo 500"
+  },
+  "patterns": [
+    [
+      "^(\\d+) packaging options?$",
+      "$1 opzioni di imballaggio"
+    ],
+    [
+      "^Selected option: (.+)$",
+      "Opzione selezionata: $1"
+    ],
+    [
+      "^(\\d+) matching choices\\. Your current selection stays available\\.$",
+      "$1 opzioni corrispondono. La selezione attuale è ancora disponibile."
+    ],
+    [
+      "^(\\d+) guides · Matches guide titles and opening text$",
+      "$1 guide · Corrispondenze nei titoli e nei testi introduttivi"
+    ],
+    [
+      "^(\\d+) packaging options · Page (\\d+) of (\\d+)$",
+      "$1 opzioni di imballaggio · Pagina $2 di $3"
+    ],
+    [
+      "^(\\d+) products · Showing (\\d+)[–-](\\d+)(.*)$",
+      "$1 prodotti · Visualizzati $2–$3$4"
+    ],
+    [
+      "^Category: (.+)$",
+      "Categoria: $1"
+    ],
+    [
+      "^Directions page (\\d+)$",
+      "Pagina delle istruzioni $1"
+    ],
+    [
+      "^Packaging option: (.+)$",
+      "Opzione di imballaggio: $1"
+    ],
+    [
+      "^(.+): AI concept only$",
+      "$1: solo concept AI"
+    ],
+    [
+      "^Selected reference files \\((\\d+)\\): (.+)\\. Files are sent only when you choose Send My Packaging Request\\.$",
+      "File di riferimento selezionati ($1): $2. I file vengono inviati solo quando scegli «Invia la mia richiesta di imballaggio»."
+    ],
+    [
+      "^Your request has been received\\. Reference: (\\S+)\\. (\\d+) reference files? saved privately with this request\\. Packrivo will review the details and confirm the next step\\. This is not a quotation or order confirmation\\.$",
+      "La tua richiesta è stata ricevuta. Riferimento: $1. I $2 file di riferimento sono stati archiviati in modo riservato insieme a questa richiesta. Packrivo esaminerà i dettagli e confermerà il prossimo passaggio. Questa non è un’offerta né una conferma d’ordine."
+    ],
+    [
+      "^(.*)Retry with the same details or use the copy and contact options below\\.$",
+      "$1Riprova con gli stessi dati oppure usa le opzioni di copia e contatto qui sotto."
+    ],
+    [
+      "^The receiving status is not confirmed\\.(.*)$",
+      "La ricezione non è stata confermata.$1"
+    ]
+  ]
+}

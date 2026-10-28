@@ -283,7 +283,14 @@
     "Custom Round Tube Gift Boxes | Packrivo": "Tubos redondos de cartão para presentes | Packrivo",
     "Custom Jewelry Pouches with Logo | Packrivo": "Sacos para joias em tecido com logótipo | Packrivo",
     "Custom Thermoformed Insert Trays | Packrivo": "Bandejas termoformadas com moldes | Packrivo",
-    "Custom Windowed Folding Cartons | Packrivo": "Caixas de cartão dobrado com janela | Packrivo"
+    "Custom Windowed Folding Cartons | Packrivo": "Caixas de cartão dobrado com janela | Packrivo",
+    "Custom Jewelry Boxes & Packaging with Logo | Packrivo": "Caixas de joias e embalagens com logótipo | Packrivo",
+    "Custom Packaging: 134 Styles, MOQ 500 | Packrivo": "Embalagens à medida: 134 modelos, MOQ 500 | Packrivo",
+    "Custom Jewelry Boxes: Rigid, Drawer, MOQ 500 | Packrivo": "Caixas de joias rígidas, gaveta, MOQ 500 | Packrivo",
+    "Custom Mailer Boxes & Shipping Boxes with Logo | Packrivo": "Caixas de envio com logótipo | Packrivo",
+    "Custom Packaging Samples Before You Order | Packrivo": "Amostras de embalagem antes de encomendar | Packrivo",
+    "Custom Packaging Guides for Small Brands | Packrivo": "Guias de embalagens para pequenas marcas | Packrivo",
+    "About Packrivo | Custom Packaging from Shenzhen": "Sobre a Packrivo | Embalagens à medida de Shenzhen"
   },
   "attr": {
     "Next step": "Próxima etapa",
@@ -978,6 +985,14 @@
     "Custom Mailer Boxes": "Caixas de envio personalizadas",
     "Custom Sheet Labels": "Etiquetas em folha personalizadas",
     "Search": "Pesquisar",
+    "Custom jewelry boxes, pouches and gift boxes printed with your logo, from 500 pieces. Order a sample first and see live prices in the quote builder.": "Caixas de joias, sacos e caixas de presente feitos à medida com o seu logótipo, a partir de 500 peças. Peça primeiro uma amostra e veja preços em tempo real no configurador de orçamentos.",
+    "Browse 134 custom packaging styles, from jewelry boxes and pouches to mailers and gift boxes, printed with your logo from 500 pieces. Get a price.": "Explore 134 modelos de embalagens à medida, de caixas e sacos para joias a caixas de envio e presente, com o seu logótipo a partir de 500 peças. Peça um preço.",
+    "Custom jewelry boxes with your logo: rigid, magnetic, drawer and pillow styles for rings, necklaces and bracelets, from 500 pieces. Get a price.": "Caixas de joias com o seu logótipo: rígidas, magnéticas, de gaveta e travesseiro para anéis, colares e pulseiras, a partir de 500 peças. Peça um preço.",
+    "Custom printed mailer boxes and shipping boxes for ecommerce brands, with your logo from 500 pieces. Get a price.": "Caixas postais e de envio impressas à medida para marcas de comércio eletrónico, com o seu logótipo a partir de 500 peças. Peça um preço.",
+    "Order a sample of your custom box or pouch to check size, print and finish before your 500-piece order. Get a price.": "Peça uma amostra da sua caixa ou saco personalizado para verificar tamanho, impressão e acabamento antes da encomenda de 500 peças. Peça um preço.",
+    "Practical guides for small brands on jewelry boxes, mailers and gift packaging: sizes, materials, costs and how to order.": "Guias práticos para pequenas marcas sobre caixas de joias, caixas de envio e embalagens de presente: tamanhos, materiais, custos e como encomendar.",
+    "Packrivo helps small brands order custom packaging from Shenzhen, working with independent suppliers on samples, printing and shipping.": "A Packrivo ajuda pequenas marcas a encomendar embalagens à medida de Shenzhen, com fornecedores independentes para amostras, impressão e envio.",
+    "Request a packaging quotation with your product, dimensions, quantity and destination. MOQ 500 per design.": "Peça um orçamento de embalagem com o seu produto, dimensões, quantidade e destino. Mínimo de 500 peças por design.",
     "Red drawer jewelry box with ribbon pull and insert": "Caixa para joias vermelha com gaveta, fita de puxar e molde interior",
     "Black and white lid-and-base jewelry boxes with inserts": "Caixas para joias a preto e branco com tampa e base e moldes interiores"
   },
@@ -7078,7 +7093,16 @@
     "Put it to work on a real pack": "Aplique isto numa embalagem real",
     "The quote builder applies these numbers to your size and quantity. We confirm the dieline before anything is produced.": "O simulador de orçamento aplica estes números ao seu tamanho e quantidade. Confirmamos o molde de corte antes de produzir seja o que for.",
     "Build a quote": "Criar um orçamento",
-    "Supplier product photo, retouched (text and watermarks removed)": "Foto do produto do fornecedor, retocada (texto e marcas de água removidos)"
+    "Supplier product photo, retouched (text and watermarks removed)": "Foto do produto do fornecedor, retocada (texto e marcas de água removidos)",
+    "Custom jewelry boxes, pouches and gift boxes printed with your logo, from 500 pieces. Order a sample first and see live prices in the quote builder.": "Caixas de joias, sacos e caixas de presente feitos à medida com o seu logótipo, a partir de 500 peças. Peça primeiro uma amostra e veja preços em tempo real no configurador de orçamentos.",
+    "Browse 134 custom packaging styles, from jewelry boxes and pouches to mailers and gift boxes, printed with your logo from 500 pieces. Get a price.": "Explore 134 modelos de embalagens à medida, de caixas e sacos para joias a caixas de envio e presente, com o seu logótipo a partir de 500 peças. Peça um preço.",
+    "Custom jewelry boxes with your logo: rigid, magnetic, drawer and pillow styles for rings, necklaces and bracelets, from 500 pieces. Get a price.": "Caixas de joias com o seu logótipo: rígidas, magnéticas, de gaveta e travesseiro para anéis, colares e pulseiras, a partir de 500 peças. Peça um preço.",
+    "Custom printed mailer boxes and shipping boxes for ecommerce brands, with your logo from 500 pieces. Get a price.": "Caixas postais e de envio impressas à medida para marcas de comércio eletrónico, com o seu logótipo a partir de 500 peças. Peça um preço.",
+    "Order a sample of your custom box or pouch to check size, print and finish before your 500-piece order. Get a price.": "Peça uma amostra da sua caixa ou saco personalizado para verificar tamanho, impressão e acabamento antes da encomenda de 500 peças. Peça um preço.",
+    "Practical guides for small brands on jewelry boxes, mailers and gift packaging: sizes, materials, costs and how to order.": "Guias práticos para pequenas marcas sobre caixas de joias, caixas de envio e embalagens de presente: tamanhos, materiais, custos e como encomendar.",
+    "Packrivo helps small brands order custom packaging from Shenzhen, working with independent suppliers on samples, printing and shipping.": "A Packrivo ajuda pequenas marcas a encomendar embalagens à medida de Shenzhen, com fornecedores independentes para amostras, impressão e envio.",
+    "Request a packaging quotation with your product, dimensions, quantity and destination. MOQ 500 per design.": "Peça um orçamento de embalagem com o seu produto, dimensões, quantidade e destino. Mínimo de 500 peças por design.",
+    "Get a quote · MOQ 500": "Peça um orçamento · Mínimo 500"
   },
   "text": {
     "Home": "Início",
@@ -7326,6 +7350,7 @@
     "Put it to work on a real pack": "Aplique isto numa embalagem real",
     "The quote builder applies these numbers to your size and quantity. We confirm the dieline before anything is produced.": "O simulador de orçamento aplica estes números ao seu tamanho e quantidade. Confirmamos o molde de corte antes de produzir seja o que for.",
     "Build a quote": "Criar um orçamento",
-    "Supplier product photo, retouched (text and watermarks removed)": "Foto do produto do fornecedor, retocada (texto e marcas de água removidos)"
+    "Supplier product photo, retouched (text and watermarks removed)": "Foto do produto do fornecedor, retocada (texto e marcas de água removidos)",
+    "Get a quote · MOQ 500": "Peça um orçamento · Mínimo 500"
   }
 }

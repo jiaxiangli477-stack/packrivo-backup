@@ -1,0 +1,426 @@
+[
+  {
+    "path": "/",
+    "title": "Custom Jewelry Boxes & Packaging with Logo | Packrivo",
+    "description": "Custom jewelry boxes, pouches and gift boxes printed with your logo, from 500 pieces. Order a sample first and see live prices in the quote builder.",
+    "i18n": {
+      "ar": {
+        "title": "علب مجوهرات وتغليف مخصص بالشعار | Packrivo",
+        "description": "علب مجوهرات وأكياس وعلب هدايا مطبوعة بشعارك، من 500 قطعة. اطلب عينة أولًا واطّلع على الأسعار المباشرة في أداة إعداد عرض السعر."
+      },
+      "de": {
+        "title": "Schmuckschachteln & Verpackungen mit Logo | Packrivo",
+        "description": "Schmuckschachteln, Beutel und Geschenkboxen mit Ihrem Logo, ab 500 Stück. Erst ein Muster bestellen und Live-Preise im Angebotsrechner sehen."
+      },
+      "es": {
+        "title": "Cajas de joyería y packaging con logo | Packrivo",
+        "description": "Cajas de joyería, bolsas y cajas de regalo personalizadas con tu logo, desde 500 unidades. Pide primero una muestra y consulta precios en vivo en el configurador de presupuestos."
+      },
+      "fr": {
+        "title": "Boîtes à bijoux & emballages avec logo | Packrivo",
+        "description": "Boîtes à bijoux, pochettes et boîtes cadeaux personnalisées avec votre logo, dès 500 pièces. Commandez d’abord un échantillon et consultez les prix en direct dans le configurateur de devis."
+      },
+      "it": {
+        "title": "Scatole per gioielli e packaging con logo | Packrivo",
+        "description": "Scatole per gioielli, sacchetti e scatole regalo personalizzati con il tuo logo, da 500 pezzi. Ordina prima un campione e consulta i prezzi aggiornati nel configuratore di preventivi."
+      },
+      "ja": {
+        "title": "ロゴ入りジュエリーボックス・オリジナル包装 | Packrivo",
+        "description": "ジュエリーボックス、ポーチ、ギフトボックスにロゴ印刷、500個から。まずサンプルを注文し、見積もり作成ツールでリアルタイムの価格をご確認ください。"
+      },
+      "ko": {
+        "title": "로고 맞춤 주얼리 박스·포장 | Packrivo",
+        "description": "주얼리 박스, 파우치와 선물 상자에 로고를 인쇄하며 500개부터 주문할 수 있습니다. 먼저 샘플을 주문하고 견적 도구에서 실시간 가격을 확인하세요."
+      },
+      "nl": {
+        "title": "Sieradendoosjes & verpakkingen met logo | Packrivo",
+        "description": "Sieradendoosjes, zakjes en geschenkdozen op maat met je logo, vanaf 500 stuks. Bestel eerst een monster en bekijk actuele prijzen in de offertebouwer."
+      },
+      "pt": {
+        "title": "Caixas de joias e embalagens com logótipo | Packrivo",
+        "description": "Caixas de joias, sacos e caixas de presente feitos à medida com o seu logótipo, a partir de 500 peças. Peça primeiro uma amostra e veja preços em tempo real no configurador de orçamentos."
+      },
+      "zh-CN": {
+        "title": "定制首饰盒与包装，可印标志 | Packrivo",
+        "description": "定制首饰盒、首饰袋和礼盒，可印您的标志，500件起订。先订样品，并通过报价器查看实时价格。"
+      },
+      "zh-TW": {
+        "title": "客製首飾盒與包裝，可印標誌 | Packrivo",
+        "description": "客製首飾盒、首飾袋和禮盒，可印您的標誌，500件起訂。先訂樣品，並透過報價工具查看即時價格。"
+      }
+    }
+  },
+  {
+    "path": "/products/",
+    "title": "Custom Packaging: 134 Styles, MOQ 500 | Packrivo",
+    "description": "Browse 134 custom packaging styles, from jewelry boxes and pouches to mailers and gift boxes, printed with your logo from 500 pieces. Get a price.",
+    "i18n": {
+      "ar": {
+        "title": "تغليف مخصص: 134 تصميمًا، حد أدنى 500 | Packrivo",
+        "description": "تصفح 134 نمطًا من التغليف المخصص، من علب المجوهرات والأكياس إلى علب البريد والهدايا، مطبوعة بشعارك من 500 قطعة. اطلب سعرًا."
+      },
+      "de": {
+        "title": "Verpackungen nach Maß: 134 Arten, MOQ 500 | Packrivo",
+        "description": "134 Verpackungsvarianten nach Maß entdecken: Schmuckschachteln, Beutel, Versand- und Geschenkboxen, mit Ihrem Logo ab 500 Stück. Preis anfragen."
+      },
+      "es": {
+        "title": "Packaging a medida: 134 modelos, MOQ 500 | Packrivo",
+        "description": "Explora 134 modelos de packaging a medida: cajas y bolsas para joyería, cajas de envío y de regalo, impresas con tu logo desde 500 unidades. Pide precio."
+      },
+      "fr": {
+        "title": "Emballages personnalisés : 134 modèles, MOQ 500 | Packrivo",
+        "description": "Découvrez 134 modèles d’emballages personnalisés : boîtes à bijoux, pochettes, boîtes d’envoi et cadeaux, imprimés avec votre logo dès 500 pièces. Demandez un prix."
+      },
+      "it": {
+        "title": "Packaging personalizzato: 134 modelli, MOQ 500 | Packrivo",
+        "description": "Scopri 134 modelli di packaging personalizzato, da scatole e sacchetti per gioielli a scatole da spedizione e regalo, con il tuo logo da 500 pezzi. Richiedi un prezzo."
+      },
+      "ja": {
+        "title": "オリジナル包装134種類・最低注文数500個 | Packrivo",
+        "description": "ジュエリーボックスやポーチから宅配箱、ギフトボックスまで、134種類のオリジナル包装をご覧ください。ロゴ印刷は500個から。価格をお問い合わせください。"
+      },
+      "ko": {
+        "title": "맞춤 포장 134종 · 최소 주문 500개 | Packrivo",
+        "description": "주얼리 박스와 파우치부터 메일러, 선물 상자까지 134종의 맞춤 포장을 살펴보세요. 로고 인쇄는 500개부터 가능합니다. 가격을 문의하세요."
+      },
+      "nl": {
+        "title": "Verpakkingen op maat: 134 stijlen, MOQ 500 | Packrivo",
+        "description": "Bekijk 134 verpakkingsstijlen op maat: van sieradendoosjes en zakjes tot verzend- en geschenkdozen, met je logo vanaf 500 stuks. Vraag een prijs aan."
+      },
+      "pt": {
+        "title": "Embalagens à medida: 134 modelos, MOQ 500 | Packrivo",
+        "description": "Explore 134 modelos de embalagens à medida, de caixas e sacos para joias a caixas de envio e presente, com o seu logótipo a partir de 500 peças. Peça um preço."
+      },
+      "zh-CN": {
+        "title": "定制包装：134种款式，500件起订 | Packrivo",
+        "description": "浏览134种定制包装，从首饰盒、首饰袋到快递盒和礼盒，可印您的标志，500件起订。欢迎询价。"
+      },
+      "zh-TW": {
+        "title": "客製包裝：134種款式，最低500件 | Packrivo",
+        "description": "瀏覽134種客製包裝，從首飾盒、首飾袋到寄件盒和禮盒，可印您的標誌，500件起訂。歡迎詢價。"
+      }
+    }
+  },
+  {
+    "path": "/jewelry-boxes/",
+    "title": "Custom Jewelry Boxes: Rigid, Drawer, MOQ 500 | Packrivo",
+    "description": "Custom jewelry boxes with your logo: rigid, magnetic, drawer and pillow styles for rings, necklaces and bracelets, from 500 pieces. Get a price.",
+    "i18n": {
+      "ar": {
+        "title": "علب مجوهرات مخصصة: صلبة وبدرج، من 500 | Packrivo",
+        "description": "علب مجوهرات بشعارك: صلبة ومغناطيسية وبدرج وبشكل وسادة، للخواتم والقلائد والأساور، من 500 قطعة. اطلب سعرًا."
+      },
+      "de": {
+        "title": "Schmuckschachteln: Hartbox, Schublade, ab 500 | Packrivo",
+        "description": "Schmuckschachteln mit Ihrem Logo: Hartboxen, Magnet-, Schubladen- und Kissenschachteln für Ringe, Ketten und Armbänder, ab 500 Stück. Preis anfragen."
+      },
+      "es": {
+        "title": "Cajas de joyería rígidas y con cajón, MOQ 500 | Packrivo",
+        "description": "Cajas para joyería con tu logo: rígidas, magnéticas, con cajón y tipo almohada para anillos, collares y pulseras, desde 500 unidades. Pide precio."
+      },
+      "fr": {
+        "title": "Boîtes à bijoux : rigides, tiroir, MOQ 500 | Packrivo",
+        "description": "Boîtes à bijoux avec votre logo : rigides, aimantées, à tiroir ou berlingot pour bagues, colliers et bracelets, dès 500 pièces. Demandez un prix."
+      },
+      "it": {
+        "title": "Scatole per gioielli: rigide, a cassetto, MOQ 500 | Packrivo",
+        "description": "Scatole per gioielli con il tuo logo: rigide, magnetiche, a cassetto e a cuscino per anelli, collane e bracciali, da 500 pezzi. Richiedi un prezzo."
+      },
+      "ja": {
+        "title": "ジュエリーボックス：貼り箱・引き出し式・500個から | Packrivo",
+        "description": "ロゴ入りジュエリーボックスを500個から。リング、ネックレス、ブレスレット向けに、貼り箱、マグネット式、引き出し式、ピローボックスをご用意。価格をお問い合わせください。"
+      },
+      "ko": {
+        "title": "맞춤 주얼리 박스: 경질·서랍형, 최소 500개 | Packrivo",
+        "description": "로고를 넣은 주얼리 박스는 500개부터 가능합니다. 반지, 목걸이와 팔찌용 경질, 자석형, 서랍형, 필로우형을 선택하세요. 가격을 문의하세요."
+      },
+      "nl": {
+        "title": "Sieradendoosjes: hardbox, lade, MOQ 500 | Packrivo",
+        "description": "Sieradendoosjes met je logo: hardboxen, magneet-, lade- en kussendoosjes voor ringen, kettingen en armbanden, vanaf 500 stuks. Vraag een prijs aan."
+      },
+      "pt": {
+        "title": "Caixas de joias rígidas, gaveta, MOQ 500 | Packrivo",
+        "description": "Caixas de joias com o seu logótipo: rígidas, magnéticas, de gaveta e travesseiro para anéis, colares e pulseiras, a partir de 500 peças. Peça um preço."
+      },
+      "zh-CN": {
+        "title": "定制首饰盒：精装、抽屉，500件起订 | Packrivo",
+        "description": "可印您标志的定制首饰盒，包含精装、磁吸、抽屉和枕头盒款式，适合戒指、项链和手链，500件起订。欢迎询价。"
+      },
+      "zh-TW": {
+        "title": "客製首飾盒：裱紙、抽屜式，500件起訂 | Packrivo",
+        "description": "可印您標誌的客製首飾盒，包括裱紙、磁吸、抽屜式和枕頭盒款式，適合戒指、項鍊和手鍊，500件起訂。歡迎詢價。"
+      }
+    }
+  },
+  {
+    "path": "/mailer-boxes/",
+    "title": "Custom Mailer Boxes & Shipping Boxes with Logo | Packrivo",
+    "description": "Custom printed mailer boxes and shipping boxes for ecommerce brands, with your logo from 500 pieces. Get a price.",
+    "i18n": {
+      "ar": {
+        "title": "علب بريد وشحن مخصصة بالشعار | Packrivo",
+        "description": "علب بريد وشحن مطبوعة حسب الطلب لعلامات التجارة الإلكترونية، بشعارك من 500 قطعة. اطلب سعرًا."
+      },
+      "de": {
+        "title": "Versandschachteln & Versandkartons mit Logo | Packrivo",
+        "description": "Individuell bedruckte Versandschachteln und Versandkartons für E-Commerce-Marken, mit Ihrem Logo ab 500 Stück. Preis anfragen."
+      },
+      "es": {
+        "title": "Cajas de envío con logo a medida | Packrivo",
+        "description": "Cajas postales y de transporte impresas a medida para marcas de comercio electrónico, con tu logo desde 500 unidades. Pide precio."
+      },
+      "fr": {
+        "title": "Boîtes d’envoi & cartons avec logo | Packrivo",
+        "description": "Boîtes d’envoi et cartons d’expédition personnalisés pour marques e-commerce, imprimés avec votre logo dès 500 pièces. Demandez un prix."
+      },
+      "it": {
+        "title": "Scatole da spedizione con logo | Packrivo",
+        "description": "Scatole postali e da spedizione stampate su misura per marchi e-commerce, con il tuo logo da 500 pezzi. Richiedi un prezzo."
+      },
+      "ja": {
+        "title": "ロゴ入りメーラーボックス・配送箱 | Packrivo",
+        "description": "ECブランド向けに、メーラーボックスや配送箱をオリジナル印刷。ロゴ入りで500個から。価格をお問い合わせください。"
+      },
+      "ko": {
+        "title": "로고 맞춤 메일러·배송 박스 | Packrivo",
+        "description": "이커머스 브랜드를 위한 맞춤 인쇄 메일러 박스와 배송 상자입니다. 로고 인쇄는 500개부터 가능합니다. 가격을 문의하세요."
+      },
+      "nl": {
+        "title": "Verzenddozen met logo op maat | Packrivo",
+        "description": "Bedrukte mailerdozen en verzenddozen op maat voor e-commercemerken, met je logo vanaf 500 stuks. Vraag een prijs aan."
+      },
+      "pt": {
+        "title": "Caixas de envio com logótipo | Packrivo",
+        "description": "Caixas postais e de envio impressas à medida para marcas de comércio eletrónico, com o seu logótipo a partir de 500 peças. Peça um preço."
+      },
+      "zh-CN": {
+        "title": "定制快递盒与运输箱，可印标志 | Packrivo",
+        "description": "面向电商品牌的定制印刷快递盒与运输箱，可印您的标志，500件起订。欢迎询价。"
+      },
+      "zh-TW": {
+        "title": "客製寄件盒與運輸箱，可印標誌 | Packrivo",
+        "description": "面向電商品牌的客製印刷寄件盒與運輸箱，可印您的標誌，500件起訂。歡迎詢價。"
+      }
+    }
+  },
+  {
+    "path": "/samples/",
+    "title": "Custom Packaging Samples Before You Order | Packrivo",
+    "description": "Order a sample of your custom box or pouch to check size, print and finish before your 500-piece order. Get a price.",
+    "i18n": {
+      "ar": {
+        "title": "عينات تغليف مخصص قبل الطلب | Packrivo",
+        "description": "اطلب عينة من علبتك أو كيسك المخصص لفحص المقاس والطباعة والتشطيب قبل طلب 500 قطعة. اطلب سعرًا."
+      },
+      "de": {
+        "title": "Individuelle Verpackungsmuster vor Bestellung | Packrivo",
+        "description": "Bestellen Sie ein Muster Ihrer individuellen Schachtel oder Ihres Beutels. Prüfen Sie Größe, Druck und Veredelung vor Ihrer Bestellung über 500 Stück. Preis anfragen."
+      },
+      "es": {
+        "title": "Muestras de packaging antes del pedido | Packrivo",
+        "description": "Pide una muestra de tu caja o bolsa a medida para revisar tamaño, impresión y acabado antes de tu pedido de 500 unidades. Pide precio."
+      },
+      "fr": {
+        "title": "Échantillons d’emballage avant commande | Packrivo",
+        "description": "Commandez un échantillon de votre boîte ou pochette sur mesure pour vérifier dimensions, impression et finition avant votre commande de 500 pièces. Demandez un prix."
+      },
+      "it": {
+        "title": "Campioni di packaging prima dell’ordine | Packrivo",
+        "description": "Ordina un campione della tua scatola o del tuo sacchetto su misura per verificare dimensioni, stampa e finitura prima dell’ordine di 500 pezzi. Richiedi un prezzo."
+      },
+      "ja": {
+        "title": "注文前に確認するオリジナル包装サンプル | Packrivo",
+        "description": "オーダーメイドの箱やポーチのサンプルを注文し、500個の注文前にサイズ、印刷、仕上がりをご確認ください。価格をお問い合わせください。"
+      },
+      "ko": {
+        "title": "주문 전 맞춤 포장 샘플 | Packrivo",
+        "description": "500개 주문 전에 맞춤 상자나 파우치의 샘플을 주문해 크기, 인쇄와 마감을 확인하세요. 가격을 문의하세요."
+      },
+      "nl": {
+        "title": "Verpakkingsmonsters vóór je bestelt | Packrivo",
+        "description": "Bestel een monster van je doos of zakje op maat om formaat, bedrukking en afwerking te controleren vóór je bestelling van 500 stuks. Vraag een prijs aan."
+      },
+      "pt": {
+        "title": "Amostras de embalagem antes de encomendar | Packrivo",
+        "description": "Peça uma amostra da sua caixa ou saco personalizado para verificar tamanho, impressão e acabamento antes da encomenda de 500 peças. Peça um preço."
+      },
+      "zh-CN": {
+        "title": "下单前先看定制包装样品 | Packrivo",
+        "description": "先订定制盒或包装袋样品，在下单500件前检查尺寸、印刷和表面处理。欢迎询价。"
+      },
+      "zh-TW": {
+        "title": "下單前先看客製包裝樣品 | Packrivo",
+        "description": "先訂客製盒或包裝袋樣品，在下單500件前檢查尺寸、印刷和表面處理。歡迎詢價。"
+      }
+    }
+  },
+  {
+    "path": "/blog/",
+    "title": "Custom Packaging Guides for Small Brands | Packrivo",
+    "description": "Practical guides for small brands on jewelry boxes, mailers and gift packaging: sizes, materials, costs and how to order.",
+    "i18n": {
+      "ar": {
+        "title": "أدلة تغليف مخصص للعلامات الصغيرة | Packrivo",
+        "description": "أدلة عملية للعلامات الصغيرة عن علب المجوهرات والبريد وتغليف الهدايا: المقاسات والمواد والتكاليف وكيفية الطلب."
+      },
+      "de": {
+        "title": "Verpackungsratgeber für kleine Marken | Packrivo",
+        "description": "Praktische Ratgeber für kleine Marken zu Schmuckschachteln, Versandboxen und Geschenkverpackungen: Größen, Materialien, Kosten und Bestellung."
+      },
+      "es": {
+        "title": "Guías de packaging para pequeñas marcas | Packrivo",
+        "description": "Guías prácticas para pequeñas marcas sobre cajas de joyería, cajas de envío y packaging de regalo: tamaños, materiales, costes y cómo pedir."
+      },
+      "fr": {
+        "title": "Guides d’emballage pour petites marques | Packrivo",
+        "description": "Guides pratiques pour petites marques sur les boîtes à bijoux, les boîtes d’envoi et l’emballage cadeau : dimensions, matériaux, coûts et commande."
+      },
+      "it": {
+        "title": "Guide al packaging per piccoli marchi | Packrivo",
+        "description": "Guide pratiche per piccoli marchi su scatole per gioielli, scatole da spedizione e packaging regalo: dimensioni, materiali, costi e come ordinare."
+      },
+      "ja": {
+        "title": "小規模ブランド向けオリジナル包装ガイド | Packrivo",
+        "description": "小規模ブランド向けに、ジュエリーボックス、宅配箱、ギフト包装を解説。サイズ、素材、費用、注文方法がわかる実用ガイドです。"
+      },
+      "ko": {
+        "title": "소규모 브랜드 맞춤 포장 가이드 | Packrivo",
+        "description": "소규모 브랜드를 위한 주얼리 박스, 메일러와 선물 포장 실용 가이드입니다. 크기, 소재, 비용과 주문 방법을 안내합니다."
+      },
+      "nl": {
+        "title": "Verpakkingsgidsen voor kleine merken | Packrivo",
+        "description": "Praktische gidsen voor kleine merken over sieradendoosjes, verzenddozen en geschenkverpakkingen: maten, materialen, kosten en bestellen."
+      },
+      "pt": {
+        "title": "Guias de embalagens para pequenas marcas | Packrivo",
+        "description": "Guias práticos para pequenas marcas sobre caixas de joias, caixas de envio e embalagens de presente: tamanhos, materiais, custos e como encomendar."
+      },
+      "zh-CN": {
+        "title": "小品牌定制包装指南 | Packrivo",
+        "description": "为小品牌提供首饰盒、快递盒和礼品包装的实用指南，涵盖尺寸、材料、成本及下单方法。"
+      },
+      "zh-TW": {
+        "title": "小品牌客製包裝指南 | Packrivo",
+        "description": "為小品牌提供首飾盒、寄件盒和禮品包裝的實用指南，涵蓋尺寸、材料、成本及下單方式。"
+      }
+    }
+  },
+  {
+    "path": "/about/",
+    "title": "About Packrivo | Custom Packaging from Shenzhen",
+    "description": "Packrivo helps small brands order custom packaging from Shenzhen, working with independent suppliers on samples, printing and shipping.",
+    "i18n": {
+      "ar": {
+        "title": "عن Packrivo | تغليف مخصص من شنتشن",
+        "description": "تساعد Packrivo العلامات الصغيرة على طلب تغليف مخصص من شنتشن، بالتعاون مع موردين مستقلين في العينات والطباعة والشحن."
+      },
+      "de": {
+        "title": "Über Packrivo | Verpackungen nach Maß aus Shenzhen",
+        "description": "Packrivo hilft kleinen Marken, individuelle Verpackungen aus Shenzhen zu bestellen, und arbeitet bei Mustern, Druck und Versand mit unabhängigen Lieferanten."
+      },
+      "es": {
+        "title": "Sobre Packrivo | Packaging a medida desde Shenzhen",
+        "description": "Packrivo ayuda a pequeñas marcas a pedir packaging a medida desde Shenzhen, trabajando con proveedores independientes en muestras, impresión y envío."
+      },
+      "fr": {
+        "title": "À propos de Packrivo | Emballages sur mesure de Shenzhen",
+        "description": "Packrivo aide les petites marques à commander des emballages sur mesure de Shenzhen, avec des fournisseurs indépendants pour les échantillons, l’impression et l’expédition."
+      },
+      "it": {
+        "title": "Chi è Packrivo | Packaging su misura da Shenzhen",
+        "description": "Packrivo aiuta i piccoli marchi a ordinare packaging su misura da Shenzhen, collaborando con fornitori indipendenti per campioni, stampa e spedizione."
+      },
+      "ja": {
+        "title": "Packrivoについて | 深圳発のオリジナル包装",
+        "description": "Packrivoは、小規模ブランドによる深圳からのオリジナル包装の注文を支援します。独立したサプライヤーと連携し、サンプル、印刷、発送を進めます。"
+      },
+      "ko": {
+        "title": "Packrivo 소개 | 선전에서 오는 맞춤 포장",
+        "description": "Packrivo는 소규모 브랜드가 선전에서 맞춤 포장을 주문하도록 돕습니다. 독립 공급업체와 함께 샘플, 인쇄와 배송을 진행합니다."
+      },
+      "nl": {
+        "title": "Over Packrivo | Verpakkingen op maat uit Shenzhen",
+        "description": "Packrivo helpt kleine merken verpakkingen op maat uit Shenzhen te bestellen, samen met onafhankelijke leveranciers voor monsters, bedrukking en verzending."
+      },
+      "pt": {
+        "title": "Sobre a Packrivo | Embalagens à medida de Shenzhen",
+        "description": "A Packrivo ajuda pequenas marcas a encomendar embalagens à medida de Shenzhen, com fornecedores independentes para amostras, impressão e envio."
+      },
+      "zh-CN": {
+        "title": "关于 Packrivo | 来自深圳的定制包装",
+        "description": "Packrivo帮助小品牌订购来自深圳的定制包装，与独立供应商合作推进打样、印刷和运输。"
+      },
+      "zh-TW": {
+        "title": "關於 Packrivo | 來自深圳的客製包裝",
+        "description": "Packrivo協助小品牌訂購來自深圳的客製包裝，與獨立供應商合作推進打樣、印刷和運輸。"
+      }
+    }
+  },
+  {
+    "path": "/inquiry/",
+    "title": "Request a Custom Packaging Quote | Packrivo",
+    "description": "Request a packaging quotation with your product, dimensions, quantity and destination. MOQ 500 per design.",
+    "i18n": {
+      "ar": {
+        "title": "اطلب عرض سعر للتغليف المخصص | Packrivo",
+        "description": "اطلب عرض سعر للتغليف مع تحديد المنتج والأبعاد والكمية والوجهة. الحد الأدنى 500 قطعة لكل تصميم."
+      },
+      "de": {
+        "title": "Angebot für Verpackungen nach Maß anfragen | Packrivo",
+        "description": "Fordern Sie ein Verpackungsangebot mit Produkt, Abmessungen, Menge und Zielort an. Mindestmenge: 500 Stück pro Design."
+      },
+      "es": {
+        "title": "Solicita presupuesto de packaging | Packrivo",
+        "description": "Solicita un presupuesto de packaging indicando producto, dimensiones, cantidad y destino. Pedido mínimo de 500 unidades por diseño."
+      },
+      "fr": {
+        "title": "Devis d’emballage personnalisé | Packrivo",
+        "description": "Demandez un devis d’emballage en précisant produit, dimensions, quantité et destination. Minimum de 500 pièces par modèle."
+      },
+      "it": {
+        "title": "Richiedi un preventivo per il packaging | Packrivo",
+        "description": "Richiedi un preventivo per il packaging indicando prodotto, dimensioni, quantità e destinazione. Minimo 500 pezzi per modello."
+      },
+      "ja": {
+        "title": "オリジナル包装の見積もり依頼 | Packrivo",
+        "description": "商品、寸法、数量、配送先を添えて包装の見積もりをご依頼ください。デザインごとの最低注文数は500個です。"
+      },
+      "ko": {
+        "title": "맞춤 포장 견적 요청 | Packrivo",
+        "description": "제품, 치수, 수량과 배송지를 알려주고 포장 견적을 요청하세요. 디자인당 최소 주문 수량은 500개입니다."
+      },
+      "nl": {
+        "title": "Offerte voor verpakkingen op maat | Packrivo",
+        "description": "Vraag een verpakkingsofferte aan met je product, afmetingen, aantal en bestemming. Minimum 500 stuks per ontwerp."
+      },
+      "pt": {
+        "title": "Peça um orçamento de embalagem | Packrivo",
+        "description": "Peça um orçamento de embalagem com o seu produto, dimensões, quantidade e destino. Mínimo de 500 peças por design."
+      },
+      "zh-CN": {
+        "title": "定制包装询价 | Packrivo",
+        "description": "提供您的产品、尺寸、数量和目的地，获取包装报价。每款设计起订500件。"
+      },
+      "zh-TW": {
+        "title": "客製包裝詢價 | Packrivo",
+        "description": "提供您的產品、尺寸、數量和目的地，取得包裝報價。每款設計最低訂購500件。"
+      }
+    }
+  },
+  {
+    "ui": "Get a quote · MOQ 500",
+    "i18n": {
+      "ar": "اطلب عرض سعر · الحد الأدنى 500",
+      "de": "Angebot anfragen · Mindestmenge 500",
+      "es": "Solicitar presupuesto · Mínimo 500",
+      "fr": "Demander un devis · Minimum 500",
+      "it": "Richiedi un preventivo · Minimo 500",
+      "ja": "見積もりを依頼 · 最低注文数500個",
+      "ko": "견적 요청 · 최소 주문 500개",
+      "nl": "Offerte aanvragen · Minimum 500",
+      "pt": "Peça um orçamento · Mínimo 500",
+      "zh-CN": "获取报价 · 起订量500件",
+      "zh-TW": "取得報價 · 最低訂購500件"
+    }
+  }
+]

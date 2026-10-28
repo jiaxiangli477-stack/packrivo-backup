@@ -1,0 +1,79 @@
+{
+  "input_sha256": "f972f2c243c91f7038c3e87da3602af8f5f4cfeb7bdf69076ab5c72322dbbc28",
+  "dictionaries": {
+    "ar": {
+      "sha256": "04862116d35159db9587cce0e828f3425936abd98a981d79bbd877390a8e9103"
+    },
+    "de": {
+      "sha256": "99aea3ca6adcb1289e7b940d46261b7b2eea5d7adef34649ba09c1902a2e5611"
+    },
+    "es": {
+      "sha256": "fdb2da9a144c5c523691141622ef2cf0e34a019fc5a3daf2f008645e716350cf"
+    },
+    "fr": {
+      "sha256": "293454bde6a6095b807a57cd2f1fe516650b29c55f933c8507a09f991a0af4cf"
+    },
+    "it": {
+      "sha256": "c48696170572f3c28691da757b206feccb3865b64efe2ecefd664b76d99a9eca"
+    },
+    "ja": {
+      "sha256": "7362e91c4bb0a21f549da69bcc1433ea5442ba276323ddac791147eecc4d4058"
+    },
+    "ko": {
+      "sha256": "4f3fe16fd2984c373224910d821fd0982d8b931208880359674b57b0b572bb06"
+    },
+    "nl": {
+      "sha256": "3458d7c1efb7891574abd54b532283a02dfd7254d7cc02f2d7b1183380b5d057"
+    },
+    "pt": {
+      "sha256": "18ea17e24eac64144048c397637b427d6d3931ed6e78748ed394ebb7f71e2955"
+    },
+    "zh-CN": {
+      "sha256": "3592141d100dd62bd50b20b2597f9214438a0de4b97eddca091b5c5ba99a6fda"
+    },
+    "zh-TW": {
+      "sha256": "c33e11a83b8720fe4607f9447e2f6284bfd0e2cc763c22e50ed9b02ff35c62b8"
+    }
+  },
+  "runtime": {
+    "ar": {
+      "sha256": "5ecec6e2d8a83ddc7000f12e6f007588de3e9ec23d0417d855e214e62180cfe8"
+    },
+    "de": {
+      "sha256": "33aecfe501171b46c30d40f5f527385f672590df0c65e02a3ee73bbbb0e8c507"
+    },
+    "es": {
+      "sha256": "352d25e397c2852f8647ee14ce1fd8bdd8ff76f9192ecba5cf22d4490c5ddb3f"
+    },
+    "fr": {
+      "sha256": "2f43e7dbe80862caa48146a8782325dd266115982bd050f333ef14f7cece06cf"
+    },
+    "it": {
+      "sha256": "56130befc716f879f73213634c1325ab28bc9206c22e4924221a5cb022d524e9"
+    },
+    "ja": {
+      "sha256": "cdb6c4d78673623ece24ee06136e0a58f19551a765aa5976de5e42a23551d0cd"
+    },
+    "ko": {
+      "sha256": "bd2d3f41e318c2235792d5357feb23ead8aafc60e78f88136996c67ff2a57dbf"
+    },
+    "nl": {
+      "sha256": "8c0fba730651e5092e5ea258b344ff43229ec8369b698cc59f8772ed01f60105"
+    },
+    "pt": {
+      "sha256": "3f39e1af27e5c1dacf3db4e7e800b14f2556386fe1443fade0efff2394f9ae09"
+    },
+    "zh-CN": {
+      "sha256": "fd37f9d07203af1b8a36bd0bc33b74d345b45d3a33c253018ca106c03fd935df"
+    },
+    "zh-TW": {
+      "sha256": "c997239193fa2b5dffeb2f38b5bb4672999770b9d99668f732bc5db813d0e9dc"
+    }
+  },
+  "paths": {
+    "sha256": "b2dde597f9f5e859b2d318ff1226bb04dbfe2c50ca0e8f346b11a7fa6152d498",
+    "added": [
+      "/blog/"
+    ]
+  }
+}

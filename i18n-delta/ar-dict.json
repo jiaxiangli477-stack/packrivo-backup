@@ -133,7 +133,15 @@
     "Custom Round Tube Gift Boxes | Packrivo": "علب هدايا أنبوبية دائرية | Packrivo",
     "Custom Jewelry Pouches with Logo | Packrivo": "أكياس مجوهرات قماشية بالشعار | Packrivo",
     "Custom Thermoformed Insert Trays | Packrivo": "صواني حشو مصبوبة حرارياً | Packrivo",
-    "Custom Windowed Folding Cartons | Packrivo": "علب كرتونية بنافذة مخصصة | Packrivo"
+    "Custom Windowed Folding Cartons | Packrivo": "علب كرتونية بنافذة مخصصة | Packrivo",
+    "Custom Jewelry Boxes & Packaging with Logo | Packrivo": "علب مجوهرات وتغليف مخصص بالشعار | Packrivo",
+    "Custom Packaging: 134 Styles, MOQ 500 | Packrivo": "تغليف مخصص: 134 تصميمًا، حد أدنى 500 | Packrivo",
+    "Custom Jewelry Boxes: Rigid, Drawer, MOQ 500 | Packrivo": "علب مجوهرات مخصصة: صلبة وبدرج، من 500 | Packrivo",
+    "Custom Mailer Boxes & Shipping Boxes with Logo | Packrivo": "علب بريد وشحن مخصصة بالشعار | Packrivo",
+    "Custom Packaging Samples Before You Order | Packrivo": "عينات تغليف مخصص قبل الطلب | Packrivo",
+    "Custom Packaging Guides for Small Brands | Packrivo": "أدلة تغليف مخصص للعلامات الصغيرة | Packrivo",
+    "About Packrivo | Custom Packaging from Shenzhen": "عن Packrivo | تغليف مخصص من شنتشن",
+    "Request a Custom Packaging Quote | Packrivo": "اطلب عرض سعر للتغليف المخصص | Packrivo"
   },
   "block": {
     "Custom Drawer Jewelry Boxes with Logo": "علب مجوهرات بدرج مخصصة مع شعار",
@@ -461,7 +469,16 @@
     "Put it to work on a real pack": "طبّقها على عبوة حقيقية",
     "The quote builder applies these numbers to your size and quantity. We confirm the dieline before anything is produced.": "أداة عرض السعر تطبّق هذه الأرقام على مقاسك وكميتك، ونؤكد مخطط القص قبل بدء أي إنتاج.",
     "Build a quote": "أنشئ عرض سعر",
-    "Supplier product photo, retouched (text and watermarks removed)": "صورة منتج من المورّد، معدّلة (أُزيلت النصوص والعلامات المائية)"
+    "Supplier product photo, retouched (text and watermarks removed)": "صورة منتج من المورّد، معدّلة (أُزيلت النصوص والعلامات المائية)",
+    "Custom jewelry boxes, pouches and gift boxes printed with your logo, from 500 pieces. Order a sample first and see live prices in the quote builder.": "علب مجوهرات وأكياس وعلب هدايا مطبوعة بشعارك، من 500 قطعة. اطلب عينة أولًا واطّلع على الأسعار المباشرة في أداة إعداد عرض السعر.",
+    "Browse 134 custom packaging styles, from jewelry boxes and pouches to mailers and gift boxes, printed with your logo from 500 pieces. Get a price.": "تصفح 134 نمطًا من التغليف المخصص، من علب المجوهرات والأكياس إلى علب البريد والهدايا، مطبوعة بشعارك من 500 قطعة. اطلب سعرًا.",
+    "Custom jewelry boxes with your logo: rigid, magnetic, drawer and pillow styles for rings, necklaces and bracelets, from 500 pieces. Get a price.": "علب مجوهرات بشعارك: صلبة ومغناطيسية وبدرج وبشكل وسادة، للخواتم والقلائد والأساور، من 500 قطعة. اطلب سعرًا.",
+    "Custom printed mailer boxes and shipping boxes for ecommerce brands, with your logo from 500 pieces. Get a price.": "علب بريد وشحن مطبوعة حسب الطلب لعلامات التجارة الإلكترونية، بشعارك من 500 قطعة. اطلب سعرًا.",
+    "Order a sample of your custom box or pouch to check size, print and finish before your 500-piece order. Get a price.": "اطلب عينة من علبتك أو كيسك المخصص لفحص المقاس والطباعة والتشطيب قبل طلب 500 قطعة. اطلب سعرًا.",
+    "Practical guides for small brands on jewelry boxes, mailers and gift packaging: sizes, materials, costs and how to order.": "أدلة عملية للعلامات الصغيرة عن علب المجوهرات والبريد وتغليف الهدايا: المقاسات والمواد والتكاليف وكيفية الطلب.",
+    "Packrivo helps small brands order custom packaging from Shenzhen, working with independent suppliers on samples, printing and shipping.": "تساعد Packrivo العلامات الصغيرة على طلب تغليف مخصص من شنتشن، بالتعاون مع موردين مستقلين في العينات والطباعة والشحن.",
+    "Request a packaging quotation with your product, dimensions, quantity and destination. MOQ 500 per design.": "اطلب عرض سعر للتغليف مع تحديد المنتج والأبعاد والكمية والوجهة. الحد الأدنى 500 قطعة لكل تصميم.",
+    "Get a quote · MOQ 500": "اطلب عرض سعر · الحد الأدنى 500"
   },
   "text": {
     "Custom Drawer Jewelry Boxes with Logo": "علب مجوهرات بدرج مخصصة مع شعار",
@@ -655,7 +672,8 @@
     "Put it to work on a real pack": "طبّقها على عبوة حقيقية",
     "The quote builder applies these numbers to your size and quantity. We confirm the dieline before anything is produced.": "أداة عرض السعر تطبّق هذه الأرقام على مقاسك وكميتك، ونؤكد مخطط القص قبل بدء أي إنتاج.",
     "Build a quote": "أنشئ عرض سعر",
-    "Supplier product photo, retouched (text and watermarks removed)": "صورة منتج من المورّد، معدّلة (أُزيلت النصوص والعلامات المائية)"
+    "Supplier product photo, retouched (text and watermarks removed)": "صورة منتج من المورّد، معدّلة (أُزيلت النصوص والعلامات المائية)",
+    "Get a quote · MOQ 500": "اطلب عرض سعر · الحد الأدنى 500"
   },
   "attr": {
     "Custom drawer jewelry boxes for small brands, with logo options and a 500-piece minimum. Get a price.": "علب مجوهرات بدرج للعلامات الصغيرة، مع خيارات للشعار وحد أدنى 500 قطعة. اطلب سعراً.",
@@ -801,6 +819,14 @@
     "Custom Sheet Labels": "ملصقات شيت مخصصة",
     "Search": "بحث",
     "Red drawer jewelry box with ribbon pull and insert": "علب مجوهرات بأدراج حمراء مع سحب شريطي وحشوة",
-    "Black and white lid-and-base jewelry boxes with inserts": "علب مجوهرات بالأسود والأبيض بغطاء وقاعدة مع حشوات"
+    "Black and white lid-and-base jewelry boxes with inserts": "علب مجوهرات بالأسود والأبيض بغطاء وقاعدة مع حشوات",
+    "Custom jewelry boxes, pouches and gift boxes printed with your logo, from 500 pieces. Order a sample first and see live prices in the quote builder.": "علب مجوهرات وأكياس وعلب هدايا مطبوعة بشعارك، من 500 قطعة. اطلب عينة أولًا واطّلع على الأسعار المباشرة في أداة إعداد عرض السعر.",
+    "Browse 134 custom packaging styles, from jewelry boxes and pouches to mailers and gift boxes, printed with your logo from 500 pieces. Get a price.": "تصفح 134 نمطًا من التغليف المخصص، من علب المجوهرات والأكياس إلى علب البريد والهدايا، مطبوعة بشعارك من 500 قطعة. اطلب سعرًا.",
+    "Custom jewelry boxes with your logo: rigid, magnetic, drawer and pillow styles for rings, necklaces and bracelets, from 500 pieces. Get a price.": "علب مجوهرات بشعارك: صلبة ومغناطيسية وبدرج وبشكل وسادة، للخواتم والقلائد والأساور، من 500 قطعة. اطلب سعرًا.",
+    "Custom printed mailer boxes and shipping boxes for ecommerce brands, with your logo from 500 pieces. Get a price.": "علب بريد وشحن مطبوعة حسب الطلب لعلامات التجارة الإلكترونية، بشعارك من 500 قطعة. اطلب سعرًا.",
+    "Order a sample of your custom box or pouch to check size, print and finish before your 500-piece order. Get a price.": "اطلب عينة من علبتك أو كيسك المخصص لفحص المقاس والطباعة والتشطيب قبل طلب 500 قطعة. اطلب سعرًا.",
+    "Practical guides for small brands on jewelry boxes, mailers and gift packaging: sizes, materials, costs and how to order.": "أدلة عملية للعلامات الصغيرة عن علب المجوهرات والبريد وتغليف الهدايا: المقاسات والمواد والتكاليف وكيفية الطلب.",
+    "Packrivo helps small brands order custom packaging from Shenzhen, working with independent suppliers on samples, printing and shipping.": "تساعد Packrivo العلامات الصغيرة على طلب تغليف مخصص من شنتشن، بالتعاون مع موردين مستقلين في العينات والطباعة والشحن.",
+    "Request a packaging quotation with your product, dimensions, quantity and destination. MOQ 500 per design.": "اطلب عرض سعر للتغليف مع تحديد المنتج والأبعاد والكمية والوجهة. الحد الأدنى 500 قطعة لكل تصميم."
   }
 }

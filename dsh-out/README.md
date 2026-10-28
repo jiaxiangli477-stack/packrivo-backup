@@ -172,3 +172,53 @@ RESULT PASS
 | `ui-strings.json` | 60 × 11 | 38,094 |
 
 本轮开始时的本地源文件和成品快照：`D:\Codex\packrivo-dsh-20261027f\before-structure-fix`。修正后的批次顺序和 `old_title` 均与快照一致。
+
+## 27i
+
+已生成 `dsh-out/hubs-27i.json`：一个数组，共 **9 个对象**，包含 8 个主页面及 1 条按钮文字。8 页各有 ar、de、es、fr、it、ja、ko、nl、pt、zh-CN、zh-TW 共 11 个语种，每语种具备 title 和 description；按钮亦有 11 个译文。合计 88 个译文标题、88 个译文描述、11 个按钮译文。
+
+英文 title / description 从 `DSH-TASK-2026-10-27i.md` 的定稿表提取，并以独立固定清单逐字校验，未改英文。翻译用词参照 SEO 方案第 1 节 E 及 27f 已用的同类包装词；pillow 指枕头形折叠纸盒，不是带枕垫的盒子。没有追加价格、交期、认证、工厂或原文以外城市。
+
+格式口径及需注意之处：
+
+- `/about/` 按任务单最后的特例处理：品牌保留在第一段，如 `Über Packrivo | …`，不在尾部再加一次 ` | Packrivo`；其余 7 页 × 11 语种都保留品牌后缀。
+- `/inquiry/` 描述前的中文括号是任务说明，不属于英文正文。JSON 保留的英文为 `Request a packaging quotation with your product, dimensions, quantity and destination. MOQ 500 per design.`，未改写。
+- 标题全部不超过 60 字符。译文 description 完整保留定稿含义，最长 189 字符；本任务没有规定 description 上限，没有为了套用旧批次的长度规则擅自删减内容。
+- 没有新增需要业务确认的事实；此文件没有被导入，字典及页面均未修改。
+
+各语种 title 最大长度：
+
+| 语种 | 最大字符数 |
+| --- | ---: |
+| ar | 48 |
+| de | 56 |
+| es | 56 |
+| fr | 58 |
+| it | 60 |
+| ja | 37 |
+| ko | 37 |
+| nl | 53 |
+| pt | 52 |
+| zh-CN | 29 |
+| zh-TW | 30 |
+
+本地生成与校验脚本留在 `E:\破甲工作区\.tmp\packrivo-27i\generate.mjs`、`validate.mjs`。实跑校验：
+
+```text
+$ node E:\破甲工作区\.tmp\packrivo-27i\validate.mjs
+ar max_title_chars=48 max_description_chars=126
+de max_title_chars=56 max_description_chars=166
+es max_title_chars=56 max_description_chars=178
+fr max_title_chars=58 max_description_chars=189
+it max_title_chars=60 max_description_chars=183
+ja max_title_chars=37 max_description_chars=84
+ko max_title_chars=37 max_description_chars=82
+nl max_title_chars=53 max_description_chars=155
+pt max_title_chars=52 max_description_chars=187
+zh-CN max_title_chars=29 max_description_chars=52
+zh-TW max_title_chars=30 max_description_chars=53
+PASS: pages=8 languages=11 title_checks=88 description_checks=88 ui_translations=11
+PASS: approved English unchanged; brand format; <=60 titles; no sourcing terms; numbers preserved; UTF-8 without BOM
+```
+
+本轮只写本地文件；未导入 WordPress、未操作数据库、未执行 Git 命令、未访问网站或服务器。

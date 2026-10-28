@@ -1,0 +1,540 @@
+[
+  {
+    "path": "/",
+    "lang": "en",
+    "url": "http://localhost:8081/",
+    "status": 200,
+    "titleTags": [
+      "<title>Custom Packaging Sourcing for Small Brands | Packrivo</title>"
+    ],
+    "titles": [
+      "Custom Packaging Sourcing for Small Brands | Packrivo"
+    ],
+    "descriptions": [
+      "Explore packaging styles for jewelry, candle and gift brands. Prepare specifications, compare supplier quotations and review samples with Packrivo."
+    ],
+    "h1": [
+      "Custom packaging for jewelry, candles & gifts."
+    ]
+  },
+  {
+    "path": "/",
+    "lang": "ar",
+    "url": "http://localhost:8081/ar/",
+    "status": 200,
+    "titleTags": [
+      "<title>توريد التغليف المخصص للعلامات التجارية الصغيرة | Packrivo</title>"
+    ],
+    "titles": [
+      "توريد التغليف المخصص للعلامات التجارية الصغيرة | Packrivo"
+    ],
+    "descriptions": [
+      "استكشف أنماط التغليف لعلامات المجوهرات والشموع والهدايا. جهّز المواصفات، وقارن عروض أسعار المورّدين، وراجع العينات مع Packrivo."
+    ],
+    "h1": [
+      "Custom packaging for jewelry, candles & gifts."
+    ]
+  },
+  {
+    "path": "/",
+    "lang": "de",
+    "url": "http://localhost:8081/de/",
+    "status": 200,
+    "titleTags": [
+      "<title>Beschaffung kundenspezifischer Verpackungen für kleine Marken | Packrivo</title>"
+    ],
+    "titles": [
+      "Beschaffung kundenspezifischer Verpackungen für kleine Marken | Packrivo"
+    ],
+    "descriptions": [
+      "Entdecken Sie Verpackungsstile für Schmuck-, Kerzen- und Geschenkmarken. Bereiten Sie Spezifikationen vor, vergleichen Sie Lieferantenangebote und prüfen Sie Muster mit Packrivo."
+    ],
+    "h1": [
+      "Custom packaging for jewelry, candles & gifts."
+    ]
+  },
+  {
+    "path": "/",
+    "lang": "ja",
+    "url": "http://localhost:8081/ja/",
+    "status": 200,
+    "titleTags": [
+      "<title>小規模ブランド向け特注包装調達 | Packrivo</title>"
+    ],
+    "titles": [
+      "小規模ブランド向け特注包装調達 | Packrivo"
+    ],
+    "descriptions": [
+      "宝飾品、キャンドル、ギフトブランド向けのパッケージスタイルを検討してください。仕様を準備し、サプライヤー見積を比較し、Packrivoとサンプルを確認します。"
+    ],
+    "h1": [
+      "Custom packaging for jewelry, candles & gifts."
+    ]
+  },
+  {
+    "path": "/products/",
+    "lang": "en",
+    "url": "http://localhost:8081/products/",
+    "status": 200,
+    "titleTags": [
+      "<title>Custom Packaging: 134 Styles, MOQ 500 | Packrivo</title>"
+    ],
+    "titles": [
+      "Custom Packaging: 134 Styles, MOQ 500 | Packrivo"
+    ],
+    "descriptions": [],
+    "h1": [
+      "Every structure we can source"
+    ]
+  },
+  {
+    "path": "/products/",
+    "lang": "ar",
+    "url": "http://localhost:8081/ar/products/",
+    "status": 200,
+    "titleTags": [
+      "<title>Custom Packaging: 134 Styles, MOQ 500 | Packrivo</title>"
+    ],
+    "titles": [
+      "Custom Packaging: 134 Styles, MOQ 500 | Packrivo"
+    ],
+    "descriptions": [],
+    "h1": [
+      "Every structure we can source"
+    ]
+  },
+  {
+    "path": "/products/",
+    "lang": "de",
+    "url": "http://localhost:8081/de/products/",
+    "status": 200,
+    "titleTags": [
+      "<title>Custom Packaging: 134 Styles, MOQ 500 | Packrivo</title>"
+    ],
+    "titles": [
+      "Custom Packaging: 134 Styles, MOQ 500 | Packrivo"
+    ],
+    "descriptions": [],
+    "h1": [
+      "Every structure we can source"
+    ]
+  },
+  {
+    "path": "/products/",
+    "lang": "ja",
+    "url": "http://localhost:8081/ja/products/",
+    "status": 200,
+    "titleTags": [
+      "<title>Custom Packaging: 134 Styles, MOQ 500 | Packrivo</title>"
+    ],
+    "titles": [
+      "Custom Packaging: 134 Styles, MOQ 500 | Packrivo"
+    ],
+    "descriptions": [],
+    "h1": [
+      "Every structure we can source"
+    ]
+  },
+  {
+    "path": "/jewelry-boxes/",
+    "lang": "en",
+    "url": "http://localhost:8081/jewelry-boxes/",
+    "status": 200,
+    "titleTags": [
+      "<title>Custom Jewelry Boxes: Rigid, Drawer, MOQ 500 | Packrivo</title>"
+    ],
+    "titles": [
+      "Custom Jewelry Boxes: Rigid, Drawer, MOQ 500 | Packrivo"
+    ],
+    "descriptions": [],
+    "h1": [
+      "Custom Jewelry Boxes With Logo for Your Collection"
+    ]
+  },
+  {
+    "path": "/jewelry-boxes/",
+    "lang": "ar",
+    "url": "http://localhost:8081/ar/jewelry-boxes/",
+    "status": 200,
+    "titleTags": [
+      "<title>Custom Jewelry Boxes: Rigid, Drawer, MOQ 500 | Packrivo</title>"
+    ],
+    "titles": [
+      "Custom Jewelry Boxes: Rigid, Drawer, MOQ 500 | Packrivo"
+    ],
+    "descriptions": [],
+    "h1": [
+      "Custom Jewelry Boxes With Logo for Your Collection"
+    ]
+  },
+  {
+    "path": "/jewelry-boxes/",
+    "lang": "de",
+    "url": "http://localhost:8081/de/jewelry-boxes/",
+    "status": 200,
+    "titleTags": [
+      "<title>Schmuckschachteln mit Logo – ab 500 Stück</title>"
+    ],
+    "titles": [
+      "Schmuckschachteln mit Logo – ab 500 Stück"
+    ],
+    "descriptions": [],
+    "h1": [
+      "Custom Jewelry Boxes With Logo for Your Collection"
+    ]
+  },
+  {
+    "path": "/jewelry-boxes/",
+    "lang": "ja",
+    "url": "http://localhost:8081/ja/jewelry-boxes/",
+    "status": 200,
+    "titleTags": [
+      "<title>Custom Jewelry Boxes: Rigid, Drawer, MOQ 500 | Packrivo</title>"
+    ],
+    "titles": [
+      "Custom Jewelry Boxes: Rigid, Drawer, MOQ 500 | Packrivo"
+    ],
+    "descriptions": [],
+    "h1": [
+      "Custom Jewelry Boxes With Logo for Your Collection"
+    ]
+  },
+  {
+    "path": "/mailer-boxes/",
+    "lang": "en",
+    "url": "http://localhost:8081/mailer-boxes/",
+    "status": 200,
+    "titleTags": [
+      "<title>Custom Shipping Boxes &amp; Mailers | Packrivo</title>"
+    ],
+    "titles": [
+      "Custom Shipping Boxes & Mailers | Packrivo"
+    ],
+    "descriptions": [
+      "Compare custom shipping boxes, mailers and parcel bags for packed products. Specify contents, closure and destination before requesting supplier quotes."
+    ],
+    "h1": [
+      "Shipping Boxes & Mailers"
+    ]
+  },
+  {
+    "path": "/mailer-boxes/",
+    "lang": "ar",
+    "url": "http://localhost:8081/ar/mailer-boxes/",
+    "status": 200,
+    "titleTags": [
+      "<title>صناديق الشحن & العبوات البريدية المخصصة | Packrivo</title>"
+    ],
+    "titles": [
+      "صناديق الشحن & العبوات البريدية المخصصة | Packrivo"
+    ],
+    "descriptions": [
+      "قارن بين صناديق الشحن المخصصة والمظاريف البريدية وأكياس الطرود للمنتجات المعبأة. حدد المحتويات وطريقة الإغلاق والوجهة قبل طلب عروض أسعار الموردين."
+    ],
+    "h1": [
+      "صناديق الشحن والعبوات البريدية"
+    ]
+  },
+  {
+    "path": "/mailer-boxes/",
+    "lang": "de",
+    "url": "http://localhost:8081/de/mailer-boxes/",
+    "status": 200,
+    "titleTags": [
+      "<title>Kundenspezifische Versandkartons & Versandtaschen | Packrivo</title>"
+    ],
+    "titles": [
+      "Kundenspezifische Versandkartons & Versandtaschen | Packrivo"
+    ],
+    "descriptions": [
+      "Vergleichen Sie maßgefertigte Versandkartons, Versandtaschen und Versandbeutel für verpackte Produkte. Geben Sie Inhalt, Verschluss und Bestimmungsort an, bevor Sie Lieferantenangebote anfordern."
+    ],
+    "h1": [
+      "Versandkartons & Versandtaschen"
+    ]
+  },
+  {
+    "path": "/mailer-boxes/",
+    "lang": "ja",
+    "url": "http://localhost:8081/ja/mailer-boxes/",
+    "status": 200,
+    "titleTags": [
+      "<title>カスタム配送用箱 & メーラー | Packrivo</title>"
+    ],
+    "titles": [
+      "カスタム配送用箱 & メーラー | Packrivo"
+    ],
+    "descriptions": [
+      "梱包済み製品向けに、特注配送箱、メーラー、宅配袋を比較してください。サプライヤー見積もりを依頼する前に、内容物、封止方法、配送先を指定してください。"
+    ],
+    "h1": [
+      "配送箱 & メーラー"
+    ]
+  },
+  {
+    "path": "/samples/",
+    "lang": "en",
+    "url": "http://localhost:8081/samples/",
+    "status": 200,
+    "titleTags": [
+      "<title>Custom Packaging Samples: Structure & Finish | Packrivo</title>"
+    ],
+    "titles": [
+      "Custom Packaging Samples: Structure & Finish | Packrivo"
+    ],
+    "descriptions": [],
+    "h1": [
+      "Packaging samples"
+    ]
+  },
+  {
+    "path": "/samples/",
+    "lang": "ar",
+    "url": "http://localhost:8081/ar/samples/",
+    "status": 200,
+    "titleTags": [
+      "<title>عينات تغليف مخصص: الهيكل & التشطيب | Packrivo</title>"
+    ],
+    "titles": [
+      "عينات تغليف مخصص: الهيكل & التشطيب | Packrivo"
+    ],
+    "descriptions": [],
+    "h1": [
+      "عينات التغليف"
+    ]
+  },
+  {
+    "path": "/samples/",
+    "lang": "de",
+    "url": "http://localhost:8081/de/samples/",
+    "status": 200,
+    "titleTags": [
+      "<title>Muster kundenspezifischer Verpackungen: Konstruktion und Veredelung | Packrivo</title>"
+    ],
+    "titles": [
+      "Muster kundenspezifischer Verpackungen: Konstruktion und Veredelung | Packrivo"
+    ],
+    "descriptions": [],
+    "h1": [
+      "Verpackungsmuster"
+    ]
+  },
+  {
+    "path": "/samples/",
+    "lang": "ja",
+    "url": "http://localhost:8081/ja/samples/",
+    "status": 200,
+    "titleTags": [
+      "<title>特注パッケージサンプル：構造 & 仕上げ | Packrivo</title>"
+    ],
+    "titles": [
+      "特注パッケージサンプル：構造 & 仕上げ | Packrivo"
+    ],
+    "descriptions": [],
+    "h1": [
+      "包装サンプル"
+    ]
+  },
+  {
+    "path": "/blog/",
+    "lang": "en",
+    "url": "http://localhost:8081/blog/",
+    "status": 200,
+    "titleTags": [
+      "<title>Blog &#8211; Packrivo</title>"
+    ],
+    "titles": [
+      "Blog – Packrivo"
+    ],
+    "descriptions": [],
+    "h1": [
+      "Packaging notes from the floor"
+    ]
+  },
+  {
+    "path": "/blog/",
+    "lang": "ar",
+    "url": "http://localhost:8081/ar/blog/",
+    "status": 404,
+    "titleTags": [
+      "<title>404 — page not translated</title>"
+    ],
+    "titles": [
+      "404 — page not translated"
+    ],
+    "descriptions": [],
+    "h1": []
+  },
+  {
+    "path": "/blog/",
+    "lang": "de",
+    "url": "http://localhost:8081/de/blog/",
+    "status": 404,
+    "titleTags": [
+      "<title>404 — page not translated</title>"
+    ],
+    "titles": [
+      "404 — page not translated"
+    ],
+    "descriptions": [],
+    "h1": []
+  },
+  {
+    "path": "/blog/",
+    "lang": "ja",
+    "url": "http://localhost:8081/ja/blog/",
+    "status": 404,
+    "titleTags": [
+      "<title>404 — page not translated</title>"
+    ],
+    "titles": [
+      "404 — page not translated"
+    ],
+    "descriptions": [],
+    "h1": []
+  },
+  {
+    "path": "/about/",
+    "lang": "en",
+    "url": "http://localhost:8081/about/",
+    "status": 200,
+    "titleTags": [
+      "<title>About Packrivo: Packaging Sourcing in Shenzhen, China</title>"
+    ],
+    "titles": [
+      "About Packrivo: Packaging Sourcing in Shenzhen, China"
+    ],
+    "descriptions": [
+      "Learn about Packrivo's Shenzhen packaging sourcing service, independent supplier roles and editorial method for jewelry, candle and gift brands."
+    ],
+    "h1": [
+      "About Packrivo"
+    ]
+  },
+  {
+    "path": "/about/",
+    "lang": "ar",
+    "url": "http://localhost:8081/ar/about/",
+    "status": 200,
+    "titleTags": [
+      "<title>حول Packrivo: توريد التغليف في شنتشن، الصين</title>"
+    ],
+    "titles": [
+      "حول Packrivo: توريد التغليف في شنتشن، الصين"
+    ],
+    "descriptions": [
+      "تعرّف على خدمة Packrivo لتوريد التغليف في شنتشن، وأدوار الموردين المستقلين، والمنهج التحريري لعلامات المجوهرات والشموع والهدايا."
+    ],
+    "h1": [
+      "حول Packrivo"
+    ]
+  },
+  {
+    "path": "/about/",
+    "lang": "de",
+    "url": "http://localhost:8081/de/about/",
+    "status": 200,
+    "titleTags": [
+      "<title>Über Packrivo: Verpackungsbeschaffung in Shenzhen, China</title>"
+    ],
+    "titles": [
+      "Über Packrivo: Verpackungsbeschaffung in Shenzhen, China"
+    ],
+    "descriptions": [
+      "Erfahren Sie mehr über Packrivos Beschaffungsservice für Verpackungen in Shenzhen, die Rollen unabhängiger Lieferanten und die redaktionelle Methode für Schmuck-, Kerzen- und Geschenkmarken."
+    ],
+    "h1": [
+      "Über Packrivo"
+    ]
+  },
+  {
+    "path": "/about/",
+    "lang": "ja",
+    "url": "http://localhost:8081/ja/about/",
+    "status": 200,
+    "titleTags": [
+      "<title>Packrivoについて：中国深圳における包装調達</title>"
+    ],
+    "titles": [
+      "Packrivoについて：中国深圳における包装調達"
+    ],
+    "descriptions": [
+      "Packrivoの深圳における包装調達サービス、独立系サプライヤーの役割、ジュエリー、キャンドル、ギフトブランド向けの編集方法についてご確認ください。"
+    ],
+    "h1": [
+      "Packrivoについて"
+    ]
+  },
+  {
+    "path": "/inquiry/",
+    "lang": "en",
+    "url": "http://localhost:8081/inquiry/",
+    "status": 200,
+    "titleTags": [
+      "<title>Request a Custom Packaging Quote | Packrivo</title>"
+    ],
+    "titles": [
+      "Request a Custom Packaging Quote | Packrivo"
+    ],
+    "descriptions": [
+      "Request a packaging quotation with your product, dimensions, quantity and destination. MOQ 500 per design. Add artwork or reference files for Packrivo review."
+    ],
+    "h1": [
+      "Get a packaging quote."
+    ]
+  },
+  {
+    "path": "/inquiry/",
+    "lang": "ar",
+    "url": "http://localhost:8081/ar/inquiry/",
+    "status": 200,
+    "titleTags": [
+      "<title>اطلب عرض سعر لتغليف مخصص | Packrivo</title>"
+    ],
+    "titles": [
+      "اطلب عرض سعر لتغليف مخصص | Packrivo"
+    ],
+    "descriptions": [
+      "اطلب عرض سعر للتغليف مع منتجك وأبعاده والكمية والوجهة. MOQ (الحد الأدنى للطلب) 500 لكل تصميم. أضف ملفات التصميم أو الملفات المرجعية لمراجعة Packrivo."
+    ],
+    "h1": [
+      "احصل على عرض سعر للتغليف."
+    ]
+  },
+  {
+    "path": "/inquiry/",
+    "lang": "de",
+    "url": "http://localhost:8081/de/inquiry/",
+    "status": 200,
+    "titleTags": [
+      "<title>Kundenspezifisches Verpackungsangebot anfordern | Packrivo</title>"
+    ],
+    "titles": [
+      "Kundenspezifisches Verpackungsangebot anfordern | Packrivo"
+    ],
+    "descriptions": [
+      "Ein Verpackungsangebot mit Ihrem Produkt, den Abmessungen, der Menge und dem Bestimmungsort anfordern. MOQ 500 pro Design. Druckdaten oder Referenzdateien zur Prüfung durch Packrivo hinzufügen."
+    ],
+    "h1": [
+      "Fordern Sie ein Verpackungsangebot an."
+    ]
+  },
+  {
+    "path": "/inquiry/",
+    "lang": "ja",
+    "url": "http://localhost:8081/ja/inquiry/",
+    "status": 200,
+    "titleTags": [
+      "<title>カスタム包装の見積を依頼 | Packrivo</title>"
+    ],
+    "titles": [
+      "カスタム包装の見積を依頼 | Packrivo"
+    ],
+    "descriptions": [
+      "製品、寸法、数量、仕向地を添えて包装見積を依頼する。デザインあたり MOQ 500。Packrivo のレビュー用にアートワークまたは参照ファイルを追加する。"
+    ],
+    "h1": [
+      "包装見積を取得。"
+    ]
+  }
+]

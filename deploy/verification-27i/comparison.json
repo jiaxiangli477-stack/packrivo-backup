@@ -1,0 +1,48 @@
+{
+  "responses": 32,
+  "singleTitle": 32,
+  "singleDescription": 32,
+  "policyMismatches": 0,
+  "dshExactRows": 27,
+  "preservedExceptionRows": 5,
+  "englishH1Unchanged": 8,
+  "bannedTitleHits": 0,
+  "exceptions": [
+    {
+      "path": "/jewelry-boxes/",
+      "language": "de",
+      "titleDifferent": true,
+      "descriptionDifferent": false,
+      "reason": "production-existing title translation preserved"
+    },
+    {
+      "path": "/inquiry/",
+      "language": "en",
+      "titleDifferent": false,
+      "descriptionDifferent": true,
+      "reason": "existing inquiry English/production translation preserved"
+    },
+    {
+      "path": "/inquiry/",
+      "language": "ar",
+      "titleDifferent": true,
+      "descriptionDifferent": true,
+      "reason": "existing inquiry English/production translation preserved"
+    },
+    {
+      "path": "/inquiry/",
+      "language": "de",
+      "titleDifferent": true,
+      "descriptionDifferent": true,
+      "reason": "existing inquiry English/production translation preserved"
+    },
+    {
+      "path": "/inquiry/",
+      "language": "ja",
+      "titleDifferent": true,
+      "descriptionDifferent": true,
+      "reason": "existing inquiry English/production translation preserved"
+    }
+  ],
+  "failures": []
+}
