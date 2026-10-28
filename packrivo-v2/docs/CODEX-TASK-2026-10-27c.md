@@ -68,11 +68,19 @@
    - 优先读 post meta `_packrivo_engine_style`。
    - 没有 meta 时按 slug 关键词映射，**只在引擎的 style 真正描述了这种结构时才映射**。
    - 天鹅绒 / 布袋、木盒、PU 皮盒，以及引擎里没有对应结构的，一律返回 `null`。注意引擎的 `pouch` 是立式阻隔袋，不是首饰绒布袋。
-3. 加 `pk_from_price( $post_id )`：用 v2 `lib/catalog.ts` 的 `fromPrice` 和 `defaultInput(style)` 同一组默认尺寸、材料、印刷、工艺，按 500 件算。结果用 transient 缓存 12 小时，pricing.json 变化时清缓存。
+3. 加 `pk_from_price( $post_id )`。**（2026-10-27 已定，取代原写法）**
+   - 数量固定 **500 件**（MOQ）。
+   - 材料、印刷、工艺：和 v2 `unitAt()` 一样，用 `DEFAULT_MATERIAL[style]` + `full-color` + `matte`。
+   - 尺寸：**不用** `defaultInput()` 的 30×20×10，戒指盒按这个尺寸算价格会严重失真。在 `functions.php` 里建一张按 style 的"卡片参考尺寸"表：
+     - rigid（首饰盒）用 9.5×9.5×4，和首页英雄价卡一致
+     - mailer 用 30×22×12，和首页价格表一致
+     - 其余 style 取 v2 `data/products.ts` 里同 style 第一个产品的 `sizes[0]`
+   - 卡片上必须显示 `at 500 pcs · L×W×H cm`，让买家知道价格对应什么规格。
+   - 结果用 transient 缓存 12 小时，pricing.json 变化时清缓存。
 
 验收：
 - 结果文件里贴出**全部产品页**的映射表（slug → style 或 null → from 价），给我逐行复核。
-- 任选 3 个产品，用 `wp eval` 算的 from 价，和 v2 `node -e` 调 `fromPrice` 的结果逐一相等，贴出对照。
+- 任选 3 个产品，用 `wp eval` 算的 from 价，和 v2 用 `node` 以**完全相同的输入**（style、材料、印刷、工艺、500 件、同一尺寸）调 `priceQuote()` 的结果逐一相等，贴出对照。不和 `fromPrice()` 比。
 
 ## C. 首页 `front-page.php`
 
