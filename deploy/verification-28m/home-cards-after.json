@@ -1,0 +1,65 @@
+﻿{
+  "url": "http://localhost:8081/",
+  "status": 200,
+  "h1": "Custom packaging for jewelry, candles & gifts.",
+  "heroFrom": "$1.63 / unit",
+  "cardCount": 8,
+  "cards": [
+    {
+      "title": "Custom Drawer Jewelry Boxes with Logo",
+      "group": "Jewelry boxes",
+      "price": "from $2.83 / unit",
+      "cta": "http://localhost:8081/get-a-quote/?style=rigid&#038;qty=500&#038;product=product-drawer-jewelry-box",
+      "img": "http://localhost:8081/wp-content/uploads/2026/10/packrivo-27c-drawer-1200.webp"
+    },
+    {
+      "title": "Custom Lid-and-Base Jewelry Boxes",
+      "group": "Jewelry boxes",
+      "price": "from $2.83 / unit",
+      "cta": "http://localhost:8081/get-a-quote/?style=rigid&#038;qty=500&#038;product=product-lid-and-base-jewelry-box",
+      "img": "http://localhost:8081/wp-content/uploads/2026/10/packrivo-27c-lid-base-1200.webp"
+    },
+    {
+      "title": "Custom Jewelry Boxes with Fitted Inserts",
+      "group": "Jewelry boxes",
+      "price": "from $2.83 / unit",
+      "cta": "http://localhost:8081/get-a-quote/?style=rigid&#038;qty=500&#038;product=product-jewelry-box-with-insert",
+      "img": "http://localhost:8081/wp-content/uploads/2026/10/packrivo-27e-insert-1200.webp"
+    },
+    {
+      "title": "Custom Window Lid Rigid Boxes",
+      "group": "Gift boxes",
+      "price": "from $2.83 / unit",
+      "cta": "http://localhost:8081/get-a-quote/?style=rigid&#038;qty=500&#038;product=product-window-lid-rigid-gift-box",
+      "img": "https://www.packrivo.com/wp-content/uploads/packrivo-scale-20261004/p054-6f903dc1c0bb-1536.webp"
+    },
+    {
+      "title": "Custom Hinged Rigid Gift Boxes",
+      "group": "Gift boxes",
+      "price": "from $2.83 / unit",
+      "cta": "http://localhost:8081/get-a-quote/?style=rigid&#038;qty=500&#038;product=product-hinged-nonmagnetic-rigid-box",
+      "img": "https://www.packrivo.com/wp-content/uploads/packrivo-scale-20261004/p055-6c20d9f4267f-1536.webp"
+    },
+    {
+      "title": "Custom Hinged Lid Boxes with Logo",
+      "group": "Mailer boxes",
+      "price": "from $2.48 / unit",
+      "cta": "http://localhost:8081/get-a-quote/?style=mailer&#038;qty=500&#038;product=product-corrugated-roll-end-hinged-lid",
+      "img": "https://www.packrivo.com/wp-content/uploads/packrivo-scale-20261004/p052-ff47120be667-1536.webp"
+    },
+    {
+      "title": "Custom Paper Gift Bags with Logo",
+      "group": "Paper bags",
+      "price": "from $1.63 / unit",
+      "cta": "http://localhost:8081/get-a-quote/?style=bag&#038;qty=500&#038;product=product-euro-tote-paper-carrier",
+      "img": "https://www.packrivo.com/wp-content/uploads/packrivo-scale-20261004/p071-c42d44731fd8-1536.webp"
+    },
+    {
+      "title": "Custom SOS Paper Bags Bulk",
+      "group": "Paper bags",
+      "price": "from $1.63 / unit",
+      "cta": "http://localhost:8081/get-a-quote/?style=bag&#038;qty=500&#038;product=product-sos-paper-gift-bag",
+      "img": "https://www.packrivo.com/wp-content/uploads/packrivo-scale-20261004/p070-601cfbc8e594-1536.webp"
+    }
+  ]
+}

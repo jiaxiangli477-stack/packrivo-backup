@@ -189,6 +189,33 @@ function pk_card_reference($style)
     return $rows[$style] ?? null;
 }
 
+/**
+ * Keep the configurator on the same reference spec the cards quote.
+ * Without this the card says "from $2.83" and the builder opens at its own
+ * 30x22x12 default, which prices the same box at $7.45.
+ */
+function pk_quote_reference_spec($spec, $product, $style)
+{
+    if (!is_array($spec)) $spec = [];
+    if ($product === '') return $spec;
+    if ($style === '') {
+        $page = get_page_by_path($product);
+        if (!$page) return $spec;
+        $style = (string) pk_engine_style_for($page->ID);
+    }
+    $reference = pk_card_reference($style);
+    if (!$reference) return $spec;
+    return [
+        'length' => $reference[0],
+        'width' => $reference[1],
+        'height' => $reference[2],
+        'material' => $reference[3],
+        'print' => 'full-color',
+        'finish' => 'matte',
+    ];
+}
+add_filter('pkq_reference_spec', 'pk_quote_reference_spec', 10, 3);
+
 function pk_pricing_tables_ready()
 {
     if (!class_exists('PKQ_Plugin') || !class_exists('PKQ_Pricing') || !defined('PKQ_DIR')) return false;

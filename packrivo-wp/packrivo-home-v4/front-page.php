@@ -7,22 +7,24 @@ get_header();
 
 $img = get_stylesheet_directory_uri() . '/assets/img';
 
+// Card titles come from each page's reviewed buyer title, never from a local label.
 $home_specs = [
-    ['product-drawer-jewelry-box','Jewelry boxes','Custom Drawer Jewelry Boxes'],
-    ['product-magnetic-jewelry-box','Jewelry boxes','Custom Magnetic Jewelry Boxes'],
-    ['product-lid-and-base-jewelry-box','Jewelry boxes','Custom Lid-and-Base Jewelry Boxes'],
-    ['product-jewelry-box-with-insert','Jewelry boxes','Custom Jewelry Boxes with Fitted Inserts'],
-    ['product-window-lid-rigid-gift-box','Gift boxes','Custom Window Gift Boxes'],
-    ['product-corrugated-roll-end-hinged-lid','Mailer boxes','Custom Mailer Boxes'],
-    ['product-sheet-labels','Labels','Custom Sheet Labels'],
+    ['product-drawer-jewelry-box','Jewelry boxes'],
+    ['product-lid-and-base-jewelry-box','Jewelry boxes'],
+    ['product-jewelry-box-with-insert','Jewelry boxes'],
+    ['product-window-lid-rigid-gift-box','Gift boxes'],
+    ['product-hinged-nonmagnetic-rigid-box','Gift boxes'],
+    ['product-corrugated-roll-end-hinged-lid','Mailer boxes'],
+    ['product-euro-tote-paper-carrier','Paper bags'],
+    ['product-sos-paper-gift-bag','Paper bags'],
 ];
 $home_products = [];
-foreach ($home_specs as [$slug,$group,$label]) {
+foreach ($home_specs as [$slug,$group]) {
     $page = get_page_by_path($slug);
     if (!$page || $page->post_status !== 'publish') continue;
     $cover = get_the_post_thumbnail_url($page,'medium_large') ?: get_post_meta($page->ID,'_packrivo_article_cover_url',true);
     $price = pk_from_price($page->ID);
-    if ($cover && $price !== null) $home_products[] = ['product'=>$page,'group'=>$group,'title'=>$label,'price'=>$price];
+    if ($cover && $price !== null) $home_products[] = ['product'=>$page,'group'=>$group,'title'=>wp_strip_all_tags(get_the_title($page)),'price'=>$price];
     if (count($home_products) === 8) break;
 }
 $contact = get_page_by_path('contact');

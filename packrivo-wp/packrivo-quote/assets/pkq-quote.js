@@ -144,22 +144,32 @@
 
     var requestedStyle = root.getAttribute('data-style') || '';
     var needsStyleChoice = !!root.getAttribute('data-product') && !cfg.styles[requestedStyle];
+    var attrNum = function (name, fallback) {
+      var v = parseFloat(root.getAttribute(name));
+      return isFinite(v) && v > 0 ? v : fallback;
+    };
+    var attrStr = function (name) { return root.getAttribute(name) || ''; };
     var state = {
       style: needsStyleChoice ? '' : (requestedStyle || 'mailer'),
       material: 'kraft',
       print: 'full-color',
       finish: 'matte',
       qty: parseInt(root.getAttribute('data-qty'), 10) || 1000,
-      length: 30,
-      width: 22,
-      height: 12,
+      length: attrNum('data-length', 30),
+      width: attrNum('data-width', 22),
+      height: attrNum('data-height', 12),
       rush: false,
       step: 0
     };
 
     if (!cfg.styles[state.style] && !needsStyleChoice) state.style = Object.keys(cfg.styles)[0];
-    if (state.style === 'rigid') state.material = 'rigidboard';
-    if (state.style === 'pouch' || state.style === 'poly') state.material = 'kraftpoly';
+    // The card reference spec wins when the page hands one over; the style default
+    // below is only the fallback for a bare visit.
+    if (attrStr('data-material')) state.material = attrStr('data-material');
+    else if (state.style === 'rigid') state.material = 'rigidboard';
+    if (!attrStr('data-material') && (state.style === 'pouch' || state.style === 'poly')) state.material = 'kraftpoly';
+    if (attrStr('data-print')) state.print = attrStr('data-print');
+    if (attrStr('data-finish')) state.finish = attrStr('data-finish');
 
     root.innerHTML = '';
     var shell = el('div', 'pkq-shell');

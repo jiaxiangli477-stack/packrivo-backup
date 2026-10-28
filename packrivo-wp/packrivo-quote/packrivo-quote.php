@@ -158,11 +158,21 @@ final class PKQ_Plugin
         $qty = is_scalar($qty_input) && $qty_input !== '' ? max((int) $settings['min_qty'], min((int) $settings['max_qty'], (int) $qty_input)) : 0;
         $product = is_scalar($product_input) ? sanitize_title(wp_unslash($product_input)) : '';
 
+        // A product entry point prices one reference spec; the theme owns that spec,
+        // so it hands it over through a filter. No product means the plain defaults.
+        $spec = $product !== '' ? (array) apply_filters('pkq_reference_spec', [], $product, $style) : [];
+        $spec_attrs = '';
+        foreach (['length', 'width', 'height', 'material', 'print', 'finish'] as $key) {
+            if (!isset($spec[$key]) || $spec[$key] === '') continue;
+            $spec_attrs .= sprintf(' data-%s="%s"', $key, esc_attr((string) $spec[$key]));
+        }
+
         return sprintf(
-            '<div class="pkq-root" data-style="%s" data-qty="%d" data-product="%s"><noscript>%s</noscript></div>',
+            '<div class="pkq-root" data-style="%s" data-qty="%d" data-product="%s"%s><noscript>%s</noscript></div>',
             esc_attr($style),
             $qty,
             esc_attr($product),
+            $spec_attrs,
             esc_html__('This configurator needs JavaScript. Email hello@packrivo.com and we will quote manually.', 'packrivo-quote')
         );
     }

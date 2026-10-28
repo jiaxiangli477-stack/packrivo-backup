@@ -1,0 +1,133 @@
+﻿== home_specs 改前 7 项 ==
+product-drawer-jewelry-box  status=publish  cover=Y  style=rigid  price=2.83  missing=none
+product-magnetic-jewelry-box  status=publish  cover=N  style=rigid  price=2.83  missing=cover
+product-lid-and-base-jewelry-box  status=publish  cover=Y  style=rigid  price=2.83  missing=none
+product-jewelry-box-with-insert  status=publish  cover=Y  style=rigid  price=2.83  missing=none
+product-window-lid-rigid-gift-box  status=publish  cover=Y  style=rigid  price=2.83  missing=none
+product-corrugated-roll-end-hinged-lid  status=publish  cover=Y  style=mailer  price=2.48  missing=none
+product-sheet-labels  status=publish  cover=N  style=sticker  price=0.96  missing=cover
+
+== 封面+价格都齐（可直接上首页）: 20 ==
+  product-auto-bottom-slotted-outer-carton | shipping | $2.31 | Bulk Shipping Boxes with Logo
+  product-book-style-rigid-presentation-box | rigid | $2.83 | Custom Book-Style Rigid Gift Boxes
+  product-bookend-folding-carton | carton | $1.28 | Custom Bookend Folding Cartons
+  product-drawer-jewelry-box | rigid | $2.83 | Custom Drawer Jewelry Boxes with Logo
+  product-foldable-lid-base-box | rigid | $2.83 | Custom Foldable Lid and Base Boxes
+  product-full-overlap-slotted-outer-carton | shipping | $2.31 | Custom Full Overlap Shipping Boxes
+  product-hexagonal-folding-carton | carton | $1.28 | Custom Hexagonal Gift Boxes
+  product-corrugated-roll-end-hinged-lid | mailer | $2.48 | Custom Hinged Lid Boxes with Logo
+  product-hinged-nonmagnetic-rigid-box | rigid | $2.83 | Custom Hinged Rigid Gift Boxes
+  product-jewelry-box-with-insert | rigid | $2.83 | Custom Jewelry Boxes with Fitted Inserts
+  product-lid-and-base-jewelry-box | rigid | $2.83 | Custom Lid-and-Base Jewelry Boxes
+  product-euro-tote-paper-carrier | bag | $1.63 | Custom Paper Gift Bags with Logo
+  product-reverse-tuck-retail-carton | carton | $1.28 | Custom Reverse Tuck Retail Boxes
+  product-regular-slotted-shipping-carton | shipping | $2.31 | Custom Shipping Boxes with Logo
+  product-shoulder-neck-rigid-box | rigid | $2.83 | Custom Shoulder Neck Rigid Boxes
+  product-sos-paper-gift-bag | bag | $1.63 | Custom SOS Paper Bags Bulk
+  product-straight-tuck-retail-carton | carton | $1.28 | Custom Straight Tuck Boxes
+  product-two-door-rigid-presentation-box | rigid | $2.83 | Custom Two-Door Rigid Boxes
+  product-wide-gusset-paper-carrier | bag | $1.63 | Custom Wide Gusset Paper Bags
+  product-window-lid-rigid-gift-box | rigid | $2.83 | Custom Window Lid Rigid Boxes
+
+== 有封面缺价格: 83 ==
+  product-auto-lock-bottom-carton | style=-
+  product-corrugated-bottle-gift-carrier | style=-
+  product-cube-carry-carton | style=-
+  product-rigid-chipboard-divider | style=-
+  product-corrugated-book-wrap-mailer | style=-
+  product-paired-corrugated-end-caps | style=-
+  product-corrugated-gusset-folder | style=-
+  product-double-wall-tray-lid | style=-
+  product-counter-display-carton | style=-
+  product-die-cut-handle-paper-bag | style=-
+  product-flip-out-dispenser-carton | style=-
+  product-four-corner-display-tray | style=-
+  product-shipping-document-window-pouch | style=-
+  product-double-wall-frame-tray-lid | style=-
+  product-drawstring-fabric-gift-bag | style=-
+  product-paperboard-roll-end-dust-flap-carton | style=-
+  product-eva-foam-holder | style=-
+  product-fold-over-flap-fabric-pouch | style=-
+  product-box-bottom-fabric-tote | style=-
+  product-five-panel-corrugated-folder | style=-
+  product-paper-merchandise-sleeve-bag | style=-
+  product-flocked-foam-holder | style=-
+  product-hook-floor-gift-display | style=-
+  product-folded-box-liner | style=-
+  product-folded-tray-sleeve-box | style=-
+  product-full-flap-auto-bottom-carton | style=-
+  product-gable-top-carry-carton | style=-
+  product-paperboard-grid-divider | style=-
+  product-gusset-folder-carton | style=-
+  product-five-panel-hanger-carton | style=-
+  product-hanging-tab-retail-carton | style=-
+  product-header-card-bag-topper | style=-
+  product-side-lock-hinged-gift-tray | style=-
+  product-hinged-metal-gift-container | style=-
+  product-jewelry-mounting-card | style=-
+  product-kraft-bubble-parcel-envelope | style=-
+  product-expandable-kraft-parcel-bag | style=-
+  product-latch-metal-gift-container | style=-
+  product-lock-cap-auto-bottom-carton | style=-
+  product-molded-pulp-corner-cradle | style=-
+  product-molded-pulp-end-support-pair | style=-
+  product-thermoformed-multi-cavity-tray | style=-
+  product-multi-tier-floor-gift-display | style=-
+  product-nest-stack-thermoformed-tray | style=-
+  product-paper-padded-parcel-envelope | style=-
+  product-multi-piece-pe-foam-support | style=-
+  product-peg-hook-counter-display | style=-
+  product-flower-petal-top-gift-carton | style=-
+  product-pinch-lock-paperboard-tray | style=-
+  product-pocket-floor-gift-display | style=-
+  product-poly-bubble-parcel-envelope | style=-
+  product-four-corner-pre-glued-carton | style=-
+  product-press-close-metal-gift-container | style=-
+  product-paper-belly-band | style=-
+  product-hinged-thermoformed-clamshell | style=-
+  product-auto-bottom-display-carton | style=-
+  product-gift-hang-tag | style=-
+  product-paper-carton-sealing-tape | style=-
+  product-printed-tissue-sheet | style=-
+  product-polyurethane-foam-holder | style=-
+  product-reinforced-paper-sealing-tape | style=-
+  product-returnable-paper-parcel-bag | style=-
+  product-returnable-poly-parcel-bag | style=-
+  product-corrugated-reverse-tuck-pack | style=-
+  product-rigid-paperboard-postal-envelope | style=-
+  product-round-metal-gift-container | style=-
+  product-screw-top-metal-gift-container | style=-
+  product-full-overlap-seal-end-carton | style=-
+  product-self-locking-corrugated-folder | style=-
+  product-side-lock-display-carton | style=-
+  product-six-corner-pre-glued-carton | style=-
+  product-slide-in-card-blister | style=-
+  product-corrugated-tuck-top-snap-bottom | style=-
+  product-snap-bottom-slotted-outer-carton | style=-
+  product-snap-lock-bottom-carton | style=-
+  product-tab-lock-roll-end-corrugated-pack | style=-
+  product-three-flap-lock-corrugated-pack | style=-
+  product-shelf-counter-display | style=-
+  product-double-wall-frame-tray-sleeve | style=-
+  product-tray-floor-gift-display | style=-
+  product-tuck-end-sleeve-carton | style=-
+  product-corrugated-tuck-top-auto-bottom | style=-
+  product-zippered-fabric-gift-pouch | style=-
+
+== 有价格缺封面: 14 ==
+  product-collapsible-magnetic-gift-box | rigid | $2.83
+  product-folding-carton | carton | $1.28
+  product-folding-gift-box | carton | $1.28
+  product-front-tuck-mailer | mailer | $2.48
+  product-lightweight-mailer | mailer | $2.48
+  product-magnetic-jewelry-box | rigid | $2.83
+  product-mailer-with-insert | mailer | $2.48
+  product-pillow-jewelry-box | carton | $1.28
+  product-finished-folding-gift-box | carton | $1.28
+  product-printed-mailer | mailer | $2.48
+  paper-mailer-bag | bag | $1.63
+  product-sheet-labels | sticker | $0.96
+  product-tuck-end-gift-box | carton | $1.28
+  windowed-folding-carton | carton | $1.28
+
+== 产品页总数: 134 ==

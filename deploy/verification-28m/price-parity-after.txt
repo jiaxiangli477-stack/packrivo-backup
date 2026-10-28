@@ -1,0 +1,73 @@
+﻿{
+  "cardCount": 8,
+  "heroFrom": 1.63,
+  "minCardPrice": 1.63,
+  "heroMatchesMin": true,
+  "rows": [
+    {
+      "title": "Custom Drawer Jewelry Boxes with Logo",
+      "cardPrice": 2.83,
+      "quotePrice": 2.83,
+      "same": true,
+      "status": 200,
+      "cta": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-drawer-jewelry-box"
+    },
+    {
+      "title": "Custom Lid-and-Base Jewelry Boxes",
+      "cardPrice": 2.83,
+      "quotePrice": 2.83,
+      "same": true,
+      "status": 200,
+      "cta": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-lid-and-base-jewelry-box"
+    },
+    {
+      "title": "Custom Jewelry Boxes with Fitted Inserts",
+      "cardPrice": 2.83,
+      "quotePrice": 2.83,
+      "same": true,
+      "status": 200,
+      "cta": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-jewelry-box-with-insert"
+    },
+    {
+      "title": "Custom Window Lid Rigid Boxes",
+      "cardPrice": 2.83,
+      "quotePrice": 2.83,
+      "same": true,
+      "status": 200,
+      "cta": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-window-lid-rigid-gift-box"
+    },
+    {
+      "title": "Custom Hinged Rigid Gift Boxes",
+      "cardPrice": 2.83,
+      "quotePrice": 2.83,
+      "same": true,
+      "status": 200,
+      "cta": "http://localhost:8081/get-a-quote/?style=rigid&qty=500&product=product-hinged-nonmagnetic-rigid-box"
+    },
+    {
+      "title": "Custom Hinged Lid Boxes with Logo",
+      "cardPrice": 2.48,
+      "quotePrice": 2.48,
+      "same": true,
+      "status": 200,
+      "cta": "http://localhost:8081/get-a-quote/?style=mailer&qty=500&product=product-corrugated-roll-end-hinged-lid"
+    },
+    {
+      "title": "Custom Paper Gift Bags with Logo",
+      "cardPrice": 1.63,
+      "quotePrice": 1.63,
+      "same": true,
+      "status": 200,
+      "cta": "http://localhost:8081/get-a-quote/?style=bag&qty=500&product=product-euro-tote-paper-carrier"
+    },
+    {
+      "title": "Custom SOS Paper Bags Bulk",
+      "cardPrice": 1.63,
+      "quotePrice": 1.63,
+      "same": true,
+      "status": 200,
+      "cta": "http://localhost:8081/get-a-quote/?style=bag&qty=500&product=product-sos-paper-gift-bag"
+    }
+  ]
+}
+PASS 8/8 卡片价与报价页实算一致
