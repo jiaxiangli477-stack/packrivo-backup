@@ -526,6 +526,10 @@ docker exec php php -l "$WPC/wp-content/mu-plugins/packrivo-site-remediation-202
 # 6.2 404 viewport：给「本页尚未翻译」的 404 补 <meta name="viewport">
 cd "$WP"                      # 这个补丁的路径前缀是 wp-content/mu-plugins/，要在 WP 根执行
 sha256sum wp-content/mu-plugins/packrivo-i18n.php
+#   生产 2026-10-29 实测：打前 a2a7bdf3…，打后 f7d95f35…（只截了前 8 位，全值见 28u 的 compare-cols 日志）
+#   这个文件**没有**像 27e 那样的固定基线：演练库里的副本是 3bc325503b16…（28m 之前的版本），
+#   与生产那份不是同一版，但同一份补丁两边都能干净打上。所以判据是 git apply --check 通过，
+#   不是"哈希等于某个值"；打完只要哈希变了就算落盘。
 git apply -p1 --check "$PKG/patches-28m/packrivo-i18n-404-viewport.patch" && echo CHECK-OK
 git apply -p1         "$PKG/patches-28m/packrivo-i18n-404-viewport.patch"
 docker exec php php -l "$WPC/wp-content/mu-plugins/packrivo-i18n.php"
@@ -779,6 +783,7 @@ cp -a "$BACKUP/i18n/." "$I18N/"
 | **最后手段（28r）** | 第 9 步末尾的整库导入 + 9.6/9.5/9.4/9.2 文件部分 | 原始一轮 `PASS=16 FAIL=2 EXIT=1`（L-4/L-6 判据写法与顺序都错了，见该节注记），按改写的判据复核 `PASS=11 FAIL=0 EXIT=0`；整站快照回到基线 `4972cd81…`（逐字节一致） |
 | **并入三个守卫后重跑（28s）** | 第 0–8 步正向 + 第 9 步回滚 | 见 `DSH-RESULT-2026-10-28s.md`：每步 `PASS=n FAIL=0` 且 `EXIT=0`；复位快照 `4972cd81…`、正向快照 `4247693f…`、回滚后回到 `4972cd81…`；反向自检确认 3.0 守卫拦得住他站残留 JSON |
 | **本地对齐 WP 7.1.4 后重跑（28t）** | 第 0–8 步正向 + 第 9 步回滚 + 3.0 反向自检 | 见 `DSH-RESULT-2026-10-28t.md`：core 升级到 7.1.4（官方包 `a147146c…`）后每步 `PASS=n FAIL=0` 且 `EXIT=0`；复位快照作为本轮新基线，回滚后回到该基线；正向快照与 28s 正向 `4247693f…` 的 diff 只来自版本号，页面标题没有变化。RUNBOOK 提交号见结果文档（下一次生产授权锁定它） |
+| **演练环境换 MySQL 后完整重跑（29v）** | 正向 0–8（含 4.5 建页）+ 最后手段（整库导入）+ 第二轮正向 + 第 9 步回滚（含 9.8 删页）+ 3.0 反向自检 | 见 `DSH-RESULT-2026-10-29v.md` 与 `deploy/verification-29v/`：`mysql` 换 **MySQL 8.4.13**（`caching_sha2_password` + 自签 TLS）、`php` 客户端钉 **mariadb 11.4.13**，第 0 步如实复现「`2026 TLS/SSL error` → 装包装 → `1045 caching_sha2` → 装 connector → 三条判据 PASS」；两轮正向各 `73 PASS / 0 FAIL`、`step9` `PASS=9 FAIL=0`、最后手段 `20 PASS / 0 FAIL`，全程 `EXIT=0`。新基线 `8971f447…`（取代 MariaDB 时代的 `4972cd81…`），正向 `eef3fd37…` 与 28s 的 `4247693f…` **只差一行**（报价页 ID 3220 → 5444）；最后手段 / 第 9 步 / 反向自检三条路径之后快照都回到基线 `8971f447…`（逐字节一致） |
 
 ### 附录 C-1 · 2026-10-29 生产实跑（首装，已上线）
 

@@ -1,0 +1,96 @@
+--- /home/web/rehearsal-29v/lsr-s-after-import.txt
++++ /home/web/rehearsal-29v/lsr-s-final.txt
+@@ -25,50 +25,49 @@
+ 8aed2a8e7b2f2b9913a5359a973d3d06b2116fcbaec03922d060192fefd8e75d  packrivo-blogc100-private-8aed2a8e7b2f2b99.php
+ ba962f158b89386c7d52ad21aa091068f44346d1f7209d8ec38ad93ef13fd917  packrivo-blogc100-published-native-ba962f158b89386c.php
+ f4f4f542b10d42be6cd806e40507f4005f84a1980f1fd8f6ff2eb145da31e88a  packrivo-blogc100-single-reader-toc.php
+-77e5728319a37645d5d10bacc1e91aea8bf9ea1dd1ca75a82c5290584caebe30  packrivo-i18n.php
++3bc325503b16a5de8cea7600801512653d4ab94db94739ac773e3d4a2741bb5e  packrivo-i18n.php
+ 3444b0ad0b648ab456a1dffe71707b8b96c003c5098bb5eef62bc710762349d8  packrivo-merge-redirects.php
+ 253ba0fcc19133a8b2d39f28f0f0159a6a2d03d553f9705b15cbe6866d095d56  packrivo-nav-fix.php
+ 3e26cb44a0bb83d6d6700437a0963642d45789a485c05d2cf4de7bcfb2e69353  packrivo-private-backup-compat.php
+ 5066ae84839264bc54f3e76b192a2beaa401d964b022b0579aafbe03e6f74e0e  packrivo-product11-related-reading-5066ae84839264bc.php
+ 61f9d414299dd1054b019c0f512810316c110224d11960168939afa00d6fe8ea  packrivo-site-polish-20260922.php
+-887787ab3240091d1c6328e444d70cbe7585ca79c00e162857106c3d94e78189  packrivo-site-remediation-20261022.php
++ac0a27538c428f2175e9596bd21f27be47069aaf57cbeabf8892ae456e2f471d  packrivo-site-remediation-20261022.php
+ bdd902d72ef5725ade14c214bb6eb0df966ec833f1ef98c8edf0354ce291241b  packrivo-wave1.php
+ 5ab5be3f85f46ce5416fdb4cafc98f54de86a1fc4ece041c56c2de40173a1d8c  packrivo-wave2.php
+ cadffde82ac5d13e7107dc44e3b13588eef15887364f18b2ca6bf17c50eec44b  packrivo-yoast-sitemap-stable-order-20261016.php
+ == i18n 字典（排序后 sha256）==
+-2340f7e7aead26670b515400bcca27ea925506359af76da283122806572604f7  ar-dict.json
+-8dab1d1a84836837d879fb524b80a1be024bbab1f33f8381951e31dba6129df0  ar-js.json
+-92fc8ff4ca087a261b0973da7644e602c1a7b34b30c6d77cb112a9ceba826182  de-dict.json
+-28537c8791d98e112bfc87c013174b4d4a97f179f8eb328b662af316419ae582  de-js.json
+-862820a0e35f6b346aceae548136698147c4dabf8740335264ac9ac8d8cab31d  es-dict.json
+-b7c0aa8b776a37837b76a6cb623b73743ffbd2f91ca9dc8735a4516acebe204f  es-js.json
+-c5a069e89c535085839e26f4a1b480874dfead25a115634546f8ca39fd90e581  fr-dict.json
+-ef27a392579c6aa3e6c0ad1f5986c33a04bae31442a8394c4e4d284d6c577572  fr-js.json
+-b87c2f3e2d2613cea0b0902d0b3d078c87abf28d98c053ca13bd1cc408f912d5  it-dict.json
+-c96d055661e9eae68ea505aa223459bbd25a82c8ff002386f184c80e9e46d316  it-js.json
+-23515bd245a82512c2f7fcc044f7520ed4833271c0f3089c7f7e9df1af6b0506  ja-dict.json
+-617a45c417d8227558d74740602a94dae93159a9b74f7edb8dc4ce63cc2e85b5  ja-js.json
+-9fbeb5af60925bf1bb6c59ad8b73b491eca33555f5b89fcaef1ea956d985796c  ko-dict.json
+-1ea3bf13416ccb9488a08c4c027378ff3e255f631b57666381ffc167311d5780  ko-js.json
+-68df9e4f5490a0d9881b2f1c2dc26af479da41275ea1ff523fee6ae1eb3c035e  nl-dict.json
+-9b2f0497d9a202ce8319e1b1adeb6a9ea642e080278ac3b704f8a90054b8cfeb  nl-js.json
+-c8dccff3d49310790ba7bf3cbc1ca0878d3745fc45c7182c6ab275ac3bd265ee  paths.json
+-6a1409584ca70a94ee36891b6300652101989bc164fbc7430346f191dedac102  pt-dict.json
+-425c2e86fd57b68e837efa5ae81d8b9c60c24ce2a5877854c8232499f52947f7  pt-js.json
+-987ddd0eab514abfd9a699f6445463fdb049f753ac2f318b7ffce3670e642182  zh-CN-dict.json
+-5b117faf7a0afb64cbf66f2fb2785edaaca736a1c7046e7cc2be813782788740  zh-CN-js.json
+-125f7218cb3f12948f306024ae43d46f008b7f987823b9b8cdbd118ac6b650a4  zh-TW-dict.json
+-324dbc9914a25a0bed98ddb9e971c9a34b09828d281fa29271020808c610bd5d  zh-TW-js.json
++fce78c52b16e54bf102d0fce28a633ab61b6fb6ba9e56fbff132fb748feff00a  ar-dict.json
++e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  ar-js.json
++a12869308e19e291aabc730948a8e47c020e5b64cda950a45df19c7f3a3a717d  de-dict.json
++e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  de-js.json
++0018dbfa97c609f55de47874885befb084d83923f2fe6c83da87ee5e909b0c9f  es-dict.json
++e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  es-js.json
++d51f5e49905ee47f97ea2e6f51c143dbcef3534b240ba0977686ab94c74f0aff  fr-dict.json
++e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  fr-js.json
++fe4bea37ab3d3c473c8a94481e3552802851eb562a83e7cee5baf3ff8a809e7e  it-dict.json
++e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  it-js.json
++b652dfe2854668fa71f2512499eb9cb6ce23073830cb91b2a8e9803410da79c8  ja-dict.json
++e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  ja-js.json
++40fe5b2b2b4acd33e24e8a016211731f3ca383810509ae6b73c1b4dc5bf8e8dd  ko-dict.json
++e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  ko-js.json
++374cc9886f4fb781c83f1c6af9d2afdaf3f9e830b8e603212f958a9af631d846  nl-dict.json
++e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  nl-js.json
++b2dde597f9f5e859b2d318ff1226bb04dbfe2c50ca0e8f346b11a7fa6152d498  paths.json
++f53d72b25884b343f8108eb0b3f761f4a0f19826ecf1794a88359bd2c52700b7  pt-dict.json
++e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  pt-js.json
++cedb65edea9698cd8769ba3b67a93d8692f62c2da52ed36abb49fcbbfc311372  zh-CN-dict.json
++e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  zh-CN-js.json
++02fa594f6474434a460f19971ae9b53f3c000f49b07087868dcf8369e0fa3c3b  zh-TW-dict.json
++e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  zh-TW-js.json
+ == 主题 ==
+ name,status,update,version,update_version,auto_update
+-packrivo-home-v4,inactive,none,4.0.1,,off
+ packrivo-static-bridge-1.2.38,active,none,1.2.38,,off
+ twentytwentyfive,inactive,none,1.0,,off
+ twentytwentyfour,inactive,none,1.3,,off
+ twentytwentythree,inactive,none,1.6,,off
+ template=packrivo-static-bridge-1.2.38
+ stylesheet=packrivo-static-bridge-1.2.38
+-子主题目录存在=yes
++子主题目录存在=no
+ == 插件 ==
+ name,status,update,version,update_version,auto_update
+ akismet,inactive,none,5.3.6,,off
+@@ -78,7 +77,6 @@
+ packrivo-lead-intake,active,none,0.3.0,,off
+ packrivo-operations,active,none,0.1.0,,off
+ packrivo-product-workspace,active,none,0.1.0,,off
+-packrivo-quote,inactive,none,1.0.1,,off
+ packrivo-analytics-events,must-use,,,,off
+ packrivo-blog-batch-20261018-gate,must-use,,,,off
+ packrivo-blog-overhaul-c100-cover-20261016,must-use,,,,off
+@@ -115,7 +113,7 @@
+ packrivo-blog-overhaul-verified-asset-cover-og-seed-20261016,must-use,,,,off
+ packrivo-wave1,must-use,,1.0.0,,off
+ packrivo-wave2,must-use,,1.0.0,,off
+-报价插件目录存在=yes
++报价插件目录存在=no
+ == 页面标题（ID,slug,title 排序）==
+ 10,product-magnetic-jewelry-box,"Custom Magnetic Jewelry Boxes with Logo"
+ 1032,gift-box-design-outside-inside,"Gift Box Design: Balance the Exterior and Interior"
