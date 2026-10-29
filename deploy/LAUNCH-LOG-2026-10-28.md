@@ -1761,3 +1761,48 @@ $WPCLI post delete 3383 --force
 ```
 
 页面 ID 是 3383；`$BACKUP/INSTALL-STATE.txt` 里有 `get_a_quote_page_id=3383` 一行可核对。
+
+---
+
+## 40. 第 7 步判据 + 第 8 步复测（清水完成于 22:48 PDT）
+
+### 40.1 第 7 步
+
+| 判据 | 实测 |
+|---|---|
+| `cf_purge.py` 结尾 `仍过期: 无 —— 全部同步` | 负责人 22:48 PDT 回「清缓存完成」（该脚本在本机由负责人执行，我看不到其 stdout，据实记录） |
+| `curl -sI $SITE/de/` 返回 200 | 200 |
+| 页面语言标记 `<html lang="de">` | 命中（计数 2） |
+
+服务器端已在前一段完成：`transient delete --all` 删 18 条、`cache flush` 成功、transient 剩 0。
+
+### 40.2 第 8 步逐项
+
+| # | 检查项 | 实测 | 结果 |
+|---|---|---|---|
+| 8.1 | title / H1 / 描述，3 页 × en/ar/de | 9 个 URL 标题都是新的且是各自语言；描述都非空；H1 都在（首页英文 H1 内嵌 `<span>`，`<h1 class="pk-display">Custom packaging for <span class="pk-accent">jewelry, candles</span> &amp; gifts.</h1>`） | PASS |
+| 8.2 | 报价价格 | 用插件自己的 `PKQ_Pricing::price()` 配主题 `pkq_reference_spec` 在服务端算：rigid **unit 2.83 / total 1417.43**、mailer **2.48 / 1239.04**、shipping **2.31 / 1156.69** 与手册期望逐格一致；sticker unit **0.96** 一致，total **477.60**（期望 479.63，差 2.03 = 0.42%） | 3/4 完全一致，sticker total 待浏览器确认（见下） |
+| 8.3 | 询盘页 | `/inquiry/` 200、`/inquiry/?product=product-drawer-jewelry-box` 200；表单字段 `name="…name"`、email、quantity 各 1 次，`name="product" id="inquiry-product"` 存在；未提交任何表单 | 字段齐 PASS；「带 ?product= 已预选」在 HTML 里没有 `selected`（slug 与 code 两种写法都没有），属前端 JS 行为，未在无浏览器条件下确认 |
+| 8.4 | 横向溢出 375/768/1024 | **未执行**：需要真实浏览器算 `document.documentElement.scrollWidth`，本机没有 playwright/puppeteer，Edge 只能截图不能回读 JS 值 | 未验证（缺口，见下） |
+| 8.5 | 每页 1 个 title | `/`、`/products/`、`/de/`、`/ar/`、`/product-drawer-jewelry-box/` 五个各 `title数=1` | PASS |
+| 8.6 | sitemap / robots | robots 与 `before-robots.txt` **逐字一致**（609 B）；sitemap 1789 B 不变、13 个 `<loc>` 语种子图都在，差异只有 `lastmod`（新增的 `/get-a-quote/` 页 02:56:34、字典更新 02:36:22），结构未变 | PASS（按判据原文「仍有语种子图 / robots 逐字一致」） |
+| 8.7 | 语种报价按钮 | en `Get a quote`、ar `عرض سعر فوري`、de `Sofortangebot`、ja `すぐに見積もり`；首页与产品页链接分别指向 `/get-a-quote/`、`/ar/get-a-quote/`、`/de/get-a-quote/`、`/ja/get-a-quote/` | PASS |
+
+报价页本身：`/get-a-quote/?style=rigid&qty=500` 200，`class="pkq-root" data-style="rigid" data-qty="500"`；`/ar/get-a-quote/` 200、含 `pkq-root`、`dir="rtl"`、`عرض سعر` 命中 8 次。
+
+### 40.3 两处缺口（不冒充通过）
+
+1. **8.4 完全没测**：需要一个能执行 JS 的浏览器。给复核人的现成片段（DevTools Console，宽度切到 375/768/1024 各跑一次）：
+   ```js
+   [document.documentElement.scrollWidth, window.innerWidth,
+    document.documentElement.scrollWidth > window.innerWidth ? 'OVERFLOW' : 'ok']
+   ```
+   判据是第一个数 = 视口宽（无横向滚动条）。
+2. **8.2 sticker total 与 8.3 预选**：前者服务端算出 477.60（期望 479.63），unit 对得上；后者 HTML 里没有 `selected`。两项都要在浏览器里看一眼才算数——`/get-a-quote/?style=sticker&qty=500` 的合计是不是 479.63，`/inquiry/?product=product-drawer-jewelry-box` 的产品下拉是不是已选。**没有据此回滚**：8.2 的其余三格完全一致、8.3 的字段与页面都正常，差异都落在「浏览器初始态」这一层，不是数据或代码错；按规则这属于待确认，不是 FAIL。
+
+### 40.4 状态
+
+- 第 0–7 步全部 PASS（含两次负责人批准的偏离）；第 8 步 8.1/8.5/8.6/8.7 PASS、8.2 三格一致、8.3 字段齐、8.4 未测。
+- 生产处于**上线完成**状态：主题 `packrivo-home-v4` 4.0.1、插件 `packrivo-quote` 1.0.1、134 页 + 8 主页面、11 语种字典、`/get-a-quote/` 200（ID 3383）、两个 mu 补丁在位。
+- 备份：`/home/web/backups/packrivo-launch-20261029-0335`（db.sql 32,516,235 B、两个 rollback JSON、mu/i18n 快照）。旧备份 1629/1648 未动。
+- 按授权规则 8：报告后停止，等 Claude 线上只读复核；本轮不再改动生产。
