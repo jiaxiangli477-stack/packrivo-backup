@@ -1,0 +1,37 @@
+################ 29x 反向自检 2026-10-29T21:30:54Z ################
+===== [1] 现状：/pkg/rollback 里有什么 =====
+total 1240
+-rw-r--r--    1 root     root       1255899 Oct 29 20:54 rollback-27g.json
+-rw-r--r--    1 root     root          9078 Oct 29 20:55 rollback-27i.json
+===== [2] 放一个 site 不一致的 JSON =====
+total 1244
+-rw-r--r--    1 root     root       1255899 Oct 29 20:54 rollback-27g.json
+-rw-r--r--    1 root     root          9078 Oct 29 20:55 rollback-27i.json
+-rw-r--r--    1 root     root            69 Oct 29 21:30 rollback-bogus.json
+bogus site=http://wrong-site.invalid
+===== [3] 单独跑第 3 步（期望：3.0 守卫 FAIL、整步 EXIT!=0、apply 没执行）=====
+negtest step3 EXIT=1
+--- 该次的 PASS/FAIL 行 ---
+PASS: 3.0 /pkg/rollback/rollback-27g.json site 与本轮一致
+PASS: 3.0 /pkg/rollback/rollback-27i.json site 与本轮一致
+FAIL: 3.0 /pkg/rollback/rollback-bogus.json 非本轮产物（site=http://wrong-site.invalid，期望 http://nginx），先清空 /pkg/rollback
+--- 汇总行 ---
+3.0 守卫拦截，apply 不执行
+本步判据：PASS=2 FAIL=1
+--- apply 是否执行过（应无输出，期望计数 0）---
+0
+PASS: 3.0 守卫拦住他站 JSON，整步非零退出，apply 未执行
+===== [4] 删掉这个文件 =====
+total 1240
+-rw-r--r--    1 root     root       1255899 Oct 29 20:54 rollback-27g.json
+-rw-r--r--    1 root     root          9078 Oct 29 20:55 rollback-27i.json
+===== [5] 再取一次快照（必须仍是基线）=====
+snapshot: /home/web/rehearsal-29x/s-after-negtest.txt
+行数: 844
+整份 sha256: 01c1c448743c7d797d4925e3af0903e1805391bbb431159062b278ca846599b7
+snapshot(ext): /home/web/rehearsal-29x/s-after-negtest.txt.ext
+整份 sha256(ext): 91db54e0c1d8c5538192d384d3dab926f361b805d1e653b2d2da3e00d89cad63
+反向自检后快照 sha256 = 01c1c448743c7d797d4925e3af0903e1805391bbb431159062b278ca846599b7
+基线 = 01c1c448743c7d797d4925e3af0903e1805391bbb431159062b278ca846599b7
+PASS: 反向自检没有改动站点（仍 = 基线）
+################ 反向自检结束 ################

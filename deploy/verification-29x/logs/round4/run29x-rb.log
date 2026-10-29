@@ -24,3 +24,7 @@ FAIL: 3.0 /pkg/rollback/rollback-bogus.json 非本轮产物（site=http://wrong-
 PASS: 3.0 守卫拦住他站 JSON，整步非零退出，apply 未执行
 PASS: 反向自检没有改动站点（仍 = 基线）
 negtest 退出码 = 0
+  快照[after-negtest]  旧口径=01c1c448743c7d797d4925e3af0903e1805391bbb431159062b278ca846599b7
+  快照[after-negtest]  ext   =91db54e0c1d8c5538192d384d3dab926f361b805d1e653b2d2da3e00d89cad63
+################ 29x 段2 结束 2026-10-29T21:34:47Z ################
+EXIT=0

@@ -64,10 +64,13 @@
 - `services`、`inserts` 的 `<title>` 在 11 个语种里原来都是英文 → 已补词典（22 条，落到 `deploy/i18n-merged/*-dict.json` 与演练站 `wp-content/uploads/packrivo-i18n/`）。
 - `inquiry`（Get a Quote，页面 ID 49）的标题在 11 个语种里本来就有译文 → 11 行标记"原文已是译文，未改"。
 - 渲染核验（演练站）：`/de/services` → `Verpackungsbeschaffung: 8–15 % Gebühr, schriftlicher Umfang | Packrivo`；`/zh-CN/inserts` → `包装内衬：泡棉、纸板、配合检查 | Packrivo`；11 个语种里"仍是英文标题"的页面数 = 0。
+- 博客页 11 语种逐语言核验（`evidence/i18n-blog-29x/i828-browser.json`，24 行 = 12 语种 × 正常/空态）：`/{lang}/blog/` 全部 200、每页 12 卡，`<title>`/eyebrow/H1/lede/日期/min read 均本地化——`/de/` `Verpackungsratgeber für kleine Marken | Packrivo` · `Magazin · 333 Artikel` · `7 Min. Lesezeit · 26. Okt`，`/fr/` eyebrow `Le Journal · 333 articles`，`/ja/` `読了 7分 · 2026年10月26日`，`/ar/ /zh-CN/ /zh-TW/` 等同样为译文；en 对照行正常。
+- 博客空态：11 非英语种 `/blog/?topic=zz-nonexistent` HTML 复核（`evidence/i18n-blog-29x/empty-html-29x/empty-html-29x.json` + 11 份 `*.blog.empty.html`）11/11 `localizedEmptyState=true / hasEnglishFallback=false / cardCount=0 / ok=true`；en 对照显示英文空态文案（`i828-browser.json` 中 `emptyState:"EN-empty-state"`）。
 
 ## 7. 重新打包与哈希
 
 - `deploy/packrivo-home-v4.zip`：44 条目（38 文件 + 6 目录项），796,514 B，SHA256 `49ddbe6f1848419d2add0d801a0bf41817dbbab891b4747bcd629fdfc3a0599e`。
+- 安装后 `assets/site.css`：35199 B，SHA256 `A5EF20760FD2F50497F657AACABB6C0B7BD0DC6C8B4F4A805806BF82C79C7E4E`；zip 内条目、`packrivo-wp` mirror 树、演练安装后三处逐字节一致。
 - 与本轮之前那版（`a0e82203…` / 796,199 B）相比，文件集合不变（38/38），只有 `page.php`、`assets/site.css` 内容变化——即第 2 节里的宽表包裹、窄屏裁剪、非原生页左对齐三项。
 - RUNBOOK 表（第 145 行）与第 5 步哈希注释（第 481 行）已同步成新哈希；`doc` 里其它历史哈希未改。
 
@@ -91,13 +94,13 @@
 | step7 | 1 | PASS=1 FAIL=0 |
 | step8 | 9 | PASS=9 FAIL=0 |
 
-段 2（`21:22:55Z` 起）：第 9 步回滚 → 3.0 守卫反向自检。
+段 2（`21:22:55Z` → `21:34:47Z` 结束，容器 EXIT=0）：第 9 步回滚 → 3.0 守卫反向自检。
 
 - step9：PASS=11 FAIL=0（含 9.3 两份 rollback JSON 的 site 校验、9a before-mu 全 OK、9b 主题回父主题、9c 子主题目录已删、9d 报价插件已移除、9e 首页 200、9f `/get-a-quote/` 回 301、9g 报价页计数 0、9h 页面 8 模板 meta 已还原）。
 - 快照：基线 `01c1c448743c7d797d4925e3af0903e1805391bbb431159062b278ca846599b7`（ext `91db54e0…`）；正向 `8a011aea9cd43d6bd5aeeae4c03e5f5a6d263c7c425e97c585d6b332499f4b5b`（ext `a2c2e2bd…`）；**回滚后 = 基线（逐字节一致）**；反向自检后仍 = 基线。
 - 3.0 反向自检：往 `/pkg/rollback/` 塞一个 `site=http://wrong-site.invalid` 的 JSON，守卫打印"非本轮产物…先清空 /pkg/rollback"，整步非零退出、apply 未执行、站点未变（negtest 退出码 0）。
 - 正向与基线的 ext 差异只有预期项：`packrivo-i18n.php`、`packrivo-site-remediation-20261022.php` 两个 mu 更新，11 份 dict + 11 份 js + `paths.json` 合并，主题切到 `packrivo-home-v4 4.0.2`，报价插件上装，页面 7010 `get-a-quote` 新建，页面 8 `page_template=template-products-v4.php`。
-- 本轮日志与三份快照已归档到 `deploy/verification-29x/logs/round4/`。
+- 本轮日志与快照已归档到 `deploy/verification-29x/logs/round4/`（含 `step9.log`、`negtest.log`、`negtest-step3.log`、正向/回滚/反向自检三组快照，以及 `run29x-rb.log` 完整尾部：`29x 段2 结束 2026-10-29T21:34:47Z` + `EXIT=0`）。
 
 ## 9. 浏览器判据（真实 Chrome + 本地代理，Host 原样带给 8091）
 
