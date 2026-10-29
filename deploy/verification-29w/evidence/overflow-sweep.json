@@ -1,0 +1,164 @@
+[
+ {
+  "path": "/",
+  "width": 375,
+  "status": 200,
+  "sw": 375,
+  "iw": 375,
+  "bad": 0,
+  "ok": true
+ },
+ {
+  "path": "/",
+  "width": 768,
+  "status": 200,
+  "sw": 768,
+  "iw": 768,
+  "bad": 0,
+  "ok": true
+ },
+ {
+  "path": "/",
+  "width": 1024,
+  "status": 200,
+  "sw": 1024,
+  "iw": 1024,
+  "bad": 0,
+  "ok": true
+ },
+ {
+  "path": "/products/",
+  "width": 375,
+  "status": 200,
+  "sw": 375,
+  "iw": 375,
+  "bad": 0,
+  "ok": true
+ },
+ {
+  "path": "/products/",
+  "width": 768,
+  "status": 200,
+  "sw": 768,
+  "iw": 768,
+  "bad": 0,
+  "ok": true
+ },
+ {
+  "path": "/products/",
+  "width": 1024,
+  "status": 200,
+  "sw": 1024,
+  "iw": 1024,
+  "bad": 0,
+  "ok": true
+ },
+ {
+  "path": "/de/",
+  "width": 375,
+  "status": 200,
+  "sw": 375,
+  "iw": 375,
+  "bad": 0,
+  "ok": true
+ },
+ {
+  "path": "/de/",
+  "width": 768,
+  "status": 200,
+  "sw": 768,
+  "iw": 768,
+  "bad": 0,
+  "ok": true
+ },
+ {
+  "path": "/de/",
+  "width": 1024,
+  "status": 200,
+  "sw": 1024,
+  "iw": 1024,
+  "bad": 0,
+  "ok": true
+ },
+ {
+  "path": "/ar/",
+  "width": 375,
+  "status": 200,
+  "sw": 375,
+  "iw": 375,
+  "bad": 0,
+  "ok": true
+ },
+ {
+  "path": "/ar/",
+  "width": 768,
+  "status": 200,
+  "sw": 768,
+  "iw": 768,
+  "bad": 0,
+  "ok": true
+ },
+ {
+  "path": "/ar/",
+  "width": 1024,
+  "status": 200,
+  "sw": 1024,
+  "iw": 1024,
+  "bad": 0,
+  "ok": true
+ },
+ {
+  "path": "/product-drawer-jewelry-box/",
+  "width": 375,
+  "status": 200,
+  "sw": 375,
+  "iw": 375,
+  "bad": 0,
+  "ok": true
+ },
+ {
+  "path": "/product-drawer-jewelry-box/",
+  "width": 768,
+  "status": 200,
+  "sw": 768,
+  "iw": 768,
+  "bad": 0,
+  "ok": true
+ },
+ {
+  "path": "/product-drawer-jewelry-box/",
+  "width": 1024,
+  "status": 200,
+  "sw": 1024,
+  "iw": 1024,
+  "bad": 0,
+  "ok": true
+ },
+ {
+  "path": "/get-a-quote/",
+  "width": 375,
+  "status": 200,
+  "sw": 375,
+  "iw": 375,
+  "bad": 0,
+  "ok": true
+ },
+ {
+  "path": "/get-a-quote/",
+  "width": 768,
+  "status": 200,
+  "sw": 768,
+  "iw": 768,
+  "bad": 0,
+  "ok": true
+ },
+ {
+  "path": "/get-a-quote/",
+  "width": 1024,
+  "status": 200,
+  "sw": 1024,
+  "iw": 1024,
+  "bad": 0,
+  "ok": true
+ }
+]

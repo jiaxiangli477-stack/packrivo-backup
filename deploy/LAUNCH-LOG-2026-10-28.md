@@ -1806,3 +1806,93 @@ $WPCLI post delete 3383 --force
 - 生产处于**上线完成**状态：主题 `packrivo-home-v4` 4.0.1、插件 `packrivo-quote` 1.0.1、134 页 + 8 主页面、11 语种字典、`/get-a-quote/` 200（ID 3383）、两个 mu 补丁在位。
 - 备份：`/home/web/backups/packrivo-launch-20261029-0335`（db.sql 32,516,235 B、两个 rollback JSON、mu/i18n 快照）。旧备份 1629/1648 未动。
 - 按授权规则 8：报告后停止，等 Claude 线上只读复核；本轮不再改动生产。
+
+---
+
+## 41 · 上线后热修复 29w-A：`/products/` 设 `template-products-v4.php`（2026-10-29 09:00–09:04 UTC）
+
+**授权**：负责人本人发出（任务单 `packrivo-v2/docs/DSH-TASK-2026-10-29w.md` 的 A 部分）。范围仅限：只读记录原值 → `post meta update` 一次 → 五条判据 → 任何 FAIL 回滚并停下 → `cache flush` + `transient delete --all` → 记日志并 push。Cloudflare 缓存由负责人本人清。
+**执行机**：本机 `ssh netcup`（容器 `php` / `mysql` / `nginx` / `redis`）。**没有读任何凭据文件，没有碰其他页面。**
+
+### 41.1 只读取证（动手前，`/tmp/29w-a-readonly2.log`）
+
+| 项 | 实测 |
+|---|---|
+| 页面 8 | `ID=8, post_type=page, post_name=products, post_status=publish, post_title="Custom Packaging Products"` |
+| **`_wp_page_template` 原值** | **不存在**：`post meta get 8 _wp_page_template` → 空、`rc=1`；`post meta list 8 --keys=_wp_page_template` 只有表头；页面 meta 总数 10 |
+| 模板文件 | `/home/web/html/www.packrivo.com/wordpress/wp-content/themes/packrivo-home-v4/template-products-v4.php`，**7,768 B**，`Oct 29 03:43`（= 上线时装的那个包） |
+| 子主题里的模板 | `template-journal-v4.php`、`template-products-v4.php`（父主题目录内 **没有** `template-*.php`，属正常：模板都在子主题） |
+| **生产所有非 default 的 `_wp_page_template`** | **一条都没有**（`post list --meta_key=_wp_page_template --meta_compare='!=' --meta_value=default` 命中为空）→ 没有第三处遗漏 |
+| 阅读设置 | `show_on_front=page`、`page_on_front=7`、`page_for_posts=53` |
+| 改前 HTTP（`?cb=` 破 CF） | `/products/`、`/de/products/`、`/ar/products/` 均 200，`body-class=page-template-default`，`EveryStructure=0`；`/`、`/blog/`、`/get-a-quote/` 200 |
+
+**回滚预案**：原值不存在，所以回滚动作是 `post meta delete 8 _wp_page_template`（不是恢复某个值）。
+
+### 41.2 执行（`/tmp/29w-a-apply.log`）
+
+```
+$ docker exec php php -d disable_functions= /usr/local/bin/wp --path=<WPC> --allow-root post meta get 8 _wp_page_template
+打前 rc=1                      # 空输出，确认没有这个 meta
+
+$ … post meta update 8 _wp_page_template template-products-v4.php
+Success: Updated custom field '_wp_page_template'.     rc=0
+
+$ … post meta get 8 _wp_page_template
+template-products-v4.php                               rc=0
+```
+
+### 41.3 五条判据（源站直连 443 + 真实 Chrome 三宽度，`?cb=` 破缓存）
+
+源站直连（`curl -sk --resolve www.packrivo.com:443:127.0.0.1`，绕开 Cloudflare 看真值）：
+
+| URL | 状态 | body class | `Every structure we can source` |
+|---|---|---|---|
+| `/products/` | 200 | `page-template-template-products-v4` | 1 |
+| `/de/products/` | 200 | `page-template-template-products-v4` | 0（该语种文案翻译过） |
+| `/ar/products/` | 200 | `page-template-template-products-v4` | 0（同上） |
+| `/` | 200 | `page-template-default` | 0 |
+| `/blog/` | 200 | （无 `page-template-*`，`is_home` 由子主题 `template_include` 接管） | 0 |
+| `/get-a-quote/` | 200 | `page-template-default` | 0 |
+
+完整 body 标签（`/products/`）：
+
+```html
+<body class="wp-singular page-template page-template-template-products-v4 page-template-template-products-v4-php page page-id-8 wp-theme-packrivo-static-bridge-1238 wp-child-theme-packrivo-home-v4 pk-body pr-page-pad pr-has-sticky has-contact-dock">
+```
+
+浏览器实测（headless Chrome，playwright-core 驱动本机 Chrome；`deploy/verification-29w/evidence/render-check.json`、三张截图）：
+
+| 宽度 | scrollWidth / innerWidth | 溢出元素 | h1 | 分类 chip | 卡片 | 排序表单 / 搜索框 | 分页 |
+|---|---|---|---|---|---|---|---|
+| 375 | **375 / 375** | 0 | Every structure we can source | 7 | 24 | 1 / 1 | 1 |
+| 768 | **768 / 768** | 0 | 同上 | 7 | 24 | 1 / 1 | 1 |
+| 1024 | **1024 / 1024** | 0 | 同上 | 7 | 24 | 1 / 1 | 1 |
+| de / ar @1024 | 1024 / 1024 | 0 | `Alle Verpackungsformen, die wir beschaffen können` / `كل التصاميم الهيكلية التي يمكننا توريدها` | — | — | — | — |
+
+截图：`deploy/verification-29w/evidence/products-375.png` / `products-768.png` / `products-1024.png` / `products-de-1024.png` / `products-ar-1024.png`。
+**五条判据全部 PASS，未触发回滚。**
+
+### 41.4 收尾：清缓存
+
+```
+cache flush            → Success: The cache was flushed.        rc=0
+transient delete --all → Success: 11 transients deleted.        rc=0
+transient list --format=count → 0
+```
+
+清完再回读一次，状态与 class 全部不变（上表同值）。Cloudflare 缓存由负责人本人清。
+
+### 41.5 顺手补上 §40.3 的缺口 8.4（只读，无任何改动）
+
+上一轮记「8.4 横向溢出未执行：本机没有 playwright」。本轮本机已有 `playwright-core`（`E:\破甲工作区\packrivo-v2\node_modules`）+ 本机 Chrome，于是把 6 个页面 × 3 个宽度全跑了一遍（`deploy/verification-29w/evidence/overflow-sweep.json`）：
+
+`/`、`/products/`、`/de/`、`/ar/`、`/product-drawer-jewelry-box/`、`/get-a-quote/`，375 / 768 / 1024 各一次，**18 组全部 `scrollWidth == innerWidth`、越界元素 0、状态 200，FAIL 数 0**。
+
+即 §40.3 的缺口 1 现在可以关掉；缺口 2（sticker 合计 479.63、`?product=` 预选）仍需要浏览器里点开报价页核对，本轮没做（不在 A 授权范围）。
+
+### 41.6 状态
+
+- `/products/` 已用 `template-products-v4.php`，三语同模板，三宽度无横向溢出，首页 / blog / 报价页未受影响；
+- 生产只剩这一处 `_wp_page_template` 改动（`8 → template-products-v4.php`），其他页面与设置未动；
+- 回滚一条命令：`post meta delete 8 _wp_page_template`；
+- 本文件记录的是执行结果，B 部分（RUNBOOK 4.6 + 9.7.5 + 演练重跑 + 子主题字体路径）走下一轮任务单。

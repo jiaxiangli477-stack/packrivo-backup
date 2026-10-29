@@ -1,0 +1,56 @@
+{
+ "cb": 1793264591156,
+ "time": "2026-10-29T09:03:12.493Z",
+ "shots": [
+  {
+   "width": 375,
+   "h1": "Every structure we can source",
+   "chips": 7,
+   "cards": 24,
+   "cardImgs": 17,
+   "sortForm": 1,
+   "searchInput": 1,
+   "filterbar": 1,
+   "pager": 1,
+   "bodyClass": "wp-singular page-template page-template-template-products-v4 page-template-template-products-v4-php page page-id-8 wp-theme-packrivo-static-bridge-1238 wp-child-theme-packrivo-home-v4 pk-body pr-page-pad pr-has-sticky has-contact-dock pr-consent-open pr-has-consent",
+   "scrollWidth": 375,
+   "innerWidth": 375
+  },
+  {
+   "width": 768,
+   "h1": "Every structure we can source",
+   "chips": 7,
+   "cards": 24,
+   "cardImgs": 17,
+   "sortForm": 1,
+   "searchInput": 1,
+   "filterbar": 1,
+   "pager": 1,
+   "bodyClass": "wp-singular page-template page-template-template-products-v4 page-template-template-products-v4-php page page-id-8 wp-theme-packrivo-static-bridge-1238 wp-child-theme-packrivo-home-v4 pk-body pr-page-pad pr-has-sticky has-contact-dock pr-consent-open pr-has-consent",
+   "scrollWidth": 768,
+   "innerWidth": 768
+  },
+  {
+   "width": 1024,
+   "h1": "Every structure we can source",
+   "chips": 7,
+   "cards": 24,
+   "cardImgs": 17,
+   "sortForm": 1,
+   "searchInput": 1,
+   "filterbar": 1,
+   "pager": 1,
+   "bodyClass": "wp-singular page-template page-template-template-products-v4 page-template-template-products-v4-php page page-id-8 wp-theme-packrivo-static-bridge-1238 wp-child-theme-packrivo-home-v4 pk-body pr-page-pad pr-has-sticky has-contact-dock pr-consent-open pr-has-consent",
+   "scrollWidth": 1024,
+   "innerWidth": 1024
+  }
+ ],
+ "de": {
+  "bodyClass": "wp-singular page-template page-template-template-products-v4 page-template-template-products-v4-php page page-id-8 wp-theme-packrivo-static-bridge-1238 wp-child-theme-packrivo-home-v4 pk-body pr-page-pad pr-has-sticky has-contact-dock pr-consent-open pr-has-consent",
+  "h1": "Alle Verpackungsformen, die wir beschaffen können"
+ },
+ "ar": {
+  "bodyClass": "wp-singular page-template page-template-template-products-v4 page-template-template-products-v4-php page page-id-8 wp-theme-packrivo-static-bridge-1238 wp-child-theme-packrivo-home-v4 pk-body pr-page-pad pr-has-sticky has-contact-dock pr-consent-open pr-has-consent",
+  "h1": "كل التصاميم الهيكلية التي يمكننا توريدها"
+ }
+}
