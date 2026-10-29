@@ -1557,3 +1557,132 @@ find $WP/wp-admin $WP/wp-includes -type f -newermt '2026-10-28 00:00' | wc -l
 - **停止在第 0 步 0k**，第 1–8 步未执行。
 - 生产侧本次改动只有：容器内 `/usr/local/bin/mariadb-dump`、`/usr/local/bin/mariadb` 两个包装脚本（RUNBOOK 0.1 原文的补救块），以及 `/home/web/prod-28u/` 下本次脚本与日志；数据库、站点文件、备份目录零改动。
 - **待批**：是否授权在 php 容器里 `apk add --no-cache mariadb-connector-c`（客户端依赖，装完重跑 0.1 的探针；不涉及站点、数据库、凭据）。装上后探针仍 ≤ 0 字节则继续停。
+
+---
+
+## 38. 继续执行：偏离补插件 → 第 1–5 步通过 → 第 6 步 FAIL 并回滚
+
+**接上一节**：负责人 19:32 PDT 放行 `apk add --no-cache mariadb-connector-c`（RUNBOOK 之外的一次偏离，RUNBOOK 仍锁 `f88a762`/`2fa7bb6a`），并追加探针三条判据。
+
+### 38.1 0k 偏离与复测（三条判据）
+
+装包命令与结果：
+
+```
+docker exec php apk add --no-cache mariadb-connector-c
+(1/1) Installing mariadb-connector-c (3.3.10-r0)
+```
+
+插件目录装前/装后：
+
+```
+装前 /usr/lib/mariadb/plugin ：total 0，文件数 0
+装后                         ：caching_sha2_password.so、client_ed25519.so、dialog.so、
+                               mysql_clear_password.so、sha256_password.so，文件数 5
+包版本                       ：mariadb-connector-c-3.3.10-r0（mariadb-client-11.4.13-r0 未变）
+```
+
+探针复测（`$WPCLI db export /tmp/probe.sql --skip-plugins --skip-themes`）：
+
+| 判据 | 实测 | 结果 |
+|---|---|---|
+| 导出字节数 > 0 | **32,516,267 B** | PASS |
+| CREATE TABLE 条数 = 库里表数 | 导出 40 vs `SHOW FULL TABLES` 的 BASE TABLE 40（`wp db tables --all-tables-with-prefix` 也是 40） | PASS |
+| 末尾有 `-- Dump completed` | `-- Dump completed on 2026-10-29  2:31:36` | PASS |
+
+**判据实现出过一次错，按实测更正**：第一次判 0k-2 时我用 `wp db query "SELECT COUNT(*) … information_schema …" --skip-column-names`，那条返回空（该调用没吐值），拿空串去比 → 判 FAIL；同时 `SHOW TABLES | wc -l` 得 41，多出来的是表头那一行。改用 `SHOW FULL TABLES` 去掉表头再数 BASE TABLE 得 40，与 `wp db tables --all-tables-with-prefix`（40）、导出里的 `CREATE TABLE`（40）三方一致。表是 40 个，不是 41，判据本身没有失败。
+
+### 38.2 0.2 上传与一处路径偏差
+
+- 两个 zip 落服务器后哈希与本地一致：`5974ae0c…34bf9`（home-v4）、`096d0c8e…52d93`（quote）；`i18n-merged` 23 个文件、`tools/merge-i18n.php` 13,108 B、`patches-28m` 1 个、`scripts/` 三组（11/9/8 个文件）。
+- **偏差**：RUNBOOK 0.2 第 128 行把 `dsh-out/*.json` 传到了包根，而第 3 步脚本按 `<package-root>/dsh-out/` 读（`lib.php` 直接拼 `/pkg/dsh-out/batch-01.json`）。第一次跑第 3 步因此 plan 直接 `Cannot read /pkg/dsh-out/batch-01.json`。处理：在 `$PKG` 下补 `dsh-out/` 并按表 0.2 第 118 行声明的相对路径重传 6 个 JSON，再 `docker cp` 进容器（第 2 步的 `docker cp` 早于这次补传），**重跑第 3 步**。此偏差只改上传落点，未改任何 RUNBOOK 命令；上线后应把 0.2 第 128 行改成 `netcup:/home/web/packrivo-packages/dsh-out/`。
+
+### 38.3 第 1 步 备份（PASS=12 / FAIL=0）
+
+```
+LAUNCH = packrivo-launch-20261029-0335
+CURRENT_LAUNCH 已写
+mu：packrivo-i18n.php a2a7bdf3…、packrivo-site-remediation-20261022.php ac0a2753…
+i18n：i18n-today 100 个文件（de-dict.json 1,307,802 B）
+db.sql：32,516,235 B  sha256 1733240d1caf67373a6dc659ce6abafd53cbc9bba0f158e28e8de0b585cd6ab6
+pages=391  sitemap=1789 B  robots=609 B
+1a–1j 全 PASS
+追加判据 1n：db.sql CREATE TABLE 40 = BASE TABLE 40  PASS
+追加判据 1o：db.sql 末尾 `-- Dump completed`     PASS
+```
+
+### 38.4 第 2 步 字典（全 PASS）
+
+11 个语种 dict + 11 个 js 合并完成（生产为底、生产优先），`paths.json` 146 条（生产 144 + 本地 146 → 146），`conflicts.json` = `[]`（**0 条冲突**，无需人工裁决）。2.5 六条全 PASS，装完 i18n 目录 100 个文件、`conflicts.json` 未误拷、`/de/` 200 且 `lang="de"` 计数 2。
+
+### 38.5 第 3 步 内容（PASS=13 / FAIL=0）
+
+```
+3.0 守卫：/pkg/rollback 空，PASS
+plan 27g：input_pages=134 preflight=PASS writes=0
+apply 27g：backup=created rows=134   apply_updated=134 already_current=0 URL_and_body_check=PASS
+verify 27g：verified_pages=134 sourcing_titles=0 duplicate_titles=0 mismatches=0 URL_and_non_H1_body_unchanged=134/134
+plan 27i：hub_pages=8 preflight=PASS inquiry_existing_description=preserved writes=0
+apply 27i：backup=created rows=8  apply_updated=7 already_current=1 H1_body_URL_check=PASS
+verify 27i：verified_hubs=8 metadata_mismatches=0 H1_body_URL_unchanged=8/8 inquiry_description_preserved=yes
+rollback 文件：rollback-27g.json 1,256,463 B、rollback-27i.json 9,100 B（已存 $BACKUP/rollback/）
+```
+
+抽 3 页标题正常（`/product-drawer-jewelry-box/`、`/products/`、`/jewelry-boxes/` 各 1 个 `<title>`）。
+**判据实现错误一处**：3g 我把 `H1_body_URL_unchanged=8/8` 查在 `apply-27i.log`（RUNBOOK 第 317 行说这条在 27i 的 **verify** 输出里），查错文件 → 误判 FAIL；按原文改查 `verify-27i.log` 后 PASS，导入未重跑（apply/verify 输出都在盘上）。
+
+### 38.6 第 4 步 报价插件（PASS=3 / FAIL=0）
+
+容器内包哈希 `096d0c8e…` √；`Plugin 'packrivo-quote' activated`；`packrivo-quote,active,none,1.0.1`；首页 200；`/get-a-quote/` 此时仍 301（预期空档期）。
+
+### 38.7 第 5 步 子主题（PASS=5 / FAIL=0）
+
+父主题 `packrivo-static-bridge-1.2.38` 保持 active；装包哈希 `5974ae0c…` √；`Switched to 'Packrivo Home v4 (child)'`；`stylesheet=packrivo-home-v4`、`template=packrivo-static-bridge-1.2.38`、首页 200；主题列表里 1.2.38 状态变 `parent`、`packrivo-home-v4,active,4.0.1`。
+
+### 38.8 第 6 步 FAIL → 按回滚一节恢复（本步停在这里）
+
+补丁本身都打上了、语法都对：
+
+```
+6.1 27e：打前哈希 = 基线 ac0a2753… √   CHECK-OK   No syntax errors detected
+        打后 packrivo-site-remediation-20261022.php = 887787ab…
+6.2 404 viewport：CHECK-OK   No syntax errors detected
+        打后 packrivo-i18n.php = f7d95f35…（补丁落点在第 168 行 `<meta name="viewport" …>`）
+```
+
+**判据 6c/6d 没过：`/get-a-quote/` 与 `/de/get-a-quote/` 变成 404，不是 200。**
+
+归因（全部只读）：
+
+```
+GET /get-a-quote/?cb=…           → 404   （en / de / ar 都一样，不是 CF 缓存）
+GET /get-a-quote/?style=rigid&qty=500 → 404
+GET /ar/…/jewelry-pouch-box-customer-handoff/?cb=… → viewport 计数 1（6e 其实 PASS，先前 0 是 CF 缓存的 404 页）
+get_page_by_path("get-a-quote")  → false（生产上没有这个页面）
+wp post list --post_type=page --post_status=any | grep -i quote → 只有 49,inquiry,"Get a Packaging Quote"
+生产 ID 3220 = "Shipping Boxes & Mailers" 的 revision（不是演练里那个页面）
+插件侧：packrivo-quote 只提供短代码 [packrivo_quote]（packrivo-quote.php 里只有 register_activation_hook → flush_rewrite_rules）
+README：「新建一个页面，插入短代码 [packrivo_quote]」
+演练侧：s-forward.txt 有 3220,get-a-quote,"Get a Quote" —— 演练库里有这个页面，所以 28q/28r/28s 第 6 步能直接 200
+```
+
+结论：**生产从来没有 `/get-a-quote/` 这个页面**。以前由 mu 里的旧 301 顶到 `/inquiry/`，把「没有页面」这个问题盖住了；27e 补丁把 301 删掉后，404 就露出来了。RUNBOOK 第 6 步的判据（200）和 8.2（按 `/get-a-quote/?style=rigid&qty=500` 核价）都依赖这个页面存在，而 RUNBOOK 全篇没有建页这一步 —— 这是手册的缺口，不是补丁的问题。
+
+按授权规则 1 执行第 6 步回滚（§6 回滚一节原文）：
+
+```
+cp -a "$BACKUP/mu/packrivo-site-remediation-20261022.php" …    → ac0a2753…（= 基线）
+cp -a "$BACKUP/mu/packrivo-i18n.php" …                        → a2a7bdf3…（= 基线）
+sha256sum -c "$BACKUP/before-mu.sha256"                       → 两个都 OK
+php -l 两个文件                                                → No syntax errors detected
+```
+
+回滚后站点状态（带 cache-buster）：`/` 200、`/get-a-quote/` **301 → /inquiry/**（恢复旧行为）、`/de/get-a-quote/` 301、`/products/` 200、`/inquiry/` 200、`/de/` 200。
+
+**第 7、8 步未执行。** 生产当前处于「1–5 步已生效、6 步已回滚」的状态：新主题、报价插件、134 页内容、合并字典都在，`/get-a-quote/` 仍是旧 301，站点对外 200。
+
+### 38.9 待负责人决定
+
+1. **补建 `/get-a-quote/` 页面**（这是唯一卡点）：标题 `Get a Quote`、slug `get-a-quote`、正文 `[packrivo_quote]`、状态 publish。建好后再打第 6 步两个补丁（补丁本身已验证 CHECK-OK），然后继续第 7 步（等你清缓存）与第 8 步。
+2. 或者判定本次上线暂停，把第 3–5 步也回滚回上线前状态（内容用 rollback-27g/27i 回滚、插件停用删除、主题切回父主题）。
+3. 无论走哪条，RUNBOOK 都要补两处：0.2 上传落点、第 3 步前建 `/get-a-quote/` 页面（或把建页并入第 3 步）。

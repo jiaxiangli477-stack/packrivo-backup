@@ -148,3 +148,72 @@ find $WP/wp-admin $WP/wp-includes -type f -newermt '2026-10-28 00:00' | wc -l  �
 | `/home/web/prod-28u/` 下 `step0.sh`、`diag.sh`、`probe-pkg.sh` 与三份日志 | 本次脚本与证据 |
 | 数据库、站点文件、主题、插件、CURRENT_LAUNCH、备份目录 | **未改动**（1629/1648 两个旧备份未动） |
 | 未打印、未记录任何密码/密钥/token；未打开 `.cf.env`；未到第 7 步 | — |
+
+---
+
+# 28u 续：第 1–5 步通过，第 6 步 FAIL 并已回滚（授权窗口内）
+
+`CURRENT_LAUNCH = packrivo-launch-20261029-0335`
+
+## 18 逐步 PASS/FAIL 表
+
+| 步 | 判据 | 结果 |
+|---|---|---|
+| 0 | 0.1 十四条 + 追加三条（探针 > 0 / CREATE TABLE = 表数 / Dump completed） | 14 + 3 **PASS**（说明见 §19） |
+| 0.2 | 上传 + 服务器侧哈希 | **PASS**（两个 zip 哈希与本地一致） |
+| 1 | 1a–1j + 追加 1n/1o | **12 PASS / 0 FAIL** |
+| 2 | paths/dict/js/坏 JSON/de 站 | **全 PASS**（冲突 0 条） |
+| 3 | 3.0 守卫 + 3a–3m | **13 PASS / 0 FAIL** |
+| 4 | 包哈希 / active / 站点 200 | **3 PASS / 0 FAIL** |
+| 5 | 父主题 / stylesheet / template / 首页 | **5 PASS / 0 FAIL** |
+| 6 | 6a 基线哈希、两处 CHECK-OK、两处 php -l | PASS |
+| 6 | **6c/6d `/get-a-quote/` = 200** | **FAIL → 整步回滚并停止** |
+| 7 | 清缓存 | **未执行** |
+| 8 | 上线后复测 | **未执行** |
+
+## 19 关键数据
+
+| 项 | 值 |
+|---|---|
+| `CURRENT_LAUNCH` | `packrivo-launch-20261029-0335` |
+| `db.sql` 字节数 | **32,516,235 B** |
+| `db.sql` sha256 | **`1733240d1caf67373a6dc659ce6abafd53cbc9bba0f158e28e8de0b585cd6ab6`** |
+| db.sql 表数 | `CREATE TABLE` 40 = `SHOW FULL TABLES` 的 BASE TABLE 40 = `wp db tables --all-tables-with-prefix` 40 |
+| db.sql 尾行 | `-- Dump completed on 2026-10-29  2:31:36` |
+| 备份其余 | mu 两个哈希、i18n 100 个文件、before-pages.csv 391 行、sitemap 1789 B、robots 609 B |
+| 字典 | 11 dict + 11 js + paths 146 条，conflicts `[]` |
+| 内容 | 27g `apply_updated=134 already_current=0`；27i `7+1=8`；`URL_and_non_H1_body_unchanged=134/134`；`H1_body_URL_unchanged=8/8`；`metadata_mismatches=0`；`inquiry_description_preserved=yes` |
+| 插件 | `packrivo-quote` 1.0.1 active，包哈希 `096d0c8e…` |
+| 子主题 | `packrivo-home-v4` 4.0.1 active，父主题 `packrivo-static-bridge-1.2.38`（状态 parent） |
+| 第 6 步回滚后 | `ac0a2753…` / `a2a7bdf3…`（= 上线前基线），两个 `php -l` 干净 |
+| 站点现状 | `/` 200、`/get-a-quote/` 301 → `/inquiry/`、`/de/get-a-quote/` 301、`/products/` 200、`/inquiry/` 200、`/de/` 200 |
+| 第 8 步 | 未执行（按规则停在第 6 步） |
+
+## 20 第 6 步为什么 FAIL：生产没有 `/get-a-quote/` 页面
+
+- 补丁打上了、语法也对：`packrivo-site-remediation-20261022.php` `ac0a2753…` → `887787ab…`，`packrivo-i18n.php` `a2a7bdf3…` → `f7d95f35…`（viewport 落在第 168 行）。
+- 但 `/get-a-quote/`（en / de / ar，`?cb=` 破缓存，GET 与 HEAD 都试过）**一律 404**。
+- `get_page_by_path('get-a-quote')` = `false`；任意状态下名字含 quote 的页面只有 `49,inquiry,"Get a Packaging Quote"`。
+- 生产 ID 3220 是 `Shipping Boxes & Mailers` 的一个 revision；**演练库里 3220 才是 `get-a-quote / "Get a Quote"`**（`s-forward.txt` 第 3220 行），演练因此第 6 步直接 200。
+- `packrivo-quote` 插件只提供短代码 `[packrivo_quote]`（`register_activation_hook` 里只 flush 重写规则），README 明确要求「新建一个页面，插入短代码」。
+- 上线前这个缺口被 mu 里那条旧 301 盖住了（301 → `/inquiry/`）；27e 补丁删掉 301 后，404 暴露出来。RUNBOOK 第 6 步判据与 8.2 核价都依赖这个页面，手册里没有建页这一步。
+
+## 21 已执行的回滚（第 6 步，§6 回滚一节原文）
+
+`cp -a` 两个 mu 文件回基线 → `sha256sum -c before-mu.sha256` 两个 OK → 复核哈希 `ac0a2753…` / `a2a7bdf3…` → 两个 `php -l` 干净 → 站点 6 个 URL 全 200（`/get-a-quote/` 回到 301 → `/inquiry/`）。第 3–5 步的成果保留，第 7、8 步未动。
+
+## 22 两次偏离与两处判据实现错误（都已实测更正，未重跑成功步骤）
+
+| 项 | 内容 |
+|---|---|
+| 偏离 1（负责人已批） | `apk add --no-cache mariadb-connector-c 3.3.10-r0`：插件目录 0 → 5 个文件，探针 0 → 32,516,267 B |
+| 偏离 2（上传落点） | 0.2 第 128 行把 `dsh-out/*.json` 传到包根，第 3 步按 `<root>/dsh-out/` 读；补建 `dsh-out/` 重传后第 3 步一次通过。只改落点，未改命令 |
+| 判据错误 1 | 0k-2 用了返回空的 `information_schema` 查询 + 把 `SHOW TABLES` 表头算进计数（41）；改 `SHOW FULL TABLES` 去表头 = 40，与导出 40 一致 |
+| 判据错误 2 | 3g 把 `H1_body_URL_unchanged=8/8` 查在 `apply-27i.log`，原文说在 verify 输出；改查 `verify-27i.log` 后 PASS |
+| 判据错误 3 | 6b 拿打补丁**前**的哈希变量去比「已变」；补丁后实测 `f7d95f35…` ≠ `a2a7bdf3…`，6b 实际 PASS |
+
+## 23 待负责人决定
+
+1. 授权补建 `/get-a-quote/` 页面（标题 `Get a Quote`、slug `get-a-quote`、正文 `[packrivo_quote]`、publish）→ 重打第 6 步两个补丁 → 继续第 7 步（等你清缓存）→ 第 8 步。
+2. 或判定本次上线暂停，把第 3–5 步也回滚（内容用两个 rollback JSON、插件停用删除、主题切回父主题）。
+3. RUNBOOK 上线后要补：0.2 上传落点、建 `/get-a-quote/` 页面这一步（或并入第 3 步）。
