@@ -1,0 +1,17 @@
+############### packrivo-live 升级 7.1.3 → 7.1.4  2026-10-29T01:30:43Z ###############
+--- 升级前版本 ---
+$wp_version = '7.1.3';
+--- 备份 core 文件（tar 到本机）---
+-rw-r--r--    1 root     root      22228777 Oct 29 01:30 /backup/packrivo-live-core-7.1.3.tar.gz
+--- 备份数据库 ---
+-rw-r--r--    1 root     root      32392977 Oct 29 01:30 /backup/packrivo-live-db-7.1.3.sql
+b9f0fb3d5d12144f9d3df5e18bbfbb95cb2e762b3f0ae1af617899ae92372057  /backup/packrivo-live-db-7.1.3.sql
+sha256sum: can't open '/backup/packrivo-live-core-7.1.3.tar.gz': No such file or directory
+--- wp core update（官方 7.1.4 包）---
+Error: Error establishing a database connection.
+--- 升级后 ---
+7.1.3
+--- 站点可达性（8081）---
+/ -> /backup/upgrade-live.sh: line 23: curl: not found
+/products/ -> /backup/upgrade-live.sh: line 23: curl: not found
+############### 结束 ###############

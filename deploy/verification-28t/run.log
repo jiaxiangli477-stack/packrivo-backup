@@ -1,0 +1,64 @@
+################ 28t 开始 2026-10-29T01:46:37Z ################
+===== [0] 本轮环境版本（升级后）=====
+$wp_version = '7.1.4';
+===== [1] 复位（reset.sh）=====
+reset 退出码 = 0
+Warning: wp_update_plugins(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
+报价插件未安装 ✓
+Custom Clear Display Box Sourcing
+get-a-quote 301（期望 301）
+首页 200（期望 200）
+===== [2] 拆掉 mariadb 包装 =====
+0
+包装已拆除
+===== [3] 复位后快照（本轮基线）=====
+snapshot: /home/web/v28t/s-reset.txt
+行数: 845
+整份 sha256: 4972cd8195d7b40a10dac4140273ba7faef4e152b2b886489bfcc624f2773deb
+复位快照 sha256 = 4972cd8195d7b40a10dac4140273ba7faef4e152b2b886489bfcc624f2773deb  （28s 基线 4972cd8195d7b40a10dac4140273ba7faef4e152b2b886489bfcc624f2773deb）
+观察: 复位快照与 28s 基线相同
+===== [4] 正向 0–8 =====
+----- step0 开始 01:51:10 -----
+step0 :: 本步判据：PASS=6 FAIL=0 :: EXIT=0
+----- step1 开始 01:52:34 -----
+step1 :: 本步判据：PASS=10 FAIL=0 :: EXIT=0
+----- step2 开始 01:54:39 -----
+step2 :: 本步判据：PASS=8 FAIL=0 :: EXIT=0
+----- step3 开始 01:55:01 -----
+step3 :: 本步判据：PASS=11 FAIL=0 :: EXIT=0
+----- step4 开始 01:57:10 -----
+step4 :: 本步判据：PASS=3 FAIL=0 :: EXIT=0
+----- step5 开始 01:58:19 -----
+step5 :: 本步判据：PASS=4 FAIL=0 :: EXIT=0
+----- step6 开始 02:00:14 -----
+step6 :: 本步判据：PASS=5 FAIL=0 :: EXIT=0
+----- step7 开始 02:00:34 -----
+step7 :: 本步判据：PASS=1 FAIL=0 :: EXIT=0
+----- step8 开始 02:01:27 -----
+step8 :: 本步判据：PASS=9 FAIL=0 :: EXIT=0
+===== [5] 正向后快照 =====
+snapshot: /home/web/v28t/s-forward.txt
+行数: 847
+整份 sha256: 4247693fa3a31f35477dcb059ad79e4ae5c13de861f94dfcc3848fe57f81b392
+正向快照 sha256 = 4247693fa3a31f35477dcb059ad79e4ae5c13de861f94dfcc3848fe57f81b392  （28s 正向 4247693fa3a31f35477dcb059ad79e4ae5c13de861f94dfcc3848fe57f81b392）
+===== [6] 回滚 第 9 步 =====
+step9 :: 本步判据：PASS=8 FAIL=0 :: EXIT=0
+===== [7] 回滚后快照（必须 = 本轮基线 4972cd8195d7b40a10dac4140273ba7faef4e152b2b886489bfcc624f2773deb）=====
+snapshot: /home/web/v28t/s-after-rollback.txt
+行数: 845
+整份 sha256: 4972cd8195d7b40a10dac4140273ba7faef4e152b2b886489bfcc624f2773deb
+回滚后快照 sha256 = 4972cd8195d7b40a10dac4140273ba7faef4e152b2b886489bfcc624f2773deb
+PASS: 回滚后快照 = 本轮基线
+===== 逐步汇总 =====
+step0 :: 本步判据：PASS=6 FAIL=0 :: EXIT=0
+step1 :: 本步判据：PASS=10 FAIL=0 :: EXIT=0
+step2 :: 本步判据：PASS=8 FAIL=0 :: EXIT=0
+step3 :: 本步判据：PASS=11 FAIL=0 :: EXIT=0
+step4 :: 本步判据：PASS=3 FAIL=0 :: EXIT=0
+step5 :: 本步判据：PASS=4 FAIL=0 :: EXIT=0
+step6 :: 本步判据：PASS=5 FAIL=0 :: EXIT=0
+step7 :: 本步判据：PASS=1 FAIL=0 :: EXIT=0
+step8 :: 本步判据：PASS=9 FAIL=0 :: EXIT=0
+step9 :: 本步判据：PASS=8 FAIL=0 :: EXIT=0
+################ 28t 结束 2026-10-29T02:10:13Z ################
+EXIT=0

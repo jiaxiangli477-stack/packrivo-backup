@@ -1,0 +1,31 @@
+
+############### STEP 4 报价插件（首次安装） ###############
+
+++ cat /home/web/backups/CURRENT_LAUNCH
++ BACKUP=/home/web/backups/packrivo-launch-20261029-0152
++ docker cp /home/web/packrivo-packages/packrivo-quote.zip php:/pkg/packrivo-quote.zip
++ docker exec php sha256sum /pkg/packrivo-quote.zip
+096d0c8e81360e7fc616e5d46c96088fc3a65ceb32daf9b78cf1e1de0bc52d93  /pkg/packrivo-quote.zip
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root plugin install /pkg/packrivo-quote.zip --force
+Unpacking the package...
+Installing the plugin...
+Removing the old version of the plugin...
+Plugin updated successfully.
+Warning: wp_version_check(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
+Warning: wp_update_plugins(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
+Warning: wp_update_themes(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
+Success: Installed 1 of 1 plugins.
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root plugin activate packrivo-quote
+Plugin 'packrivo-quote' activated.
+Success: Activated 1 of 1 plugins.
++ docker + exec php grep packrivo-quotephp 
+-d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root plugin list --format=csv
+Warning: wp_update_plugins(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
+packrivo-quote,active,none,1.0.1,,off
++ curl -s -o /dev/null -w '%{http_code}\n' http://nginx/
+200
++ set +x
+PASS: 4a 插件已激活
+PASS: 4b 插件目录存在
+PASS: 4c 首页 200
+本步判据：PASS=3 FAIL=0

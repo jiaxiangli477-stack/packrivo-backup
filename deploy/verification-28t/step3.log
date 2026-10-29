@@ -1,0 +1,78 @@
+
+############### STEP 3 134 产品页 + 8 主页面 ###############
+
+++ cat /home/web/backups/CURRENT_LAUNCH
++ BACKUP=/home/web/backups/packrivo-launch-20261029-0152
++ docker exec php mkdir -p /pkg/rollback
++ hr 'STEP 3.0 应用前守卫'
++ echo
+
++ echo '############### STEP 3.0 应用前守卫 ###############'
+############### STEP 3.0 应用前守卫 ###############
++ echo
+
++ set +x
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root eval-file /pkg/scripts/product-buyers-27g/import.php plan /pkg http://nginx /pkg/rollback/rollback-27g.json all134
+input_pages=134 preflight=PASS
+writes=0
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root eval-file /pkg/scripts/hubs-27i/import.php plan /pkg http://nginx /pkg/rollback/rollback-27i.json
+hub_pages=8 preflight=PASS
+inquiry_existing_description=preserved writes=0
++ docker + tee exec php /tmp/a3g.txt
+php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root eval-file /pkg/scripts/product-buyers-27g/import.php apply /pkg http://nginx /pkg/rollback/rollback-27g.json all134
+input_pages=134 preflight=PASS
+backup=created rows=134
+apply_updated=130 already_current=4 URL_and_body_check=PASS
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root eval-file /pkg/scripts/product-buyers-27g/import.php verify /pkg http://nginx /pkg/rollback/rollback-27g.json all134
+input_pages=134 preflight=PASS
+backup=reused rows=134
+verified_pages=134 sourcing_titles=0 duplicate_titles=0 mismatches=0
+URL_and_non_H1_body_unchanged=134/134
++ docker + exec php tee /tmp/a3i.txtphp -d 
+disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root eval-file /pkg/scripts/hubs-27i/import.php apply /pkg http://nginx /pkg/rollback/rollback-27i.json
+hub_pages=8 preflight=PASS
+backup=created rows=8
+apply_updated=7 already_current=1 H1_body_URL_check=PASS
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root eval-file /pkg/scripts/hubs-27i/import.php verify /pkg http://nginx /pkg/rollback/rollback-27i.json
+hub_pages=8 preflight=PASS
+backup=reused rows=8
+verified_hubs=8 metadata_mismatches=0 H1_body_URL_unchanged=8/8 inquiry_description_preserved=yes
++ docker cp php:/pkg/rollback/. /home/web/backups/packrivo-launch-20261029-0152/rollback/
++ ls -l /home/web/backups/packrivo-launch-20261029-0152/rollback/
+total 1240
+-rw-r--r--    1 root     root       1255899 Oct 29 01:55 rollback-27g.json
+-rw-r--r--    1 root     root          9078 Oct 29 01:56 rollback-27i.json
++ test -s /home/web/backups/packrivo-launch-20261029-0152/rollback/rollback-27g.json
++ echo '27g rollback ok'
+27g rollback ok
++ test -s /home/web/backups/packrivo-launch-20261029-0152/rollback/rollback-27i.json
++ echo '27i rollback ok'
+27i rollback ok
++ curl + grep -s http://nginx/product-drawer-jewelry-box/-o 
+'<title>[^<]*</title>'
+<title>Custom Drawer Jewelry Boxes with Logo | Packrivo</title>
++ curl + -s http://nginx/products/grep -o 
+'<title>[^<]*</title>'
+<title>Custom Packaging: 134 Styles, MOQ 500 | Packrivo</title>
++ curl + -s http://nginx/jewelry-boxes/grep -o 
+'<title>[^<]*</title>'
+<title>Custom Jewelry Boxes: Rigid, Drawer, MOQ 500 | Packrivo</title>
++ set +x
+27g verify: URL_and_non_H1_body_unchanged=134/134
+PASS: 3a 27g verify URL_and_non_H1_body_unchanged=134/134
+27i verify: verified_hubs=8 metadata_mismatches=0 H1_body_URL_unchanged=8/8 inquiry_description_preserved=yes
+PASS: 3b 27i verify metadata_mismatches=0
+27g apply: apply_updated=130 already_current=4
+27i apply: apply_updated=7 already_current=1
+27g: apply_updated=130 already_current=4 合计=134
+27i: apply_updated=7 already_current=1 合计=8
+PASS: 3·27g 总数 = 134（130+4=134）
+PASS: 3·27i 总数 = 8（7+1=8）
+PASS: 3·27g apply_updated > 0（演练要求真实写入）
+PASS: 3·27i apply_updated > 0（演练要求真实写入）
+PASS: 3·27g URL_and_body_check=PASS
+PASS: 3·27i H1_body_URL_check=PASS
+PASS: 3c 27g rollback 依据非空
+PASS: 3d 27i rollback 依据非空
+PASS: 3e 产品页 200
+本步判据：PASS=11 FAIL=0

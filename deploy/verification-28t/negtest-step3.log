@@ -1,0 +1,19 @@
+
+############### STEP 3 134 产品页 + 8 主页面 ###############
+
+++ cat /home/web/backups/CURRENT_LAUNCH
++ BACKUP=/home/web/backups/packrivo-launch-20261029-0152
++ docker exec php mkdir -p /pkg/rollback
++ hr 'STEP 3.0 应用前守卫'
++ echo
+
++ echo '############### STEP 3.0 应用前守卫 ###############'
+############### STEP 3.0 应用前守卫 ###############
++ echo
+
++ set +x
+PASS: 3.0 /pkg/rollback/rollback-27g.json site 与本轮一致
+PASS: 3.0 /pkg/rollback/rollback-27i.json site 与本轮一致
+FAIL: 3.0 /pkg/rollback/rollback-bogus.json 非本轮产物（site=http://wrong-site.invalid，期望 http://nginx），先清空 /pkg/rollback
+3.0 守卫拦截，apply 不执行
+本步判据：PASS=2 FAIL=1

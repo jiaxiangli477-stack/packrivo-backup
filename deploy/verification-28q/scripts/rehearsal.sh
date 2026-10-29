@@ -114,7 +114,7 @@ chmod +x /usr/local/bin/mariadb'
   ls "$PKG"/scripts
   set +x
   hr "STEP 0 通过判据"
-  ck "0a core version = 7.1.3"   test "$($WPCLI core version)" = "7.1.3"
+  ck "0a core version = 7.1.4"   test "$($WPCLI core version)" = "7.1.4"
   ck "0b PHP = 8.3.x"            docker exec php php -r 'exit(PHP_VERSION_ID>=80300 && PHP_VERSION_ID<80400 ? 0 : 1);'
   ck "0c 首装：子主题未安装"      test ! -d "$WP/wp-content/themes/packrivo-home-v4"
   ck "0d 首装：报价插件未安装"    test ! -d "$WP/wp-content/plugins/packrivo-quote"
