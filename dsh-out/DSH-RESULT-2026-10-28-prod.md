@@ -217,3 +217,41 @@ find $WP/wp-admin $WP/wp-includes -type f -newermt '2026-10-28 00:00' | wc -l  �
 1. 授权补建 `/get-a-quote/` 页面（标题 `Get a Quote`、slug `get-a-quote`、正文 `[packrivo_quote]`、publish）→ 重打第 6 步两个补丁 → 继续第 7 步（等你清缓存）→ 第 8 步。
 2. 或判定本次上线暂停，把第 3–5 步也回滚（内容用两个 rollback JSON、插件停用删除、主题切回父主题）。
 3. RUNBOOK 上线后要补：0.2 上传落点、建 `/get-a-quote/` 页面这一步（或并入第 3 步）。
+
+---
+
+# 28u 续 2：补建页面 → 第 6 步全 PASS → 第 7 步服务器端完成，等清 CF
+
+## 24 第 6 步重跑结果（PASS=10 / FAIL=0）
+
+| 判据 | 实测 |
+|---|---|
+| 6a 27e 打前哈希 = `ac0a2753…` | 一致；打后 `887787ab…` |
+| 6b 28m 打前哈希 = `a2a7bdf3…` | 一致；打后 `f7d95f35…` |
+| 两处 `--check` | 都 `CHECK-OK` |
+| 两处 `php -l` | 都 `No syntax errors detected` |
+| 6c `/get-a-quote/` | **200** |
+| 6d `/de/get-a-quote/` | **200** |
+| 6f / 6g 页面含 `pkq-root` | 各 1 |
+| 6e ar 404 页 viewport | 1 |
+| 其他 URL | `/` 200、`/products/` 200、`/inquiry/` 200、`/de/` 200、`/ar/get-a-quote/` 200 |
+
+## 25 新建页面
+
+| 项 | 值 |
+|---|---|
+| 页面 ID | **3383** |
+| 建页命令 | `post create --post_type=page --post_title='Get a Quote' --post_name=get-a-quote --post_content='[packrivo_quote]' --post_status=publish --comment_status=closed --porcelain` |
+| 建页前守卫 | 库里 `post_name='get-a-quote'` 0 行、`wp post list`（any+draft+trash）0 条、模糊 0 行、标题 0 行 |
+| 建页后判据 | `post_name=get-a-quote`、`post_content=[packrivo_quote]`、`post_status=publish` 全 PASS |
+| 页面标题 | `<title>Get a Quote - Packrivo</title>` |
+
+## 26 第 7 步（服务器端已完成，Cloudflare 待负责人）
+
+- `transient delete --all` → 删除 18 条；`cache flush` → `The cache was flushed`；transient 剩余 0。
+- `/de/` 200（`lang="de"` 计数 2）、`/get-a-quote/` 200。
+- **停在这里等「清缓存完成」**；之后做第 7 步判据（`cf_purge.py` 输出 `仍过期: 无 —— 全部同步`、`/de/` 200、`lang="de"`）与第 8 步全部 8 项。
+
+## 27 回滚预案（已记入 LAUNCH-LOG §39.5）
+
+需要第 9 步回滚时先 `$WPCLI post delete 3383 --force`，再按 9.6 恢复两个 mu 补丁（备份里 `get_a_quote_page_id=3383`）。

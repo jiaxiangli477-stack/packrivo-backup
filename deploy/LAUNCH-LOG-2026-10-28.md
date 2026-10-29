@@ -1686,3 +1686,78 @@ php -l 两个文件                                                → No syntax
 1. **补建 `/get-a-quote/` 页面**（这是唯一卡点）：标题 `Get a Quote`、slug `get-a-quote`、正文 `[packrivo_quote]`、状态 publish。建好后再打第 6 步两个补丁（补丁本身已验证 CHECK-OK），然后继续第 7 步（等你清缓存）与第 8 步。
 2. 或者判定本次上线暂停，把第 3–5 步也回滚回上线前状态（内容用 rollback-27g/27i 回滚、插件停用删除、主题切回父主题）。
 3. 无论走哪条，RUNBOOK 都要补两处：0.2 上传落点、第 3 步前建 `/get-a-quote/` 页面（或把建页并入第 3 步）。
+
+---
+
+## 39. 偏离 2：补建 `/get-a-quote/` 页（ID 3383）→ 第 6 步重跑全 PASS → 第 7 步服务器端完成待清 CF
+
+**授权**：负责人 19:55 PDT 批准补建页面（RUNBOOK 之外第二次偏离；RUNBOOK 仍锁 `f88a762`/`2fa7bb6a`，执行期间未改）。窗口重新计算至 23:55 PDT。
+
+### 39.1 建页前守卫（授权规则 1）
+
+```
+查库 SELECT … WHERE post_name='get-a-quote'        → 0 行
+计数 SELECT COUNT(*) AS c … WHERE post_name=…      → 0
+wp post list --post_type=any --post_status=any,draft,pending,private,future,trash --name=get-a-quote → 0 条
+模糊 WHERE post_name LIKE '%get-a-quote%'          → 0 行
+标题 WHERE post_title LIKE '%Get a Quote%'         → 0 行
+GUARD=PASS
+```
+
+**过程记录**：第一次跑守卫时我用 `wp db query … --skip-column-names` 取计数，该调用返回空（与第 0 步 0k-2 同一个坑），脚本按「不能确认就停」直接 `exit 1`，没有建页；改成不带该参数、从输出里取最后一个纯数字行后计数为 0，才继续。也就是说没有出现「守卫没查清就写库」的情况。
+
+### 39.2 建页
+
+```bash
+$WPCLI post create --post_type=page --post_title='Get a Quote' --post_name=get-a-quote \
+    --post_content='[packrivo_quote]' --post_status=publish --comment_status=closed --porcelain
+→ 3383
+```
+
+**页面 ID = 3383**（记在 `/home/web/prod-28u/get-a-quote-page-id.txt`，并追加到 `$BACKUP/INSTALL-STATE.txt`）
+
+建页后判据：
+
+| 判据 | 实测 | 结果 |
+|---|---|---|
+| `post_name` 正好 `get-a-quote` | `get-a-quote`（不是 `get-a-quote-2`） | PASS |
+| `post_content` 正好 `[packrivo_quote]` | `[packrivo_quote]` | PASS |
+| `post_status` = publish | `publish` | PASS |
+
+### 39.3 第 6 步重跑（10 条全 PASS）
+
+```
+6.1 27e    ：打前 ac0a2753…（= 基线）  --check OK  php -l 干净  打后 887787ab…
+6.2 404vp  ：打前 a2a7bdf3…（= 备份）  --check OK  php -l 干净  打后 f7d95f35…
+6c  GET /get-a-quote/    → 200
+6d  GET /de/get-a-quote/ → 200
+6f  /get-a-quote/ 里 pkq-root 计数 1
+6g  /de/get-a-quote/ 里 pkq-root 计数 1
+6e  ar 404 页 name="viewport" 计数 1
+复查：/ 200、/products/ 200、/inquiry/ 200、/de/ 200、/ar/get-a-quote/ 200
+页面标题：<title>Get a Quote - Packrivo</title>
+本步判据：PASS=10 FAIL=0
+```
+
+### 39.4 第 7 步服务器端（Cloudflare 待负责人执行）
+
+```
+$WPCLI transient delete --all   → Success: 18 transients deleted from the database.
+$WPCLI cache flush              → Success: The cache was flushed.
+transient 剩余                   → 0
+/de/ → 200，lang="de" 计数 2
+/get-a-quote/ → 200
+```
+
+**按授权规则 4 停在这里**：Cloudflare 全站 purge 由负责人亲自跑 `python E:\破甲工作区\i18n\cf_purge.py`。等「清缓存完成」后我再做第 7 步判据与第 8 步。
+
+### 39.5 回滚预案（授权规则 6，写进日志备查）
+
+若之后任一步 FAIL 且需要第 9 步回滚，**先删这个页面，再按 9.6 恢复 mu 补丁**：
+
+```bash
+$WPCLI post delete 3383 --force
+# 然后回到第 9 步 9.6 的 mu 恢复流程（cp -a 两个 mu 文件 + sha256sum -c before-mu.sha256）
+```
+
+页面 ID 是 3383；`$BACKUP/INSTALL-STATE.txt` 里有 `get_a_quote_page_id=3383` 一行可核对。
