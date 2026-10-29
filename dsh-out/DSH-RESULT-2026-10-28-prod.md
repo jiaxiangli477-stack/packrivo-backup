@@ -71,3 +71,80 @@
 - 授权批复原文已追加到 `dsh-out/AUTHZ-REQUEST-2026-10-28-prod-launch.md` §4。
 - 命令与原始输出追加到 `deploy/LAUNCH-LOG-2026-10-28.md` §36。
 - 未打印、未记录任何密码、密钥或 token；未打开 `.cf.env`；未执行第 7 步（Cloudflare 清缓存由负责人亲自执行，本次未到该步）。
+
+---
+
+# 28u：第二次生产授权（取代上一份）——第 0 步停在 0k
+
+授权时间：负责人 2026-10-28 19:23 PDT（窗口至 23:23 PDT）。RUNBOOK 锁定 `f88a762` / blob `2fa7bb6a`（开工前校验一致）。执行人 dsh，单线程；Task 55 保持 paused（`pause` 返回 409 already-paused，paused 后无新活动）。
+
+## 11 结论
+
+**第 0 步 `PASS=14 FAIL=1`，唯一 FAIL 是 0k（导出探针）。按规则停止，第 1–8 步未执行，生产零写入。**
+
+`core version = 7.1.4`（0b 通过）、其余 13 条判据全部 PASS。0k 的失败不是 TLS 那关——`--skip-ssl` 包装**按文档生效**，卡在下一关：生产是 **MySQL 26.7.0**，账号认证用 `caching_sha2_password`，而 php 容器里 `mariadb-dump 11.4.13` 的认证插件目录为空，加载不到 `caching_sha2_password.so`。
+
+## 12 逐步 PASS/FAIL 表（第 0 步）
+
+| 判据 | 实测 | 结果 |
+|---|---|---|
+| 0a php/mysql/nginx 容器在跑 | 三个都在 | PASS ×3 |
+| 0b `core version` = 7.1.4 | `7.1.4` | PASS |
+| 0c PHP = 8.3.x | `8.3.31` | PASS |
+| 0d siteurl | `https://www.packrivo.com` | PASS |
+| 0e template | `packrivo-static-bridge-1.2.38` | PASS |
+| 0f stylesheet 与 template 相同 | 同 | PASS |
+| 0g 子主题目录不存在 | 不存在 | PASS |
+| 0h 报价插件目录不存在 | 不存在 | PASS |
+| 0i 父主题 active | `1.2.38,active` | PASS |
+| 0j `mysqldump --version` 有输出 | `11.4.13-MariaDB, client 10.19` | PASS |
+| **0k 导出探针 > 0 字节** | 装包装后报 `1045 Plugin caching_sha2_password could not be loaded`，**0 字节** | **FAIL** |
+| 0l `/get-a-quote/` = 301 | 301 → `/inquiry/` | PASS |
+| 0m `/inquiry/` = 200 | 200 | PASS |
+| 1–8 | — | **未执行** |
+
+## 13 关键字段
+
+| 项 | 值 |
+|---|---|
+| `CURRENT_LAUNCH` | **（无）**——`/home/web/backups/CURRENT_LAUNCH` 不存在 |
+| `db.sql` 字节数 | **未生成**（第 1 步未执行） |
+| `db.sql` sha256 | **未生成** |
+| 第 8 步各项 | **未执行** |
+| 生产 core | `7.1.4`（`$wp_db_version` 未再动；全深度变更 48 个文件，见 §14） |
+| 两个 zip 哈希 | 未上传；本地仍是 `5974ae0c…` / `096d0c8e…` |
+
+## 14 只读记录：生产 core 全深度变更数
+
+```
+find $WP/wp-admin $WP/wp-includes -type f -newermt '2026-10-28 00:00' | wc -l  →  48
+```
+
+与 28t 本地官方包升级的 48 个文件数量一致、清单同构（`wp-admin/about.php`、`wp-admin/includes/*`、`wp-admin/user-edit.php`、`wp-admin/users.php`…）。印证 28t 的更正：上次记的「8 个」是顶层口径，全深度 48 个。清单在服务器 `/tmp/core-depth-28u.txt`。
+
+## 15 0k 的诊断证据
+
+| 项 | 值 |
+|---|---|
+| 第一次探针 | `2026 TLS/SSL error: self-signed certificate in certificate chain`，0 字节（RUNBOOK 0.1 补救块列出的第二种） |
+| 装包装后 | `1045 Plugin caching_sha2_password could not be loaded: … /usr/lib/mariadb/plugin/caching_sha2_password.so: No such file or directory`，0 字节 |
+| php 容器客户端 | `mariadb-dump from 11.4.13-MariaDB, client 10.19` |
+| php 容器插件目录 | `/usr/lib/mariadb/plugin` → **0 个文件** |
+| php 容器相关包 | `mariadb-client 11.4.13`、`mariadb-common`（没有 connector 包） |
+| mysql 容器 | image `mysql`，`mysqld Ver 26.7.0 MySQL Community Server` |
+| 仓库里可补的包 | `mariadb-connector-c-3.3.10-r0`；`apk fetch` 只下载未安装，包内确有 `usr/lib/mariadb/plugin/caching_sha2_password.so`（另有 `sha256_password.so`、`client_ed25519.so`、`dialog.so`、`mysql_clear_password.so`），验证完已删除 |
+
+## 16 待负责人决定
+
+1. **授权补客户端依赖**：在 php 容器 `apk add --no-cache mariadb-connector-c`（只影响客户端插件目录，不动站点、数据库、凭据），装完重跑 0.1 的探针；若仍 ≤ 0 字节继续停下报告。这是最直接的一条。
+2. 或者指定别的导出通道（例如改用别的客户端/由你在服务器侧导出），我按你给的命令文件执行。
+3. 若两条都不走，本次上线到此为止，生产维持上线前状态。
+
+## 17 生产侧改动清单（零业务写入）
+
+| 改动 | 性质 |
+|---|---|
+| `/usr/local/bin/mariadb-dump`、`/usr/local/bin/mariadb` 两个包装脚本 | RUNBOOK 0.1 原文的 TLS 补救块（`exec … --skip-ssl`） |
+| `/home/web/prod-28u/` 下 `step0.sh`、`diag.sh`、`probe-pkg.sh` 与三份日志 | 本次脚本与证据 |
+| 数据库、站点文件、主题、插件、CURRENT_LAUNCH、备份目录 | **未改动**（1629/1648 两个旧备份未动） |
+| 未打印、未记录任何密码/密钥/token；未打开 `.cf.env`；未到第 7 步 | — |

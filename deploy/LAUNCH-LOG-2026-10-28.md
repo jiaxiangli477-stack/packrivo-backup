@@ -1471,3 +1471,89 @@ stat wp-admin/about.php        : mtime=2026-10-28 19:00:43 +0100
   2. **回退 core**：先把生产 core 退回 7.1.3 的正式文件集（需另给授权与 7.1.3 包来源；退回后 `wp core update-db` 是否可逆需评估）；
   3. **暂停上线**：先查清 2026-10-28 11:00 PDT 这次 core 更新是谁做的、有没有跑过 `update-db`（`$wp_db_version = 61833`），再决定基线。
 - 另需确认：第 0.1 探针在生产报的是自签证书链错误，走 `--skip-ssl` 包装是否算手册授权范围内（我倾向算，因为手册原文写的是「报 TLS/SSL error」）。
+
+---
+
+## 37. 生产上线 28u（第二次授权）：第 0 步停在 0k —— 装包装后探针报 caching_sha2_password 插件缺失
+
+**授权**：负责人 2026-10-28 19:23 PDT 授权（取代上一份），执行 RUNBOOK 第 0–8 步（含第 7 步清缓存与第 8 步上线后复测），时间窗 4 小时（至 23:23 PDT）；RUNBOOK 锁定提交 `f88a762`、blob `2fa7bb6a`。
+**执行人**：dsh，单线程。并行工位：`pause -Task 55` 返回 409（already paused，未产生新活动，最后活动 seq 39262）；`#56` 本工位。
+**锁定校验**：`git hash-object deploy/RUNBOOK-launch.md` = `2fa7bb6a61afa912a7109fefd90ca284f2c0422c` = `git rev-parse f88a762:deploy/RUNBOOK-launch.md`；工作区干净（HEAD `307cf35`）。执行期间未改 RUNBOOK。
+**命令落地**：脚本先落本地 → `scp` 到 `/home/web/prod-28u/` → 宿主机 `bash 文件`，输出重定向到远端日志再取回（不逐行粘贴、不用管道截断，避免 SIGHUP 打断）。
+
+### 37.1 第 0 步（0.1 只读）逐条判据
+
+| 判据 | 实测 | 结果 |
+|---|---|---|
+| 0a php / mysql / nginx 容器在跑 | 三个都在（redis 也在） | PASS ×3 |
+| 0b `core version` = 7.1.4 | `7.1.4` | PASS |
+| 0c PHP = 8.3.x | `PHP 8.3.31 (cli)` | PASS |
+| 0d `siteurl` | `https://www.packrivo.com` | PASS |
+| 0e `template` | `packrivo-static-bridge-1.2.38` | PASS |
+| 0f `stylesheet` 与 `template` 相同 | 同（子主题未装） | PASS |
+| 0g 子主题目录不存在 | 不存在 | PASS |
+| 0h 报价插件目录不存在 | 不存在 | PASS |
+| 0i 父主题 active | `packrivo-static-bridge-1.2.38,active` | PASS |
+| 0j `mysqldump --version` 有输出 | `11.4.13-MariaDB, client 10.19` | PASS |
+| **0k 导出探针 > 0 字节** | 见 37.2 | **FAIL** |
+| 0l `/get-a-quote/` = 301 | `301` → `https://www.packrivo.com/inquiry/` | PASS |
+| 0m `/inquiry/` = 200 | `200` | PASS |
+
+**第 0 步结论：`PASS=14 FAIL=1`，0k FAIL → 按授权规则 1/3 停止，未进入第 1 步，生产零写入。**
+
+### 37.2 0k 的两次报错（TLS 已过、卡在认证插件）
+
+```
+# 探针第一次（容器里没有包装，与 28t 一致）
+$WPCLI db export /tmp/probe.sql --skip-plugins --skip-themes
+mariadb-dump: Got error: 2026: "TLS/SSL error: self-signed certificate in certificate chain" when trying to connect
+探针字节数 = 0
+观察: 探针没通过（0 字节）→ 按 0.1 补救块装包装后重探
+
+# 装包装（/usr/local/bin/mariadb-dump、/usr/local/bin/mariadb，exec … --skip-ssl）后重探
+mariadb-dump: Got error: 1045: "Plugin caching_sha2_password could not be loaded:
+Error loading shared library /usr/lib/mariadb/plugin/caching_sha2_password.so: No such file or directory" when trying to connect
+装包装后探针字节数 = 0
+FAIL: 0k 装包装后导出探针 > 0 字节（0）
+```
+
+- 第一段报错正是 RUNBOOK 0.1 新写进补救块的第二种（自签证书链），`--skip-ssl` **按文档生效**——TLS 这关过了。
+- 第二段是新问题：**生产 `mysql` 容器是 MySQL 26.7.0（Community Server），不是 MariaDB**，账号认证用的是 `caching_sha2_password`；php 容器里的客户端是 `mariadb-dump 11.4.13`，它的认证插件目录 `/usr/lib/mariadb/plugin/` **是空的（0 个文件）**，加载不到 `caching_sha2_password.so`。
+
+### 37.3 根因证据（只读，未安装任何东西）
+
+```
+php 容器已装包            : mariadb-client 11.4.13, mariadb-common
+/usr/lib/mariadb/plugin   : total 0（文件数 0）
+mariadb-dump --version    : from 11.4.13-MariaDB, client 10.19 for Linux (x86_64)
+mysql 容器                : image mysql，mysqld Ver 26.7.0（MySQL Community Server）
+alpine 仓库有             : mariadb-connector-c-3.3.10-r0
+apk fetch mariadb-connector-c（只下载、未安装，事后已删）包内清单：
+  usr/lib/mariadb/plugin/caching_sha2_password.so
+  usr/lib/mariadb/plugin/client_ed25519.so
+  usr/lib/mariadb/plugin/dialog.so
+  usr/lib/mariadb/plugin/mysql_clear_password.so
+  usr/lib/mariadb/plugin/sha256_password.so
+```
+
+**结论**：缺的就是 `mariadb-connector-c` 这个客户端依赖包（`mariadb-client` 在这个镜像里没把它带上）。装上它，`--skip-ssl` 包装就能正常导出。这一条**未经安装验证**——按授权规则「装上包装后必须 > 0 字节，否则停下」，停在这里等放行。
+
+### 37.4 只读记录：生产 core 全深度变更数（不作判据）
+
+```
+find $WP/wp-admin $WP/wp-includes -type f -newermt '2026-10-28 00:00' | wc -l
+→ 48
+```
+
+与 28t 本地官方包升级变动的 48 个文件**数量一致**，且清单前 12 行（`wp-admin/about.php`、`wp-admin/includes/*`、`wp-admin/user-edit.php`、`wp-admin/users.php`…）与本地清单同构。也就印证了 28t 里的更正：生产那 8 个只是顶层文件，全深度是 48 个。清单存 `/tmp/core-depth-28u.txt`。
+
+### 37.5 环境其它现状（未改动）
+
+- `/home/web/packrivo-packages/` 为空（0.2 上传未做）。
+- 旧备份 `packrivo-launch-20261028-1629`、`packrivo-launch-20261028-1648` 均在，**未动**；`CURRENT_LAUNCH` 仍不存在。
+
+### 37.6 停止点与待批事项
+
+- **停止在第 0 步 0k**，第 1–8 步未执行。
+- 生产侧本次改动只有：容器内 `/usr/local/bin/mariadb-dump`、`/usr/local/bin/mariadb` 两个包装脚本（RUNBOOK 0.1 原文的补救块），以及 `/home/web/prod-28u/` 下本次脚本与日志；数据库、站点文件、备份目录零改动。
+- **待批**：是否授权在 php 容器里 `apk add --no-cache mariadb-connector-c`（客户端依赖，装完重跑 0.1 的探针；不涉及站点、数据库、凭据）。装上后探针仍 ≤ 0 字节则继续停。
