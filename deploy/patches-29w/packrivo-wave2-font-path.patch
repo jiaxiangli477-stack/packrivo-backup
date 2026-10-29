@@ -1,0 +1,13 @@
+diff --git a/wp-content/mu-plugins/packrivo-wave2.php b/wp-content/mu-plugins/packrivo-wave2.php
+index 5364c9c..36313ed 100644
+--- a/wp-content/mu-plugins/packrivo-wave2.php
++++ b/wp-content/mu-plugins/packrivo-wave2.php
+@@ -32,7 +32,7 @@ add_action('template_redirect', function () {
+  *   首访基本走系统字体、缓存命中又跳成品牌字。
+  * ------------------------------------------------------------------ */
+ 
+-define('PACKRIVO_W2_FONT_URL', get_stylesheet_directory_uri() . '/packrivo-static/assets/packrivo-inter-latin-v3.woff2');
++define('PACKRIVO_W2_FONT_URL', get_template_directory_uri() . '/packrivo-static/assets/packrivo-inter-latin-v3.woff2');
+ 
+ add_action('wp_head', function () {
+     if (is_admin() || is_feed()) return;

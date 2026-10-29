@@ -1,0 +1,15 @@
+# 字体 404 修正：验证记录（演练站，2026-10-29）
+## 1) 页面里的两处引用（preload 与 @font-face 都来自 mu 插件 packrivo-wave2.php 第 35 行）
+  <link rel="preload" href="http://nginx/wp-content/themes/packrivo-static-bridge-1.2.38/packrivo-static/assets/packrivo-inter-latin-v3.woff2" as="font" type="font/woff2" crossorigin>
+  <style id="packrivo-w2-font">@font-face{font-family:"Packrivo Inter";src:url("http://nginx/wp-content/themes/packrivo-static-bridge-1.2.38/packrivo-static/assets/packrivo-inter-latin-v3.woff2") format("woff2");font-weight:100 900;font-style:normal;font-display:swap}</style>
+## 2) 修正前（原文件 5ab5be3f…）：引用 get_stylesheet_directory_uri() → 子主题路径 404
+  $ curl -s -o /dev/null -w '%{http_code}' http://nginx/wp-content/themes/packrivo-home-v4/packrivo-static/assets/packrivo-inter-latin-v3.woff2
+  404   ← 29w 之前生产与演练都是这条；生产那份由 .tmp/29w/find-404.mjs 抓到的同源 404 列表确认
+## 3) 修正后（73d43ba0…）
+  父主题路径 200 ← 页面上现在只剩这条引用
+  子主题路径 404 ← 已无任何页面引用（此态子主题已回滚，缺文件无影响）
+## 4) 指纹变化：只动 mu 一行
+  基线   s-reset.txt                8971f447510523ed468eedfaa9ceec1ac1d4762465bfd0fb006ae58dad3dd2b4
+  修字体 s-after-fontfix.txt        01c1c448743c7d797d4925e3af0903e1805391bbb431159062b278ca846599b7
+  差异仅: - 5ab5be3f85f46ce5416fdb4cafc98f54de86a1fc4ece041c56c2de40173a1d8c  packrivo-wave2.php
+         + 73d43ba0262a9d74249b19a46380bc5c338f94bd9e0776baa46eddf074c9f259  packrivo-wave2.php

@@ -1,4 +1,4 @@
-node_modules/
+﻿node_modules/
 *.log
 !deploy/verification-28q/rehearsal.log
 !deploy/verification-28r/lastresort.log
@@ -19,3 +19,4 @@ node_modules/
 !deploy/verification-28t/core-upgrade-live.log
 .env*
 !deploy/verification-29v/*.log
+!deploy/verification-29w/logs/*.log

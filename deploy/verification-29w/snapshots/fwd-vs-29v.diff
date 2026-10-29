@@ -1,0 +1,18 @@
+--- /opt/x29w/ref/s-forward-29v.txt
++++ /home/web/rehearsal-29w/s-forward.txt
+@@ -665,7 +665,6 @@
+ 542,product-full-overlap-seal-end-carton,"Custom Seal End Cartons Wholesale"
+ 543,product-four-corner-pre-glued-carton,"Custom Pre-Glued Boxes Bulk"
+ 544,product-paperboard-roll-end-dust-flap-carton,"Custom Dust Flap Cartons"
+-5444,get-a-quote,"Get a Quote"
+ 545,product-pinch-lock-paperboard-tray,"Custom Pinch Lock Trays"
+ 546,product-side-lock-hinged-gift-tray,"Custom Hinged Gift Trays"
+ 547,product-five-panel-hanger-carton,"Custom Hanger Boxes for Retail"
+@@ -770,6 +769,7 @@
+ 646,label-liner-release,"Label Liner Release vs Adhesion: Review Both Interfaces"
+ 647,label-roll-receipt-inspection,"Received Label Rolls Need Condition and Identity Checks Before Application"
+ 648,barcode-data-before-art,"Confirm Barcode Data Before Sending the Artwork"
++6489,get-a-quote,"Get a Quote"
+ 649,belly-band-retained-product-identity,"Product Identity Needs a Place After the Belly Band Is Removed"
+ 650,actual-size-trim-diecut-proof,"Actual-Size Proofs Make Trim and Die-Cut Relationships Reviewable"
+ 651,file-packaging-links-fonts,"Packaging Print File Checklist: Fonts, Links and Output"

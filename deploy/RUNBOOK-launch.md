@@ -505,6 +505,73 @@ curl -s -o /dev/null -w '%{http_code}\n' "$SITE/"
 
 ---
 
+## 4.6 指定页面模板 `_wp_page_template`（**首次安装**，机器：**生产 SSH**）
+
+**预计 1 分钟。编号沿用任务单的 4.6，但机器上的顺序是「第 5 步装完子主题之后、第 6 步打补丁之前」——模板文件 `template-products-v4.php` 是随子主题包一起装进来的，第 5 步之前跑 4.6.1 的守卫必然失败（文件不存在），这是预期。**
+
+为什么必须有这一步：子主题给 `/products/` 准备了 `template-products-v4.php`，但**页面本身要有一条 `_wp_page_template` meta 才会用它**。没有这条 meta，WordPress 走 `page.php` 默认模板，把页面正文里那段 legacy HTML 原样吐出来——筛选控件挤成一串文字、内容贴左边缘、产品图撑满整宽。2026-10-29 上线后 `/products/` 就是这样错乱的，`2026-10-29w` 的生产热修复补的就是这一处（页面 8，原值**不存在**）。这类「本地库里有、RUNBOOK 没写、演练库又是从本地复制的」遗漏，和 4.5 的报价页是同一类。
+
+> 生产 2026-10-29 实测：`post meta get 8 _wp_page_template` → 空、`rc=1`（根本没有这条 meta）；页面 meta 一共 10 条，`_packrivo_native_page` / `_packrivo_canonical` / `_yoast_wpseo_focuskw` / `_pkpw_legacy_body` 都在，唯独没有模板。全站**只有这一页**需要指定模板（`post list --meta_key=_wp_page_template --meta_compare='!=' --meta_value=default` 命中为空）。
+
+**4.6.1 守卫：页面 8 存在、模板文件存在**
+
+```bash
+WP=/home/web/html/www.packrivo.com/wordpress
+WPCLI="docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root"
+BACKUP=/home/web/backups/$(cat /home/web/backups/CURRENT_LAUNCH)
+
+$WPCLI post get 8 --fields=ID,post_type,post_name,post_status --format=csv
+#   期望 post_type=page、post_name=products、post_status=publish；对不上就停下报告，不要改别的页面
+ls -l "$WP/wp-content/themes/packrivo-home-v4/template-products-v4.php"
+#   模板在**子主题**目录里（父主题没有 template-*.php，这是正常的）；文件不在就停下（第 5 步装的主题包不对）
+```
+
+**4.6.2 先把原值记进 `INSTALL-STATE.txt`（回滚只认这里）**
+
+```bash
+V=$($WPCLI post meta get 8 _wp_page_template 2>/dev/null); rc=$?
+[ -z "$V" ] && V=EMPTY
+echo "page8_template_before=$V (rc=$rc) at=$(date -u +%FT%TZ)" >> "$BACKUP/INSTALL-STATE.txt"
+grep page8_template_before "$BACKUP/INSTALL-STATE.txt"
+```
+
+`rc=1` + 空 = **本来没有这条 meta**（2026-10-29 生产就是这样）；此时回滚是 `post meta delete`，不是「改回某个值」。
+
+**4.6.3 执行**
+
+```bash
+$WPCLI post meta update 8 _wp_page_template template-products-v4.php
+$WPCLI post meta get 8 _wp_page_template            # 期望回显 template-products-v4.php
+```
+
+**通过判据（全 PASS 才算过；HTTP 一律带 `?cb=$(date +%s)` 破缓存）**
+
+| # | 判据 | 怎么查 |
+|---|---|---|
+| 4.6a | meta 值正好 `template-products-v4.php` | `$WPCLI post meta get 8 _wp_page_template` |
+| 4.6b | `/products/` 的 `<body class>` 含 `page-template-template-products-v4` | `curl -s "$SITE/products/?cb=$(date +%s)" \| grep -o '<body[^>]*>'` |
+| 4.6c | 页面出现 `Every structure we can source` | `curl -s "$SITE/products/?cb=$(date +%s)" \| grep -c 'Every structure we can source'`（期望 1） |
+| 4.6d | `/de/products/`、`/ar/products/` 也是这个模板（文案随语种翻译，别拿英文句子判） | 同上，只判 `page-template-template-products-v4` |
+| 4.6e | 375 / 768 / 1024 三个宽度**无横向溢出** | 真实浏览器：`document.documentElement.scrollWidth === window.innerWidth`；没有浏览器就停下报告，别用肉眼代替 |
+| 4.6f | `/`、`/blog/` 仍然 200；`/get-a-quote/` **此刻仍是 301**（27e 补丁在第 6 步才打，这是预期空档，第 6 步之后才该变 200） | `curl -s -o /dev/null -w '%{http_code}\n' "$SITE/blog/?cb=$(date +%s)"` |
+
+4.6e 的现成跑法（本机 `playwright-core` + 本机 Chrome，`2026-10-29w` 用它给生产做过三宽度检查）：三个宽度各开一次 `/products/?cb=<ts>`，`evaluate` 取 `document.documentElement.scrollWidth` 与 `window.innerWidth`，两者相等且没有越界元素才算过。
+
+**回滚**
+
+```bash
+V=$(sed -n 's/^page8_template_before=\(.*\) (rc=.*/\1/p' "$BACKUP/INSTALL-STATE.txt" | tail -1)
+if [ "$V" = "EMPTY" ] || [ -z "$V" ]; then
+  $WPCLI post meta delete 8 _wp_page_template        # 原值本来不存在
+else
+  $WPCLI post meta update 8 _wp_page_template "$V"
+fi
+$WPCLI post meta list 8 --keys=_wp_page_template --format=csv   # EMPTY 时只剩表头
+curl -s "$SITE/products/?cb=$(date +%s)" | grep -o 'page-template-[a-z0-9-]*' | head -1   # 回到 page-template-default
+```
+
+---
+
 ## 6. mu 补丁（机器：**生产 SSH**）
 
 **预计 10 分钟。两个补丁落在不同文件上，各自独立回滚。顺序固定：先 `27e-quote-redirect.patch`，再 `packrivo-i18n-404-viewport.patch`。**
@@ -647,6 +714,17 @@ echo "报价页 ID = ${GQ_ID:-（没找到，先查 $BACKUP/INSTALL-STATE.txt）
 test -n "${GQ_ID:-}" && $WPCLI post delete "$GQ_ID" --force
 $WPCLI post list --post_type=page --name=get-a-quote --post_status=any,draft,trash --format=count   # 期望 0
 
+# 9.7.5 页面模板（4.6 设的 meta）：按 INSTALL-STATE 里记的原值恢复；原值是 EMPTY 就删掉
+#    顺序：在 9.8 之后、9.6 之前——删模板要早于回滚子主题，否则中间那段页面还是新模板套旧主题
+TB=$(sed -n 's/^page8_template_before=\(.*\) (rc=.*/\1/p' "$BACKUP/INSTALL-STATE.txt" | tail -1)
+echo "页面 8 模板原值 = ${TB:-（没找到，先查 $BACKUP/INSTALL-STATE.txt）}"
+if [ "${TB:-}" = "EMPTY" ] || [ -z "${TB:-}" ]; then
+  $WPCLI post meta delete 8 _wp_page_template 2>/dev/null || echo "本来就没有这条 meta"
+else
+  $WPCLI post meta update 8 _wp_page_template "$TB"
+fi
+$WPCLI post meta list 8 --keys=_wp_page_template --format=csv    # EMPTY 时只剩表头
+
 # 9.7 缓存：无需回滚（重新生成即可）；想立即回旧内容就先清一次
 #     python E:\破甲工作区\i18n\cf_purge.py      ← 本机，负责人亲自
 $WPCLI transient delete --all
@@ -764,10 +842,11 @@ cp -a "$BACKUP/i18n/." "$I18N/"
 | 4 | 报价插件（首装） | 生产 SSH | 5 min | 可（若报价插件不变） |
 | 4.5 | 建报价页 `/get-a-quote/`（首装必做） | 生产 SSH | 2 min | 不可（插件只给短代码，不会自己建页） |
 | 5 | 子主题（首装） | 生产 SSH | 5 min | 可（若只改内容） |
+| 4.6 | 指定页面模板 `_wp_page_template`（`/products/`，首装必做） | 生产 SSH | 1 min | 不可（没有这条 meta 页面就走默认模板，正文 legacy HTML 会排版错乱） |
 | 6 | 两个 mu 补丁 | 生产 SSH | 10 min | 27e 不可省（否则报价按钮全跳询盘） |
 | 7 | 清缓存 | 本机 + 生产 SSH（Cloudflare 由负责人亲自执行） | 5 min | 不可 |
 | 8 | 复测 | 本机浏览器 + 生产 SSH | 20–30 min | 不可 |
-| 9 | 整体回滚（**先 9.8 删报价页**，再 9.7 → 9.2） | 生产 SSH（清缓存在本机） | 15 min | 只在出问题时执行 |
+| 9 | 整体回滚（**先 9.8 删报价页 → 9.7.5 还原页面模板**，再 9.7 → 9.2） | 生产 SSH（清缓存在本机） | 15 min | 只在出问题时执行 |
 
 ## 附录 C · 本地演练（28q 正反向 + 28r 最后手段，均已跑通）
 
@@ -808,4 +887,6 @@ cp -a "$BACKUP/i18n/." "$I18N/"
 - 文件部分按 9.6 → 9.5 → 9.4 → 9.2 做完后，整站快照 sha256 与 28q 基线 `4972cd81…` **逐字节一致**。
 
 结构化摘要：`deploy/verification-28q/rehearsal-verify.json`；演练脚本（复位 / 快照 / 逐步执行）：`deploy/verification-28q/scripts/`。最后手段的完整日志、三份快照与 diff：`deploy/verification-28r/`。
+
+**上线后补记（2026-10-29 当天与次日）**：29 号上线当场的两处偏离是「connector-c 插件缺失」和「`/get-a-quote/` 页面不存在」；次日又发现**第三处同类遗漏**——页面 8 `/products/` 没有 `_wp_page_template`，用的是默认模板，正文里的 legacy HTML 被原样吐出（筛选控件挤成文字、图片撑满宽）。三处的成因完全一样：**本地库里有的东西，RUNBOOK 没写，演练库又从本地复制**。现在的对应正文是 **0.1 补救块（两层）**、**4.5 建报价页**、**4.6 指定页面模板**，回滚分别是 **9.8** 与 **9.7.5**；生产那两次执行原文见 `deploy/LAUNCH-LOG-2026-10-28.md` §39 与 §41。
 
