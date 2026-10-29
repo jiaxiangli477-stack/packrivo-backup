@@ -141,7 +141,9 @@
     "Custom Packaging Samples Before You Order | Packrivo": "Campioni di packaging prima dell’ordine | Packrivo",
     "Custom Packaging Guides for Small Brands | Packrivo": "Guide al packaging per piccoli marchi | Packrivo",
     "About Packrivo | Custom Packaging from Shenzhen": "Chi è Packrivo | Packaging su misura da Shenzhen",
-    "Request a Custom Packaging Quote | Packrivo": "Richiedi un preventivo per il packaging | Packrivo"
+    "Request a Custom Packaging Quote | Packrivo": "Richiedi un preventivo per il packaging | Packrivo",
+    "Packaging Sourcing Blog for Small Brands | Packrivo": "Blog sul sourcing di packaging per piccoli marchi | Packrivo"
+
   },
   "block": {
     "Custom Drawer Jewelry Boxes with Logo": "Scatole per gioielli a cassetto personalizzate con logo",
@@ -1013,7 +1015,21 @@
     "What we make": "Cosa realizziamo",
     "Where do you ship from?": "Da dove spedite?",
     "White corrugated": "Cartone ondulato bianco",
-    "Wooden Jewelry Boxes": "Scatole per gioielli in legno"
+    "Wooden Jewelry Boxes": "Scatole per gioielli in legno",
+    "No articles in this topic yet.": "Ancora nessun articolo in questo argomento.",
+    "Jan": "gen",
+    "Feb": "feb",
+    "Mar": "mar",
+    "Apr": "apr",
+    "May": "mag",
+    "Jun": "giu",
+    "Jul": "lug",
+    "Aug": "ago",
+    "Sep": "set",
+    "Oct": "ott",
+    "Nov": "nov",
+    "Dec": "dic"
+
   },
   "attr": {
     "Custom drawer jewelry boxes for small brands, with logo options and a 500-piece minimum. Get a price.": "Scatole per gioielli a cassetto per piccoli marchi, con logo e minimo 500 pezzi. Richiedi un prezzo.",

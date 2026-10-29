@@ -1,0 +1,39 @@
+
+############### STEP 4.6 指定页面模板 _wp_page_template ###############
+
+++ cat /home/web/backups/CURRENT_LAUNCH
++ BACKUP=/home/web/backups/packrivo-launch-20261029-2051
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root post get 8 --fields=ID,post_type,post_name,post_status --format=csv
+Field,Value
+ID,8
+post_status,publish
+post_name,products
+post_type,page
++ ls -l /home/web/html/www.packrivo.com/wordpress/wp-content/themes/packrivo-home-v4/template-products-v4.php
+-rw-r--r--    1 root     root          7768 Oct 29 21:00 /home/web/html/www.packrivo.com/wordpress/wp-content/themes/packrivo-home-v4/template-products-v4.php
+++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root post meta get 8 _wp_page_template
++ V=
++ rc=1
++ '[' -z '' ']'
++ V=EMPTY
+++ date -u +%FT%TZ
++ echo 'page8_template_before=EMPTY (rc=1) at=2026-10-29T21:02:28Z by=rehearsal-29w'
++ grep page8_template_before /home/web/backups/packrivo-launch-20261029-2051/INSTALL-STATE.txt
+page8_template_before=EMPTY (rc=1) at=2026-10-29T21:02:28Z by=rehearsal-29w
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root post meta update 8 _wp_page_template template-products-v4.php
+Success: Updated custom field '_wp_page_template'.
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root post meta get 8 _wp_page_template
+template-products-v4.php
++ set +x
+页面8=[products/publish] 模板=[template-products-v4.php] body=[page-template-template-products-v4] 文案=1 de=[page-template-template-products-v4] ar=[page-template-template-products-v4] 状态码=/200 /blog/200 /get-a-quote/301
+PASS: 4.6-0 守卫：页面 8 是 page/products/publish
+PASS: 4.6a meta 值 = template-products-v4.php
+PASS: 4.6b /products/ body 含 page-template-template-products-v4
+PASS: 4.6c /products/ 出现 Every structure we can source
+PASS: 4.6d /de/products/ 也是新模板
+PASS: 4.6d2 /ar/products/ 也是新模板
+PASS: 4.6f 首页 200
+PASS: 4.6f2 /blog/ 200
+PASS: 4.6f3 /get-a-quote/ 此刻仍是 301（27e 未打，预期空档）
+注：4.6e（375/768/1024 横向溢出）必须真实浏览器，由宿主机 29w-browser 单独判定，不计入本步 PASS/FAIL
+本步判据：PASS=9 FAIL=0

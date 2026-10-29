@@ -1,0 +1,448 @@
+--- /home/web/rehearsal-29x/s-reset.txt.ext
++++ /home/web/rehearsal-29x/s-forward.txt.ext
+@@ -25,49 +25,50 @@
+ 8aed2a8e7b2f2b9913a5359a973d3d06b2116fcbaec03922d060192fefd8e75d  packrivo-blogc100-private-8aed2a8e7b2f2b99.php
+ ba962f158b89386c7d52ad21aa091068f44346d1f7209d8ec38ad93ef13fd917  packrivo-blogc100-published-native-ba962f158b89386c.php
+ f4f4f542b10d42be6cd806e40507f4005f84a1980f1fd8f6ff2eb145da31e88a  packrivo-blogc100-single-reader-toc.php
+-3bc325503b16a5de8cea7600801512653d4ab94db94739ac773e3d4a2741bb5e  packrivo-i18n.php
++77e5728319a37645d5d10bacc1e91aea8bf9ea1dd1ca75a82c5290584caebe30  packrivo-i18n.php
+ 3444b0ad0b648ab456a1dffe71707b8b96c003c5098bb5eef62bc710762349d8  packrivo-merge-redirects.php
+ 253ba0fcc19133a8b2d39f28f0f0159a6a2d03d553f9705b15cbe6866d095d56  packrivo-nav-fix.php
+ 3e26cb44a0bb83d6d6700437a0963642d45789a485c05d2cf4de7bcfb2e69353  packrivo-private-backup-compat.php
+ 5066ae84839264bc54f3e76b192a2beaa401d964b022b0579aafbe03e6f74e0e  packrivo-product11-related-reading-5066ae84839264bc.php
+ 61f9d414299dd1054b019c0f512810316c110224d11960168939afa00d6fe8ea  packrivo-site-polish-20260922.php
+-ac0a27538c428f2175e9596bd21f27be47069aaf57cbeabf8892ae456e2f471d  packrivo-site-remediation-20261022.php
++887787ab3240091d1c6328e444d70cbe7585ca79c00e162857106c3d94e78189  packrivo-site-remediation-20261022.php
+ bdd902d72ef5725ade14c214bb6eb0df966ec833f1ef98c8edf0354ce291241b  packrivo-wave1.php
+ 73d43ba0262a9d74249b19a46380bc5c338f94bd9e0776baa46eddf074c9f259  packrivo-wave2.php
+ cadffde82ac5d13e7107dc44e3b13588eef15887364f18b2ca6bf17c50eec44b  packrivo-yoast-sitemap-stable-order-20261016.php
+ == i18n 字典（排序后 sha256）==
+-fce78c52b16e54bf102d0fce28a633ab61b6fb6ba9e56fbff132fb748feff00a  ar-dict.json
+-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  ar-js.json
+-a12869308e19e291aabc730948a8e47c020e5b64cda950a45df19c7f3a3a717d  de-dict.json
+-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  de-js.json
+-0018dbfa97c609f55de47874885befb084d83923f2fe6c83da87ee5e909b0c9f  es-dict.json
+-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  es-js.json
+-d51f5e49905ee47f97ea2e6f51c143dbcef3534b240ba0977686ab94c74f0aff  fr-dict.json
+-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  fr-js.json
+-fe4bea37ab3d3c473c8a94481e3552802851eb562a83e7cee5baf3ff8a809e7e  it-dict.json
+-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  it-js.json
+-b652dfe2854668fa71f2512499eb9cb6ce23073830cb91b2a8e9803410da79c8  ja-dict.json
+-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  ja-js.json
+-40fe5b2b2b4acd33e24e8a016211731f3ca383810509ae6b73c1b4dc5bf8e8dd  ko-dict.json
+-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  ko-js.json
+-374cc9886f4fb781c83f1c6af9d2afdaf3f9e830b8e603212f958a9af631d846  nl-dict.json
+-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  nl-js.json
+-b2dde597f9f5e859b2d318ff1226bb04dbfe2c50ca0e8f346b11a7fa6152d498  paths.json
+-f53d72b25884b343f8108eb0b3f761f4a0f19826ecf1794a88359bd2c52700b7  pt-dict.json
+-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  pt-js.json
+-cedb65edea9698cd8769ba3b67a93d8692f62c2da52ed36abb49fcbbfc311372  zh-CN-dict.json
+-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  zh-CN-js.json
+-02fa594f6474434a460f19971ae9b53f3c000f49b07087868dcf8369e0fa3c3b  zh-TW-dict.json
+-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  zh-TW-js.json
++8a2f7435a333789c7a2c7a2f5bcf5732c05379c0887c247823f6034f17acc560  ar-dict.json
++8dab1d1a84836837d879fb524b80a1be024bbab1f33f8381951e31dba6129df0  ar-js.json
++c7db32e7e602da9629d79d4235bf32cf9c9b090bb99ae52850217341128d566e  de-dict.json
++28537c8791d98e112bfc87c013174b4d4a97f179f8eb328b662af316419ae582  de-js.json
++4e899c40689cbdec05e7e1bd23b3e63cab35169f4da5d6242038fec9f2bf2c2d  es-dict.json
++b7c0aa8b776a37837b76a6cb623b73743ffbd2f91ca9dc8735a4516acebe204f  es-js.json
++05f61609e129517bcf4d33178202f8906270011a778dc4efd3bf019afb57d9de  fr-dict.json
++ef27a392579c6aa3e6c0ad1f5986c33a04bae31442a8394c4e4d284d6c577572  fr-js.json
++ce7f879a8c3df9339b61639c47927f327b52e3cd0e592158756fca17368a819e  it-dict.json
++c96d055661e9eae68ea505aa223459bbd25a82c8ff002386f184c80e9e46d316  it-js.json
++a0e3bc3792701162c4f112d59b857b78967c0b91ae9b5bd79180710134d9104c  ja-dict.json
++617a45c417d8227558d74740602a94dae93159a9b74f7edb8dc4ce63cc2e85b5  ja-js.json
++39296b80a4018460dc850b299ad8afa4d9a13622f007b76750a18419567691f1  ko-dict.json
++1ea3bf13416ccb9488a08c4c027378ff3e255f631b57666381ffc167311d5780  ko-js.json
++bf19cd8907015501c975b317936c1ffd98e873f820c934b89629bee5b514e596  nl-dict.json
++9b2f0497d9a202ce8319e1b1adeb6a9ea642e080278ac3b704f8a90054b8cfeb  nl-js.json
++c8dccff3d49310790ba7bf3cbc1ca0878d3745fc45c7182c6ab275ac3bd265ee  paths.json
++103fe6992189e5f23e87b4e37d7dac9d958f57c4f06e4c960df4e816a61e1d9a  pt-dict.json
++425c2e86fd57b68e837efa5ae81d8b9c60c24ce2a5877854c8232499f52947f7  pt-js.json
++f9905d2fbd56f549174157d2acb573748b90a9ff80770914bc8839197b219a8e  zh-CN-dict.json
++5b117faf7a0afb64cbf66f2fb2785edaaca736a1c7046e7cc2be813782788740  zh-CN-js.json
++77b36f968b55be94c067f17c8dbac1797892d31aaf0de45c28b782abea691b58  zh-TW-dict.json
++324dbc9914a25a0bed98ddb9e971c9a34b09828d281fa29271020808c610bd5d  zh-TW-js.json
+ == 主题 ==
+ name,status,update,version,update_version,auto_update
+-packrivo-static-bridge-1.2.38,active,none,1.2.38,,off
++packrivo-home-v4,active,none,4.0.2,,off
++packrivo-static-bridge-1.2.38,parent,none,1.2.38,,off
+ twentytwentyfive,inactive,none,1.0,,off
+ twentytwentyfour,inactive,none,1.3,,off
+ twentytwentythree,inactive,none,1.6,,off
+ template=packrivo-static-bridge-1.2.38
+-stylesheet=packrivo-static-bridge-1.2.38
+-子主题目录存在=no
++stylesheet=packrivo-home-v4
++子主题目录存在=yes
+ == 插件 ==
+ name,status,update,version,update_version,auto_update
+ akismet,inactive,none,5.3.6,,off
+@@ -77,6 +78,7 @@
+ packrivo-lead-intake,active,none,0.3.0,,off
+ packrivo-operations,active,none,0.1.0,,off
+ packrivo-product-workspace,active,none,0.1.0,,off
++packrivo-quote,active,none,1.0.1,,off
+ packrivo-analytics-events,must-use,,,,off
+ packrivo-blog-batch-20261018-gate,must-use,,,,off
+ packrivo-blog-overhaul-c100-cover-20261016,must-use,,,,off
+@@ -113,7 +115,7 @@
+ packrivo-blog-overhaul-verified-asset-cover-og-seed-20261016,must-use,,,,off
+ packrivo-wave1,must-use,,1.0.0,,off
+ packrivo-wave2,must-use,,1.0.0,,off
+-报价插件目录存在=no
++报价插件目录存在=yes
+ == 页面标题（ID,slug,title 排序）==
+ 10,product-magnetic-jewelry-box,"Custom Magnetic Jewelry Boxes with Logo"
+ 1032,gift-box-design-outside-inside,"Gift Box Design: Balance the Exterior and Interior"
+@@ -227,7 +229,7 @@
+ 1385,made-in-usa-import-origin-marking,"Made in USA Packaging Claims and Import Origin Marks Serve Different Legal Purposes"
+ 1386,dap-ddp-packaging-import-clearance,"DAP or DDP Packaging Orders: Import Responsibilities"
+ 1387,usps-letter-nonmachinable-packaging,"A USPS Letter Can Be Nonmachinable Even When Its Dimensions Fit"
+-14,product-pillow-jewelry-box,"Custom Pillow Jewelry Box Sourcing"
++14,product-pillow-jewelry-box,"Custom Pillow Jewelry Boxes"
+ 15,foldable-gift-boxes,"Gift Boxes &amp; Retail Packaging"
+ 150,drawer-style-gift-box-concept,"Drawer-Style Gift Box Packaging: A Structured Brief for a Small Gift Brand"
+ 1564,stock-custom-first-order,"Stock or Custom Packaging: First-Order Cost"
+@@ -266,7 +268,7 @@
+ 1597,preassembled-box-buffer-planning,"Preassembling Gift Boxes Before a Packing Peak"
+ 1598,gift-component-kitting-work,"Gift Packaging Kitting: Count Preparation and Assembly"
+ 1599,gift-variant-changeover-sequence,"Packaging Changeover Time Can Affect the Best Order Sequence"
+-16,product-folding-carton,"Custom Folding Cartons and Gift Boxes Sourcing"
++16,product-folding-carton,"Custom Folding Cartons Wholesale"
+ 160,packaging-print-finishes-checklist,"Packaging Print Finish Specifications for a Clear Handoff"
+ 1600,packing-bench-refill-lots,"Refilling a Packing Bench Trades Fewer Trips for More Working Stock"
+ 1601,packing-inspection-rework-timing,"Inspection Timing Changes the Cost of Discovering a Packing Error"
+@@ -322,13 +324,13 @@
+ 1661,packaging-vat-cash-recoverability,"Packaging VAT Needs Separate Cash and Recoverability Calculations"
+ 1662,retailer-stock-channel-eligibility,"Retail Packaging Requirements for Existing Box Stock"
+ 1663,packaging-improvement-baseline,"Packaging Improvements Need a Like-for-Like Operating Baseline"
+-17,product-tuck-end-gift-box,"Custom Tuck-End Carton Sourcing"
+-18,product-folding-gift-box,"Custom Folding Gift Box Sourcing"
+-19,product-finished-folding-gift-box,"Custom Folding Gift Box with Decorative Finish Sourcing"
+-20,product-collapsible-magnetic-gift-box,"Custom Collapsible Magnetic Gift Box Sourcing"
++17,product-tuck-end-gift-box,"Custom Tuck End Gift Boxes"
++18,product-folding-gift-box,"Custom Folding Gift Boxes with Logo"
++19,product-finished-folding-gift-box,"Custom Printed Folding Gift Boxes"
++20,product-collapsible-magnetic-gift-box,"Custom Collapsible Magnetic Gift Boxes"
+ 21,mailer-boxes,"Shipping Boxes &amp; Mailers"
+-22,product-front-tuck-mailer,"Custom Mailer Box Sourcing"
+-23,product-lightweight-mailer,"Custom Lightweight Mailer Box Sourcing"
++22,product-front-tuck-mailer,"Custom Front Tuck Mailer Boxes"
++23,product-lightweight-mailer,"Custom Lightweight Mailer Boxes"
+ 233,custom-packaging-quote-comparison-checklist,"Custom Packaging Quote Comparison by Scope, Units and Delivery"
+ 234,jewelry-box-structures-brief,"Jewelry Box Types Compared by Opening, Fit and Removal"
+ 235,jewelry-pouch-specifications,"Custom Jewelry Pouch Specifications for Supplier Briefs"
+@@ -336,29 +338,29 @@
+ 237,tissue-gift-bag-set-checklist,"Custom Gift Bags and Tissue Paper: Specification Checklist"
+ 238,mailer-box-with-insert-fit-brief,"Mailer Box With Insert: Dimensions and Fit Brief"
+ 239,roll-or-sheet-labels-application-format,"Roll Labels vs Sheet Labels: Choose by Application"
+-24,product-flat-delivery-mailer,"Custom Flat-Delivery Mailer Box Sourcing"
++24,product-flat-delivery-mailer,"Custom Flat-Pack Mailer Boxes"
+ 240,packaging-insert-materials,"Packaging Insert Materials: Compare Form and Fit"
+ 241,packaging-artwork-handoff-checklist,"Packaging Artwork Approval Checklist for Print Handoff"
+ 242,packaging-reorder-checklist,"Packaging Reorder Checklist: Version and Scope Control"
+-247,round-cardboard-tube-box,"Custom Round Cardboard Tube Gift Box Sourcing"
+-25,product-mailer-with-insert,"Custom Mailer Box with Fitted Insert Sourcing"
+-250,windowed-folding-carton,"Custom Windowed Folding Carton Sourcing"
+-252,textile-jewelry-pouch,"Custom Textile Jewelry Pouch Sourcing"
+-253,paper-mailer-bag,"Custom Paper Mailer Bag Sourcing"
+-254,poly-mailer-bag,"Custom Poly Mailer Bag Sourcing"
+-257,clear-display-box,"Custom Clear Display Box Sourcing"
+-258,thermoformed-insert-tray,"Custom Thermoformed Insert Tray Sourcing"
+-26,product-printed-mailer,"Custom Printed Mailer Box Sourcing"
+-261,molded-pulp-insert,"Custom Molded Pulp and Fiber Inserts for Your Product"
+-262,gift-bag-tissue-set,"Custom Gift Bag and Tissue Set Sourcing"
++247,round-cardboard-tube-box,"Custom Round Tube Gift Boxes"
++25,product-mailer-with-insert,"Custom Mailer Boxes with Inserts"
++250,windowed-folding-carton,"Custom Windowed Folding Cartons"
++252,textile-jewelry-pouch,"Custom Jewelry Pouches with Logo"
++253,paper-mailer-bag,"Custom Printed Paper Mailer Bags"
++254,poly-mailer-bag,"Custom Poly Mailer Bags Bulk"
++257,clear-display-box,"Custom Clear Display Boxes with Logo"
++258,thermoformed-insert-tray,"Custom Thermoformed Insert Trays"
++26,product-printed-mailer,"Custom Printed Mailer Boxes"
++261,molded-pulp-insert,"Custom Molded Pulp Packaging Inserts"
++262,gift-bag-tissue-set,"Custom Gift Bag and Tissue Set Wholesale"
+ 27,labels,"Custom Packaging Labels"
+-28,product-rectangle-roll-labels,"Custom Roll Labels Sourcing"
++28,product-rectangle-roll-labels,"Custom Rectangle Roll Labels"
+ 2852,customization,"Packaging Customization"
+ 2853,bags-pouches,"Custom Bags &amp; Pouches"
+ 2854,packaging-supplier-certificate-check,"Packaging Supplier Certificates Need a Site and Scope Check"
+ 2864,paper-book-cloth-box-covers,"Paper or Book Cloth Covers for a Rigid Jewelry Gift Box"
+ 2884,samples,"Packaging Samples"
+-29,product-square-roll-labels,"Custom Square Roll Labels Sourcing"
++29,product-square-roll-labels,"Custom Square Roll Labels"
+ 2904,terms,"Terms of Service"
+ 2905,compare,"Custom packaging suppliers compared for small brands"
+ 2906,packrivo-vs-packlane,"Packlane vs Packrivo: which fits your packaging order?"
+@@ -394,7 +396,7 @@
+ 2997,catalog-rigid-lid-and-base-box-225262,"Rigid Lid-and-Base Box — Flip Lid"
+ 2998,catalog-rigid-lid-and-base-box-115236,"Green Rigid Lid-and-Base Box"
+ 2999,catalog-rigid-lid-and-base-box-290629,"Rigid Lid-and-Base Box — Ref. 290629"
+-30,product-circle-roll-labels,"Custom Circular Roll Labels Sourcing"
++30,product-circle-roll-labels,"Custom Circle Roll Labels"
+ 3000,catalog-rigid-lid-and-base-box-668812,"Rigid Lid-and-Base Box — Specialty Paper"
+ 3001,catalog-rigid-lid-and-base-box-758242,"Blue-Pink Gradient Rigid Lid-and-Base Box — Gradient"
+ 3002,catalog-rigid-lid-and-base-box-352093,"Forest Green Rigid Lid-and-Base Box"
+@@ -481,7 +483,7 @@
+ 3097,catalog-necklace-box-o1cn01pth3,"Necklace Box — Portable, Storage"
+ 3098,catalog-necklace-box-o1cn01y18w,"Necklace Box — Clear Window, Mini, Storage"
+ 3099,catalog-necklace-box-o1cn01l8mw,"Necklace Box — Clear Window, Storage — Ref. 01L8MW"
+-31,product-sheet-labels,"Custom Sheet Labels Sourcing"
++31,product-sheet-labels,"Custom Printed Sheet Labels"
+ 3100,catalog-necklace-box-o1cn01utys,"Necklace Box — Storage — Ref. 01UTYS"
+ 3101,catalog-necklace-box-o1cn01ekfe,"Necklace Box — Ref. 01EKFE"
+ 3102,catalog-necklace-box-o1cn01adum,"Necklace Box — Two-Layer, Storage"
+@@ -582,7 +584,7 @@
+ 3197,catalog-ring-box-o1cn01sgt6et1f,"Ring Box — Lid-and-Base, Storage"
+ 3198,catalog-ring-box-o1cn01wu7uj11f,"Black Ring Box"
+ 3199,catalog-ring-box-o1cn01sevmgs2h,"Ring Box — Ref. VMGS2H"
+-32,product-coated-labels,"Custom Coated Labels Sourcing"
++32,product-coated-labels,"Custom Coated Labels with Logo"
+ 3200,catalog-ring-box-o1cn01sfztev1w,"Green Ring Box — Velvet"
+ 3201,catalog-ring-box-o1cn01fvxevh1w,"Blue Ring Box — Lid-and-Base"
+ 3202,catalog-ring-box-o1cn017slkhuxk,"White Ring Box — Ref. LKHUXK"
+@@ -597,13 +599,13 @@
+ 3211,catalog-wooden-box,"Wooden Jewelry Boxes — Reference Catalogue"
+ 3212,catalog-wooden-box-o1cn01rnjift1k,"Black Wooden Jewelry Box"
+ 33,inserts,"Packaging Inserts &amp; Cards"
+-34,product-die-cut-insert,"Custom Die-Cut Insert Sourcing"
+-35,product-corrugated-inlay,"Custom Corrugated Mailer Inlay Sourcing"
+-36,product-information-card,"Custom Packaging Information Card Sourcing"
++34,product-die-cut-insert,"Custom Die-Cut Box Inserts"
++35,product-corrugated-inlay,"Custom Mailer Box Inserts"
++36,product-information-card,"Custom Printed Info Cards"
+ 366,eu-ppwr-packaging-buyer-checklist,"EU PPWR Packaging Checklist for Small Brands"
+ 367,food-contact-packaging-documents-checklist,"Food Contact Packaging Documents: A Buyer Checklist"
+-37,product-paperboard-insert,"Custom Paperboard Insert Sourcing"
+-38,product-corrugated-divider,"Custom Corrugated Divider and Inlay Sourcing"
++37,product-paperboard-insert,"Custom Paperboard Inserts"
++38,product-corrugated-divider,"Custom Corrugated Dividers and Inserts"
+ 39,about,"About Packrivo"
+ 40,services,"Packaging Sourcing Services"
+ 41,cases,"Packaging Concept Examples"
+@@ -629,107 +631,107 @@
+ 506,label-adhesion-surface-use-conditions,"Label Adhesion for Packaging: Surface and Use Checklist"
+ 508,multi-sku-jewelry-packaging-fit-matrix,"Multi SKU Jewelry Packaging: Build a Fit Matrix"
+ 510,packaging-material-claim-evidence-scope,"Packaging Material Claims: Match the Evidence Scope"
+-512,product-shoulder-neck-rigid-box,"Custom Shoulder-Neck Rigid Box Sourcing"
+-513,product-folded-tray-sleeve-box,"Custom Folded Tray and Sleeve Box Sourcing"
+-514,product-auto-lock-bottom-carton,"Custom Auto-Lock Bottom Carton Sourcing"
+-515,product-snap-lock-bottom-carton,"Custom Snap-Lock Bottom Carton Sourcing"
+-516,product-foldable-lid-base-box,"Custom Foldable Lid Base Box Sourcing"
+-517,product-gable-top-carry-carton,"Custom Gable Top Carry Carton Sourcing"
+-518,product-hanging-tab-retail-carton,"Custom Hanging Tab Retail Carton Sourcing"
+-519,product-counter-display-carton,"Custom Counter Display Carton Sourcing"
+-520,product-jewelry-mounting-card,"Custom Jewelry Mounting Card Sourcing"
+-521,product-paper-belly-band,"Custom Paper Belly Band Sourcing"
+-522,product-regular-slotted-shipping-carton,"Custom Regular Slotted Shipping Carton Sourcing"
+-523,product-corrugated-book-wrap-mailer,"Custom Corrugated Book Wrap Mailer Sourcing"
+-524,product-folded-box-liner,"Custom Folded Box Liner Sourcing"
+-525,product-paired-corrugated-end-caps,"Custom Paired Corrugated End Caps Sourcing"
+-526,product-rigid-paperboard-postal-envelope,"Custom Rigid Paperboard Postal Envelope Sourcing"
+-527,product-reverse-tuck-retail-carton,"Custom Reverse Tuck Retail Carton Sourcing"
+-528,product-straight-tuck-retail-carton,"Custom Straight Tuck Retail Carton Sourcing"
+-529,product-bookend-folding-carton,"Custom Bookend Folding Carton Sourcing"
++512,product-shoulder-neck-rigid-box,"Custom Shoulder Neck Rigid Boxes"
++513,product-folded-tray-sleeve-box,"Custom Folded Tray and Sleeve Boxes"
++514,product-auto-lock-bottom-carton,"Custom Auto-Lock Bottom Boxes"
++515,product-snap-lock-bottom-carton,"Custom Snap Lock Bottom Boxes"
++516,product-foldable-lid-base-box,"Custom Foldable Lid and Base Boxes"
++517,product-gable-top-carry-carton,"Custom Gable Boxes with Handle"
++518,product-hanging-tab-retail-carton,"Custom Hanging Retail Boxes"
++519,product-counter-display-carton,"Custom Counter Display Boxes"
++520,product-jewelry-mounting-card,"Custom Jewelry Display Cards"
++521,product-paper-belly-band,"Custom Printed Belly Bands"
++522,product-regular-slotted-shipping-carton,"Custom Shipping Boxes with Logo"
++523,product-corrugated-book-wrap-mailer,"Custom Corrugated Book Mailers"
++524,product-folded-box-liner,"Custom Folded Box Liners"
++525,product-paired-corrugated-end-caps,"Custom Corrugated End Caps"
++526,product-rigid-paperboard-postal-envelope,"Custom Rigid Postal Envelopes"
++527,product-reverse-tuck-retail-carton,"Custom Reverse Tuck Retail Boxes"
++528,product-straight-tuck-retail-carton,"Custom Straight Tuck Boxes"
++529,product-bookend-folding-carton,"Custom Bookend Folding Cartons"
+ 53,blog,Blog
+-530,product-full-flap-auto-bottom-carton,"Custom Full-Flap Auto-Bottom Carton Sourcing"
+-531,product-lock-cap-auto-bottom-carton,"Custom Lock-Cap Auto-Bottom Carton Sourcing"
+-532,product-six-corner-pre-glued-carton,"Custom Six-Corner Pre-Glued Carton Sourcing"
+-533,product-gusset-folder-carton,"Custom Gusset Folder Carton Sourcing"
+-534,product-header-card-bag-topper,"Custom Header Card Bag Topper Sourcing"
+-535,product-hexagonal-folding-carton,"Custom Hexagonal Folding Carton Sourcing"
+-536,product-four-corner-display-tray,"Custom Four-Corner Display Tray Sourcing"
+-537,product-auto-bottom-display-carton,"Custom Auto Bottom Display Carton Sourcing"
+-538,product-side-lock-display-carton,"Custom Side-Lock Display Carton Sourcing"
+-539,product-cube-carry-carton,"Custom Integrated-Handle Cube Carrier Sourcing"
+-540,product-flower-petal-top-gift-carton,"Custom Flower Petal Top Gift Carton Sourcing"
+-541,product-flip-out-dispenser-carton,"Custom Flip-Out Dispenser Carton Sourcing"
+-542,product-full-overlap-seal-end-carton,"Custom Full-Overlap Seal End Carton Sourcing"
+-543,product-four-corner-pre-glued-carton,"Custom Four-Corner Pre-Glued Carton Sourcing"
+-544,product-paperboard-roll-end-dust-flap-carton,"Custom Paperboard Roll End Dust Flap Carton Sourcing"
+-545,product-pinch-lock-paperboard-tray,"Custom Pinch Lock Paperboard Tray Sourcing"
+-546,product-side-lock-hinged-gift-tray,"Custom Side-Lock Hinged Gift Tray Sourcing"
+-547,product-five-panel-hanger-carton,"Custom Five-Panel Hanger Carton Sourcing"
+-548,product-tuck-end-sleeve-carton,"Custom Tuck-End Sleeve Carton Sourcing"
+-549,product-double-wall-frame-tray-lid,"Custom Double-Wall Frame Tray and Lid Sourcing"
+-550,product-double-wall-frame-tray-sleeve,"Custom Double-Wall Frame Tray and Sleeve Sourcing"
+-551,product-double-wall-tray-lid,"Custom Double-Wall Tray and Lid Sourcing"
+-552,product-tab-lock-roll-end-corrugated-pack,"Custom Tab Lock Roll End Corrugated Pack Sourcing"
+-553,product-self-locking-corrugated-folder,"Custom Self-Locking Corrugated Folder Sourcing"
+-554,product-five-panel-corrugated-folder,"Custom FEFCO 0410 Five-Panel Corrugated Folder Sourcing"
+-555,product-snap-bottom-slotted-outer-carton,"Custom Snap Bottom Slotted Outer Carton Sourcing"
+-556,product-auto-bottom-slotted-outer-carton,"Custom Auto Bottom Slotted Outer Carton Sourcing"
+-557,product-full-overlap-slotted-outer-carton,"Custom Full-Overlap Slotted Outer Carton Sourcing"
+-558,product-corrugated-gusset-folder,"Custom Corrugated Gusset Folder Sourcing"
+-559,product-three-flap-lock-corrugated-pack,"Custom Three Flap Lock Corrugated Pack Sourcing"
+-560,product-corrugated-tuck-top-snap-bottom,"Custom Corrugated Tuck-Top Snap-Bottom Carton Sourcing"
+-561,product-corrugated-tuck-top-auto-bottom,"Custom Corrugated Tuck-Top Auto-Bottom Carton Sourcing"
+-562,product-corrugated-reverse-tuck-pack,"Custom Corrugated Reverse Tuck Pack Sourcing"
+-563,product-corrugated-roll-end-hinged-lid,"Custom Corrugated Roll End Hinged Lid Sourcing"
+-564,product-corrugated-bottle-gift-carrier,"Custom Corrugated Bottle Gift Carrier Sourcing"
+-565,product-window-lid-rigid-gift-box,"Custom Window Lid Rigid Gift Box Sourcing"
+-566,product-hinged-nonmagnetic-rigid-box,"Custom Ribbon-Tie Hinged Rigid Box Sourcing"
+-567,product-book-style-rigid-presentation-box,"Custom Book-Style Rigid Presentation Box Sourcing"
+-568,product-two-door-rigid-presentation-box,"Custom Two-Door Rigid Presentation Box Sourcing"
+-569,product-paperboard-grid-divider,"Custom Paperboard Grid Divider Sourcing"
+-570,product-rigid-chipboard-divider,"Custom Fixed-Cell Chipboard Divider Sourcing"
+-571,product-molded-pulp-corner-cradle,"Custom Molded Pulp Corner Cradle Sourcing"
+-572,product-molded-pulp-end-support-pair,"Custom Molded Pulp End Support Pair Sourcing"
+-573,product-polyurethane-foam-holder,"Custom Contour-Cut PU Foam Holder Sourcing"
+-574,product-eva-foam-holder,"Custom Through-Cut EVA Insert Sourcing"
+-575,product-multi-piece-pe-foam-support,"Custom Multi-Piece PE Foam Support Sourcing"
+-576,product-flocked-foam-holder,"Custom Flocked Foam Holder Sourcing"
+-577,product-thermoformed-multi-cavity-tray,"Custom Thermoformed Multi-Cavity Tray Sourcing"
+-578,product-hinged-thermoformed-clamshell,"Custom Hinged Thermoformed Clamshell Sourcing"
+-579,product-slide-in-card-blister,"Custom Slide In Card Blister Sourcing"
+-580,product-nest-stack-thermoformed-tray,"Custom Nest-and-Stack Thermoformed Tray Sourcing"
+-581,product-sos-paper-gift-bag,"Custom SOS Paper Gift Bag Sourcing"
+-582,product-euro-tote-paper-carrier,"Custom Paper Gift Carrier Sourcing"
+-583,product-die-cut-handle-paper-bag,"Custom Die-Cut Handle Paper Bag Sourcing"
+-584,product-wide-gusset-paper-carrier,"Custom Wide Gusset Paper Carrier Sourcing"
+-585,product-paper-merchandise-sleeve-bag,"Custom Flat Merchandise Paper Bag Sourcing"
+-586,product-drawstring-fabric-gift-bag,"Custom Drawstring Fabric Gift Bag Sourcing"
+-587,product-zippered-fabric-gift-pouch,"Custom Zippered Fabric Gift Pouch Sourcing"
+-588,product-box-bottom-fabric-tote,"Custom Box Bottom Fabric Tote Sourcing"
+-589,product-fold-over-flap-fabric-pouch,"Custom Fold-Over Flap Fabric Pouch Sourcing"
+-590,product-expandable-kraft-parcel-bag,"Custom Expandable Kraft Parcel Bag Sourcing"
+-591,product-returnable-paper-parcel-bag,"Custom Returnable Paper Parcel Bag Sourcing"
+-592,product-returnable-poly-parcel-bag,"Custom Returnable Poly Parcel Bag Sourcing"
+-593,product-paper-padded-parcel-envelope,"Custom Paper Padded Parcel Envelope Sourcing"
+-594,product-kraft-bubble-parcel-envelope,"Custom Kraft Bubble Parcel Envelope Sourcing"
+-595,product-poly-bubble-parcel-envelope,"Custom Poly Bubble Parcel Envelope Sourcing"
+-596,product-shelf-counter-display,"Custom Multi-Tier Counter Display Sourcing"
+-597,product-peg-hook-counter-display,"Custom Peg Hook Counter Display Sourcing"
+-598,product-pocket-floor-gift-display,"Custom Pocket Floor Gift Display Sourcing"
+-599,product-tray-floor-gift-display,"Custom Tray Floor Gift Display Sourcing"
+-600,product-multi-tier-floor-gift-display,"Custom Multi-Tier Floor Gift Display Sourcing"
+-601,product-hook-floor-gift-display,"Custom Hook Floor Gift Display Sourcing"
+-602,product-paper-carton-sealing-tape,"Custom Pressure-Sensitive Paper Sealing Tape Sourcing"
+-603,product-reinforced-paper-sealing-tape,"Custom Reinforced Water-Activated Paper Tape Sourcing"
+-604,product-printed-tissue-sheet,"Custom Printed Tissue Sheet Sourcing"
+-605,product-gift-hang-tag,"Custom Gift Hang Tag Sourcing"
+-606,product-shipping-document-window-pouch,"Custom Shipping Document Window Pouch Sourcing"
+-607,product-hinged-metal-gift-container,"Custom Hinged Metal Gift Container Sourcing"
+-608,product-round-metal-gift-container,"Custom Slip-Lid Metal Gift Container Sourcing"
+-609,product-screw-top-metal-gift-container,"Custom Screw-Top Metal Gift Container Sourcing"
+-610,product-latch-metal-gift-container,"Custom Latch Metal Gift Container Sourcing"
+-611,product-press-close-metal-gift-container,"Custom Press-Close Metal Gift Container Sourcing"
++530,product-full-flap-auto-bottom-carton,"Custom Full Flap Auto Bottom Boxes"
++531,product-lock-cap-auto-bottom-carton,"Custom Lock Cap Auto Bottom Boxes"
++532,product-six-corner-pre-glued-carton,"Custom Six-Corner Pre-Glued Boxes"
++533,product-gusset-folder-carton,"Custom Gusset Folder Boxes"
++534,product-header-card-bag-topper,"Custom Header Card Bag Toppers"
++535,product-hexagonal-folding-carton,"Custom Hexagonal Gift Boxes"
++536,product-four-corner-display-tray,"Custom Display Trays for Retail"
++537,product-auto-bottom-display-carton,"Custom Printed Display Boxes"
++538,product-side-lock-display-carton,"Custom Side Lock Display Boxes"
++539,product-cube-carry-carton,"Custom Carry Boxes with Handle"
++540,product-flower-petal-top-gift-carton,"Custom Petal Top Gift Boxes"
++541,product-flip-out-dispenser-carton,"Custom Dispenser Boxes with Logo"
++542,product-full-overlap-seal-end-carton,"Custom Seal End Cartons Wholesale"
++543,product-four-corner-pre-glued-carton,"Custom Pre-Glued Boxes Bulk"
++544,product-paperboard-roll-end-dust-flap-carton,"Custom Dust Flap Cartons"
++545,product-pinch-lock-paperboard-tray,"Custom Pinch Lock Trays"
++546,product-side-lock-hinged-gift-tray,"Custom Hinged Gift Trays"
++547,product-five-panel-hanger-carton,"Custom Hanger Boxes for Retail"
++548,product-tuck-end-sleeve-carton,"Custom Tuck End Sleeve Boxes"
++549,product-double-wall-frame-tray-lid,"Custom Double-Wall Tray and Lid Sets"
++550,product-double-wall-frame-tray-sleeve,"Custom Tray and Sleeve Boxes"
++551,product-double-wall-tray-lid,"Custom Corrugated Tray Boxes with Lid"
++552,product-tab-lock-roll-end-corrugated-pack,"Custom Tab Lock Corrugated Packs"
++553,product-self-locking-corrugated-folder,"Custom Self-Locking Mailers"
++554,product-five-panel-corrugated-folder,"Custom Five-Panel Corrugated Folders"
++555,product-snap-bottom-slotted-outer-carton,"Custom Snap Bottom Shipping Boxes"
++556,product-auto-bottom-slotted-outer-carton,"Bulk Shipping Boxes with Logo"
++557,product-full-overlap-slotted-outer-carton,"Custom Full Overlap Shipping Boxes"
++558,product-corrugated-gusset-folder,"Custom Corrugated Gusset Folders"
++559,product-three-flap-lock-corrugated-pack,"Custom Three Flap Lock Boxes"
++560,product-corrugated-tuck-top-snap-bottom,"Custom Snap Bottom Cartons"
++561,product-corrugated-tuck-top-auto-bottom,"Custom Tuck Top Auto Bottom Boxes"
++562,product-corrugated-reverse-tuck-pack,"Custom Reverse Tuck Boxes"
++563,product-corrugated-roll-end-hinged-lid,"Custom Hinged Lid Boxes with Logo"
++564,product-corrugated-bottle-gift-carrier,"Custom Bottle Gift Boxes with Handle"
++565,product-window-lid-rigid-gift-box,"Custom Window Lid Rigid Boxes"
++566,product-hinged-nonmagnetic-rigid-box,"Custom Hinged Rigid Gift Boxes"
++567,product-book-style-rigid-presentation-box,"Custom Book-Style Rigid Gift Boxes"
++568,product-two-door-rigid-presentation-box,"Custom Two-Door Rigid Boxes"
++569,product-paperboard-grid-divider,"Custom Grid Dividers for Boxes"
++570,product-rigid-chipboard-divider,"Custom Chipboard Dividers"
++571,product-molded-pulp-corner-cradle,"Custom Molded Pulp Corner Inserts"
++572,product-molded-pulp-end-support-pair,"Custom Molded Pulp End Caps"
++573,product-polyurethane-foam-holder,"Custom PU Foam Inserts"
++574,product-eva-foam-holder,"Custom EVA Foam Inserts"
++575,product-multi-piece-pe-foam-support,"Custom PE Foam Packaging Inserts"
++576,product-flocked-foam-holder,"Custom Flocked Foam Inserts"
++577,product-thermoformed-multi-cavity-tray,"Custom Multi-Cavity Trays"
++578,product-hinged-thermoformed-clamshell,"Custom Printed Clamshell Packaging"
++579,product-slide-in-card-blister,"Custom Slide-In Blister Cards"
++580,product-nest-stack-thermoformed-tray,"Custom Nest and Stack Trays"
++581,product-sos-paper-gift-bag,"Custom SOS Paper Bags Bulk"
++582,product-euro-tote-paper-carrier,"Custom Paper Gift Bags with Logo"
++583,product-die-cut-handle-paper-bag,"Custom Die-Cut Handle Paper Bags"
++584,product-wide-gusset-paper-carrier,"Custom Wide Gusset Paper Bags"
++585,product-paper-merchandise-sleeve-bag,"Custom Flat Paper Merchandise Bags"
++586,product-drawstring-fabric-gift-bag,"Custom Drawstring Gift Bags Bulk"
++587,product-zippered-fabric-gift-pouch,"Custom Zippered Fabric Pouches"
++588,product-box-bottom-fabric-tote,"Custom Fabric Tote Bags with Logo"
++589,product-fold-over-flap-fabric-pouch,"Custom Fabric Pouches with Flap"
++590,product-expandable-kraft-parcel-bag,"Custom Kraft Parcel Bags Bulk"
++591,product-returnable-paper-parcel-bag,"Custom Returnable Parcel Bags"
++592,product-returnable-poly-parcel-bag,"Custom Returnable Poly Mailers"
++593,product-paper-padded-parcel-envelope,"Custom Padded Paper Mailers"
++594,product-kraft-bubble-parcel-envelope,"Custom Kraft Bubble Mailers"
++595,product-poly-bubble-parcel-envelope,"Custom Poly Bubble Mailers"
++596,product-shelf-counter-display,"Custom Tiered Counter Displays"
++597,product-peg-hook-counter-display,"Custom Peg Hook Counter Displays"
++598,product-pocket-floor-gift-display,"Custom Pocket Display Stands"
++599,product-tray-floor-gift-display,"Custom Tray Floor Displays"
++600,product-multi-tier-floor-gift-display,"Custom Multi-Tier Display Stands"
++601,product-hook-floor-gift-display,"Custom Floor Display Stands"
++602,product-paper-carton-sealing-tape,"Custom Printed Paper Tape"
++603,product-reinforced-paper-sealing-tape,"Custom Reinforced Paper Tape"
++604,product-printed-tissue-sheet,"Custom Printed Tissue Paper"
++605,product-gift-hang-tag,"Custom Printed Gift Hang Tags"
++606,product-shipping-document-window-pouch,"Custom Document Window Pouches"
++607,product-hinged-metal-gift-container,"Custom Hinged Metal Gift Tins"
++608,product-round-metal-gift-container,"Custom Round Metal Gift Tins"
++609,product-screw-top-metal-gift-container,"Custom Screw-Top Metal Tins"
++610,product-latch-metal-gift-container,"Custom Latch Metal Gift Boxes"
++611,product-press-close-metal-gift-container,"Custom Press-Close Metal Tins"
+ 612,care-card-packout-clearance,"Care Cards in Gift Boxes: Recheck the Complete Fit"
+ 613,pendant-chain-routing,"Necklace Packaging: Route Chains and Keep Clasps Accessible"
+ 614,earring-card-backing-clearance,"Earring Card Packaging: Check Posts and Backs"
+@@ -831,6 +833,7 @@
+ 709,retail-copy-responsibility,"Assign Product Copy Responsibility Before the Packaging Proof"
+ 710,brief-unknowns-to-questions,"Turn Unknown Brief Fields Into Answerable Supplier Questions"
+ 711,component-approval-dependencies,"Link Component Approvals Before Releasing the Whole Set"
++7793,get-a-quote,"Get a Quote"
+ 8,products,"Custom Packaging Products"
+ 9,jewelry-boxes,"Custom Jewelry Boxes With Logo for Your Collection"
+ 90,jewelry-box-insert-fit-measurements,"Jewelry Box Dimensions and Supplier Size References"
+@@ -842,4 +845,4 @@
+ == 关键选项 ==
+ home=http://nginx
+ siteurl=http://nginx
+-page8_template=NONE
++page8_template=template-products-v4.php

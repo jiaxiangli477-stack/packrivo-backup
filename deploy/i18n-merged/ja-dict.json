@@ -1,5 +1,7 @@
 {
   "title": {
+    "Packaging Inserts: Foam, Paperboard, Fit Check | Packrivo": "包装インサート：フォーム・紙器・嵌合確認 | Packrivo",
+    "Packaging Sourcing: 8–15% Fee, Written Scope | Packrivo": "包装調達：手数料8–15%、範囲は書面で | Packrivo",
     "Get a Quote – Packrivo": "見積もりを依頼 – Packrivo",
     "Get a Quote": "見積もりを依頼",
     "About Packrivo: Packaging Sourcing in Shenzhen, China": "Packrivoについて：中国深圳における包装調達",
@@ -286,7 +288,9 @@
     "Custom Mailer Boxes & Shipping Boxes with Logo | Packrivo": "ロゴ入りメーラーボックス・配送箱 | Packrivo",
     "Custom Packaging Samples Before You Order | Packrivo": "注文前に確認するオリジナル包装サンプル | Packrivo",
     "Custom Packaging Guides for Small Brands | Packrivo": "小規模ブランド向けオリジナル包装ガイド | Packrivo",
-    "About Packrivo | Custom Packaging from Shenzhen": "Packrivoについて | 深圳発のオリジナル包装"
+    "About Packrivo | Custom Packaging from Shenzhen": "Packrivoについて | 深圳発のオリジナル包装",
+    "Packaging Sourcing Blog for Small Brands | Packrivo": "小規模ブランド向けパッケージ調達ブログ | Packrivo"
+
   },
   "attr": {
     "A broad fifth hanger panel sits behind a retail body while a hand opens the loaded key-accessory pack.": "幅広の第5ハンガーパネルが小売用本体の背後にあり、手で商品入りのキーアクセサリーパックを開けています。",
@@ -7662,6 +7666,20 @@
     "What we make": "取り扱う製品",
     "Where do you ship from?": "どこから発送しますか？",
     "White corrugated": "白い段ボール",
-    "Wooden Jewelry Boxes": "木製ジュエリーボックス"
+    "Wooden Jewelry Boxes": "木製ジュエリーボックス",
+    "No articles in this topic yet.": "このテーマの記事はまだありません。",
+    "Jan": "1月",
+    "Feb": "2月",
+    "Mar": "3月",
+    "Apr": "4月",
+    "May": "5月",
+    "Jun": "6月",
+    "Jul": "7月",
+    "Aug": "8月",
+    "Sep": "9月",
+    "Oct": "10月",
+    "Nov": "11月",
+    "Dec": "12月"
+
   }
 }

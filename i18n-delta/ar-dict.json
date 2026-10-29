@@ -141,7 +141,9 @@
     "Custom Packaging Samples Before You Order | Packrivo": "عينات تغليف مخصص قبل الطلب | Packrivo",
     "Custom Packaging Guides for Small Brands | Packrivo": "أدلة تغليف مخصص للعلامات الصغيرة | Packrivo",
     "About Packrivo | Custom Packaging from Shenzhen": "عن Packrivo | تغليف مخصص من شنتشن",
-    "Request a Custom Packaging Quote | Packrivo": "اطلب عرض سعر للتغليف المخصص | Packrivo"
+    "Request a Custom Packaging Quote | Packrivo": "اطلب عرض سعر للتغليف المخصص | Packrivo",
+    "Packaging Sourcing Blog for Small Brands | Packrivo": "مدونة توريد التغليف للعلامات الصغيرة | Packrivo"
+
   },
   "block": {
     "Custom Drawer Jewelry Boxes with Logo": "علب مجوهرات بدرج مخصصة مع شعار",
@@ -1013,7 +1015,21 @@
     "What we make": "ما نصنعه",
     "Where do you ship from?": "من أين تشحنون؟",
     "White corrugated": "كرتون مموج أبيض",
-    "Wooden Jewelry Boxes": "علب مجوهرات خشبية"
+    "Wooden Jewelry Boxes": "علب مجوهرات خشبية",
+    "No articles in this topic yet.": "لا توجد مقالات في هذا الموضوع بعد.",
+    "Jan": "يناير",
+    "Feb": "فبراير",
+    "Mar": "مارس",
+    "Apr": "أبريل",
+    "May": "مايو",
+    "Jun": "يونيو",
+    "Jul": "يوليو",
+    "Aug": "أغسطس",
+    "Sep": "سبتمبر",
+    "Oct": "أكتوبر",
+    "Nov": "نوفمبر",
+    "Dec": "ديسمبر"
+
   },
   "attr": {
     "Custom drawer jewelry boxes for small brands, with logo options and a 500-piece minimum. Get a price.": "علب مجوهرات بدرج للعلامات الصغيرة، مع خيارات للشعار وحد أدنى 500 قطعة. اطلب سعراً.",

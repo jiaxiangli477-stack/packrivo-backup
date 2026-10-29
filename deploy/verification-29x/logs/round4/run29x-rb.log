@@ -1,0 +1,26 @@
+################ 29x 段2（回滚）开始 2026-10-29T21:22:55Z ################
+===== [5] 第 9 步回滚（9.8 → 9.7.5 → 9.7 → 9.6 … 9.2）21:22:55 =====
+PASS: 9.3 /pkg/rollback/rollback-27g.json site 与本轮一致
+PASS: 9.3 /pkg/rollback/rollback-27i.json site 与本轮一致
+PASS: 9a before-mu.sha256 全 OK
+PASS: 9b stylesheet 回到父主题
+PASS: 9c 子主题目录已删
+PASS: 9d 报价插件已移除
+PASS: 9e 首页 200
+PASS: 9f /get-a-quote/ 回到 301
+PASS: 9g 报价页已删（任何状态计数 0）
+PASS: 9h 页面 8 模板 meta 已还原（首装前不存在）
+PASS: 9h2 页面 8 回到默认模板类（node 不存在时跳过浏览器项）
+本步判据：PASS=11 FAIL=0
+step9 :: 本步判据：PASS=11 FAIL=0 :: EXIT=0
+  快照[after-rollback]  旧口径=01c1c448743c7d797d4925e3af0903e1805391bbb431159062b278ca846599b7
+  快照[after-rollback]  ext   =91db54e0c1d8c5538192d384d3dab926f361b805d1e653b2d2da3e00d89cad63
+PASS: 回滚后旧口径快照 = 基线（逐字节一致）
+PASS: 回滚后 ext 快照 = 基线（模板 meta 已还原）
+===== [6] 3.0 守卫反向自检 21:30:54 =====
+PASS: 3.0 /pkg/rollback/rollback-27g.json site 与本轮一致
+PASS: 3.0 /pkg/rollback/rollback-27i.json site 与本轮一致
+FAIL: 3.0 /pkg/rollback/rollback-bogus.json 非本轮产物（site=http://wrong-site.invalid，期望 http://nginx），先清空 /pkg/rollback
+PASS: 3.0 守卫拦住他站 JSON，整步非零退出，apply 未执行
+PASS: 反向自检没有改动站点（仍 = 基线）
+negtest 退出码 = 0

@@ -142,7 +142,7 @@ docker exec php sh -c 'ls /usr/lib/mariadb/plugin'               # 期望 5–6 
 
 | 文件（本机仓库 `E:\破甲工作区\packrivo-backup\` 下的路径） | 文件数 | 大小 | SHA-256 |
 |---|---|---|---|
-| `deploy/packrivo-home-v4.zip` | 38 | 790,164 B | `5974ae0c208d03016701698c45dfbd467f7c24c6036fba120dccc01f72034bf9` |
+| `deploy/packrivo-home-v4.zip` | 38 | 796,514 B | `49ddbe6f1848419d2add0d801a0bf41817dbbab891b4747bcd629fdfc3a0599e` |
 | `deploy/packrivo-quote.zip` | 19（`demo/` 不进包） | 54,581 B | `096d0c8e81360e7fc616e5d46c96088fc3a65ceb32daf9b78cf1e1de0bc52d93` |
 | `deploy/27e-quote-redirect.patch` | — | 647 B | 见第 6 步 |
 | `deploy/patches-28m/packrivo-i18n-404-viewport.patch` | — | 1018 B | 见第 6 步 |
@@ -478,7 +478,7 @@ $WPCLI theme list --format=csv | grep packrivo-static-bridge | grep active     #
 
 # 5.2 装 + 启用
 docker cp "$PKG/packrivo-home-v4.zip" php:"$PKGC/packrivo-home-v4.zip"
-docker exec php sha256sum "$PKGC/packrivo-home-v4.zip"    # 必须 5974ae0c…
+docker exec php sha256sum "$PKGC/packrivo-home-v4.zip"    # 必须 49DDBE6F…
 $WPCLI theme install  "$PKGC/packrivo-home-v4.zip" --force
 $WPCLI theme activate packrivo-home-v4
 

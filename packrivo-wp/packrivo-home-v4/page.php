@@ -77,14 +77,27 @@ while (have_posts()) :
             }
         }
     }
+
+    // 宽表在窄屏会顶宽整页（.comparison-table 自带 min-width:650px），套一层横滚容器，
+    // 表格自己滚，页面不再横向溢出。原生快照里 .packrivo-table-wrap 的 CSS 泄漏成了纯文本
+    // （未包 <style>），所以那些 wrap 形同虚设，必须由 site.css 里的 .pk-table-scroll 兜底。
+    $content = preg_replace(
+        '~<table\b(?=[^>]*\bclass=["\'][^"\']*\bcomparison-table\b)[^>]*>[\s\S]*?</table>~i',
+        '<div class="pk-table-scroll">$0</div>',
+        $content
+    );
     ?>
     <main id="main" class="pk-main">
         <?php if ($native) : ?>
-            <?php // 29x：原生页面内容限宽——补一层与页头 .pk-wrap 同口径的容器（max-width 一致、左右内边距一致）。
-            // 本来设计成通栏的区块走 CSS 白名单（.pr-remediation-hero 等）单独放开，其余都收进限宽。 ?>
-            <div class="pk-wrap pk-native-wrap"><?php echo $content; // already escaped by the editor pipeline ?></div>
+            <?php // Native pages keep their own section markup, which was built for the old
+                  // full-width <main>. Constrain it with the same box the header uses so text
+                  // no longer starts at x=0; sections that are meant to bleed carry
+                  // .pk-bleed / [data-full-bleed] and escape via CSS (see site.css). ?>
+            <div class="pk-page-body">
+                <?php echo $content; // already escaped by the editor pipeline ?>
+            </div>
         <?php else : ?>
-            <div class="pk-wrap" style="padding:56px 0 72px">
+            <div class="pk-wrap" style="padding:56px 24px 72px">
                 <?php // Must run the content filters, otherwise shortcodes such as [packrivo_quote] stay literal. ?>
                 <article class="article"><?php echo apply_filters('the_content', $content); ?></article>
             </div>

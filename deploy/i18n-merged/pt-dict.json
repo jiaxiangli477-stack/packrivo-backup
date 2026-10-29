@@ -1,5 +1,7 @@
 {
   "title": {
+    "Packaging Inserts: Foam, Paperboard, Fit Check | Packrivo": "Insertos de embalagem: espuma, cartão, verificação de encaixe | Packrivo",
+    "Packaging Sourcing: 8–15% Fee, Written Scope | Packrivo": "Compras de embalagem: 8–15% de taxa, escopo por escrito | Packrivo",
     "Get a Quote – Packrivo": "Pedir orçamento – Packrivo",
     "Get a Quote": "Solicite uma Cotação",
     "Custom Packaging Labels | Packrivo": "Etiquetas de Embalagem Personalizadas | Packrivo",
@@ -292,7 +294,9 @@
     "Custom Mailer Boxes & Shipping Boxes with Logo | Packrivo": "Caixas de envio com logótipo | Packrivo",
     "Custom Packaging Samples Before You Order | Packrivo": "Amostras de embalagem antes de encomendar | Packrivo",
     "Custom Packaging Guides for Small Brands | Packrivo": "Guias de embalagens para pequenas marcas | Packrivo",
-    "About Packrivo | Custom Packaging from Shenzhen": "Sobre a Packrivo | Embalagens à medida de Shenzhen"
+    "About Packrivo | Custom Packaging from Shenzhen": "Sobre a Packrivo | Embalagens à medida de Shenzhen",
+    "Packaging Sourcing Blog for Small Brands | Packrivo": "Blog de sourcing de embalagens para pequenas marcas | Packrivo"
+
   },
   "attr": {
     "Next step": "Próxima etapa",
@@ -7720,6 +7724,20 @@
     "What we make": "O que fazemos",
     "Where do you ship from?": "De onde vocês enviam?",
     "White corrugated": "Papelão ondulado branco",
-    "Wooden Jewelry Boxes": "Caixas de madeira para joias"
+    "Wooden Jewelry Boxes": "Caixas de madeira para joias",
+    "No articles in this topic yet.": "Ainda não há artigos neste tópico.",
+    "Jan": "jan.",
+    "Feb": "fev.",
+    "Mar": "mar.",
+    "Apr": "abr.",
+    "May": "mai.",
+    "Jun": "jun.",
+    "Jul": "jul.",
+    "Aug": "ago.",
+    "Sep": "set.",
+    "Oct": "out.",
+    "Nov": "nov.",
+    "Dec": "dez."
+
   }
 }

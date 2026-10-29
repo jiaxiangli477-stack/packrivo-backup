@@ -1,5 +1,7 @@
 {
   "title": {
+    "Packaging Inserts: Foam, Paperboard, Fit Check | Packrivo": "Calages d'emballage : mousse, carton, contrôle de la tenue | Packrivo",
+    "Packaging Sourcing: 8–15% Fee, Written Scope | Packrivo": "Approvisionnement en emballage : 8–15 % de commission, périmètre écrit | Packrivo",
     "Get a Quote – Packrivo": "Obtenir un devis – Packrivo",
     "Get a Quote": "Obtenir un devis",
     "Custom Packaging Labels | Packrivo": "Étiquettes d'emballage personnalisées | Packrivo",
@@ -292,7 +294,9 @@
     "Custom Mailer Boxes & Shipping Boxes with Logo | Packrivo": "Boîtes d’envoi & cartons avec logo | Packrivo",
     "Custom Packaging Samples Before You Order | Packrivo": "Échantillons d’emballage avant commande | Packrivo",
     "Custom Packaging Guides for Small Brands | Packrivo": "Guides d’emballage pour petites marques | Packrivo",
-    "About Packrivo | Custom Packaging from Shenzhen": "À propos de Packrivo | Emballages sur mesure de Shenzhen"
+    "About Packrivo | Custom Packaging from Shenzhen": "À propos de Packrivo | Emballages sur mesure de Shenzhen",
+    "Packaging Sourcing Blog for Small Brands | Packrivo": "Blog sourcing d’emballage pour petites marques | Packrivo"
+
   },
   "attr": {
     "Next step": "Étape suivante",
@@ -7207,7 +7211,7 @@
     "Jewelry Pouches": "Pochettes à bijoux",
     "Jewelry Storage Boxes": "Boîtes de rangement pour bijoux",
     "Journal": "Journal",
-    "Journal · 333 articles": "Journal · 333 articles",
+    "Journal · 333 articles": "Le Journal · 333 articles",
     "Keep reading": "Continuer la lecture",
     "Kraft corrugated": "Carton ondulé kraft",
     "Lead time by stage": "Délai par étape",
@@ -7624,7 +7628,7 @@
     "Jewelry Pouches": "Pochettes à bijoux",
     "Jewelry Storage Boxes": "Boîtes de rangement pour bijoux",
     "Journal": "Journal",
-    "Journal · 333 articles": "Journal · 333 articles",
+    "Journal · 333 articles": "Le Journal · 333 articles",
     "Keep reading": "Continuer la lecture",
     "Kraft corrugated": "Carton ondulé kraft",
     "Lead time by stage": "Délai par étape",
@@ -7721,6 +7725,20 @@
     "What we make": "Ce que nous proposons",
     "Where do you ship from?": "D’où expédiez-vous ?",
     "White corrugated": "Carton ondulé blanc",
-    "Wooden Jewelry Boxes": "Boîtes à bijoux en bois"
+    "Wooden Jewelry Boxes": "Boîtes à bijoux en bois",
+    "No articles in this topic yet.": "Aucun article dans ce sujet pour le moment.",
+    "Jan": "janv.",
+    "Feb": "févr.",
+    "Mar": "mars",
+    "Apr": "avr.",
+    "May": "mai",
+    "Jun": "juin",
+    "Jul": "juil.",
+    "Aug": "août",
+    "Sep": "sept.",
+    "Oct": "oct.",
+    "Nov": "nov.",
+    "Dec": "déc."
+
   }
 }

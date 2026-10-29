@@ -1,0 +1,32 @@
+{
+ "note": "29x 第 6 项：services / inserts 两个页面的 <title> 在 11 个语种里还是英文，这里补 title 类词条。Get a Quote 的 title 已在字典里，不必补。",
+ "kind": "title",
+ "entries": {
+  "Packaging Sourcing: 8–15% Fee, Written Scope | Packrivo": {
+   "de": "Verpackungsbeschaffung: 8–15 % Gebühr, schriftlicher Umfang | Packrivo",
+   "fr": "Approvisionnement en emballage : 8–15 % de commission, périmètre écrit | Packrivo",
+   "es": "Abastecimiento de embalaje: 8–15 % de comisión, alcance por escrito | Packrivo",
+   "it": "Approvvigionamento imballaggi: 8–15% di commissione, perimetro scritto | Packrivo",
+   "nl": "Verpakkingsinkoop: 8–15% fee, schriftelijke scope | Packrivo",
+   "pt": "Compras de embalagem: 8–15% de taxa, escopo por escrito | Packrivo",
+   "ar": "توريد التغليف: عمولة 8–15% ونطاق مكتوب | Packrivo",
+   "ja": "包装調達：手数料8–15%、範囲は書面で | Packrivo",
+   "ko": "포장 소싱: 수수료 8–15%, 서면 범위 | Packrivo",
+   "zh-CN": "包装采购服务：8–15% 服务费，书面范围 | Packrivo",
+   "zh-TW": "包裝採購服務：8–15% 服務費，書面範圍 | Packrivo"
+  },
+  "Packaging Inserts: Foam, Paperboard, Fit Check | Packrivo": {
+   "de": "Verpackungseinlagen: Schaum, Karton, Passprüfung | Packrivo",
+   "fr": "Calages d'emballage : mousse, carton, contrôle de la tenue | Packrivo",
+   "es": "Insertos de embalaje: espuma, cartón, verificación de ajuste | Packrivo",
+   "it": "Inserti per imballaggio: schiuma, cartoncino, verifica di accoppiamento | Packrivo",
+   "nl": "Verpakkingsinlays: schuim, karton, pascontrole | Packrivo",
+   "pt": "Insertos de embalagem: espuma, cartão, verificação de encaixe | Packrivo",
+   "ar": "حشوات التغليف: فوم وكرتون وفحص المطابقة | Packrivo",
+   "ja": "包装インサート：フォーム・紙器・嵌合確認 | Packrivo",
+   "ko": "포장 인서트: 폼·지판·맞춤 확인 | Packrivo",
+   "zh-CN": "包装内衬：泡棉、纸板、配合检查 | Packrivo",
+   "zh-TW": "包裝內襯：泡棉、紙板、配合檢查 | Packrivo"
+  }
+ }
+}

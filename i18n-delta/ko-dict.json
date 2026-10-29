@@ -141,7 +141,9 @@
     "Custom Packaging Samples Before You Order | Packrivo": "주문 전 맞춤 포장 샘플 | Packrivo",
     "Custom Packaging Guides for Small Brands | Packrivo": "소규모 브랜드 맞춤 포장 가이드 | Packrivo",
     "About Packrivo | Custom Packaging from Shenzhen": "Packrivo 소개 | 선전에서 오는 맞춤 포장",
-    "Request a Custom Packaging Quote | Packrivo": "맞춤 포장 견적 요청 | Packrivo"
+    "Request a Custom Packaging Quote | Packrivo": "맞춤 포장 견적 요청 | Packrivo",
+    "Packaging Sourcing Blog for Small Brands | Packrivo": "소규모 브랜드를 위한 포장 조달 블로그 | Packrivo"
+
   },
   "block": {
     "Custom Drawer Jewelry Boxes with Logo": "로고 맞춤 서랍형 주얼리 박스",
@@ -1013,7 +1015,21 @@
     "What we make": "제작 제품",
     "Where do you ship from?": "어디에서 배송하나요?",
     "White corrugated": "화이트 골판지",
-    "Wooden Jewelry Boxes": "나무 주얼리 상자"
+    "Wooden Jewelry Boxes": "나무 주얼리 상자",
+    "No articles in this topic yet.": "이 주제에는 아직 글이 없습니다.",
+    "Jan": "1월",
+    "Feb": "2월",
+    "Mar": "3월",
+    "Apr": "4월",
+    "May": "5월",
+    "Jun": "6월",
+    "Jul": "7월",
+    "Aug": "8월",
+    "Sep": "9월",
+    "Oct": "10월",
+    "Nov": "11월",
+    "Dec": "12월"
+
   },
   "attr": {
     "Custom drawer jewelry boxes for small brands, with logo options and a 500-piece minimum. Get a price.": "소규모 브랜드를 위한 서랍형 주얼리 박스입니다. 로고 선택이 가능하며 최소 주문 수량은 500개입니다. 가격을 문의하세요.",

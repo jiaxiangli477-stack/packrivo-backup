@@ -1,5 +1,7 @@
 {
   "title": {
+    "Packaging Inserts: Foam, Paperboard, Fit Check | Packrivo": "포장 인서트: 폼·지판·맞춤 확인 | Packrivo",
+    "Packaging Sourcing: 8–15% Fee, Written Scope | Packrivo": "포장 소싱: 수수료 8–15%, 서면 범위 | Packrivo",
     "Get a Quote – Packrivo": "견적 요청 – Packrivo",
     "Get a Quote": "견적 요청",
     "About Packrivo: Packaging Sourcing in Shenzhen, China": "Packrivo 소개: 중국 선전의 포장 소싱",
@@ -286,7 +288,9 @@
     "Custom Mailer Boxes & Shipping Boxes with Logo | Packrivo": "로고 맞춤 메일러·배송 박스 | Packrivo",
     "Custom Packaging Samples Before You Order | Packrivo": "주문 전 맞춤 포장 샘플 | Packrivo",
     "Custom Packaging Guides for Small Brands | Packrivo": "소규모 브랜드 맞춤 포장 가이드 | Packrivo",
-    "About Packrivo | Custom Packaging from Shenzhen": "Packrivo 소개 | 선전에서 오는 맞춤 포장"
+    "About Packrivo | Custom Packaging from Shenzhen": "Packrivo 소개 | 선전에서 오는 맞춤 포장",
+    "Packaging Sourcing Blog for Small Brands | Packrivo": "소규모 브랜드를 위한 포장 조달 블로그 | Packrivo"
+
   },
   "attr": {
     "A closed display carton sits beside an opened header and front-access tray holding retail units.": "닫힌 디스플레이 카톤 옆에 개봉된 헤더와 전면 접근 트레이가 있으며, 여기에 소매 단위 제품이 담겨 있습니다.",
@@ -7662,6 +7666,20 @@
     "What we make": "제작 제품",
     "Where do you ship from?": "어디에서 배송하나요?",
     "White corrugated": "화이트 골판지",
-    "Wooden Jewelry Boxes": "나무 주얼리 상자"
+    "Wooden Jewelry Boxes": "나무 주얼리 상자",
+    "No articles in this topic yet.": "이 주제에는 아직 글이 없습니다.",
+    "Jan": "1월",
+    "Feb": "2월",
+    "Mar": "3월",
+    "Apr": "4월",
+    "May": "5월",
+    "Jun": "6월",
+    "Jul": "7월",
+    "Aug": "8월",
+    "Sep": "9월",
+    "Oct": "10월",
+    "Nov": "11월",
+    "Dec": "12월"
+
   }
 }

@@ -141,7 +141,9 @@
     "Custom Packaging Samples Before You Order | Packrivo": "Amostras de embalagem antes de encomendar | Packrivo",
     "Custom Packaging Guides for Small Brands | Packrivo": "Guias de embalagens para pequenas marcas | Packrivo",
     "About Packrivo | Custom Packaging from Shenzhen": "Sobre a Packrivo | Embalagens à medida de Shenzhen",
-    "Request a Custom Packaging Quote | Packrivo": "Peça um orçamento de embalagem | Packrivo"
+    "Request a Custom Packaging Quote | Packrivo": "Peça um orçamento de embalagem | Packrivo",
+    "Packaging Sourcing Blog for Small Brands | Packrivo": "Blog de sourcing de embalagens para pequenas marcas | Packrivo"
+
   },
   "block": {
     "Custom Drawer Jewelry Boxes with Logo": "Caixas de joias com gaveta e logotipo personalizado",
@@ -1013,7 +1015,21 @@
     "What we make": "O que fazemos",
     "Where do you ship from?": "De onde vocês enviam?",
     "White corrugated": "Papelão ondulado branco",
-    "Wooden Jewelry Boxes": "Caixas de madeira para joias"
+    "Wooden Jewelry Boxes": "Caixas de madeira para joias",
+    "No articles in this topic yet.": "Ainda não há artigos neste tópico.",
+    "Jan": "jan.",
+    "Feb": "fev.",
+    "Mar": "mar.",
+    "Apr": "abr.",
+    "May": "mai.",
+    "Jun": "jun.",
+    "Jul": "jul.",
+    "Aug": "ago.",
+    "Sep": "set.",
+    "Oct": "out.",
+    "Nov": "nov.",
+    "Dec": "dez."
+
   },
   "attr": {
     "Custom drawer jewelry boxes for small brands, with logo options and a 500-piece minimum. Get a price.": "Caixas de joias com gaveta para pequenas marcas, com opções de logotipo e pedido mínimo de 500 peças. Peça um preço.",

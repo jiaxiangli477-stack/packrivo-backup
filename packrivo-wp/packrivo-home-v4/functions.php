@@ -83,7 +83,9 @@ function pkv4_hub_document_title($title)
 {
     $id = pkv4_hub_metadata_id();
     $value = $id ? get_post_meta($id, '_packrivo_document_title', true) : '';
-    return is_string($value) && $value !== '' ? html_entity_decode($value, ENT_QUOTES | ENT_HTML5, 'UTF-8') : $title;
+    $value = is_string($value) && $value !== '' ? html_entity_decode($value, ENT_QUOTES | ENT_HTML5, 'UTF-8') : $title;
+    // 29x：博客页文档标题在翻译页按 title 桶翻译（无键时原样，由插件缓冲兜底）。
+    return pkv4_i18n_t($value, array('title'));
 }
 add_filter('pre_get_document_title', 'pkv4_hub_document_title', 1100);
 add_filter('wpseo_title', 'pkv4_hub_document_title', 1100);
@@ -325,3 +327,78 @@ add_action('wp_head', function () {
         echo '<link rel="canonical" href="'.esc_url($url).'" />' . "\n";
     }
 }, 5);
+
+/* ------------------------------------------------------------------ *
+ * 29x i18n：博客页动态串（文档标题/日期/min read/空态）跟着翻译词典走。
+ * mu 插件 packrivo-i18n 的输出缓冲只做整串精确替换；带数字的动态串
+ * （"Journal · 333 articles"、"7 min read"、日期）匹配不到，由主题在这里
+ * 查同一份词典（uploads/packrivo-i18n/{lang}-dict.json）回填。
+ * 词典键约定：
+ *   title 桶：博客页文档标题整串（'Packaging Sourcing Blog for Small Brands | Packrivo'）
+ *   text  桶：'{N} min read'、空态 'No articles in this topic yet.'、Jan–Dec 12 个月名
+ * 无键时逐级回退：{N} 数字归一 → 模板内语言表 → 英文原串。
+ * ------------------------------------------------------------------ */
+
+/** 查词典：只在翻译页（PACKRIVO_LANG 已定义）查；命中返回字符串，否则 null。 */
+function pkv4_i18n_lookup($text, $kinds = array('text', 'block'))
+{
+    if (!function_exists('packrivo_lang') || !function_exists('packrivo_i18n_lookup')) return null;
+    if (packrivo_lang() === null) return null;
+    $hit = packrivo_i18n_lookup((string) $text, (array) $kinds);
+    return (is_string($hit) && $hit !== '') ? $hit : null;
+}
+
+/**
+ * 精确 + {N} 数字归一查找：
+ * 先按原串查；查不到就把数字归一成 {N} 再查（词典里有 '{N} min read' 这类模板键），
+ * 命中后用原串里的数字按序回填。仍无键返回原串。
+ */
+function pkv4_i18n_t($text, $kinds = array('text', 'block'))
+{
+    $text = (string) $text;
+    $hit = pkv4_i18n_lookup($text, $kinds);
+    if ($hit !== null) return $hit;
+    $pattern = preg_replace('/\d+/u', '{N}', $text);
+    if (is_string($pattern) && $pattern !== $text) {
+        $tpl = pkv4_i18n_lookup($pattern, $kinds);
+        if ($tpl !== null) {
+            preg_match_all('/\d+/u', $text, $m);
+            $nums = $m[0];
+            $i = 0;
+            return preg_replace_callback('/\{N\}/u', function () use (&$i, $nums) {
+                return $nums[$i++] ?? '';
+            }, $tpl);
+        }
+    }
+    return $text;
+}
+
+/**
+ * 日期：整串（'Oct 12, 2025'）先查词典；查不到就按词典里的月名键替换英文月份，
+ * 版式沿用语言表 $pattern（如 de 的 '{d}. {M} {Y}'）；词典与语言表都没有则回英文。
+ */
+function pkv4_i18n_date($ts, $pattern = null, $months = null)
+{
+    $ts = (int) $ts;
+    $en = wp_date('M j, Y', $ts);
+    $hit = pkv4_i18n_lookup($en, array('text', 'block'));
+    if ($hit !== null) return $hit;
+    $m = wp_date('M', $ts);
+    $tr = pkv4_i18n_lookup($m, array('text', 'block'));
+    if ($tr !== null && $tr !== $m) {
+        $tokens = array('{d}' => (string) (int) wp_date('j', $ts), '{M}' => $tr, '{Y}' => wp_date('Y', $ts));
+        if (is_string($pattern) && $pattern !== '') return strtr($pattern, $tokens);
+        return str_replace($m, $tr, $en);
+    }
+    if (is_array($months) && is_string($pattern) && $pattern !== '') {
+        $month = $months[(int) wp_date('n', $ts) - 1] ?? null;
+        if (is_string($month) && $month !== '') {
+            return strtr($pattern, array(
+                '{d}' => (string) (int) wp_date('j', $ts),
+                '{M}' => $month,
+                '{Y}' => wp_date('Y', $ts),
+            ));
+        }
+    }
+    return $en;
+}

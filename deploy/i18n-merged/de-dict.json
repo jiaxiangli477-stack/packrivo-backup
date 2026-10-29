@@ -1,5 +1,7 @@
 {
   "title": {
+    "Packaging Inserts: Foam, Paperboard, Fit Check | Packrivo": "Verpackungseinlagen: Schaum, Karton, Passprüfung | Packrivo",
+    "Packaging Sourcing: 8–15% Fee, Written Scope | Packrivo": "Verpackungsbeschaffung: 8–15 % Gebühr, schriftlicher Umfang | Packrivo",
     "Get a Quote – Packrivo": "Angebot anfordern – Packrivo",
     "Get a Quote": "Angebot anfordern",
     "Custom Packaging Sourcing for Small Brands | Packrivo": "Beschaffung kundenspezifischer Verpackungen für kleine Marken | Packrivo",
@@ -286,7 +288,9 @@
     "Custom Mailer Boxes & Shipping Boxes with Logo | Packrivo": "Versandschachteln & Versandkartons mit Logo | Packrivo",
     "Custom Packaging Samples Before You Order | Packrivo": "Individuelle Verpackungsmuster vor Bestellung | Packrivo",
     "Custom Packaging Guides for Small Brands | Packrivo": "Verpackungsratgeber für kleine Marken | Packrivo",
-    "About Packrivo | Custom Packaging from Shenzhen": "Über Packrivo | Verpackungen nach Maß aus Shenzhen"
+    "About Packrivo | Custom Packaging from Shenzhen": "Über Packrivo | Verpackungen nach Maß aus Shenzhen",
+    "Packaging Sourcing Blog for Small Brands | Packrivo": "Verpackungs-Sourcing-Blog für kleine Marken | Packrivo"
+
   },
   "attr": {
     "Explore packaging styles for jewelry, candle and gift brands. Prepare specifications, compare supplier quotations and review samples with Packrivo.": "Entdecken Sie Verpackungsstile für Schmuck-, Kerzen- und Geschenkmarken. Bereiten Sie Spezifikationen vor, vergleichen Sie Lieferantenangebote und prüfen Sie Muster mit Packrivo.",
@@ -7715,6 +7719,20 @@
     "What we make": "Was wir anbieten",
     "Where do you ship from?": "Von wo versenden Sie?",
     "White corrugated": "Weiße Wellpappe",
-    "Wooden Jewelry Boxes": "Schmuckschachteln aus Holz"
+    "Wooden Jewelry Boxes": "Schmuckschachteln aus Holz",
+    "No articles in this topic yet.": "In diesem Thema gibt es noch keine Artikel.",
+    "Jan": "Jan",
+    "Feb": "Feb",
+    "Mar": "Mär",
+    "Apr": "Apr",
+    "May": "Mai",
+    "Jun": "Jun",
+    "Jul": "Jul",
+    "Aug": "Aug",
+    "Sep": "Sep",
+    "Oct": "Okt",
+    "Nov": "Nov",
+    "Dec": "Dez"
+
   }
 }

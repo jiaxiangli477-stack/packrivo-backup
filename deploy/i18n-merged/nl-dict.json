@@ -1,5 +1,7 @@
 {
   "title": {
+    "Packaging Inserts: Foam, Paperboard, Fit Check | Packrivo": "Verpakkingsinlays: schuim, karton, pascontrole | Packrivo",
+    "Packaging Sourcing: 8–15% Fee, Written Scope | Packrivo": "Verpakkingsinkoop: 8–15% fee, schriftelijke scope | Packrivo",
     "Get a Quote – Packrivo": "Prijsopgave aanvragen – Packrivo",
     "Get a Quote": "Vraag een offerte aan",
     "Custom Packaging Labels | Packrivo": "Op maat gemaakte verpakkingsetiketten | Packrivo",
@@ -292,7 +294,9 @@
     "Custom Mailer Boxes & Shipping Boxes with Logo | Packrivo": "Verzenddozen met logo op maat | Packrivo",
     "Custom Packaging Samples Before You Order | Packrivo": "Verpakkingsmonsters vóór je bestelt | Packrivo",
     "Custom Packaging Guides for Small Brands | Packrivo": "Verpakkingsgidsen voor kleine merken | Packrivo",
-    "About Packrivo | Custom Packaging from Shenzhen": "Over Packrivo | Verpakkingen op maat uit Shenzhen"
+    "About Packrivo | Custom Packaging from Shenzhen": "Over Packrivo | Verpakkingen op maat uit Shenzhen",
+    "Packaging Sourcing Blog for Small Brands | Packrivo": "Blog over verpakkingsinkoop voor kleine merken | Packrivo"
+
   },
   "attr": {
     "Next step": "Volgende stap",
@@ -7720,6 +7724,20 @@
     "What we make": "Wat wij maken",
     "Where do you ship from?": "Vanwaar verzenden jullie?",
     "White corrugated": "Wit golfkarton",
-    "Wooden Jewelry Boxes": "Houten sieradendozen"
+    "Wooden Jewelry Boxes": "Houten sieradendozen",
+    "No articles in this topic yet.": "Nog geen artikelen in dit onderwerp.",
+    "Jan": "jan.",
+    "Feb": "feb.",
+    "Mar": "mrt.",
+    "Apr": "apr.",
+    "May": "mei",
+    "Jun": "jun.",
+    "Jul": "jul.",
+    "Aug": "aug.",
+    "Sep": "sep.",
+    "Oct": "okt.",
+    "Nov": "nov.",
+    "Dec": "dec."
+
   }
 }
