@@ -1,0 +1,124 @@
+
+############### STEP 0.1 上线前检查 ###############
+
++ docker + grep ps --format -E '^(php|mysql|nginx|redis)\b''{{.Names}}\t{{.Image}}'
+
+php	r29v-php:8.3
+mysql	mysql:8.4
+redis	redis:alpine
+nginx	nginx:alpine
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root core version
+7.1.4
++ docker + head exec php -1
+php -v
+PHP 8.3.36 (cli) (built: Oct 21 2026 22:54:11) (NTS)
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root option get siteurl
+http://nginx
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root option get template
+packrivo-static-bridge-1.2.38
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root option get stylesheet
+packrivo-static-bridge-1.2.38
++ docker + grep exec php '^packrivo-home-v4,'
+php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root theme list --format=csv
+Warning: wp_update_themes(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
++ echo '子主题未安装 → 首次安装'
+子主题未安装 → 首次安装
++ docker + grep exec php '^packrivo-quote,'
+php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root plugin list --format=csv
+Warning: wp_update_plugins(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
++ echo '报价插件未安装 → 首次安装'
+报价插件未安装 → 首次安装
++ docker + grep + grep exec php packrivo-static-bridge
+active
+php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root theme list --format=csv
+Warning: wp_update_themes(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
+packrivo-static-bridge-1.2.38,active,none,1.2.38,,off
++ docker exec php sh -c 'command -v mysqldump || apk add --no-cache mariadb-client'
+/usr/bin/mysqldump
++ docker exec php mysqldump --version
+mysqldump: Deprecated program name. It will be removed in a future release, use '/usr/bin/mariadb-dump' instead
+mysqldump from 11.4.13-MariaDB, client 10.19 for Linux (x86_64)
++ mkdir -p /home/web/packrivo-packages
++ set +x
+
+############### STEP 0.1 导出探针 · 第 1 次（裸探，预期 TLS/SSL error） ###############
+
+Warning: Failed to get current character set of the posts table. Reason: ERROR 2026 (HY000): TLS/SSL error: self-signed certificate in certificate chain
+
+mariadb-dump: Got error: 2026: "TLS/SSL error: self-signed certificate in certificate chain" when trying to connect
+第 1 次探针字节数 = 0
+PASS: 0k-L1 裸探报 TLS/SSL error（TLS/SSL error: self-signed certificate in certificate chain）
+
+############### STEP 0.1 补救第 1 层：装 --skip-ssl 包装 ###############
+
++ docker exec php sh -c 'cat > /usr/local/bin/mariadb-dump <<EOF
+#!/bin/sh
+exec /usr/bin/mariadb-dump "\$@" --skip-ssl
+EOF
+chmod +x /usr/local/bin/mariadb-dump'
++ docker exec php sh -c 'cat > /usr/local/bin/mariadb <<EOF
+#!/bin/sh
+exec /usr/bin/mariadb "\$@" --skip-ssl
+EOF
+chmod +x /usr/local/bin/mariadb'
++ docker exec php sh -c 'command -v mariadb-dump'
+/usr/local/bin/mariadb-dump
++ set +x
+
+############### STEP 0.1 导出探针 · 第 2 次（装了包装，预期 1045 caching_sha2） ###############
+
+Warning: Failed to get current character set of the posts table. Reason: ERROR 1045 (28000): Plugin caching_sha2_password could not be loaded: Error loading shared library /usr/lib/mariadb/plugin/caching_sha2_password.so: No such file or directory
+
+mariadb-dump: Got error: 1045: "Plugin caching_sha2_password could not be loaded: Error loading shared library /usr/lib/mariadb/plugin/caching_sha2_password.so: No such file or directory" when trying to connect
+第 2 次探针字节数 = 0
+PASS: 0k-L2 装包装后报 1045 caching_sha2 插件缺失
+
+############### STEP 0.1 补救第 2 层：apk add mariadb-connector-c ###############
+
++ docker exec php sh -c 'ls /usr/lib/mariadb/plugin 2>/dev/null | wc -l'
+0
++ docker exec php sh -c 'apk add --no-cache mariadb-connector-c'
+(1/1) Installing mariadb-connector-c (3.4.6-r0)
+OK: 71.6 MiB in 52 packages
++ docker exec php sh -c 'ls /usr/lib/mariadb/plugin'
+caching_sha2_password.so
+client_ed25519.so
+dialog.so
+mysql_clear_password.so
+parsec.so
+sha256_password.so
++ set +x
+
+############### STEP 0.1 导出探针 · 最终（三条判据就在这份文件上判） ###############
+
+Success: Exported to '/tmp/probe-final.sql'.
+
+############### STEP 0.2 上传清单核对（演练环境用本地目录代替 scp） ###############
+
++ sha256sum /home/web/packrivo-packages/packrivo-home-v4.zip /home/web/packrivo-packages/packrivo-quote.zip
+5974ae0c208d03016701698c45dfbd467f7c24c6036fba120dccc01f72034bf9  /home/web/packrivo-packages/packrivo-home-v4.zip
+096d0c8e81360e7fc616e5d46c96088fc3a65ceb32daf9b78cf1e1de0bc52d93  /home/web/packrivo-packages/packrivo-quote.zip
++ ls + wc /home/web/packrivo-packages/i18n-merged
+-l
+23
++ ls + wc /home/web/packrivo-packages/dsh-out
+-l
+6
++ ls /home/web/packrivo-packages/scripts
+hubs-27i
+product-buyers-27e
+product-buyers-27g
++ set +x
+
+############### STEP 0 通过判据 ###############
+
+探针终值：字节=47377810  CREATE TABLE=40  BASE TABLE=40  DumpCompleted=1
+PASS: 0a core version = 7.1.4
+PASS: 0b PHP = 8.3.x
+PASS: 0c 首装：子主题未安装
+PASS: 0d 首装：报价插件未安装
+PASS: 0e mysqldump 可用
+PASS: 0k-1 探针字节数 > 0
+PASS: 0k-2 CREATE TABLE = BASE TABLE（40 vs 40）
+PASS: 0k-3 末尾有 -- Dump completed
+本步判据：PASS=10 FAIL=0

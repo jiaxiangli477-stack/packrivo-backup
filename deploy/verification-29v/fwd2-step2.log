@@ -1,0 +1,106 @@
+
+############### STEP 2 字典与路径表 ###############
+
+++ cat /home/web/backups/CURRENT_LAUNCH
++ BACKUP=/home/web/backups/packrivo-launch-20261029-0745
++ cp -a /home/web/html/www.packrivo.com/wordpress/wp-content/uploads/packrivo-i18n /home/web/backups/packrivo-launch-20261029-0745/i18n-today
++ ls + head/home/web/backups/packrivo-launch-20261029-0745/i18n-today
+
+ar-dict.json
+ar-js.json
+de-dict.json
+de-js.json
+es-dict.json
+es-js.json
+fr-dict.json
+fr-js.json
+it-dict.json
+it-js.json
++ grep -c '"' /home/web/backups/packrivo-launch-20261029-0745/i18n-today/de-dict.json
+1
++ docker exec php mkdir -p /pkg
++ docker cp /home/web/packrivo-packages/. php:/pkg/
++ docker cp /home/web/backups/packrivo-launch-20261029-0745/i18n-today php:/bk-i18n-today
++ docker exec php rm -rf /pkg/merged
++ docker exec php mkdir -p /pkg/merged
++ docker exec php php /pkg/tools/merge-i18n.php --prod=/bk-i18n-today --local=/pkg/i18n-merged --out=/pkg/merged --require=/get-a-quote/
+ar     生产有 → 合并后 title=287 attr=738 block=6266 text=366，冲突 0
+de     生产有 → 合并后 title=287 attr=739 block=6266 text=417，冲突 0
+es     生产有 → 合并后 title=293 attr=739 block=6268 text=409，冲突 0
+fr     生产有 → 合并后 title=293 attr=739 block=6268 text=416，冲突 0
+it     生产有 → 合并后 title=293 attr=739 block=6268 text=411，冲突 0
+ja     生产有 → 合并后 title=287 attr=738 block=6266 text=366，冲突 0
+ko     生产有 → 合并后 title=287 attr=738 block=6266 text=366，冲突 0
+nl     生产有 → 合并后 title=293 attr=739 block=6268 text=415，冲突 0
+pt     生产有 → 合并后 title=293 attr=739 block=6268 text=415，冲突 0
+zh-CN  生产有 → 合并后 title=287 attr=739 block=6266 text=416，冲突 0
+zh-TW  生产有 → 合并后 title=287 attr=738 block=6266 text=366，冲突 0
+空文件，按空字典处理: /bk-i18n-today/ar-js.json
+ar     js：exact=125 patterns=110，冲突 0
+空文件，按空字典处理: /bk-i18n-today/de-js.json
+空文件，按空字典处理: /bk-i18n-today/es-js.json
+de     js：exact=125 patterns=110，冲突 0
+空文件，按空字典处理: /bk-i18n-today/fr-js.json
+es     js：exact=125 patterns=110，冲突 0
+fr     js：exact=125 patterns=110，冲突 0
+空文件，按空字典处理: /bk-i18n-today/it-js.json
+it     js：exact=125 patterns=110，冲突 0
+空文件，按空字典处理: /bk-i18n-today/ja-js.json
+ja     js：exact=126 patterns=110，冲突 0
+空文件，按空字典处理: /bk-i18n-today/ko-js.json
+ko     js：exact=125 patterns=110，冲突 0
+空文件，按空字典处理: /bk-i18n-today/nl-js.json
+nl     js：exact=125 patterns=110，冲突 0
+空文件，按空字典处理: /bk-i18n-today/pt-js.json
+pt     js：exact=125 patterns=110，冲突 0
+空文件，按空字典处理: /bk-i18n-today/zh-CN-js.json
+zh-CN  js：exact=125 patterns=110，冲突 0
+空文件，按空字典处理: /bk-i18n-today/zh-TW-js.json
+zh-TW  js：exact=125 patterns=110，冲突 0
+paths.json：生产 144 + 本地 146 → 合并 146（本轮补 0：无）
+冲突清单：0 条 → /pkg/merged/conflicts.json
++ mkdir -p /home/web/packrivo-packages/merged
++ docker cp php:/pkg/merged/. /home/web/packrivo-packages/merged/
++ cat /home/web/packrivo-packages/merged/conflicts.json
+[]
++ docker exec php sh -c 'ls /pkg/merged/*-dict.json | wc -l'
+11
++ docker exec php sh -c 'ls /pkg/merged/*-js.json   | wc -l'
+11
++ docker exec php sh -c 'for f in /pkg/merged/*.json; do php -r "\$d=json_decode(file_get_contents(\$argv[1]),true); exit((json_last_error()===JSON_ERROR_NONE)?0:1);" "$f" || echo "坏 JSON: $f"; done'
++ docker exec php sh -c 'grep -q "\"/get-a-quote/\"" /pkg/merged/paths.json && echo "paths ok"'
+paths ok
++ docker exec php sh -c 'php -r "\$p=json_decode(file_get_contents(\"/pkg/merged/paths.json\"),true); exit((is_array(\$p)&&count(\$p)>=146)?0:1);" && echo "paths count ok"'
+paths count ok
++ cp /home/web/packrivo-packages/merged/ar-dict.json /home/web/packrivo-packages/merged/de-dict.json /home/web/packrivo-packages/merged/es-dict.json /home/web/packrivo-packages/merged/fr-dict.json /home/web/packrivo-packages/merged/it-dict.json /home/web/packrivo-packages/merged/ja-dict.json /home/web/packrivo-packages/merged/ko-dict.json /home/web/packrivo-packages/merged/nl-dict.json /home/web/packrivo-packages/merged/pt-dict.json /home/web/packrivo-packages/merged/zh-CN-dict.json /home/web/packrivo-packages/merged/zh-TW-dict.json /home/web/html/www.packrivo.com/wordpress/wp-content/uploads/packrivo-i18n/
++ cp /home/web/packrivo-packages/merged/ar-js.json /home/web/packrivo-packages/merged/de-js.json /home/web/packrivo-packages/merged/es-js.json /home/web/packrivo-packages/merged/fr-js.json /home/web/packrivo-packages/merged/it-js.json /home/web/packrivo-packages/merged/ja-js.json /home/web/packrivo-packages/merged/ko-js.json /home/web/packrivo-packages/merged/nl-js.json /home/web/packrivo-packages/merged/pt-js.json /home/web/packrivo-packages/merged/zh-CN-js.json /home/web/packrivo-packages/merged/zh-TW-js.json /home/web/html/www.packrivo.com/wordpress/wp-content/uploads/packrivo-i18n/
++ cp /home/web/packrivo-packages/merged/paths.json /home/web/html/www.packrivo.com/wordpress/wp-content/uploads/packrivo-i18n/
++ ls + head-l /home/web/html/www.packrivo.com/wordpress/wp-content/uploads/packrivo-i18n
+
+total 16048
+-rw-r--r--    1 root     root       1667772 Oct 29 07:48 ar-dict.json
+-rw-r--r--    1 root     root         33133 Oct 29 07:48 ar-js.json
+-rw-r--r--    1 root     root       1485545 Oct 29 07:48 de-dict.json
+-rw-r--r--    1 root     root         28979 Oct 29 07:48 de-js.json
+-rw-r--r--    1 root     root       1474161 Oct 29 07:48 es-dict.json
+-rw-r--r--    1 root     root         29001 Oct 29 07:48 es-js.json
+-rw-r--r--    1 root     root       1516734 Oct 29 07:48 fr-dict.json
+-rw-r--r--    1 root     root         29651 Oct 29 07:48 fr-js.json
+-rw-r--r--    1 root     root       1494853 Oct 29 07:48 it-dict.json
++ set +x
+
+############### STEP 2 通过判据 ###############
+
++ curl + grep -s http://nginx/de/-c 'lang="de"'
+
+2
++ set +x
+PASS: 2a paths.json 存在
+PASS: 2b paths 含 /get-a-quote/
+PASS: 2c paths 条数 >= 146
+PASS: 2d dict = 11
+PASS: 2e js = 11
+PASS: 2f 无坏 JSON
+PASS: 2g 冲突 0
+PASS: 2h de 站 lang=de
+本步判据：PASS=8 FAIL=0

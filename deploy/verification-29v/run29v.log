@@ -1,0 +1,133 @@
+################ 29v 开始 2026-10-29T07:03:33Z ################
+===== [1] 复位（reset.sh）07:03:33 =====
+reset 退出码 = 0
+===== [2] 复位后快照 = 本轮基线 07:07:58 =====
+snapshot: /home/web/rehearsal-29v/s-reset.txt
+行数: 844
+整份 sha256: 8971f447510523ed468eedfaa9ceec1ac1d4762465bfd0fb006ae58dad3dd2b4
+基线 sha256 = 8971f447510523ed468eedfaa9ceec1ac1d4762465bfd0fb006ae58dad3dd2b4（写进 /home/web/rehearsal-29v/baseline.sha256；29s 的 4972cd81… 是 MariaDB 时代的基线，本轮换成 MySQL 后重取）
+===== [3] 正向 0–8（含 4.5 建页）07:09:38 =====
+----- [fwd] step0 开始 07:09:38 -----
+step0 :: 本步判据：PASS=10 FAIL=0 :: EXIT=0
+----- [fwd] step1 开始 07:11:12 -----
+step1 :: 本步判据：PASS=10 FAIL=0 :: EXIT=0
+----- [fwd] step2 开始 07:13:34 -----
+step2 :: 本步判据：PASS=8 FAIL=0 :: EXIT=0
+----- [fwd] step3 开始 07:13:54 -----
+step3 :: 本步判据：PASS=11 FAIL=0 :: EXIT=0
+----- [fwd] step4 开始 07:16:09 -----
+step4 :: 本步判据：PASS=3 FAIL=0 :: EXIT=0
+----- [fwd] step45 开始 07:17:19 -----
+step45 :: 本步判据：PASS=5 FAIL=0 :: EXIT=0
+----- [fwd] step5 开始 07:19:19 -----
+step5 :: 本步判据：PASS=4 FAIL=0 :: EXIT=0
+----- [fwd] step6 开始 07:21:54 -----
+step6 :: 本步判据：PASS=12 FAIL=0 :: EXIT=0
+----- [fwd] step7 开始 07:22:40 -----
+step7 :: 本步判据：PASS=1 FAIL=0 :: EXIT=0
+----- [fwd] step8 开始 07:23:53 -----
+step8 :: 本步判据：PASS=9 FAIL=0 :: EXIT=0
+--- [fwd] 逐步汇总 ---
+step0 :: 本步判据：PASS=10 FAIL=0 :: EXIT=0
+step1 :: 本步判据：PASS=10 FAIL=0 :: EXIT=0
+step2 :: 本步判据：PASS=8 FAIL=0 :: EXIT=0
+step3 :: 本步判据：PASS=11 FAIL=0 :: EXIT=0
+step4 :: 本步判据：PASS=3 FAIL=0 :: EXIT=0
+step45 :: 本步判据：PASS=5 FAIL=0 :: EXIT=0
+step5 :: 本步判据：PASS=4 FAIL=0 :: EXIT=0
+step6 :: 本步判据：PASS=12 FAIL=0 :: EXIT=0
+step7 :: 本步判据：PASS=1 FAIL=0 :: EXIT=0
+step8 :: 本步判据：PASS=9 FAIL=0 :: EXIT=0
+snapshot: /home/web/rehearsal-29v/s-forward.txt
+行数: 847
+整份 sha256: eef3fd37a8cbe2a4079c89fb6836d2518a06c6cf2ee4bd8d0f95ac75d729a33a
+正向快照 sha256 = eef3fd37a8cbe2a4079c89fb6836d2518a06c6cf2ee4bd8d0f95ac75d729a33a
+PASS: 正向快照与基线不同（第 3/4/5/45 步确实改了东西）
+--- 与 28s 正向快照（4247693f…，MariaDB 时代）的 diff 统计 ---
+diff 行数 = 18；新增/删除行 = +0 / -0
+===== [4] 最后手段：整库导入（MySQL）07:28:22 =====
+lastresort 退出码 = 0
+PASS: 起点快照 = 本轮正向快照
+PASS: db.sql 非空（47374862 B）
+PASS: db.sql 含 CREATE TABLE（40 条）
+PASS: canary 创建（ID=5445）
+PASS: 无包装时 db import 失败（rc=1）—— 导入依赖包装
+PASS: 导入失败没有把库导坏（表数仍 40）
+PASS: 导出探针 > 0 字节（47230679）
+PASS: 有包装时 db import 成功（rc=0）
+PASS: L-1 表数 = db.sql 的 CREATE TABLE 数（40）
+PASS: L-2 canary 被整库导入覆盖（证明会丢上线后新数据）
+PASS: L-2b 报价页已被整库导入删除
+PASS: L-3 stylesheet/template 都是父主题 1.2.38
+PASS: L-4 packrivo-quote 未激活
+PASS: L-5 页面标题一节与基线逐行一致（725 行）
+PASS: 首页 200
+PASS: /products/ 200
+PASS: /de/ 200
+PASS: 9.6 mu 恢复且 before-mu.sha256 全 OK
+PASS: L-6 /get-a-quote/ 301（27e 已回滚，页面已删）
+PASS: 最终快照 = 基线（逐字节一致）
+===== [5] 再复位一次，跑第 9 步回滚 07:39:10 =====
+reset2 退出码 = 0
+snapshot: /home/web/rehearsal-29v/s-reset2.txt
+行数: 844
+整份 sha256: 8971f447510523ed468eedfaa9ceec1ac1d4762465bfd0fb006ae58dad3dd2b4
+PASS: 二次复位快照 = 基线
+===== [6] 正向 0–8（第二轮）07:44:28 =====
+----- [fwd2] step0 开始 07:44:28 -----
+step0 :: 本步判据：PASS=10 FAIL=0 :: EXIT=0
+----- [fwd2] step1 开始 07:45:52 -----
+step1 :: 本步判据：PASS=10 FAIL=0 :: EXIT=0
+----- [fwd2] step2 开始 07:47:53 -----
+step2 :: 本步判据：PASS=8 FAIL=0 :: EXIT=0
+----- [fwd2] step3 开始 07:48:11 -----
+step3 :: 本步判据：PASS=11 FAIL=0 :: EXIT=0
+----- [fwd2] step4 开始 07:50:16 -----
+step4 :: 本步判据：PASS=3 FAIL=0 :: EXIT=0
+----- [fwd2] step45 开始 07:51:29 -----
+step45 :: 本步判据：PASS=5 FAIL=0 :: EXIT=0
+----- [fwd2] step5 开始 07:53:29 -----
+step5 :: 本步判据：PASS=4 FAIL=0 :: EXIT=0
+----- [fwd2] step6 开始 07:55:27 -----
+step6 :: 本步判据：PASS=12 FAIL=0 :: EXIT=0
+----- [fwd2] step7 开始 07:55:59 -----
+step7 :: 本步判据：PASS=1 FAIL=0 :: EXIT=0
+----- [fwd2] step8 开始 07:57:04 -----
+step8 :: 本步判据：PASS=9 FAIL=0 :: EXIT=0
+--- [fwd2] 逐步汇总 ---
+step0 :: 本步判据：PASS=10 FAIL=0 :: EXIT=0
+step1 :: 本步判据：PASS=10 FAIL=0 :: EXIT=0
+step2 :: 本步判据：PASS=8 FAIL=0 :: EXIT=0
+step3 :: 本步判据：PASS=11 FAIL=0 :: EXIT=0
+step4 :: 本步判据：PASS=3 FAIL=0 :: EXIT=0
+step45 :: 本步判据：PASS=5 FAIL=0 :: EXIT=0
+step5 :: 本步判据：PASS=4 FAIL=0 :: EXIT=0
+step6 :: 本步判据：PASS=12 FAIL=0 :: EXIT=0
+step7 :: 本步判据：PASS=1 FAIL=0 :: EXIT=0
+step8 :: 本步判据：PASS=9 FAIL=0 :: EXIT=0
+===== [7] 第 9 步回滚（含 9.8 删报价页）07:58:39 =====
+PASS: 9.3 /pkg/rollback/rollback-27g.json site 与本轮一致
+PASS: 9.3 /pkg/rollback/rollback-27i.json site 与本轮一致
+PASS: 9a before-mu.sha256 全 OK
+PASS: 9b stylesheet 回到父主题
+PASS: 9c 子主题目录已删
+PASS: 9d 报价插件已移除
+PASS: 9e 首页 200
+PASS: 9f /get-a-quote/ 回到 301
+PASS: 9g 报价页已删（任何状态计数 0）
+本步判据：PASS=9 FAIL=0
+step9 :: 本步判据：PASS=9 FAIL=0 :: EXIT=0
+snapshot: /home/web/rehearsal-29v/s-after-rollback.txt
+行数: 844
+整份 sha256: 8971f447510523ed468eedfaa9ceec1ac1d4762465bfd0fb006ae58dad3dd2b4
+回滚后快照 sha256 = 8971f447510523ed468eedfaa9ceec1ac1d4762465bfd0fb006ae58dad3dd2b4
+PASS: 回滚后快照 = 基线（逐字节一致）
+===== [8] 3.0 守卫反向自检 08:05:53 =====
+PASS: 3.0 /pkg/rollback/rollback-27g.json site 与本轮一致
+PASS: 3.0 /pkg/rollback/rollback-27i.json site 与本轮一致
+FAIL: 3.0 /pkg/rollback/rollback-bogus.json 非本轮产物（site=http://wrong-site.invalid，期望 http://nginx），先清空 /pkg/rollback
+PASS: 3.0 守卫拦住他站 JSON，整步非零退出，apply 未执行
+PASS: 反向自检没有改动站点（仍 = 基线）
+negtest 退出码 = 0
+################ 29v 结束 2026-10-29T08:07:35Z ################
+EXIT=0

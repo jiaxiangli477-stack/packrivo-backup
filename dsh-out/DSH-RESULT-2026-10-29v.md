@@ -25,7 +25,7 @@
 | 10 | 正文写进 0k-2 / 3g / 6b 三处判据修正 | **L94–L96**（0k-2）、**L358**（3g）、**L550**（6b） | 0k-2：`SHOW FULL TABLES` 数 BASE TABLE 去掉表头；3g：`H1_body_URL_unchanged=8/8` 在 **verify** 输出里，不在 apply；6b：要拿**打补丁之后**的哈希去比「已变」 |
 | 11 | 附录 C 加一行 10-29 生产实跑 + 两次偏离 | **L788 起 `### 附录 C-1`** | 两次偏离（connector-c / 建报价页 3383）逐条写现象→原因→正文位置；另附实测数字（`db.sql` 32,516,235 B、`CREATE TABLE` 40 = BASE TABLE 40、48 个 core 文件） |
 | 12 | 演练环境：mysql 换 MySQL 官方镜像 + `caching_sha2_password` + 自签 TLS | `deploy/verification-29v/env/README-ENV.md`、`STEPS-29v.md` | 实测 `mysql:8.4` → **8.4.13**，`root@%` 插件 `caching_sha2_password`，自签 `CN=MySQL_Server_8.4.13_Auto_Generated_Server_Certificate` |
-| 13 | reset.sh 删掉演练库 get-a-quote 页 + 拆掉 connector | `deploy/verification-29v/scripts/reset.sh` §5/§6 | 实测：`ID,post_status / 3220,publish → Success: Deleted post 3220`；`apk del mariadb-connector-c` → 插件目录 **0** 个文件、`/usr/local/bin` 里 0 个包装 |
+| 13 | reset.sh 删掉演练库 get-a-quote 页 + 拆掉 connector | `deploy/verification-29v/scripts/reset.sh` §5/§6 | 实测（交付轮 `reset.log`）：`ID,post_status / 5183,publish → Success: Deleted post 5183`（种子自带的 3220 页在首轮作废轮的复位里已删）；`apk del mariadb-connector-c` → 插件目录 **0** 个文件、`/usr/local/bin` 里 0 个包装 |
 | 14 | 完整重跑（复位 → 正向 0–8 含 4.5 → 回滚 9 含删页 → 3.0 反向自检） | `deploy/verification-29v/logs/` | 见下面 §2 |
 | 15 | 第 0 步日志依次出现 TLS 报错 → 装包装 → 1045 报错 → 装 connector → 三条判据 PASS | `logs/fwd-step0.log`、`logs/fwd2-step0.log` | 两条报错原文与生产逐字节相同，见 §3 |
 | 16 | 换 MySQL 后取复位快照作新基线；正向快照与 `4247693f…` 做 diff 并解释 | `snapshots/s-reset.txt`、`s-forward.txt`、`logs/forward-vs-28s.diff` | 新基线 `8971f447…`；diff 只有一行（报价页 ID 3220 → 5444），见 §4 |
@@ -73,7 +73,7 @@
   PASS: 0k-L2 装包装后报 1045 caching_sha2 插件缺失
 apk add --no-cache mariadb-connector-c
   (1/1) Installing mariadb-connector-c (3.4.6-r0)  → 插件目录出现 caching_sha2_password.so
-最终探针：字节=45379954  CREATE TABLE=40  BASE TABLE=40  DumpCompleted=1
+最终探针：字节=47374862  CREATE TABLE=40  BASE TABLE=40  DumpCompleted=1（第二轮 fwd2 为 47377810）
 PASS: 0k-1 / 0k-2（40 vs 40）/ 0k-3
 ```
 
@@ -203,6 +203,8 @@ Date:   Wed Oct 28 23:13:43 2026 -0700
 ```
 
 > `050a9a4` 里还带了两份**过时副本** `scripts/lastresort.sh`、`scripts/negtest.sh`（从 28r/28s 直接拷来、路径写死 `/opt/x28*`）。它们已被 `lastresort29v.sh` / `negtest29v.sh` 取代，本结果文档的提交里删掉了，避免下次照着错的路径跑。
+>
+> 本结果文档、53 文件平铺快照与 `.gitignore` 的 29v 日志例外由收尾提交（HEAD）一并入库，逐项复核见 §9。
 
 本轮新建文件全部落在 `E:\`（仓库内 `deploy/verification-29v/`，演练日志在 `E:\破甲工作区\.tmp\28q\rehearsal\home\web\rehearsal-29v`），没有向 `C:` 写任何东西（中途一次变量名撞上只读 `$HOME` 误挂了 `C:\Users\21996` 一瞬，已当场停容器并删掉误写的 `rehearsal-29v` 目录，复核 `C:` 上没有残留）。
 
@@ -214,3 +216,33 @@ Date:   Wed Oct 28 23:13:43 2026 -0700
 2. **生产 MySQL 是 26.7.0，演练是 8.4.13**；connector 生产 `3.3.10-r0`、演练 `3.4.6-r0`。报错原文与判据一致，版本差异已写进 `env/README-ENV.md`。
 3. 演练库的 `packrivo-i18n.php` 与生产那份不是同一版本（`3bc32550…` vs `a2a7bdf3…`）。这属于演练基线的历史差异，第 6 步判据已改成 `--check` + 「打后 ≠ 打前」，不再依赖固定哈希。
 4. 生产侧的 `INSTALL-STATE.txt` 是 28u 当场新建的（里面有 `get_a_quote_page_id=3383`）。**9.8 依赖这个文件**，如果以后有人把它删了，回滚就取不到 ID——RUNBOOK 9.8 里留了「没找到就先查文件」的提示，但文件本身要当资产保管。
+
+---
+
+## 9 · 三件交付物齐套与复核（收尾核对）
+
+### 9.1 齐套检查
+
+| 交付物 | 位置 | 核对结果 |
+|---|---|---|
+| ① RUNBOOK 补丁 | `deploy/RUNBOOK-launch.md`（正文补丁 `dea6898`，附录 C 与 6.2 注记 `050a9a4`） | 头部首装声明 L8–L10、§0.1 两层补救 L102–L150、0.2 上传落点 L155–L170、4.5 建报价页 L416、9.8 删报价页 L643、附录 C-1 L788、判据修正 0k-2 L93 / 3g L358 / 6b L550 全部在位；HEAD blob = `288a5f75dec825d83084504496db71865543ed4c`（磁盘同） |
+| ② verification-29v 快照 | `deploy/verification-29v/` | 55 个文件 = §4B 平铺 53 个日志/快照 + `README.md` + `STEPS-29v.md`，另有 `env/` `scripts/` `logs/` `snapshots/` 四个子目录；四份快照在目标侧重算 sha256 均 = 基线 `8971f447…`；`run29v.log` 末行 `EXIT=0`；negtest 四要素（守卫 FAIL / step3 EXIT=1 / apply 计数 0 / 快照=基线）在 `negtest.log` 全在 |
+| ③ 结果文档 | `dsh-out/DSH-RESULT-2026-10-29v.md` | 本文件；随本收尾提交（HEAD）入库 |
+
+### 9.2 53 文件平铺快照的拷贝与核对证据
+
+- 源：`E:\破甲工作区\.tmp\28q\rehearsal\home\web\rehearsal-29v\`（r29v-runner 整轮输出）；目标：`deploy/verification-29v/` 平铺。
+- 拷贝时间 2026-10-29T01:12:40（本机）；**53/53 逐文件 sha256 一致（MATCH=53 MISMATCH=0）**；`s-reset/s-reset2/s-after-rollback/s-after-negtest` 四份快照在目标侧重算均 = 基线 `8971f447…`。`lsr-titles.diff` 未生成属预期：L-5 titles 与基线一致时 `lastresort29v.sh` 不写该文件。
+- 核对脚本与结果：`E:\Ai\ARTEX-Portable\app\data\tasks\57\i761\copy-verify.ps1`、`copy-verify.txt`、`copy-verify.csv`。
+- git 状态：53 个文件里 2 个（`step-summary-fwd.txt` / `step-summary-fwd2.txt`）此前已随 `050a9a4` 入库；24 个此前未跟踪；27 个 `*.log` 被 `.gitignore` 的 `*.log` 规则排除。本收尾提交按 28s/28t 惯例在 `.gitignore` 追加 `!deploy/verification-29v/*.log` 例外，53 文件全部入库。
+
+### 9.3 verification-29v/README.md 来源归档说明
+
+- `verification-29v/README.md`（现 6,220 B / 89 行）是**本轮演练证据汇总（结果+哈希）**，随提交 `050a9a4` 落盘（当时 blob `965a06a0d98f8158f31e485aa8f411c19eee2a1a`）；本收尾对齐两处数字后 blob 为 `872a14d279dddfe17b29c77b30d52b7e919a0a8c`，磁盘文件与 HEAD 一致。
+- 它**不在 §4B 的 53 文件平铺清单里**：源目录 `rehearsal-29v/` 里没有 README.md，拷贝不涉及它。#761 清点目标目录时看到 55 = 53 + `STEPS-29v.md` + `README.md`，README 是「执行期间出现」——实为执行窗口里随 `050a9a4` 提交落盘的交付汇总，属预期产物，不是拷贝工件。本次只做事实对齐（见 9.4），未改动其余内容。
+
+### 9.4 本收尾与交付日志对齐的三处更正
+
+1. 结果文档 §3 探针字节数 `45379954` → 交付 `fwd-step0.log` 实为 **47374862**（fwd2 轮 47377810）；
+2. 结果文档 §1 第 13 行删页证据 → 交付轮 `reset.log` 的 `5183,publish → Success: Deleted post 5183`（种子自带的 3220 在首轮作废轮已删，作废轮日志随目录清空未留档）；
+3. `verification-29v/README.md` §2 / §4 同步对齐上述两处。

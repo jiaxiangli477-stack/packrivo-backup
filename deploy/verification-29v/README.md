@@ -28,7 +28,7 @@
 +5444,get-a-quote,"Get a Quote"
 ```
 
-只有报价页的 ID 变了：**3220**（演练库历史上自带的那一页，被 `reset.sh` 删掉了）→ **5444**（第 4.5 步 `post create` 新建的）。
+只有报价页的 ID 变了：**3220**（28s 时代演练库自带的报价页 ID；本轮 MySQL 种子里它仍在，首轮作废轮的 `reset.sh` 删掉后、交付轮 `reset.log` 里被删的是首轮 4.5 建的 5183）→ **5444**（本轮 4.5 `post create` 新建）。
 页面标题、插件、主题、`siteurl`/`home` 全部逐行一致——说明第 3/4/5/45/6 步在 MySQL 上产生的站点状态与 MariaDB 时代相同。
 
 （`fwd2` 那一轮 4.5 建出来的页也是 **5444**：最后手段做过整库导入，`wp_posts` 的 AUTO_INCREMENT 跟着回到备份里的值，所以第二次插回同一个 ID。）
@@ -59,7 +59,7 @@
 装 --skip-ssl 包装 → mariadb-dump: Got error: 1045: "Plugin caching_sha2_password could not be loaded:
                       Error loading shared library /usr/lib/mariadb/plugin/caching_sha2_password.so: …"      字节数 = 0
 apk add --no-cache mariadb-connector-c → (1/1) Installing mariadb-connector-c (3.4.6-r0) → 插件目录出现 caching_sha2_password.so
-最终探针：字节=45379954  CREATE TABLE=40  BASE TABLE=40  DumpCompleted=1
+最终探针：字节=47374862  CREATE TABLE=40  BASE TABLE=40  DumpCompleted=1（fwd2 轮 47377810）
 PASS: 0k-L1 / 0k-L2 / 0k-1 / 0k-2 / 0k-3
 ```
 

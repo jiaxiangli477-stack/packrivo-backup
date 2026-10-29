@@ -1,0 +1,39 @@
+
+############### STEP 4.5 建报价页 /get-a-quote/ ###############
+
+++ cat /home/web/backups/CURRENT_LAUNCH
++ BACKUP=/home/web/backups/packrivo-launch-20261029-0711
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root db query 'SELECT ID,post_type,post_status,post_name FROM wp_posts WHERE post_name='\''get-a-quote'\'''
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root db query 'SELECT COUNT(*) AS c FROM wp_posts WHERE post_name='\''get-a-quote'\'''
+c
+0
+
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root post list --post_type=any --post_status=any,draft,pending,private,future,trash --name=get-a-quote --fields=ID,post_type,post_name,post_status --format=csv
+ID,post_type,post_name,post_status
++ set +x
+守卫结果：任何状态下 get-a-quote 页面 = 0 条
+PASS: 4.5-0 守卫：任何状态都没有 get-a-quote
+++ docker ++ tail ++ tr exec php -1
+-d ' \r'php -d 
+disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root post create --post_type=page '--post_title=Get a Quote' --post_name=get-a-quote '--post_content=[packrivo_quote]' --post_status=publish --comment_status=closed --porcelain
++ GQ_ID=5444
+++ date -u +%FT%TZ
++ echo 'get_a_quote_page_id=5444 created=2026-10-29T07:18:03Z by=rehearsal-29v'
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root post get 5444 --fields=ID,post_type,post_name,post_status,post_title --format=csv
+Field,Value
+ID,5444
+post_title,"Get a Quote"
+post_status,publish
+post_name,get-a-quote
+post_type,page
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root post get 5444 --field=post_content
+[packrivo_quote]
++ curl -s -o /dev/null -w 'get-a-quote %{http_code}（此时仍 301，27e 未打）\n' http://nginx/get-a-quote/
+get-a-quote 301（此时仍 301，27e 未打）
++ set +x
+ID=5444 slug=[get-a-quote] body=[[packrivo_quote]] status=[publish]
+PASS: 4.5a slug 正好是 get-a-quote
+PASS: 4.5b 正文正好是 [packrivo_quote]
+PASS: 4.5c 状态是 publish
+PASS: 4.5d ID 已记进 INSTALL-STATE
+本步判据：PASS=5 FAIL=0

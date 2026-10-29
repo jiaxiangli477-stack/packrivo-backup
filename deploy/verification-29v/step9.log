@@ -1,0 +1,125 @@
+
+############### STEP 9 整体回滚 ###############
+
+++ cat /home/web/backups/CURRENT_LAUNCH
++ LAUNCH=packrivo-launch-20261029-0745
++ BACKUP=/home/web/backups/packrivo-launch-20261029-0745
++ echo '回滚目标: /home/web/backups/packrivo-launch-20261029-0745'
+回滚目标: /home/web/backups/packrivo-launch-20261029-0745
++ test -f /home/web/backups/packrivo-launch-20261029-0745/db.sql
++ echo 备份在位
+备份在位
++ hr 'STEP 9.8 删报价页'
++ echo
+
++ echo '############### STEP 9.8 删报价页 ###############'
+############### STEP 9.8 删报价页 ###############
++ echo
+
+++ sed ++ tail -n 's/^get_a_quote_page_id=\([0-9][0-9]*\).*/\1/p' -1
+/home/web/backups/packrivo-launch-20261029-0745/INSTALL-STATE.txt
++ GQ_ID=5444
++ echo '9.8 报价页 ID = 5444'
+9.8 报价页 ID = 5444
++ '[' -n 5444 ']'
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root post delete 5444 --force
+Success: Deleted post 5444.
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root post list --post_type=page --name=get-a-quote --post_status=any,draft,trash --format=count
+0+ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root transient delete --all
+Success: 7 transients deleted from the database.
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root cache flush
+Success: The cache was flushed.
++ cp -a /home/web/backups/packrivo-launch-20261029-0745/mu/packrivo-i18n.php /home/web/html/www.packrivo.com/wordpress/wp-content/mu-plugins/
++ cp -a /home/web/backups/packrivo-launch-20261029-0745/mu/packrivo-site-remediation-20261022.php /home/web/html/www.packrivo.com/wordpress/wp-content/mu-plugins/
++ sha256sum -c /home/web/backups/packrivo-launch-20261029-0745/before-mu.sha256
+/home/web/html/www.packrivo.com/wordpress/wp-content/mu-plugins/packrivo-i18n.php: OK
+/home/web/html/www.packrivo.com/wordpress/wp-content/mu-plugins/packrivo-site-remediation-20261022.php: OK
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root theme activate packrivo-static-bridge-1.2.38
+Success: Switched to 'Packrivo Static Bridge' theme.
++ rm -r /home/web/html/www.packrivo.com/wordpress/wp-content/themes/packrivo-home-v4
++ docker + grep exec php packrivo-home-v4
+php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root theme list --format=csv
+Warning: wp_update_themes(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
++ echo 子主题已移除
+子主题已移除
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root plugin deactivate packrivo-quote
+Plugin 'packrivo-quote' deactivated.
+Success: Deactivated 1 of 1 plugins.
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root plugin delete packrivo-quote
+Deleted 'packrivo-quote' plugin.
+Success: Deleted 1 of 1 plugins.
++ docker + grep exec php packrivo-quote
+php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root plugin list --format=csv
+Warning: wp_update_plugins(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
++ echo 报价插件已移除
+报价插件已移除
++ docker cp /home/web/backups/packrivo-launch-20261029-0745/rollback/rollback-27i.json php:/pkg/rollback/
++ docker cp /home/web/backups/packrivo-launch-20261029-0745/rollback/rollback-27g.json php:/pkg/rollback/
++ hr 'STEP 9.3 回滚前守卫'
++ echo
+
++ echo '############### STEP 9.3 回滚前守卫 ###############'
+############### STEP 9.3 回滚前守卫 ###############
++ echo
+
++ set +x
+PASS: 9.3 /pkg/rollback/rollback-27g.json site 与本轮一致
+PASS: 9.3 /pkg/rollback/rollback-27i.json site 与本轮一致
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root eval-file /pkg/scripts/hubs-27i/import.php rollback-check /pkg http://nginx /pkg/rollback/rollback-27i.json
+hub_pages=8 preflight=PASS
+backup=reused rows=8
+rollback_eligible=7 already_restored=1 writes=0
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root eval-file /pkg/scripts/hubs-27i/import.php rollback /pkg http://nginx /pkg/rollback/rollback-27i.json
+hub_pages=8 preflight=PASS
+backup=reused rows=8
+rollback_updated=7 already_current=1 H1_body_URL_check=PASS
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root eval-file /pkg/scripts/product-buyers-27g/import.php rollback-check /pkg http://nginx /pkg/rollback/rollback-27g.json all134
+input_pages=134 preflight=PASS
+backup=reused rows=134
+rollback_eligible=130 already_restored=4 writes=0
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root eval-file /pkg/scripts/product-buyers-27g/import.php rollback /pkg http://nginx /pkg/rollback/rollback-27g.json all134
+input_pages=134 preflight=PASS
+backup=reused rows=134
+rollback_updated=130 already_current=4 URL_and_body_check=PASS
++ cp -a /home/web/backups/packrivo-launch-20261029-0745/i18n/. /home/web/html/www.packrivo.com/wordpress/wp-content/uploads/packrivo-i18n/
++ set +x
+
+############### STEP 9 判据 ###############
+
++ sha256sum -c /home/web/backups/packrivo-launch-20261029-0745/before-mu.sha256
+/home/web/html/www.packrivo.com/wordpress/wp-content/mu-plugins/packrivo-i18n.php: OK
+/home/web/html/www.packrivo.com/wordpress/wp-content/mu-plugins/packrivo-site-remediation-20261022.php: OK
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root option get stylesheet
+packrivo-static-bridge-1.2.38
++ docker + grep exec php packrivo-quote
+php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root plugin list --format=csv
+Warning: wp_update_plugins(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
++ echo 报价插件不在列表里
+报价插件不在列表里
++ for u in "$SITE/" "$SITE/products/" "$SITE/de/"
++ echo -n 'http://nginx/  title数='
+http://nginx/  title数=+ curl + grep -s http://nginx/-c '<title>'
+
+2
++ for u in "$SITE/" "$SITE/products/" "$SITE/de/"
++ echo -n 'http://nginx/products/  title数='
+http://nginx/products/  title数=+ curl + grep -s http://nginx/products/-c '<title>'
+
+1
++ for u in "$SITE/" "$SITE/products/" "$SITE/de/"
++ echo -n 'http://nginx/de/  title数='
+http://nginx/de/  title数=+ curl + grep -s http://nginx/de/-c '<title>'
+
+2
++ curl + grep -s http://nginx/product-drawer-jewelry-box/-o 
+'<title>[^<]*</title>'
+<title>Custom Drawer Jewelry Boxes with Logo | Packrivo</title>
++ set +x
+PASS: 9a before-mu.sha256 全 OK
+PASS: 9b stylesheet 回到父主题
+PASS: 9c 子主题目录已删
+PASS: 9d 报价插件已移除
+PASS: 9e 首页 200
+PASS: 9f /get-a-quote/ 回到 301
+PASS: 9g 报价页已删（任何状态计数 0）
+本步判据：PASS=9 FAIL=0

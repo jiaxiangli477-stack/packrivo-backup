@@ -1,0 +1,54 @@
+
+############### STEP 8 复测 ###############
+
+++ cat /home/web/backups/CURRENT_LAUNCH
++ BACKUP=/home/web/backups/packrivo-launch-20261029-0745
++ for u in "$SITE/" "$SITE/products/" "$SITE/de/" "$SITE/ar/" "$SITE/product-drawer-jewelry-box/"
++ echo -n 'http://nginx/  title数='
+http://nginx/  title数=+ curl + grep -s http://nginx/-c '<title>'
+
+1
++ for u in "$SITE/" "$SITE/products/" "$SITE/de/" "$SITE/ar/" "$SITE/product-drawer-jewelry-box/"
++ echo -n 'http://nginx/products/  title数='
+http://nginx/products/  title数=+ curl + grep -s http://nginx/products/-c '<title>'
+
+1
++ for u in "$SITE/" "$SITE/products/" "$SITE/de/" "$SITE/ar/" "$SITE/product-drawer-jewelry-box/"
++ echo -n 'http://nginx/de/  title数='
+http://nginx/de/  title数=+ curl + grep -s http://nginx/de/-c '<title>'
+
+1
++ for u in "$SITE/" "$SITE/products/" "$SITE/de/" "$SITE/ar/" "$SITE/product-drawer-jewelry-box/"
++ echo -n 'http://nginx/ar/  title数='
+http://nginx/ar/  title数=+ curl + grep -s -c '<title>'http://nginx/ar/
+
+1
++ for u in "$SITE/" "$SITE/products/" "$SITE/de/" "$SITE/ar/" "$SITE/product-drawer-jewelry-box/"
++ echo -n 'http://nginx/product-drawer-jewelry-box/  title数='
+http://nginx/product-drawer-jewelry-box/  title数=+ curl + grep -s http://nginx/product-drawer-jewelry-box/-c '<title>'
+
+1
++ diff ++ curl /home/web/backups/packrivo-launch-20261029-0745/before-sitemap.xml /dev/fd/63-s http://nginx/wp-sitemap.xml
+
++ echo 'sitemap 未变'
+sitemap 未变
++ diff ++ curl /home/web/backups/packrivo-launch-20261029-0745/before-robots.txt /dev/fd/63-s http://nginx/robots.txt
+
++ echo 'robots 未变'
+robots 未变
++ + curl -s grep -c 'http://nginx/get-a-quote/?style=rigid&qty=500'
+pkq-root
+1
++ curl -s -o /dev/null -w 'inquiry %{http_code}\n' http://nginx/inquiry/
+inquiry 200
++ set +x
+PASS: 8· / 200
+PASS: 8· /products/ 200
+PASS: 8· /de/ 200
+PASS: 8· /ar/ 200
+PASS: 8· /product-drawer-jewelry-box/ 200
+PASS: 8· sitemap 未变
+PASS: 8· robots 未变
+PASS: 8· 报价页渲染 pkq-root
+PASS: 8· /inquiry/ 200
+本步判据：PASS=9 FAIL=0

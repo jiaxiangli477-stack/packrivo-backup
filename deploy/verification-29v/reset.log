@@ -1,0 +1,30 @@
+== 1) 站点地址指回演练站 ==
+http://nginx
+== 2) mu 回到打补丁前 ==
+== 3) 字典回到演练前（pristine-i18n）==
+i18n 文件数: 23
+== 4) 主题与插件回到首装前 ==
+== 5) 删掉报价页（任何状态），让首装前状态与生产一致 ==
+ID,post_status
+5183,publish
+  删除报价页 ID=5183
+Success: Deleted post 5183.
+  剩余 get-a-quote 页面数: 0
+== 6) 拆掉 mariadb-connector-c 与 --skip-ssl 包装（让第 0 步重走两层补救）==
+(1/1) Purging mariadb-connector-c (3.4.6-r0)
+OK: 71.2 MiB in 51 packages
+  认证插件目录文件数: 0
+  /usr/local/bin 里的 mariadb 包装: 0
+== 7) 清掉上一轮遗留的 rollback 依据，重灌干净的包 ==
+== 8) 内容回到上线前（按 slug 写回依据里的旧值）==
+restore_slug=130 missing=0 无正文依据=0
+restore_slug=8 missing=0 无正文依据=8
+== 9) 状态确认 ==
+packrivo-static-bridge-1.2.38
+Warning: wp_update_themes(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
+子主题未安装 ✓
+Warning: wp_update_plugins(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
+报价插件未安装 ✓
+Custom Clear Display Box Sourcing
+get-a-quote 301（期望 301）
+首页 200（期望 200）

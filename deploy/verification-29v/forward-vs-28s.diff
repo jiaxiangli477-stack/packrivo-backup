@@ -1,0 +1,18 @@
+--- /opt/x29v/ref/s-forward-28s.txt
++++ /home/web/rehearsal-29v/s-forward.txt
+@@ -598,7 +598,6 @@
+ 3210,catalog-necklace-box-o1cn01ztvtho1i,"Necklace Box — Storage — Ref. VTHO1I"
+ 3211,catalog-wooden-box,"Wooden Jewelry Boxes — Reference Catalogue"
+ 3212,catalog-wooden-box-o1cn01rnjift1k,"Black Wooden Jewelry Box"
+-3220,get-a-quote,"Get a Quote"
+ 33,inserts,"Packaging Inserts &amp; Cards"
+ 34,product-die-cut-insert,"Custom Die-Cut Box Inserts"
+ 35,product-corrugated-inlay,"Custom Mailer Box Inserts"
+@@ -666,6 +665,7 @@
+ 542,product-full-overlap-seal-end-carton,"Custom Seal End Cartons Wholesale"
+ 543,product-four-corner-pre-glued-carton,"Custom Pre-Glued Boxes Bulk"
+ 544,product-paperboard-roll-end-dust-flap-carton,"Custom Dust Flap Cartons"
++5444,get-a-quote,"Get a Quote"
+ 545,product-pinch-lock-paperboard-tray,"Custom Pinch Lock Trays"
+ 546,product-side-lock-hinged-gift-tray,"Custom Hinged Gift Trays"
+ 547,product-five-panel-hanger-carton,"Custom Hanger Boxes for Retail"

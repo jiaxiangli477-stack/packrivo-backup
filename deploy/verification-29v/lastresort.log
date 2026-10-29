@@ -1,0 +1,144 @@
+############ 29v 最后手段（MySQL）开始 2026-10-29T07:28:22Z ############
+CURRENT_LAUNCH=packrivo-launch-20261029-0711
+起点期望 = eef3fd37a8cbe2a4079c89fb6836d2518a06c6cf2ee4bd8d0f95ac75d729a33a
+基线       = 8971f447510523ed468eedfaa9ceec1ac1d4762465bfd0fb006ae58dad3dd2b4
+=========== 阶段 0 · 起点确认 ===========
+snapshot: /home/web/rehearsal-29v/lsr-s-start.txt
+行数: 847
+整份 sha256: eef3fd37a8cbe2a4079c89fb6836d2518a06c6cf2ee4bd8d0f95ac75d729a33a
+起点快照 sha256 = eef3fd37a8cbe2a4079c89fb6836d2518a06c6cf2ee4bd8d0f95ac75d729a33a
+PASS: 起点快照 = 本轮正向快照
+-- db.sql --
+-rw-r--r--    1 root     root      47374862 Oct 29 07:11 /home/web/backups/packrivo-launch-20261029-0711/db.sql
+6be5f71afacc9ad20dc1b8db4938756a4e2a92bc562f478848890337699544f0  /home/web/backups/packrivo-launch-20261029-0711/db.sql
+db.sql 字节数 = 47374862；CREATE TABLE 行数 = 40
+PASS: db.sql 非空（47374862 B）
+PASS: db.sql 含 CREATE TABLE（40 条）
+=========== 阶段 1 · 造一条上线后新数据（canary）===========
+++ docker ++ tail ++ tr exec php -1
+-d ' \r'php -d 
+disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root post create --post_type=page --post_status=draft --post_title=29v-canary --post_name=29v-canary --porcelain
++ CANARY_ID=5445
++ set +x
+canary post ID = 5445
+PASS: canary 创建（ID=5445）
+报价页（4.5 建的）当前条数：1
+=========== 阶段 2 · 最后手段（包装不在）===========
+导入前 BASE TABLE = 40
++ docker exec php sh -c 'rm -f /usr/local/bin/mariadb-dump /usr/local/bin/mariadb; ls /usr/local/bin | grep -c mariadb || echo "包装已拆除"'
+0
+包装已拆除
++ docker cp /home/web/backups/packrivo-launch-20261029-0711/db.sql php:/tmp/db.sql
++ set +x
+Error: Failed to get current SQL modes. Reason: ERROR 2026 (HY000): TLS/SSL error: self-signed certificate in certificate chain
+
+db import（无包装）退出码 = 1
+表数（导入失败后）= 40
+http://nginx
+PASS: 无包装时 db import 失败（rc=1）—— 导入依赖包装
+PASS: 导入失败没有把库导坏（表数仍 40）
+=========== 阶段 3 · 按 0.1 补救块装上包装 ===========
++ docker exec php sh -c 'cat > /usr/local/bin/mariadb-dump <<EOF
+#!/bin/sh
+exec /usr/bin/mariadb-dump "\$@" --skip-ssl
+EOF
+chmod +x /usr/local/bin/mariadb-dump'
++ docker exec php sh -c 'cat > /usr/local/bin/mariadb <<EOF
+#!/bin/sh
+exec /usr/bin/mariadb "\$@" --skip-ssl
+EOF
+chmod +x /usr/local/bin/mariadb'
++ docker exec php sh -c 'command -v mariadb-dump; command -v mariadb'
+/usr/local/bin/mariadb-dump
+/usr/local/bin/mariadb
++ docker + tail exec php -2php -d 
+disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root db export /tmp/probe.sql --skip-plugins --skip-themes
+Success: Exported to '/tmp/probe.sql'.
++ set +x
+探针导出字节数 = 47230679
+PASS: 导出探针 > 0 字节（47230679）
+=========== 阶段 4 · 原样再执行最后手段（包装在）===========
++ docker cp /home/web/backups/packrivo-launch-20261029-0711/db.sql php:/tmp/db.sql
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root db import /tmp/db.sql
+Success: Imported from '/tmp/db.sql'.
++ RC_WRAP=0
++ set +x
+db import（有包装）退出码 = 0
+PASS: 有包装时 db import 成功（rc=0）
+=========== 阶段 5 · 导入后清理 ===========
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root transient delete --all
+Success: 8 transients deleted from the database.
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root cache flush
+Success: The cache was flushed.
++ set +x
+=========== 阶段 6 · 验收（L-1 … L-6）===========
+L-1 库里 BASE TABLE = 40；db.sql 里 CREATE TABLE = 40
+PASS: L-1 表数 = db.sql 的 CREATE TABLE 数（40）
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root post list --post_type=page,post --post_status=any --name=29v-canary --fields=ID,post_title --format=csv
+ID,post_title
++ set +x
+canary 剩余 = 0（期望 0）；报价页剩余 = 0（期望 0，整库导入顺带把它删了）
+PASS: L-2 canary 被整库导入覆盖（证明会丢上线后新数据）
+PASS: L-2b 报价页已被整库导入删除
+stylesheet=packrivo-static-bridge-1.2.38 template=packrivo-static-bridge-1.2.38
+PASS: L-3 stylesheet/template 都是父主题 1.2.38
+Warning: wp_update_plugins(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
+L-4 激活状态的 packrivo-quote 条数 = 0（期望 0；只看 active，文件还在属正常）
+PASS: L-4 packrivo-quote 未激活
+snapshot: /home/web/rehearsal-29v/lsr-s-after-import.txt
+行数: 846
+整份 sha256: 7b3100febbc425d83e5289c8ac27010f71341cf506ff84a7b53c1b9acc613487
+PASS: L-5 页面标题一节与基线逐行一致（725 行）
++ for u in "/" "/products/" "/de/"
++ curl -s -o /dev/null -w '%{http_code} /\n' http://nginx/
+200 /
++ for u in "/" "/products/" "/de/"
++ curl -s -o /dev/null -w '%{http_code} /products/\n' http://nginx/products/
+200 /products/
++ for u in "/" "/products/" "/de/"
++ curl -s -o /dev/null -w '%{http_code} /de/\n' http://nginx/de/
+200 /de/
++ set +x
+PASS: 首页 200
+PASS: /products/ 200
+PASS: /de/ 200
+=========== 阶段 7 · 文件部分（9.6 / 9.5 / 9.4 / 9.2）===========
++ cp -a /home/web/backups/packrivo-launch-20261029-0711/mu/packrivo-i18n.php /home/web/html/www.packrivo.com/wordpress/wp-content/mu-plugins/
++ cp -a /home/web/backups/packrivo-launch-20261029-0711/mu/packrivo-site-remediation-20261022.php /home/web/html/www.packrivo.com/wordpress/wp-content/mu-plugins/
++ sha256sum -c /home/web/backups/packrivo-launch-20261029-0711/before-mu.sha256
+/home/web/html/www.packrivo.com/wordpress/wp-content/mu-plugins/packrivo-i18n.php: OK
+/home/web/html/www.packrivo.com/wordpress/wp-content/mu-plugins/packrivo-site-remediation-20261022.php: OK
++ set +x
+PASS: 9.6 mu 恢复且 before-mu.sha256 全 OK
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root theme activate packrivo-static-bridge-1.2.38
+Warning: The 'Packrivo Static Bridge' theme is already active.
++ rm -r /home/web/html/www.packrivo.com/wordpress/wp-content/themes/packrivo-home-v4
++ docker + grep exec packrivo-home-v4
+php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root theme list --format=csv
+Warning: wp_update_themes(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
++ echo 子主题已移除
+子主题已移除
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root plugin deactivate packrivo-quote
+Success: Plugin already deactivated.
+Warning: Plugin 'packrivo-quote' isn't active.
++ docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root plugin delete packrivo-quote
+Deleted 'packrivo-quote' plugin.
+Success: Deleted 1 of 1 plugins.
++ docker + grep exec php packrivo-quote
+php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root plugin list --format=csv
+Warning: wp_update_plugins(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
++ echo 报价插件已移除
+报价插件已移除
++ cp -a /home/web/backups/packrivo-launch-20261029-0711/i18n/. /home/web/html/www.packrivo.com/wordpress/wp-content/uploads/packrivo-i18n/
++ set +x
+-- L-6：/get-a-quote/ 必须在 9.6（mu 恢复）之后判 --
+/get-a-quote/ = 301（期望 301）
+PASS: L-6 /get-a-quote/ 301（27e 已回滚，页面已删）
+=========== 阶段 8 · 最终快照 vs 基线 ===========
+snapshot: /home/web/rehearsal-29v/lsr-s-final.txt
+行数: 844
+整份 sha256: 8971f447510523ed468eedfaa9ceec1ac1d4762465bfd0fb006ae58dad3dd2b4
+最终 sha256 = 8971f447510523ed468eedfaa9ceec1ac1d4762465bfd0fb006ae58dad3dd2b4
+基线   sha256 = 8971f447510523ed468eedfaa9ceec1ac1d4762465bfd0fb006ae58dad3dd2b4
+PASS: 最终快照 = 基线（逐字节一致）
+############ 汇总：PASS=20 FAIL=0 ############

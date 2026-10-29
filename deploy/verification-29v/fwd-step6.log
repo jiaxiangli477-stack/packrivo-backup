@@ -1,0 +1,70 @@
+
+############### STEP 6 两个 mu 补丁 ###############
+
++ cd /home/web/html/www.packrivo.com/wordpress/wp-content/mu-plugins
+++ sha256sum ++ cut packrivo-site-remediation-20261022.php
+'-d ' -f1
++ H27E_PRE=ac0a27538c428f2175e9596bd21f27be47069aaf57cbeabf8892ae456e2f471d
++ echo '打前 27e = ac0a27538c428f2175e9596bd21f27be47069aaf57cbeabf8892ae456e2f471d'
+打前 27e = ac0a27538c428f2175e9596bd21f27be47069aaf57cbeabf8892ae456e2f471d
++ git apply -p1 --check /home/web/packrivo-packages/27e-quote-redirect.patch
++ echo CHECK-OK-A
+CHECK-OK-A
++ CHECK_OK=1
++ git apply -p1 /home/web/packrivo-packages/27e-quote-redirect.patch
++ docker exec php php -l /var/www/html/www.packrivo.com/wordpress/wp-content/mu-plugins/packrivo-site-remediation-20261022.php
+No syntax errors detected in /var/www/html/www.packrivo.com/wordpress/wp-content/mu-plugins/packrivo-site-remediation-20261022.php
+++ sha256sum ++ cut packrivo-site-remediation-20261022.php
+'-d ' -f1
++ H27E_POST=887787ab3240091d1c6328e444d70cbe7585ca79c00e162857106c3d94e78189
++ echo '打后 27e = 887787ab3240091d1c6328e444d70cbe7585ca79c00e162857106c3d94e78189'
+打后 27e = 887787ab3240091d1c6328e444d70cbe7585ca79c00e162857106c3d94e78189
++ cd /home/web/html/www.packrivo.com/wordpress
+++ ++ sha256sum wp-content/mu-plugins/packrivo-i18n.phpcut 
+'-d ' -f1
++ HI18_PRE=3bc325503b16a5de8cea7600801512653d4ab94db94739ac773e3d4a2741bb5e
++ echo '打前 i18n = 3bc325503b16a5de8cea7600801512653d4ab94db94739ac773e3d4a2741bb5e'
+打前 i18n = 3bc325503b16a5de8cea7600801512653d4ab94db94739ac773e3d4a2741bb5e
++ git apply -p1 --check /home/web/packrivo-packages/patches-28m/packrivo-i18n-404-viewport.patch
++ echo CHECK-OK-B
+CHECK-OK-B
++ CHECK_OK=2
++ git apply -p1 /home/web/packrivo-packages/patches-28m/packrivo-i18n-404-viewport.patch
++ docker exec php php -l /var/www/html/www.packrivo.com/wordpress/wp-content/mu-plugins/packrivo-i18n.php
+No syntax errors detected in /var/www/html/www.packrivo.com/wordpress/wp-content/mu-plugins/packrivo-i18n.php
+++ ++ cut sha256sum wp-content/mu-plugins/packrivo-i18n.php'-d ' -f1
+
++ HI18_POST=77e5728319a37645d5d10bacc1e91aea8bf9ea1dd1ca75a82c5290584caebe30
++ echo '打后 i18n = 77e5728319a37645d5d10bacc1e91aea8bf9ea1dd1ca75a82c5290584caebe30'
+打后 i18n = 77e5728319a37645d5d10bacc1e91aea8bf9ea1dd1ca75a82c5290584caebe30
++ set +x
+
+############### STEP 6 通过判据 ###############
+
++ curl -s -o /dev/null -w 'get-a-quote %{http_code}\n' 'http://nginx/get-a-quote/?cb=1793258515'
+get-a-quote 200
++ curl -s -o /dev/null -w 'de/get-a-quote %{http_code}\n' 'http://nginx/de/get-a-quote/?cb=1793258515'
+de/get-a-quote 200
++ curl + -s 'http://nginx/get-a-quote/?cb=1793258515'grep -c 
+pkq-root
+1
++ + grep curl -s -c pkq-root'http://nginx/de/get-a-quote/?cb=1793258515'
+
+1
++ curl + grep -s 'http://nginx/ar/2026/10/26/jewelry-pouch-box-customer-handoff/?cb=1793258515'-c 
+'name="viewport"'
+1
++ set +x
+PASS: 6a 27e 打前哈希 = 基线 ac0a2753…
+PASS: 6b 27e 打后哈希 ≠ 基线（已落盘）
+PASS: 6b2 i18n 打前哈希 = 备份里记的值（3bc32550）
+PASS: 6b3 i18n 打后哈希 ≠ 打前（已落盘）
+PASS: 6c 两个 --check 都 CHECK-OK
+PASS: 6d /get-a-quote/ = 200
+PASS: 6e /de/get-a-quote/ = 200
+PASS: 6f 报价页含 pkq-root
+PASS: 6g de 报价页含 pkq-root
+PASS: 6h ar 404 页有 viewport
+PASS: 6i mu 语法 OK
+PASS: 6j 27e 语法 OK
+本步判据：PASS=12 FAIL=0
