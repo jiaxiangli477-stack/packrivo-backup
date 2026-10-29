@@ -5,7 +5,7 @@
 >
 > **28q 改版要点**（相对 28o）：生产站跑在 Docker 里，本手册所有命令都标了「宿主机 / 容器内」；`$BACKUP` 第 1 步定一次、写进 `CURRENT_LAUNCH`；备份路径与回滚路径一一对应；第 4、5 步按**首次安装**写（生产上子主题与报价插件都还不存在）；数据库备份落到 `$BACKUP/db.sql`。
 
-- 目标站点：`https://www.packrivo.com`（**WordPress 7.1.3** + 父主题 `packrivo-static-bridge-1.2.38` + 子主题 `packrivo-home-v4` + 报价插件 `packrivo-quote` + mu-plugins `packrivo-i18n.php`、`packrivo-site-remediation-20261022.php`）
+- 目标站点：`https://www.packrivo.com`（**WordPress 7.1.4** + 父主题 `packrivo-static-bridge-1.2.38` + 子主题 `packrivo-home-v4` + 报价插件 `packrivo-quote` + mu-plugins `packrivo-i18n.php`、`packrivo-site-remediation-20261022.php`）
 - 上线前生产现状（2026-10-28 实测）：活跃主题是父主题本身，**子主题与报价插件都未安装**，`/get-a-quote/` 是 mu 里那条老别名 301 到 `/inquiry/`
 - 本轮上线内容：134 个产品页新标题/描述（27g）、8 个主页面（27i）、11 语种字典与路径表（27g/27i/28k/28m/28n/28o）、报价插件与子主题新包、两个 mu 补丁
 - 预计总耗时：**1.5–2 小时**（含复测），建议在**访问量低**的时段做（北京时间 02:00–05:00 或周末）
@@ -50,7 +50,7 @@ WPCLI="docker exec php php -d disable_functions= /usr/local/bin/wp --path=$WPC -
 ```bash
 # 容器与版本
 docker ps --format '{{.Names}}\t{{.Image}}' | grep -E '^(php|mysql|nginx|redis)\b'
-$WPCLI core version                         # 期望 7.1.3
+$WPCLI core version                         # 期望 7.1.4（生产开着 WP 小版本自动更新，见下方说明）
 docker exec php php -v | head -1            # 期望 PHP 8.3.x
 $WPCLI option get siteurl                   # 期望 https://www.packrivo.com
 $WPCLI option get template                  # 期望 packrivo-static-bridge-1.2.38
@@ -75,14 +75,20 @@ docker exec php rm -f /tmp/probe.sql
 mkdir -p "$PKG"
 ```
 
-**通过判据**：`docker ps` 里的 php/mysql/nginx 都在；`core version` = `7.1.3`；PHP = `8.3.x`；`template` = `packrivo-static-bridge-1.2.38`；子主题与报价插件都「未安装」；`mysqldump --version` 有输出；**导出探针的字节数 > 0**。
+**通过判据**：`docker ps` 里的 php/mysql/nginx 都在；`core version` = `7.1.4`；PHP = `8.3.x`；`template` = `packrivo-static-bridge-1.2.38`；子主题与报价插件都「未安装」；`mysqldump --version` 有输出；**导出探针的字节数 > 0**。
 若子主题或报价插件**已经存在**，说明不是首次安装，**停下**，本手册的 4/5 步与 9 步不适用。
+
+> **生产开着 WordPress 小版本自动更新，执行当天先核版本。** 2026-10-28 那次上线就是在窗口前被 WP 自动更新从 7.1.3 升到 7.1.4（增量包，改动 8 个 core 文件、`$wp_db_version` 保持 61833）。如果执行当天 `core version` 又不是本节写的值，**第 0 步判 FAIL，不要临场改判据**：先按 28t 的做法在本地用官方包对齐同一版本、完整重跑一轮演练，改完本节期望值再上生产。
 
 > **导出探针每轮都要重跑，不能靠上一轮留下的包装。** 下面的包装装在容器 `/usr/local/bin` 里，容器一重建就没了；28s 演练就是先把包装拆掉再跑，确认第 0 步真的会走「探针失败 → 按补救块装包装 → 重探成功」这条路。探针字节数为 0 或报 TLS/SSL error 就当没通过，别往下做第 1 步。
 >
 > **判据只看补救后的结果。** 包装本来不在时，第一次探针失败是**预期现象，不算本步 FAIL**；按补救块装上包装、重探一次到字节数 > 0 才算通过。装了包装仍然 0 字节/报 TLS 错误，才是真 FAIL，停下别做第 1 步。
 
-**若导出探针报 `TLS/SSL error: SSL is required, but the server does not support it`**（`mysql` 侧没开 TLS + 客户端是 mariadb 11.x 时的典型症状），做一次容器内的客户端包装再重探。要点：`--skip-ssl` 必须**追加在参数末尾**，因为 wp-cli 传的 `--no-defaults` 必须保持在第一位，放前面会被拒。
+**若导出探针报下列两种 `TLS/SSL error` 之一，做一次容器内的客户端包装再重探：**
+> - `TLS/SSL error: SSL is required, but the server does not support it` —— `mysql` 侧没开 TLS、客户端是 mariadb 11.x 时的典型症状（演练环境就是这种；28q 实测）。
+> - `TLS/SSL error: self-signed certificate in certificate chain` —— `mysql` 侧开了 TLS 但证书是自签/链不全，mariadb 11.x 客户端拒绝（生产 2026-10-28 实测这种；28t 起把两种都写进本节，负责人已放行）。
+>
+> 两种都按下面的包装块处理，判据一样：装上包装后探针必须导出 **> 0 字节**；仍然导不出（例如服务端强制要求 TLS、`--skip-ssl` 被拒）就**停下报告**，不要往下做第 1 步。要点：`--skip-ssl` 必须**追加在参数末尾**，因为 wp-cli 传的 `--no-defaults` 必须保持在第一位，放前面会被拒。
 
 ```bash
 docker exec php sh -c 'cat > /usr/local/bin/mariadb-dump <<EOF
@@ -655,7 +661,7 @@ cp -a "$BACKUP/i18n/." "$I18N/"
 
 ## 附录 C · 本地演练（28q 正反向 + 28r 最后手段，均已跑通）
 
-本手册在 2026-10-28 于本地按「生产结构」完整演练过：WP **7.1.3** + PHP **8.3.36**、`php` / `mysql` / `nginx` 三个容器、宿主机目录 `/home/web/...`、子主题与报价插件**未安装**的首装前状态，内容也摆回上线前（27g/27i 的旧标题、旧正文）。
+本手册在 2026-10-28 于本地按「生产结构」完整演练过：WP **7.1.4**（28t 起；7.1.3 时代跑过 28q/28r/28s 三轮）+ PHP **8.3.36**、`php` / `mysql` / `nginx` 三个容器、宿主机目录 `/home/web/...`、子主题与报价插件**未安装**的首装前状态，内容也摆回上线前（27g/27i 的旧标题、旧正文）。
 
 **判据以行为准，不看 exit 码。** 28q 当时记的「9 个步骤块全部 exit=0」现在已经不算证据：`rehearsal.sh` 每个 step 结尾都是 `set +x`，脚本恒返回 0。28r 起改成——每一步的判据打印 `PASS:` / `FAIL:`，`step_end` 统计本步 `PASS=n FAIL=m`，有 FAIL 就 `exit 1`（`bash rehearsal.sh selftest` 可自检这套机制）。
 
@@ -666,6 +672,7 @@ cp -a "$BACKUP/i18n/." "$I18N/"
 | 再正向（28q） | 第 1–8 步 | 站点快照与第一次正向**逐字节一致**（`4247693f…`），说明每步可重复执行 |
 | **最后手段（28r）** | 第 9 步末尾的整库导入 + 9.6/9.5/9.4/9.2 文件部分 | 原始一轮 `PASS=16 FAIL=2 EXIT=1`（L-4/L-6 判据写法与顺序都错了，见该节注记），按改写的判据复核 `PASS=11 FAIL=0 EXIT=0`；整站快照回到基线 `4972cd81…`（逐字节一致） |
 | **并入三个守卫后重跑（28s）** | 第 0–8 步正向 + 第 9 步回滚 | 见 `DSH-RESULT-2026-10-28s.md`：每步 `PASS=n FAIL=0` 且 `EXIT=0`；复位快照 `4972cd81…`、正向快照 `4247693f…`、回滚后回到 `4972cd81…`；反向自检确认 3.0 守卫拦得住他站残留 JSON |
+| **本地对齐 WP 7.1.4 后重跑（28t）** | 第 0–8 步正向 + 第 9 步回滚 + 3.0 反向自检 | 见 `DSH-RESULT-2026-10-28t.md`：core 升级到 7.1.4（官方包 `a147146c…`）后每步 `PASS=n FAIL=0` 且 `EXIT=0`；复位快照作为本轮新基线，回滚后回到该基线；正向快照与 28s 正向 `4247693f…` 的 diff 只来自版本号，页面标题没有变化。RUNBOOK 提交号见结果文档（下一次生产授权锁定它） |
 
 28q 补跑过第 0.1 步新加的**数据库导出探针**：拆掉客户端包装时探针报 `TLS/SSL error: SSL is required`、导出 0 字节；按本手册打包装后导出 36,381,501 B、40 张表。
 
