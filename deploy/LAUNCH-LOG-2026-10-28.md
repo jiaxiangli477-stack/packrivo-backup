@@ -1403,3 +1403,71 @@ estore_slug=8 missing=0、static-bridge 1.2.38。
 - **✗ 两项外部前置仍缺：生产第 1 步维持停止（FAIL）；第 2–8 步与 SSH 生产继续禁止；明确授权未出现前绝不执行第 2–8 步。**
 - 操作边界：本意图全程只读（git status/log/rev-parse、文件读取、目录列举）；未执行任何脚本、未启动/停止/接入容器、未修改/删除他人文件、未 SSH 生产、未重跑生产第 1 步、未读取或打印任何密码/密钥/token；仓库变更仅本节日志与 `dsh-out/AUTHZ-REQUEST-2026-10-28-prod-launch.md` 两个文件，其余在途改动与未跟踪文件零触碰。
 
+
+---
+
+## 36. 生产上线 28t（授权后首轮）：第 0 步停在 0b —— 生产 core 已是 7.1.4，手册锁定 7.1.3
+
+**授权**：负责人 2026-10-28 18:00 PDT 授权执行 `deploy/RUNBOOK-launch.md` 第 0–8 步（含第 7 步 Cloudflare 清缓存与第 8 步上线后复测），时间窗 4 小时，解除 28s「本轮不碰生产」限制；RUNBOOK 版本锁定 `ba97e04`，blob `a7cc2f29`（开工前校验：`git hash-object deploy/RUNBOOK-launch.md` = `a7cc2f29470ec8240b5581fcbab25869fed625b7`，与 `git rev-parse ba97e04:deploy/RUNBOOK-launch.md` 相同）。
+**执行人**：dsh，单线程。**开工前停掉并行工位**：`artex-team.ps1 pause -Task 55` → `status=paused`（LAUNCH-LOG 门禁检查链/资产侦察链）；`#56` 原本即 paused（`pause` 返回 409 already-paused）。
+**服务器**：netcup `v2202609415437518901`，本机 PDT 18:00 / 服务器 CET 02:04 / UTC 01:04。
+**命令落地方式**：按授权规则 3，命令块先存成本地文件 → `scp` 到 `/home/web/prod-28t/` → 宿主机上 `bash 文件` 执行，不逐行粘贴交互式会话。
+
+### 36.1 第 0 步（0.1 上线前检查，只读）逐条判据
+
+| 判据 | 实测 | 结果 |
+|---|---|---|
+| 0a php / mysql / nginx 容器在跑 | 三个都在（redis 也在） | PASS ×3 |
+| **0b `core version` = 7.1.3** | **`7.1.4`** | **FAIL** |
+| 0c PHP = 8.3.x | `PHP 8.3.31 (cli)` | PASS |
+| 0d `siteurl` = `https://www.packrivo.com` | 同 | PASS |
+| 0e `template` = `packrivo-static-bridge-1.2.38` | 同 | PASS |
+| 0f `stylesheet` 与 `template` 相同 | 同（子主题未装） | PASS |
+| 0g 子主题目录不存在 | `wp-content/themes/packrivo-home-v4` 不存在 | PASS |
+| 0h 报价插件目录不存在 | `wp-content/plugins/packrivo-quote` 不存在 | PASS |
+| 0i 父主题 active | `packrivo-static-bridge-1.2.38,active` | PASS |
+| 0j `mysqldump --version` 有输出 | `mysqldump from 11.4.13-MariaDB, client 10.19`（`apk add mariadb-client` 装进容器，`/usr/bin/mysqldump -> mariadb-dump`） | PASS |
+| 0k 导出探针 > 0 字节 | 报 `mariadb-dump: Got error: 2026: "TLS/SSL error: self-signed certificate in certificate chain"`，探针 **0 字节** | 见 36.3 |
+| 0l `/get-a-quote/` = 301 | `301`，Location `https://www.packrivo.com/inquiry/` | PASS |
+| 0m `/inquiry/` = 200 | `200`（另 `/`、`/products/`、`/de/` 均 200） | PASS |
+
+**第 0 步结论：0b FAIL → 按授权规则 2/4 停止，未进入第 1 步。**
+
+### 36.2 0b FAIL 的证据链（生产 core 在 2026-10-28 13:00 PDT 被更新过）
+
+```
+$WHM/wp-includes/version.php   : $wp_version = '7.1.4';   $wp_db_version = 61833;
+stat version.php               : mtime=2026-10-28 19:00:43 +0100   size=1103
+stat wp-admin/about.php        : mtime=2026-10-28 19:00:43 +0100
+近 2 天被改过的 core 文件（wp-admin/wp-includes 顶层）：8 个
+  wp-admin/user-edit.php  wp-admin/users.php  wp-admin/about.php
+  wp-includes/version.php  wp-includes/class-wp-block-parser.php
+  wp-includes/kses.php  wp-includes/class-wp-customize-manager.php
+  wp-includes/admin-bar.php
+```
+
+- 这 8 个文件是 WordPress 一次正式安全/维护更新的典型文件集合（version.php + about.php + kses.php + block-parser + customize-manager + admin-bar + users/user-edit），**不像手工改版本号**。
+- `wp core verify-checksums` 报 `File doesn't verify against checksum: wp-config-sample.php` → `Error: WordPress installation doesn't verify against checksums.`（只有 wp-config-sample.php 一条不符，其余未报；该文件本来就可能被站点改过，不足以下结论）。
+- 时间线：上一次上线尝试是 2026-10-28 15:25–16:35 UTC（08:25–09:35 PDT），当时 `core version` 记录为 **7.1.3**（本文件 §1/§2 的实测行、§35 索引行均为 7.1.3）；`version.php` 的 mtime 是 **19:00 +0100 = 18:00 UTC = 11:00 PDT**，在上一次尝试之后、本次尝试之前。
+- 全仓库检索 `7.1.4` **零命中**：RUNBOOK、演练环境（28q/28r/28s 基线 `4972cd81…`）、任务单写的都是 7.1.3。也就是说**生产已不在本次授权的基线版本上**，而 RUNBOOK 是版本锁定、不许临场改的。
+
+### 36.3 导出探针的报错与演练不同（需要负责人确认走哪条）
+
+- 演练（28q/28r/28s）：`TLS/SSL error: SSL is required, but the server does not support it`（服务端没开 TLS）。
+- 生产（本次）：`TLS/SSL error: self-signed certificate in certificate chain`（服务端开了 TLS，但证书是自签/链不全，客户端 `mariadb 11.4.13` 拒绝）。
+- 两者都是 **2026 号 TLS/SSL 错误、探针 0 字节**，RUNBOOK 0.1 的补救块（`--skip-ssl` 追加在参数末尾的容器内包装）按文字仍然适用；但**生产侧没有验证过这条补救在生产上是否真能导出**（演练环境不是自签证书场景）。本次因 0b 已 FAIL 停止，**没有装包装、没有重探**。
+
+### 36.4 环境其它现状（只读，未改动）
+
+- `/home/web/backups/` 里已有 `packrivo-launch-20261028-1629`、`packrivo-launch-20261028-1648`（上一次尝试留下的，**未动**）；`CURRENT_LAUNCH` **不存在** → 说明上一次第 1 步没有完成。
+- `/home/web/packrivo-packages/` 为空 → 0.2 上传还没做。
+- 容器内 `/usr/local/bin` 没有 mariadb 包装（本次 `apk add` 只装了 client）。
+
+### 36.5 停止点与待批事项
+
+- **停止在第 0 步 0b**，第 1–8 步一律未执行；生产零写入（除容器内 `apk add mariadb-client` 这条手册 0.1 原文自带的依赖安装，以及 `/home/web/prod-28t/` 下本次的脚本与日志）。
+- 需要负责人就「生产 core = 7.1.4，手册锁定 7.1.3」给出决定，三条路任选：
+  1. **改判据**：授权把 RUNBOOK 0.1 的 `core version` 期望改为 `7.1.4`（并注明演练基线是 7.1.3，与生产不一致），改完重新授权再从第 0 步起跑；
+  2. **回退 core**：先把生产 core 退回 7.1.3 的正式文件集（需另给授权与 7.1.3 包来源；退回后 `wp core update-db` 是否可逆需评估）；
+  3. **暂停上线**：先查清 2026-10-28 11:00 PDT 这次 core 更新是谁做的、有没有跑过 `update-db`（`$wp_db_version = 61833`），再决定基线。
+- 另需确认：第 0.1 探针在生产报的是自签证书链错误，走 `--skip-ssl` 包装是否算手册授权范围内（我倾向算，因为手册原文写的是「报 TLS/SSL error」）。
