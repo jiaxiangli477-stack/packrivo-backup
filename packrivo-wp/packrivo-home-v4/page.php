@@ -80,7 +80,9 @@ while (have_posts()) :
     ?>
     <main id="main" class="pk-main">
         <?php if ($native) : ?>
-            <?php echo $content; // already escaped by the editor pipeline ?>
+            <?php // 29x：原生页面内容限宽——补一层与页头 .pk-wrap 同口径的容器（max-width 一致、左右内边距一致）。
+            // 本来设计成通栏的区块走 CSS 白名单（.pr-remediation-hero 等）单独放开，其余都收进限宽。 ?>
+            <div class="pk-wrap pk-native-wrap"><?php echo $content; // already escaped by the editor pipeline ?></div>
         <?php else : ?>
             <div class="pk-wrap" style="padding:56px 0 72px">
                 <?php // Must run the content filters, otherwise shortcodes such as [packrivo_quote] stay literal. ?>

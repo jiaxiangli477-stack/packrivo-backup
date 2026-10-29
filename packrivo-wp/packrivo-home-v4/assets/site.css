@@ -893,3 +893,100 @@ body .pr-sticky .pr-sticky-main:hover {
    让这一行直接允许换行：与语种无关、与宽度无关，也不是把溢出藏起来。≤767 仍走父主题的 block 堆叠。 */
 .footer-bottom { flex-wrap: wrap; row-gap: 10px; }
 .footer-bottom > * { min-width: 0; }
+
+/* ---------- 29x journal: horizontal case cards ---------- */
+/* 单列纵向排列，卡片间距 28px。白底、细边框、大圆角、内边距 32px。 */
+.pk-case-list { display: flex; flex-direction: column; gap: 28px; }
+
+.pk-case-card {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 32px;
+  background: var(--pk-paper);
+  border: 1px solid var(--pk-line);
+  border-radius: 16px;
+  padding: 32px;
+  min-width: 0;
+}
+.pk-case-card:hover { border-color: rgba(12, 20, 17, 0.35); }
+
+/* 封面：约占卡片宽度 40%，比例 16:10，圆角。标签叠在封面左下角。 */
+.pk-case-cover {
+  position: relative;
+  display: block;
+  flex: 0 0 40%;
+  max-width: 40%;
+  aspect-ratio: 16 / 10;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #eee;
+}
+.pk-case-cover img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.pk-case-tag {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  max-width: calc(100% - 24px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background: rgba(253, 252, 248, 0.92);
+  color: var(--pk-ink);
+  border-radius: 4px;
+  padding: 6px 10px;
+  font-family: var(--pk-font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+}
+
+.pk-case-body { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
+
+.pk-case-cat {
+  margin: 0;
+  font-family: var(--pk-font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--pk-moss);
+}
+
+.pk-case-title { margin: 0; font-family: var(--pk-font-display); font-weight: 700; font-size: clamp(1.25rem, 2.2vw, 1.6rem); line-height: 1.2; letter-spacing: -0.02em; }
+.pk-case-title a { color: inherit; text-decoration: none; }
+.pk-case-title a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+.pk-case-excerpt {
+  margin: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  color: var(--pk-slate);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.pk-case-meta { margin: 0; color: var(--pk-slate); font-size: 11px; }
+
+/* 手机宽度：封面在上、文字在下。 */
+@media (max-width: 767px) {
+  .pk-case-card { flex-direction: column; gap: 20px; padding: 24px; }
+  .pk-case-cover { flex: 0 0 auto; max-width: none; width: 100%; }
+}
+
+/* ---------- 29x: native pages width limit ---------- */
+/* page.php 给原生页面套了 .pk-wrap（max-width 1180 / 两侧 24px），
+   与页头一致，面包屑和正文不再贴住屏幕边缘。 */
+.pk-native-wrap { position: relative; min-height: 60vh; }
+
+/* 白名单：本来设计成通栏的区块单独放开（整段铺满视口，不算溢出）。
+   .pr-remediation-hero（首页 hero）与 .pkpw-hero 全站只在两页出现。 */
+.pk-native-wrap .pr-remediation-hero,
+.pk-native-wrap .pkpw-hero {
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}

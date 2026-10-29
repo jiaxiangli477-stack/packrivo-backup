@@ -1,0 +1,2399 @@
+[
+ {
+  "ID": 90,
+  "title": "Jewelry Box Dimensions and Supplier Size References",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 70,
+  "allScores": {
+   "materials-print": 12,
+   "supplier-briefs": 22,
+   "samples-approval": 11,
+   "structures-fit": 70,
+   "shipping-rules": 0
+  },
+  "evidence": "dimension(11) size(11) mm(8)",
+  "runnerUp": "supplier-briefs",
+  "runnerUpScore": 22
+ },
+ {
+  "ID": 91,
+  "title": "Folding Gift Box Specifications for Structure and Delivery",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 56,
+  "allScores": {
+   "materials-print": 16,
+   "supplier-briefs": 14,
+   "samples-approval": 10,
+   "structures-fit": 56,
+   "shipping-rules": 20
+  },
+  "evidence": "structure(8) insert(8) closure(8)",
+  "runnerUp": "shipping-rules",
+  "runnerUpScore": 20
+ },
+ {
+  "ID": 92,
+  "title": "Mailer Box Protection Starts With the Complete Packed System",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 44,
+  "allScores": {
+   "materials-print": 9,
+   "supplier-briefs": 8,
+   "samples-approval": 7,
+   "structures-fit": 44,
+   "shipping-rules": 15
+  },
+  "evidence": "mailer(11) fit(7) closure(6)",
+  "runnerUp": "shipping-rules",
+  "runnerUpScore": 15
+ },
+ {
+  "ID": 93,
+  "title": "Foil, Embossing and Spot UV for a Packaging Finish Choice",
+  "status": "publish",
+  "category": "materials-print",
+  "score": 73,
+  "allScores": {
+   "materials-print": 73,
+   "supplier-briefs": 7,
+   "samples-approval": 16,
+   "structures-fit": 17,
+   "shipping-rules": 1
+  },
+  "evidence": "foil(11) finish(11) emboss(10)",
+  "runnerUp": "structures-fit",
+  "runnerUpScore": 17
+ },
+ {
+  "ID": 94,
+  "title": "A Custom Packaging Supplier Brief That Gets Specific Replies",
+  "status": "publish",
+  "category": "supplier-briefs",
+  "score": 32,
+  "allScores": {
+   "materials-print": 12,
+   "supplier-briefs": 32,
+   "samples-approval": 6,
+   "structures-fit": 30,
+   "shipping-rules": 16
+  },
+  "evidence": "supplier(11) brief(11) price(3)",
+  "runnerUp": "structures-fit",
+  "runnerUpScore": 30
+ },
+ {
+  "ID": 123,
+  "title": "A Packaging Sample Inspection Checklist With Clear Decisions",
+  "status": "publish",
+  "category": "samples-approval",
+  "score": 22,
+  "allScores": {
+   "materials-print": 12,
+   "supplier-briefs": 6,
+   "samples-approval": 22,
+   "structures-fit": 30,
+   "shipping-rules": 0
+  },
+  "evidence": "manual review: 样品检验清单＝验收环节",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 22
+ },
+ {
+  "ID": 124,
+  "title": "Turn AI Packaging Designs Into a Supplier-Ready Brief",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 31,
+  "allScores": {
+   "materials-print": 22,
+   "supplier-briefs": 19,
+   "samples-approval": 14,
+   "structures-fit": 31,
+   "shipping-rules": 5
+  },
+  "evidence": "dimension(8) drawer(5) size(3)",
+  "runnerUp": "materials-print",
+  "runnerUpScore": 22
+ },
+ {
+  "ID": 160,
+  "title": "Packaging Print Finish Specifications for a Clear Handoff",
+  "status": "publish",
+  "category": "materials-print",
+  "score": 42,
+  "allScores": {
+   "materials-print": 42,
+   "supplier-briefs": 7,
+   "samples-approval": 20,
+   "structures-fit": 17,
+   "shipping-rules": 2
+  },
+  "evidence": "print(11) finish(11) material(5)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 20
+ },
+ {
+  "ID": 233,
+  "title": "Custom Packaging Quote Comparison by Scope, Units and Delivery",
+  "status": "publish",
+  "category": "supplier-briefs",
+  "score": 41,
+  "allScores": {
+   "materials-print": 10,
+   "supplier-briefs": 41,
+   "samples-approval": 5,
+   "structures-fit": 33,
+   "shipping-rules": 9
+  },
+  "evidence": "quote(9) supplier(8) price(8)",
+  "runnerUp": "structures-fit",
+  "runnerUpScore": 33
+ },
+ {
+  "ID": 234,
+  "title": "Jewelry Box Types Compared by Opening, Fit and Removal",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 62,
+  "allScores": {
+   "materials-print": 8,
+   "supplier-briefs": 4,
+   "samples-approval": 9,
+   "structures-fit": 62,
+   "shipping-rules": 2
+  },
+  "evidence": "fit(9) lid(8) base(7)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 9
+ },
+ {
+  "ID": 235,
+  "title": "Custom Jewelry Pouch Specifications for Supplier Briefs",
+  "status": "publish",
+  "category": "supplier-briefs",
+  "score": 17,
+  "allScores": {
+   "materials-print": 28,
+   "supplier-briefs": 17,
+   "samples-approval": 10,
+   "structures-fit": 27,
+   "shipping-rules": 2
+  },
+  "evidence": "manual review: 标题就是 supplier briefs，正文是给供应商的规格单",
+  "runnerUp": "structures-fit",
+  "runnerUpScore": 27
+ },
+ {
+  "ID": 236,
+  "title": "Candle Box Inserts: Brief the Box and Outer Pack",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 57,
+  "allScores": {
+   "materials-print": 17,
+   "supplier-briefs": 11,
+   "samples-approval": 10,
+   "structures-fit": 57,
+   "shipping-rules": 21
+  },
+  "evidence": "insert(11) fit(8) lid(8)",
+  "runnerUp": "shipping-rules",
+  "runnerUpScore": 21
+ },
+ {
+  "ID": 237,
+  "title": "Custom Gift Bags and Tissue Paper: Specification Checklist",
+  "status": "publish",
+  "category": "materials-print",
+  "score": 29,
+  "allScores": {
+   "materials-print": 29,
+   "supplier-briefs": 21,
+   "samples-approval": 11,
+   "structures-fit": 13,
+   "shipping-rules": 2
+  },
+  "evidence": "paper(11) print(8) material(3)",
+  "runnerUp": "supplier-briefs",
+  "runnerUpScore": 21
+ },
+ {
+  "ID": 238,
+  "title": "Mailer Box With Insert: Dimensions and Fit Brief",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 68,
+  "allScores": {
+   "materials-print": 11,
+   "supplier-briefs": 16,
+   "samples-approval": 10,
+   "structures-fit": 68,
+   "shipping-rules": 13
+  },
+  "evidence": "fit(11) insert(11) mailer(11)",
+  "runnerUp": "supplier-briefs",
+  "runnerUpScore": 16
+ },
+ {
+  "ID": 239,
+  "title": "Roll Labels vs Sheet Labels: Choose by Application",
+  "status": "publish",
+  "category": "materials-print",
+  "score": 17,
+  "allScores": {
+   "materials-print": 17,
+   "supplier-briefs": 4,
+   "samples-approval": 5,
+   "structures-fit": 14,
+   "shipping-rules": 1
+  },
+  "evidence": "material(6) print(6) finish(4)",
+  "runnerUp": "structures-fit",
+  "runnerUpScore": 14
+ },
+ {
+  "ID": 240,
+  "title": "Packaging Insert Materials: Compare Form and Fit",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 46,
+  "allScores": {
+   "materials-print": 31,
+   "supplier-briefs": 4,
+   "samples-approval": 8,
+   "structures-fit": 46,
+   "shipping-rules": 4
+  },
+  "evidence": "fit(11) insert(11) cavity(6)",
+  "runnerUp": "materials-print",
+  "runnerUpScore": 31
+ },
+ {
+  "ID": 241,
+  "title": "Packaging Artwork Approval Checklist for Print Handoff",
+  "status": "publish",
+  "category": "samples-approval",
+  "score": 41,
+  "allScores": {
+   "materials-print": 29,
+   "supplier-briefs": 1,
+   "samples-approval": 41,
+   "structures-fit": 17,
+   "shipping-rules": 5
+  },
+  "evidence": "approval(11) proof(8) approve(8)",
+  "runnerUp": "materials-print",
+  "runnerUpScore": 29
+ },
+ {
+  "ID": 242,
+  "title": "Packaging Reorder Checklist: Version and Scope Control",
+  "status": "publish",
+  "category": "supplier-briefs",
+  "score": 14,
+  "allScores": {
+   "materials-print": 7,
+   "supplier-briefs": 14,
+   "samples-approval": 27,
+   "structures-fit": 28,
+   "shipping-rules": 0
+  },
+  "evidence": "manual review: reorder / version / scope 属于下单与版本控制",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 27
+ },
+ {
+  "ID": 366,
+  "title": "EU PPWR Packaging Checklist for Small Brands",
+  "status": "publish",
+  "category": "shipping-rules",
+  "score": 39,
+  "allScores": {
+   "materials-print": 24,
+   "supplier-briefs": 15,
+   "samples-approval": 7,
+   "structures-fit": 18,
+   "shipping-rules": 39
+  },
+  "evidence": "ppwr(11) regulation(8) import(5)",
+  "runnerUp": "materials-print",
+  "runnerUpScore": 24
+ },
+ {
+  "ID": 367,
+  "title": "Food Contact Packaging Documents: A Buyer Checklist",
+  "status": "publish",
+  "category": "shipping-rules",
+  "score": 41,
+  "allScores": {
+   "materials-print": 35,
+   "supplier-briefs": 14,
+   "samples-approval": 12,
+   "structures-fit": 16,
+   "shipping-rules": 41
+  },
+  "evidence": "compliance(8) customs(5) import(5)",
+  "runnerUp": "materials-print",
+  "runnerUpScore": 35
+ },
+ {
+  "ID": 448,
+  "title": "Custom Packaging MOQ: Plan 500 Pieces per Design",
+  "status": "publish",
+  "category": "supplier-briefs",
+  "score": 21,
+  "allScores": {
+   "materials-print": 11,
+   "supplier-briefs": 21,
+   "samples-approval": 7,
+   "structures-fit": 16,
+   "shipping-rules": 0
+  },
+  "evidence": "moq(6) quotation(5) price(3)",
+  "runnerUp": "structures-fit",
+  "runnerUpScore": 16
+ },
+ {
+  "ID": 449,
+  "title": "Packaging Sample Revisions: Compare Before Approval",
+  "status": "publish",
+  "category": "samples-approval",
+  "score": 28,
+  "allScores": {
+   "materials-print": 3,
+   "supplier-briefs": 11,
+   "samples-approval": 28,
+   "structures-fit": 24,
+   "shipping-rules": 7
+  },
+  "evidence": "sample(11) revision(11) approval(4)",
+  "runnerUp": "structures-fit",
+  "runnerUpScore": 24
+ },
+ {
+  "ID": 450,
+  "title": "Packaging Supplier Clarification Matrix for Buyer Replies",
+  "status": "publish",
+  "category": "supplier-briefs",
+  "score": 33,
+  "allScores": {
+   "materials-print": 12,
+   "supplier-briefs": 33,
+   "samples-approval": 22,
+   "structures-fit": 22,
+   "shipping-rules": 6
+  },
+  "evidence": "supplier(11) brief(8) quote(5)",
+  "runnerUp": "structures-fit",
+  "runnerUpScore": 22
+ },
+ {
+  "ID": 451,
+  "title": "Flat Pack vs Assembled Packaging: Compare the Work",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 27,
+  "allScores": {
+   "materials-print": 6,
+   "supplier-briefs": 23,
+   "samples-approval": 17,
+   "structures-fit": 27,
+   "shipping-rules": 24
+  },
+  "evidence": "insert(8) fit(6) dimension(4)",
+  "runnerUp": "shipping-rules",
+  "runnerUpScore": 24
+ },
+ {
+  "ID": 452,
+  "title": "Packaging Dimensions: Measurement and Acceptance Checklist",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 61,
+  "allScores": {
+   "materials-print": 10,
+   "supplier-briefs": 7,
+   "samples-approval": 19,
+   "structures-fit": 61,
+   "shipping-rules": 5
+  },
+  "evidence": "dimension(11) insert(8) wall(8)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 19
+ },
+ {
+  "ID": 453,
+  "title": "Packaging Color Approval With a Physical Reference",
+  "status": "publish",
+  "category": "materials-print",
+  "score": 40,
+  "allScores": {
+   "materials-print": 40,
+   "supplier-briefs": 7,
+   "samples-approval": 28,
+   "structures-fit": 20,
+   "shipping-rules": 2
+  },
+  "evidence": "finish(8) material(8) print(8)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 28
+ },
+ {
+  "ID": 454,
+  "title": "Packaging Dieline Change Control and Approval Impact",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 44,
+  "allScores": {
+   "materials-print": 9,
+   "supplier-briefs": 7,
+   "samples-approval": 38,
+   "structures-fit": 44,
+   "shipping-rules": 8
+  },
+  "evidence": "layout(8) insert(8) closure(7)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 38
+ },
+ {
+  "ID": 455,
+  "title": "Incoming Packaging Inspection and Acceptance Record",
+  "status": "publish",
+  "category": "samples-approval",
+  "score": 26,
+  "allScores": {
+   "materials-print": 2,
+   "supplier-briefs": 6,
+   "samples-approval": 26,
+   "structures-fit": 8,
+   "shipping-rules": 8
+  },
+  "evidence": "inspection(11) sample(8) revision(3)",
+  "runnerUp": "structures-fit",
+  "runnerUpScore": 8
+ },
+ {
+  "ID": 456,
+  "title": "Packaging Freight Quotes: Carton Data to Prepare",
+  "status": "publish",
+  "category": "shipping-rules",
+  "score": 52,
+  "allScores": {
+   "materials-print": 4,
+   "supplier-briefs": 13,
+   "samples-approval": 2,
+   "structures-fit": 29,
+   "shipping-rules": 52
+  },
+  "evidence": "freight(11) carton(11) ship(8)",
+  "runnerUp": "structures-fit",
+  "runnerUpScore": 29
+ },
+ {
+  "ID": 457,
+  "title": "Packaging Approval Timeline: Dependencies Before Dates",
+  "status": "publish",
+  "category": "samples-approval",
+  "score": 28,
+  "allScores": {
+   "materials-print": 2,
+   "supplier-briefs": 9,
+   "samples-approval": 28,
+   "structures-fit": 21,
+   "shipping-rules": 7
+  },
+  "evidence": "approval(11) sample(8) approve(4)",
+  "runnerUp": "structures-fit",
+  "runnerUpScore": 21
+ },
+ {
+  "ID": 506,
+  "title": "Label Adhesion for Packaging: Surface and Use Checklist",
+  "status": "publish",
+  "category": "materials-print",
+  "score": 26,
+  "allScores": {
+   "materials-print": 26,
+   "supplier-briefs": 13,
+   "samples-approval": 12,
+   "structures-fit": 7,
+   "shipping-rules": 2
+  },
+  "evidence": "finish(8) material(8) eva(3)",
+  "runnerUp": "supplier-briefs",
+  "runnerUpScore": 13
+ },
+ {
+  "ID": 508,
+  "title": "Multi SKU Jewelry Packaging: Build a Fit Matrix",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 42,
+  "allScores": {
+   "materials-print": 5,
+   "supplier-briefs": 17,
+   "samples-approval": 8,
+   "structures-fit": 42,
+   "shipping-rules": 0
+  },
+  "evidence": "fit(11) insert(8) dimension(7)",
+  "runnerUp": "supplier-briefs",
+  "runnerUpScore": 17
+ },
+ {
+  "ID": 510,
+  "title": "Packaging Material Claims: Match the Evidence Scope",
+  "status": "publish",
+  "category": "materials-print",
+  "score": 41,
+  "allScores": {
+   "materials-print": 41,
+   "supplier-briefs": 16,
+   "samples-approval": 18,
+   "structures-fit": 11,
+   "shipping-rules": 4
+  },
+  "evidence": "material(11) finish(8) board(6)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 18
+ },
+ {
+  "ID": 612,
+  "title": "Care Cards in Gift Boxes: Recheck the Complete Fit",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 51,
+  "allScores": {
+   "materials-print": 8,
+   "supplier-briefs": 7,
+   "samples-approval": 16,
+   "structures-fit": 51,
+   "shipping-rules": 0
+  },
+  "evidence": "fit(11) insert(8) mm(6)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 16
+ },
+ {
+  "ID": 613,
+  "title": "Necklace Packaging: Route Chains and Keep Clasps Accessible",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 13,
+  "allScores": {
+   "materials-print": 9,
+   "supplier-briefs": 11,
+   "samples-approval": 12,
+   "structures-fit": 13,
+   "shipping-rules": 3
+  },
+  "evidence": "insert(5) size(1) fit(1)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 12
+ },
+ {
+  "ID": 614,
+  "title": "Earring Card Packaging: Check Posts and Backs",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 41,
+  "allScores": {
+   "materials-print": 11,
+   "supplier-briefs": 11,
+   "samples-approval": 10,
+   "structures-fit": 41,
+   "shipping-rules": 0
+  },
+  "evidence": "clearance(8) mm(8) dimension(5)",
+  "runnerUp": "materials-print",
+  "runnerUpScore": 11
+ },
+ {
+  "ID": 615,
+  "title": "Glass Candle Packaging: Map Contact Before Approval",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 34,
+  "allScores": {
+   "materials-print": 11,
+   "supplier-briefs": 8,
+   "samples-approval": 13,
+   "structures-fit": 34,
+   "shipping-rules": 16
+  },
+  "evidence": "insert(8) lid(8) clearance(5)",
+  "runnerUp": "shipping-rules",
+  "runnerUpScore": 16
+ },
+ {
+  "ID": 616,
+  "title": "Packaging Set Quote Comparison: Components and Units",
+  "status": "publish",
+  "category": "supplier-briefs",
+  "score": 32,
+  "allScores": {
+   "materials-print": 9,
+   "supplier-briefs": 32,
+   "samples-approval": 2,
+   "structures-fit": 22,
+   "shipping-rules": 9
+  },
+  "evidence": "quote(10) price(8) supplier(8)",
+  "runnerUp": "structures-fit",
+  "runnerUpScore": 22
+ },
+ {
+  "ID": 617,
+  "title": "Retail Hang Slots: Review the Actual Fixture",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 8,
+  "allScores": {
+   "materials-print": 19,
+   "supplier-briefs": 13,
+   "samples-approval": 15,
+   "structures-fit": 8,
+   "shipping-rules": 2
+  },
+  "evidence": "manual review: 零售挂孔要对实物挂架复尺，属结构/挂装",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 15
+ },
+ {
+  "ID": 618,
+  "title": "Collapsible Gift Box Assembly: Plan the First Trial",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 31,
+  "allScores": {
+   "materials-print": 4,
+   "supplier-briefs": 9,
+   "samples-approval": 26,
+   "structures-fit": 31,
+   "shipping-rules": 6
+  },
+  "evidence": "insert(8) fit(8) closure(8)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 26
+ },
+ {
+  "ID": 619,
+  "title": "Candle Label Placement Around Seams and Curves",
+  "status": "publish",
+  "category": "materials-print",
+  "score": 11,
+  "allScores": {
+   "materials-print": 11,
+   "supplier-briefs": 11,
+   "samples-approval": 12,
+   "structures-fit": 14,
+   "shipping-rules": 13
+  },
+  "evidence": "manual review: 标签在曲面与接缝上的位置＝印刷/贴标工艺",
+  "runnerUp": "shipping-rules",
+  "runnerUpScore": 13
+ },
+ {
+  "ID": 620,
+  "title": "Retail Barcodes on Packaging: Review the Printed Proof",
+  "status": "publish",
+  "category": "materials-print",
+  "score": 30,
+  "allScores": {
+   "materials-print": 30,
+   "supplier-briefs": 3,
+   "samples-approval": 28,
+   "structures-fit": 16,
+   "shipping-rules": 1
+  },
+  "evidence": "print(11) finish(8) material(4)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 28
+ },
+ {
+  "ID": 621,
+  "title": "Keep Box Insert and Sleeve Variants Matched During Packing",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 30,
+  "allScores": {
+   "materials-print": 14,
+   "supplier-briefs": 9,
+   "samples-approval": 17,
+   "structures-fit": 30,
+   "shipping-rules": 10
+  },
+  "evidence": "insert(11) sleeve(11) fit(6)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 17
+ },
+ {
+  "ID": 622,
+  "title": "Paperboard Grammage vs Caliper: Compare Both Properties",
+  "status": "publish",
+  "category": "materials-print",
+  "score": 40,
+  "allScores": {
+   "materials-print": 40,
+   "supplier-briefs": 9,
+   "samples-approval": 11,
+   "structures-fit": 31,
+   "shipping-rules": 1
+  },
+  "evidence": "paper(9) paperboard(9) material(8)",
+  "runnerUp": "structures-fit",
+  "runnerUpScore": 31
+ },
+ {
+  "ID": 623,
+  "title": "Map Board Grain Direction Before Approving Fold Lines",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 35,
+  "allScores": {
+   "materials-print": 25,
+   "supplier-briefs": 12,
+   "samples-approval": 23,
+   "structures-fit": 35,
+   "shipping-rules": 5
+  },
+  "evidence": "layout(8) lid(8) base(6)",
+  "runnerUp": "materials-print",
+  "runnerUpScore": 25
+ },
+ {
+  "ID": 624,
+  "title": "Review Print Cracking on the Formed Fold",
+  "status": "publish",
+  "category": "materials-print",
+  "score": 32,
+  "allScores": {
+   "materials-print": 32,
+   "supplier-briefs": 13,
+   "samples-approval": 22,
+   "structures-fit": 9,
+   "shipping-rules": 9
+  },
+  "evidence": "print(11) material(8) board(6)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 22
+ },
+ {
+  "ID": 625,
+  "title": "Place Rigid-Box Wrap Seams Away From the Main View",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 24,
+  "allScores": {
+   "materials-print": 12,
+   "supplier-briefs": 15,
+   "samples-approval": 13,
+   "structures-fit": 24,
+   "shipping-rules": 1
+  },
+  "evidence": "lid(7) layout(7) dimension(3)",
+  "runnerUp": "supplier-briefs",
+  "runnerUpScore": 15
+ },
+ {
+  "ID": 626,
+  "title": "Include Turned Paper Edges in Lid-Fit Reviews",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 46,
+  "allScores": {
+   "materials-print": 24,
+   "supplier-briefs": 10,
+   "samples-approval": 24,
+   "structures-fit": 46,
+   "shipping-rules": 0
+  },
+  "evidence": "fit(11) lid(11) dimension(8)",
+  "runnerUp": "materials-print",
+  "runnerUpScore": 24
+ },
+ {
+  "ID": 627,
+  "title": "Printing on Uncoated Paper: Review the Proposed Stock",
+  "status": "publish",
+  "category": "materials-print",
+  "score": 38,
+  "allScores": {
+   "materials-print": 38,
+   "supplier-briefs": 4,
+   "samples-approval": 22,
+   "structures-fit": 8,
+   "shipping-rules": 0
+  },
+  "evidence": "paper(11) print(11) material(8)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 22
+ },
+ {
+  "ID": 628,
+  "title": "Printing White on Kraft Paper: Artwork and Proof Guide",
+  "status": "publish",
+  "category": "materials-print",
+  "score": 52,
+  "allScores": {
+   "materials-print": 52,
+   "supplier-briefs": 6,
+   "samples-approval": 24,
+   "structures-fit": 8,
+   "shipping-rules": 1
+  },
+  "evidence": "kraft(11) print(11) ink(8)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 24
+ },
+ {
+  "ID": 629,
+  "title": "Large Solid Print Areas Need Review on the Named Formed Panel",
+  "status": "publish",
+  "category": "materials-print",
+  "score": 37,
+  "allScores": {
+   "materials-print": 37,
+   "supplier-briefs": 6,
+   "samples-approval": 24,
+   "structures-fit": 3,
+   "shipping-rules": 0
+  },
+  "evidence": "print(11) finish(8) material(6)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 24
+ },
+ {
+  "ID": 630,
+  "title": "Small Packaging Type Needs the Selected Printer’s File Specification",
+  "status": "publish",
+  "category": "materials-print",
+  "score": 20,
+  "allScores": {
+   "materials-print": 20,
+   "supplier-briefs": 7,
+   "samples-approval": 12,
+   "structures-fit": 19,
+   "shipping-rules": 1
+  },
+  "evidence": "print(11) material(4) printing(3)",
+  "runnerUp": "structures-fit",
+  "runnerUpScore": 19
+ },
+ {
+  "ID": 631,
+  "title": "Reversed Type Needs Its Background, Print Process and Finish Reviewed Together",
+  "status": "publish",
+  "category": "materials-print",
+  "score": 33,
+  "allScores": {
+   "materials-print": 33,
+   "supplier-briefs": 7,
+   "samples-approval": 21,
+   "structures-fit": 11,
+   "shipping-rules": 1
+  },
+  "evidence": "print(11) finish(11) material(4)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 21
+ },
+ {
+  "ID": 632,
+  "title": "Packaging Foil Placement Around Folds and Glue Areas",
+  "status": "publish",
+  "category": "materials-print",
+  "score": 28,
+  "allScores": {
+   "materials-print": 28,
+   "supplier-briefs": 9,
+   "samples-approval": 25,
+   "structures-fit": 9,
+   "shipping-rules": 0
+  },
+  "evidence": "foil(11) print(8) material(6)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 25
+ },
+ {
+  "ID": 633,
+  "title": "Embossing Needs a Back-Surface Contact and Clearance Map",
+  "status": "publish",
+  "category": "materials-print",
+  "score": 34,
+  "allScores": {
+   "materials-print": 34,
+   "supplier-briefs": 8,
+   "samples-approval": 17,
+   "structures-fit": 31,
+   "shipping-rules": 0
+  },
+  "evidence": "emboss(11) board(8) material(6)",
+  "runnerUp": "structures-fit",
+  "runnerUpScore": 31
+ },
+ {
+  "ID": 634,
+  "title": "Spot-Gloss Masks Need a Named Panel and a Registered Boundary",
+  "status": "publish",
+  "category": "materials-print",
+  "score": 37,
+  "allScores": {
+   "materials-print": 37,
+   "supplier-briefs": 9,
+   "samples-approval": 19,
+   "structures-fit": 2,
+   "shipping-rules": 0
+  },
+  "evidence": "gloss(11) print(8) coating(8)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 19
+ },
+ {
+  "ID": 635,
+  "title": "Lamination and Varnish Need Separate Layers in the Packaging BOM",
+  "status": "publish",
+  "category": "materials-print",
+  "score": 67,
+  "allScores": {
+   "materials-print": 67,
+   "supplier-briefs": 7,
+   "samples-approval": 15,
+   "structures-fit": 27,
+   "shipping-rules": 2
+  },
+  "evidence": "varnish(8) coating(8) print(8)",
+  "runnerUp": "structures-fit",
+  "runnerUpScore": 27
+ },
+ {
+  "ID": 636,
+  "title": "Finish Contact Observations Need the Product Surface and Handling Conditions",
+  "status": "publish",
+  "category": "materials-print",
+  "score": 22,
+  "allScores": {
+   "materials-print": 22,
+   "supplier-briefs": 9,
+   "samples-approval": 15,
+   "structures-fit": 3,
+   "shipping-rules": 0
+  },
+  "evidence": "finish(11) material(8) coating(2)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 15
+ },
+ {
+  "ID": 637,
+  "title": "Glue Zones Need the Current Drawing and Surface Layers in One View",
+  "status": "publish",
+  "category": "materials-print",
+  "score": 35,
+  "allScores": {
+   "materials-print": 35,
+   "supplier-briefs": 8,
+   "samples-approval": 18,
+   "structures-fit": 13,
+   "shipping-rules": 3
+  },
+  "evidence": "coating(8) print(8) material(5)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 18
+ },
+ {
+  "ID": 638,
+  "title": "Locate Window Patches Against the Product View",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 22,
+  "allScores": {
+   "materials-print": 5,
+   "supplier-briefs": 12,
+   "samples-approval": 20,
+   "structures-fit": 22,
+   "shipping-rules": 2
+  },
+  "evidence": "base(7) layout(5) insert(4)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 20
+ },
+ {
+  "ID": 639,
+  "title": "Review Window Clarity With the Product Behind It",
+  "status": "publish",
+  "category": "samples-approval",
+  "score": 15,
+  "allScores": {
+   "materials-print": 9,
+   "supplier-briefs": 10,
+   "samples-approval": 15,
+   "structures-fit": 2,
+   "shipping-rules": 1
+  },
+  "evidence": "sample(8) approval(4) revision(2)",
+  "runnerUp": "supplier-briefs",
+  "runnerUpScore": 10
+ },
+ {
+  "ID": 640,
+  "title": "Describe Surface Scuffs Before Requesting a Finish Change",
+  "status": "publish",
+  "category": "materials-print",
+  "score": 25,
+  "allScores": {
+   "materials-print": 25,
+   "supplier-briefs": 11,
+   "samples-approval": 18,
+   "structures-fit": 13,
+   "shipping-rules": 0
+  },
+  "evidence": "finish(11) material(6) print(4)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 18
+ },
+ {
+  "ID": 641,
+  "title": "Exposed Board Edges Need a Separate Color Decision After Converting",
+  "status": "publish",
+  "category": "materials-print",
+  "score": 25,
+  "allScores": {
+   "materials-print": 25,
+   "supplier-briefs": 7,
+   "samples-approval": 19,
+   "structures-fit": 13,
+   "shipping-rules": 0
+  },
+  "evidence": "board(8) material(8) finish(7)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 19
+ },
+ {
+  "ID": 642,
+  "title": "Label Roll Changeovers Need Splice Identification Before Application",
+  "status": "publish",
+  "category": "materials-print",
+  "score": 4,
+  "allScores": {
+   "materials-print": 4,
+   "supplier-briefs": 10,
+   "samples-approval": 12,
+   "structures-fit": 2,
+   "shipping-rules": 0
+  },
+  "evidence": "manual review: 标签卷换卷与接头识别＝卷材与印刷生产",
+  "runnerUp": "supplier-briefs",
+  "runnerUpScore": 10
+ },
+ {
+  "ID": 643,
+  "title": "Label Liner Width, Gap and Pitch for the Applicator",
+  "status": "publish",
+  "category": "materials-print",
+  "score": 4,
+  "allScores": {
+   "materials-print": 4,
+   "supplier-briefs": 8,
+   "samples-approval": 10,
+   "structures-fit": 27,
+   "shipping-rules": 0
+  },
+  "evidence": "manual review: 标签离型纸宽度与间距＝卷材规格",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 10
+ },
+ {
+  "ID": 644,
+  "title": "Record Removal Conditions Before Asking for a Removable Label",
+  "status": "publish",
+  "category": "materials-print",
+  "score": 17,
+  "allScores": {
+   "materials-print": 17,
+   "supplier-briefs": 15,
+   "samples-approval": 11,
+   "structures-fit": 11,
+   "shipping-rules": 1
+  },
+  "evidence": "material(7) finish(4) print(3)",
+  "runnerUp": "supplier-briefs",
+  "runnerUpScore": 15
+ },
+ {
+  "ID": 645,
+  "title": "Wrap Label Overlaps: Locate the Joint Before Artwork",
+  "status": "publish",
+  "category": "materials-print",
+  "score": 5,
+  "allScores": {
+   "materials-print": 5,
+   "supplier-briefs": 9,
+   "samples-approval": 23,
+   "structures-fit": 5,
+   "shipping-rules": 8
+  },
+  "evidence": "manual review: 环标搭接位置在放稿前定＝印刷版面",
+  "runnerUp": "supplier-briefs",
+  "runnerUpScore": 9
+ },
+ {
+  "ID": 646,
+  "title": "Label Liner Release vs Adhesion: Review Both Interfaces",
+  "status": "publish",
+  "category": "materials-print",
+  "score": 4,
+  "allScores": {
+   "materials-print": 4,
+   "supplier-briefs": 6,
+   "samples-approval": 16,
+   "structures-fit": 1,
+   "shipping-rules": 2
+  },
+  "evidence": "manual review: 离型与粘性属材料/标签工艺",
+  "runnerUp": "supplier-briefs",
+  "runnerUpScore": 6
+ },
+ {
+  "ID": 647,
+  "title": "Received Label Rolls Need Condition and Identity Checks Before Application",
+  "status": "publish",
+  "category": "samples-approval",
+  "score": 13,
+  "allScores": {
+   "materials-print": 7,
+   "supplier-briefs": 9,
+   "samples-approval": 13,
+   "structures-fit": 2,
+   "shipping-rules": 0
+  },
+  "evidence": "inspection(5) sample(4) approval(1)",
+  "runnerUp": "supplier-briefs",
+  "runnerUpScore": 9
+ },
+ {
+  "ID": 648,
+  "title": "Confirm Barcode Data Before Sending the Artwork",
+  "status": "publish",
+  "category": "samples-approval",
+  "score": 20,
+  "allScores": {
+   "materials-print": 14,
+   "supplier-briefs": 4,
+   "samples-approval": 20,
+   "structures-fit": 3,
+   "shipping-rules": 3
+  },
+  "evidence": "sample(6) approve(6) revision(4)",
+  "runnerUp": "materials-print",
+  "runnerUpScore": 14
+ },
+ {
+  "ID": 649,
+  "title": "Product Identity Needs a Place After the Belly Band Is Removed",
+  "status": "publish",
+  "category": "samples-approval",
+  "score": 17,
+  "allScores": {
+   "materials-print": 6,
+   "supplier-briefs": 8,
+   "samples-approval": 17,
+   "structures-fit": 1,
+   "shipping-rules": 11
+  },
+  "evidence": "approve(8) sample(4) approval(2)",
+  "runnerUp": "shipping-rules",
+  "runnerUpScore": 11
+ },
+ {
+  "ID": 650,
+  "title": "Actual-Size Proofs Make Trim and Die-Cut Relationships Reviewable",
+  "status": "publish",
+  "category": "samples-approval",
+  "score": 28,
+  "allScores": {
+   "materials-print": 9,
+   "supplier-briefs": 7,
+   "samples-approval": 28,
+   "structures-fit": 28,
+   "shipping-rules": 9
+  },
+  "evidence": "manual review: 实际尺寸打样稿＝proof 环节",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 28
+ },
+ {
+  "ID": 651,
+  "title": "Packaging Print File Checklist: Fonts, Links and Output",
+  "status": "publish",
+  "category": "materials-print",
+  "score": 11,
+  "allScores": {
+   "materials-print": 11,
+   "supplier-briefs": 5,
+   "samples-approval": 8,
+   "structures-fit": 4,
+   "shipping-rules": 0
+  },
+  "evidence": "print(11)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 8
+ },
+ {
+  "ID": 652,
+  "title": "Map Sleeve Seam Contact During Tray Travel",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 21,
+  "allScores": {
+   "materials-print": 10,
+   "supplier-briefs": 11,
+   "samples-approval": 15,
+   "structures-fit": 21,
+   "shipping-rules": 0
+  },
+  "evidence": "sleeve(11) dimension(2) fit(2)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 15
+ },
+ {
+  "ID": 653,
+  "title": "Decide Whether the Drawer Should Stop or Slide Out",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 22,
+  "allScores": {
+   "materials-print": 11,
+   "supplier-briefs": 10,
+   "samples-approval": 11,
+   "structures-fit": 22,
+   "shipping-rules": 1
+  },
+  "evidence": "drawer(11) sleeve(8) dimension(1)",
+  "runnerUp": "materials-print",
+  "runnerUpScore": 11
+ },
+ {
+  "ID": 654,
+  "title": "Drawer Box Pull Tabs: Review the Loaded Tray",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 19,
+  "allScores": {
+   "materials-print": 15,
+   "supplier-briefs": 10,
+   "samples-approval": 18,
+   "structures-fit": 19,
+   "shipping-rules": 0
+  },
+  "evidence": "drawer(11) sleeve(6) size(1)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 18
+ },
+ {
+  "ID": 655,
+  "title": "Lift Off Lid Gift Boxes: Leave a Clear Finger Grip",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 30,
+  "allScores": {
+   "materials-print": 5,
+   "supplier-briefs": 9,
+   "samples-approval": 11,
+   "structures-fit": 30,
+   "shipping-rules": 0
+  },
+  "evidence": "lid(11) base(8) fit(4)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 11
+ },
+ {
+  "ID": 656,
+  "title": "Set Product Display Height Before Confirming the Neck",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 49,
+  "allScores": {
+   "materials-print": 10,
+   "supplier-briefs": 11,
+   "samples-approval": 15,
+   "structures-fit": 49,
+   "shipping-rules": 0
+  },
+  "evidence": "lid(8) mm(8) base(8)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 15
+ },
+ {
+  "ID": 657,
+  "title": "Compare Folded Wall Builds Before Pairing Lid and Base",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 52,
+  "allScores": {
+   "materials-print": 13,
+   "supplier-briefs": 9,
+   "samples-approval": 21,
+   "structures-fit": 52,
+   "shipping-rules": 0
+  },
+  "evidence": "wall(11) lid(11) base(11)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 21
+ },
+ {
+  "ID": 658,
+  "title": "Write the Bottom-Tab Sequence for the Packing Bench",
+  "status": "publish",
+  "category": "samples-approval",
+  "score": 18,
+  "allScores": {
+   "materials-print": 7,
+   "supplier-briefs": 10,
+   "samples-approval": 18,
+   "structures-fit": 15,
+   "shipping-rules": 8
+  },
+  "evidence": "sample(7) revision(4) approve(3)",
+  "runnerUp": "structures-fit",
+  "runnerUpScore": 15
+ },
+ {
+  "ID": 659,
+  "title": "Check Prepared Bottom Joints Before Loading",
+  "status": "publish",
+  "category": "samples-approval",
+  "score": 20,
+  "allScores": {
+   "materials-print": 11,
+   "supplier-briefs": 10,
+   "samples-approval": 20,
+   "structures-fit": 10,
+   "shipping-rules": 7
+  },
+  "evidence": "sample(8) approval(4) revision(4)",
+  "runnerUp": "materials-print",
+  "runnerUpScore": 11
+ },
+ {
+  "ID": 660,
+  "title": "Name the Loading End and the Customer Opening Separately",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 12,
+  "allScores": {
+   "materials-print": 9,
+   "supplier-briefs": 7,
+   "samples-approval": 10,
+   "structures-fit": 12,
+   "shipping-rules": 6
+  },
+  "evidence": "closure(4) tuck(3) insert(2)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 10
+ },
+ {
+  "ID": 661,
+  "title": "Set Display Front-Wall Height Around the Customer Grip",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 23,
+  "allScores": {
+   "materials-print": 4,
+   "supplier-briefs": 9,
+   "samples-approval": 12,
+   "structures-fit": 23,
+   "shipping-rules": 1
+  },
+  "evidence": "wall(11) layout(8) dimension(1)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 12
+ },
+ {
+  "ID": 662,
+  "title": "Plan Refilling Before Approving the Display Layout",
+  "status": "publish",
+  "category": "supplier-briefs",
+  "score": 9,
+  "allScores": {
+   "materials-print": 4,
+   "supplier-briefs": 9,
+   "samples-approval": 8,
+   "structures-fit": 10,
+   "shipping-rules": 0
+  },
+  "evidence": "manual review: 陈列与补货安排要写进 brief",
+  "runnerUp": "supplier-briefs",
+  "runnerUpScore": 9
+ },
+ {
+  "ID": 663,
+  "title": "Check Nearby Packs in the Retail Fixture Layout",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 17,
+  "allScores": {
+   "materials-print": 6,
+   "supplier-briefs": 10,
+   "samples-approval": 7,
+   "structures-fit": 17,
+   "shipping-rules": 0
+  },
+  "evidence": "layout(11) fit(3) clearance(2)",
+  "runnerUp": "supplier-briefs",
+  "runnerUpScore": 10
+ },
+ {
+  "ID": 664,
+  "title": "Gift Carrier Handoffs Need Acceptance Across Bag, Gable and Tote Formats",
+  "status": "publish",
+  "category": "materials-print",
+  "score": 22,
+  "allScores": {
+   "materials-print": 22,
+   "supplier-briefs": 7,
+   "samples-approval": 9,
+   "structures-fit": 17,
+   "shipping-rules": 8
+  },
+  "evidence": "fabric(6) material(5) paper(5)",
+  "runnerUp": "structures-fit",
+  "runnerUpScore": 17
+ },
+ {
+  "ID": 665,
+  "title": "Gift Bag Loading Needs Clearance Around the Box Corners",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 26,
+  "allScores": {
+   "materials-print": 12,
+   "supplier-briefs": 7,
+   "samples-approval": 11,
+   "structures-fit": 26,
+   "shipping-rules": 0
+  },
+  "evidence": "base(8) clearance(5) fit(5)",
+  "runnerUp": "materials-print",
+  "runnerUpScore": 12
+ },
+ {
+  "ID": 666,
+  "title": "Identify Handle Joints in the Paper-Bag Brief",
+  "status": "publish",
+  "category": "materials-print",
+  "score": 17,
+  "allScores": {
+   "materials-print": 17,
+   "supplier-briefs": 13,
+   "samples-approval": 15,
+   "structures-fit": 11,
+   "shipping-rules": 0
+  },
+  "evidence": "material(8) paper(7) eva(2)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 15
+ },
+ {
+  "ID": 667,
+  "title": "Choose the Tissue Fold Before Placing the Printed Mark",
+  "status": "publish",
+  "category": "materials-print",
+  "score": 28,
+  "allScores": {
+   "materials-print": 28,
+   "supplier-briefs": 8,
+   "samples-approval": 14,
+   "structures-fit": 10,
+   "shipping-rules": 1
+  },
+  "evidence": "print(11) material(7) printing(5)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 14
+ },
+ {
+  "ID": 668,
+  "title": "Write Mounting Instructions With Front and Back Views",
+  "status": "publish",
+  "category": "samples-approval",
+  "score": 13,
+  "allScores": {
+   "materials-print": 6,
+   "supplier-briefs": 9,
+   "samples-approval": 13,
+   "structures-fit": 9,
+   "shipping-rules": 1
+  },
+  "evidence": "sample(5) revision(5) approval(2)",
+  "runnerUp": "structures-fit",
+  "runnerUpScore": 9
+ },
+ {
+  "ID": 669,
+  "title": "Place the Removal Tab Where the Customer Can Reach It",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 28,
+  "allScores": {
+   "materials-print": 5,
+   "supplier-briefs": 9,
+   "samples-approval": 10,
+   "structures-fit": 28,
+   "shipping-rules": 0
+  },
+  "evidence": "wall(6) base(6) insert(5)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 10
+ },
+ {
+  "ID": 670,
+  "title": "Identify Handed Divider Parts in the Loading Plan",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 17,
+  "allScores": {
+   "materials-print": 9,
+   "supplier-briefs": 9,
+   "samples-approval": 7,
+   "structures-fit": 17,
+   "shipping-rules": 0
+  },
+  "evidence": "divider(11) fit(2) size(1)",
+  "runnerUp": "materials-print",
+  "runnerUpScore": 9
+ },
+ {
+  "ID": 671,
+  "title": "Review the Release Direction of a Pulp Cavity",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 23,
+  "allScores": {
+   "materials-print": 9,
+   "supplier-briefs": 10,
+   "samples-approval": 10,
+   "structures-fit": 23,
+   "shipping-rules": 1
+  },
+  "evidence": "cavity(11) wall(5) fit(3)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 10
+ },
+ {
+  "ID": 672,
+  "title": "Name the Tray Edge That the Product or Hand Touches",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 19,
+  "allScores": {
+   "materials-print": 9,
+   "supplier-briefs": 8,
+   "samples-approval": 19,
+   "structures-fit": 19,
+   "shipping-rules": 1
+  },
+  "evidence": "base(7) cavity(6) wall(2)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 19
+ },
+ {
+  "ID": 673,
+  "title": "Foam Packaging Inserts: Fabrication and Layer Scope",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 26,
+  "allScores": {
+   "materials-print": 32,
+   "supplier-briefs": 8,
+   "samples-approval": 6,
+   "structures-fit": 26,
+   "shipping-rules": 0
+  },
+  "evidence": "manual review: 泡棉内衬分层属内衬结构",
+  "runnerUp": "structures-fit",
+  "runnerUpScore": 26
+ },
+ {
+  "ID": 674,
+  "title": "Keep Left and Right End Caps Identified Through Packing",
+  "status": "publish",
+  "category": "samples-approval",
+  "score": 15,
+  "allScores": {
+   "materials-print": 8,
+   "supplier-briefs": 8,
+   "samples-approval": 15,
+   "structures-fit": 6,
+   "shipping-rules": 0
+  },
+  "evidence": "sample(5) revision(5) approval(2)",
+  "runnerUp": "materials-print",
+  "runnerUpScore": 8
+ },
+ {
+  "ID": 675,
+  "title": "Mark Liner Corner Overlaps Before Checking Usable Space",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 29,
+  "allScores": {
+   "materials-print": 9,
+   "supplier-briefs": 9,
+   "samples-approval": 17,
+   "structures-fit": 29,
+   "shipping-rules": 0
+  },
+  "evidence": "mm(8) dimension(6) size(3)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 17
+ },
+ {
+  "ID": 676,
+  "title": "Assign Book-Wrap Fold Positions to Named Thicknesses",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 18,
+  "allScores": {
+   "materials-print": 7,
+   "supplier-briefs": 10,
+   "samples-approval": 15,
+   "structures-fit": 18,
+   "shipping-rules": 0
+  },
+  "evidence": "thickness(10) size(2) closure(2)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 15
+ },
+ {
+  "ID": 677,
+  "title": "Check Flap Reach With the Envelope Filled",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 26,
+  "allScores": {
+   "materials-print": 8,
+   "supplier-briefs": 9,
+   "samples-approval": 15,
+   "structures-fit": 26,
+   "shipping-rules": 0
+  },
+  "evidence": "mm(8) closure(6) dimension(5)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 15
+ },
+ {
+  "ID": 678,
+  "title": "Return Mailer Second Seals: Plan the Closing Sequence",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 21,
+  "allScores": {
+   "materials-print": 4,
+   "supplier-briefs": 4,
+   "samples-approval": 4,
+   "structures-fit": 21,
+   "shipping-rules": 2
+  },
+  "evidence": "mailer(11) closure(8) size(1)",
+  "runnerUp": "materials-print",
+  "runnerUpScore": 4
+ },
+ {
+  "ID": 679,
+  "title": "Seal End Carton Packing: Equipment and Operations",
+  "status": "publish",
+  "category": "supplier-briefs",
+  "score": 16,
+  "allScores": {
+   "materials-print": 8,
+   "supplier-briefs": 16,
+   "samples-approval": 11,
+   "structures-fit": 2,
+   "shipping-rules": 11
+  },
+  "evidence": "supplier(8) price(4) quote(2)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 11
+ },
+ {
+  "ID": 680,
+  "title": "Assembly Tools and Per-Pack Consumables Need Separate Planning Units",
+  "status": "publish",
+  "category": "supplier-briefs",
+  "score": 16,
+  "allScores": {
+   "materials-print": 6,
+   "supplier-briefs": 16,
+   "samples-approval": 6,
+   "structures-fit": 5,
+   "shipping-rules": 9
+  },
+  "evidence": "supplier(7) price(3) quote(2)",
+  "runnerUp": "shipping-rules",
+  "runnerUpScore": 9
+ },
+ {
+  "ID": 681,
+  "title": "Record a Packing Trial Without Promising a Universal Speed",
+  "status": "publish",
+  "category": "samples-approval",
+  "score": 19,
+  "allScores": {
+   "materials-print": 6,
+   "supplier-briefs": 7,
+   "samples-approval": 19,
+   "structures-fit": 3,
+   "shipping-rules": 5
+  },
+  "evidence": "trial(11) sample(4) approval(2)",
+  "runnerUp": "supplier-briefs",
+  "runnerUpScore": 7
+ },
+ {
+  "ID": 682,
+  "title": "Shipping-Carton IDs Need the Packaging Versions Inside Them",
+  "status": "publish",
+  "category": "shipping-rules",
+  "score": 36,
+  "allScores": {
+   "materials-print": 7,
+   "supplier-briefs": 10,
+   "samples-approval": 18,
+   "structures-fit": 26,
+   "shipping-rules": 36
+  },
+  "evidence": "ship(11) carton(11) shipping(5)",
+  "runnerUp": "structures-fit",
+  "runnerUpScore": 26
+ },
+ {
+  "ID": 683,
+  "title": "Master-Carton Labels Need Reconciliation With the Packed Units",
+  "status": "publish",
+  "category": "shipping-rules",
+  "score": 20,
+  "allScores": {
+   "materials-print": 13,
+   "supplier-briefs": 9,
+   "samples-approval": 12,
+   "structures-fit": 12,
+   "shipping-rules": 20
+  },
+  "evidence": "carton(11) ship(2) freight(2)",
+  "runnerUp": "materials-print",
+  "runnerUpScore": 13
+ },
+ {
+  "ID": 684,
+  "title": "Record Orientation When Retail Packs Share an Outer Carton",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 38,
+  "allScores": {
+   "materials-print": 10,
+   "supplier-briefs": 6,
+   "samples-approval": 6,
+   "structures-fit": 38,
+   "shipping-rules": 25
+  },
+  "evidence": "wall(8) base(8) layout(5)",
+  "runnerUp": "shipping-rules",
+  "runnerUpScore": 25
+ },
+ {
+  "ID": 685,
+  "title": "Parcel Classification Needs the Current Carrier, Service and Measured Pack",
+  "status": "publish",
+  "category": "shipping-rules",
+  "score": 27,
+  "allScores": {
+   "materials-print": 4,
+   "supplier-briefs": 8,
+   "samples-approval": 10,
+   "structures-fit": 14,
+   "shipping-rules": 27
+  },
+  "evidence": "ship(8) shipping(6) shipment(6)",
+  "runnerUp": "structures-fit",
+  "runnerUpScore": 14
+ },
+ {
+  "ID": 686,
+  "title": "Shipping Label Placement: Keep Barcodes Clear of Seams",
+  "status": "publish",
+  "category": "shipping-rules",
+  "score": 27,
+  "allScores": {
+   "materials-print": 2,
+   "supplier-briefs": 5,
+   "samples-approval": 4,
+   "structures-fit": 12,
+   "shipping-rules": 27
+  },
+  "evidence": "shipping(11) ship(11) fedex(2)",
+  "runnerUp": "structures-fit",
+  "runnerUpScore": 12
+ },
+ {
+  "ID": 687,
+  "title": "Name the Sealing Method in the Shipping-Carton Scope",
+  "status": "publish",
+  "category": "shipping-rules",
+  "score": 23,
+  "allScores": {
+   "materials-print": 7,
+   "supplier-briefs": 12,
+   "samples-approval": 11,
+   "structures-fit": 1,
+   "shipping-rules": 23
+  },
+  "evidence": "carton(11) shipping(5) ship(5)",
+  "runnerUp": "supplier-briefs",
+  "runnerUpScore": 12
+ },
+ {
+  "ID": 688,
+  "title": "Agree Conditioning Before Comparing Packaging Samples",
+  "status": "publish",
+  "category": "samples-approval",
+  "score": 21,
+  "allScores": {
+   "materials-print": 15,
+   "supplier-briefs": 5,
+   "samples-approval": 21,
+   "structures-fit": 12,
+   "shipping-rules": 1
+  },
+  "evidence": "sample(11) revision(5) approval(2)",
+  "runnerUp": "materials-print",
+  "runnerUpScore": 15
+ },
+ {
+  "ID": 689,
+  "title": "Packaging Distribution Tests: Define the Packed System",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 15,
+  "allScores": {
+   "materials-print": 9,
+   "supplier-briefs": 5,
+   "samples-approval": 4,
+   "structures-fit": 15,
+   "shipping-rules": 4
+  },
+  "evidence": "insert(3) closure(3) dimension(2)",
+  "runnerUp": "materials-print",
+  "runnerUpScore": 9
+ },
+ {
+  "ID": 690,
+  "title": "Packaging Test Reports: Match the Ordered Configuration",
+  "status": "publish",
+  "category": "samples-approval",
+  "score": 2,
+  "allScores": {
+   "materials-print": 2,
+   "supplier-briefs": 4,
+   "samples-approval": 2,
+   "structures-fit": 10,
+   "shipping-rules": 2
+  },
+  "evidence": "manual review: 测试报告与订购配置的比对＝验收环节",
+  "runnerUp": "supplier-briefs",
+  "runnerUpScore": 4
+ },
+ {
+  "ID": 691,
+  "title": "Describe Transit Damage by Location and Pack Version",
+  "status": "publish",
+  "category": "shipping-rules",
+  "score": 11,
+  "allScores": {
+   "materials-print": 10,
+   "supplier-briefs": 6,
+   "samples-approval": 9,
+   "structures-fit": 12,
+   "shipping-rules": 11
+  },
+  "evidence": "manual review: 运输损伤按位置与包装版本描述＝运输与索赔",
+  "runnerUp": "shipping-rules",
+  "runnerUpScore": 11
+ },
+ {
+  "ID": 692,
+  "title": "Packaging Tooling: Drawing, Ownership and Reuse Scope",
+  "status": "publish",
+  "category": "supplier-briefs",
+  "score": 30,
+  "allScores": {
+   "materials-print": 16,
+   "supplier-briefs": 30,
+   "samples-approval": 8,
+   "structures-fit": 5,
+   "shipping-rules": 3
+  },
+  "evidence": "tooling(11) supplier(8) payment(4)",
+  "runnerUp": "materials-print",
+  "runnerUpScore": 16
+ },
+ {
+  "ID": 693,
+  "title": "Review a Material Substitution Against the Same Required Job",
+  "status": "publish",
+  "category": "materials-print",
+  "score": 24,
+  "allScores": {
+   "materials-print": 24,
+   "supplier-briefs": 9,
+   "samples-approval": 20,
+   "structures-fit": 14,
+   "shipping-rules": 1
+  },
+  "evidence": "material(11) print(8) board(4)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 20
+ },
+ {
+  "ID": 694,
+  "title": "Name the Sample Version Included in Each Quotation",
+  "status": "publish",
+  "category": "supplier-briefs",
+  "score": 25,
+  "allScores": {
+   "materials-print": 18,
+   "supplier-briefs": 25,
+   "samples-approval": 20,
+   "structures-fit": 5,
+   "shipping-rules": 0
+  },
+  "evidence": "quote(8) quotation(6) supplier(4)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 20
+ },
+ {
+  "ID": 695,
+  "title": "Record the Contracting Seller Before Accepting Commercial Terms",
+  "status": "publish",
+  "category": "supplier-briefs",
+  "score": 20,
+  "allScores": {
+   "materials-print": 6,
+   "supplier-briefs": 20,
+   "samples-approval": 8,
+   "structures-fit": 1,
+   "shipping-rules": 0
+  },
+  "evidence": "payment(8) supplier(6) factory(2)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 8
+ },
+ {
+  "ID": 696,
+  "title": "Separate Quote Currency From Conversion Assumptions",
+  "status": "publish",
+  "category": "supplier-briefs",
+  "score": 37,
+  "allScores": {
+   "materials-print": 4,
+   "supplier-briefs": 37,
+   "samples-approval": 5,
+   "structures-fit": 4,
+   "shipping-rules": 1
+  },
+  "evidence": "quote(11) supplier(7) price(7)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 5
+ },
+ {
+  "ID": 697,
+  "title": "Packaging Quote Validity After Specification Changes",
+  "status": "publish",
+  "category": "supplier-briefs",
+  "score": 32,
+  "allScores": {
+   "materials-print": 4,
+   "supplier-briefs": 32,
+   "samples-approval": 2,
+   "structures-fit": 6,
+   "shipping-rules": 2
+  },
+  "evidence": "quote(11) price(8) quotation(6)",
+  "runnerUp": "structures-fit",
+  "runnerUpScore": 6
+ },
+ {
+  "ID": 698,
+  "title": "Sampling Units Need Their Own Lines Before a Production Order",
+  "status": "publish",
+  "category": "samples-approval",
+  "score": 22,
+  "allScores": {
+   "materials-print": 9,
+   "supplier-briefs": 15,
+   "samples-approval": 22,
+   "structures-fit": 8,
+   "shipping-rules": 3
+  },
+  "evidence": "sample(8) trial(8) approval(4)",
+  "runnerUp": "supplier-briefs",
+  "runnerUpScore": 15
+ },
+ {
+  "ID": 699,
+  "title": "Leftover Packaging: Check Versions Before Reordering",
+  "status": "publish",
+  "category": "supplier-briefs",
+  "score": 12,
+  "allScores": {
+   "materials-print": 5,
+   "supplier-briefs": 12,
+   "samples-approval": 10,
+   "structures-fit": 11,
+   "shipping-rules": 0
+  },
+  "evidence": "supplier(4) moq(4) price(2)",
+  "runnerUp": "structures-fit",
+  "runnerUpScore": 11
+ },
+ {
+  "ID": 700,
+  "title": "File Names Need a Revision Convention and an Approval Cross-Reference",
+  "status": "publish",
+  "category": "samples-approval",
+  "score": 30,
+  "allScores": {
+   "materials-print": 12,
+   "supplier-briefs": 8,
+   "samples-approval": 30,
+   "structures-fit": 3,
+   "shipping-rules": 0
+  },
+  "evidence": "approval(11) revision(11) sample(4)",
+  "runnerUp": "materials-print",
+  "runnerUpScore": 12
+ },
+ {
+  "ID": 701,
+  "title": "Photograph Three Named Views Before Requesting a Sample Change",
+  "status": "publish",
+  "category": "samples-approval",
+  "score": 24,
+  "allScores": {
+   "materials-print": 7,
+   "supplier-briefs": 7,
+   "samples-approval": 24,
+   "structures-fit": 5,
+   "shipping-rules": 2
+  },
+  "evidence": "sample(11) revision(5) approval(4)",
+  "runnerUp": "materials-print",
+  "runnerUpScore": 7
+ },
+ {
+  "ID": 702,
+  "title": "Same-Scope Supplier Conflicts Need an Authorized Selection Record",
+  "status": "publish",
+  "category": "supplier-briefs",
+  "score": 21,
+  "allScores": {
+   "materials-print": 6,
+   "supplier-briefs": 21,
+   "samples-approval": 16,
+   "structures-fit": 14,
+   "shipping-rules": 0
+  },
+  "evidence": "supplier(11) brief(4) factory(3)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 16
+ },
+ {
+  "ID": 703,
+  "title": "Supplier Deviations Need Approval Before the Sample Is Authorized",
+  "status": "publish",
+  "category": "samples-approval",
+  "score": 41,
+  "allScores": {
+   "materials-print": 7,
+   "supplier-briefs": 17,
+   "samples-approval": 41,
+   "structures-fit": 12,
+   "shipping-rules": 0
+  },
+  "evidence": "sample(11) approval(8) trial(8)",
+  "runnerUp": "supplier-briefs",
+  "runnerUpScore": 17
+ },
+ {
+  "ID": 704,
+  "title": "Write an Approval Label That Names the Accepted Scope",
+  "status": "publish",
+  "category": "samples-approval",
+  "score": 24,
+  "allScores": {
+   "materials-print": 10,
+   "supplier-briefs": 5,
+   "samples-approval": 24,
+   "structures-fit": 10,
+   "shipping-rules": 0
+  },
+  "evidence": "approval(11) sample(8) revision(3)",
+  "runnerUp": "structures-fit",
+  "runnerUpScore": 10
+ },
+ {
+  "ID": 705,
+  "title": "Release Artwork Panel by Panel Against the Current Drawing",
+  "status": "publish",
+  "category": "materials-print",
+  "score": 19,
+  "allScores": {
+   "materials-print": 19,
+   "supplier-briefs": 7,
+   "samples-approval": 19,
+   "structures-fit": 2,
+   "shipping-rules": 2
+  },
+  "evidence": "manual review: 分版放稿/artwork＝印刷文件",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 19
+ },
+ {
+  "ID": 706,
+  "title": "Keep Incoming Lot References With the Items Reviewed",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 20,
+  "allScores": {
+   "materials-print": 8,
+   "supplier-briefs": 5,
+   "samples-approval": 10,
+   "structures-fit": 20,
+   "shipping-rules": 11
+  },
+  "evidence": "lid(8) base(8) size(2)",
+  "runnerUp": "shipping-rules",
+  "runnerUpScore": 11
+ },
+ {
+  "ID": 707,
+  "title": "Incoming Component Damage Needs a Hold Record Before Packing",
+  "status": "publish",
+  "category": "samples-approval",
+  "score": 14,
+  "allScores": {
+   "materials-print": 5,
+   "supplier-briefs": 12,
+   "samples-approval": 14,
+   "structures-fit": 10,
+   "shipping-rules": 4
+  },
+  "evidence": "sample(5) inspection(5) revision(2)",
+  "runnerUp": "supplier-briefs",
+  "runnerUpScore": 12
+ },
+ {
+  "ID": 708,
+  "title": "Reopen Packaging Reviews When the Product Changes",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 25,
+  "allScores": {
+   "materials-print": 8,
+   "supplier-briefs": 5,
+   "samples-approval": 13,
+   "structures-fit": 25,
+   "shipping-rules": 0
+  },
+  "evidence": "base(8) lid(6) dimension(3)",
+  "runnerUp": "samples-approval",
+  "runnerUpScore": 13
+ },
+ {
+  "ID": 709,
+  "title": "Assign Product Copy Responsibility Before the Packaging Proof",
+  "status": "publish",
+  "category": "samples-approval",
+  "score": 31,
+  "allScores": {
+   "materials-print": 9,
+   "supplier-briefs": 7,
+   "samples-approval": 31,
+   "structures-fit": 12,
+   "shipping-rules": 7
+  },
+  "evidence": "proof(11) revision(8) approval(4)",
+  "runnerUp": "structures-fit",
+  "runnerUpScore": 12
+ },
+ {
+  "ID": 710,
+  "title": "Turn Unknown Brief Fields Into Answerable Supplier Questions",
+  "status": "publish",
+  "category": "supplier-briefs",
+  "score": 23,
+  "allScores": {
+   "materials-print": 8,
+   "supplier-briefs": 23,
+   "samples-approval": 4,
+   "structures-fit": 9,
+   "shipping-rules": 0
+  },
+  "evidence": "supplier(11) brief(10) moq(1)",
+  "runnerUp": "structures-fit",
+  "runnerUpScore": 9
+ },
+ {
+  "ID": 711,
+  "title": "Link Component Approvals Before Releasing the Whole Set",
+  "status": "publish",
+  "category": "samples-approval",
+  "score": 24,
+  "allScores": {
+   "materials-print": 11,
+   "supplier-briefs": 5,
+   "samples-approval": 24,
+   "structures-fit": 22,
+   "shipping-rules": 0
+  },
+  "evidence": "approval(11) sample(7) proof(3)",
+  "runnerUp": "structures-fit",
+  "runnerUpScore": 22
+ },
+ {
+  "ID": 1032,
+  "title": "Gift Box Design: Balance the Exterior and Interior",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 43,
+  "allScores": {
+   "materials-print": 19,
+   "supplier-briefs": 11,
+   "samples-approval": 5,
+   "structures-fit": 43,
+   "shipping-rules": 6
+  },
+  "evidence": "interior(11) lid(8) insert(8)",
+  "runnerUp": "materials-print",
+  "runnerUpScore": 19
+ },
+ {
+  "ID": 1038,
+  "title": "Seasonal Packaging Sleeves for a Shared Gift Box",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 41,
+  "allScores": {
+   "materials-print": 12,
+   "supplier-briefs": 14,
+   "samples-approval": 3,
+   "structures-fit": 41,
+   "shipping-rules": 4
+  },
+  "evidence": "sleeve(11) base(8) insert(8)",
+  "runnerUp": "supplier-briefs",
+  "runnerUpScore": 14
+ },
+ {
+  "ID": 1040,
+  "title": "Accessible Gift Packaging for Limited Dexterity",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 36,
+  "allScores": {
+   "materials-print": 16,
+   "supplier-briefs": 8,
+   "samples-approval": 9,
+   "structures-fit": 36,
+   "shipping-rules": 8
+  },
+  "evidence": "lid(8) drawer(6) base(5)",
+  "runnerUp": "materials-print",
+  "runnerUpScore": 16
+ },
+ {
+  "ID": 1042,
+  "title": "Gift Ready Ecommerce Packaging: Messages and Packout",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 18,
+  "allScores": {
+   "materials-print": 15,
+   "supplier-briefs": 14,
+   "samples-approval": 9,
+   "structures-fit": 18,
+   "shipping-rules": 18
+  },
+  "evidence": "fit(5) insert(5) size(3)",
+  "runnerUp": "shipping-rules",
+  "runnerUpScore": 18
+ },
+ {
+  "ID": 1044,
+  "title": "Shipping Box Sizes for Small Business: Plan the Range",
+  "status": "publish",
+  "category": "shipping-rules",
+  "score": 41,
+  "allScores": {
+   "materials-print": 6,
+   "supplier-briefs": 27,
+   "samples-approval": 7,
+   "structures-fit": 34,
+   "shipping-rules": 41
+  },
+  "evidence": "shipping(11) ship(11) carton(8)",
+  "runnerUp": "structures-fit",
+  "runnerUpScore": 34
+ },
+ {
+  "ID": 1046,
+  "title": "QR Codes on Packaging: Placement, Links and Long-Term Maintenance",
+  "status": "publish",
+  "category": "materials-print",
+  "score": 27,
+  "allScores": {
+   "materials-print": 27,
+   "supplier-briefs": 6,
+   "samples-approval": 12,
+   "structures-fit": 12,
+   "shipping-rules": 2
+  },
+  "evidence": "print(8) material(8) finish(8)",
+  "runnerUp": "structures-fit",
+  "runnerUpScore": 12
+ },
+ {
+  "ID": 1048,
+  "title": "Personalized Gift Packaging: Cards, Tags and Sleeves",
+  "status": "publish",
+  "category": "structures-fit",
+  "score": 44,
+  "allScores": {
+   "materials-print": 30,
+   "supplier-briefs": 15,
+   "samples-approval": 24,
+   "structures-fit": 44,
+   "shipping-rules": 2
+  },
+  "evidence": "sleeve(11) layout(8) size(8)",
+  "runnerUp": "materials-print",
+  "runnerUpScore": 30
+ },
+ {
+  "ID": 1050,
+  "title": "Ecommerce vs Retail Packaging: What Can Be Shared",
+  "status": "publish",
+  "category": "shipping-rules",
+  "score": 28,
+  "allScores": {
+   "materials-print": 8,
+   "supplier-briefs": 12,
+   "samples-approval": 4,
+   "structures-fit": 8,
+   "shipping-rules": 28
+  },
+  "evidence": "carton(8) ship(8) shipping(7)",
+  "runnerUp": "supplier-briefs",
+  "runnerUpScore": 12
+ }
+]
