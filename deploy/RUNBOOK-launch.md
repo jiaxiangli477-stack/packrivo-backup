@@ -4,6 +4,10 @@
 > 本文件不含任何密码、密钥或 token：wp-cli 走服务器上已有的 SSH/容器配置，Cloudflare 清缓存走本机 `E:\破甲工作区\i18n\.cf.env`（只引用路径，不抄值）。
 >
 > **28q 改版要点**（相对 28o）：生产站跑在 Docker 里，本手册所有命令都标了「宿主机 / 容器内」；`$BACKUP` 第 1 步定一次、写进 `CURRENT_LAUNCH`；备份路径与回滚路径一一对应；第 4、5 步按**首次安装**写（生产上子主题与报价插件都还不存在）；数据库备份落到 `$BACKUP/db.sql`。
+>
+> **首装已于 2026-10-29 完成。本手册是「首装手册」，不是升级手册。**
+> 那次上线的生产 ID、备份目录与逐步实测：`deploy/LAUNCH-LOG-2026-10-28.md` §37–§40、`dsh-out/DSH-RESULT-2026-10-28-prod.md`。要点：`CURRENT_LAUNCH = packrivo-launch-20261029-0335`，`/get-a-quote/` 页 ID = **3383**（本手册 4.5 建、9.8 删），两个 mu 补丁打后哈希 `887787ab…` / `f7d95f35…`。
+> **以后改主题或插件不要重跑本手册**：第 0 步「子主题/报价插件未安装」两条判据在已上线的生产上必然不成立，第 4/5 步的 `--force` 覆盖安装与 4.5 建页也不该再走一遍。升级另写升级手册（只覆盖装包 + 打补丁 + 复测）。
 
 - 目标站点：`https://www.packrivo.com`（**WordPress 7.1.4** + 父主题 `packrivo-static-bridge-1.2.38` + 子主题 `packrivo-home-v4` + 报价插件 `packrivo-quote` + mu-plugins `packrivo-i18n.php`、`packrivo-site-remediation-20261022.php`）
 - 上线前生产现状（2026-10-28 实测）：活跃主题是父主题本身，**子主题与报价插件都未安装**，`/get-a-quote/` 是 mu 里那条老别名 301 到 `/inquiry/`
@@ -47,6 +51,10 @@ WPCLI="docker exec php php -d disable_functions= /usr/local/bin/wp --path=$WPC -
 
 ### 0.1 上线前检查（只读）
 
+> **生产数据库是 MySQL，不是 MariaDB。** 2026-10-29 那次实测：`mysql` 容器跑 **MySQL Community Server 26.7.0**，账号认证插件是 **`caching_sha2_password`**；`php` 容器里的客户端是 `mariadb-client/mariadb-dump 11.4.13`，它的认证插件目录 `/usr/lib/mariadb/plugin/` 初始为空。这两件事各会产生一次报错，**导出探针要按下面的两层顺序处理**，两层都过完探针才可能有字节。
+> 演练环境从 29v 起也用 MySQL 官方镜像（`mysql:8.4`，本机实测 8.4.13）+ `caching_sha2_password` + 自签证书 TLS，就是为了在本地先把这两层跑出来。版本号与生产不同（26.7.0 vs 8.4.13），但两种报错与改法一致。
+
+
 ```bash
 # 容器与版本
 docker ps --format '{{.Names}}\t{{.Image}}' | grep -E '^(php|mysql|nginx|redis)\b'
@@ -65,8 +73,7 @@ $WPCLI theme list --format=csv | grep packrivo-static-bridge | grep active
 docker exec php sh -c 'command -v mysqldump || apk add --no-cache mariadb-client'
 docker exec php mysqldump --version
 
-# 数据库导出探针：wp-cli 调 mariadb-dump 时带 --no-defaults，会忽略 /etc/my.cnf.d；
-# 若 mysql 侧没开 TLS 而客户端是 mariadb 11.x，导出会报 TLS/SSL error
+# 数据库导出探针（第一次跑几乎一定失败，这是预期，见下面「两层补救」）：
 $WPCLI db export /tmp/probe.sql --skip-plugins --skip-themes
 docker exec php sh -c 'wc -c /tmp/probe.sql'
 docker exec php rm -f /tmp/probe.sql
@@ -75,20 +82,28 @@ docker exec php rm -f /tmp/probe.sql
 mkdir -p "$PKG"
 ```
 
-**通过判据**：`docker ps` 里的 php/mysql/nginx 都在；`core version` = `7.1.4`；PHP = `8.3.x`；`template` = `packrivo-static-bridge-1.2.38`；子主题与报价插件都「未安装」；`mysqldump --version` 有输出；**导出探针的字节数 > 0**。
+**通过判据**：`docker ps` 里的 php/mysql/nginx 都在；`core version` = `7.1.4`；PHP = `8.3.x`；`template` = `packrivo-static-bridge-1.2.38`；子主题与报价插件都「未安装」；`mysqldump --version` 有输出；**导出探针三条判据全 PASS**（见下）。
 若子主题或报价插件**已经存在**，说明不是首次安装，**停下**，本手册的 4/5 步与 9 步不适用。
 
-> **生产开着 WordPress 小版本自动更新，执行当天先核版本。** 2026-10-28 那次上线就是在窗口前被 WP 自动更新从 7.1.3 升到 7.1.4（增量包，改动 8 个 core 文件、`$wp_db_version` 保持 61833）。如果执行当天 `core version` 又不是本节写的值，**第 0 步判 FAIL，不要临场改判据**：先按 28t 的做法在本地用官方包对齐同一版本、完整重跑一轮演练，改完本节期望值再上生产。
+**导出探针的三条判据（改成三条，全 PASS 才算过）**：
 
-> **导出探针每轮都要重跑，不能靠上一轮留下的包装。** 下面的包装装在容器 `/usr/local/bin` 里，容器一重建就没了；28s 演练就是先把包装拆掉再跑，确认第 0 步真的会走「探针失败 → 按补救块装包装 → 重探成功」这条路。探针字节数为 0 或报 TLS/SSL error 就当没通过，别往下做第 1 步。
->
-> **判据只看补救后的结果。** 包装本来不在时，第一次探针失败是**预期现象，不算本步 FAIL**；按补救块装上包装、重探一次到字节数 > 0 才算通过。装了包装仍然 0 字节/报 TLS 错误，才是真 FAIL，停下别做第 1 步。
+| # | 判据 | 怎么查 |
+|---|---|---|
+| 0k-1 | 导出字节数 **> 0** | `docker exec php sh -c 'wc -c < /tmp/probe.sql'` |
+| 0k-2 | 导出里的 `CREATE TABLE` 条数 **= 库里 BASE TABLE 的条数** | 导出：`docker exec php grep -c 'CREATE TABLE' /tmp/probe.sql`；库：`$WPCLI db query "SHOW FULL TABLES" \| grep -c 'BASE TABLE'`（或 `$WPCLI db tables --all-tables-with-prefix \| wc -l`） |
+| 0k-3 | 文件末尾有 `-- Dump completed` | `docker exec php tail -2 /tmp/probe.sql` |
 
-**若导出探针报下列两种 `TLS/SSL error` 之一，做一次容器内的客户端包装再重探：**
-> - `TLS/SSL error: SSL is required, but the server does not support it` —— `mysql` 侧没开 TLS、客户端是 mariadb 11.x 时的典型症状（演练环境就是这种；28q 实测）。
-> - `TLS/SSL error: self-signed certificate in certificate chain` —— `mysql` 侧开了 TLS 但证书是自签/链不全，mariadb 11.x 客户端拒绝（生产 2026-10-28 实测这种；28t 起把两种都写进本节，负责人已放行）。
->
-> 两种都按下面的包装块处理，判据一样：装上包装后探针必须导出 **> 0 字节**；仍然导不出（例如服务端强制要求 TLS、`--skip-ssl` 被拒）就**停下报告**，不要往下做第 1 步。要点：`--skip-ssl` 必须**追加在参数末尾**，因为 wp-cli 传的 `--no-defaults` 必须保持在第一位，放前面会被拒。
+> **0k-2 的写法是 2026-10-29 当场改正的，不要再退回去。** 当时先用 `wp db query "SELECT COUNT(*) … information_schema …" --skip-column-names` 取库里的表数，**这条返回空**（`wp db query` 对这个调用不吐值），拿空串去比就误判成 FAIL；同时 `SHOW TABLES | wc -l` 会多算一行表头（40 张表得 41）。正确做法：`SHOW FULL TABLES` 只数 `BASE TABLE` 行（去掉表头那一行），或直接用 `wp db tables --all-tables-with-prefix | wc -l`；两边必须一致才算对，口径不一致时先统一口径，不要直接把两个数字放一起比。
+
+> **生产开着 WordPress 小版本自动更新，执行当天先核版本。** 2026-10-28 那次上线就是在窗口前被 WP 自动更新从 7.1.3 升到 7.1.4（增量包，**全深度改动 48 个 core 文件**、`$wp_db_version` 保持 61833）。注意 48 是全深度口径；只 `find -maxdepth 1` 扫 WP 根目录会数成 8 个，别拿 8 当全量。如果执行当天 `core version` 又不是本节写的值，**第 0 步判 FAIL，不要临场改判据**：先按 28t 的做法在本地用官方包对齐同一版本、完整重跑一轮演练，改完本节期望值再上生产。
+
+> **导出探针每轮都要重跑，不能靠上一轮留下的包装。** 包装装在容器 `/usr/local/bin` 里、认证插件装在 `/usr/lib/mariadb/plugin/` 里，容器一重建就都没了；29v 起演练环境的 `reset.sh` 每次复位都会把这两样拆掉，保证第 0 步真的走一遍「报错 → 补救 → 重探」。探针仍然是 0 字节就当没通过，别往下做第 1 步。
+
+### 0.1 补救块（两层，按顺序做，不要跳）
+
+**第 1 层 · TLS**：探针报下面两种 `TLS/SSL error` 之一时，做一次容器内的客户端包装再重探。
+> - `TLS/SSL error: SSL is required, but the server does not support it` —— `mysql` 侧没开 TLS、客户端是 mariadb 11.x 时的典型症状（28q 演练环境就是这种）。
+> - `TLS/SSL error: self-signed certificate in certificate chain` —— `mysql` 侧开了 TLS 但证书是自签/链不全，mariadb 11.x 客户端拒绝。**生产 2026-10-29 实测就是这句**（MySQL 26.7.0 + 自签证书 + `mariadb-dump 11.4.13`）。
 
 ```bash
 docker exec php sh -c 'cat > /usr/local/bin/mariadb-dump <<EOF
@@ -102,8 +117,26 @@ exec /usr/bin/mariadb "\$@" --skip-ssl
 EOF
 chmod +x /usr/local/bin/mariadb'
 docker exec php sh -c 'command -v mariadb-dump'
-# 然后重跑上面的导出探针，必须看到字节数 > 0
+# 然后重跑上面的导出探针
 ```
+
+要点：`--skip-ssl` 必须**追加在参数末尾**，因为 wp-cli 传的 `--no-defaults` 必须保持在第一位，放前面会被拒。
+
+**第 2 层 · caching_sha2**：装上包装后如果探针还是 0 字节，并且报下面这条，说明缺认证插件（不是 TLS 问题），补装 connector 再重探：
+
+```
+mariadb-dump: Got error: 1045: "Plugin caching_sha2_password could not be loaded:
+Error loading shared library /usr/lib/mariadb/plugin/caching_sha2_password.so: No such file or directory"
+```
+
+```bash
+docker exec php sh -c 'ls /usr/lib/mariadb/plugin | wc -l'      # 生产首装时是 0
+docker exec php sh -c 'apk add --no-cache mariadb-connector-c'
+docker exec php sh -c 'ls /usr/lib/mariadb/plugin'               # 期望 5–6 个 .so，含 caching_sha2_password.so
+# 然后重跑上面的导出探针 → 走下面三条判据
+```
+
+两层都过完，探针仍然 0 字节或报别的错 → **停下报告**，不要往下做第 1 步。装了什么包、装了哪个版本、插件目录前后各有几个文件，都记进上线日志。
 
 ### 0.2 从本机上传（**本机**执行，只在宿主机落地，不进 web 目录）
 
@@ -125,9 +158,16 @@ docker exec php sh -c 'command -v mariadb-dump'
 $P='E:\破甲工作区\packrivo-backup'
 scp -r "$P\deploy\packrivo-home-v4.zip" "$P\deploy\packrivo-quote.zip" "$P\deploy\27e-quote-redirect.patch" netcup:/home/web/packrivo-packages/
 scp -r "$P\deploy\patches-28m" "$P\deploy\i18n-merged" "$P\deploy\tools" netcup:/home/web/packrivo-packages/
-scp -r "$P\dsh-out\batch-01.json" "$P\dsh-out\batch-02.json" "$P\dsh-out\batch-03.json" "$P\dsh-out\batch-04.json" "$P\dsh-out\batch-05.json" "$P\dsh-out\hubs-27i.json" netcup:/home/web/packrivo-packages/
+# 6 个 JSON 必须落进 $PKG/dsh-out/（第 3 步的脚本按 <包根>/dsh-out/ 读，落包根会 Cannot read /pkg/dsh-out/batch-01.json）
+scp -r "$P\dsh-out\batch-01.json" "$P\dsh-out\batch-02.json" "$P\dsh-out\batch-03.json" "$P\dsh-out\batch-04.json" "$P\dsh-out\batch-05.json" "$P\dsh-out\hubs-27i.json" netcup:/home/web/packrivo-packages/dsh-out/
 scp -r "$P\scripts\product-buyers-27g" "$P\scripts\product-buyers-27e" "$P\scripts\hubs-27i" netcup:/home/web/packrivo-packages/scripts/
 ```
+
+> **落点清单（2026-10-29 上线时踩过一次，照这个对）**：
+> - `$PKG/*.zip`、`$PKG/27e-quote-redirect.patch` —— 包根
+> - `$PKG/patches-28m/`、`$PKG/i18n-merged/`、`$PKG/tools/`、`$PKG/scripts/` —— 包根下同名子目录
+> - **`$PKG/dsh-out/`（6 个 JSON）** —— 必须在 `dsh-out/` 子目录里，脚本读的是 `/pkg/dsh-out/batch-01.json`；落到包根时第 3 步 plan 会直接 `Cannot read /pkg/dsh-out/batch-01.json`
+> - `scp` 之前先在宿主机 `mkdir -p "$PKG/dsh-out"`（`scp` 不会替你建目录）
 
 上传后在**宿主机**核对：
 
@@ -315,6 +355,7 @@ ls -l "$BACKUP/rollback/"
 - `apply` 输出 `URL_and_body_check=PASS`（27g）；27i 输出 `H1_body_URL_check=PASS` 与 `H1_body_URL_unchanged=8/8`；
 - 出现 `Backup input/site mismatch` / `Original backup site/input mismatch` / `Expected-site guard failed` → **本步 FAIL**：先查 `/pkg/rollback` 有没有他站残留（3.0 守卫本该拦住），按下面「回滚」处理并**停止**；
 - 27g `verify` 输出 `URL_and_non_H1_body_unchanged=134/134`；27i `verify` 输出 `metadata_mismatches=0`，并且有 `H1_body_URL_unchanged=8/8` 与 `inquiry_description_preserved=yes`（两个脚本的 verify 打的字段不一样，拿 27i 的字段去判 27g 会一直 FAIL）；
+- **判据要在对应命令的输出里查（2026-10-29 当场改过）**：`H1_body_URL_unchanged=8/8` 是 **27i 的 `verify`** 打的，去 `apply` 的日志里 grep 会查不到 → 误判 FAIL。查之前先确认这行属于 `plan` / `apply` / `verify` 哪一个，再落到对应的输出文件上；查错了只改查法，不要重跑已经跑对的步骤；
 - `$BACKUP/rollback/` 里两个 JSON 都在（27g 约 1.2 MB，含全部原值）：
   ```bash
   test -s "$BACKUP/rollback/rollback-27g.json" && echo "27g rollback ok"
@@ -368,6 +409,59 @@ curl -s -o /dev/null -w '%{http_code}\n' "$SITE/"         # 200
 $WPCLI plugin deactivate packrivo-quote
 $WPCLI plugin delete packrivo-quote
 $WPCLI plugin list --format=csv | grep packrivo-quote || echo "报价插件已移除（回到首装前状态）"
+```
+
+---
+
+## 4.5 建报价页 `/get-a-quote/`（**首次安装**，机器：**生产 SSH**）
+
+**预计 2 分钟。放在第 4 步装完插件之后、第 6 步打补丁之前。**
+
+为什么必须有这一步：报价插件 `packrivo-quote` 只提供短代码 `[packrivo_quote]`，**它自己不会建页面**（插件里只有 `register_activation_hook` → `flush_rewrite_rules()`，没有 `add_rewrite_rule`、没有 `template_include`）。生产上线前没有这个页面，是 mu 里那条老 301 把 `/get-a-quote/` 顶到 `/inquiry/` 遮住了；第 6 步 27e 删掉 301 之后就会露出 404（2026-10-29 就是这样 FAIL 的）。演练库以前自带这个页面（ID 3220），所以演练一直没暴露——29v 起 `reset.sh` 会把它删掉。
+
+**4.5.1 守卫：任何状态都不能已有 slug 为 `get-a-quote` 的页面**
+
+```bash
+WPCLI="docker exec php php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root"
+BACKUP=/home/web/backups/$(cat /home/web/backups/CURRENT_LAUNCH)
+
+# 直接查库（含 draft / trash / revision，全 post_type）
+$WPCLI db query "SELECT ID,post_type,post_status,post_name FROM wp_posts WHERE post_name='get-a-quote'"
+# 计数（注意：wp db query 不要加 --skip-column-names，它对这个调用返回空；取输出里最后一个纯数字行）
+$WPCLI db query "SELECT COUNT(*) AS c FROM wp_posts WHERE post_name='get-a-quote'"
+# 再走一遍 wp 接口，把草稿和回收站都显式列上
+$WPCLI post list --post_type=any --post_status=any,draft,pending,private,future,trash \
+                 --name=get-a-quote --fields=ID,post_type,post_name,post_status --format=csv
+```
+
+两条都要是 **0 行 / 0 条** 才继续。**已经有就停下报告，不要覆盖、不要改 slug 硬建。**
+
+**4.5.2 建页**
+
+```bash
+$WPCLI post create --post_type=page --post_title='Get a Quote' --post_name=get-a-quote \
+       --post_content='[packrivo_quote]' --post_status=publish --comment_status=closed --porcelain
+# 返回的数字就是页面 ID（生产 2026-10-29 是 3383）
+echo "get_a_quote_page_id=<ID> created=$(date -u +%FT%TZ)" >> "$BACKUP/INSTALL-STATE.txt"
+tail -2 "$BACKUP/INSTALL-STATE.txt"
+```
+
+**通过判据**
+
+| # | 判据 | 怎么查 |
+|---|---|---|
+| 4.5a | `post_name` **正好**是 `get-a-quote`（不是 `get-a-quote-2`） | `$WPCLI post get <ID> --field=post_name` |
+| 4.5b | `post_content` **正好**是 `[packrivo_quote]` | `$WPCLI post get <ID> --field=post_content` |
+| 4.5c | `post_status` = `publish` | `$WPCLI post get <ID> --field=post_status` |
+| 4.5d | ID 已记进 `$BACKUP/INSTALL-STATE.txt` | `grep get_a_quote_page_id "$BACKUP/INSTALL-STATE.txt"` |
+
+此时 `/get-a-quote/` 仍然 301 到 `/inquiry/`（27e 还没打），**这是预期空档期**，不算失败；第 6 步打完补丁它才会 200 并渲染出报价组件。
+
+**回滚**
+
+```bash
+$WPCLI post delete <ID> --force          # ID 从 INSTALL-STATE.txt 读
+$WPCLI post list --post_type=page --name=get-a-quote --post_status=any,draft,trash --format=count   # 期望 0
 ```
 
 ---
@@ -439,17 +533,21 @@ docker exec php php -l "$WPC/wp-content/mu-plugins/packrivo-i18n.php"
 
 **通过判据**
 
-- 6.1 的 `sha256sum` 与 `ac0a2753…` 一致；两个 `git apply --check` 都 `CHECK-OK`（失败**不要强打**）；
-- 两个 `php -l` 都 `No syntax errors detected`；
-- `/get-a-quote/` 不再 301：
-  ```bash
-  curl -sI "$SITE/get-a-quote/"    | head -3      # 期望 200
-  curl -sI "$SITE/de/get-a-quote/" | head -3      # 期望 200
-  ```
-- 语种 404 有 viewport：
-  ```bash
-  curl -s "$SITE/ar/2026/10/26/jewelry-pouch-box-customer-handoff/" | grep -c 'name="viewport"'   # 期望 1
-  ```
+| # | 判据 | 怎么查 |
+|---|---|---|
+| 6a | 6.1 打补丁**之前**的 `sha256sum` = 基线 `ac0a27538c428f2175e9596bd21f27be47069aaf57cbeabf8892ae456e2f471d` | 打之前先 `sha256sum`，与基线不一致就先 diff 再决定，不要盲目打 |
+| 6b | 6.1 打补丁**之后**的 `sha256sum` ≠ 基线（说明补丁真的落盘了） | 打完再 `sha256sum` 一次 |
+| 6c | 两个 `git apply --check` 都 `CHECK-OK`，两个 `php -l` 都 `No syntax errors detected` | 见上面命令输出；`--check` 失败**不要强打** |
+| 6d | `/get-a-quote/` = **200**（不再是 301） | `curl -s -o /dev/null -w '%{http_code}' "$SITE/get-a-quote/?cb=$(date +%s)"` |
+| 6e | `/de/get-a-quote/` = **200** | 同上，换成 `/de/get-a-quote/` |
+| 6f | 报价页里有报价组件（短代码真的渲染出来了） | `curl -s "$SITE/get-a-quote/?cb=$(date +%s)" \| grep -c 'pkq-root'` → 期望 ≥ 1；`/de/get-a-quote/` 同样一条 |
+| 6g | 语种 404 有 viewport | `curl -s "$SITE/ar/2026/10/26/jewelry-pouch-box-customer-handoff/?cb=$(date +%s)" \| grep -c 'name="viewport"'` → 期望 1 |
+
+> **6b 的写法是 2026-10-29 当场改的**：那一轮拿「打补丁**前**」抓的哈希变量去比「是否已变」，当然相等 → 误判 FAIL。要判「补丁落盘」就必须**打完再取一次哈希**。
+>
+> **6d/6e 不过先查 4.5**：这两条 200 的前提是 `/get-a-quote/` **页面存在**（4.5 建的）。2026-10-29 首装就是在这一步 FAIL——补丁打对了，但生产从来没有这个页面，27e 把 301 删掉后直接 404。判 200 之前先确认 `$WPCLI post list --post_type=page --name=get-a-quote --format=count` = 1。
+>
+> **URL 判据一律带 `?cb=` 破缓存**：Cloudflare 会缓存 301/404，拿裸 URL 打两次会读到上一次的缓存结果（28u 判 6g 时就被缓存的 404 页骗成 0）。
 
 **回滚**（两个独立，读的是第 1 步摊平后的 `$BACKUP/mu/<文件名>`）：
 
@@ -538,6 +636,13 @@ echo "回滚目标: $BACKUP"; test -f "$BACKUP/db.sql" && echo "备份在位"
 ```
 
 ```bash
+# 9.8 报价页：按 INSTALL-STATE 里记的 ID 删掉（顺序在第 9.6 之前）
+#     这一页是 4.5 建的，回滚到首装前状态就必须删掉，否则站点留着一个只在本次上线存在的页面
+GQ_ID=$(sed -n 's/^get_a_quote_page_id=\([0-9][0-9]*\).*/\1/p' "$BACKUP/INSTALL-STATE.txt")
+echo "报价页 ID = ${GQ_ID:-（没找到，先查 $BACKUP/INSTALL-STATE.txt）}"
+test -n "${GQ_ID:-}" && $WPCLI post delete "$GQ_ID" --force
+$WPCLI post list --post_type=page --name=get-a-quote --post_status=any,draft,trash --format=count   # 期望 0
+
 # 9.7 缓存：无需回滚（重新生成即可）；想立即回旧内容就先清一次
 #     python E:\破甲工作区\i18n\cf_purge.py      ← 本机，负责人亲自
 $WPCLI transient delete --all
@@ -653,11 +758,12 @@ cp -a "$BACKUP/i18n/." "$I18N/"
 | 2 | 字典 + 路径表 | 生产 SSH（容器里跑合并） | 20–30 min | 不可（本轮主体） |
 | 3 | 134 产品页 + 8 主页面 | 生产 SSH（容器里 eval-file） | 15–25 min | 不可（SEO 主体） |
 | 4 | 报价插件（首装） | 生产 SSH | 5 min | 可（若报价插件不变） |
+| 4.5 | 建报价页 `/get-a-quote/`（首装必做） | 生产 SSH | 2 min | 不可（插件只给短代码，不会自己建页） |
 | 5 | 子主题（首装） | 生产 SSH | 5 min | 可（若只改内容） |
 | 6 | 两个 mu 补丁 | 生产 SSH | 10 min | 27e 不可省（否则报价按钮全跳询盘） |
 | 7 | 清缓存 | 本机 + 生产 SSH（Cloudflare 由负责人亲自执行） | 5 min | 不可 |
 | 8 | 复测 | 本机浏览器 + 生产 SSH | 20–30 min | 不可 |
-| 9 | 整体回滚 | 生产 SSH（清缓存在本机） | 15 min | 只在出问题时执行 |
+| 9 | 整体回滚（**先 9.8 删报价页**，再 9.7 → 9.2） | 生产 SSH（清缓存在本机） | 15 min | 只在出问题时执行 |
 
 ## 附录 C · 本地演练（28q 正反向 + 28r 最后手段，均已跑通）
 
@@ -673,6 +779,21 @@ cp -a "$BACKUP/i18n/." "$I18N/"
 | **最后手段（28r）** | 第 9 步末尾的整库导入 + 9.6/9.5/9.4/9.2 文件部分 | 原始一轮 `PASS=16 FAIL=2 EXIT=1`（L-4/L-6 判据写法与顺序都错了，见该节注记），按改写的判据复核 `PASS=11 FAIL=0 EXIT=0`；整站快照回到基线 `4972cd81…`（逐字节一致） |
 | **并入三个守卫后重跑（28s）** | 第 0–8 步正向 + 第 9 步回滚 | 见 `DSH-RESULT-2026-10-28s.md`：每步 `PASS=n FAIL=0` 且 `EXIT=0`；复位快照 `4972cd81…`、正向快照 `4247693f…`、回滚后回到 `4972cd81…`；反向自检确认 3.0 守卫拦得住他站残留 JSON |
 | **本地对齐 WP 7.1.4 后重跑（28t）** | 第 0–8 步正向 + 第 9 步回滚 + 3.0 反向自检 | 见 `DSH-RESULT-2026-10-28t.md`：core 升级到 7.1.4（官方包 `a147146c…`）后每步 `PASS=n FAIL=0` 且 `EXIT=0`；复位快照作为本轮新基线，回滚后回到该基线；正向快照与 28s 正向 `4247693f…` 的 diff 只来自版本号，页面标题没有变化。RUNBOOK 提交号见结果文档（下一次生产授权锁定它） |
+
+### 附录 C-1 · 2026-10-29 生产实跑（首装，已上线）
+
+第一次真上生产（`4544e0d`，Claude 线上只读复核通过）。逐字节证据：`deploy/LAUNCH-LOG-2026-10-28.md` §37–§40、`dsh-out/DSH-RESULT-2026-10-28-prod.md` §18–§31。
+
+**那一轮两次停下等临时批准（现在都已写进正文，下次不用再批）**：
+
+| # | 现象 | 原因 | 现在的正文位置 |
+|---|---|---|---|
+| 偏离 1 | 0.1 导出探针先报 `TLS/SSL error: self-signed certificate in certificate chain`（0 字节）；打上 `--skip-ssl` 包装后改报 `1045 … caching_sha2_password.so: No such file or directory`（仍 0 字节） | 生产 `mysql` 是 **MySQL 26.7.0**、认证 `caching_sha2_password`；php 容器是 `mariadb-dump 11.4.13`，`/usr/lib/mariadb/plugin/` 初始 0 个文件。当场批准 `apk add --no-cache mariadb-connector-c`（装到 3.3.10-r0，插件目录 0 → 5 个文件），探针随即导出 32,516,267 B | **0.1「补救块（两层）」** |
+| 偏离 2 | 第 6 步补丁打对了，`/get-a-quote/` 却是 **404**（en/de/ar 全 404，HEAD 也 404） | 生产**从来没有** `/get-a-quote/` 页面：插件只给短代码，旧 301 一直遮着；演练库自带这个页面（ID 3220）所以从没暴露。当场批准 `post create` 建页，生产 ID **3383** | **4.5 建报价页**、**第 6 步判据 6d/6e 注记**、**9.8 删报价页** |
+
+**那轮当场改正的三处判据写法**（都已进正文）：0k-2 用 `SHOW FULL TABLES` 数 `BASE TABLE` 并去掉表头（`SELECT COUNT(*) … --skip-column-names` 返回空、`SHOW TABLES | wc -l` 多算一行表头）；3g 的 `H1_body_URL_unchanged=8/8` 在 **verify** 输出里，不在 apply；6b 要拿**打补丁之后**的哈希去比「已变」。
+
+**实测数字（下次可对照）**：`CURRENT_LAUNCH=packrivo-launch-20261029-0335`；`db.sql` 32,516,235 B / `sha256 1733240d…6ab6`；`CREATE TABLE` 40 = `SHOW FULL TABLES` 的 BASE TABLE 40；27g `apply_updated=134 already_current=0`、27i `7+1=8`；两个 mu 打后 `887787ab…` / `f7d95f35…`；core 全深度改动 **48** 个文件。
 
 28q 补跑过第 0.1 步新加的**数据库导出探针**：拆掉客户端包装时探针报 `TLS/SSL error: SSL is required`、导出 0 字节；按本手册打包装后导出 36,381,501 B、40 张表。
 
