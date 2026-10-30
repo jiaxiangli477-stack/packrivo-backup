@@ -415,3 +415,24 @@ meta 抽查 /catalog-velvet-box/：len=104
 
 一处手册与实现的偏差（不改手册，先记录）：`29z-crawl-prod.mjs` / `29z-old-url-sources.mjs` 的参数是 **out-dir**，
 按手册写成 `xxx.json` 会建出一个同名目录；本次已把 crawl 结果规整为 `crawl-29z-after-cf-prod.json`。
+## A10. Claude 线上只读复核（交接文件「下一步」第 3 条）—— 全部通过
+
+2026-10-30，负责人清完 Cloudflare 缓存后，从公网只读检查（curl，未登录、未写任何东西）。仓库核对：HEAD `a3d0d6b`，RUNBOOK blob `b3edcd71ee33fcbf982dd2a4aefd3026022e4930`（与授权锁定一致），工作区干净。
+
+| 检查项 | 要求 | 实测 | 结果 |
+|---|---|---|---|
+| `/wp-json/wp/v2/pages?search=1688` | X-WP-Total 0 | 0（body `[]`） | PASS |
+| `/wp-json/wp/v2/pages?search=%C2%A5`（¥） | 0 | 0（body `[]`） | PASS |
+| `/wp-json/wp/v2/posts?search=1688` | 0 | 0（body `[]`） | PASS |
+| 5 个 catalog 页（ring-box-o1cn01ahes / wooden-box-o1cn01rnjift1k / velvet-box / paper-box / gift-box） | 200，HTML 无 `1688`、无 `¥` / `¥`，meta description 为新写法 | 全部 200，76–90 KB；1688 / ¥ / `¥` 均为 0；meta 均以 `Custom logo printing, MOQ 500 per design. Samples available.` 结尾 | PASS |
+| `/products/` | 无 `¥`，卡片 24 | 200，312368 B；`¥` 0、`¥` 0、`1688` 0；`pk-product-card` 卡片 24 | PASS |
+| 首页 | 能看到 `Example quote`；字体 `packrivo-inter-latin-v3.woff2` 200 | `Example quote` 1 处；字体 200 `font/woff2` 34952 B（packrivo-static-bridge-1.2.38 路径） | PASS |
+| 首页站内链接 | 5 个旧死链都没有 | `/resources/` `/pricing/` `/packaging-examples/` `/rigid-gift-boxes/` `/sustainability/` 引用均为 0 | PASS |
+| 子主题版本 | 4.0.4 | `style.css` 头 `Version: 4.0.4`；首页资源 `?ver=4.0.4` | PASS |
+
+结论：29z 线上复核通过，可以进入 29y。
+
+备注（不影响通过，记入积压）：
+- 本节标题 1 行写的「中止」是第一次授权时的状态，以 A0–A10 为准：第三次授权（`09e272e`）已上线成功。
+- `/catalog-wooden-box-o1cn01rnjift1k/` 的新 meta 开头是「Black Wood-Grain Jewelry.」，读起来像被截断，后续精修 catalog 文案时一并看。
+- `29z-crawl-prod.mjs` / `29z-old-url-sources.mjs` 的参数实际是输出目录，手册写法有偏差（见 A9 末尾），下次改 RUNBOOK 时顺手修。
