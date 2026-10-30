@@ -74,7 +74,8 @@ $faq = [
       <?php // 图里没有内衬、也不是棚拍实物：alt 只写看到的两个奶油色礼盒与棕色缎带。 ?>
       <img src="<?php echo esc_url($img . '/hero.webp'); ?>" alt="Two small cream gift boxes with brown satin ribbon, held in open hands" width="1200" height="1200" loading="eager" />
       <figcaption class="pk-hero-card">
-        <p class="pk-mono">Rigid magnetic box · 9.5×9.5×4 cm</p>
+        <?php // 图里是两只奶油色纸盒 + 棕色缎带，卡片文案加 Example quote 前缀，价格仍由报价引擎算，不动数字。 ?>
+        <p class="pk-mono">Example quote · Rigid magnetic box · 9.5×9.5×4 cm</p>
         <?php
         // Priced by the same engine as the configurator, at 1,000 units.
         $pk_hero_unit = null;

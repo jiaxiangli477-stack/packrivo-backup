@@ -7,7 +7,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('PKV4_VERSION', '4.0.3');
+define('PKV4_VERSION', '4.0.4');
 
 function pkv4_assets()
 {

@@ -35,6 +35,7 @@
   ],
   "console_errors": [
     "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+    "1440: Failed to load resource: the server responded with a status of 404 (Not Found)",
     "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
     "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
     "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
@@ -50,6 +51,7 @@
     "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
     "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
     "375: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+    "375: Failed to load resource: the server responded with a status of 404 (Not Found)",
     "375: Failed to load resource: net::ERR_EMPTY_RESPONSE",
     "375: Failed to load resource: net::ERR_EMPTY_RESPONSE",
     "375: Failed to load resource: net::ERR_EMPTY_RESPONSE",

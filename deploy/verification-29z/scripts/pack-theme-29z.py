@@ -16,7 +16,7 @@ PAIRS = [
     (os.path.join(ROOT, "packrivo-wp", "packrivo-home-v4.zip")),
 ]
 PREFIX = "packrivo-home-v4/"
-STAMP = (2026, 10, 29, 0, 0, 0)
+STAMP = (2026, 10, 30, 0, 0, 0)
 
 
 def collect():

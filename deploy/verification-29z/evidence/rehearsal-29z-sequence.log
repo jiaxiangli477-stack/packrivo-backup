@@ -1,0 +1,690 @@
+
+===== R0 环境准备：灌生产库 + 4.0.1 + mu 未打补丁 =====
+
+===== [容器] 导入 29z-prod.sql + home/siteurl=http://nginx + cache flush =====
+  Success: Imported from '/tmp/29z-prod.sql'.
+  Success: Updated 'home' option.
+  Success: Updated 'siteurl' option.
+  Success: The cache was flushed.
+
+===== [宿主] 4.0.1 落地并装进容器 =====
+
+===== [容器] 装完看版本 =====
+  packrivo-static-bridge-1.2.38	parent	1.2.38
+  grep: /var/www/html/www.packrivo.com/wordpress/wp-content/themes/packrivo-home-v4/style.css: No such file or directory
+  Error: The 'packrivo-home-v4' theme could not be found.
+  5ab5be3f85f46ce5416fdb4cafc98f54de86a1fc4ece041c56c2de40173a1d8c  /var/www/html/www.packrivo.com/wordpress/wp-content/mu-plugins/packrivo-wave2.php
+
+===== R0 完成 =====
+
+===== [容器] D.0 只读预检 =====
+  --- theme list ---
+  packrivo-home-v4	active	4.0.1
+  packrivo-static-bridge-1.2.38	parent	1.2.38
+  --- 基线计数 ---
+  Error: Too many positional arguments: SELECT COUNT(*) FROM wp_posts WHERE post_type='page' AND post_status='publish' AND post_name LIKE 'catalog-%'
+  Error: Too many positional arguments: SELECT COUNT(*) FROM wp_posts WHERE post_status='publish' AND post_content LIKE '%1688%'
+  Error: Too many positional arguments: SELECT COUNT(*) FROM wp_posts WHERE post_status='publish' AND post_content LIKE CONCAT('%',CHAR(194,165),'%')
+  Error: Too many positional arguments: SELECT COUNT(*) FROM wp_posts WHERE post_status='publish' AND post_content LIKE '%detail.1688.com%'
+  Error: Too many positional arguments: SELECT COUNT(*) FROM wp_postmeta WHERE meta_key='_yoast_wpseo_metadesc'
+  Error: Too many positional arguments: SELECT COUNT(*) FROM wp_postmeta WHERE meta_key='_yoast_wpseo_metadesc' AND (meta_value LIKE '%1688%' OR meta_value LIKE CONCAT('%',CHAR(194,165),'%'))
+  Error: Too many positional arguments: SELECT COUNT(*) FROM wp_yoast_indexable WHERE description LIKE '%1688%' OR description LIKE CONCAT('%',CHAR(194,165),'%')
+  Error: Too many positional arguments: SELECT ROUND((LENGTH(post_content)-LENGTH(REPLACE(post_content,'Listed at','')))/9) FROM wp_posts WHERE ID=8
+  Error: Too many positional arguments: SELECT COUNT(*) FROM wp_posts WHERE ID=90 AND post_content LIKE '%detail.1688.com%'
+  catalog_pages=publish_1688=publish_yen=publish_detail1688=metadesc_rows=metadesc_1688yen=indexable_1688yen=products_yen_paras=blog_detail1688=--- 首页字体 ---
+  http://nginx/wp-content/themes/packrivo-home-v4/packrivo-static/assets/packrivo-inter-latin-v3.woff2
+
+===== [容器] D.0 前态：criteria before + 首页哈希 =====
+  == 取前态 ==
+    快照 before: pages 729 / meta 804 / index 774 / cards 24 / products 303354B
+    catalog 页 ID: 208 条
+  c0312a451a49b1b26b242c171a33cbf5c009008eedd9e77aebc80d007464782b  /tmp/home-before.html
+
+===== [宿主] 保存 home-before.html / sha256 =====
+  home-before sha256 = c0312a451a49b1b26b242c171a33cbf5c009008eedd9e77aebc80d007464782b
+
+===== [本机] D.0-7 /products/ 改前截图 =====
+  {
+    "tag": "before",
+    "page": "/products/",
+    "shot": [
+      {
+        "width": 1440,
+        "height": 900,
+        "status": 200,
+        "file": "before-1440.png",
+        "bytes": 73287,
+        "cards": 24,
+        "overflow": false,
+        "yen_in_dom": 0,
+        "first_titles": [
+          "Bulk Shipping Boxes with Logo",
+          "Custom Auto-Lock Bottom Boxes",
+          "Custom Book-Style Rigid Gift Boxes"
+        ]
+      },
+      {
+        "width": 375,
+        "height": 812,
+        "status": 200,
+        "file": "before-375.png",
+        "bytes": 33178,
+        "cards": 24,
+        "overflow": false,
+        "yen_in_dom": 0,
+        "first_titles": [
+          "Bulk Shipping Boxes with Logo",
+          "Custom Auto-Lock Bottom Boxes",
+          "Custom Book-Style Rigid Gift Boxes"
+        ]
+      }
+    ],
+    "console_errors": [
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "375: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "375: Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "375: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "375: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "375: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "375: Failed to load resource: net::ERR_EMPTY_RESPONSE"
+    ]
+  }
+
+===== D.1-1 备份 4.0.1 主题目录 =====
+  文件数 = 38
+  目录哈希 = c02a9324b3c8550cec3502c7e23c4257d618da4a2f14a5da352faf86e3289edf
+  Version: 4.0.1
+
+===== D.1-2 备份 mu 原文件 =====
+  mu 原文件 sha256 = 5ab5be3f85f46ce5416fdb4cafc98f54de86a1fc4ece041c56c2de40173a1d8c
+  .orig-29w 5ab5be3f85f46ce5416fdb4cafc98f54de86a1fc4ece041c56c2de40173a1d8c  /var/www/html/www.packrivo.com/wordpress/wp-content/mu-plugins/packrivo-wave2.php.orig-29w
+
+===== D.1-3 备份三张表（落宿主机） =====
+  Success: Exported to '/tmp/29z-pre.sql'.
+  三表备份字节 = 29149411
+  三表备份 sha256 = 65240db93303b32ee0a64adef87cff99ac5b6d606d449051e5d9b5b57dd72b02
+  容器内已删: ls: /tmp/29z-pre.sql: No such file or directory
+
+===== R1 完成 =====
+===== [容器] D.0 基线计数（重跑，-e 已修）=====
+  --- theme list ---
+  packrivo-home-v4	active	4.0.1
+  packrivo-static-bridge-1.2.38	parent	1.2.38
+  --- 基线计数 ---
+  catalog_pages=208
+  publish_1688=209
+  publish_yen=209
+  publish_detail1688=1
+  metadesc_rows=769
+  metadesc_1688yen=226
+  indexable_1688yen=189
+  products_yen_paras=Success: Query succeeded. Rows affected: -1
+  blog_detail1688=1
+  --- 首页字体 ---
+  http://nginx/wp-content/themes/packrivo-home-v4/packrivo-static/assets/packrivo-inter-latin-v3.woff2
+
+===== [容器] D.2.1 装 4.0.4 + 卡片文案 =====
+  --- 包哈希 ---
+  3279dc6121cee305dbbf620beb7b7da45334886b779d7d2ece68004ceda4aed6  /pkg/packrivo-home-v4.zip
+  --- 装 + 启用 ---
+  Warning: The '/var/www/html/www.packrivo.com/wordpress/wp-content/themes/packrivo-home-v4.zip' theme could not be found.
+  Error: No themes installed.
+  Warning: The 'Packrivo Home v4 (child)' theme is already active.
+  packrivo-home-v4	active	4.0.1
+  packrivo-static-bridge-1.2.38	parent	1.2.38
+  --- 卡片文案 ---
+  front-page Example quote 行数=0
+  首页渲染=价格块=per unit 行=per unit at 1,000 pieces
+
+===== [容器] D.2.2 字体补丁 =====
+  --- dry-run ---
+  --- apply ---
+  /tmp/r-steps.sh: line 53: patch: not found
+  /tmp/r-steps.sh: line 55: patch: not found
+  5ab5be3f85f46ce5416fdb4cafc98f54de86a1fc4ece041c56c2de40173a1d8c  /var/www/html/www.packrivo.com/wordpress/wp-content/mu-plugins/packrivo-wave2.php
+  Success: The cache was flushed.
+  --- 字体 URL ---
+  http://nginx/wp-content/themes/packrivo-home-v4/packrivo-static/assets/packrivo-inter-latin-v3.woff2
+  code=200 type=font/woff2 size=34952
+
+===== [容器] D.3.1 干跑 =====
+    #3208 catalog-necklace-box-o1cn01cjv8p1iy 行-1 块-1 字节 5766→5404
+        删掉的段落: Historical 1688 listing or search price for reference only. The US dollar amount is an approximate historical conversion. The applicable quantity, specification
+    #3207 catalog-necklace-box-o1cn01hswf671i 行-1 块-1 字节 5764→5403
+        删掉的段落: Historical 1688 listing or search price for reference only. The US dollar amount is an approximate historical conversion. The applicable quantity, specification
+  
+  [audit] 删掉的句子（34 句）与改动明细 -> /tmp/strip-1688-audit.json
+  
+  [report] {"mode":"dry-run","pages_catalog":208,"pages_touched":208,"rows_removed":192,"h2_blocks_removed":192,"leftover_pages":0,"metadesc_written":208,"metadesc_total":208,"metadesc_unique":208,"metadesc_maxlen":153,"metadesc_over155":0,"indexable_rows":208,"products_p_removed":158,"blog_links_unwrapped":1,"changes":210}
+
+===== [容器] D.3.2 真跑 =====
+        删掉的段落: Historical 1688 listing or search price for reference only. The US dollar amount is an approximate historical conversion. The applicable quantity, specification
+  
+  [audit] 删掉的句子（34 句）与改动明细 -> /tmp/audit-29z.json
+  
+  [report] {"mode":"apply","pages_catalog":208,"pages_touched":208,"rows_removed":192,"h2_blocks_removed":192,"leftover_pages":0,"metadesc_written":208,"metadesc_total":208,"metadesc_unique":208,"metadesc_maxlen":153,"metadesc_over155":0,"indexable_rows":208,"products_p_removed":158,"blog_links_unwrapped":1,"changes":210}
+  audit 字节 = 10451
+
+===== [容器] D.3.3 幂等（应 changes 0） =====
+  [audit] 删掉的句子（0 句）与改动明细 -> /tmp/strip-1688-audit.json
+  
+  [report] {"mode":"apply","pages_catalog":208,"pages_touched":0,"rows_removed":0,"h2_blocks_removed":0,"leftover_pages":0,"metadesc_written":0,"metadesc_total":208,"metadesc_unique":208,"metadesc_maxlen":153,"metadesc_over155":0,"indexable_rows":208,"products_p_removed":0,"blog_links_unwrapped":0,"changes":0}
+
+===== [容器] D.4 indexable + flush =====
+  Success: Query succeeded. Rows affected: 543
+  Success: The cache was flushed.
+  mismatch=0
+
+===== [本机] D.5 改后截图 =====
+  {
+    "tag": "after",
+    "page": "/products/",
+    "shot": [
+      {
+        "width": 1440,
+        "height": 900,
+        "status": 200,
+        "file": "after-1440.png",
+        "bytes": 73287,
+        "cards": 24,
+        "overflow": false,
+        "yen_in_dom": 0,
+        "first_titles": [
+          "Bulk Shipping Boxes with Logo",
+          "Custom Auto-Lock Bottom Boxes",
+          "Custom Book-Style Rigid Gift Boxes"
+        ]
+      },
+      {
+        "width": 375,
+        "height": 812,
+        "status": 200,
+        "file": "after-375.png",
+        "bytes": 33178,
+        "cards": 24,
+        "overflow": false,
+        "yen_in_dom": 0,
+        "first_titles": [
+          "Bulk Shipping Boxes with Logo",
+          "Custom Auto-Lock Bottom Boxes",
+          "Custom Book-Style Rigid Gift Boxes"
+        ]
+      }
+    ],
+    "console_errors": [
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "375: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "375: Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "375: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "375: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "375: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "375: Failed to load resource: net::ERR_EMPTY_RESPONSE"
+    ]
+  }
+
+===== [容器] D.5 compare =====
+  == 取后态 ==
+    快照 after: pages 729 / meta 1012 / index 774 / cards 24 / products 302028B
+  == §2 九条判据 ==
+    PASS  1a 正文含 1688 的 publish 行（期望 0，实际 0）
+    PASS  1b 正文含 ¥ 的 publish 行（期望 0，实际 0）
+    PASS  1c 正文含 detail.1688.com 的 publish 行（期望 0，实际 0）
+    PASS  2a catalog meta 里还有价格/来源词（期望 0，实际 0）
+    PASS  2b catalog meta 超过 155 字符（期望 0，实际 0）
+    PASS  2c catalog meta 条数 / 去重后条数（期望 208，实际 208）
+    PASS  2d catalog meta 带固定尾句（期望 208，实际 208）
+    PASS  2e og-description 与 metadesc 同步（不一致条数）（期望 0，实际 0）
+    PASS  3a ID/slug/status 集合（期望 0b9937b5aa0f2465b31dd2cf224b402d，实际 0b9937b5aa0f2465b31dd2cf224b402d）
+    PASS  3b noindex 集合（期望 36c1d1f0c472ea66be0745c7404dd0fe，实际 36c1d1f0c472ea66be0745c7404dd0fe）
+    PASS  4a /products/ 产品卡片数（期望 24，实际 24）
+    PASS  4b /products/ 卡片 链接+名称 逐条相同（期望 abfa829ef48d5fa18bfa582ca9ff77a3，实际 abfa829ef48d5fa18bfa582ca9ff77a3）
+    PASS  4c 渲染里 ¥ 计数（期望 0，实际 0）
+    PASS  4d 渲染里 \u00a5 计数（期望 0，实际 0）
+    PASS  4e 渲染里 1688 计数（期望 0，实际 0）
+      截图 after-1440.png 73287 B
+      截图 after-375.png 33178 B
+    FAIL  4f 改前改后 x 1440/375 四张截图（期望 4，实际 2）
+      改前 /products/: ¥ 0 / \u00a5 20 / 1688 0
+    PASS  5a 内容被改的对象数（预期 210 = 208 catalog + /products/ + 1 篇博客）（期望 210，实际 210）
+    PASS  5b 集合外被改的对象数（期望 0，实际 0）
+    PASS  6a 非 catalog/products/博客 的 meta 被改条数（期望 0，实际 0）
+    PASS  6b meta 被改对象数（只有 208 个 catalog 页有 metadesc 行；products 与博客本来没有这行）（期望 208，实际 208）
+    PASS  7 indexable.description 与 postmeta 不一致条数（期望 0，实际 0）
+    PASS  8 抽查 5 个 catalog 页渲染里 ¥ 总数（期望 0，实际 0）
+    PASS  9a /get-a-quote/ 跟随跳转后状态（期望 200，实际 200）
+    PASS  9b /products/ 页里 Get a price 链接（51 处）
+  == 汇总 ==
+    PASS=23  FAIL=1
+
+===== R2 完成 =====
+===== compare 重跑（补齐改前截图）=====
+  == 取后态 ==
+    快照 after: pages 729 / meta 1012 / index 774 / cards 24 / products 302028B
+  == §2 九条判据 ==
+    PASS  1a 正文含 1688 的 publish 行（期望 0，实际 0）
+    PASS  1b 正文含 ¥ 的 publish 行（期望 0，实际 0）
+    PASS  1c 正文含 detail.1688.com 的 publish 行（期望 0，实际 0）
+    PASS  2a catalog meta 里还有价格/来源词（期望 0，实际 0）
+    PASS  2b catalog meta 超过 155 字符（期望 0，实际 0）
+    PASS  2c catalog meta 条数 / 去重后条数（期望 208，实际 208）
+    PASS  2d catalog meta 带固定尾句（期望 208，实际 208）
+    PASS  2e og-description 与 metadesc 同步（不一致条数）（期望 0，实际 0）
+    PASS  3a ID/slug/status 集合（期望 0b9937b5aa0f2465b31dd2cf224b402d，实际 0b9937b5aa0f2465b31dd2cf224b402d）
+    PASS  3b noindex 集合（期望 36c1d1f0c472ea66be0745c7404dd0fe，实际 36c1d1f0c472ea66be0745c7404dd0fe）
+    PASS  4a /products/ 产品卡片数（期望 24，实际 24）
+    PASS  4b /products/ 卡片 链接+名称 逐条相同（期望 abfa829ef48d5fa18bfa582ca9ff77a3，实际 abfa829ef48d5fa18bfa582ca9ff77a3）
+    PASS  4c 渲染里 ¥ 计数（期望 0，实际 0）
+    PASS  4d 渲染里 \u00a5 计数（期望 0，实际 0）
+    PASS  4e 渲染里 1688 计数（期望 0，实际 0）
+      截图 before-1440.png 73287 B
+      截图 after-1440.png 73287 B
+      截图 before-375.png 33178 B
+      截图 after-375.png 33178 B
+    PASS  4f 改前改后 x 1440/375 四张截图（期望 4，实际 4）
+      改前 /products/: ¥ 0 / \u00a5 20 / 1688 0
+    PASS  5a 内容被改的对象数（预期 210 = 208 catalog + /products/ + 1 篇博客）（期望 210，实际 210）
+    PASS  5b 集合外被改的对象数（期望 0，实际 0）
+    PASS  6a 非 catalog/products/博客 的 meta 被改条数（期望 0，实际 0）
+    PASS  6b meta 被改对象数（只有 208 个 catalog 页有 metadesc 行；products 与博客本来没有这行）（期望 208，实际 208）
+    PASS  7 indexable.description 与 postmeta 不一致条数（期望 0，实际 0）
+    PASS  8 抽查 5 个 catalog 页渲染里 ¥ 总数（期望 0，实际 0）
+    PASS  9a /get-a-quote/ 跟随跳转后状态（期望 200，实际 200）
+    PASS  9b /products/ 页里 Get a price 链接（51 处）
+  == 汇总 ==
+    PASS=24  FAIL=0
+===== 重置：导回 D.1c 的三表备份（为干净的 D.2→D.5）=====
+  Success: Imported from '/tmp/29z-pre.sql'.
+  Success: The cache was flushed.
+
+===== [容器] D.2.1 装 4.0.4 + 卡片文案 =====
+  --- 包哈希 ---
+  3279dc6121cee305dbbf620beb7b7da45334886b779d7d2ece68004ceda4aed6  /pkg/packrivo-home-v4.zip
+  --- 装 + 启用 ---
+  Warning: wp_update_themes(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
+  Success: Installed 1 of 1 themes.
+  Warning: The 'Packrivo Home v4 (child)' theme is already active.
+  packrivo-home-v4	active	4.0.4
+  packrivo-static-bridge-1.2.38	parent	1.2.38
+  --- 卡片文案 ---
+  front-page Example quote 行数=1
+  首页渲染=Example quote · Rigid magnetic box · 9.5×9.5×4 cm
+  价格块=per unit 行=per unit at 1,000 pieces
+
+===== [容器] D.2.2 字体补丁 =====
+  --- dry-run ---
+  --- apply ---
+  /tmp/r-steps.sh: line 53: patch: not found
+  /tmp/r-steps.sh: line 55: patch: not found
+  5ab5be3f85f46ce5416fdb4cafc98f54de86a1fc4ece041c56c2de40173a1d8c  /var/www/html/www.packrivo.com/wordpress/wp-content/mu-plugins/packrivo-wave2.php
+  Success: The cache was flushed.
+  --- 字体 URL ---
+  http://nginx/wp-content/themes/packrivo-home-v4/packrivo-static/assets/packrivo-inter-latin-v3.woff2
+  code=200 type=font/woff2 size=34952
+
+===== [容器] D.3.1 干跑 =====
+    #3208 catalog-necklace-box-o1cn01cjv8p1iy 行-1 块-1 字节 5766→5404
+        删掉的段落: Historical 1688 listing or search price for reference only. The US dollar amount is an approximate historical conversion. The applicable quantity, specification
+    #3207 catalog-necklace-box-o1cn01hswf671i 行-1 块-1 字节 5764→5403
+        删掉的段落: Historical 1688 listing or search price for reference only. The US dollar amount is an approximate historical conversion. The applicable quantity, specification
+  
+  [audit] 删掉的句子（34 句）与改动明细 -> /tmp/strip-1688-audit.json
+  
+  [report] {"mode":"dry-run","pages_catalog":208,"pages_touched":208,"rows_removed":192,"h2_blocks_removed":192,"leftover_pages":0,"metadesc_written":208,"metadesc_total":208,"metadesc_unique":208,"metadesc_maxlen":153,"metadesc_over155":0,"indexable_rows":208,"products_p_removed":158,"blog_links_unwrapped":1,"changes":210}
+
+===== [容器] D.3.2 真跑 =====
+        删掉的段落: Historical 1688 listing or search price for reference only. The US dollar amount is an approximate historical conversion. The applicable quantity, specification
+  
+  [audit] 删掉的句子（34 句）与改动明细 -> /tmp/audit-29z.json
+  
+  [report] {"mode":"apply","pages_catalog":208,"pages_touched":208,"rows_removed":192,"h2_blocks_removed":192,"leftover_pages":0,"metadesc_written":208,"metadesc_total":208,"metadesc_unique":208,"metadesc_maxlen":153,"metadesc_over155":0,"indexable_rows":208,"products_p_removed":158,"blog_links_unwrapped":1,"changes":210}
+  audit 字节 = 10451
+
+===== [容器] D.3.3 幂等（应 changes 0） =====
+  [audit] 删掉的句子（0 句）与改动明细 -> /tmp/strip-1688-audit.json
+  
+  [report] {"mode":"apply","pages_catalog":208,"pages_touched":0,"rows_removed":0,"h2_blocks_removed":0,"leftover_pages":0,"metadesc_written":0,"metadesc_total":208,"metadesc_unique":208,"metadesc_maxlen":153,"metadesc_over155":0,"indexable_rows":208,"products_p_removed":0,"blog_links_unwrapped":0,"changes":0}
+
+===== [容器] D.4 indexable + flush =====
+  Success: Query succeeded. Rows affected: 543
+  Success: The cache was flushed.
+  mismatch=0
+
+===== [本机] D.5 改后截图 =====
+  {
+    "tag": "after",
+    "page": "/products/",
+    "shot": [
+      {
+        "width": 1440,
+        "height": 900,
+        "status": 200,
+        "file": "after-1440.png",
+        "bytes": 73287,
+        "cards": 24,
+        "overflow": false,
+        "yen_in_dom": 0,
+        "first_titles": [
+          "Bulk Shipping Boxes with Logo",
+          "Custom Auto-Lock Bottom Boxes",
+          "Custom Book-Style Rigid Gift Boxes"
+        ]
+      },
+      {
+        "width": 375,
+        "height": 812,
+        "status": 200,
+        "file": "after-375.png",
+        "bytes": 33178,
+        "cards": 24,
+        "overflow": false,
+        "yen_in_dom": 0,
+        "first_titles": [
+          "Bulk Shipping Boxes with Logo",
+          "Custom Auto-Lock Bottom Boxes",
+          "Custom Book-Style Rigid Gift Boxes"
+        ]
+      }
+    ],
+    "console_errors": [
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "375: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "375: Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "375: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "375: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "375: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "375: Failed to load resource: net::ERR_EMPTY_RESPONSE"
+    ]
+  }
+
+===== [容器] D.5 compare =====
+  == 取后态 ==
+    快照 after: pages 729 / meta 1012 / index 774 / cards 24 / products 301667B
+  == §2 九条判据 ==
+    PASS  1a 正文含 1688 的 publish 行（期望 0，实际 0）
+    PASS  1b 正文含 ¥ 的 publish 行（期望 0，实际 0）
+    PASS  1c 正文含 detail.1688.com 的 publish 行（期望 0，实际 0）
+    PASS  2a catalog meta 里还有价格/来源词（期望 0，实际 0）
+    PASS  2b catalog meta 超过 155 字符（期望 0，实际 0）
+    PASS  2c catalog meta 条数 / 去重后条数（期望 208，实际 208）
+    PASS  2d catalog meta 带固定尾句（期望 208，实际 208）
+    PASS  2e og-description 与 metadesc 同步（不一致条数）（期望 0，实际 0）
+    PASS  3a ID/slug/status 集合（期望 0b9937b5aa0f2465b31dd2cf224b402d，实际 0b9937b5aa0f2465b31dd2cf224b402d）
+    PASS  3b noindex 集合（期望 36c1d1f0c472ea66be0745c7404dd0fe，实际 36c1d1f0c472ea66be0745c7404dd0fe）
+    PASS  4a /products/ 产品卡片数（期望 24，实际 24）
+    PASS  4b /products/ 卡片 链接+名称 逐条相同（期望 abfa829ef48d5fa18bfa582ca9ff77a3，实际 abfa829ef48d5fa18bfa582ca9ff77a3）
+    PASS  4c 渲染里 ¥ 计数（期望 0，实际 0）
+    PASS  4d 渲染里 \u00a5 计数（期望 0，实际 0）
+    PASS  4e 渲染里 1688 计数（期望 0，实际 0）
+      截图 before-1440.png 73287 B
+      截图 after-1440.png 73287 B
+      截图 before-375.png 33178 B
+      截图 after-375.png 33178 B
+    PASS  4f 改前改后 x 1440/375 四张截图（期望 4，实际 4）
+      改前 /products/: ¥ 0 / \u00a5 20 / 1688 0
+    PASS  5a 内容被改的对象数（预期 210 = 208 catalog + /products/ + 1 篇博客）（期望 210，实际 210）
+    PASS  5b 集合外被改的对象数（期望 0，实际 0）
+    PASS  6a 非 catalog/products/博客 的 meta 被改条数（期望 0，实际 0）
+    PASS  6b meta 被改对象数（只有 208 个 catalog 页有 metadesc 行；products 与博客本来没有这行）（期望 208，实际 208）
+    PASS  7 indexable.description 与 postmeta 不一致条数（期望 0，实际 0）
+    PASS  8 抽查 5 个 catalog 页渲染里 ¥ 总数（期望 0，实际 0）
+    PASS  9a /get-a-quote/ 跟随跳转后状态（期望 200，实际 200）
+    PASS  9b /products/ 页里 Get a price 链接（51 处）
+  == 汇总 ==
+    PASS=24  FAIL=0
+
+===== R2 完成 =====
+===== [容器] D.2.2 字体补丁（重跑：PHP 兜底）=====
+  --- 容器没有 patch，走 PHP 兜底 ---
+  applied
+  sha256=73d43ba0262a9d74249b19a46380bc5c338f94bd9e0776baa46eddf074c9f259
+  OK 与 §6.5 锁定值一致
+  73d43ba0262a9d74249b19a46380bc5c338f94bd9e0776baa46eddf074c9f259  /var/www/html/www.packrivo.com/wordpress/wp-content/mu-plugins/packrivo-wave2.php
+  Success: The cache was flushed.
+  --- 字体 URL ---
+  http://nginx/wp-content/themes/packrivo-static-bridge-1.2.38/packrivo-static/assets/packrivo-inter-latin-v3.woff2
+  code=200 type=font/woff2 size=34952
+
+===== D.6-1 主题目录退回 4.0.1 =====
+
+===== [容器] 删掉 4.0.4 目录 =====
+  --- 删 4.0.4，覆盖回 4.0.1 ---
+  (目录已删，等宿主机 docker cp 覆盖)
+
+===== [容器] 回滚后版本 =====
+  packrivo-home-v4	active	4.0.1
+  packrivo-static-bridge-1.2.38	parent	1.2.38
+  Version: 4.0.1
+  回滚后目录哈希 = c02a9324b3c8550cec3502c7e23c4257d618da4a2f14a5da352faf86e3289edf
+  备份时目录哈希 = c02a9324b3c8550cec3502c7e23c4257d618da4a2f14a5da352faf86e3289edf
+  目录哈希一致 = True
+
+===== D.6-2 字体补丁回滚 =====
+
+===== [容器] mu 换回原文件 =====
+  5ab5be3f85f46ce5416fdb4cafc98f54de86a1fc4ece041c56c2de40173a1d8c  /var/www/html/www.packrivo.com/wordpress/wp-content/mu-plugins/packrivo-wave2.php
+  备份时 mu 哈希 = 5ab5be3f85f46ce5416fdb4cafc98f54de86a1fc4ece041c56c2de40173a1d8c
+
+===== D.6-3 导回三张表 =====
+
+===== [容器] db import + flush =====
+  Success: Imported from '/tmp/29z-pre.sql'.
+  Success: The cache was flushed.
+
+===== D.6-4 回滚判据 =====
+
+===== [容器] 四条判据 =====
+  --- ①主题版本 ---
+  packrivo-home-v4	active	4.0.1
+  packrivo-static-bridge-1.2.38	parent	1.2.38
+  Version: 4.0.1
+  --- ②¥/1688 计数 ---
+  publish_yen=209
+  publish_1688=209
+  metadesc_rows=769
+  --- ③首页哈希 ---
+  c0312a451a49b1b26b242c171a33cbf5c009008eedd9e77aebc80d007464782b  /tmp/home-after-rollback.html
+  --- ④mu 原文件 ---
+  5ab5be3f85f46ce5416fdb4cafc98f54de86a1fc4ece041c56c2de40173a1d8c  /var/www/html/www.packrivo.com/wordpress/wp-content/mu-plugins/packrivo-wave2.php
+  --- ⑤回滚后首页字体 ---
+  http://nginx/wp-content/themes/packrivo-home-v4/packrivo-static/assets/packrivo-inter-latin-v3.woff2
+  code=404 type=text/html
+  改前首页哈希 = c0312a451a49b1b26b242c171a33cbf5c009008eedd9e77aebc80d007464782b
+
+===== R3 完成 =====
+
+===== R4 第二次正向：D.2 -> D.5（验证可重复执行） =====
+
+===== [容器] D.2.1 装 4.0.4（第二次） =====
+  --- 包哈希 ---
+  3279dc6121cee305dbbf620beb7b7da45334886b779d7d2ece68004ceda4aed6  /var/www/html/www.packrivo.com/wordpress/wp-content/themes/packrivo-home-v4.zip
+  --- 装 + 启用 ---
+  Warning: wp_update_themes(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/www.packrivo.com/wordpress/wp-includes/functions.php on line 6260
+  Success: Installed 1 of 1 themes.
+  Warning: The 'Packrivo Home v4 (child)' theme is already active.
+  packrivo-home-v4	active	4.0.4
+  packrivo-static-bridge-1.2.38	parent	1.2.38
+  --- 卡片文案 ---
+  front-page Example quote 行数=1
+  首页渲染=Example quote · Rigid magnetic box · 9.5×9.5×4 cm
+  价格块=per unit 行=per unit at 1,000 pieces
+
+===== [容器] D.2.2 字体补丁（第二次，应 already applied 或成功） =====
+  --- 容器没有 patch，走 PHP 兜底 ---
+  applied
+  sha256=73d43ba0262a9d74249b19a46380bc5c338f94bd9e0776baa46eddf074c9f259
+  OK 与 §6.5 锁定值一致
+  73d43ba0262a9d74249b19a46380bc5c338f94bd9e0776baa46eddf074c9f259  /var/www/html/www.packrivo.com/wordpress/wp-content/mu-plugins/packrivo-wave2.php
+  Success: The cache was flushed.
+  --- 字体 URL ---
+  http://nginx/wp-content/themes/packrivo-static-bridge-1.2.38/packrivo-static/assets/packrivo-inter-latin-v3.woff2
+  code=200 type=font/woff2 size=34952
+
+===== [容器] D.3.1 干跑（第二次） =====
+    #3208 catalog-necklace-box-o1cn01cjv8p1iy 行-1 块-1 字节 5766→5404
+        删掉的段落: Historical 1688 listing or search price for reference only. The US dollar amount is an approximate historical conversion. The applicable quantity, specification
+    #3207 catalog-necklace-box-o1cn01hswf671i 行-1 块-1 字节 5764→5403
+        删掉的段落: Historical 1688 listing or search price for reference only. The US dollar amount is an approximate historical conversion. The applicable quantity, specification
+  
+  [audit] 删掉的句子（34 句）与改动明细 -> /tmp/strip-1688-audit.json
+  
+  [report] {"mode":"dry-run","pages_catalog":208,"pages_touched":208,"rows_removed":192,"h2_blocks_removed":192,"leftover_pages":0,"metadesc_written":208,"metadesc_total":208,"metadesc_unique":208,"metadesc_maxlen":153,"metadesc_over155":0,"indexable_rows":208,"products_p_removed":158,"blog_links_unwrapped":1,"changes":210}
+
+===== [容器] D.3.2 真跑（第二次） =====
+        删掉的段落: Historical 1688 listing or search price for reference only. The US dollar amount is an approximate historical conversion. The applicable quantity, specification
+  
+  [audit] 删掉的句子（34 句）与改动明细 -> /tmp/audit-29z.json
+  
+  [report] {"mode":"apply","pages_catalog":208,"pages_touched":208,"rows_removed":192,"h2_blocks_removed":192,"leftover_pages":0,"metadesc_written":208,"metadesc_total":208,"metadesc_unique":208,"metadesc_maxlen":153,"metadesc_over155":0,"indexable_rows":208,"products_p_removed":158,"blog_links_unwrapped":1,"changes":210}
+
+===== [容器] D.3.3 幂等（第二次） =====
+  [audit] 删掉的句子（0 句）与改动明细 -> /tmp/strip-1688-audit.json
+  
+  [report] {"mode":"apply","pages_catalog":208,"pages_touched":0,"rows_removed":0,"h2_blocks_removed":0,"leftover_pages":0,"metadesc_written":0,"metadesc_total":208,"metadesc_unique":208,"metadesc_maxlen":153,"metadesc_over155":0,"indexable_rows":208,"products_p_removed":0,"blog_links_unwrapped":0,"changes":0}
+
+===== [容器] D.4 indexable（第二次） =====
+  Success: Query succeeded. Rows affected: 543
+  Success: The cache was flushed.
+  mismatch=0
+
+===== [本机] D.5 改后截图（第二次） =====
+  {
+    "tag": "after",
+    "page": "/products/",
+    "shot": [
+      {
+        "width": 1440,
+        "height": 900,
+        "status": 200,
+        "file": "after-1440.png",
+        "bytes": 73287,
+        "cards": 24,
+        "overflow": false,
+        "yen_in_dom": 0,
+        "first_titles": [
+          "Bulk Shipping Boxes with Logo",
+          "Custom Auto-Lock Bottom Boxes",
+          "Custom Book-Style Rigid Gift Boxes"
+        ]
+      },
+      {
+        "width": 375,
+        "height": 812,
+        "status": 200,
+        "file": "after-375.png",
+        "bytes": 33178,
+        "cards": 24,
+        "overflow": false,
+        "yen_in_dom": 0,
+        "first_titles": [
+          "Bulk Shipping Boxes with Logo",
+          "Custom Auto-Lock Bottom Boxes",
+          "Custom Book-Style Rigid Gift Boxes"
+        ]
+      }
+    ],
+    "console_errors": [
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "375: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "375: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "375: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "375: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+      "375: Failed to load resource: net::ERR_EMPTY_RESPONSE"
+    ]
+  }
+
+===== [容器] D.5 compare（第二次） =====
+  == 取后态 ==
+    快照 after: pages 729 / meta 1012 / index 774 / cards 24 / products 301693B
+  == §2 九条判据 ==
+    PASS  1a 正文含 1688 的 publish 行（期望 0，实际 0）
+    PASS  1b 正文含 ¥ 的 publish 行（期望 0，实际 0）
+    PASS  1c 正文含 detail.1688.com 的 publish 行（期望 0，实际 0）
+    PASS  2a catalog meta 里还有价格/来源词（期望 0，实际 0）
+    PASS  2b catalog meta 超过 155 字符（期望 0，实际 0）
+    PASS  2c catalog meta 条数 / 去重后条数（期望 208，实际 208）
+    PASS  2d catalog meta 带固定尾句（期望 208，实际 208）
+    PASS  2e og-description 与 metadesc 同步（不一致条数）（期望 0，实际 0）
+    PASS  3a ID/slug/status 集合（期望 0b9937b5aa0f2465b31dd2cf224b402d，实际 0b9937b5aa0f2465b31dd2cf224b402d）
+    PASS  3b noindex 集合（期望 36c1d1f0c472ea66be0745c7404dd0fe，实际 36c1d1f0c472ea66be0745c7404dd0fe）
+    PASS  4a /products/ 产品卡片数（期望 24，实际 24）
+    PASS  4b /products/ 卡片 链接+名称 逐条相同（期望 abfa829ef48d5fa18bfa582ca9ff77a3，实际 abfa829ef48d5fa18bfa582ca9ff77a3）
+    PASS  4c 渲染里 ¥ 计数（期望 0，实际 0）
+    PASS  4d 渲染里 \u00a5 计数（期望 0，实际 0）
+    PASS  4e 渲染里 1688 计数（期望 0，实际 0）
+      截图 before-1440.png 73287 B
+      截图 after-1440.png 73287 B
+      截图 before-375.png 33178 B
+      截图 after-375.png 33178 B
+    PASS  4f 改前改后 x 1440/375 四张截图（期望 4，实际 4）
+      改前 /products/: ¥ 0 / \u00a5 20 / 1688 0
+    PASS  5a 内容被改的对象数（预期 210 = 208 catalog + /products/ + 1 篇博客）（期望 210，实际 210）
+    PASS  5b 集合外被改的对象数（期望 0，实际 0）
+    PASS  6a 非 catalog/products/博客 的 meta 被改条数（期望 0，实际 0）
+    PASS  6b meta 被改对象数（只有 208 个 catalog 页有 metadesc 行；products 与博客本来没有这行）（期望 208，实际 208）
+    PASS  7 indexable.description 与 postmeta 不一致条数（期望 0，实际 0）
+    PASS  8 抽查 5 个 catalog 页渲染里 ¥ 总数（期望 0，实际 0）
+    PASS  9a /get-a-quote/ 跟随跳转后状态（期望 200，实际 200）
+    PASS  9b /products/ 页里 Get a price 链接（51 处）
+  == 汇总 ==
+    PASS=24  FAIL=0
+
+===== R4 完成 =====

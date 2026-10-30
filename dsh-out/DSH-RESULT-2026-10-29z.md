@@ -20,7 +20,9 @@
 | 判据 4 新口径 | ✅ 卡片逐一相同 + `¥`/`\u00a5`/`1688` 归零 + 四张截图（1440/375 改前改后） |
 | 3b | ✅ 2/2 PASS（zip/mirror/装好后三处哈希一致；首页 1440 与 375 各一张） |
 | 3c | ✅ 主题层 0 死链（本地 4.0.3 实测 0 引用）；生产侧 5 条旧链接 + 1 处字体 404 定位到**生产仍是子主题 4.0.1 且没打字体补丁**，见 §6 |
-| 4.0.3 包 | ✅ 未变：791,053 B / 43 条目 / `7d792ad9…945f7` |
+| 4.0.4 包 | ✅ 791,169 B / 43 条目 / `3279dc61…aed6`（首页卡片改成 `Example quote · …`，11 语种词典同步） |
+| 附录 D | ✅ 重排成一条从上到下照着敲的顺序：D.0 预检 → D.1 锁定/上传 → D.1b 前态 → D.1c 备份 → D.2 装 4.0.4（含字体补丁）→ D.3 去价 → D.4 indexable → D.5 compare → D.5.5 停→ D.6 回滚 |
+| 演练三连跑 | ✅ 正向 24/0 → 回滚四条判据全中 → 再正向 24/0（可重复执行） |
 
 ## 1. §0 生产只读导出（按授权执行，做完即退）
 
@@ -222,7 +224,8 @@ indexable 更新 208 行 / 改动合计 210
 
 | 物 | 路径 | 字节 | sha256 |
 |---|---|---|---|
-| 子主题包 4.0.3 | `deploy/packrivo-home-v4.zip` | 791,053 | `7d792ad9f4e63025e2fce8a640856710ede5fe3b925e9bdaa372a6002bb945f7` |
+| 子主题包 4.0.4 | `deploy/packrivo-home-v4.zip` | 791,169 | `3279dc6121cee305dbbf620beb7b7da45334886b779d7d2ece68004ceda4aed6` |
+| 字体补丁 PHP 兜底 | `deploy/patches-29w/apply-font-patch.php` | 1,840 | `64c8768e5ba3e00281fda4d5937f8c57a03cf5871818a84c2363095b0dda269b` |
 | 去价脚本 | `deploy/patches-29z/strip-1688.php` | 见 RUNBOOK D.1 | 本轮改过（新增 `<td>` 兜底），D.1 已同步 |
 | 去价包装器 | `deploy/patches-29z/strip-1688.sh` | 1,730 | `0deea313611ff71a760baae5646bcd0252f1cbad5bdb85d0ab3e2953e112ee1e` |
 | 九条判据脚本 | `deploy/verification-29z/scripts/29z-criteria.sh` | 见 RUNBOOK D.1 | 判据 4 已改写 |
@@ -245,3 +248,129 @@ indexable 更新 208 行 / 改动合计 210
 3. `/assets/concept-*.webp`：按你的意见本轮不处理。
 4. 多语种博客 404：既存状态，不在 29z 范围。
 5. **没有开始 29y**。
+## 12. 复核第 2 轮（2026-10-30）：附录 D 重排、子主题 4.0.4、演练三连跑
+
+负责人指出 5 处要改，逐条落地：
+
+### 12.1 D.6 回滚写错了 —— 已改
+
+旧版 `theme activate packrivo-static-bridge-1.2.38` 会把站点切回父主题（整站变成上线前的样子），这是真的错。
+新 D.6 不再碰 `theme activate`，改成「目录级回滚 + 激活状态不变」：
+
+1. `rm -rf $WPC/wp-content/themes/packrivo-home-v4`，再用 D.1c 的备份 `docker cp -a` 覆盖回去（slug 不变，仍 active）；
+2. 目录哈希核对：`cd 备份目录 && find . -type f -print0 | sort -z | xargs -0 sha256sum | sha256sum`，回滚后再算一次，两侧逐字相同；
+3. 字体补丁回滚：`cp -a packrivo-wave2.php.orig-29w packrivo-wave2.php`，哈希回到 `5ab5be3f…`；
+4. 最后 `db import` + `cache flush`。
+
+### 12.2 三张表备份不放容器 /tmp —— 已改
+
+D.1c 第 3 步：`db export` 到容器 `/tmp/29z-pre.sql` 后**立刻** `docker cp` 到宿主机 `$BACKUP/29z/`，
+记 `29z-pre.bytes` 与 `29z-pre.sha256`，再把容器里那份 `rm -f`。回滚导的是宿主机这份。
+演练实测：`29,149,411 B`，`sha256 65240db93303b32ee0a64adef87cff99ac5b6d606d449051e5d9b5b57dd72b02`。
+
+### 12.3 附录 D 重排成一条顺序 —— 已改
+
+现在的顺序（每一步都标了【本机】/【宿主】/【容器】）：
+
+```
+D.0   变量与预检（theme list + catalog 208 + 1688 209 + ¥ 209）
+D.1   锁定物表（6 个文件，sha256）+ 上传 + 核对
+D.1b  前态快照（criteria before + 首页哈希 + /products/ 改前截图）
+D.1c  备份三样（4.0.1 主题目录 + mu 原文件 + 三张表，全落宿主机 $BACKUP）
+D.2   装 4.0.4（D.2.1 装包 / D.2.2 字体补丁）
+D.3   去价：干跑 → 真跑 → 幂等复跑
+D.4   重建 indexable + cache flush
+D.5   compare（24 条判据）
+D.5.5 【停】等负责人跑 cf_purge.py，再线上复测
+D.6   回滚（四条判据）
+```
+
+`deploy/...` 上传清单写死在 D.1.1：`packrivo-home-v4.zip`、`strip-1688.php`、`strip-1688.sh`、
+`packrivo-wave2-font-path.patch`、`apply-font-patch.php`、`29z-criteria.sh`，一共 6 个，全部先 `scp` 到 `$PKG`。
+
+执行中踩到两个坑，已经写进手册：
+
+- `wp db query` 的 SQL 是**位置参数**，加 `-e` 会报 `Too many positional arguments` —— D.4 与 D.6 的 SQL 全部改掉；
+- 演练镜像里**没有 `patch`**（`patch: not found`），所以给 §6.5 / D.2.2 加了 PHP 兜底 `apply-font-patch.php`
+  （只做那一行替换、幂等、打完校验 `73d43ba0…`）。生产容器有没有 `patch` 未知，手册先试 `patch`、没有就走兜底。
+
+### 12.4 首页说明卡片文案 —— 已改
+
+`packrivo-wp/packrivo-home-v4/front-page.php` 第 77 行：
+
+- 改前：`<p class="pk-mono">Rigid magnetic box · 9.5×9.5×4 cm</p>`
+- 改后：`<p class="pk-mono">Example quote · Rigid magnetic box · 9.5×9.5×4 cm</p>`
+
+价格那一段**一个字没动**：仍是 `PKQ_Pricing::price([...9.5×9.5×4, 1000 pcs...])` 算出来的 `$x.xx` + `per unit at 1,000 pieces`。
+演练里首页渲染出 `Example quote · Rigid magnetic box · 9.5×9.5×4 cm`，价格块与 `per unit at 1,000 pieces` 都在。
+
+11 个语种词典各加一条（`deploy/i18n-merged/*-dict.json`，锚点 `"Rigid magnetic box · 9.5×9.5×4 cm"` 行之后）：
+
+| 语种 | 译文 |
+|---|---|
+| de | Beispielangebot · Feste Magnetbox · 9.5×9.5×4 cm |
+| fr | Devis indicatif · Boîte rigide magnétique · 9.5×9.5×4 cm |
+| es | Presupuesto orientativo · Caja rígida magnética · 9.5×9.5×4 cm |
+| it | Preventivo indicativo · Scatola rigida magnetica · 9.5×9.5×4 cm |
+| nl | Voorbeeldopgave · Stijve magneetdoos · 9.5×9.5×4 cm |
+| pt | Orçamento de exemplo · Caixa rígida magnética · 9.5×9.5×4 cm |
+| ar | عرض سعر تقديري · صندوق صلب مغناطيسي · 9.5×9.5×4 سم |
+| ja | 参考見積 · マグネット式硬質箱 · 9.5×9.5×4 cm |
+| ko | 예시 견적 · 자석 경질 박스 · 9.5×9.5×4 cm |
+| zh-CN | 示例报价 · 磁吸硬盒 · 9.5×9.5×4 厘米 |
+| zh-TW | 範例報價 · 磁吸硬盒 · 9.5×9.5×4 公分 |
+
+脚本 `deploy/verification-29z/scripts/add-hero-example-quote-i18n.py`（行级插入、不重新序列化，插完 `json.loads` 自检），
+实测 11/11 插入、0 跳过。
+
+### 12.5 子主题升 4.0.4 —— 已改
+
+`style.css` 与 `functions.php`（`PKV4_VERSION`）都到 `4.0.4`，重新打包（STAMP 改 2026-10-30）：
+**791,169 B / 43 条目（38 文件 + 5 目录）/ `3279dc6121cee305dbbf620beb7b7da45334886b779d7d2ece68004ceda4aed6`**。
+两处锁定都换了：§5 的包表（`791,169 B` + `3279dc61…`、§5.2 注释改成 `3279DC61…`）与附录 D.1.0 表。
+
+### 12.6 演练三连跑（生产现状库 + 4.0.1 起步）
+
+起点按生产现状摆：`29z-prod.sql` 灌回去、`home/siteurl=http://nginx`、子主题从 git `7fe56ad` 取 **4.0.1** 装进去、
+mu 还原成未打补丁的 `5ab5be3f…`。日志：`deploy/verification-29z/evidence/rehearsal-29z-sequence.log`（691 行）。
+
+**① 正向（D.0 → D.5）**
+
+| 步骤 | 结果 |
+|---|---|
+| D.0 预检 | `packrivo-home-v4 active 4.0.1`、catalog 208、1688 209、¥ 209 |
+| D.1b 前态 | 首页哈希 `c0312a45…`，`/products/` 改前截图 24 卡 / 无溢出 |
+| D.1c 备份 | 主题目录 38 文件、目录哈希 `c02a9324…`、`Version: 4.0.1`；mu `5ab5be3f…`；三表 29,149,411 B `65240db9…` |
+| D.2.1 装包 | 包哈希对得上，`Installed 1 of 1 themes`，`active 4.0.4`，`front-page` 里 `Example quote` 命中 1 处，首页渲染出该文案 |
+| D.2.2 字体 | 容器没 `patch` → PHP 兜底 `applied`，mu `73d43ba0…`（与 §6.5 锁一致），首页字体 URL 变成父主题路径、`200 / font/woff2 / 34952` |
+| D.3 | 干跑 `changes 210`、真跑 `changes 210`、再跑 `changes 0`（幂等），审计 10,451 B |
+| D.4 | indexable 更新 + `mismatch=0` |
+| D.5 | **PASS=24 FAIL=0**，四张截图齐 |
+
+**② 回滚（D.6）**
+
+| 判据 | 结果 |
+|---|---|
+| ① 版本 | `active 4.0.1`，目录哈希 `c02a9324…` 与备份时**逐字相同** |
+| ② `¥` / `1688` | 回到 `209` / `209` |
+| ③ 首页 HTML | `c0312a45…`，与 `home-before.sha256` **相同** |
+| ④ mu 原文件 | `5ab5be3f…`，与备份时相同 |
+| 附 | 回滚后子主题字体路径重新 **404 `text/html`** —— 生产那个症状在演练里复现了，正是 29w 补丁要修的东西 |
+
+**③ 再正向（D.2 → D.5）**
+
+装包 `active 4.0.4`、字体 `applied` + `73d43ba0…`、干跑 `210`、真跑 `210`、复跑 `0`、`mismatch=0`、compare **PASS=24 FAIL=0**。
+→ 同一套步骤可以重复执行。
+
+### 12.7 提交前门禁
+
+`check-commit-utf8-29z.py` 本轮 **7/7 PASS**（G1a/G1b/G2a/G2b/G3a/G3b/G4）。
+G4 特意做成「附录 D.1.0 的 sha256 与磁盘真实文件逐一比对」，这轮就因为改了判据脚本、脚本一改 D.1.0 就对不上，
+被它拦了一次，重跑生成器才对齐。
+
+### 12.8 与生产的差异（如实记）
+
+- 演练里的 4.0.1 来自 git `7fe56ad`，**生产那份 4.0.1 的目录文件数可能不同**（生产没跑过 `git archive`）；
+  D.1c 备份的是生产现场那份，D.6 回滚也是那份，所以不依赖 git。
+- 生产容器的 `patch` 有没有，本轮没验证（没碰生产）。手册写的是「先试 patch、没有就走 PHP 兜底」。
+- 演练首页字体那条 404 在打补丁**之后**消失、回滚**之后**复现，与生产现状一致。
