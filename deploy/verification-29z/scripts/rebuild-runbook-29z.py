@@ -38,7 +38,8 @@ FONT_SECTION = """## 6.5 · 字体路径补丁（29w，机器：**生产 SSH**�
 **先看现状再决定打不打**（29z 实测生产返回 200，走的是子主题路径 + 缓存；补丁是把这条链钉死）：
 
 ```bash
-CURL="curl -sS -k --noproxy=* --resolve www.packrivo.com:443:127.0.0.1"   # -k：源站是 CF Origin CA 证书；直连源站，不读 Cloudflare 缓存
+export no_proxy='*' NO_PROXY='*'
+CURL="curl -sS -k --resolve www.packrivo.com:443:127.0.0.1"   # -k：源站是 CF Origin CA 证书；直连源站，不读 Cloudflare 缓存
 $CURL https://www.packrivo.com/ | grep -o 'https://[^"]*packrivo-inter-latin-v3\\.woff2' | head -2
 $CURL -o /dev/null -w 'code=%{{http_code}} type=%{{content_type}} size=%{{size_download}}\\n' \\
   https://www.packrivo.com/wp-content/themes/packrivo-static-bridge-1.2.38/packrivo-static/assets/packrivo-inter-latin-v3.woff2
@@ -90,7 +91,9 @@ PKGC=/pkg
 BACKUP=/home/web/backups/29z-$(date -u +%Y%m%d-%H%M%S)
 
 SITE=https://www.packrivo.com
-CURL="curl -sS -k --noproxy=* --resolve www.packrivo.com:443:127.0.0.1"   # -k：源站是 CloudFlare Origin CA 证书，本机不认
+export no_proxy='*' NO_PROXY='*'   # 绕开宿主的系统代理；用环境变量而不是往 $CURL 里塞引号（变量里的引号是字面量）
+CURL="curl -sS -k --resolve www.packrivo.com:443:127.0.0.1"   # -k：源站是 CloudFlare Origin CA 证书，本机不认
+curl --version | head -1           # 记下来：探测与判据都跑在这台机器的这个 curl 上
 ORIGIN_IP=$(docker inspect php -f '{{{{range .NetworkSettings.Networks}}}}{{{{.Gateway}}}}{{{{end}}}}')   # php 容器的默认网关 = 宿主机；不用容器里的 ip 命令（镜像不一定有），也不用双引号里的 $3
 CURLX="--resolve www.packrivo.com:443:$ORIGIN_IP -k"   # 给容器里的 29z-criteria.sh（它解析不到 nginx 这个名字）
 
@@ -125,35 +128,54 @@ WPCLI="docker exec php php -d disable_functions= /usr/local/bin/wp --path=$WPC -
 【宿主】4) **直连源站探测**（不通就停，别急着装包）：
 
 ```bash
-echo '--- 1) 响应头里有没有 Cloudflare 标记 ---'
-$CURL -I "$SITE/" | tee /tmp/29z-probe-head.txt
-if grep -qi 'cf-ray\|cf-cache-status' /tmp/29z-probe-head.txt; then echo 'FAIL 还在走 Cloudflare'; else echo 'OK 无 cf-ray / cf-cache-status'; fi
+# 旧文件会让「没有某样东西」假 PASS，先删干净
+rm -f /tmp/29z-probe1.html /tmp/29z-probe2.html /tmp/29z-probe-head.txt /tmp/29z-probe1.err /tmp/29z-probe2.err /tmp/29z-probe-head.err
+now=$(date +%s)
 
-echo '--- 2) 连取两次首页，哈希必须相同 ---'
-$CURL "$SITE/" -o /tmp/29z-probe1.html
-$CURL "$SITE/" -o /tmp/29z-probe2.html
+echo '--- 1) 响应头（stderr 落文件，⛳ 要求为空）---'
+$CURL -I "$SITE/" > /tmp/29z-probe-head.txt 2> /tmp/29z-probe-head.err
+head -1 /tmp/29z-probe-head.txt
+grep -i '^server:' /tmp/29z-probe-head.txt
+[ -s /tmp/29z-probe-head.err ] && echo "FAIL head 的 stderr：$(cat /tmp/29z-probe-head.err)" || echo 'PASS head 的 stderr 为空'
+grep -Eq '^HTTP/[0-9.]+ 200' /tmp/29z-probe-head.txt && echo 'PASS 头文件首行是 HTTP 200' || echo 'FAIL 头文件首行不是 HTTP 200'
+grep -qi '^server: nginx' /tmp/29z-probe-head.txt && echo 'PASS 头文件里 server: nginx' || echo 'FAIL 头文件里没有 server: nginx'
+grep -qi 'cf-ray\|cf-cache-status' /tmp/29z-probe-head.txt && echo 'FAIL 还在走 Cloudflare' || echo 'PASS 无 cf-ray / cf-cache-status'
+
+echo '--- 2) 连取两次首页（stderr 落文件，⛳ 要求为空）---'
+$CURL "$SITE/" -o /tmp/29z-probe1.html 2> /tmp/29z-probe1.err
+$CURL "$SITE/" -o /tmp/29z-probe2.html 2> /tmp/29z-probe2.err
 sha256sum /tmp/29z-probe1.html /tmp/29z-probe2.html
 grep -c '<html' /tmp/29z-probe1.html
+for i in 1 2; do
+  sz=$(wc -c < /tmp/29z-probe$i.html); mt=$(stat -c %Y /tmp/29z-probe$i.html)
+  [ "$sz" -gt 0 ] && echo "PASS probe$i 有内容 ${{sz}}B" || echo "FAIL probe$i 是 0 字节"
+  [ "$mt" -ge "$now" ] && echo "PASS probe$i 是本次抓的（mtime $mt ≥ $now）" || echo "FAIL probe$i 是旧文件（mtime $mt < $now）"
+  [ -s /tmp/29z-probe$i.err ] && echo "FAIL probe$i 的 stderr：$(cat /tmp/29z-probe$i.err)" || echo "PASS probe$i 的 stderr 为空"
+done
 ```
 
-⛳ 三条同时成立才继续：响应头**没有** `cf-ray` / `cf-cache-status`；两个哈希**相同**；`<html` 计数 ≥ 1。
+⛳ 只要出现一个 `FAIL` 就停。必须同时成立：两个 stderr 都空；头文件首行是 `HTTP/... 200` **并且**里面有 `server: nginx`（不能只靠「没有 cf-ray」这种否命题）；两个探测文件都存在、字节 > 0、mtime 不早于 `$now`；两个哈希相同。
 
 不通过就停，对号入座（四种，都实测过）：
 
 | 现象 | 原因 | 处置 |
 |---|---|---|
-| 头里有 `cf-ray` / `cf-cache-status`，或直接 `503 Service Unavailable` + `Proxy-Connection: close` | 本机（Windows / macOS）的**系统代理**被 curl 拿走了，`--resolve` 发挥不了作用；实测 Windows 上 `ProxyEnable=1 / ProxyServer=127.0.0.1:10808` 就会这样 | `CURL` 默认已带 `--noproxy=*`；若仍不行再 `env \| grep -i proxy` 看环境变量 |
+| 头里有 `cf-ray` / `cf-cache-status`，或直接 `503 Service Unavailable` + `Proxy-Connection: close` | 本机（Windows / macOS）的**系统代理**被 curl 拿走了，`--resolve` 发挥不了作用 | 开头那句 `export no_proxy='*' NO_PROXY='*'` 就是干这个的；再 `env \| grep -i proxy` 确认 |
 | TLS 报 `unable to get local issuer certificate`（curl 60） | 源站挂的是 **CloudFlare Origin CA** 证书（issuer 写着 CloudFlare Origin SSL Certificate Authority），本机和容器的 CA 库都没有它的根 | `CURL` 默认已带 `-k`（只跳过证书校验，仍直连 127.0.0.1） |
-| 响应头里出现 `HTTP/1.1 200 Connection established`，紧跟着 `Server: cloudflare` + `CF-RAY` | `CURL` 抄成变量后，里面的引号是**字面量**：`--noproxy '*'` 到了 curl 手里变成 `*` 带引号，匹配不上域名，代理照常生效 | 写成 `--noproxy=*`（用等号，完全不需要引号）；实测 2026-10-30 演练里就是这么被抓到的 |
+| 响应头里出现 `HTTP/1.1 200 Connection established`，紧跟着 `Server: cloudflare` + `CF-RAY` | 把绕代理写进变量里会失效（引号在变量里是字面量） | 改成 `export no_proxy='*'`，不再往参数里塞星号 |
 | 两次哈希不同 | 页面里有随机串（nonce / 时间戳 / AB 变体） | `diff /tmp/29z-probe1.html /tmp/29z-probe2.html` 定位；若随机串在 `<script>` 的 `nonce=` 里，比对前先 `sed -E 's/nonce="[^"]*"//g'`；仍不同就改用 `/products/` 当基准页，并在 D.6 第 4 步同步改 |
 | `Connection refused` | 源站 443 没开 | `CURL="curl -sS --resolve www.packrivo.com:80:127.0.0.1"`、`SITE=http://www.packrivo.com`；若 nginx 又 301 到 https，说明只能走 443，回头查 nginx 监听 |
 
-演练环境等价写法（把端口指到演练 nginx，写法保持一致）：
+演练环境等价写法（**宿主侧命令必须在 Linux 里跑**，与生产同一种 shell；练过的做法是拉一个
+`curlimages/curl:8.14.1` 容器挂到演练网桥上，把 `--resolve` 指到演练源站容器）：
 
 ```bash
-SITE=http://www.packrivo.com:8091
-CURL="curl -sS --noproxy=* --resolve www.packrivo.com:8091:127.0.0.1"
+docker run --rm --network r28q-net curlimages/curl:8.14.1 sh -c 'curl --version | head -1; curl -sS -k --resolve www.packrivo.com:443:172.19.0.5 -I https://www.packrivo.com/'
 ```
+
+⛳ `curl --version` 必须是 **8.14.x**（和生产宿主同一代）；版本不对就换镜像，不要在 Windows 的 Git bash 里跑——
+那台机器的 curl 对参数的处理跟生产不一样，会把坑盖住（2026-10-30 就是这么漏过绕代理那个参数的）。
+`SITE` 一律 `https://…:443`，不接受任何非 443 的等价写法。
 
 【宿主】5) 只读预检：
 
@@ -217,7 +239,7 @@ $CURL "$SITE/" -o "$BACKUP/29z/home-before.html"
 sha256sum "$BACKUP/29z/home-before.html" | tee "$BACKUP/29z/home-before.sha256"
 ```
 
-⛳ `home-before.sha256` 有值；容器里出现 `/tmp/29z-snap/`（pages-before / meta-before / index-before / products-before），且 `products-before.html` **不是 0 字节**、pages/meta/index 三个快照也不是空的——空就说明容器没真拿到页面，后面的 4 / 8 / 9 会假 PASS。生产上实测踩过这个坑：php 容器里 `nginx` 解析不到（`http://nginx/` 报 curl(6)）。
+⛳ `before` 模式自己就会打 7 条 **B1～B7**：pages 行数 ≥ 400、meta 行数 ≥ 200、index 行数 ≥ 200、`products-before.html` ≥ 100000 字节、卡片数 = 24、`products-before.err` = 0 字节、catalog ID = 208。**7 条全 PASS 才往下走**；任一 FAIL 脚本退出码 1，且 `home-before.sha256` 必须有值。这七条专门堵「空快照也算 PASS」——生产上实测踩过：php 容器里 `nginx` 解析不到，快照全空，4/8/9 全假 PASS。
 刚才 D.0 第 4 步探测过「两次哈希相同」，所以这个值以后可以直接拿来比。
 
 【本机】2) `/products/` 的「改前」截图（**必须在装包之前拍**，本机直接打生产域名，**不要 `docker cp` 进容器**）：
@@ -227,7 +249,7 @@ node deploy/verification-29z/scripts/29z-products-shots.mjs deploy/verification-
 ```
 
 ⛳ 两张图（1440 / 375）都 `status 200`、`cards` 都是 24、`overflow` false；`shots-before.json` 落盘。
-演练环境：把 base 换成演练源站 `http://www.packrivo.com:8091`，并加 `SHOTS_MAP=www.packrivo.com`（Chrome 按域名钉 127.0.0.1、关掉系统代理），写法与生产等价。
+演练环境：base 用 `https://www.packrivo.com`（演练源站也是 443），加 `SHOTS_MAP=www.packrivo.com`（Chrome 按域名钉 127.0.0.1、关掉系统代理），写法与生产等价。
 截图不放进容器——本机的图 `docker cp` 只会进**演练容器**，生产容器里根本没有，判据也不该依赖它。
 
 ### D.1c 备份（三样，全落宿主机 `$BACKUP`，回滚只从这里取）
@@ -370,7 +392,7 @@ docker cp "$PKG/29z-criteria.sh" php:/tmp/29z-criteria.sh
 docker exec -e SITE="$SITE" -e CURLX="$CURLX" php sh /tmp/29z-criteria.sh compare-noshots
 ```
 
-⛳ `PASS=23 FAIL=0 SKIP=1`。`SKIP` 那条固定是 **4f 截图**——截图在本机拍、在本机判，容器里没有也不该有，
+⛳ `PASS=32 FAIL=0 SKIP=1`（v3 判据：0a–0f 六条输入非空、2c/7b/8b 三条正向条件）。`SKIP` 那条固定是 **4f 截图**——截图在本机拍、在本机判，容器里没有也不该有，
 所以这一条在这里**既不算 PASS 也不算 FAIL**（旧版把「容器里没图」记成 FAIL，会把人卡住）。
 
 判据 4 的口径是「卡片数量/名称/链接逐一相同 + 渲染里 `¥`、`\u00a5`、`1688` 计数为 0」，
@@ -389,7 +411,7 @@ python E:\破甲工作区\i18n\cf_purge.py          # 负责人平时用这份�
 ```bash
 # 1) 改后截图（缓存已清，拍到的是新页面）
 node deploy/verification-29z/scripts/29z-products-shots.mjs deploy/verification-29z/evidence/products-shots after https://www.packrivo.com
-#    （演练：SHOTS_MAP=www.packrivo.com + base 换成 http://www.packrivo.com:8091）
+#    （演练：SHOTS_MAP=www.packrivo.com + base 也用 https://www.packrivo.com）
 
 # 2) 判据 4f（四张图齐 + 卡片数与改前一致 + 无横向溢出）
 node deploy/verification-29z/scripts/29z-shots-check.mjs deploy/verification-29z/evidence/products-shots
