@@ -503,3 +503,77 @@ nginx   →  容器改名 web（原 nginx）     docker exec php getent hosts ng
 
 授权已作废，生产未改动：`active 4.0.1`、`publish_yen=209`、mu `5ab5be3f…`，`/root/29z-pkg` 与 `$BACKUP` 均已删除（`ls` 复核无 `29z*`）。
 重新上生产要等负责人重新授权。
+## 15. 复核打回后的修正（2026-10-30 第二轮）：ORIGIN_IP 取网关 + 演练改走 443
+
+复核意见成立。原写法 `ORIGIN_IP=$(docker exec php sh -c "ip route | awk '/default/ {print $3}'")` 有两个硬伤：
+双引号里的 `$3` 由**宿主机 shell** 先展开（为空串），到 awk 手里变成 `$0`，打出来的是整行路由而不是 IP；
+生产 php 镜像（`kjlion/php:fpm-alpine`）也不保证有 `ip` 命令。当时演练日志里确实没有 `ORIGIN_IP=`，说明那行没被执行过。
+
+### 15.1 附录 D.0 改为不依赖容器内部
+
+```bash
+ORIGIN_IP=$(docker inspect php -f '{{range .NetworkSettings.Networks}}{{.Gateway}}{{end}}')
+```
+
+接着新增一条 ⛳，两条各自打 PASS / FAIL，任一 FAIL 就停：
+
+```bash
+echo "ORIGIN_IP=$ORIGIN_IP"
+echo "$ORIGIN_IP" | grep -Eq '^[0-9]+(\.[0-9]+){3}$' && echo 'PASS ORIGIN_IP 是单个 IPv4' || echo 'FAIL ORIGIN_IP 不是单个 IPv4'
+code=$(docker exec php curl -sS -o /dev/null -w '%{http_code}' $CURLX https://www.packrivo.com/)
+[ "$code" = "200" ] && echo "PASS 容器经 CURLX 打源站 = $code" || echo "FAIL 容器经 CURLX 打源站 = $code"
+```
+
+第一条挡「拿不到网关 / 拿到整行」；第二条挡「容器拿不到页面」（拿不到就是 0 字节快照，后面 4/8/9 假 PASS）。
+
+### 15.2 演练里顺带抓到的第二个坑：变量里的引号是字面量
+
+D.0 原来的 `CURL="curl -sS -k --noproxy '*' --resolve www.packrivo.com:443:127.0.0.1"` 抄成变量后，
+`'*'` 里的引号**不会**被 shell 二次解释，curl 收到的是字面量 `'*'`，匹配不上域名 → 代理由此生效：
+
+```text
+$CURL -I "$SITE/"
+HTTP/1.1 200 Connection established        ← 代理 CONNECT
+HTTP/1.1 200 OK
+Server: cloudflare
+cf-cache-status: EXPIRED
+CF-RAY: a52920600a5507b3-LAX
+FAIL 还在走 Cloudflare
+```
+
+改成 `--noproxy=*`（等号形式，完全不需要引号），首跑即 `Server: nginx/1.31.8` + `OK 无 cf-ray / cf-cache-status`。
+失败表同步加一行「头里出现 `Connection established` + `Server: cloudflare`」。
+
+### 15.3 演练环境重搭（已按 §15.4 重跑）
+
+```text
+SITE      = https://www.packrivo.com          （不再用 http、不再用 8091）
+web 容器  = nginx:alpine，只发布 -p 443:443，自签证书 CN=www.packrivo.com（2026-10-30 → 2029-02-01）
+            80 一律 301 到 https；php 收到 HTTPS=on / SERVER_PORT=443，WP 认 https
+php 容器  = 删掉 /etc/hosts 里那条 www.packrivo.com（getent hosts www.packrivo.com → 解析失败）
+ORIGIN_IP = docker inspect php … → 172.19.0.1（r28q-net 网关）
+CURLX     = --resolve www.packrivo.com:443:172.19.0.1 -k
+mysql     = 26.7.0（MD5/SHA1 已无）
+```
+
+演练宿主是 Windows，D.0-2 的 `mkdir -p /root/29z-pkg` 在 Git bash 里落到 Git 安装目录报 `Permission denied`，
+日志里已标注（生产上是 root，不受影响）；`docker exec php mkdir -p /pkg` 正常。
+
+### 15.4 三轮（`29z-prod.sql`，日志 `rehearsal-29z-sequence-v5.log`，530 行）
+
+| | 关键输出 |
+|---|---|
+| D.0-4 ⛳ | `ORIGIN_IP=172.19.0.1` / `PASS ORIGIN_IP 是单个 IPv4` / `PASS 容器经 CURLX 打源站 = 200` |
+| D.0-5 探测 | `http=200`、`Server: nginx/1.31.8`、`OK 无 cf-ray / cf-cache-status`、`两次哈希相同 = True`、`html 命中 = 1` |
+| 前态 D.1b | `pages 729 / meta 804 / index 774 / cards 24 / products 308696B`；`home-before` = `6a0f317b…` |
+| 备份 D.1c | 38 文件 + `c02a9324…` + `Version: 4.0.1`；mu `5ab5be3f…`；三表 29,219,165 B |
+| 正向 D.2–D.5 | `active 4.0.4`；`Example quote · Rigid magnetic box · 9.5×9.5×4 cm`；字体 `applied`→`73d43ba0…`、`code=200 type=font/woff2 size=34952`；干跑 210 → 真跑 210 → 复跑 0；`mismatch=0`；`after 729/1012/774/24 卡/307011B`；**PASS=23 FAIL=0 SKIP=1** + 本机 **PASS 4f** |
+| 回滚 D.6 | `active 4.0.1`；目录哈希 `c02a9324…` 一致；`publish_yen=209`、`publish_1688=209`；mu `5ab5be3f…`；字体 `code=404`；首页 `6a0f317b…` 与改前相同 |
+| 再正向 | 与首轮逐项相同：`4.0.4`、`73d43ba0…`、210/210/0、`mismatch=0`、**23/0/1**、本机 **PASS 4f** |
+
+（首页哈希与上一轮 `715c6587…` 不同是因为这次 home 是 https，页面里的链接全变了；改前改后仍然相等。）
+
+### 15.5 仍未闭合的一处
+
+`/products/` 页面有两个静态资源 404（截图 JSON 里 `1440: Failed to load resource 404` × 14~15、`375` × 3~4），
+改前就有、改后不变，三轮结果一致，不属于 29z 引入；4f 判据不覆盖这一项，先记着。

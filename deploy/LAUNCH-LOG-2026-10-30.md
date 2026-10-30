@@ -167,3 +167,18 @@ publish_yen = 209
 1. 本次授权作废，等负责人重新发授权；
 2. 演练环境改成生产同构（MySQL 26.7.0、php 容器解析不到 `nginx`）并重跑三轮 —— 见 `DSH-RESULT-2026-10-29z.md` §14；
 3. 判据脚本改为 `SHA2(…,256)` + `CURLX` 直连钩子，新哈希 `e3602e3d…`（10006 B）已写进 D.1.0 表。
+## 7. 复核打回后的修正（`6466878` 之后，仍未上生产）
+
+复核抓到 D.0 那行 `ORIGIN_IP=$(docker exec php sh -c "ip route | awk '/default/ {print $3}'")`：
+双引号里的 `$3` 被**宿主机 shell** 展开成空，awk 打出整行；生产 php 镜像也不保证有 `ip` 命令。成立，已改：
+
+1. 换成 `ORIGIN_IP=$(docker inspect php -f '{{range .NetworkSettings.Networks}}{{.Gateway}}{{end}}')`；
+2. 紧接着加 ⛳ 两条（IPv4 正则判定 + 容器经 `$CURLX` 打源站必须 200），任一 FAIL 就停；
+3. 演练改成 `SITE=https://www.packrivo.com`：web 容器只发布 443 + 自签证书，80 一律 301，
+   php 容器删掉 hosts 里的域名，`ORIGIN_IP` 由上面那行算出来（`172.19.0.1`），不再手写 IP、不用 hosts、不用 8091；
+4. 演练里又抓到一个生产同款陷阱：`CURL="curl … --noproxy '*' …"` 的引号在变量里是**字面量**，
+   curl 收到 `'*'` 不匹配域名 → 代理生效 → 走 Cloudflare。改 `--noproxy=*`，失败表加一行。
+
+生产同构下三轮全绿（日志 `deploy/verification-29z/evidence/rehearsal-29z-sequence-v5.log`，530 行）：
+D.0 ⛳ 两条 PASS、探测直连 nginx 200 且无 CF、前态 308,696 B、正向 23/0/1 + 4f、回滚哈希/计数/字体四条全对、
+再正向与首轮逐项相同。**生产仍是 4.0.1 + ¥209 + mu `5ab5be3f`，本次只改仓库。**

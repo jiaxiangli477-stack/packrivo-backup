@@ -52,7 +52,7 @@ WPCLI="docker exec php php -d disable_functions= /usr/local/bin/wp --path=$WPC -
 ### 0.1 上线前检查（只读）
 
 > **生产数据库是 MySQL，不是 MariaDB。** 2026-10-29 那次实测：`mysql` 容器跑 **MySQL Community Server 26.7.0**，账号认证插件是 **`caching_sha2_password`**；`php` 容器里的客户端是 `mariadb-client/mariadb-dump 11.4.13`，它的认证插件目录 `/usr/lib/mariadb/plugin/` 初始为空。这两件事各会产生一次报错，**导出探针要按下面的两层顺序处理**，两层都过完探针才可能有字节。
-> 演练环境从 29v 起也用 MySQL 官方镜像（`mysql:8.4`，本机实测 8.4.13）+ `caching_sha2_password` + 自签证书 TLS，就是为了在本地先把这两层跑出来。版本号与生产不同（26.7.0 vs 8.4.13），但两种报错与改法一致。
+> 演练环境从 2026-10-30 起换成 **`mysql:26.7.0`**（与生产同版本）+ `caching_sha2_password` + 自签证书 TLS。同版本不只是为了报错一致：MySQL 26.7 里 **`MD5()` / `SHA1()` 已经没有**（`ERROR 1305`），只有 `SHA2()` / `CRC32()`，判据脚本用的是 `SHA2(…,256)`。
 
 
 ```bash
@@ -640,7 +640,7 @@ sha256sum -c "$BACKUP/before-mu.sha256"
 **先看现状再决定打不打**（29z 实测生产返回 200，走的是子主题路径 + 缓存；补丁是把这条链钉死）：
 
 ```bash
-CURL="curl -sS --noproxy '*' --resolve www.packrivo.com:443:127.0.0.1"   # 直连源站，不读 Cloudflare 缓存
+CURL="curl -sS -k --noproxy=* --resolve www.packrivo.com:443:127.0.0.1"   # -k：源站是 CF Origin CA 证书；直连源站，不读 Cloudflare 缓存
 $CURL https://www.packrivo.com/ | grep -o 'https://[^"]*packrivo-inter-latin-v3\.woff2' | head -2
 $CURL -o /dev/null -w 'code=%{{http_code}} type=%{{content_type}} size=%{{size_download}}\n' \
   https://www.packrivo.com/wp-content/themes/packrivo-static-bridge-1.2.38/packrivo-static/assets/packrivo-inter-latin-v3.woff2
@@ -949,13 +949,23 @@ PKGC=/pkg
 BACKUP=/home/web/backups/29z-$(date -u +%Y%m%d-%H%M%S)
 
 SITE=https://www.packrivo.com
-CURL="curl -sS -k --noproxy '*' --resolve www.packrivo.com:443:127.0.0.1"   # -k：源站是 CloudFlare Origin CA 证书，本机不认
-ORIGIN_IP=$(docker exec php sh -c "ip route | awk '/default/ {print $3}'")   # php 容器里的宿主网关 IP，容器直连源站用
+CURL="curl -sS -k --noproxy=* --resolve www.packrivo.com:443:127.0.0.1"   # -k：源站是 CloudFlare Origin CA 证书，本机不认
+ORIGIN_IP=$(docker inspect php -f '{{range .NetworkSettings.Networks}}{{.Gateway}}{{end}}')   # php 容器的默认网关 = 宿主机；不用容器里的 ip 命令（镜像不一定有），也不用双引号里的 $3
 CURLX="--resolve www.packrivo.com:443:$ORIGIN_IP -k"   # 给容器里的 29z-criteria.sh（它解析不到 nginx 这个名字）
-echo "ORIGIN_IP=$ORIGIN_IP"
 
 echo "$BACKUP" | tee /root/29z-backup-path.txt
 ```
+
+⛳ 下面两条各自打 PASS / FAIL，任一 FAIL 就停（不要带着空的 IP 往下跑）：
+
+```bash
+echo "ORIGIN_IP=$ORIGIN_IP"
+echo "$ORIGIN_IP" | grep -Eq '^[0-9]+(\.[0-9]+){3}$' && echo 'PASS ORIGIN_IP 是单个 IPv4' || echo 'FAIL ORIGIN_IP 不是单个 IPv4'
+code=$(docker exec php curl -sS -o /dev/null -w '%{http_code}' $CURLX https://www.packrivo.com/)
+[ "$code" = "200" ] && echo "PASS 容器经 CURLX 打源站 = $code" || echo "FAIL 容器经 CURLX 打源站 = $code"
+```
+
+⛳ `ORIGIN_IP` 是一个 IPv4；容器里 `curl $CURLX https://www.packrivo.com/` 回 200。这两条专门堵两个坑：网关 IP 拿不到（空串，或 awk 因为 `$3` 被宿主机 shell 展开成空而打出整行）、容器拿不到源站页面（products-before 就会是 0 字节，后面 4/8/9 假 PASS）。
 
 【宿主】2) 建目录（宿主机 `$PKG`、`$BACKUP`，容器内 `$PKGC`）。**D.1.1 的 `scp` 依赖这里先做完**：
 
@@ -991,8 +1001,9 @@ grep -c '<html' /tmp/29z-probe1.html
 
 | 现象 | 原因 | 处置 |
 |---|---|---|
-| 头里有 `cf-ray` / `cf-cache-status`，或直接 `503 Service Unavailable` + `Proxy-Connection: close` | 本机（Windows / macOS）的**系统代理**被 curl 拿走了，`--resolve` 发挥不了作用；实测 Windows 上 `ProxyEnable=1 / ProxyServer=127.0.0.1:10808` 就会这样 | `CURL` 默认已带 `--noproxy '*'`；若仍不行再 `env \| grep -i proxy` 看环境变量 |
+| 头里有 `cf-ray` / `cf-cache-status`，或直接 `503 Service Unavailable` + `Proxy-Connection: close` | 本机（Windows / macOS）的**系统代理**被 curl 拿走了，`--resolve` 发挥不了作用；实测 Windows 上 `ProxyEnable=1 / ProxyServer=127.0.0.1:10808` 就会这样 | `CURL` 默认已带 `--noproxy=*`；若仍不行再 `env \| grep -i proxy` 看环境变量 |
 | TLS 报 `unable to get local issuer certificate`（curl 60） | 源站挂的是 **CloudFlare Origin CA** 证书（issuer 写着 CloudFlare Origin SSL Certificate Authority），本机和容器的 CA 库都没有它的根 | `CURL` 默认已带 `-k`（只跳过证书校验，仍直连 127.0.0.1） |
+| 响应头里出现 `HTTP/1.1 200 Connection established`，紧跟着 `Server: cloudflare` + `CF-RAY` | `CURL` 抄成变量后，里面的引号是**字面量**：`--noproxy '*'` 到了 curl 手里变成 `*` 带引号，匹配不上域名，代理照常生效 | 写成 `--noproxy=*`（用等号，完全不需要引号）；实测 2026-10-30 演练里就是这么被抓到的 |
 | 两次哈希不同 | 页面里有随机串（nonce / 时间戳 / AB 变体） | `diff /tmp/29z-probe1.html /tmp/29z-probe2.html` 定位；若随机串在 `<script>` 的 `nonce=` 里，比对前先 `sed -E 's/nonce="[^"]*"//g'`；仍不同就改用 `/products/` 当基准页，并在 D.6 第 4 步同步改 |
 | `Connection refused` | 源站 443 没开 | `CURL="curl -sS --resolve www.packrivo.com:80:127.0.0.1"`、`SITE=http://www.packrivo.com`；若 nginx 又 301 到 https，说明只能走 443，回头查 nginx 监听 |
 
@@ -1000,7 +1011,7 @@ grep -c '<html' /tmp/29z-probe1.html
 
 ```bash
 SITE=http://www.packrivo.com:8091
-CURL="curl -sS --noproxy '*' --resolve www.packrivo.com:8091:127.0.0.1"
+CURL="curl -sS --noproxy=* --resolve www.packrivo.com:8091:127.0.0.1"
 ```
 
 【宿主】5) 只读预检：

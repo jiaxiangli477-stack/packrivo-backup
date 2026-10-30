@@ -1,6 +1,6 @@
 {
   "tag": "before",
-  "base": "http://www.packrivo.com:8091",
+  "base": "https://www.packrivo.com",
   "page": "/products/",
   "shot": [
     {
@@ -36,24 +36,24 @@
   ],
   "console_errors": [
     "1440: Failed to load resource: the server responded with a status of 404 (Not Found)",
-    "1440: Failed to load resource: net::ERR_CONNECTION_REFUSED",
-    "1440: Failed to load resource: net::ERR_CONNECTION_REFUSED",
-    "1440: Failed to load resource: net::ERR_CONNECTION_REFUSED",
-    "1440: Failed to load resource: net::ERR_CONNECTION_REFUSED",
-    "1440: Failed to load resource: net::ERR_CONNECTION_REFUSED",
-    "1440: Failed to load resource: net::ERR_CONNECTION_REFUSED",
-    "1440: Failed to load resource: net::ERR_CONNECTION_REFUSED",
-    "1440: Failed to load resource: net::ERR_CONNECTION_REFUSED",
-    "1440: Failed to load resource: net::ERR_CONNECTION_REFUSED",
-    "1440: Failed to load resource: net::ERR_CONNECTION_REFUSED",
-    "1440: Failed to load resource: net::ERR_CONNECTION_REFUSED",
-    "1440: Failed to load resource: net::ERR_CONNECTION_REFUSED",
-    "1440: Failed to load resource: net::ERR_CONNECTION_REFUSED",
-    "1440: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+    "1440: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "1440: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "1440: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "1440: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "1440: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "1440: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "1440: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "1440: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "1440: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "1440: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "1440: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "1440: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "1440: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "1440: Failed to load resource: the server responded with a status of 404 (Not Found)",
     "375: Failed to load resource: the server responded with a status of 404 (Not Found)",
-    "375: Failed to load resource: net::ERR_CONNECTION_REFUSED",
-    "375: Failed to load resource: net::ERR_CONNECTION_REFUSED",
-    "375: Failed to load resource: net::ERR_CONNECTION_REFUSED",
-    "375: Failed to load resource: net::ERR_CONNECTION_REFUSED"
+    "375: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "375: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "375: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "375: Failed to load resource: the server responded with a status of 404 (Not Found)"
   ]
 }
