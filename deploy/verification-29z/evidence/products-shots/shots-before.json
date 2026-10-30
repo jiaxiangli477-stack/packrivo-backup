@@ -8,7 +8,7 @@
       "height": 900,
       "status": 200,
       "file": "before-1440.png",
-      "bytes": 105346,
+      "bytes": 434099,
       "cards": 24,
       "overflow": false,
       "yen_in_dom": 0,
@@ -23,7 +23,7 @@
       "height": 812,
       "status": 200,
       "file": "before-375.png",
-      "bytes": 45134,
+      "bytes": 131926,
       "cards": 24,
       "overflow": false,
       "yen_in_dom": 0,
@@ -35,25 +35,7 @@
     }
   ],
   "console_errors": [
-    "1440: Failed to load resource: the server responded with a status of 404 (Not Found)",
-    "1440: Failed to load resource: the server responded with a status of 404 (Not Found)",
-    "1440: Failed to load resource: the server responded with a status of 404 (Not Found)",
-    "1440: Failed to load resource: the server responded with a status of 404 (Not Found)",
-    "1440: Failed to load resource: the server responded with a status of 404 (Not Found)",
-    "1440: Failed to load resource: the server responded with a status of 404 (Not Found)",
-    "1440: Failed to load resource: the server responded with a status of 404 (Not Found)",
-    "1440: Failed to load resource: the server responded with a status of 404 (Not Found)",
-    "1440: Failed to load resource: the server responded with a status of 404 (Not Found)",
-    "1440: Failed to load resource: the server responded with a status of 404 (Not Found)",
-    "1440: Failed to load resource: the server responded with a status of 404 (Not Found)",
-    "1440: Failed to load resource: the server responded with a status of 404 (Not Found)",
-    "1440: Failed to load resource: the server responded with a status of 404 (Not Found)",
-    "1440: Failed to load resource: the server responded with a status of 404 (Not Found)",
-    "1440: Failed to load resource: the server responded with a status of 404 (Not Found)",
-    "375: Failed to load resource: the server responded with a status of 404 (Not Found)",
-    "375: Failed to load resource: the server responded with a status of 404 (Not Found)",
-    "375: Failed to load resource: the server responded with a status of 404 (Not Found)",
-    "375: Failed to load resource: the server responded with a status of 404 (Not Found)",
-    "375: Failed to load resource: the server responded with a status of 404 (Not Found)"
+    "1440: Failed to load resource: the server responded with a status of 404 ()",
+    "375: Failed to load resource: the server responded with a status of 404 ()"
   ]
 }
