@@ -1,0 +1,56 @@
+29z 判据 v3 负向验证（2026-10-30，演练栈 r28q：php / mysql 26.7.0 / web:443 / redis）
+目的：证明每条「计数为 0 就 PASS」的判据都配了正向条件，空输入会 FAIL 而不是 PASS。
+判据脚本 = deploy/verification-29z/scripts/29z-criteria.sh（13079 B / 1f6dd732275191c58b780af068220a40e2d85cb6226bbe90b78d9322a0dbe546）
+
+=== 负向 A：把 before 快照清空（pages-before / cards-before 各 0 行）===
+  快照 after: pages 729 / meta 1012 / index 774 / cards 24 / products 307011B / curl_stderr 0B
+  FAIL  0a pages 快照非空且前后条数相同（before 0 / after 729，要求 ≥400 且相等）
+  PASS  0b meta-after 快照行数（≥ 200，实际 1012）
+  PASS  0c index-after 快照行数（≥ 200，实际 774）
+  PASS  0d products-before.html 字节数（≥ 100000，实际 308696）
+  PASS  0e products-after.html 字节数（≥ 100000，实际 307011）
+  PASS  0f products-after 的 curl stderr 字节数（期望 0，实际 0）
+  FAIL  3a ID/slug/status 集合（期望 d41d8cd98f00b204e9800998ecf8427e，实际 0b9937b5aa0f2465b31dd2cf224b402d）
+  FAIL  3b noindex 集合（期望 d41d8cd98f00b204e9800998ecf8427e，实际 36c1d1f0c472ea66be0745c7404dd0fe）
+  FAIL  4b /products/ 卡片 链接+名称 逐条相同（期望 d41d8cd98f00b204e9800998ecf8427e，实际 3cde34728bf1d65b22f8c33d1801a96d）
+  FAIL  5a 内容被改的对象数（预期 210 = 208 catalog + /products/ + 1 篇博客）（期望 210，实际 0）
+  PASS=27  FAIL=5  SKIP=1
+
+=== 负向 B：源站打不通（--resolve 指向 172.19.0.99，after 页 0 字节、stderr 非空）===
+  快照 after: pages 729 / meta 1012 / index 774 / cards 0 / products 0B / curl_stderr 95B
+  FAIL  0a pages 快照非空且前后条数相同（before 0 / after 729，要求 ≥400 且相等）
+  PASS  0b meta-after 快照行数（≥ 200，实际 1012）
+  PASS  0c index-after 快照行数（≥ 200，实际 774）
+  PASS  0d products-before.html 字节数（≥ 100000，实际 308696）
+  FAIL  0e products-after.html 字节数（要求 ≥ 100000，实际 0）
+  FAIL  0f products-after 的 curl stderr 字节数（期望 0，实际 95）
+  FAIL  3a ID/slug/status 集合（期望 d41d8cd98f00b204e9800998ecf8427e，实际 0b9937b5aa0f2465b31dd2cf224b402d）
+  FAIL  3b noindex 集合（期望 d41d8cd98f00b204e9800998ecf8427e，实际 36c1d1f0c472ea66be0745c7404dd0fe）
+  FAIL  4a /products/ 产品卡片数（前后各 24）（期望 24，实际 0）
+  PASS  4c 渲染里 ¥ 计数（期望 0，实际 0）
+  PASS  4d 渲染里 \u00a5 计数（期望 0，实际 0）
+  PASS  4e 渲染里 1688 计数（期望 0，实际 0）
+    改前 /products/: ¥ 0 / \u00a5 20 / 1688 0
+  FAIL  5a 内容被改的对象数（预期 210 = 208 catalog + /products/ + 1 篇博客）（期望 210，实际 0）
+  FAIL  8b 5 页里 http=200 且 bytes≥10000 的页数（期望 5，实际 0）
+  FAIL  9a /get-a-quote/ 跟随跳转后状态（期望 200，实际 000）
+  FAIL  9b /products/ 页里 Get a price 链接（0 处）
+  PASS=22  FAIL=10  SKIP=1
+
+=== 负向 C：源站打不通时跑 before 模式（模拟「快照取不到」）===
+  --- 源站打不通时跑 before 模式（B4/B5/B6 应 FAIL、退出码应非 0）---
+  before 退出码 = 1
+    PASS  B1 pages 快照行数（publish 对象）（≥ 400，实际 729）
+    PASS  B2 meta 快照行数（≥ 200，实际 1012）
+    PASS  B3 index 快照行数（≥ 200，实际 774）
+    FAIL  B4 products-before.html 字节数（要求 ≥ 100000，实际 0）
+    FAIL  B5 /products/ 卡片数（期望 24，实际 0）
+    FAIL  B6 products-before 的 curl stderr 字节数（期望 0，实际 95）
+    PASS  B7 catalog 页 ID 条数（期望 208，实际 208）
+    PASS=4  FAIL=3
+
+=== 还原演练快照 ===
+307011 /tmp/29z-snap/products-after.html
+      729 /tmp/29z-snap/pages-before.txt
+       24 /tmp/29z-snap/cards-before.txt
+      753 total
