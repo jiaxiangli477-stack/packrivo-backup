@@ -350,3 +350,68 @@ D.4 ⛳ 不一致条数 = 0
 
 D.0 → D.5 全部 ⛳ 通过，零 FAIL。生产当前 = 4.0.4 + 字体补丁已打 + 正文归零。
 清缓存由负责人执行；之后再做改后截图 → 判据 4f → 全站复测，然后把本节补完。
+## A9. D.5.5 后半（负责人已清 Cloudflare 缓存）
+
+清缓存后公网口径复查（`curl -I`，三条都 `cf-cache-status: MISS`）：
+
+```text
+https://www.packrivo.com/            200  Server: cloudflare | cf-cache-status: MISS
+https://www.packrivo.com/products/   200  Server: cloudflare | cf-cache-status: MISS
+https://www.packrivo.com/get-a-quote/ 200 Server: cloudflare | cf-cache-status: MISS
+首页公网直取：'Example quote · Rigid magnetic box' 1 处 / ¥ 0 处 / 字体 v3 URL 2 处
+```
+
+**① 改后截图**
+
+```text
+after-1440: status=200 cards=24 overflow=false ¥=0 434099 B
+after-375 : status=200 cards=24 overflow=false ¥=0 131926 B
+shots-after.json console_errors = 0
+```
+
+**② 判据 4f**
+
+```text
+before-1440: status=200 cards=24 overflow=false ¥=0 434099 B
+before-375 : status=200 cards=24 overflow=false ¥=0 131926 B
+after-1440 : status=200 cards=24 overflow=false ¥=0 434099 B
+after-375  : status=200 cards=24 overflow=false ¥=0 131926 B
+PASS  4f 改前改后 x 1440/375 四张截图（4/4 齐，卡片 24 = 24，无溢出，改后 ¥ 0）
+```
+
+改前改后两张 1440 图 sha256 相同（`71d40763fac33290…`），375 也相同（`7f47536f2e53dc2e…`），mtime 分别是 03:36:23 与 03:44:47
+（不是没重拍，是**渲染出来的像素本来就一样**）：本次去掉的价格在正文里，而 `/products/` 由 `template-products-v4` 渲染、
+正文不上屏，所以页面视觉不变，变的是 HTML 体积（313656 → 312127 B）。
+
+**③ 全站复测（60 页）**
+
+```text
+pages=60  pages_non200=11  links_unique=1064  links_non200=1
+非 200 页面 = 11 条，全部是同一篇博客的 11 个语种版本：
+  /de/ /fr/ /es/ /it/ /nl/ /pt/ /ar/ /ja/ /ko/ /zh-CN/ /zh-TW/ + 2026/09/21/jewelry-box-insert-fit-measurements/  均 404（改前就是这样）
+唯一非 200 链接 = /xmlrpc.php?rsd → 403（WP 头部 EditURI，站点自己禁的 XML-RPC，与本轮无关）
+字体 = 200 / font/woff2 / …/packrivo-static-bridge-1.2.38/…/packrivo-inter-latin-v3.woff2
+旧 URL 引用：/rigid-gift-boxes/ /resources/ /packaging-examples/ /pricing/ /sustainability/ → summary {} （0 条）
+```
+
+**④ 公网口径抽查**
+
+```text
+/products/          200  312368 B  ¥=0 \u00a5=0 1688=0  Get a price 46 处
+catalog-ring-box    200  78060 B   ¥=0 \u00a5=0 1688=0
+catalog-wooden-box  200  76686 B   ¥=0 \u00a5=0 1688=0
+catalog-velvet-box  200  89669 B   ¥=0 \u00a5=0 1688=0
+catalog-paper-box   200  84843 B   ¥=0 \u00a5=0 1688=0
+catalog-gift-box    200  81047 B   ¥=0 \u00a5=0 1688=0
+meta 抽查 /catalog-velvet-box/：len=104
+  Velvet Jewelry Boxes — Reference Catalogue. Custom logo printing, MOQ 500 per design. Samples available.
+```
+
+**执行结束。** 生产 = `packrivo-home-v4 4.0.4` + 字体补丁 + 正文/meta 归零，缓存由负责人清，本流程全程未清缓存、未碰密码与 `.cf.env`。
+
+产物：
+- `deliver/…` 见 `$BACKUP = /home/web/backups/29z-20261030-103332`（主题 4.0.1 目录、mu 原文件、三表 sql、审计 json、home-before）
+- 仓库：`deploy/verification-29z/evidence/{products-shots/, crawl-29z-after-cf-prod.json, old-url-sources-prod.json}`
+
+一处手册与实现的偏差（不改手册，先记录）：`29z-crawl-prod.mjs` / `29z-old-url-sources.mjs` 的参数是 **out-dir**，
+按手册写成 `xxx.json` 会建出一个同名目录；本次已把 crawl 结果规整为 `crawl-29z-after-cf-prod.json`。

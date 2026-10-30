@@ -1,0 +1,513 @@
+{
+  "base": "https://www.packrivo.com",
+  "pages": [
+    {
+      "lang": "en",
+      "kind": "home",
+      "url": "/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 110478
+    },
+    {
+      "lang": "en",
+      "kind": "products",
+      "url": "/products/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 311855
+    },
+    {
+      "lang": "en",
+      "kind": "services",
+      "url": "/services/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 89118
+    },
+    {
+      "lang": "en",
+      "kind": "blog",
+      "url": "/2026/09/21/jewelry-box-insert-fit-measurements/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 98066
+    },
+    {
+      "lang": "en",
+      "kind": "product",
+      "url": "/product-magnetic-jewelry-box/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 91492
+    },
+    {
+      "lang": "de",
+      "kind": "home",
+      "url": "/de/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 142071
+    },
+    {
+      "lang": "de",
+      "kind": "products",
+      "url": "/de/products/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 340034
+    },
+    {
+      "lang": "de",
+      "kind": "services",
+      "url": "/de/services/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 120634
+    },
+    {
+      "lang": "de",
+      "kind": "blog",
+      "url": "/de/2026/09/21/jewelry-box-insert-fit-measurements/",
+      "status": 404,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 0
+    },
+    {
+      "lang": "de",
+      "kind": "product",
+      "url": "/de/product-magnetic-jewelry-box/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 123318
+    },
+    {
+      "lang": "fr",
+      "kind": "home",
+      "url": "/fr/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 143098
+    },
+    {
+      "lang": "fr",
+      "kind": "products",
+      "url": "/fr/products/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 341814
+    },
+    {
+      "lang": "fr",
+      "kind": "services",
+      "url": "/fr/services/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 121363
+    },
+    {
+      "lang": "fr",
+      "kind": "blog",
+      "url": "/fr/2026/09/21/jewelry-box-insert-fit-measurements/",
+      "status": 404,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 0
+    },
+    {
+      "lang": "fr",
+      "kind": "product",
+      "url": "/fr/product-magnetic-jewelry-box/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 124474
+    },
+    {
+      "lang": "es",
+      "kind": "home",
+      "url": "/es/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 142167
+    },
+    {
+      "lang": "es",
+      "kind": "products",
+      "url": "/es/products/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 341226
+    },
+    {
+      "lang": "es",
+      "kind": "services",
+      "url": "/es/services/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 120607
+    },
+    {
+      "lang": "es",
+      "kind": "blog",
+      "url": "/es/2026/09/21/jewelry-box-insert-fit-measurements/",
+      "status": 404,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 0
+    },
+    {
+      "lang": "es",
+      "kind": "product",
+      "url": "/es/product-magnetic-jewelry-box/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 123622
+    },
+    {
+      "lang": "it",
+      "kind": "home",
+      "url": "/it/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 142869
+    },
+    {
+      "lang": "it",
+      "kind": "products",
+      "url": "/it/products/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 342326
+    },
+    {
+      "lang": "it",
+      "kind": "services",
+      "url": "/it/services/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 121025
+    },
+    {
+      "lang": "it",
+      "kind": "blog",
+      "url": "/it/2026/09/21/jewelry-box-insert-fit-measurements/",
+      "status": 404,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 0
+    },
+    {
+      "lang": "it",
+      "kind": "product",
+      "url": "/it/product-magnetic-jewelry-box/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 124122
+    },
+    {
+      "lang": "nl",
+      "kind": "home",
+      "url": "/nl/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 141486
+    },
+    {
+      "lang": "nl",
+      "kind": "products",
+      "url": "/nl/products/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 339808
+    },
+    {
+      "lang": "nl",
+      "kind": "services",
+      "url": "/nl/services/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 120027
+    },
+    {
+      "lang": "nl",
+      "kind": "blog",
+      "url": "/nl/2026/09/21/jewelry-box-insert-fit-measurements/",
+      "status": 404,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 0
+    },
+    {
+      "lang": "nl",
+      "kind": "product",
+      "url": "/nl/product-magnetic-jewelry-box/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 122854
+    },
+    {
+      "lang": "pt",
+      "kind": "home",
+      "url": "/pt/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 142260
+    },
+    {
+      "lang": "pt",
+      "kind": "products",
+      "url": "/pt/products/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 341927
+    },
+    {
+      "lang": "pt",
+      "kind": "services",
+      "url": "/pt/services/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 120441
+    },
+    {
+      "lang": "pt",
+      "kind": "blog",
+      "url": "/pt/2026/09/21/jewelry-box-insert-fit-measurements/",
+      "status": 404,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 0
+    },
+    {
+      "lang": "pt",
+      "kind": "product",
+      "url": "/pt/product-magnetic-jewelry-box/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 123388
+    },
+    {
+      "lang": "ar",
+      "kind": "home",
+      "url": "/ar/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 138834
+    },
+    {
+      "lang": "ar",
+      "kind": "products",
+      "url": "/ar/products/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 336649
+    },
+    {
+      "lang": "ar",
+      "kind": "services",
+      "url": "/ar/services/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 117382
+    },
+    {
+      "lang": "ar",
+      "kind": "blog",
+      "url": "/ar/2026/09/21/jewelry-box-insert-fit-measurements/",
+      "status": 404,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 0
+    },
+    {
+      "lang": "ar",
+      "kind": "product",
+      "url": "/ar/product-magnetic-jewelry-box/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 119570
+    },
+    {
+      "lang": "ja",
+      "kind": "home",
+      "url": "/ja/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 132666
+    },
+    {
+      "lang": "ja",
+      "kind": "products",
+      "url": "/ja/products/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 328492
+    },
+    {
+      "lang": "ja",
+      "kind": "services",
+      "url": "/ja/services/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 112353
+    },
+    {
+      "lang": "ja",
+      "kind": "blog",
+      "url": "/ja/2026/09/21/jewelry-box-insert-fit-measurements/",
+      "status": 404,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 0
+    },
+    {
+      "lang": "ja",
+      "kind": "product",
+      "url": "/ja/product-magnetic-jewelry-box/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 113482
+    },
+    {
+      "lang": "ko",
+      "kind": "home",
+      "url": "/ko/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 133069
+    },
+    {
+      "lang": "ko",
+      "kind": "products",
+      "url": "/ko/products/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 328639
+    },
+    {
+      "lang": "ko",
+      "kind": "services",
+      "url": "/ko/services/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 112621
+    },
+    {
+      "lang": "ko",
+      "kind": "blog",
+      "url": "/ko/2026/09/21/jewelry-box-insert-fit-measurements/",
+      "status": 404,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 0
+    },
+    {
+      "lang": "ko",
+      "kind": "product",
+      "url": "/ko/product-magnetic-jewelry-box/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 113816
+    },
+    {
+      "lang": "zh-CN",
+      "kind": "home",
+      "url": "/zh-CN/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 131462
+    },
+    {
+      "lang": "zh-CN",
+      "kind": "products",
+      "url": "/zh-CN/products/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 326432
+    },
+    {
+      "lang": "zh-CN",
+      "kind": "services",
+      "url": "/zh-CN/services/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 111385
+    },
+    {
+      "lang": "zh-CN",
+      "kind": "blog",
+      "url": "/zh-CN/2026/09/21/jewelry-box-insert-fit-measurements/",
+      "status": 404,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 0
+    },
+    {
+      "lang": "zh-CN",
+      "kind": "product",
+      "url": "/zh-CN/product-magnetic-jewelry-box/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 112022
+    },
+    {
+      "lang": "zh-TW",
+      "kind": "home",
+      "url": "/zh-TW/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 131536
+    },
+    {
+      "lang": "zh-TW",
+      "kind": "products",
+      "url": "/zh-TW/products/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 326654
+    },
+    {
+      "lang": "zh-TW",
+      "kind": "services",
+      "url": "/zh-TW/services/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 111395
+    },
+    {
+      "lang": "zh-TW",
+      "kind": "blog",
+      "url": "/zh-TW/2026/09/21/jewelry-box-insert-fit-measurements/",
+      "status": 404,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 0
+    },
+    {
+      "lang": "zh-TW",
+      "kind": "product",
+      "url": "/zh-TW/product-magnetic-jewelry-box/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 112041
+    }
+  ],
+  "links": {
+    "unique": 1064,
+    "non200": [
+      {
+        "url": "/xmlrpc.php?rsd",
+        "status": 403,
+        "type": "text/html",
+        "err": ""
+      }
+    ],
+    "by_class": {
+      "other": 1
+    }
+  },
+  "fonts": [
+    {
+      "url": "/wp-content/themes/packrivo-static-bridge-1.2.38/packrivo-static/assets/packrivo-inter-latin-v3.woff2",
+      "status": 200,
+      "type": "font/woff2",
+      "len": null
+    },
+    {
+      "url_in_home": [
+        "https://www.packrivo.com/wp-content/themes/packrivo-static-bridge-1.2.38/packrivo-static/assets/packrivo-inter-latin-v3.woff2"
+      ]
+    }
+  ],
+  "shots_note": ""
+}
