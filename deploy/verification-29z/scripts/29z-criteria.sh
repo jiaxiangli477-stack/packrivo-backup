@@ -1,11 +1,15 @@
 #!/bin/sh
 # 29z §2 九条判据（v2，2026-10-30 按负责人复核意见改写判据 4）
-# 用法：sh 29z-criteria.sh <before|compare>
-#   before  —— 只取前态快照（DB 必须是未打补丁的状态；之后由外部拍 /products/ 两档截图）
-#   compare —— 打完补丁后跑，逐条打印 PASS/FAIL
+# 用法：sh 29z-criteria.sh <before|compare|compare-noshots>
+#   before          —— 只取前态快照（DB 必须是未打补丁的状态；截图由本机拍）
+#   compare         —— 打完补丁后跑，逐条打印 PASS/FAIL（含 4f 四张截图，仅演练环境用）
+#   compare-noshots —— 生产用：4f 打成 SKIP（截图在本机拍、本机判），不计入 PASS 也不计入 FAIL
 set -u
 MODE=${1:-compare}
+NOSHOTS=0
+[ "$MODE" = "compare-noshots" ] && NOSHOTS=1
 WP="php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root"
+SITE=${SITE:-http://nginx}
 SNAP=/tmp/29z-snap
 mkdir -p $SNAP
 
@@ -31,7 +35,7 @@ snapshot() {
     WHERE meta_key IN ('_yoast_wpseo_metadesc','_yoast_wpseo_opengraph-description') ORDER BY post_id, meta_key" --skip-column-names > $SNAP/meta-$tag.txt
   $WP db query "SELECT CONCAT_WS('|', object_id, MD5(COALESCE(description,'')), MD5(COALESCE(open_graph_description,'')))
     FROM wp_yoast_indexable WHERE object_type='post' ORDER BY object_id" --skip-column-names > $SNAP/index-$tag.txt
-  curl -s http://nginx/products/ > $SNAP/products-$tag.html
+  curl -s "$SITE/products/" > $SNAP/products-$tag.html
   php -r "$CARDS_PHP" $SNAP/products-$tag.html > $SNAP/cards-$tag.txt
   echo "  快照 $tag: pages $(wc -l < $SNAP/pages-$tag.txt) / meta $(wc -l < $SNAP/meta-$tag.txt) / index $(wc -l < $SNAP/index-$tag.txt) / cards $(wc -l < $SNAP/cards-$tag.txt) / products $(wc -c < $SNAP/products-$tag.html)B"
 }
@@ -47,7 +51,7 @@ fi
 echo "== 取后态 =="
 snapshot after
 
-PASS=0; FAIL=0
+PASS=0; FAIL=0; SKIP=0
 ck() {
   if [ "$2" = "$3" ]; then echo "  PASS  $1（期望 $2，实际 $3）"; PASS=$((PASS+1));
   else echo "  FAIL  $1（期望 $2，实际 $3）"; FAIL=$((FAIL+1)); fi
@@ -92,11 +96,17 @@ ck "4b /products/ 卡片 链接+名称 逐条相同" "$(md5sum $SNAP/cards-befor
 ck "4c 渲染里 ¥ 计数" 0 "$(grep -o '¥' $SNAP/products-after.html | wc -l)"
 ck "4d 渲染里 \\u00a5 计数" 0 "$(grep -o '\\u00a5' $SNAP/products-after.html | wc -l)"
 ck "4e 渲染里 1688 计数" 0 "$(grep -o '1688' $SNAP/products-after.html | wc -l)"
-shots=0
-for s in before-1440 after-1440 before-375 after-375; do
-  if [ -s "$SNAP/shots/$s.png" ]; then shots=$((shots+1)); echo "    截图 $s.png $(wc -c < $SNAP/shots/$s.png) B"; fi
-done
-ck "4f 改前改后 x 1440/375 四张截图" 4 "$shots"
+# 4f 截图：容器里有图就判（演练环境），没有就打 SKIP（生产：本机 29z-shots-check.mjs 判）
+if [ "$NOSHOTS" = "1" ]; then
+  echo "  SKIP  4f 改前改后 x 1440/375 四张截图 —— 本机判（29z-shots-check.mjs），容器里不计"
+  SKIP=$((SKIP+1))
+else
+  shots=0
+  for s in before-1440 after-1440 before-375 after-375; do
+    if [ -s "$SNAP/shots/$s.png" ]; then shots=$((shots+1)); echo "    截图 $s.png $(wc -c < $SNAP/shots/$s.png) B"; fi
+  done
+  ck "4f 改前改后 x 1440/375 四张截图" 4 "$shots"
+fi
 echo "    改前 /products/: ¥ $(grep -o '¥' $SNAP/products-before.html | wc -l) / \\u00a5 $(grep -o '\\u00a5' $SNAP/products-before.html | wc -l) / 1688 $(grep -o '1688' $SNAP/products-before.html | wc -l)"
 
 # --- 5 被改对象集合
@@ -126,16 +136,16 @@ ck "7 indexable.description 与 postmeta 不一致条数" 0 "$mis"
 # --- 8 catalog 页渲染里没有 ¥（抽 5 页）
 yen=0
 for s in catalog-ring-box-o1cn01ahes catalog-wooden-box-o1cn01rnjift1k catalog-velvet-box catalog-paper-box catalog-gift-box; do
-  c=$(curl -s "http://nginx/$s/" | grep -o '¥' | wc -l | tr -d ' ')
+  c=$(curl -s "$SITE/$s/" | grep -o '¥' | wc -l | tr -d ' ')
   yen=$((yen + c))
 done
 ck "8 抽查 5 个 catalog 页渲染里 ¥ 总数" 0 "$yen"
 
 # --- 9 报价链接
-code=$(curl -s -o /dev/null -w '%{http_code}' -L http://nginx/get-a-quote/ | tr -d ' ')
+code=$(curl -s -o /dev/null -w '%{http_code}' -L "$SITE/get-a-quote/" | tr -d ' ')
 ck "9a /get-a-quote/ 跟随跳转后状态" 200 "$code"
 gp=$(grep -o 'Get a price' $SNAP/products-after.html | wc -l | tr -d ' ')
 if [ "$gp" -gt 0 ]; then echo "  PASS  9b /products/ 页里 Get a price 链接（$gp 处）"; PASS=$((PASS+1)); else echo "  FAIL  9b /products/ 页里 Get a price 链接（0 处）"; FAIL=$((FAIL+1)); fi
 
 echo "== 汇总 =="
-echo "  PASS=$PASS  FAIL=$FAIL"
+echo "  PASS=$PASS  FAIL=$FAIL  SKIP=$SKIP"

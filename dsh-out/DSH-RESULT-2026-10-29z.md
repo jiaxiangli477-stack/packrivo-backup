@@ -374,3 +374,84 @@ G4 特意做成「附录 D.1.0 的 sha256 与磁盘真实文件逐一比对」�
   D.1c 备份的是生产现场那份，D.6 回滚也是那份，所以不依赖 git。
 - 生产容器的 `patch` 有没有，本轮没验证（没碰生产）。手册写的是「先试 patch、没有就走 PHP 兜底」。
 - 演练首页字体那条 404 在打补丁**之后**消失、回滚**之后**复现，与生产现状一致。
+## 13. 复核第 3 轮（2026-10-30）：五处「只在演练环境成立」的生产化修正
+
+### 13.1 全部 HTTP 改成直连源站（`$CURL`）
+
+宿主机上直接 `curl https://www.packrivo.com` 会读 Cloudflare 缓存，装完 4.0.4 看不见 `Example quote`、
+回滚比对首页哈希也会错。现在 D.0 第 1 步统一钉死：
+
+```bash
+SITE=https://www.packrivo.com
+CURL="curl -sS --noproxy '*' --resolve www.packrivo.com:443:127.0.0.1"
+```
+
+`--noproxy '*'` 是实测加上的：本机 Windows 系统代理 `ProxyEnable=1 / ProxyServer=127.0.0.1:10808`，
+curl 会走它并返回 `503 Service Unavailable` + `Proxy-Connection: close`，`--resolve` 完全失效。
+**这个坑是 D.0 探测第一次跑就抓到的**，不是猜的。
+
+D.0 第 4 步新增只读探测（不通过就停）：
+
+```bash
+$CURL -I "$SITE/" | tee /tmp/29z-probe-head.txt
+grep -qi 'cf-ray\|cf-cache-status' /tmp/29z-probe-head.txt && echo FAIL || echo OK
+$CURL "$SITE/" -o /tmp/29z-probe1.html
+$CURL "$SITE/" -o /tmp/29z-probe2.html
+sha256sum /tmp/29z-probe1.html /tmp/29z-probe2.html
+grep -c '<html' /tmp/29z-probe1.html
+```
+
+⛳ 无 CF 标记 + 两次哈希相同 + `<html>` ≥ 1。附录里配了四种失败对号入座：
+代理劫持（→ `--noproxy '*'`，已默认带）、证书主体不符（→ `-k`）、页面含随机串（→ 先 `sed` 去 nonce，
+或用 `/products/` 当基准页）、443 没开（→ 改 80）。
+
+改前（D.1b）、装完（D.2.1 文案、D.2.2 字体）、回滚（D.6）四处全部换成 `$CURL`，写法一致；§6.5 的字体检查同步改。
+
+### 13.2 scp 写死路径
+
+`$PKG` 是宿主机变量，本机 shell 里没有，`netcup:$PKG/` 会把文件丢到服务器根目录。D.1.1 六个文件全部写死
+`netcup:/root/29z-pkg/`，并在正文注明「D.0 第 2 步的 `mkdir -p "$PKG"` 必须先做完」。
+
+### 13.3 补 `PKGC=/pkg`
+
+D.0 第 1 步加 `PKGC=/pkg`，第 2 步 `docker exec php mkdir -p "$PKGC"`。D.2.1 三条命令恢复成
+`docker cp … php:"$PKGC/packrivo-home-v4.zip"` → `sha256sum "$PKGC/…"` → `theme install "$PKGC/…" --force`。
+`front-page.php` 的 grep 改成真实代码路径 `$WPC/wp-content/themes/packrivo-home-v4/front-page.php`，
+上一版那句「`$PKGC` 是主题目录」的错误说明已删（`$PKGC` 是包目录 `/pkg`，与主题目录不是一个东西）。
+
+### 13.4 截图：base 参数、本机判 4f、容器不再判图
+
+- `29z-products-shots.mjs` 加第 3 个位置参数 base URL；不给就走演练反代（原行为），给了就直接访问。
+- 改前截图放 D.1b（本机、`https://www.packrivo.com`）；改后截图移到 **D.5.5 负责人清完缓存之后**。
+- 新增 `29z-shots-check.mjs`：四张图齐 + `status 200` + 卡片数与改前一致 + 无横向溢出 + 改后 `¥` 0，
+  打印单独一行 `PASS 4f` / `FAIL 4f`，退出码 0/1。
+- 容器里 `29z-criteria.sh` 增加 `compare-noshots`：4f 打 **SKIP**（既不算 PASS 也不算 FAIL），
+  汇总行变成 `PASS=23 FAIL=0 SKIP=1`；旧版把「容器里没图」记成 FAIL。
+- 【本机】那几条 `docker cp … php:` 全部删掉——本机拷图只会进演练容器，生产容器里根本没有。
+
+### 13.5 `cf_purge.py` 路径
+
+D.5.5 改成 `python E:\破甲工作区\i18n\cf_purge.py`（负责人平时那份，10-25 版），去掉 handoff 目录那个旧路径。
+
+### 13.6 演练三轮（29z-prod.sql，按新附录 D）
+
+演练里「源站」= 演练 nginx：宿主机 `--resolve www.packrivo.com:8091:127.0.0.1`，容器内 `/etc/hosts` 把
+`www.packrivo.com` 指到 `host.docker.internal`（走宿主机发布的 8091），WP 的 `home/siteurl` 设成
+`http://www.packrivo.com:8091`——两侧 Host 相同，和生产「同一域名 + 直连源站」等价。
+日志：`deploy/verification-29z/evidence/rehearsal-29z-sequence-v3.log`（495 行）。
+
+| | 结果 |
+|---|---|
+| D.0 探测 | `200 OK`、无 `cf-ray`/`cf-cache-status`、两次哈希同为 `715c6587…`、`<html` 命中 1 |
+| D.0 预检 | `active 4.0.1`、catalog 208、1688 209、¥ 209 |
+| D.1b 前态 | 快照 729 页 / 804 meta / 774 index / cards 24 / products 311,426 B；`home-before` = `715c6587…`；改前截图两档 `cards 24`、无溢出 |
+| D.1c 备份 | 主题 38 文件 + 目录哈希 `c02a9324…` + `Version: 4.0.1`；mu `5ab5be3f…`；三表 29,149,459 B `a82aa274…` |
+| **① 正向 D.2→D.5** | `active 4.0.4`、首页渲染 `Example quote · Rigid magnetic box · 9.5×9.5×4 cm`；字体 `applied`→`73d43ba0…`、`200 / font/woff2 / 34952`；干跑 210 → 真跑 210 → 复跑 0；`mismatch=0`；**PASS=23 FAIL=0 SKIP=1**；本机 **PASS 4f** |
+| **② 回滚 D.6** | `active 4.0.1`、目录哈希 `c02a9324…` 一致；`¥=209`、`1688=209`；首页 `715c6587…` 与 `home-before` 相同；mu `5ab5be3f…`；子主题字体路径重新 `404 text/html` |
+| **③ 再正向** | `active 4.0.4`、字体 `applied`→`73d43ba0…`、210/210/0、`mismatch=0`、**PASS=23 FAIL=0 SKIP=1**、本机 **PASS 4f** |
+
+`4f` 在容器里恒为 SKIP，靠本机那条补上，合计 **24 PASS / 0 FAIL / 0 SKIP**。
+
+有一处演练观察如实记：`/products/` 两档截图在改前改后字节相同（105,346 / 45,134 B），
+因为视口内是 hero + 卡片网格，被删掉的 `Listed at ¥…` 段落在这两档视口之外；视觉对比看 `products-shots/`，
+「内容没被动过」由判据 4a/4b（卡片数 24 = 24、链接+名称 md5 相同）保证。

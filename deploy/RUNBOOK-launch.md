@@ -640,8 +640,9 @@ sha256sum -c "$BACKUP/before-mu.sha256"
 **先看现状再决定打不打**（29z 实测生产返回 200，走的是子主题路径 + 缓存；补丁是把这条链钉死）：
 
 ```bash
-curl -s https://www.packrivo.com/ | grep -o 'https://[^"]*packrivo-inter-latin-v3\.woff2' | head -2
-curl -s -o /dev/null -w 'code=%{http_code} type=%{content_type} size=%{size_download}\n' \
+CURL="curl -sS --noproxy '*' --resolve www.packrivo.com:443:127.0.0.1"   # 直连源站，不读 Cloudflare 缓存
+$CURL https://www.packrivo.com/ | grep -o 'https://[^"]*packrivo-inter-latin-v3\.woff2' | head -2
+$CURL -o /dev/null -w 'code=%{{http_code}} type=%{{content_type}} size=%{{size_download}}\n' \
   https://www.packrivo.com/wp-content/themes/packrivo-static-bridge-1.2.38/packrivo-static/assets/packrivo-inter-latin-v3.woff2
 ```
 
@@ -658,7 +659,7 @@ docker exec php sha256sum "$WPC/wp-content/mu-plugins/packrivo-wave2.php"   # �
 
 **判据**：`grep -n 'PACKRIVO_W2_FONT_URL' packrivo-wave2.php` 里那行变成 `get_template_directory_uri()`；
 首页 HTML 里的字体 URL 指向 `/wp-content/themes/packrivo-static-bridge-<ver>/packrivo-static/assets/...woff2`；
-`curl -sI` 该 URL 返回 **200** 且 `content-type: font/woff2`、`content-length: 34952`。
+`$CURL -I` 该 URL 返回 **200** 且 `content-type: font/woff2`、`content-length: 34952`。
 
 **回滚**：`docker exec php sh -c "cp -a $WPC/wp-content/mu-plugins/packrivo-wave2.php.orig-29w $WPC/wp-content/mu-plugins/packrivo-wave2.php"`，
 再 `$WPCLI cache flush`。
@@ -933,26 +934,73 @@ cp -a "$BACKUP/i18n/." "$I18N/"
 >
 > 记号：`【本机】` 在你电脑上（仓库根目录）；`【宿主】` 生产宿主机 SSH 里的 shell；`【容器】` 已经进了
 > `docker exec php`（不用再套一层）。`⛳` 是判据，不通过就停，不要往下走。
+>
+> **一条硬规矩：宿主机上每一次 HTTP 访问都必须直连源站（`$CURL`），不许直接 `curl https://www.packrivo.com`。**
+> 那个域名挂在 Cloudflare 后面，直接请求会读到缓存里的旧页面：装完 4.0.4 看不见 `Example quote`、
+> 回滚比对首页哈希也对不上，人会卡在半路误判。改前、改后、回滚三处用的必须是同一种直连方式。
 
-### D.0 变量与预检
+### D.0 变量、直连探测、预检
 
-【宿主】1) 定路径，**把 `$BACKUP` 记下来**（回滚只认它）：
+【宿主】1) 一次性把变量钉好，**把 `$BACKUP` 记下来**（回滚只认它）：
 
 ```bash
 PKG=/root/29z-pkg
+PKGC=/pkg
 BACKUP=/home/web/backups/29z-$(date -u +%Y%m%d-%H%M%S)
-mkdir -p "$PKG" "$BACKUP/29z"
+
+SITE=https://www.packrivo.com
+CURL="curl -sS --noproxy '*' --resolve www.packrivo.com:443:127.0.0.1"   # 直连源站，绕开 Cloudflare 和本机代理
+
 echo "$BACKUP" | tee /root/29z-backup-path.txt
 ```
 
-【宿主】2) 后面反复用的两行：
+【宿主】2) 建目录（宿主机 `$PKG`、`$BACKUP`，容器内 `$PKGC`）。**D.1.1 的 `scp` 依赖这里先做完**：
+
+```bash
+mkdir -p "$PKG" "$BACKUP/29z"
+docker exec php mkdir -p "$PKGC"
+```
+
+【宿主】3) 后面反复用的两行：
 
 ```bash
 WPC=/var/www/html/www.packrivo.com/wordpress
 WPCLI="docker exec php php -d disable_functions= /usr/local/bin/wp --path=$WPC --allow-root"
 ```
 
-【宿主】3) 只读预检：
+【宿主】4) **直连源站探测**（不通就停，别急着装包）：
+
+```bash
+echo '--- 1) 响应头里有没有 Cloudflare 标记 ---'
+$CURL -I "$SITE/" | tee /tmp/29z-probe-head.txt
+if grep -qi 'cf-ray\|cf-cache-status' /tmp/29z-probe-head.txt; then echo 'FAIL 还在走 Cloudflare'; else echo 'OK 无 cf-ray / cf-cache-status'; fi
+
+echo '--- 2) 连取两次首页，哈希必须相同 ---'
+$CURL "$SITE/" -o /tmp/29z-probe1.html
+$CURL "$SITE/" -o /tmp/29z-probe2.html
+sha256sum /tmp/29z-probe1.html /tmp/29z-probe2.html
+grep -c '<html' /tmp/29z-probe1.html
+```
+
+⛳ 三条同时成立才继续：响应头**没有** `cf-ray` / `cf-cache-status`；两个哈希**相同**；`<html` 计数 ≥ 1。
+
+不通过就停，对号入座（四种，都实测过）：
+
+| 现象 | 原因 | 处置 |
+|---|---|---|
+| 头里有 `cf-ray` / `cf-cache-status`，或直接 `503 Service Unavailable` + `Proxy-Connection: close` | 本机（Windows / macOS）的**系统代理**被 curl 拿走了，`--resolve` 发挥不了作用；实测 Windows 上 `ProxyEnable=1 / ProxyServer=127.0.0.1:10808` 就会这样 | `CURL` 默认已带 `--noproxy '*'`；若仍不行再 `env \| grep -i proxy` 看环境变量 |
+| TLS 报证书错误 | 源站证书不是这个域名的（nginx 用别的主体名） | `CURL="curl -sS -k --resolve www.packrivo.com:443:127.0.0.1"`（只跳过证书校验，仍直连） |
+| 两次哈希不同 | 页面里有随机串（nonce / 时间戳 / AB 变体） | `diff /tmp/29z-probe1.html /tmp/29z-probe2.html` 定位；若随机串在 `<script>` 的 `nonce=` 里，比对前先 `sed -E 's/nonce="[^"]*"//g'`；仍不同就改用 `/products/` 当基准页，并在 D.6 第 4 步同步改 |
+| `Connection refused` | 源站 443 没开 | `CURL="curl -sS --resolve www.packrivo.com:80:127.0.0.1"`、`SITE=http://www.packrivo.com`；若 nginx 又 301 到 https，说明只能走 443，回头查 nginx 监听 |
+
+演练环境等价写法（把端口指到演练 nginx，写法保持一致）：
+
+```bash
+SITE=http://www.packrivo.com:8091
+CURL="curl -sS --noproxy '*' --resolve www.packrivo.com:8091:127.0.0.1"
+```
+
+【宿主】5) 只读预检：
 
 ```bash
 $WPCLI theme list --fields=name,status,version | grep packrivo
@@ -973,7 +1021,7 @@ $WPCLI db query --skip-column-names "SELECT COUNT(*) FROM wp_posts WHERE post_st
 | 子主题包 4.0.4 | `deploy/packrivo-home-v4.zip` | 791169 | `3279dc6121cee305dbbf620beb7b7da45334886b779d7d2ece68004ceda4aed6` |
 | 去价脚本 | `deploy/patches-29z/strip-1688.php` | 23491 | `3c1be67b5c5a8298e317fb13ae1d910c64343370ebb440b0fb42d5fcb6f4f3fd` |
 | 去价包装器 | `deploy/patches-29z/strip-1688.sh` | 1730 | `0deea313611ff71a760baae5646bcd0252f1cbad5bdb85d0ab3e2953e112ee1e` |
-| 九条判据脚本 | `deploy/verification-29z/scripts/29z-criteria.sh` | 9257 | `4171ee2651218473d51a9f90db3e999216d7f69d19092aef14cb584b66a98083` |
+| 九条判据脚本 | `deploy/verification-29z/scripts/29z-criteria.sh` | 9824 | `1d3f39c24eaed0c8771619f30b9991d83b6c38600b63fc54dc6c6fcffe3cb8f1` |
 | 字体路径补丁 | `deploy/patches-29w/packrivo-wave2-font-path.patch` | 756 | `022c5a1666538f732bbda2911c1632b5c2285fcf393f78561efc876ce595451d` |
 | 字体补丁 PHP 兜底（容器没 `patch` 时用） | `deploy/patches-29w/apply-font-patch.php` | 1840 | `64c8768e5ba3e00281fda4d5937f8c57a03cf5871818a84c2363095b0dda269b` |
 
@@ -981,15 +1029,17 @@ $WPCLI db query --skip-column-names "SELECT COUNT(*) FROM wp_posts WHERE post_st
 包内 `assets/img/hero.webp` = `6a55801599da73d2…`（1200×1200，33,758 B）、`hero-480.webp` = `266032c7bdfc0f51…`（480×480，8,866 B）。
 `front-page.php` 里的首页说明卡片文案是 `Example quote · Rigid magnetic box · 9.5×9.5×4 cm`（价格仍由报价引擎算，没动数字）。
 
-【本机】D.1.1 上传这 **6** 个文件（表里就这 6 个，少一个都别装）：
+【本机】D.1.1 上传这 **6** 个文件（表里就这 6 个，少一个都别装）。
+路径写死 `netcup:/root/29z-pkg/`：`$PKG` 是**宿主机**上的变量，本机 shell 里没有，
+写成 `netcup:$PKG/` 会把文件丢到服务器根目录。所以 **D.0 第 2 步的 `mkdir -p "$PKG"` 必须先做完**。
 
 ```bash
-scp deploy/packrivo-home-v4.zip                       netcup:$PKG/
-scp deploy/patches-29z/strip-1688.php                 netcup:$PKG/
-scp deploy/patches-29z/strip-1688.sh                  netcup:$PKG/
-scp deploy/patches-29w/packrivo-wave2-font-path.patch netcup:$PKG/
-scp deploy/patches-29w/apply-font-patch.php           netcup:$PKG/
-scp deploy/verification-29z/scripts/29z-criteria.sh   netcup:$PKG/
+scp deploy/packrivo-home-v4.zip                       netcup:/root/29z-pkg/
+scp deploy/patches-29z/strip-1688.php                 netcup:/root/29z-pkg/
+scp deploy/patches-29z/strip-1688.sh                  netcup:/root/29z-pkg/
+scp deploy/patches-29w/packrivo-wave2-font-path.patch netcup:/root/29z-pkg/
+scp deploy/patches-29w/apply-font-patch.php           netcup:/root/29z-pkg/
+scp deploy/verification-29z/scripts/29z-criteria.sh   netcup:/root/29z-pkg/
 ```
 
 【宿主】D.1.2 核对上传物：
@@ -1002,27 +1052,28 @@ cd "$PKG" && sha256sum packrivo-home-v4.zip strip-1688.php strip-1688.sh packriv
 
 ### D.1b 前态快照（判据 4 与回滚判据都要它）
 
-【宿主】1) 判据脚本进容器 + 取前态：
+【宿主】1) 判据脚本进容器 + 取前态（首页走 `$CURL` 直连）：
 
 ```bash
 docker cp "$PKG/29z-criteria.sh" php:/tmp/29z-criteria.sh
+docker exec php sh -c 'mkdir -p /tmp/29z-snap/shots'
 docker exec php sh /tmp/29z-criteria.sh before
-mkdir -p /tmp/29z-snap/shots
-curl -sS https://www.packrivo.com/ -o "$BACKUP/29z/home-before.html"
+$CURL "$SITE/" -o "$BACKUP/29z/home-before.html"
 sha256sum "$BACKUP/29z/home-before.html" | tee "$BACKUP/29z/home-before.sha256"
 ```
 
 ⛳ `home-before.sha256` 有值；容器里出现 `/tmp/29z-snap/`（pages-before / meta-before / index-before / products-before）。
+刚才 D.0 第 4 步探测过「两次哈希相同」，所以这个值以后可以直接拿来比。
 
-【本机】2) `/products/` 的「改前」截图（**必须在装包之前拍**）：
+【本机】2) `/products/` 的「改前」截图（**必须在装包之前拍**，本机直接打生产域名，**不要 `docker cp` 进容器**）：
 
 ```bash
-node deploy/verification-29z/scripts/29z-products-shots.mjs deploy/verification-29z/evidence/products-shots before
-docker cp deploy/verification-29z/evidence/products-shots/before-1440.png php:/tmp/29z-snap/shots/before-1440.png
-docker cp deploy/verification-29z/evidence/products-shots/before-375.png  php:/tmp/29z-snap/shots/before-375.png
+node deploy/verification-29z/scripts/29z-products-shots.mjs deploy/verification-29z/evidence/products-shots before https://www.packrivo.com
 ```
 
-⛳ 两张图 `cards` 都是 24、`overflow` false。
+⛳ 两张图（1440 / 375）都 `status 200`、`cards` 都是 24、`overflow` false；`shots-before.json` 落盘。
+演练环境：把 base 换成演练源站 `http://www.packrivo.com:8091`，并加 `SHOTS_MAP=www.packrivo.com`（Chrome 按域名钉 127.0.0.1、关掉系统代理），写法与生产等价。
+截图不放进容器——本机的图 `docker cp` 只会进**演练容器**，生产容器里根本没有，判据也不该依赖它。
 
 ### D.1c 备份（三样，全落宿主机 `$BACKUP`，回滚只从这里取）
 
@@ -1071,15 +1122,16 @@ docker exec php sha256sum "$PKGC/packrivo-home-v4.zip"     # ⛳ 必须 3279dc61
 $WPCLI theme install  "$PKGC/packrivo-home-v4.zip" --force
 $WPCLI theme activate packrivo-home-v4
 $WPCLI theme list --fields=name,status,version | grep packrivo     # ⛳ active 4.0.4
-docker exec php sh -c "grep -c 'Example quote · Rigid magnetic box' $PKGC/packrivo-home-v4/front-page.php"   # ⛳ 1
+docker exec php sh -c "grep -c 'Example quote · Rigid magnetic box' $WPC/wp-content/themes/packrivo-home-v4/front-page.php"   # ⛳ 1
 ```
 
-`$PKGC` 与 §5.2 同一个：容器内 `wp-content/themes` 目录，**zip 要先拷到那个目录里**（安装命令只认这个路径）。
+`$PKGC` 是**容器里的包目录**（`/pkg`，D.0 第 2 步已 `mkdir`），装完的代码在 `$WPC/wp-content/themes/packrivo-home-v4`。
+两者不是同一个目录，别混。
 
-⛳ 首页卡片文案生效：
+⛳ 首页卡片文案生效（**走 `$CURL` 直连，不能读缓存**）：
 
 ```bash
-curl -sS https://www.packrivo.com/ | grep -o 'Example quote · Rigid magnetic box · 9.5×9.5×4 cm' | head -1
+$CURL "$SITE/" | grep -o 'Example quote · Rigid magnetic box · 9.5×9.5×4 cm' | head -1
 ```
 
 【宿主】D.2.2 字体补丁（同 §6.5，装完包紧接着打）：
@@ -1090,7 +1142,7 @@ docker exec php sh -c "cd $WPC && patch -p1 --dry-run < /tmp/29w.patch"     # �
 docker exec php sh -c "cd $WPC && patch -p1 < /tmp/29w.patch"
 docker exec php sha256sum "$WPC/wp-content/mu-plugins/packrivo-wave2.php"   # ⛳ 73d43ba0…
 $WPCLI cache flush
-curl -sS https://www.packrivo.com/ | grep -o 'https://[^"]*packrivo-inter-latin-v3.woff2' | head -1
+$CURL "$SITE/" | grep -o 'https://[^"]*packrivo-inter-latin-v3.woff2' | head -1
 ```
 
 **容器里没有 `patch` 的话**（本机演练镜像就是，会报 `patch: not found`），用 PHP 兜底，同样对齐 §6.5 的哈希锁：
@@ -1102,7 +1154,12 @@ docker exec php sha256sum "$WPC/wp-content/mu-plugins/packrivo-wave2.php"   # �
 ```
 
 ⛳ 字体 URL 指向 `/wp-content/themes/packrivo-static-bridge-1.2.38/packrivo-static/assets/packrivo-inter-latin-v3.woff2`，
-对该 URL 请求 `200` / `font/woff2` / `34952` 字节。
+直连该 URL 返回 `200` / `font/woff2` / `34952` 字节：
+
+```bash
+$CURL -o /dev/null -w 'code=%{http_code} type=%{content_type} size=%{size_download}
+'   "$SITE/wp-content/themes/packrivo-static-bridge-1.2.38/packrivo-static/assets/packrivo-inter-latin-v3.woff2"
+```
 
 ### D.3 去价：干跑、真跑
 
@@ -1149,46 +1206,48 @@ $WPCLI db query --skip-column-names "SELECT COUNT(*) FROM wp_yoast_indexable i J
 `wp db query` 的 SQL 是**位置参数**，不要加 `-e`（`wp` 会把 `-e` 之后当成多余参数报
 `Too many positional arguments`）。
 
-### D.5 复测（compare）
+### D.5 容器内复测（compare-noshots，不含截图）
 
 【宿主】
 
 ```bash
 docker cp "$PKG/29z-criteria.sh" php:/tmp/29z-criteria.sh
-docker exec php sh /tmp/29z-criteria.sh compare
+docker exec php sh /tmp/29z-criteria.sh compare-noshots
 ```
 
-⛳ `PASS=24 FAIL=0`。判据 4 要四张截图（1440/375 各一对改前改后），改后的两张由【本机】拍：
+⛳ `PASS=23 FAIL=0 SKIP=1`。`SKIP` 那条固定是 **4f 截图**——截图在本机拍、在本机判，容器里没有也不该有，
+所以这一条在这里**既不算 PASS 也不算 FAIL**（旧版把「容器里没图」记成 FAIL，会把人卡住）。
 
-```bash
-node deploy/verification-29z/scripts/29z-products-shots.mjs deploy/verification-29z/evidence/products-shots after
-docker cp deploy/verification-29z/evidence/products-shots/after-1440.png  php:/tmp/29z-snap/shots/after-1440.png
-docker cp deploy/verification-29z/evidence/products-shots/after-375.png   php:/tmp/29z-snap/shots/after-375.png
-```
-
-（改前那两张在 D.1b 第 2 步已经拍好、也拷进去了。）
-
-判据 4 的口径是「卡片数量/名称/链接逐一相同 + 渲染里 `¥`、`¥`、`1688` 计数为 0 + 四张截图」，
+判据 4 的口径是「卡片数量/名称/链接逐一相同 + 渲染里 `¥`、`¥`、`1688` 计数为 0」，
 不是「渲染字节完全相同」——生产模板把正文塞进页面 `<script>` 的 JSON，删价格必然改字节。
 
-### D.5.5 【停】清 Cloudflare 缓存，再做线上复测
+### D.5.5 【停】清 Cloudflare 缓存 → 本机判 4f → 线上复测
 
-走到这里**停下来**，把 `$BACKUP` 路径和上面每条 ⛳ 的输出发给负责人。清缓存由负责人执行（不在本流程里，
-脚本在 `E:\破甲工作区\packrivo-handoff\scripts\cf_purge.py`，凭据读 `E:\破甲工作区\i18n\.cf.env`）：
+走到这里**停下来**，把 `$BACKUP` 路径和 D.0～D.5 每条 ⛳ 的输出发给负责人。清缓存由负责人执行，不在本流程里：
 
 ```bash
-python cf_purge.py            # 负责人跑：清全站；--verify 只验证不清
+python E:\破甲工作区\i18n\cf_purge.py          # 负责人平时用这份（10-25 版）；--verify 只验证不清
 ```
 
-清完缓存后【本机】线上复测（只读，不写库）：
+清完缓存后【本机】按顺序做三件事：
 
 ```bash
+# 1) 改后截图（缓存已清，拍到的是新页面）
+node deploy/verification-29z/scripts/29z-products-shots.mjs deploy/verification-29z/evidence/products-shots after https://www.packrivo.com
+#    （演练：SHOTS_MAP=www.packrivo.com + base 换成 http://www.packrivo.com:8091）
+
+# 2) 判据 4f（四张图齐 + 卡片数与改前一致 + 无横向溢出）
+node deploy/verification-29z/scripts/29z-shots-check.mjs deploy/verification-29z/evidence/products-shots
+
+# 3) 全站复测（只读，不写库）
 node deploy/verification-29z/scripts/29z-crawl-prod.mjs deploy/verification-29z/evidence/crawl-29z-after-cf.json
 node deploy/verification-29z/scripts/29z-old-url-sources.mjs deploy/verification-29z/evidence/old-url-sources-after-cf.json
 ```
 
-⛳ 60 页里除 11 条多语种博客 404 外没有非 200；`/rigid-gift-boxes/ /resources/ /packaging-examples/ /pricing/ /sustainability/`
+⛳ 三条都过：`29z-shots-check.mjs` 打印 `PASS 4f`（4/4 图、卡片 24 = 24、无溢出、改后渲染 `¥` 0 处）；
+60 页里除 11 条多语种博客 404 外没有非 200；`/rigid-gift-boxes/ /resources/ /packaging-examples/ /pricing/ /sustainability/`
 引用 0 条；首页字体 200；抽 5 个 catalog 页渲染里 `¥` 0 处。
+`4f` 加上容器里那 23 条，合计 **24 PASS / 0 FAIL / 0 SKIP**。
 
 ### D.6 回滚（真出事才走这一段）
 
@@ -1225,12 +1284,12 @@ $WPCLI cache flush
 docker exec php rm -f /tmp/29z-pre.sql
 ```
 
-【宿主】4) 回滚判据（四条全中才算回干净）：
+【宿主】4) 回滚判据（四条全中才算回干净，**首页仍然用 `$CURL` 直连**，和 D.1b 同一种方式）：
 
 ```bash
 $WPCLI theme list --fields=name,status,version | grep packrivo                                     # ⛳ 4.0.1 active
 $WPCLI db query --skip-column-names "SELECT COUNT(*) FROM wp_posts WHERE post_status='publish' AND post_content LIKE CONCAT('%',CHAR(194,165),'%')"   # ⛳ 209
-curl -sS https://www.packrivo.com/ -o /tmp/home-after-rollback.html
+$CURL "$SITE/" -o /tmp/home-after-rollback.html
 sha256sum /tmp/home-after-rollback.html; cat "$BACKUP/29z/home-before.sha256"                      # ⛳ 两个哈希相同
 docker exec php sha256sum "$WPC/wp-content/mu-plugins/packrivo-wave2.php"                          # ⛳ 5ab5be3f…
 ```

@@ -1,5 +1,6 @@
 {
   "tag": "after",
+  "base": "http://www.packrivo.com:8091",
   "page": "/products/",
   "shot": [
     {
@@ -7,7 +8,7 @@
       "height": 900,
       "status": 200,
       "file": "after-1440.png",
-      "bytes": 73287,
+      "bytes": 105346,
       "cards": 24,
       "overflow": false,
       "yen_in_dom": 0,
@@ -22,7 +23,7 @@
       "height": 812,
       "status": 200,
       "file": "after-375.png",
-      "bytes": 33178,
+      "bytes": 45134,
       "cards": 24,
       "overflow": false,
       "yen_in_dom": 0,
@@ -34,25 +35,23 @@
     }
   ],
   "console_errors": [
-    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
-    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
-    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
-    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
-    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
-    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
-    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
-    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
-    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
-    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
-    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
-    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
-    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
-    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
-    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
-    "375: Failed to load resource: net::ERR_EMPTY_RESPONSE",
-    "375: Failed to load resource: net::ERR_EMPTY_RESPONSE",
-    "375: Failed to load resource: net::ERR_EMPTY_RESPONSE",
-    "375: Failed to load resource: net::ERR_EMPTY_RESPONSE",
-    "375: Failed to load resource: net::ERR_EMPTY_RESPONSE"
+    "1440: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+    "1440: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+    "1440: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+    "1440: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+    "1440: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+    "1440: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+    "1440: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+    "1440: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+    "1440: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+    "1440: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+    "1440: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+    "1440: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+    "1440: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+    "1440: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+    "375: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+    "375: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+    "375: Failed to load resource: net::ERR_CONNECTION_REFUSED",
+    "375: Failed to load resource: net::ERR_CONNECTION_REFUSED"
   ]
 }
