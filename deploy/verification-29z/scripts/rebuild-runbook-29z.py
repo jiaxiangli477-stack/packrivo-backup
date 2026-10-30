@@ -90,7 +90,10 @@ PKGC=/pkg
 BACKUP=/home/web/backups/29z-$(date -u +%Y%m%d-%H%M%S)
 
 SITE=https://www.packrivo.com
-CURL="curl -sS --noproxy '*' --resolve www.packrivo.com:443:127.0.0.1"   # 直连源站，绕开 Cloudflare 和本机代理
+CURL="curl -sS -k --noproxy '*' --resolve www.packrivo.com:443:127.0.0.1"   # -k：源站是 CloudFlare Origin CA 证书，本机不认
+ORIGIN_IP=$(docker exec php sh -c "ip route | awk '/default/ {{print $3}}'")   # php 容器里的宿主网关 IP，容器直连源站用
+CURLX="--resolve www.packrivo.com:443:$ORIGIN_IP -k"   # 给容器里的 29z-criteria.sh（它解析不到 nginx 这个名字）
+echo "ORIGIN_IP=$ORIGIN_IP"
 
 echo "$BACKUP" | tee /root/29z-backup-path.txt
 ```
@@ -130,7 +133,7 @@ grep -c '<html' /tmp/29z-probe1.html
 | 现象 | 原因 | 处置 |
 |---|---|---|
 | 头里有 `cf-ray` / `cf-cache-status`，或直接 `503 Service Unavailable` + `Proxy-Connection: close` | 本机（Windows / macOS）的**系统代理**被 curl 拿走了，`--resolve` 发挥不了作用；实测 Windows 上 `ProxyEnable=1 / ProxyServer=127.0.0.1:10808` 就会这样 | `CURL` 默认已带 `--noproxy '*'`；若仍不行再 `env \| grep -i proxy` 看环境变量 |
-| TLS 报证书错误 | 源站证书不是这个域名的（nginx 用别的主体名） | `CURL="curl -sS -k --resolve www.packrivo.com:443:127.0.0.1"`（只跳过证书校验，仍直连） |
+| TLS 报 `unable to get local issuer certificate`（curl 60） | 源站挂的是 **CloudFlare Origin CA** 证书（issuer 写着 CloudFlare Origin SSL Certificate Authority），本机和容器的 CA 库都没有它的根 | `CURL` 默认已带 `-k`（只跳过证书校验，仍直连 127.0.0.1） |
 | 两次哈希不同 | 页面里有随机串（nonce / 时间戳 / AB 变体） | `diff /tmp/29z-probe1.html /tmp/29z-probe2.html` 定位；若随机串在 `<script>` 的 `nonce=` 里，比对前先 `sed -E 's/nonce="[^"]*"//g'`；仍不同就改用 `/products/` 当基准页，并在 D.6 第 4 步同步改 |
 | `Connection refused` | 源站 443 没开 | `CURL="curl -sS --resolve www.packrivo.com:80:127.0.0.1"`、`SITE=http://www.packrivo.com`；若 nginx 又 301 到 https，说明只能走 443，回头查 nginx 监听 |
 
@@ -198,12 +201,12 @@ cd "$PKG" && sha256sum packrivo-home-v4.zip strip-1688.php strip-1688.sh packriv
 ```bash
 docker cp "$PKG/29z-criteria.sh" php:/tmp/29z-criteria.sh
 docker exec php sh -c 'mkdir -p /tmp/29z-snap/shots'
-docker exec php sh /tmp/29z-criteria.sh before
+docker exec -e SITE="$SITE" -e CURLX="$CURLX" php sh /tmp/29z-criteria.sh before
 $CURL "$SITE/" -o "$BACKUP/29z/home-before.html"
 sha256sum "$BACKUP/29z/home-before.html" | tee "$BACKUP/29z/home-before.sha256"
 ```
 
-⛳ `home-before.sha256` 有值；容器里出现 `/tmp/29z-snap/`（pages-before / meta-before / index-before / products-before）。
+⛳ `home-before.sha256` 有值；容器里出现 `/tmp/29z-snap/`（pages-before / meta-before / index-before / products-before），且 `products-before.html` **不是 0 字节**、pages/meta/index 三个快照也不是空的——空就说明容器没真拿到页面，后面的 4 / 8 / 9 会假 PASS。生产上实测踩过这个坑：php 容器里 `nginx` 解析不到（`http://nginx/` 报 curl(6)）。
 刚才 D.0 第 4 步探测过「两次哈希相同」，所以这个值以后可以直接拿来比。
 
 【本机】2) `/products/` 的「改前」截图（**必须在装包之前拍**，本机直接打生产域名，**不要 `docker cp` 进容器**）：
@@ -353,7 +356,7 @@ $WPCLI db query --skip-column-names "SELECT COUNT(*) FROM wp_yoast_indexable i J
 
 ```bash
 docker cp "$PKG/29z-criteria.sh" php:/tmp/29z-criteria.sh
-docker exec php sh /tmp/29z-criteria.sh compare-noshots
+docker exec -e SITE="$SITE" -e CURLX="$CURLX" php sh /tmp/29z-criteria.sh compare-noshots
 ```
 
 ⛳ `PASS=23 FAIL=0 SKIP=1`。`SKIP` 那条固定是 **4f 截图**——截图在本机拍、在本机判，容器里没有也不该有，

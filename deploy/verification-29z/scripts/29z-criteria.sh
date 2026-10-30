@@ -10,6 +10,9 @@ NOSHOTS=0
 [ "$MODE" = "compare-noshots" ] && NOSHOTS=1
 WP="php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root"
 SITE=${SITE:-http://nginx}
+# 直连源站时由调用方给 --resolve + -k（生产 php 容器拿不到 nginx 证书链，且解析不到 nginx 这个名字）
+CURLX=${CURLX:-}
+C() { curl -sS $CURLX "$@"; }
 SNAP=/tmp/29z-snap
 mkdir -p $SNAP
 
@@ -29,13 +32,13 @@ snapshot() {
   tag=$1
   $WP db query "SELECT CONCAT_WS('|', p.ID, p.post_name, p.post_status,
       COALESCE((SELECT meta_value FROM wp_postmeta m WHERE m.post_id=p.ID AND m.meta_key='_yoast_wpseo_meta-robots-noindex' LIMIT 1),'-'),
-      MD5(p.post_content))
+      SHA2(p.post_content,256))
     FROM wp_posts p WHERE p.post_type IN ('page','post') AND p.post_status='publish' ORDER BY p.ID" --skip-column-names > $SNAP/pages-$tag.txt
-  $WP db query "SELECT CONCAT_WS('|', post_id, meta_key, MD5(meta_value)) FROM wp_postmeta
+  $WP db query "SELECT CONCAT_WS('|', post_id, meta_key, SHA2(meta_value,256)) FROM wp_postmeta
     WHERE meta_key IN ('_yoast_wpseo_metadesc','_yoast_wpseo_opengraph-description') ORDER BY post_id, meta_key" --skip-column-names > $SNAP/meta-$tag.txt
-  $WP db query "SELECT CONCAT_WS('|', object_id, MD5(COALESCE(description,'')), MD5(COALESCE(open_graph_description,'')))
+  $WP db query "SELECT CONCAT_WS('|', object_id, SHA2(COALESCE(description,''),256), SHA2(COALESCE(open_graph_description,''),256))
     FROM wp_yoast_indexable WHERE object_type='post' ORDER BY object_id" --skip-column-names > $SNAP/index-$tag.txt
-  curl -s "$SITE/products/" > $SNAP/products-$tag.html
+  C "$SITE/products/" > $SNAP/products-$tag.html
   php -r "$CARDS_PHP" $SNAP/products-$tag.html > $SNAP/cards-$tag.txt
   echo "  快照 $tag: pages $(wc -l < $SNAP/pages-$tag.txt) / meta $(wc -l < $SNAP/meta-$tag.txt) / index $(wc -l < $SNAP/index-$tag.txt) / cards $(wc -l < $SNAP/cards-$tag.txt) / products $(wc -c < $SNAP/products-$tag.html)B"
 }
@@ -136,13 +139,13 @@ ck "7 indexable.description 与 postmeta 不一致条数" 0 "$mis"
 # --- 8 catalog 页渲染里没有 ¥（抽 5 页）
 yen=0
 for s in catalog-ring-box-o1cn01ahes catalog-wooden-box-o1cn01rnjift1k catalog-velvet-box catalog-paper-box catalog-gift-box; do
-  c=$(curl -s "$SITE/$s/" | grep -o '¥' | wc -l | tr -d ' ')
+  c=$(C "$SITE/$s/" | grep -o '¥' | wc -l | tr -d ' ')
   yen=$((yen + c))
 done
 ck "8 抽查 5 个 catalog 页渲染里 ¥ 总数" 0 "$yen"
 
 # --- 9 报价链接
-code=$(curl -s -o /dev/null -w '%{http_code}' -L "$SITE/get-a-quote/" | tr -d ' ')
+code=$(C -o /dev/null -w '%{http_code}' -L "$SITE/get-a-quote/" | tr -d ' ')
 ck "9a /get-a-quote/ 跟随跳转后状态" 200 "$code"
 gp=$(grep -o 'Get a price' $SNAP/products-after.html | wc -l | tr -d ' ')
 if [ "$gp" -gt 0 ]; then echo "  PASS  9b /products/ 页里 Get a price 链接（$gp 处）"; PASS=$((PASS+1)); else echo "  FAIL  9b /products/ 页里 Get a price 链接（0 处）"; FAIL=$((FAIL+1)); fi

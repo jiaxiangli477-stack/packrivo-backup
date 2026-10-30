@@ -455,3 +455,51 @@ D.5.5 改成 `python E:\破甲工作区\i18n\cf_purge.py`（负责人平时那�
 有一处演练观察如实记：`/products/` 两档截图在改前改后字节相同（105,346 / 45,134 B），
 因为视口内是 hero + 卡片网格，被删掉的 `Listed at ¥…` 段落在这两档视口之外；视觉对比看 `products-shots/`，
 「内容没被动过」由判据 4a/4b（卡片数 24 = 24、链接+名称 md5 相同）保证。
+## 14. 生产同构重演（2026-10-30）：MySQL 26.7 + 无 `nginx` 别名
+
+首次上生产在 D.1b 停住，两条硬故障（详见 `deploy/LAUNCH-LOG-2026-10-30.md`）：
+生产 MySQL 是 **26.7.0**，`MD5()` / `SHA1()` 直接报 `ERROR 1305 … does not exist`（只有 `SHA2()` / `CRC32()`）；
+生产 php 容器解析不到 `nginx` 这个名字，`http://nginx/` 报 `curl: (6)`，`products-before.html` 恒 0 字节。
+演练用的是 MySQL 8.4 + 自己起的 `nginx` 容器，两处差异把问题全遮住了。
+
+### 14.1 判据脚本两处修正（`29z-criteria.sh`）
+
+| 原 | 改 | 为什么 |
+|---|---|---|
+| `MD5(p.post_content)` / `MD5(meta_value)` / `MD5(COALESCE(…))` | `SHA2(…,256)` | 生产 MySQL 26.7.0 没有 `MD5()`/`SHA1()`；`SHA2()` 实测可用 |
+| 裸 `curl -s "$SITE/…"` | `C() { curl -sS $CURLX "$@"; }` + `CURLX` 环境变量 | 生产 php 容器既解析不到 `nginx`，也不认 CloudFlare Origin CA 证书；直连源站要 `--resolve … + -k` |
+
+新哈希：**10006 B / `e3602e3d9735f222149381111135bc171ffacf2750f80aa5eaef79b93eea2d01`**（D.1.0 表已同步）。
+调用方式变成 `docker exec -e SITE=… -e CURLX="--resolve www.packrivo.com:443:$ORIGIN_IP -k" php sh /tmp/29z-criteria.sh <mode>`；
+附录 D.0 新增 `ORIGIN_IP`（`docker exec php … ip route | awk '/default/ {print $3}'`）与 `CURLX` 两个变量，D.1b / D.5 两条命令显式带上。
+
+### 14.2 演练环境改成生产同构
+
+```text
+mysql   →  mysql:26.7.0（原 8.4）     docker exec mysql … `SELECT VERSION()` = 26.7.0
+          带库名复现：SELECT MD5('a')  → ERROR 1305 … FUNCTION wp.MD5 does not exist
+                     SELECT SHA1('a') → ERROR 1305 … FUNCTION wp.SHA1 does not exist
+                    SELECT SHA2('a',256) → ca978112…（可用）
+nginx   →  容器改名 web（原 nginx）     docker exec php getent hosts nginx → NO_ENTRY
+                                       docker exec php getent hosts web   → 172.19.0.5
+```
+
+源站仍然只从「宿主机网关 + `--resolve`」这条路进（`CURLX="--resolve www.packrivo.com:8091:192.168.65.254"`），
+和生产 `--resolve …:443:<网关> -k` 是同一种写法。
+
+### 14.3 三轮（`29z-prod.sql`，日志 `rehearsal-29z-sequence-v4.log`，511 行）
+
+| | 结果 |
+|---|---|
+| R1 前态（D.1b） | `pages 729 / meta 804 / index 774 / cards 24 / products 311426B`（**不是 0 字节**）；`home-before` = `715c6587…`；改前截图两档 24 卡、无溢出 |
+| R1 备份（D.1c） | 主题 38 文件 + `c02a9324…` + `Version: 4.0.1`；mu `5ab5be3f…`；三表 29,149,459 B |
+| R2 正向（D.2→D.5） | `active 4.0.4`、首页出 `Example quote · Rigid magnetic box · 9.5×9.5×4 cm`；字体 `applied`→`73d43ba0…`、`200/font/woff2/34952`；干跑 210 → 真跑 210 → 复跑 0；`mismatch=0`；快照 `after 729/1012/774/24 卡/309733B`；容器 **PASS=23 FAIL=0 SKIP=1**，本机 **PASS 4f** |
+| R3 回滚（D.6） | `active 4.0.1`、目录哈希 `c02a9324…` 一致、`¥=209`、`1688=209`、mu `5ab5be3f…`、首页 `715c6587…` 与改前相同、子主题字体路径重新 `404` |
+| R4 再正向 | 与 R2 逐项相同：`4.0.4`、`73d43ba0…`、210/210/0、`mismatch=0`、**23/0/1**、本机 **PASS 4f** |
+
+`4f` 容器里恒 SKIP，本机那条补上，合计 **24 PASS / 0 FAIL / 0 SKIP**。
+
+### 14.4 生产当前状态
+
+授权已作废，生产未改动：`active 4.0.1`、`publish_yen=209`、mu `5ab5be3f…`，`/root/29z-pkg` 与 `$BACKUP` 均已删除（`ls` 复核无 `29z*`）。
+重新上生产要等负责人重新授权。
