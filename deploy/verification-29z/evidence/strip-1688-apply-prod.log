@@ -1,0 +1,110 @@
+== 29z 生产现状库完整重跑 · 复位起 ==
+时间(UTC): 2026-10-30T04:14:17Z
+
+--- 1. 复位（重新导入 29z-prod.sql）---
+Success: Imported from '/tmp/29z-prod.sql'.
+Success: Updated 'home' option.
+Success: Updated 'siteurl' option.
+Success: The cache was flushed.
+--- 2. 前态快照 ---
+== 取前态 ==
+  快照 before: pages 729 / meta 804 / index 774 / cards 24 / products 303019B
+  catalog 页 ID: 208 条
+--- 3. /products/ 改前截图 ---
+{
+  "tag": "before",
+  "page": "/products/",
+  "shot": [
+    {
+      "width": 1440,
+      "height": 900,
+      "status": 200,
+      "file": "before-1440.png",
+      "bytes": 73287,
+      "cards": 24,
+      "overflow": false,
+      "yen_in_dom": 0,
+      "first_titles": [
+        "Bulk Shipping Boxes with Logo",
+        "Custom Auto-Lock Bottom Boxes",
+        "Custom Book-Style Rigid Gift Boxes"
+      ]
+    },
+    {
+      "width": 375,
+      "height": 812,
+      "status": 200,
+      "file": "before-375.png",
+      "bytes": 33178,
+      "cards": 24,
+      "overflow": false,
+      "yen_in_dom": 0,
+      "first_titles": [
+        "Bulk Shipping Boxes with Logo",
+        "Custom Auto-Lock Bottom Boxes",
+        "Custom Book-Style Rigid Gift Boxes"
+      ]
+    }
+  ],
+  "console_errors": [
+    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+    "375: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+    "375: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+    "375: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+    "375: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+    "375: Failed to load resource: net::ERR_EMPTY_RESPONSE"
+  ]
+}
+--- 4. 真跑 apply ---
+[collect] publish pages = 391, slug 以 catalog- 开头 = 208
+[indexable] 列 = id,permalink,permalink_hash,object_id,object_type,object_sub_type,author_id,post_parent,title,description,breadcrumb_title,post_status,is_public,is_protected,has_public_posts,number_of_pages,canonical,primary_focus_keyword,primary_focus_keyword_score,readability_score,is_cornerstone,is_robots_noindex,is_robots_nofollow,is_robots_noarchive,is_robots_noimageindex,is_robots_nosnippet,twitter_title,twitter_image,twitter_description,twitter_image_id,twitter_image_source,open_graph_title,open_graph_description,open_graph_image,open_graph_image_id,open_graph_image_source,open_graph_image_meta,link_count,incoming_link_count,prominent_words_version,created_at,updated_at,blog_id,language,region,schema_page_type,schema_article_type,has_ancestors,estimated_reading_time_minutes,version,object_last_modified,object_published_at,inclusive_language_score,seo_title_score,meta_description_score；会改的文本列 = description,open_graph_description,twitter_description
+[products] 删掉 158 个带 1688 价格的 <p>（页面由 template-products-v4 渲染，正文不上屏）
+[blog] 去掉 1 个 detail.1688.com 链接，文字改成 a supplier size sheet (kept on file)
+
+===== strip-1688 汇总（已写库）=====
+catalog 页              : 208
+正文被改的页            : 208
+删掉的价格行            : 192
+删掉的 What this tells you 块 : 192
+对照表价格单元格改链接    : 222（表头 0 处）
+正文里删掉的价格句子      : 34
+正文仍有 1688 痕迹的页  : 0
+/products/ 删掉的 <p>   : 158
+博客去链接的 <a>        : 1
+meta 要写的条数         : 208（原本已一致 0）
+indexable 要更新的行    : 208（表存在）
+meta 长度 min/max       : 74 / 153（>155 的 0 条）
+meta 去重后条数         : 208 / 208
+改动合计                : 210
+
+--- 改动样例 ---
+  #3212 catalog-wooden-box-o1cn01rnjift1k 行-1 块-1 字节 6007→5645
+      删掉的段落: Historical 1688 listing or search price for reference only. The US dollar amount is an approximate historical conversion. The applicable quantity, specification
+  #3211 catalog-wooden-box 行-0 块-0 字节 4416→4343
+  #3210 catalog-necklace-box-o1cn01ztvtho1i 行-1 块-1 字节 5801→5440
+      删掉的段落: Historical 1688 listing or search price for reference only. The US dollar amount is an approximate historical conversion. The applicable quantity, specification
+  #3209 catalog-necklace-box-o1cn01wiipxg1o 行-1 块-1 字节 5860→5498
+      删掉的段落: Historical 1688 listing or search price for reference only. The US dollar amount is an approximate historical conversion. The applicable quantity, specification
+  #3208 catalog-necklace-box-o1cn01cjv8p1iy 行-1 块-1 字节 5766→5404
+      删掉的段落: Historical 1688 listing or search price for reference only. The US dollar amount is an approximate historical conversion. The applicable quantity, specification
+  #3207 catalog-necklace-box-o1cn01hswf671i 行-1 块-1 字节 5764→5403
+      删掉的段落: Historical 1688 listing or search price for reference only. The US dollar amount is an approximate historical conversion. The applicable quantity, specification
+
+[audit] 删掉的句子（34 句）与改动明细 -> /tmp/29z-audit.json
+
+[report] {"mode":"apply","pages_catalog":208,"pages_touched":208,"rows_removed":192,"h2_blocks_removed":192,"leftover_pages":0,"metadesc_written":208,"metadesc_total":208,"metadesc_unique":208,"metadesc_maxlen":153,"metadesc_over155":0,"indexable_rows":208,"products_p_removed":158,"blog_links_unwrapped":1,"changes":210}
+Success: The cache was flushed.

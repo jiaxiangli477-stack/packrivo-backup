@@ -104,6 +104,22 @@ function s1688_strip_tells_block($content, &$removed, &$notes)
 }
 
 /**
+ * 3b) 兜底：任何 <td> 里只要还带价格，就把这个单元格换成报价链接。
+ *     生产 hub 表的表头写的是 “Confirm stock minimum”，不是 “Lowest tier”，
+ *     按表头匹配不到，所以必须有这一层。
+ */
+function s1688_fix_price_cells_any($content, $quote_href, &$cells)
+{
+    $cells = 0;
+    $hit = '~<td\b[^>]*>\s*(?:¥|US\$0?\.?0|CNY|RMB)[^<]*</td>~iu';
+    $out = preg_replace_callback($hit, function ($m) use ($quote_href, &$cells) {
+        $cells++;
+        return '<td><a class="text-link" href="' . esc_url($quote_href) . '">Get a price &rarr;</a></td>';
+    }, $content);
+    return $out === null ? $content : $out;
+}
+
+/**
  * 3) 分类 hub 页的对照表：表头是 “Lowest tier / Historical 1688 reference”，
  *    每一行有一个价格单元格。保留表结构，表头改成 Price，价格单元格换成报价链接。
  */
@@ -300,6 +316,12 @@ foreach ($catalog_ids as $pid) {
         $touched = true;
         $stat['price_cells'] += $cells;
         $stat['price_table_headers'] += $heads;
+    }
+    $cells2 = 0;
+    $content = s1688_fix_price_cells_any($content, $quote_url, $cells2);
+    if ($cells2 > 0) {
+        $touched = true;
+        $stat['price_cells'] += $cells2;
     }
 
     $sent = 0;

@@ -1,0 +1,37 @@
+29z 基线计数 · 生产现状库
+=========================================
+来源：生产库只读导出 29z-prod.sql（33029963 B，sha256 b8e9429f1e357ef3f2d9afbd5b962ff9cb2cfdf79e3025ed37722fc5f9e03679，
+      2026-10-30 03:22:48 UTC，/home/web/backups/packrivo-29z-export-20261030-032248/29z-prod.sql）
+口径：把 dump 灌进演练环境的独立库 29z_base（只读快照，未打任何补丁），下面的数都是从它里面 SELECT 出来的。
+生成时间：2026-10-30（本机演练环境，mariadb 客户端，-N -B 输出）
+
+项                                                          值
+-----------------------------------------------------------
+catalog_pages（post_type=page, publish, slug like catalog-%）  208
+publish_1688（post_content 含 1688 的 publish 行）             209   = 208 个 catalog 页 + 1 篇博客(ID 90)
+publish_yen（post_content 含人民币符号的 publish 行）          209   = 同上 209
+publish_detail1688（含 detail.1688.com 的 publish 行）          1
+catalog_content_1688（catalog 页正文含 1688）                  208
+catalog_content_yen（catalog 页正文含人民币符号）              208
+catalog_metadesc_rows（catalog 页有 _yoast_wpseo_metadesc）     208
+metadesc_1688_or_yen（全库 metadesc 含 1688 或人民币符号）      226   含草稿；publish catalog 部分是 208
+ogdesc_1688_or_yen（_yoast_wpseo_opengraph-description 命中）     0   字段全空
+indexable_1688_or_yen（wp_yoast_indexable.description 命中）   189   旧值，与 postmeta 不同步
+publish_total（page+post publish 总数）                        728
+products_page_id                                              8     /products/
+blog_post_id                                                  90    jewelry-box-insert-fit-measurements
+products_yen_paras（/products/ 正文里 "Listed at" 段数）      158
+
+与任务单的差异（据实记录，不改数字）
+-------------------------------------------
+任务单 §0 写的是「post_content 含 1688 的页 = 1、含 ¥ 的页 = 209」。
+生产现状实测是 209 / 209：208 个 catalog 页的规格表里都有一条 Historical 1688 reference，
+再加上那 1 篇博客。任务单那个「1」应该只统计了非 catalog 页，或者取的是更早的快照。
+这三个数（208 / 209 / 209）在 29z 两轮演练里都复现过，判据脚本用的就是实测口径。
+
+复现命令
+-------------------------------------------
+WP="php -d disable_functions= /usr/local/bin/wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root"
+U=$($WP config get DB_USER); P=$($WP config get DB_PASSWORD); H=$($WP config get DB_HOST)
+mariadb -h$H -u$U -p$P -N -B 29z_base -e "SELECT COUNT(*) FROM wp_posts WHERE post_type='page' AND post_status='publish' AND post_name LIKE 'catalog-%'"
+（见 deploy/verification-29z/scripts/baseline-prod.sh，整段可重复跑）

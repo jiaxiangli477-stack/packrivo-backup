@@ -1,0 +1,32 @@
+29z §0 生产只读导出记录
+=========================================
+授权依据：负责人 2026-10-30 书面授权「允许 SSH 登录生产，做下面这些只读操作，做完就退出；
+         不允许任何写入：不能 import、不能 search-replace、不能改文件、不能装主题或插件、不能清缓存」。
+
+1. 导出
+   目录：/home/web/backups/packrivo-29z-export-20261030-032248/
+          （目录名由 date -u +%Y%m%d-%H%M%S 生成，UTC）
+   文件：29z-prod.sql
+   字节：33,029,963
+   sha256：b8e9429f1e357ef3f2d9afbd5b962ff9cb2cfdf79e3025ed37722fc5f9e03679
+   时间：2026-10-30 04:22:48 UTC（宿主机 ls -l 显示 Oct 30 04:22）
+   命令：$WPCLI db export /tmp/29z-prod.sql --skip-plugins --skip-themes
+         docker exec php sha256sum /tmp/29z-prod.sql      -> b8e9429f… 与落盘一致
+         docker cp php:/tmp/29z-prod.sql <目录>/29z-prod.sql
+         scp netcup:<目录>/29z-prod.sql 本机              -> 33,029,963 B，哈希一致
+
+2. 附带只读拷贝（为了让演练环境能真渲染 <meta name="description">）
+   文件：wordpress-seo.tar.gz（生产 wp-content/plugins/wordpress-seo 原样 tar）
+   字节：4,119,804
+   sha256：28880014b381e71846b54b89fc3080ac8bf529a6527c18e8c672822db83d7dcf
+   命令：tar czf <目录>/wordpress-seo.tar.gz -C /home/web/html/www.packrivo.com/wordpress/wp-content/plugins wordpress-seo
+   用途：演练环境原本没装 Yoast，导入生产 dump 后 active_plugins 里指向它，渲染不出 meta 标签。
+
+3. 只读查询（全部执行过，输出见本目录 evidence/*.txt / 结果文档 §2）
+   a) grep -rn 'name="description"\|Historical' 生产 mu-plugins 与 themes  -> 命中 themes/packrivo-home-v4/functions.php:90 与 :103
+   b) DESCRIBE wp_yoast_indexable  -> 文本列 description / open_graph_description / twitter_description（没有 og_description）
+   c) curl 生产 catalog-ring-box-o1cn01ahes 的 <head>  -> meta description 与 og:description 都是「… Historical 1688 reference: ¥0.03 …」
+   d) 生产库计数（见 deploy/verification-29z/evidence/baseline-counts-prod.txt）
+
+4. 生产上做过的写入：**没有**。没 import、没 search-replace、没改文件、没装主题或插件、没清缓存。
+   唯一在 /home/web/backups/ 下新建的东西是本轮的导出目录（授权里明确允许）。

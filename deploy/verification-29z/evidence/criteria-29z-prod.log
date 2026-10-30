@@ -1,0 +1,61 @@
+== 29z 判据 compare（生产现状库）==
+== 取后态 ==
+  快照 after: pages 729 / meta 1012 / index 774 / cards 24 / products 301693B
+== §2 九条判据 ==
+  PASS  1a 正文含 1688 的 publish 行（期望 0，实际 0）
+  PASS  1b 正文含 ¥ 的 publish 行（期望 0，实际 0）
+  PASS  1c 正文含 detail.1688.com 的 publish 行（期望 0，实际 0）
+  PASS  2a catalog meta 里还有价格/来源词（期望 0，实际 0）
+  PASS  2b catalog meta 超过 155 字符（期望 0，实际 0）
+  PASS  2c catalog meta 条数 / 去重后条数（期望 208，实际 208）
+  PASS  2d catalog meta 带固定尾句（期望 208，实际 208）
+  PASS  2e og-description 与 metadesc 同步（不一致条数）（期望 0，实际 0）
+  PASS  3a ID/slug/status 集合（期望 0b9937b5aa0f2465b31dd2cf224b402d，实际 0b9937b5aa0f2465b31dd2cf224b402d）
+  PASS  3b noindex 集合（期望 36c1d1f0c472ea66be0745c7404dd0fe，实际 36c1d1f0c472ea66be0745c7404dd0fe）
+  PASS  4a /products/ 产品卡片数（期望 24，实际 24）
+  PASS  4b /products/ 卡片 链接+名称 逐条相同（期望 abfa829ef48d5fa18bfa582ca9ff77a3，实际 abfa829ef48d5fa18bfa582ca9ff77a3）
+  PASS  4c 渲染里 ¥ 计数（期望 0，实际 0）
+  PASS  4d 渲染里 \u00a5 计数（期望 0，实际 0）
+  PASS  4e 渲染里 1688 计数（期望 0，实际 0）
+    截图 before-1440.png 73287 B
+    截图 after-1440.png 73287 B
+    截图 before-375.png 33178 B
+    截图 after-375.png 33178 B
+  PASS  4f 改前改后 x 1440/375 四张截图（期望 4，实际 4）
+    改前 /products/: ¥ 0 / \u00a5 20 / 1688 0
+  PASS  5a 内容被改的对象数（预期 210 = 208 catalog + /products/ + 1 篇博客）（期望 210，实际 210）
+  PASS  5b 集合外被改的对象数（期望 0，实际 0）
+  PASS  6a 非 catalog/products/博客 的 meta 被改条数（期望 0，实际 0）
+  PASS  6b meta 被改对象数（只有 208 个 catalog 页有 metadesc 行；products 与博客本来没有这行）（期望 208，实际 208）
+  PASS  7 indexable.description 与 postmeta 不一致条数（期望 0，实际 0）
+  PASS  8 抽查 5 个 catalog 页渲染里 ¥ 总数（期望 0，实际 0）
+  PASS  9a /get-a-quote/ 跟随跳转后状态（期望 200，实际 200）
+  PASS  9b /products/ 页里 Get a price 链接（51 处）
+== 汇总 ==
+  PASS=24  FAIL=0
+
+== 幂等：第二次真跑 ==
+[collect] publish pages = 391, slug 以 catalog- 开头 = 208
+[indexable] 列 = id,permalink,permalink_hash,object_id,object_type,object_sub_type,author_id,post_parent,title,description,breadcrumb_title,post_status,is_public,is_protected,has_public_posts,number_of_pages,canonical,primary_focus_keyword,primary_focus_keyword_score,readability_score,is_cornerstone,is_robots_noindex,is_robots_nofollow,is_robots_noarchive,is_robots_noimageindex,is_robots_nosnippet,twitter_title,twitter_image,twitter_description,twitter_image_id,twitter_image_source,open_graph_title,open_graph_description,open_graph_image,open_graph_image_id,open_graph_image_source,open_graph_image_meta,link_count,incoming_link_count,prominent_words_version,created_at,updated_at,blog_id,language,region,schema_page_type,schema_article_type,has_ancestors,estimated_reading_time_minutes,version,object_last_modified,object_published_at,inclusive_language_score,seo_title_score,meta_description_score；会改的文本列 = description,open_graph_description,twitter_description
+[products] 没有需要删的 <p>
+[blog] 没有 detail.1688.com 的 <a>
+
+===== strip-1688 汇总（已写库）=====
+catalog 页              : 208
+正文被改的页            : 0
+删掉的价格行            : 0
+删掉的 What this tells you 块 : 0
+对照表价格单元格改链接    : 0（表头 0 处）
+正文里删掉的价格句子      : 0
+正文仍有 1688 痕迹的页  : 0
+/products/ 删掉的 <p>   : 0
+博客去链接的 <a>        : 0
+meta 要写的条数         : 0（原本已一致 208）
+indexable 要更新的行    : 208（表存在）
+meta 长度 min/max       : 74 / 153（>155 的 0 条）
+meta 去重后条数         : 208 / 208
+改动合计                : 0
+
+[audit] 删掉的句子（0 句）与改动明细 -> /tmp/29z-audit2.json
+
+[report] {"mode":"apply","pages_catalog":208,"pages_touched":0,"rows_removed":0,"h2_blocks_removed":0,"leftover_pages":0,"metadesc_written":0,"metadesc_total":208,"metadesc_unique":208,"metadesc_maxlen":153,"metadesc_over155":0,"indexable_rows":208,"products_p_removed":0,"blog_links_unwrapped":0,"changes":0}

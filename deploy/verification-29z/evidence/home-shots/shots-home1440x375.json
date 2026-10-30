@@ -1,0 +1,32 @@
+{
+  "tag": "home1440x375",
+  "page": "/",
+  "shot": [
+    {
+      "width": 1440,
+      "height": 900,
+      "status": 200,
+      "file": "home1440x375-1440.png",
+      "bytes": 260938,
+      "cards": 0,
+      "overflow": false,
+      "yen_in_dom": 0,
+      "first_titles": []
+    },
+    {
+      "width": 375,
+      "height": 812,
+      "status": 200,
+      "file": "home1440x375-375.png",
+      "bytes": 103864,
+      "cards": 0,
+      "overflow": false,
+      "yen_in_dom": 0,
+      "first_titles": []
+    }
+  ],
+  "console_errors": [
+    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+    "375: Failed to load resource: net::ERR_EMPTY_RESPONSE"
+  ]
+}

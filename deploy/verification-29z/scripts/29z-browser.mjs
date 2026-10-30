@@ -49,7 +49,7 @@ function rawGet(urlPath, host) {
       }
     );
     // 没超时就会永远挂在一个不回包的 URL 上
-    req.setTimeout(12000, () => { req.destroy(new Error('timeout')); });
+    req.setTimeout(Number(process.env.CRAWL_TIMEOUT_MS || 60000), () => { req.destroy(new Error('timeout')); });
     req.on('error', (e) => resolve({ code: 0, type: '', len: 0, body: '', loc: '', err: e.message }));
     req.end();
   });
@@ -108,7 +108,7 @@ for (const lang of LANGS) {
 
 // —— 2) 逐个请求去重后的链接（并发 8，单个 12 秒超时）——
 const toCheck = [...linkSet.keys()].sort();
-const checked = await pool(toCheck, 8, async (u) => {
+const checked = await pool(toCheck, Number(process.env.CRAWL_CONCURRENCY || 6), async (u) => {
   const r = await rawGet(u);
   let final = r.code;
   let via301 = '';
@@ -139,7 +139,7 @@ for (const [key, url] of shotTargets) {
     const page = await ctx.newPage();
     await page.setViewportSize({ width: w, height: h });
     try {
-      await page.goto('http://nginx' + url, { waitUntil: 'load', timeout: 45000 });
+      await page.goto('http://nginx' + url, { waitUntil: 'load', timeout: Number(process.env.PAGE_TIMEOUT_MS || 90000) });
       await page.waitForTimeout(400);
       const file = path.join(OUT, 'screens', `${key}-${w}.png`);
       fs.mkdirSync(path.dirname(file), { recursive: true });

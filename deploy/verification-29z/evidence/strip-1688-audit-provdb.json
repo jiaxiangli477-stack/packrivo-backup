@@ -1,0 +1,286 @@
+{
+    "mode": "apply",
+    "sentences": [
+        {
+            "id": 3211,
+            "slug": "catalog-wooden-box",
+            "tag": "p",
+            "sentence": "Historical 1688 reference prices; confirm current amounts and terms."
+        },
+        {
+            "id": 3211,
+            "slug": "catalog-wooden-box",
+            "tag": "p",
+            "sentence": "Historical 1688 listing or search prices are references only."
+        },
+        {
+            "id": 3172,
+            "slug": "catalog-paper-box",
+            "tag": "p",
+            "sentence": "Historical 1688 reference prices; confirm current amounts and terms."
+        },
+        {
+            "id": 3172,
+            "slug": "catalog-paper-box",
+            "tag": "p",
+            "sentence": "Historical 1688 listing or search prices are references only."
+        },
+        {
+            "id": 3139,
+            "slug": "catalog-jewelry-box",
+            "tag": "p",
+            "sentence": "Historical 1688 reference prices; confirm current amounts and terms."
+        },
+        {
+            "id": 3139,
+            "slug": "catalog-jewelry-box",
+            "tag": "p",
+            "sentence": "Historical 1688 listing or search prices are references only."
+        },
+        {
+            "id": 3133,
+            "slug": "catalog-pouch-b",
+            "tag": "p",
+            "sentence": "Historical 1688 reference prices; confirm current amounts and terms."
+        },
+        {
+            "id": 3133,
+            "slug": "catalog-pouch-b",
+            "tag": "p",
+            "sentence": "The historical references include ¥0.10."
+        },
+        {
+            "id": 3133,
+            "slug": "catalog-pouch-b",
+            "tag": "p",
+            "sentence": "Historical 1688 listing or search prices are references only."
+        },
+        {
+            "id": 3124,
+            "slug": "catalog-gift-box",
+            "tag": "p",
+            "sentence": "Historical 1688 reference prices; confirm current amounts and terms."
+        },
+        {
+            "id": 3124,
+            "slug": "catalog-gift-box",
+            "tag": "p",
+            "sentence": "Historical 1688 listing or search prices are references only."
+        },
+        {
+            "id": 3107,
+            "slug": "catalog-storage-box",
+            "tag": "p",
+            "sentence": "Historical 1688 reference prices; confirm current amounts and terms."
+        },
+        {
+            "id": 3107,
+            "slug": "catalog-storage-box",
+            "tag": "p",
+            "sentence": "Historical 1688 listing or search prices are references only."
+        },
+        {
+            "id": 3090,
+            "slug": "catalog-necklace-box",
+            "tag": "p",
+            "sentence": "Historical 1688 reference prices; confirm current amounts and terms."
+        },
+        {
+            "id": 3090,
+            "slug": "catalog-necklace-box",
+            "tag": "p",
+            "sentence": "Historical 1688 listing or search prices are references only."
+        },
+        {
+            "id": 3067,
+            "slug": "catalog-velvet-box",
+            "tag": "p",
+            "sentence": "Historical 1688 reference prices; confirm current amounts and terms."
+        },
+        {
+            "id": 3067,
+            "slug": "catalog-velvet-box",
+            "tag": "p",
+            "sentence": "Historical 1688 listing or search prices are references only."
+        },
+        {
+            "id": 3036,
+            "slug": "catalog-ring-box",
+            "tag": "p",
+            "sentence": "Historical 1688 reference prices; confirm current amounts and terms."
+        },
+        {
+            "id": 3036,
+            "slug": "catalog-ring-box",
+            "tag": "p",
+            "sentence": "The historical references include ¥0.03; they are not verified offers at a specific quantity."
+        },
+        {
+            "id": 3036,
+            "slug": "catalog-ring-box",
+            "tag": "p",
+            "sentence": "Historical 1688 listing or search prices are references only."
+        },
+        {
+            "id": 3033,
+            "slug": "catalog-folding-carton",
+            "tag": "p",
+            "sentence": "Historical 1688 reference prices; confirm current amounts and terms."
+        },
+        {
+            "id": 3033,
+            "slug": "catalog-folding-carton",
+            "tag": "p",
+            "sentence": "Historical 1688 listing or search prices are references only."
+        },
+        {
+            "id": 3031,
+            "slug": "catalog-velvet",
+            "tag": "p",
+            "sentence": "Historical 1688 reference prices; confirm current amounts and terms."
+        },
+        {
+            "id": 3031,
+            "slug": "catalog-velvet",
+            "tag": "p",
+            "sentence": "Historical 1688 listing or search prices are references only."
+        },
+        {
+            "id": 3026,
+            "slug": "catalog-pouch",
+            "tag": "p",
+            "sentence": "Historical 1688 reference prices; confirm current amounts and terms."
+        },
+        {
+            "id": 3026,
+            "slug": "catalog-pouch",
+            "tag": "p",
+            "sentence": "Historical 1688 listing or search prices are references only."
+        },
+        {
+            "id": 3021,
+            "slug": "catalog-pu-leather",
+            "tag": "p",
+            "sentence": "Historical 1688 reference prices; confirm current amounts and terms."
+        },
+        {
+            "id": 3021,
+            "slug": "catalog-pu-leather",
+            "tag": "p",
+            "sentence": "Historical 1688 listing or search prices are references only."
+        },
+        {
+            "id": 3004,
+            "slug": "catalog-drawer",
+            "tag": "p",
+            "sentence": "Historical 1688 reference prices; confirm current amounts and terms."
+        },
+        {
+            "id": 3004,
+            "slug": "catalog-drawer",
+            "tag": "p",
+            "sentence": "Historical 1688 listing or search prices are references only."
+        },
+        {
+            "id": 2988,
+            "slug": "catalog-rigid-lid-and-base",
+            "tag": "p",
+            "sentence": "Historical 1688 reference prices; confirm current amounts and terms."
+        },
+        {
+            "id": 2988,
+            "slug": "catalog-rigid-lid-and-base",
+            "tag": "p",
+            "sentence": "Historical 1688 listing or search prices are references only."
+        },
+        {
+            "id": 2987,
+            "slug": "catalog-other",
+            "tag": "p",
+            "sentence": "Historical 1688 reference prices; confirm current amounts and terms."
+        },
+        {
+            "id": 2987,
+            "slug": "catalog-other",
+            "tag": "p",
+            "sentence": "Historical 1688 listing or search prices are references only."
+        }
+    ],
+    "details": [
+        {
+            "id": 3212,
+            "slug": "catalog-wooden-box-o1cn01rnjift1k",
+            "rows_removed": 1,
+            "blocks_removed": 1,
+            "len_before": 6007,
+            "len_after": 5645,
+            "notes": [
+                {
+                    "dropped_paragraph": "Historical 1688 listing or search price for reference only. The US dollar amount is an approximate historical conversion. The applicable quantity, specifications, currency, printing, shipping and current project quotation require confirmation. Custom printing starts at 500 pieces per product / design."
+                }
+            ]
+        },
+        {
+            "id": 3211,
+            "slug": "catalog-wooden-box",
+            "rows_removed": 0,
+            "blocks_removed": 0,
+            "len_before": 4416,
+            "len_after": 4343,
+            "notes": []
+        },
+        {
+            "id": 3210,
+            "slug": "catalog-necklace-box-o1cn01ztvtho1i",
+            "rows_removed": 1,
+            "blocks_removed": 1,
+            "len_before": 5801,
+            "len_after": 5440,
+            "notes": [
+                {
+                    "dropped_paragraph": "Historical 1688 listing or search price for reference only. The US dollar amount is an approximate historical conversion. The applicable quantity, specifications, currency, printing, shipping and current project quotation require confirmation. Custom printing starts at 500 pieces per product / design."
+                }
+            ]
+        },
+        {
+            "id": 3209,
+            "slug": "catalog-necklace-box-o1cn01wiipxg1o",
+            "rows_removed": 1,
+            "blocks_removed": 1,
+            "len_before": 5860,
+            "len_after": 5498,
+            "notes": [
+                {
+                    "dropped_paragraph": "Historical 1688 listing or search price for reference only. The US dollar amount is an approximate historical conversion. The applicable quantity, specifications, currency, printing, shipping and current project quotation require confirmation. Custom printing starts at 500 pieces per product / design."
+                }
+            ]
+        },
+        {
+            "id": 3208,
+            "slug": "catalog-necklace-box-o1cn01cjv8p1iy",
+            "rows_removed": 1,
+            "blocks_removed": 1,
+            "len_before": 5766,
+            "len_after": 5404,
+            "notes": [
+                {
+                    "dropped_paragraph": "Historical 1688 listing or search price for reference only. The US dollar amount is an approximate historical conversion. The applicable quantity, specifications, currency, printing, shipping and current project quotation require confirmation. Custom printing starts at 500 pieces per product / design."
+                }
+            ]
+        },
+        {
+            "id": 3207,
+            "slug": "catalog-necklace-box-o1cn01hswf671i",
+            "rows_removed": 1,
+            "blocks_removed": 1,
+            "len_before": 5764,
+            "len_after": 5403,
+            "notes": [
+                {
+                    "dropped_paragraph": "Historical 1688 listing or search price for reference only. The US dollar amount is an approximate historical conversion. The applicable quantity, specifications, currency, printing, shipping and current project quotation require confirmation. Custom printing starts at 500 pieces per product / design."
+                }
+            ]
+        }
+    ],
+    "leftover_samples": []
+}

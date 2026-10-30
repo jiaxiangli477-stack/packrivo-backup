@@ -1,0 +1,46 @@
+{
+  "summary": {
+    "/rigid-gift-boxes/": 49,
+    "/resources/": 49,
+    "/packaging-examples/": 49,
+    "/pricing/": 49,
+    "/sustainability/": 12
+  },
+  "detail": {
+    "/rigid-gift-boxes/": {
+      "pages": 49,
+      "first": {
+        "page": "/",
+        "ctx": "</a></li> <li><a href=\"https://www.packrivo.com/rigid-gift-boxes/\">Rigid gift boxes</a></li> "
+      }
+    },
+    "/resources/": {
+      "pages": 49,
+      "first": {
+        "page": "/",
+        "ctx": "<li class=\"pk-has-panel\"> <a class=\"pk-nav-link\" href=\"https://www.packrivo.com/resources/\">Resources</a> <button class=\"pk-care"
+      }
+    },
+    "/packaging-examples/": {
+      "pages": 49,
+      "first": {
+        "page": "/",
+        "ctx": "krivo.com/resources/\">Guides</a></li> <li><a href=\"https://www.packrivo.com/packaging-examples/\">Packaging examples</a></li> "
+      }
+    },
+    "/pricing/": {
+      "pages": 49,
+      "first": {
+        "page": "/",
+        "ctx": "om/compare/\">Compare formats</a></li> <li><a href=\"https://www.packrivo.com/pricing/\">Price index</a></li> </ul> "
+      }
+    },
+    "/sustainability/": {
+      "pages": 12,
+      "first": {
+        "page": "/",
+        "ctx": "ndly” is not a specification.</p> <a class=\"pk-more\" href=\"https://www.packrivo.com/sustainability/\">Materials and sustainability →</a> </"
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "tag": "after",
+  "page": "/products/",
+  "shot": [
+    {
+      "width": 1440,
+      "height": 900,
+      "status": 200,
+      "file": "after-1440.png",
+      "bytes": 73287,
+      "cards": 24,
+      "overflow": false,
+      "yen_in_dom": 0,
+      "first_titles": [
+        "Bulk Shipping Boxes with Logo",
+        "Custom Auto-Lock Bottom Boxes",
+        "Custom Book-Style Rigid Gift Boxes"
+      ]
+    },
+    {
+      "width": 375,
+      "height": 812,
+      "status": 200,
+      "file": "after-375.png",
+      "bytes": 33178,
+      "cards": 24,
+      "overflow": false,
+      "yen_in_dom": 0,
+      "first_titles": [
+        "Bulk Shipping Boxes with Logo",
+        "Custom Auto-Lock Bottom Boxes",
+        "Custom Book-Style Rigid Gift Boxes"
+      ]
+    }
+  ],
+  "console_errors": [
+    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+    "1440: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+    "375: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+    "375: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+    "375: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+    "375: Failed to load resource: net::ERR_EMPTY_RESPONSE",
+    "375: Failed to load resource: net::ERR_EMPTY_RESPONSE"
+  ]
+}

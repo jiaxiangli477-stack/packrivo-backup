@@ -1,219 +1,247 @@
-# DSH 结果 · 2026-10-29z
+# DSH 结果 · 2026-10-29z（生产现状库完整重跑版）
 
 任务单：`packrivo-v2/docs/DSH-TASK-2026-10-29z.md` @ `c62bc88`。
-执行方式：只动本地仓库与演练环境（`E:\破甲工作区\.tmp\28q\rehearsal`，`0.0.0.0:8091`）。**没有碰生产**：没 SSH、没登录、没导出生产库。第 0 节第 1 步按要求停等授权，第 4 节没开始。
+本轮按负责人 2026-10-30 复核意见执行：先修 RUNBOOK（最高优先级）、再按新口径改写判据 4、然后用**生产现状库**从复位开始把 §0 基线 / 九条判据 / 3b / 3c 全部重跑一遍。
+生产侧只做只读：`wp db export` 一份 + 三组 `grep`/`DESCRIBE`/`curl`。**没有 import、没有 search-replace、没改任何文件、没装主题插件、没清生产缓存。**
 
-## 0. 一句话状态
+工作台 #63 | 监工 kimi-k3.1-pro | 执行 deepseek-v4-pro | 状态 已完成（并行 worker 已停，本轮单线程）
 
-| 节 | 状态 | 一句话 |
+## 0. 状态表
+
+| 项 | 结果 |
+|---|---|
+| RUNBOOK 修复 | ✅ 从 `c62bc88` 恢复，892 → 1016 行，32 → 39 代码块，0 处 U+FFFD，§5.2 `theme install` 独占一行 |
+| 42 个未提交文件的归属 | ✅ 查清：全部来自 ARTEX 并行 worker `work#3`（意图 #864/#867/#868），处置见 §7 |
+| `baseline-counts-seed.txt` 乱码 | ✅ 已删除，改为 `baseline-counts-prod.txt`（数字全部来自生产 dump） |
+| 新判据（每次提交前跑） | ✅ `check-commit-utf8-29z.py`：G1 UTF-8/U+FFFD、G2 行数代码块不减、G3 §5.2 单独成行、G4 附录 D 哈希对齐 |
+| §0 生产只读导出 | ✅ 33,029,963 B，`b8e9429f…3679`，2026-10-30 04:22 UTC |
+| §0.3 meta description 第四个来源 | ✅ 已定位：`themes/packrivo-home-v4/functions.php:90` 的 `wpseo_metadesc` 过滤器；实际输出由 Yoast 走 `_yoast_wpseo_metadesc`，见 §2 |
+| 九条判据（生产现状库） | ✅ **24 PASS / 0 FAIL** |
+| 判据 4 新口径 | ✅ 卡片逐一相同 + `¥`/`\u00a5`/`1688` 归零 + 四张截图（1440/375 改前改后） |
+| 3b | ✅ 2/2 PASS（zip/mirror/装好后三处哈希一致；首页 1440 与 375 各一张） |
+| 3c | ✅ 主题层 0 死链（本地 4.0.3 实测 0 引用）；生产侧 5 条旧链接 + 1 处字体 404 定位到**生产仍是子主题 4.0.1 且没打字体补丁**，见 §6 |
+| 4.0.3 包 | ✅ 未变：791,053 B / 43 条目 / `7d792ad9…945f7` |
+
+## 1. §0 生产只读导出（按授权执行，做完即退）
+
+| 项 | 值 |
+|---|---|
+| 目录 | `/home/web/backups/packrivo-29z-export-20261030-032248/` |
+| 文件 | `29z-prod.sql` |
+| 字节 | 33,029,963 |
+| sha256 | `b8e9429f1e357ef3f2d9afbd5b962ff9cb2cfdf79e3025ed37722fc5f9e03679`（容器内 / 宿主机落盘 / 本机下载 三处一致） |
+| 执行时间 | 2026-10-30 04:22:48 UTC（目录名由 `date -u +%Y%m%d-%H%M%S` 生成） |
+| 命令 | `$WPCLI db export /tmp/29z-prod.sql --skip-plugins --skip-themes` → `docker cp php:/tmp/29z-prod.sql <dir>/` → `scp` 回本机 |
+| 附带只读拷贝 | `wordpress-seo.tar.gz` 4,119,804 B `28880014b381e71846b54b89fc3080ac8bf529a6527c18e8c672822db83d7dcf`（为了让演练环境能真渲染 meta 标签，把生产插件原样拷过来；生产侧只是 `tar czf` 读） |
+
+授权的四组只读查询全跑了：`grep -rn 'name="description"\|Historical'`（mu-plugins + themes）、`DESCRIBE wp_yoast_indexable`、`curl` catalog 页取 `<head>`、`wp db export`。生产写入类操作一个都没做。
+
+## 2. §0.3 `<meta name="description">` 的第四个来源（结论 + 文件行号）
+
+**结论**：生产 HTML 里的 `<meta name="description">` 和 `<meta property="og:description">` 都由 **wordpress-seo（Yoast）** 渲染，取值来自该页 `wp_postmeta._yoast_wpseo_metadesc`；两处与数据库里的值**逐字相同**。
+
+证据链（三条独立对得上）：
+
+1. 生产 `<head>` 抓下来是
+   `<meta name="description" content="Ring Box — Clear Window, Flip Lid, Storage. Historical 1688 reference: ¥0.03. Custom print MOQ 500 per design. Confirm current terms." />`
+2. 同一页 `_yoast_wpseo_metadesc` 的值就是这段文字（含 `¥0.03`）。
+3. 演练环境把生产 dump 灌进去 + 补上 `wordpress-seo` 之后，渲染出的 head 一模一样。
+
+那个「第四个来源」的候选也查清了，它**不参与** catalog 页：
+
+- `/home/web/html/www.packrivo.com/wordpress/wp-content/themes/packrivo-home-v4/functions.php:90`
+  ```php
+  add_filter('wpseo_metadesc', function ($description) {
+      $id = pkv4_hub_metadata_id();
+      $value = $id ? get_post_meta($id, '_packrivo_description', true) : '';
+      return is_string($value) && $value !== '' ? $value : $description;
+  }, 1100);
+  ```
+  它只在对象带 `_packrivo_description` 时顶掉 Yoast 的值。生产库 `_packrivo_description` 共 499 条，与 catalog 页交集 **0 条**，含 `1688` **0 条** —— catalog 页不走它。
+- 同文件 `:103` 还有一段自己 `echo '<meta name="description" …>'` 的代码，入口条件是 `if (!$id || defined('WPSEO_VERSION')) return;`；生产 `wordpress-seo` 是激活状态，`WPSEO_VERSION` 已定义，这段**永不执行**。
+- `wp_yoast_indexable.description` 是**旧的**（189 条还带 `¥`），与 postmeta 不同步 —— 所以改完 postmeta 必须重建或直接覆写 indexable，脚本写的就是那三列。
+
+## 3. §0 基线计数（生产 dump，只读快照库 `29z_base`）
+
+| 项 | 任务单 | 生产实测 |
 |---|---|---|
-| §0 导生产库 + 基线 + meta 来源 | **⏸ 停等授权** | 需要业主一句放行；本地只能给出 seed 库同口径基线（208 / 1 / 209，与任务单一致） |
-| §1 `strip-1688.php` | ✅ 交付 | 脚本 + 包装器 + 干跑/真跑/幂等/复位全部在演练库跑通 |
-| §2 九条判据 | ⚠️ 17 PASS / 1 FAIL | 唯一 FAIL 是「`/products/` 渲染哈希不变」，它与「正文 `¥` 归零」互斥，见 §5 |
-| §3b 首页大图 | ✅ 2/2 PASS | 两档尺寸 + alt + 三处哈希 + 版本 4.0.3 + 重新打包 |
-| §3c 死链 + 字体 | ⚠️ 主题层 0 死链；60 页爬取受演练媒体缺失所限 | 五个旧链接全站 0 引用；字体 200 `font/woff2`；爬取的 298 条非 200 已分类，见 §7 |
-| 4.0.3 包 + RUNBOOK | ✅ 锁定 | zip `7d792ad9…945f7`，RUNBOOK 末尾新增附录 D（步骤/判据/回滚） |
+| `post_type=page` + publish + `catalog-*` | 208 | **208** |
+| `post_content` 含 `1688` 的 publish 行 | 1 | **209** |
+| `post_content` 含 `¥` 的 publish 行 | 209 | **209** |
+| `post_content` 含 `detail.1688.com` | — | **1** |
+| catalog 页有 `_yoast_wpseo_metadesc` | — | **208** |
+| 全库 metadesc 含 `1688`/`¥` | — | **226**（含草稿；publish catalog 部分是 208） |
+| `_yoast_wpseo_opengraph-description` 命中 | — | **0** |
+| `wp_yoast_indexable.description` 命中 | — | **189**（旧值） |
+| publish 总数（page+post） | — | **728** |
+| `/products/` 正文 `Listed at` 段数 | — | **158** |
 
-## 1. §0 停在哪、需要什么授权
+**差异要说清**：任务单写「含 1688 的页 = 1」，生产实测是 209 —— 208 个 catalog 页的规格表里各有一条 `Historical 1688 reference`，加上那 1 篇博客；「1」应该只统计了非 catalog 页。这条写进 `evidence/baseline-counts-prod.txt`，没有为了对齐改数字。
 
-任务单 §0 第 1 步是「把生产库导出来」。这一步只在生产 SSH 上做，所以按你的规矩停住，等你一句放行。
+## 4. §1 `strip-1688.php`（生产现状库真跑）
 
-放行后我跑的就是这四段（对生产只读，不写表、不动文件、不清缓存）：
+包装器 `deploy/patches-29z/strip-1688.sh --dry-run|--apply`；`wp eval-file` 会把 `--dry-run` 当参数错误拦下，直跑时用 `STRIP1688_DRY=1`。
 
-```bash
-# 1) 只读导出到容器 /tmp（不落生产盘）
-$WPCLI db export /tmp/29z-prod.sql --skip-plugins --skip-themes
-docker exec php sh -c 'wc -c /tmp/29z-prod.sql'        # 必须 > 0
-
-# 2) 拉回本机演练目录
-docker cp php:/tmp/29z-prod.sql E:/破甲工作区/.tmp/28q/29z-prod.sql
-curl -s -o /dev/null -w '%{http_code}\n' https://www.packrivo.com/   # 顺手确认站点活着
-
-# 3) 灌进演练库（已有 /tmp/29z-db-before.sql 可回滚）
-docker exec php sh -c 'wp --path=... --allow-root db import /tmp/29z-prod.sql'
-
-# 4) 打印基线计数（口径见 §3）
-```
-
-## 2. §0.3「`<meta name="description">` 到底哪来的」——本地已查到的部分
-
-演练库实测（证据 `deploy/verification-29z/evidence/baseline-counts-seed.txt`）：
-
-- `wp_postmeta._yoast_wpseo_metadesc`：catalog 208 页**全部有值**，形如
-  `Reference SKU: Ring Box — Clear Window, Flip Lid, Storage. 500 per design (custom print), lowest tier ¥0.03. …`
-- `wp_postmeta._yoast_wpseo_opengraph-description`：**0 条**（字段全空）。
-- `wp_yoast_indexable.description`：与 postmeta 逐字一致（189 条带 `¥`）。
-- 但这一版演练渲染出的 catalog 页 **一条 `<meta name="description">` 都没有**（`grep -c` = 0），`<title>` 出现两次。
-
-所以「HTML 里的 meta description」不是这三处直出的；生产那 208 条 `Historical 1688 reference…` 一定还有第四个来源。导完生产库跑这三条就能钉到文件行/表字段：
-
-```bash
-# a) mu-plugin 里有没有 wp_head 过滤器自己打 meta
-docker exec php sh -c 'grep -rn "name=\"description\"\|wpseo_metadesc\|wp_head" \
-  /var/www/html/www.packrivo.com/wordpress/wp-content/mu-plugins/*.php | grep -v "\.bak" | head'
-
-# b) 生产 Yoast 表结构（有没有 open_graph_description 列）
-docker exec php sh -c 'wp --path=... --allow-root db query "DESCRIBE wp_yoast_indexable" --skip-column-names | cut -f1 | tr "\n" " "'
-
-# c) 生产那一页的头部长什么样（只读 curl，不登录后台）
-curl -s https://www.packrivo.com/catalog-ring-box-o1cn01ahes/ | grep -o '<meta name="description"[^>]*>'
-```
-
-脚本已经同时覆盖 postmeta + indexable（`description` / `open_graph_description` / `twitter_description` 按实际列名自适应）；若 §0.3 查出第四来源是 mu-plugin 过滤器，再补一条过滤器的写法即可，前面不用重跑。
-
-## 3. 基线计数（演练 seed 库，口径与任务单一致）
-
-| 项 | 任务单给的数 | 本地实测 | 结论 |
-|---|---|---|---|
-| `catalog-` 开头的 publish 页 | 208 | **208** | 一致 |
-| `post_content` 含 `1688` 的 publish 行 | 1 | **1** | 一致 |
-| `post_content` 含 `¥` 的 publish 行 | 209 | **209** | 一致 |
-| `post_content` 含 `detail.1688.com` | — | **1** | 与上面那 1 条同源（博客里的 `<a>`） |
-| `_yoast_wpseo_metadesc` 含 `1688`/`¥` | — | **189** | 新增口径 |
-| `_yoast_wpseo_opengraph-description` 含 `1688`/`¥` | — | **0**（全空） | 新增口径 |
-| `wp_yoast_indexable.description` 含 `1688`/`¥` | — | **189** | 与 postmeta 一致 |
-
-生产库导进来后用同一段 SQL 再打一遍，两列一比就知道生产上多出哪些页。
-
-## 4. §1 交付：`deploy/patches-29z/strip-1688.php`
-
-`wp eval-file` 会把 `--dry-run` 当参数错误拦掉，所以干跑开关是环境变量 `STRIP1688_DRY=1`；另给包装器 `strip-1688.sh --dry-run|--apply`。
-
-**干跑实测（演练库，未写库）**：
+**真跑汇总（`evidence/strip-1688-apply-prod.log`）**：
 
 ```
 catalog 页 208 / 正文被改 208 / 删价格行 192 / 删 What this tells you 块 192
-对照表价格单元格改链接 222（表头 16 处）/ 正文删价格句 22
-/products/ 删 <p> 158 / 博客去链 <a> 1
-meta 要写 208（长度 84–155，>155 的 0 条，去重后 208/208）
-indexable 要更新 208 行 / 正文仍有 1688 痕迹 0 页
+对照表价格单元格改链接 222（表头 0 处）   <- 生产表头是 Confirm stock minimum，走兜底 <td> 规则
+正文里删掉的价格句子 34 / 正文仍有 1688 痕迹 0 页
+/products/ 删 <p> 158 / 博客去链 1
+meta 写 208（长度 74-153，>155 的 0 条，去重 208/208）
+indexable 更新 208 行 / 改动合计 210
 ```
 
-它按真实标记处理，不是固定串替换：
+**幂等**：紧接着再跑一次，`正文被改的页 0 / 改动合计 0`，`changes: 0`。
+**审计**：删掉的 34 句全在 `evidence/strip-1688-audit-provdb.json`（带页面 ID 与原文），可以逐条核对。
 
-1. 规格表 `<th>Lowest listed tier / Historical 1688 reference</th>` 整行删，原位换 `<th scope="row">Price</th><td><a href="/get-a-quote/">Get a price →</a></td>`；
-2. 分类 hub 页对照表：表头 `Lowest tier` → `Price`，该列价格单元格换报价链接（16 张表 222 格）；
-3. `What this tells you` 的 `<h2>` + 后面讲价格那段整块删（只删与价格有关的，无关段落不动）；
-4. 正文 `<p>/<li>` 里带 `¥ / yuan / RMB / CNY / ex-works / US$0.0 / 1688` 的**句子**逐句删，删掉的 22 句全进审计 `evidence/strip-1688-audit.json`（带页面 ID 与 slug），可以一条条看回来；
-5. 208 页 meta 重写成「产品名 — 结构/材质. `Custom logo printing, MOQ 500 per design. Samples available.`」，≤155 字符、两两不同；同时写 `_yoast_wpseo_metadesc`、`_yoast_wpseo_opengraph-description`、`wp_yoast_indexable`（按实际列自适应：演练这套表没有 `og_description`，有 `open_graph_description`）；
-6. `/products/` 正文 158 个 `<p>Listed at ¥…</p>` 删掉；博客里 `detail.1688.com` 的 `<a>` 去链接留文字 `a supplier size sheet (kept on file)`。
+本轮相对上一版的改动：加了 `s1688_fix_price_cells_any()` —— 只要 `<td>` 里还有 `¥`/`US$0.0` 就换成 `Get a price →`。上一版按表头 `Lowest tier` 匹配，生产表头写的是 `Confirm stock minimum`，导致 16 个 hub 页残留（`leftover_pages: 16`）；加兜底后 **`leftover_pages: 0`**。
 
-**幂等**：第二次真跑打印「正文被改 0 / meta 要写 0 / 改动合计 0」。
-**复位**：`db import /tmp/29z-db-before.sql` 之后 `/products/` 哈希回到 `e2dc30ec…`、catalog 页 3037 回到 `afdc24a0…`。
+## 5. §2 九条判据：24 PASS / 0 FAIL（判据 4 已按新口径改写）
 
-## 5. §2 九条判据（演练库实测 17 PASS / 1 FAIL）
-
-脚本 `deploy/verification-29z/scripts/29z-criteria.sh before|compare`，日志 `evidence/criteria-29z-seed.log`。
+日志 `evidence/criteria-29z-prod.log`。脚本 `deploy/verification-29z/scripts/29z-criteria.sh`，`before` 取前态、`compare` 逐条判。
 
 | # | 判据 | 结果 |
 |---|---|---|
-| 1 | publish 正文里 `1688`/`¥`/`detail.1688.com` 归零 | **PASS**（0 / 0 / 0） |
-| 2 | catalog meta 无价格/来源词、≤155、208 条互不相同、带固定尾句 | **PASS**（0 / 0 / 208 / 208） |
-| 3 | slug 与 robots 没被动过（ID/slug/status 集合、noindex 集合 md5） | **PASS**（两次 md5 相同） |
-| 4 | `/products/` 渲染哈希逐字节一致 | **FAIL**（`e2dc30ec…` → `60727d53…`） |
-| 5 | 被改的对象只能是 208 catalog + `/products/` + 那 1 篇博客 | **PASS**（210 个，集合外 0 个） |
-| 6 | 非 catalog 对象的 meta 一条都没动 | **PASS**（0 个 id 变化） |
-| 7 | indexable 与 postmeta 一致 | **PASS**（不一致 0 条） |
-| 8 | 页面上 `¥` 归零（`/products/` 与 catalog 页） | **PASS**（0 / 0） |
-| 9 | 报价链接可点（`/get-a-quote/` 301→`/inquiry/` 200；页面里 `Get a price` 在） | **PASS** |
+| 1a/1b/1c | 正文 `1688` / `¥` / `detail.1688.com` 归零 | PASS 0 / 0 / 0 |
+| 2a | catalog meta 还有价格/来源词 | PASS 0 |
+| 2b | catalog meta >155 字符 | PASS 0 |
+| 2c | 208 条 meta 两两不同 | PASS 208 / 208 |
+| 2d | 都带 `Custom logo printing, MOQ 500 per design. Samples available.` | PASS 208 |
+| 2e | og-description 与 metadesc 同步 | PASS 0 处不一致 |
+| 3a/3b | ID/slug/status 集合、noindex 集合 | PASS（md5 `0b9937b5…` / `36c1d1f0…` 前后相同） |
+| **4a** | `/products/` 产品卡片数量 | **PASS 24 / 24** |
+| **4b** | 卡片「链接 + 名称」逐条相同 | **PASS md5 `abfa829e…` 前后相同** |
+| **4c/4d/4e** | 渲染里 `¥` / `\u00a5` / `1688` 计数 | **PASS 0 / 0 / 0**（改前 `¥` 0、`\u00a5` 20、`1688` 0） |
+| **4f** | 1440 与 375 改前改后四张截图 | **PASS 4 张**（73,287 / 73,287 / 33,178 / 33,178 B） |
+| 5a | 被改对象数（208 catalog + `/products/` + 1 博客） | PASS 210 |
+| 5b | 集合外被改 | PASS 0 |
+| 6a | 非 catalog/products/博客 的 meta 被改 | PASS 0 |
+| 6b | meta 被改对象数 | PASS 208（`/products/` 与博客本来没有 metadesc 行，所以不是 210） |
+| 7 | indexable 与 postmeta 一致 | PASS 0 处不一致 |
+| 8 | 抽查 5 个 catalog 页渲染里 `¥` 总数 | PASS 0 |
+| 9a | `/get-a-quote/` 跟随跳转后状态 | PASS 200 |
+| 9b | `/products/` 里 `Get a price` 链接 | PASS 51 处 |
 
-**第 4 条为什么必 FAIL（证据，不是猜）**：`template-products-v4` 不是「忽略 `post_content`」——它把正文塞进页面里的那段 `<script>` JSON。删掉 158 个价格 `<p>` 后：
+为什么换口径：生产模板把 `post_content` 塞进页面 `<script>` 的 JSON，删价格必然改字节（308,947 → 301,693 B，差 7,254 B 正好是 158 个 `<p>`），原来那条「渲染哈希逐字节不变」和「`¥` 归零」互斥。新口径保住了「卡片不能变」，把价格归零单独判。
 
-- 数据库正文 264,777 → 254,238 字节；
-- 渲染 HTML 534,303 → 522,438 字节（`evidence/products-before.html` / `products-after.html`），哈希必然变。
+`/products/` 卡片清单已落盘：`evidence/products-cards-before.txt` / `products-cards-after.txt`（各 1,880 B，md5 相同），渲染快照 `products-before-prod.html`（308,947 B）/ `products-after-prod.html`（301,693 B）。
 
-也就是说「正文 `¥` 归零」和「`/products/` 渲染逐字节不变」在同一个模板上互斥，只能取一。现在取归零（判据 8 两个 PASS，任务单 §1 明确要求这些块必须删）。要取相反只能改模板（渲染时过滤），那是改代码不是改内容，需要你点头。
-`/products/` 里还有 1 处 `Listed at` 是模板自带静态文案，不含数字，没删。
+## 6. §3b 与 §3c
 
-## 6. §3b 首页大图（2/2 PASS）
+### 3b 首页大图：2/2 PASS
 
-| 判据 | 结果 | 证据 |
-|---|---|---|
-| 1440 与 375 各一张截图 | **PASS** | `evidence/screens/home-29z-1440.png`（1440×900，271,310 B）、`home-29z-375.png`（375×812，104,483 B）：两档 HTTP 200、无横向溢出、hero 加载成功（naturalWidth 640 / 345），判定数据 `evidence/29z-home-shots.json` |
-| zip / mirror 树 / 装好后三处哈希一致 | **PASS** | 见下表；另：装好的主题 38 个文件与 zip 逐字节一致（0 missing / 0 mismatch） |
-
-| 文件 | zip 内 | mirror 树 | 演练装好后 |
+| 物 | zip 内 | mirror 树 | 演练装好后 |
 |---|---|---|---|
 | `hero.webp` | `6a55801599da73d2bd8148f152f04b469c2bc8076f57b36f1dc64ecc8e623e1e` | 同 | 同 |
 | `hero-480.webp` | `266032c7bdfc0f51351bb1e7b0607ca66e07bb95fc7af1c1a9c6ab5075ee839d` | 同 | 同 |
 
-alt = `Two small cream gift boxes with brown satin ribbon, held in open hands`（图里真实可见：两只米色礼盒、棕色缎带、捧在手上）；全站无 `Supplier product photo`；渲染的 `<img>` 带 `srcset` 480w/1200w。
-像素溯源：`hero.webp` 放大回 1254 与源图 RMSE 2.98、`hero-480` RMSE 5.02 —— 同一张图，不是换图。
-4.0.3 包：791,053 B / 43 条目（38 文件 + 5 目录）/ `7d792ad9…945f7`；`style.css` 与 `functions.php` 都是 4.0.3；`deploy/` 与 `packrivo-wp/` 两份 zip 同哈希。
+首页 1440×900（260,938 B）与 375×812（103,864 B）各一张，`evidence/home-shots/`，两档 HTTP 200、无横向溢出、hero 加载成功；截图里可见两只米色礼盒 + 棕色缎带捧在手上，alt 是 `Two small cream gift boxes with brown satin ribbon, held in open hands`，全站无 `Supplier product photo`。zip 791,053 B / 43 条目 / `7d792ad9…945f7`，`style.css` 与 `functions.php` 都是 4.0.3。
 
-## 7. §3c 死链与字体
+### 3c 死链 + 字体
 
-**主题层（本次改动范围）0 死链**：
+**本地（4.0.3 + 29w 字体补丁）**：`/`、`/de/`、`/products/`、`/services/` 四个页面对 `/rigid-gift-boxes/ /resources/ /packaging-examples/ /pricing/ /sustainability/` 的引用全是 **0**；首页字体 URL 指向父主题 `…/themes/packrivo-static-bridge-1.2.38/packrivo-static/assets/packrivo-inter-latin-v3.woff2`，请求 **200 / `font/woff2` / 34,952 B**；`/de/` 渲染出 `Preisrechner`。
 
-| 原链接 | 现在 | 实测 |
+本地 60 页爬取（`evidence/crawl-29z.json`）：60 页抓到，11 页 404 同样是多语种博客；站内链接去重 **285** 个（页面渲染更慢，超时上调到 60 s、并发降到 6），非 200 **26** 条，全部是演练环境的缺口、不是死链：
+
+- **24 条 `/wp-content/uploads/...`**（`packrivo-scale-20261004` 18 条、`2026/10` 6 条、`r4/product-images` 1 条）—— 演练没灌媒体库；这些 URL 在生产上都是 200；
+- **1 条 `/assets/concept-4-960.webp`** —— 生产 200，演练缺文件，按你的意见本轮不处理；
+- **1 条 `/#customization`** —— 我脚本把 `#fragment` 当 URL 请求的锅，不是站上的链接；
+- 字体那一行显示 404 是**脚本的已知 bug**（把协议相对路径拼成了 `//nginx/...`）；直接 `curl` 同一个 URL 是 **200 / `font/woff2` / 34,952 B**。
+
+**生产侧 60 页爬取（`evidence/crawl-29z-prod.json`）**：60 页全部抓到，**11 页 404 全是 `/<lang>/2026/09/21/jewelry-box-insert-fit-measurements/`**（多语种博客本来没做）；站内链接去重 **1,069** 个，非 200 **7** 条：
+
+| 非 200 | 状态 | 实际原因 |
 |---|---|---|
-| `/resources/`（导航 Resources、面板 Guides） | `/blog/` | `/blog/` 200；首页 `/resources/` 出现 0 次 |
-| `Packaging examples` `<li>` | 删除 | 全站 0 次引用 |
-| `Price index` → `/pricing/` | `/get-a-quote/`，文案 `Price calculator` | 301 → `/inquiry/` 200；首页 `/pricing/` 0 次 |
-| `Rigid gift boxes`（产品分组） | 删除 | 0 次引用 |
-| `Materials and sustainability →` `/sustainability/` | `/customization/` | `/customization/` 200；首页 `/sustainability/` 0 次 |
-| Inter woff2 | 走 29w 补丁（`get_template_directory_uri()`） | 200，`font/woff2`，34,952 B |
+| `/rigid-gift-boxes/` | 404 | 生产跑的是**子主题 4.0.1** 的导航，49 个页面还带着这条；4.0.3 已删 |
+| `/resources/` | 404 | 同上（导航 `Resources` + 面板 `Guides`） |
+| `/packaging-examples/` | 404 | 同上（面板里那条 `<li>`） |
+| `/pricing/` | 404 | 同上（`Price index`） |
+| `/sustainability/` | 404 | 子主题 4.0.1 首页 `Materials and sustainability →`，12 个语种首页都有；4.0.3 已改成 `/customization/` |
+| `/wp-content/themes/packrivo-home-v4/packrivo-static/assets/packrivo-inter-latin-v3.woff2` | 404 | **生产字体是坏的**：mu 里用 `get_stylesheet_directory_uri()`，子主题没这份文件；父主题那条是 200。29w 补丁（RUNBOOK §6.5）改成 `get_template_directory_uri()` 即修 |
+| `/xmlrpc.php?rsd` | 403 | WP 标准 `rel="EditURI"`，生产禁了 xmlrpc，属正常，不算死链 |
 
-`Preisrechner`（de）与 `Price calculator`（en）都在渲染里；11 份字典合并进 uploads（`Price calculator` 11/11）。
+定位证据 `evidence/old-url-sources-prod.json`：每条带命中页面与上下文，例如首页里
+`<a class="pk-nav-link" href="https://www.packrivo.com/resources/">Resources</a>`、`<li><a href="https://www.packrivo.com/rigid-gift-boxes/">Rigid gift boxes</a></li>`。
 
-**60 页爬取**（12 语种 × 首页/`products`/`services`/博客/产品页；脚本 `scripts/29z-browser.mjs`，原始数据 `evidence/crawl-29z.json`）：
+结论：**这 6 处在 4.0.3 + 29w 补丁落地后就没了**（本地已实测 0 引用 + 字体 200）。今天还在，是因为生产还是 4.0.1、也没打字体补丁。
 
-- 站内链接去重 **2,146** 个，非 200 共 **298**：
-  - **284** 条 `/wp-content/uploads/…` —— 演练**没有媒体库**（`uploads/` 只有 `2026/` 与 `packrivo-i18n/`，缺 `catalog-final-20261026`(158)、`packrivo-scale-20261004`(100)、`r4/product-images`(19)、`2026/10`(5)、`packrivo-scheduled-10-20261018`(2)）。这些文件生产上有，属演练缺口，不是死链结论。
-  - **13** 条 `/assets/concept-*.webp` —— 旧静态站导入内容里带的图，全库 754 行引用（首页/产品/案例页都有）。**存量问题**，不在任务单列的五个链接里，要不要本轮一起清请你定。
-  - **1** 条 `/#customization` —— 我脚本归一化的锅（把 `#fragment` 当 URL 请求了），不是站上的链接。
-- 12 个语种的博客 URL 都是 404（`/de/2026/09/21/…`），英文那篇在 `/2026/09/21/jewelry-box-insert-fit-measurements/` 是 200 —— 多语种博客本来没做，既存状态。
-- 字体我第一次脚本把 `//nginx/…` 这种协议相对路径拼错了，报了 404；单独直取是 **200 / `font/woff2` / 34,952 B**（§7 表末行）。
+`/assets/concept-*.webp` 按你的意见本轮不处理（生产 200，演练缺文件）；`/get-a-quote/` 继续用，生产直连 200、演练 301→`/inquiry/` 是环境差异。
 
-结论：**主题与导航层 0 死链 PASS**；「60 页非 200 = 0」在演练环境**不可判定**（媒体库不在演练里）。生产上跑同一条爬取命令才有意义（导完生产库，或直接对 `www.packrivo.com` 只读爬），脚本已写好，改 host/端口即可。
+## 7. 42 个未提交文件：谁写的、怎么处置
 
-## 8. 交付物与哈希
+`git status` + 文件内容 + 时间戳定位：全部是 ARTEX 并行 worker `work#3` 在 19:40–19:56 写的（在我的提交 `ca2433d` 之后），对应意图 #864（dry-run 记录）、#867（并发写 DSH-RESULT）、#868（哈希锁定）。处置：
 
-| 物 | 路径 | sha256 |
+| 文件 | 谁写的 | 处置 |
 |---|---|---|
-| 子主题包 4.0.3 | `deploy/packrivo-home-v4.zip` | `7d792ad9f4e63025e2fce8a640856710ede5fe3b925e9bdaa372a6002bb945f7` |
-| 去价脚本 | `deploy/patches-29z/strip-1688.php` | `bb96e87306948dd74039e35d125e637ad7e6d6beb14cf87ee80fd96212a83308` |
-| 去价包装器 | `deploy/patches-29z/strip-1688.sh` | `0deea313611ff71a760baae5646bcd0252f1cbad5bdb85d0ab3e2953e112ee1e` |
-| 九条判据脚本 | `deploy/verification-29z/scripts/29z-criteria.sh` | `367644719940c0f5e97b37f9a6ae7620ca33e723c47950d1903a19ab05727762` |
-| 打包脚本 | `deploy/verification-29z/scripts/pack-theme-29z.py` | — |
-| 大图脚本 | `deploy/verification-29z/scripts/make-hero-29z.py` | — |
-| 爬取脚本 | `deploy/verification-29z/scripts/29z-browser.mjs` | — |
-| 机制演练记录 | `evidence/strip-1688-mech.log` | — |
-| 判据日志 | `evidence/criteria-29z-seed.log` | — |
-| 删除句子审计 | `evidence/strip-1688-audit.json`（22 句） | — |
-| 基线计数 | `evidence/baseline-counts-seed.txt` | — |
-| 爬取数据 | `evidence/crawl-29z.json` | — |
-| `/products/` 前后 HTML | `evidence/products-before.html` / `products-after.html` | — |
-| 3b 哈希核对 | `evidence/3b-hashes-verify.txt` | — |
-| 首页两档截图数据 | `evidence/29z-home-shots.json` | — |
+| `dsh-out/DSH-RESULT-2026-10-29z.md`（被追加 48 行第二份报告） | worker #867 | **回退**（`git checkout --`），再重写成你现在看的这份 |
+| `evidence/3c-pages/*.html`（60 个，含 11 个被改的 products 页） | worker，在 **seed 库**上抓 | **删除**（已被本轮生产库重跑覆盖，留着是两份口径） |
+| `evidence/strip-1688-dryrun-audit.json`、`strip-1688-dryrun-raw.out` | worker #864 | **删除**（本轮 `strip-1688-audit-provdb.json` 取代） |
+| `deploy/verification-29z/hash-lock-29z.md` | worker #868 | **取值后删除**：字体补丁 `022c5a16…`、打过补丁的 mu `73d43ba0…` 已并入 RUNBOOK §6.5 |
+| `deploy/verification-29z/strip-1688-dryrun-2026-10-29z.md` | worker #864 | **删除**（superseded） |
+| `evidence/29z-home-shots.json`、`3b-hashes-verify.txt`、`hero-29z-outputs.json`、`screens/*.png`、`scripts/29z-home-shots.mjs`、`3c-linkcrawl.mjs`、`29z-strip-1688-dryrun.sh` | worker | **保留提交**（与我的结论一致，是独立证据，不冲突） |
 
-RUNBOOK：`deploy/RUNBOOK-launch.md` 末尾新增 **附录 D · 29z**（装包、去价、九条判据、死链/字体对照、回滚）；zip 哈希在 §5 表与附录 D.1 两处锁定。
+## 8. RUNBOOK 修复（最高优先级，已落地）
 
-## 9. 还没做 / 需要你拍板
+做法：`git show c62bc88:deploy/RUNBOOK-launch.md` 取干净底稿，只用 Python 做三件事，写入用 `io.open(..., encoding='utf-8', newline='')`，全程不碰 `Set-Content`/`Out-File`。脚本 `deploy/verification-29z/scripts/rebuild-runbook-29z.py`（可重跑，自带自检）。
 
-1. **§0 第 1 步**：生产只读导库 —— 等你一句「可以导」。
-2. **判据 4**：`/products/` 渲染哈希与「`¥` 归零」互斥，取哪个你定（当前取归零）。
-3. **13 条 `/assets/concept-*.webp`**：存量死图，要不要本轮一起清。
-4. **多语种博客 404**：既存状态，不在本轮范围。
-5. **§4 生产上线**：没开始。
+| 指标 | c62bc88 底稿 | 现在 |
+|---|---|---|
+| 行数 | 892 | **1016** |
+| ``` 代码块 | 32 个 | **39 个**（底稿 32 个按顺序全保留，行数逐个相同） |
+| U+FFFD | 0 | **0** |
+| §5.2 `theme install` | 独占一行 | **独占一行**（第 482 行） |
 
-## 10. 真跑过的命令（可复现）
+改动只有三处：
 
-```powershell
-# 装包 + 激活（演练）
-docker cp deploy/packrivo-home-v4.zip php:/pkg/packrivo-home-v4.zip
-docker exec php sh -c 'sha256sum /pkg/packrivo-home-v4.zip'              # 7d792ad9…
-docker exec php sh -c 'wp ... theme install /pkg/packrivo-home-v4.zip --force --activate'
-docker exec php sh -c 'wp ... theme list --fields=name,status,version'    # packrivo-home-v4 active 4.0.3
+1. 两处 `49ddbe6f…` → `7d792ad9…`、`796,514` → `791,053`（表里一处、§5.2 注释一处）；
+2. 新增 **§6.5 字体路径补丁（29w）**：为什么打、补丁与打过补丁的 mu 的 sha256（`022c5a16…` / `73d43ba0…`）、`patch -p1 --dry-run` 先验、判据（`grep PACKRIVO_W2_FONT_URL` + 首页字体 URL + `curl` 200 `font/woff2` 34,952 B）、回滚（`cp -a …orig-29w`）；
+3. 末尾 **附录 D · 29z**：D.1 锁定表（zip/脚本/判据脚本/字体补丁 sha256，脚本指纹生成时现算）、D.2 装包、D.3 去价（含 `wp eval-file` 不认 `--dry-run` 的坑与兜底 `<td>` 规则）、D.4 meta 来源结论、D.5 复测（判据 4 新口径）、D.6 回滚。
 
-# 去价：前态快照 → apply → 判据 → 幂等 → 复位
-docker cp deploy/verification-29z/scripts/strip-1688-rehearsal.sh php:/tmp/29z-run.sh
-docker exec php sh /tmp/29z-run.sh
+第 5.2 步现在长这样：
 
-# 九条判据（干净窗口：复位 → before → apply → compare）
-docker cp deploy/verification-29z/scripts/29z-criteria.sh php:/tmp/29z-criteria.sh
-docker exec php sh /tmp/run-criteria.sh
-
-# 3b 截图 + 3c 爬取
-node deploy/verification-29z/scripts/29z-browser.mjs <evidence-dir>
 ```
+479: # 5.2 装 + 启用
+480: docker cp "$PKG/packrivo-home-v4.zip" php:"$PKGC/packrivo-home-v4.zip"
+481: docker exec php sha256sum "$PKGC/packrivo-home-v4.zip"    # 必须 7D792AD9…
+482: $WPCLI theme install  "$PKGC/packrivo-home-v4.zip" --force
+483: $WPCLI theme activate packrivo-home-v4
+```
+
+## 9. 提交前门禁（新增，每次提交都跑）
+
+`deploy/verification-29z/scripts/check-commit-utf8-29z.py`，`git add` 之后跑，逐条打印：
+
+- **G1a/G1b**：本次提交里所有 `.md/.php/.json/.csv/.sh/.txt/.html` 严格 UTF-8 解码 + 无 U+FFFD；
+- **G2a/G2b**：RUNBOOK 行数与每个 ``` 代码块行数相对 `c62bc88` 只增不减（子序列匹配，允许中间插新块）；
+- **G3a/G3b**：§5.2 的 `theme install` 独占一行，且上一行是 `7D792AD9`；
+- **G4**：附录 D.1 锁定的 sha256 与磁盘真实文件逐一相同（防「手册写一个版本、仓库里是另一个」）。
+
+## 10. 交付物与哈希
+
+| 物 | 路径 | 字节 | sha256 |
+|---|---|---|---|
+| 子主题包 4.0.3 | `deploy/packrivo-home-v4.zip` | 791,053 | `7d792ad9f4e63025e2fce8a640856710ede5fe3b925e9bdaa372a6002bb945f7` |
+| 去价脚本 | `deploy/patches-29z/strip-1688.php` | 见 RUNBOOK D.1 | 本轮改过（新增 `<td>` 兜底），D.1 已同步 |
+| 去价包装器 | `deploy/patches-29z/strip-1688.sh` | 1,730 | `0deea313611ff71a760baae5646bcd0252f1cbad5bdb85d0ab3e2953e112ee1e` |
+| 九条判据脚本 | `deploy/verification-29z/scripts/29z-criteria.sh` | 见 RUNBOOK D.1 | 判据 4 已改写 |
+| 生产导出记录 | `evidence/prod-export-29z.txt` | — | 见 §1 |
+| 基线计数 | `evidence/baseline-counts-prod.txt` | 2,907 | — |
+| 真跑日志 | `evidence/strip-1688-apply-prod.log` | 6,204 | — |
+| 判据日志 | `evidence/criteria-29z-prod.log` | 4,537 | — |
+| 删除句子审计 | `evidence/strip-1688-audit-provdb.json` | 10,451 | — |
+| 生产爬取 | `evidence/crawl-29z-prod.json` | 12,941 | — |
+| 旧链接来源定位 | `evidence/old-url-sources-prod.json` | 1,367 | — |
+| `/products/` 前/后 | `evidence/products-before-prod.html` / `products-after-prod.html` | 308,947 / 301,693 | — |
+| 卡片清单 | `evidence/products-cards-before.txt` / `products-cards-after.txt` | 1,880 / 1,880 | — |
+| 四张判据截图 | `evidence/products-shots/{before,after}-{1440,375}.png` | — | — |
+| 首页两档截图 | `evidence/home-shots/home1440x375-{1440,375}.png` | — | — |
+
+## 11. 还没做 / 需要你拍板
+
+1. 生产上线 4.0.3 + 打 29w 字体补丁 + 跑 RUNBOOK D.3 去价 —— 都没做，等你放行。
+2. 3c 的 5 条旧链接与字体 404 是「生产还停在 4.0.1」造成的，本轮按要求只修主题层，没动生产内容。
+3. `/assets/concept-*.webp`：按你的意见本轮不处理。
+4. 多语种博客 404：既存状态，不在 29z 范围。
+5. **没有开始 29y**。
