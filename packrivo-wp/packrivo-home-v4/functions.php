@@ -7,7 +7,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('PKV4_VERSION', '4.0.2');
+define('PKV4_VERSION', '4.0.3');
 
 function pkv4_assets()
 {
@@ -130,7 +130,6 @@ function pkv4_fallback_menu()
         ['Customization', '/customization/'],
         ['Services', '/services/'],
         ['Blog', '/blog/'],
-        ['Resources', '/resources/'],
         ['About', '/about/'],
     ];
     echo '<ul class="pk-nav-list">';
@@ -150,7 +149,6 @@ function pkv4_product_groups()
                 ['Jewelry boxes', '/jewelry-boxes/'],
                 ['Foldable gift boxes', '/foldable-gift-boxes/'],
                 ['Mailer boxes', '/mailer-boxes/'],
-                ['Rigid gift boxes', '/rigid-gift-boxes/'],
             ],
         ],
         [

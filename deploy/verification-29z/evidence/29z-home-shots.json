@@ -1,0 +1,28 @@
+[
+ {
+  "viewport": "1440x900",
+  "title": "Custom Packaging Sourcing for Small Brands | Packrivo",
+  "httpStatus": 200,
+  "heroAlt": "Two small cream gift boxes with brown satin ribbon, held in open hands",
+  "heroSrc": "http://nginx/wp-content/themes/packrivo-home-v4/assets/img/hero.webp",
+  "heroNaturalWidth": 640,
+  "heroRenderedWidth": 500.453125,
+  "scrollWidth": 1440,
+  "innerWidth": 1440,
+  "shot": "E:\\破甲工作区\\packrivo-backup\\deploy\\verification-29z\\evidence\\screens\\home-29z-1440.png",
+  "overflow": false
+ },
+ {
+  "viewport": "375x812",
+  "title": "Custom Packaging Sourcing for Small Brands | Packrivo",
+  "httpStatus": 200,
+  "heroAlt": "Two small cream gift boxes with brown satin ribbon, held in open hands",
+  "heroSrc": "http://nginx/wp-content/themes/packrivo-home-v4/assets/img/hero-480.webp",
+  "heroNaturalWidth": 345,
+  "heroRenderedWidth": 327,
+  "scrollWidth": 375,
+  "innerWidth": 375,
+  "shot": "E:\\破甲工作区\\packrivo-backup\\deploy\\verification-29z\\evidence\\screens\\home-29z-375.png",
+  "overflow": false
+ }
+]

@@ -92,16 +92,15 @@ $quote_url = home_url($pk_lang_prefix . '/get-a-quote/');
         </li>
 
         <li class="pk-has-panel">
-          <a class="pk-nav-link" href="<?php echo esc_url(home_url('/resources/')); ?>">Resources</a>
+          <a class="pk-nav-link" href="<?php echo esc_url(home_url('/blog/')); ?>">Resources</a>
           <button class="pk-caret" type="button" aria-expanded="false" aria-controls="pk-panel-resources" aria-label="Open Resources menu" data-pk-toggle>
             <svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
           </button>
           <div class="pk-panel pk-panel-sm" id="pk-panel-resources" hidden>
             <ul class="pk-panel-list">
-              <li><a href="<?php echo esc_url(home_url('/resources/')); ?>">Guides</a></li>
-              <li><a href="<?php echo esc_url(home_url('/packaging-examples/')); ?>">Packaging examples</a></li>
+              <li><a href="<?php echo esc_url(home_url('/blog/')); ?>">Guides</a></li>
               <li><a href="<?php echo esc_url(home_url('/compare/')); ?>">Compare formats</a></li>
-              <li><a href="<?php echo esc_url(home_url('/pricing/')); ?>">Price index</a></li>
+              <li><a href="<?php echo esc_url(home_url('/get-a-quote/')); ?>">Price calculator</a></li>
             </ul>
           </div>
         </li>

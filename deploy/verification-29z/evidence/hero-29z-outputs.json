@@ -1,0 +1,32 @@
+{
+ "source": "E:\\破甲工作区\\packrivo-backup\\deploy\\hero-29z\\hero-source-repaired.webp",
+ "source_sha256": "aaac86a960d4f068bf3166baa9e61581c4f7667046c1635cdfea26165f90a902",
+ "source_size": [
+  1254,
+  1254
+ ],
+ "quality": 82,
+ "method": "center-square crop + LANCZOS",
+ "outputs": [
+  {
+   "file": "hero.webp",
+   "path": "E:\\破甲工作区\\packrivo-backup\\packrivo-wp\\packrivo-home-v4\\assets\\img\\hero.webp",
+   "size": [
+    1200,
+    1200
+   ],
+   "bytes": 33758,
+   "sha256": "6a55801599da73d2bd8148f152f04b469c2bc8076f57b36f1dc64ecc8e623e1e"
+  },
+  {
+   "file": "hero-480.webp",
+   "path": "E:\\破甲工作区\\packrivo-backup\\packrivo-wp\\packrivo-home-v4\\assets\\img\\hero-480.webp",
+   "size": [
+    480,
+    480
+   ],
+   "bytes": 8866,
+   "sha256": "266032c7bdfc0f51351bb1e7b0607ca66e07bb95fc7af1c1a9c6ab5075ee839d"
+  }
+ ]
+}

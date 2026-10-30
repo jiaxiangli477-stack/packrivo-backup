@@ -71,7 +71,8 @@ $faq = [
       </div>
     </div>
     <figure class="pk-hero-media">
-      <img src="<?php echo esc_url($img . '/hero.webp'); ?>" alt="Rigid gift box with insert, studio shot" width="1200" height="1200" loading="eager" />
+      <?php // 图里没有内衬、也不是棚拍实物：alt 只写看到的两个奶油色礼盒与棕色缎带。 ?>
+      <img src="<?php echo esc_url($img . '/hero.webp'); ?>" alt="Two small cream gift boxes with brown satin ribbon, held in open hands" width="1200" height="1200" loading="eager" />
       <figcaption class="pk-hero-card">
         <p class="pk-mono">Rigid magnetic box · 9.5×9.5×4 cm</p>
         <?php
@@ -196,7 +197,7 @@ $faq = [
       <p class="pk-eyebrow">Materials</p>
       <h2 class="pk-h2">Say what the box is made of, in numbers</h2>
       <p class="pk-lede">Recycled content, board weight, coating and end-of-life route are published per structure — because “eco-friendly” is not a specification.</p>
-      <a class="pk-more" href="<?php echo esc_url(home_url('/sustainability/')); ?>">Materials and sustainability →</a>
+      <a class="pk-more" href="<?php echo esc_url(home_url('/customization/')); ?>">Materials and sustainability →</a>
     </div>
     <table class="pk-table pk-table-plain">
       <thead><tr><th>Board</th><th>Recycled</th><th>Use</th></tr></thead>
