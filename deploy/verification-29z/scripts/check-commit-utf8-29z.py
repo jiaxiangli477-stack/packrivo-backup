@@ -8,7 +8,7 @@
 检查项：
   G1 本次提交里所有 .md/.php/.json/.csv/.sh/.txt/.html 文件都能按 UTF-8 严格解码，且不含 U+FFFD
   G2 RUNBOOK 行数、每个 ``` 代码块的行数，相对 c62bc88 只增不减（按子序列匹配，允许中间插新块）
-  G3 RUNBOOK 第 5.2 步的 theme install 单独占一行，且哈希是 7D792AD9
+  G3 RUNBOOK 第 5.2 步的 theme install 单独占一行，且哈希是 3279DC61
   G4 RUNBOOK 附录 D.1 表里锁定的 sha256 与磁盘上的真实文件一致
 """
 import io
@@ -16,6 +16,13 @@ import os
 import re
 import subprocess
 import sys
+
+# 控制台编码不一定是 UTF-8（GBK 下打印 ⛳ 会 UnicodeEncodeError），先强制 stdout/stderr 走 UTF-8
+for _s in (sys.stdout, sys.stderr):
+    try:
+        _s.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
 
 REPO = r"E:\破甲工作区\packrivo-backup"
 BASE_REV = "c62bc88"
@@ -104,7 +111,7 @@ def main():
     ok_inst = bool(inst) and all(l.strip().startswith("$WPCLI theme install") for l in (lines[i] for i in inst))
     ck("G3a theme install 独占一行（%d 处）" % len(inst), ok_inst)
     near = [lines[i - 1].strip() for i in inst if i > 0]
-    ck("G3b 上一行哈希是 7d792ad9（大小写不敏感）", all("7d792ad9" in l.lower() for l in near), " / ".join(l[:70] for l in near[:2]))
+    ck("G3b 上一行哈希是 3279dc61（大小写不敏感）", all("3279dc61" in l.lower() for l in near), " / ".join(l[:70] for l in near[:2]))
 
     print("== 5.2 步原文 ==")
     start = next((i for i, l in enumerate(lines) if l.strip().startswith("# 5.2")), None)
