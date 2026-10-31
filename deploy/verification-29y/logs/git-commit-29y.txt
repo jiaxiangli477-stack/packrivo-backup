@@ -1,0 +1,19 @@
+# 29y 提交与 push 记录（2026-10-30 本地时间 / 2026-10-31 UTC）
+
+commit: f3b9bec62811b4c2b126c07a1cdb7d242730012b
+branch: main
+remote: origin = https://github.com/jiaxiangli477-stack/packrivo-backup.git
+push:   76a767a..f3b9bec  main -> main  (OK)
+remote-verify: git ls-remote origin main = f3b9bec62811b4c2b126c07a1cdb7d242730012b
+author: jiaxiangli477-stack <jiaxiangli477@gmail.com>
+date:   2026-10-30 17:53:10 -0700
+message: feat(29y): 收官交付 —— round2/merge 落盘、残留清零、门禁 7/7 复证(00:51Z)、唯一一次生产只读导出(sha256 双端一致)、证据归档与 DSH §18
+stat:    205 files changed, 96892 insertions(+), 15565 deletions(-)
+excluded: deploy/verification-29y/export/（生产导出本地副本，.gitignore 忽略，不提交）、词典 *.pre-*.bak、tasks 工作目录产物
+
+# 交付内容要点
+- 门禁：deploy/verification-29y/logs/gates-29y.txt = TOTAL 7 PASS / 0 FAIL（2026-10-31T00:51:34Z 复核版）
+- 生产只读导出：mysql 容器 mysqldump 只读直导 www_packrivo_com，35,170,138 B，
+  sha256 = 3007fb4aef2d2af4a5251d1196494ea12e6d5a9cd493e13cb2cddcc4bafd2820（远端=本机）
+- 证据：deploy/verification-29y/（round2/ csv/ logs/ evidence/ export/）+ evidence/prod-export-29y.txt
+- DSH：dsh-out/DSH-RESULT-2026-10-29y.md 新增 §18（§19 补记随后提交）

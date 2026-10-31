@@ -638,3 +638,9 @@ ID 3648  PKQ-48FGX  "PKQ-48FGX · Packrivo 29y rehearsal"  2026-10-30 18:13:12 U
 - **git 状态复核（已确认）**：工作区仅含 29y 预期改动——11 语种词典 deploy/i18n-merged/*-dict.json、主题 packrivo-home-v4（llms.txt/报价引擎/JSON-LD/quote 页等）、inc/quote-page.php、inc/structured-data.php、RUNBOOK-29y.md、artifacts-29y/、scripts-29y/、i18n-packets/、verification-29y/、DSH 本文件、.gitignore（新增 export/ 忽略）；已扫描无临时密钥/无关产物；词典 .pre-*.bak 与 tasks 目录工作产物不纳入提交。
 - **提交与 push**：见下一节补记（commit id / 分支 / 远端 / push 结果）。
 - **剩余状态**：除提交与 push（见下一节补记）外全部完成——round2/merge/残留清零/门禁 7/7/生产导出/归档/DSH §18 均闭环；本轮单线程、未派 worker。
+
+## 19. 提交与 push 补记（意图#989 收尾，2026-10-31T00:53Z 左右）
+
+- 提交 1（交付主体）：commit `f3b9bec62811b4c2b126c07a1cdb7d242730012b`，分支 `main`，远端 `origin = https://github.com/jiaxiangli477-stack/packrivo-backup.git`，push `76a767a..f3b9bec  main -> main` OK；205 files changed, 96,892 insertions(+), 15,565 deletions(-)；`git ls-remote origin main` = f3b9bec… ✓（远端复核一致）。
+- 提交 2（本补记 + `logs/git-commit-29y.txt`）：紧随其后，含 commit id / 分支 / 远端 / push 结果的完整记录。
+- 排除项：`deploy/verification-29y/export/`（生产导出本地副本，.gitignore 忽略）、词典 `*.pre-*.bak`、tasks 目录工作产物——均不进入交付。
