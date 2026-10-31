@@ -1,0 +1,55 @@
+29y 第 3 条 · 德语（de）完场记录
+生成时间：2026-10-30
+执行环境：rehearsal 栈（php 容器内 curl 8.14 --resolve www.packrivo.com:443:172.19.0.1）
+
+一、口径
+- 扫描器：deploy/verification-29y/scripts/scan-main-english-29y.php（<main> 内英文句子级计数）
+- 词典：wp-content/uploads/packrivo-i18n/de-dict.json，mu-plugin packrivo-i18n.php 做整串替换
+- 验收：单页 <main> 内残留英文 ≤5 词（品牌/单位/代号不算；外语博客索引上的英文标题不算）
+- 页面全集：德语 126 个 URL（/tmp/de-urls.txt，取自本轮生产导出的 sitemap），全部 HTTP 200 且找到 <main>
+
+二、节点抽取（两条路）
+1) extract-en-nodes-29y.php：按 <main> 文本节点抽取，节点长度上限 600 字符 → 得到 292 个唯一待译节点
+2) dump-full-nodes-29y.php：对残留最多的 9 页做「不截断」导出 → 补回 2 个超长节点
+   （725 字符的 brief-builder 说明、675 字符的珠宝简报表单标签行）
+   截断串当词典键永远匹配不上，这是先前两页卡住的真实原因。
+
+三、每批实测（每批：翻译 → apply-translation-packets-29y.py → docker cp → 复扫）
+  批次   新增 block 键   de-dict block 键数   >5 词页面   残留词合计
+  起始         —              6296             97          7098
+  第 1 批     +41             6337              —            —
+  第 2 批     +43             6382              —            —
+  第 3 批     +43             6425              —            —
+  第 4 批     +38             6463              —            —
+  第 5 批     +38             6777              9           183
+  尾包        +8              6785              0             0
+
+四、最终复扫（9 页逐页，0 残留）
+  /de/privacy/                                   0
+  /de/                                           0
+  /de/product-regular-slotted-shipping-carton/   0
+  /de/services/                                  0
+  /de/product-collapsible-magnetic-gift-box/     0
+  /de/product-folding-carton/                    0
+  /de/textile-jewelry-pouch/                     0
+  /de/windowed-folding-carton/                   0
+  /de/guide-jewelry-insert-fit/                  0
+  合计残留 0 词，超阈值页面 0
+
+  结论：de 126/126 页 ≤5 词（全页清零），达到第 3 条验收线。
+
+五、apply 脚本的英文误判修正（本轮真实踩到）
+  德语译文里 "in"（介词）、"was"（疑问词）、"will"（第一人称）都是合法德语词，
+  旧检查把它们当英文功能词 ⇒ 两条正经德语译文被判 FAIL 丢掉（批次 1 首次运行即触发）。
+  修法：EN_STOP 之外加 LOCAL_STOP（de/nl/fr/es/it/pt 各自的本族词表），
+  判定时把「本族词表里也有的词」从英文命中里扣掉。
+  修正后同一批重跑：新增 2，FAIL 0，无内容丢失。
+
+六、复现命令
+  php deploy/verification-29y/scripts/scan-main-english-29y.php /tmp/de-urls.txt /tmp/de-after.jsonl 172.19.0.1
+  python deploy/verification-29y/scripts/apply-translation-packets-29y.py <packets> deploy/i18n-merged de
+  docker cp deploy/i18n-merged/de-dict.json php:/var/www/html/www.packrivo.com/wordpress/wp-content/uploads/packrivo-i18n/de-dict.json
+
+七、尚未完成
+- it / fr / pt / es / nl / ja / ko / ar / zh-CN / zh-TW 共 10 个语言未做（it、fr 节点抽取已在跑）
+- 全量 1386 页复扫未做（等所有语言译完再一次性跑，约 30 分钟）

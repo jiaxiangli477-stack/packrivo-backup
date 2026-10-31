@@ -1,0 +1,75 @@
+29y 加固实测记录（换行/编码/门禁/本族词表/负向验证/版本号）
+时间：2026-10-30
+仓库：E:\破甲工作区\packrivo-backup
+环境：演练栈（web/php/mysql/redis；php 容器内 curl --resolve www.packrivo.com:443:172.19.0.1）
+
+一、LF 恢复（9 个被 PowerShell 写成 CRLF 的文件）
+修复工具：deploy/verification-29y/scripts/normalize-lf-29y.py（encoding="utf-8", newline="\n"）
+  deploy/i18n-merged/ar-dict.json                 CRLF 7691 → 0
+  deploy/i18n-merged/de-dict.json                 CRLF 8258 → 0
+  deploy/i18n-merged/ja-dict.json                 CRLF 7691 → 0
+  deploy/i18n-merged/ko-dict.json                 CRLF 7691 → 0
+  deploy/i18n-merged/zh-CN-dict.json              CRLF 7742 → 0
+  deploy/i18n-merged/zh-TW-dict.json              CRLF 7691 → 0
+  packrivo-wp/packrivo-home-v4/assets/site.css    CRLF 1101 → 0
+  packrivo-wp/packrivo-home-v4/front-page.php     CRLF  305 → 0
+  packrivo-wp/packrivo-home-v4/template-products-v4.php CRLF 1 → 0
+
+二、词典整文件重排的根因与修法
+根因：apply-translation-packets-29y.py 写回用 json.dump(indent=1, sort_keys=True)，桶序被重排成 attr/block/text/title，
+      缩进与仓库里 2 空格不一致 ⇒ git diff 变成整份文件重写（de-dict.json 曾显示 15994 行变动）。
+修法：新增 deploy/verification-29y/scripts/rebuild-dicts-from-head-29y.py
+      以 HEAD 原文为底（桶序 title→attr→block→text），桶尾追加新增键，定点替换被改旧键，
+      写回 indent=2 / sort_keys=False / newline="\n"，并在写完后自检 BOM 与 CRLF。
+重建结果（每个语种 追加 / 改旧 / 总键）：
+  ar 6/0/7681   de 521/5/8248   es 6/0/7733   fr 412/3/8146   it 6/0/7735   ja 6/0/7681
+  ko 6/0/7681   nl 6/0/7739    pt 6/0/7739   zh-CN 6/0/7732  zh-TW 6/0/7681
+git diff --stat 现在只剩真实改动：
+  deploy/i18n-merged/de-dict.json | 540 ++++-         deploy/i18n-merged/fr-dict.json | 426 ++++-
+  其余 9 个词典各 14~15 行                             18 files changed, 1124 insertions(+), 71 deletions(-)
+
+三、residual-english-29y.csv 去 BOM
+deploy/verification-29y/evidence/residual-english-29y.csv：BOM 有→无，CRLF 622→0，622 行内容不变
+deploy/verification-29y/evidence/residual-english-29y-unique.json：CRLF 1195→0
+
+四、门禁两条新判据（deploy/verification-29y/scripts/check-commit-utf8-29y.py）
+对「git diff HEAD + --cached + 未跟踪」全集逐文件判定：
+  (1) 可按 UTF-8 严格解码   (2) 首三字节不是 EF BB BF   (3) 无 CRLF、无孤立 CR
+  (4) .json 必须能解析        (5) .csv 必须读得出表头
+首跑真实抓出 16 个 FAIL（4 个 UTF-16LE 日志、一批 CRLF 的 CSV/JSON、一个 __pycache__/*.pyc），
+用 scripts/fix-log-encoding-29y.py 按 BOM 判断真实编码逐个转回 UTF-8+LF（内容不动）后：
+  合计 PASS 73 / FAIL 0 / SKIP 24（共 97 个待提交文件）
+
+五、LOCAL_STOP 词表入仓
+deploy/verification-29y/i18n/local-stop.json —— de/nl/fr/es/it/pt 六张表，只收本族功能词。
+apply-translation-packets-29y.py 改为从这里加载（代码内不再各写一份）。
+起因：de 批次 1 首跑把 'in / was / will' 数成英文功能词，判掉 2 条正经德语译文；改为「先扣本族词，再数英文功能词」。
+
+六、负向验证
+1) 残留英文检查  scripts/negative-residual-29y.py de
+   ① 注入前 /de/ 残留 0 词（期望 ≤5）
+   ② 注入英文长句后残留 53 词（期望 >5 ⇒ 检查必须报 FAIL）—— 报 FAIL，符合预期
+   ③ 还原词典后残留 0 词（期望 0）
+   结论 PASS
+2) 编码门禁      scripts/negative-gate-29y.py
+   ① 原始文件：PASS … UTF-8 无 BOM，纯 LF
+   ② 塞 BOM 后：FAIL … 带 BOM
+   ③ 改 CRLF 后：FAIL … 含 CRLF 53 处
+   ④ 还原后：合计 PASS 73 / FAIL 0
+   结论 PASS
+
+七、子主题版本 4.0.5 → 4.0.6（4.0.4 内容零丢失）
+functions.php: define('PKV4_VERSION', '4.0.6')；style.css: Version: 4.0.6
+php -l functions.php / inc/structured-data.php / inc/quote-page.php → 三处 No syntax errors
+4.0.4 提交 1634c64 下主题 38 个文件，与当前树（38 已跟踪 + 2 未跟踪）求差为空 ⇒ 缺失 0 个
+演练实测 /de/：HTTP 200、137444 B、ver=4.0.6 ×3、packrivo-home-v4/assets/site.css?ver=4.0.6
+容器内 functions.php / style.css md5 与宿主一致（4d160aac… / 1f033397…）
+
+八、本轮新增脚本清单（deploy/verification-29y/scripts/）
+  normalize-lf-29y.py           单文件 BOM 去除 + LF 规范化
+  rebuild-dicts-from-head-29y.py 以 HEAD 为底重建词典（保住 diff 可读）
+  fix-log-encoding-29y.py       UTF-16LE/CRLF → UTF-8/LF
+  check-commit-utf8-29y.py     提交前字节级门禁
+  negative-residual-29y.py     残留英文检查的负向验证
+  negative-gate-29y.py         编码门禁的负向验证
+  dump-full-nodes-29y.php      不截断导出文本节点（超长节点专用）

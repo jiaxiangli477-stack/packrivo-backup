@@ -1,0 +1,37 @@
+29y 第 3 项：11 语种 × <main> 残留英文扫描（改前基线）
+=====================================================
+扫描时间   2026-10-30 12:08–13:35 UTC（容器内 4 分片并行，php-fpm 单页约 5 秒）
+范围       11 个语种 sitemap 全部 URL = 1386 条（每语种 126 条；任务单写的 132 条与 sitemap 差 6 条，
+           多出的 6 条不在任何 sitemap 里，本轮按 sitemap 全集扫，差额记在这里）
+方法       scan-main-english-29y.php：取 <main> 内可见文字 → 按句判定英文（英文功能词≥2 且
+           多于本语种功能词）→ 统计 ASCII 词，扣掉品牌名/单位/代码
+输入自证   1386 条全部 http=200、全部命中 <main>、0 条异常
+结果       残留 >5 词    1049 页
+           残留 0–5 词     15 页
+           残留 0 词       322 页
+           合计           1386 页
+唯一英文片段 1093 个（出现 3649 次），片段×语种对约 2500+（这就是要翻的条数）
+残留词分布   中位数 69 词/页，最大 344 词/页
+语种分布     ar 96 / de 97 / es 96 / fr 93 / it 93 / ja 96 / ko 96 / nl 97 / pt 93 / zh-CN 96 / zh-TW 96
+
+高频残留片段（例）
+  64 次  final materials, production details and sample scope are agreed for the project.
+  18 次  Each group has its own specification pages.
+   5 次  We help small jewelry, candle and gift brands define packaging, compare independent
+          supplier proposals and review samples.
+   5 次  PET is one possible material direction for this concept, not a supplier-confirmed resin or grade.
+
+清单       deploy/verification-29y/csv/residual-english-before-29y.csv（1049 行，含语种/URL/残留词数/
+           片段数/残留词/前两句原文）
+异常清单   deploy/verification-29y/csv/residual-english-before-29y-anomalies.csv（本轮 0 行）
+
+结论（重要）
+------------
+残留主体不是新子主题的模板串，而是**进口时就只有英文的正文**：产品概念段、关于页、部分
+指南页在 11 个语言版本里都是同一段英文。按每个片段每语种编一条词典来算，需要约 2500+
+条译文（约 6.8 万英文词）。本轮把清单、判定器、补词工具做齐，译文本身需要单独排工作量。
+
+与本项相关的两个已确认事实
+  1. 子主题模板里确实有一处固定英文没进词典：产品卡片底部 "from $X / unit · at 500 pcs ·
+     L×W×H cm · Configure →"（11 语种目录页都出现）；
+  2. /de/cases/ 这类页面已经是 0 残留，说明管线本身是通的，缺的是词条。

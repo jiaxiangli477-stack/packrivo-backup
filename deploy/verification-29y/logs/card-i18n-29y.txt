@@ -1,0 +1,13 @@
+  ar     block 键数 6270
+  de     block 键数 6270
+  es     block 键数 6272
+  fr     block 键数 6272
+  it     block 键数 6272
+  ja     block 键数 6270
+  ko     block 键数 6270
+  nl     block 键数 6272
+  pt     block 键数 6272
+  zh-CN  block 键数 6270
+  zh-TW  block 键数 6270
+新增 0 条，已存在 33 条，冲突 0 条
+PASS 11 语种的卡片/价格条模板键齐全

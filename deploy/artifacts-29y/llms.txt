@@ -1,0 +1,110 @@
+# Packrivo
+
+> Packaging sourcing and project coordination for small jewelry, candle and gift brands. Based in Shenzhen, China. We prepare specifications, compare supplier quotations and review samples. Production feasibility, pricing, MOQ, lead time and sample results require supplier confirmation.
+
+## Key facts
+
+- Minimum order quantity: 500 pieces per design.
+- Coordination fee: 8–15%, with the calculation basis agreed in writing before paid work starts.
+- Typical lead times: stock jewelry boxes ship in 1–15 days; custom printed gift boxes and mailers take about 5–30 days after artwork approval.
+- Sample lead time: confirmed per project with the supplier.
+- Production lead time: confirmed per project after sample approval.
+- Location: Shenzhen, China.
+- Service scope: specification preparation, supplier quotation comparison, sample review, production coordination.
+- Not a factory: Packrivo coordinates sourcing and does not present itself as a manufacturer.
+
+## Reference prices (from the quote builder)
+
+Every unit price below is computed by the same engine that drives the quote builder at https://www.packrivo.com/get-a-quote/ — the tables in `pricing.json`, the quantity ladder and the size factor. No figure on this page is written by hand.
+
+| Structure | Size | Material | Print & finish | Quantity | Unit price (USD) |
+|---|---|---|---|---|---|
+| Rigid magnetic jewelry box | 9.5×9.5×4 cm | rigid board | full-colour print, matte | 500 | $2.83 |
+| Rigid magnetic jewelry box | 9.5×9.5×4 cm | rigid board | full-colour print, matte | 1,000 | $2.34 |
+| Printed mailer box | 30×22×12 cm | kraft corrugated | full-colour print, matte | 500 | $2.48 |
+
+Card prices (500 pieces, size as shown on the product card, full-colour print, matte):
+
+- [Custom Drawer Jewelry Boxes with Logo](https://www.packrivo.com/product-drawer-jewelry-box/) — 9.5×9.5×4 cm, from $2.83 per unit.
+- [Custom Lid-and-Base Jewelry Boxes](https://www.packrivo.com/product-lid-and-base-jewelry-box/) — 9.5×9.5×4 cm, from $2.83 per unit.
+- [Custom Jewelry Boxes with Fitted Inserts](https://www.packrivo.com/product-jewelry-box-with-insert/) — 9.5×9.5×4 cm, from $2.83 per unit.
+- [Custom Window Lid Rigid Boxes](https://www.packrivo.com/product-window-lid-rigid-gift-box/) — 9.5×9.5×4 cm, from $2.83 per unit.
+- [Custom Hinged Rigid Gift Boxes](https://www.packrivo.com/product-hinged-nonmagnetic-rigid-box/) — 9.5×9.5×4 cm, from $2.83 per unit.
+- [Custom Hinged Lid Boxes with Logo](https://www.packrivo.com/product-corrugated-roll-end-hinged-lid/) — 30×22×12 cm, from $2.48 per unit.
+- [Custom Paper Gift Bags with Logo](https://www.packrivo.com/product-euro-tote-paper-carrier/) — 18×8×22 cm, from $1.63 per unit.
+- [Custom SOS Paper Bags Bulk](https://www.packrivo.com/product-sos-paper-gift-bag/) — 18×8×22 cm, from $1.63 per unit.
+
+**Basis for every price above:** ex-works Shenzhen; includes full-colour print, matte lamination and the plate and die setup spread over the run; excludes freight, duties, sampling and the 8–15% sourcing fee. Prices are model output, not a supplier quotation — the supplier confirms the final price after specification and artwork. Generated 2026-10-30.
+
+## Products
+
+### Jewelry boxes
+- [Rigid Magnetic Jewelry Box](https://www.packrivo.com/product-magnetic-jewelry-box/): rigid box, hinged lid, separate base.
+- [Drawer Jewelry Box](https://www.packrivo.com/product-drawer-jewelry-box/): two-piece rigid drawer construction.
+- [Lid and Base Jewelry Box](https://www.packrivo.com/product-lid-and-base-jewelry-box/)
+- [Jewelry Box with Insert](https://www.packrivo.com/product-jewelry-box-with-insert/)
+- [Pillow Jewelry Box](https://www.packrivo.com/product-pillow-jewelry-box/)
+- [Shoulder Neck Rigid Box](https://www.packrivo.com/product-shoulder-neck-rigid-box/)
+
+### Gift boxes
+- [Collapsible Magnetic Gift Box](https://www.packrivo.com/product-collapsible-magnetic-gift-box/)
+- [Foldable Lid and Base Box](https://www.packrivo.com/product-foldable-lid-base-box/)
+- [Window Lid Rigid Gift Box](https://www.packrivo.com/product-window-lid-rigid-gift-box/)
+- [Book Style Rigid Presentation Box](https://www.packrivo.com/product-book-style-rigid-presentation-box/)
+- [Folded Tray Sleeve Box](https://www.packrivo.com/product-folded-tray-sleeve-box/)
+
+### Mailer boxes
+- [Mailer Box with Insert](https://www.packrivo.com/product-mailer-with-insert/)
+- [Front-Tuck Mailer](https://www.packrivo.com/product-front-tuck-mailer/)
+- [Corrugated Book Wrap Mailer](https://www.packrivo.com/product-corrugated-book-wrap-mailer/)
+- [Rigid Paperboard Postal Envelope](https://www.packrivo.com/product-rigid-paperboard-postal-envelope/)
+
+### Labels
+- [Sheet Labels](https://www.packrivo.com/product-sheet-labels/)
+- [Rectangle Roll Labels](https://www.packrivo.com/product-rectangle-roll-labels/)
+- [Coated Labels](https://www.packrivo.com/product-coated-labels/)
+
+### Inserts
+- [Die Cut Insert](https://www.packrivo.com/product-die-cut-insert/)
+- [EVA Foam Holder](https://www.packrivo.com/product-eva-foam-holder/)
+- [Flocked Foam Holder](https://www.packrivo.com/product-flocked-foam-holder/)
+- [Paperboard Grid Divider](https://www.packrivo.com/product-paperboard-grid-divider/)
+
+### Bags and pouches
+- [SOS Paper Gift Bag](https://www.packrivo.com/product-sos-paper-gift-bag/)
+- [Drawstring Fabric Gift Bag](https://www.packrivo.com/product-drawstring-fabric-gift-bag/)
+- [Textile Jewelry Pouch](https://www.packrivo.com/textile-jewelry-pouch/)
+
+## Guides
+
+- [Mailer RFQ Checklist](https://www.packrivo.com/guide-mailer-rfq-checklist/)
+- [Jewelry Insert Fit](https://www.packrivo.com/guide-jewelry-insert-fit/)
+- [Gift Box Flat Pack Check](https://www.packrivo.com/guide-gift-box-flat-pack-check/)
+
+## Comparisons
+
+- [Custom packaging suppliers compared](https://www.packrivo.com/compare/): Packlane, Arka, Packhelp, PakFactory and Packrivo on minimum order, production time and best use.
+- [Packlane vs Packrivo](https://www.packrivo.com/packrivo-vs-packlane/)
+- [Arka vs Packrivo](https://www.packrivo.com/packrivo-vs-arka/)
+- [Packhelp vs Packrivo](https://www.packrivo.com/packrivo-vs-packhelp/)
+- [PakFactory vs Packrivo](https://www.packrivo.com/packrivo-vs-pakfactory/)
+
+## Deutsch (German)
+
+- [Packrivo auf Deutsch](https://www.packrivo.com/de/): Startseite, Produkte, Kategorien, Produktseiten, Leistungen, Über uns, Anfrage und Lieferantenvergleich.
+- [Schmuckboxen](https://www.packrivo.com/de/jewelry-boxes/), [Geschenkboxen](https://www.packrivo.com/de/foldable-gift-boxes/), [Versandboxen](https://www.packrivo.com/de/mailer-boxes/), [Angebot anfordern](https://www.packrivo.com/de/inquiry/)
+
+## Inquiry
+
+- [Send a packaging brief](https://www.packrivo.com/inquiry/): reviewed by a person, no automatic quotes.
+- Contact: hello@packrivo.com, WhatsApp +86 198 9984 6512.
+- [About Packrivo](https://www.packrivo.com/about/), [Services and fees](https://www.packrivo.com/services/), [Terms of service](https://www.packrivo.com/terms/), [Privacy](https://www.packrivo.com/privacy/).
+
+## Content boundary
+
+Product pages include photos of supplier-made products. Images captioned as AI concepts are design references, not physical samples. Neither establishes closure strength, material performance, dimensions or transport protection for a specific project; supplier confirmation is required before treating any specification as production-ready.
+
+## Optional
+
+- [Full page text](https://www.packrivo.com/llms-full.txt): plain-text copy of the public product, category, service, guide and policy pages (blog articles excluded).
+- [Blog](https://www.packrivo.com/blog/): packaging sourcing articles.

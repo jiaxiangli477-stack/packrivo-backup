@@ -1,0 +1,44 @@
+[
+ {
+  "lang": "de",
+  "node": "A clarification record",
+  "pages": 1,
+  "words_est": 3,
+  "translation": "Ein Klärungsprotokoll"
+ },
+ {
+  "lang": "de",
+  "node": "keeps unresolved questions visible;",
+  "pages": 1,
+  "words_est": 4,
+  "translation": "hält offene Fragen sichtbar;"
+ },
+ {
+  "lang": "de",
+  "node": "keeps changes tied to the version reviewed.",
+  "pages": 1,
+  "words_est": 7,
+  "translation": "hält Änderungen an die geprüfte Version gebunden."
+ },
+ {
+  "lang": "de",
+  "node": "keeps unresolved questions visible; ",
+  "pages": 1,
+  "words_est": 4,
+  "translation": "hält offene Fragen sichtbar; "
+ },
+ {
+  "lang": "de",
+  "node": " keeps changes tied to the version reviewed.",
+  "pages": 1,
+  "words_est": 7,
+  "translation": " hält Änderungen an die geprüfte Version gebunden."
+ },
+ {
+  "lang": "de",
+  "node": " keeps unresolved questions visible; ",
+  "pages": 1,
+  "words_est": 4,
+  "translation": " hält offene Fragen sichtbar; "
+ }
+]

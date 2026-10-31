@@ -1,0 +1,17 @@
+{
+  "lang": "de",
+  "time": "2026-10-30 ~13:09 local",
+  "keys_added": 8,
+  "keys": [
+    "names the direction. Request the proposed hook shape, length, attachment and row positions on front and side drawings. Include the base footprint and intended retail placement.",
+    "identifies the named direction. Request the exterior paper, lining material and any joining layers separately. Keep the product-contact material visible as a supplier question if it is not yet known.",
+    "supplies the wider project inputs. This direction adds an explicit two-material interface and its seam relationships.",
+    "identifies the closure direction. Request the actual latch parts and their attachment to the lid and body. Show whether a hinge or another lid movement is proposed.",
+    "comparison should use actual setup and refill work. Don't treat all tiered structures as the same assembly merely because their fronts look similar.",
+    "adds a different preparation step and layer stack. This pressure-sensitive direction centers on dispensing and applying the offered adhesive to the named carton surface. Compare the actual packing operation rather than choosing by a generic paper or reinforcement label.",
+    "identifies clip-on or click-on lid options. Use it as a closure-family reference, then request the specific press-close proposal and its opening route.",
+    "describes separated tiered trays. Ask for the actual tray-to-body relationships and setup order."
+  ],
+  "method": "post-run fragment keys derived from existing concatenated walker values (strip leading substitute NP Die/Der/Das/Dieser X); NO global article keys (would strip blog body \"The \").",
+  "verified": "verify-residual.py (same walker+positional compare as scan-residual.py): 7 de product pages 43/34/32/28/24/23/22 -> 0/0/0/0/1/0/0 words; about=4, inquiry=3 unchanged."
+}

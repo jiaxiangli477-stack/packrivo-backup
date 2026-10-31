@@ -1,0 +1,9 @@
+=== 29y G1-G7 gates · rehearsal · 2026-10-31T00:51:34.723219+00:00 ===
+PASS G1: llms.txt 三档引擎价(2.83/2.34/2.48)与首页卡片、产品页一致，旧口径行已删
+PASS G2: EN+11 语种 /get-a-quote/ 均有 H1、title 与 ≤150 字符 meta description
+PASS G3: 改前清单(1049 行)+复扫清单落盘；11 语种 >5词页数全部为 0
+PASS G4: /products/ 与分类页输出 ItemList；FAQPage 仅在可见 FAQ 时输出
+PASS G5: 外链 CSV 按任务单口径落盘：3 行，含三大域名与锚文本样例/判断理由，未提交 disavow
+PASS G6: RUNBOOK-29y.md 落盘；evidence 证据在 deploy/verification-29y/；git log -3 --stat 可贴
+PASS G7: 11 语种词典 repo=演练 md5 一致；11/11 语种译文已合并
+TOTAL 7 PASS / 0 FAIL

@@ -1,0 +1,53 @@
+29y 基线（2026-10-30，演练环境复位完成）
+=========================================
+
+一、生产只读导出（本次唯一生产动作，另有删除旧导出）
+-----------------------------------------------------
+路径      : /home/web/backups/packrivo-29y-export-20261030-105900/29y-prod.sql
+字节      : 35072521
+sha256    : cf6e40a51f30844ecb75e59485201aaae9e4486c3ae3db56397bb48b0d07aa0e
+导出时间  : 2026-10-30 10:59:24 UTC（wp db export --add-drop-table）
+导出时生产: packrivo-home-v4 4.0.4 active / WordPress 7.1.4
+本机校验  : 字节数与 sha256 与远端逐个相同（E:\破甲工作区\.tmp\29y\29y-prod.sql）
+已删旧导出: /home/web/backups/packrivo-29z-export-20261030-032248（removed，删前删后 ls 均已留档）
+
+二、演练库导入结果（mysql:26.7.0，库 www_packrivo_com）
+------------------------------------------------------
+publish 对象        = 740
+catalog 页          = 208
+正文含 1688 的行    = 0        （29z 已在生产生效，导出即这个状态）
+wp_posts 总数       = 3197（revision 2047 / page 410 / attachment 370 / post 362）
+siteurl / home      = https://www.packrivo.com
+stylesheet/template = packrivo-home-v4 / packrivo-static-bridge-1.2.38
+page_on_front       = 7    page_for_posts = 53
+
+三、演练文件侧复位
+------------------
+子主题      : 仓库 packrivo-wp/packrivo-home-v4（Version 4.0.4，38 文件）
+字体补丁    : mu-plugins/packrivo-wave2.php = 73d43ba0262a9d74249b19a46380bc5c338f94bd9e0776baa46eddf074c9f259
+报价插件    : packrivo-quote active（演练容器原本缺文件，已从仓库装；DB 的 active_plugins 本来就有它）
+
+四、演练与生产的一处快照差异（已按生产实测对齐，仅演练容器）
+------------------------------------------------------------
+现象：演练容器的 mu 快照 packrivo-site-remediation-20261022.php 仍把 get-a-quote 当旧 URL
+      301 到 /inquiry/；生产实测 /get-a-quote/ = 200 且 body class page-id-3383。
+改前哈希：ac0a27538c428f2175e9596bd21f27be47069aaf57cbeabf8892ae456e2f471d
+改后哈希：887787ab3240091d1c6328e444d70cbe7585ca79c00e162857106c3d94e78189
+改动    ：只从 $legacy 数组移除 'get-a-quote' 一项，备份 .bak-29y 留在同目录
+未动生产：生产文件从未读取或修改，本项只是让演练与生产行为一致
+
+五、渲染基线（演练，直连源站 172.19.0.1:443，不走 CF）
+-------------------------------------------------------
+/                200  101605 B   <title>Custom Jewelry Boxes &amp; Packaging with Logo | Packrivo</title>
+/products/       200  307011 B
+/de/             200  133585 B
+/de/products/    200  336085 B
+/blog/           200  507021 B
+/get-a-quote/    200   79509 B   title=Get a Quote - Packrivo  h1 个数=0  meta description=无  page-id-3383
+
+六、任务单第 2 项缺陷已在演练复现（与生产一致）
+----------------------------------------------
+生产 https://www.packrivo.com/get-a-quote/：200，82740 B，title "Get a Quote - Packrivo"，
+      <h1> 0 个，无 <meta name="description">，body class page-id-3383，canonical 指向自身。
+演练：同上（79509 B，pkq 标记 5 处）。
+结论：第 2 项要改的是**页面 3383**（内容只有短代码 [packrivo_quote]），H1 与描述由模板/元数据补。

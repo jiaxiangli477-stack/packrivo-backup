@@ -1,0 +1,5 @@
+PASS 生成 llms.txt：7679 字节，sha256=278a0c807e29d30328c9993f02d8d67ef20ea816872c99a10d5a1ff88f4a521a
+  rigid_500   Rigid magnetic jewelry box × 500 → $2.83 / 件
+  rigid_1000  Rigid magnetic jewelry box × 1,000 → $2.34 / 件
+  mailer_500  Printed mailer box × 500 → $2.48 / 件
+  卡片价：8 个产品，最低 $1.63

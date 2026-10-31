@@ -1,0 +1,39 @@
+== 0) 输入自证 ==
+PASS  llms 文件存在（7679 字节）
+PASS  llms 字节数 7679 ≥ 4000（不是空壳）
+PASS  演练 /llms.txt 可达（实测 200）
+PASS  HTTP 取回字节与落盘文件一致（7679）
+PASS  HTTP 取回内容与落盘文件逐字节相同
+PASS  价格段标题命中 1 次（实测 1）
+PASS  旧的无来源价格行已删除（实测 0）
+PASS  llms PR_RIGID500 = $2.83
+PASS  llms PR_RIGID1000 = $2.34
+PASS  llms PR_MAILER500 = $2.48
+== 1) 首页 / ==
+PASS  首页可达（实测 200）
+PASS  首页字节数 107916 ≥ 80000
+PASS  首页卡片价格命中 5 处 ≥ 5
+PASS  首页 hero 卡片价解析 = $2.34（1,000 件）
+PASS  hero 卡片价 == llms 1,000 件（实测 2.34）
+PASS  首页 FAQ 刚性格解析 = $2.83（500 件）
+PASS  首页 FAQ 邮寄盒解析 = $2.48（500 件）
+PASS  FAQ 刚性格 == llms 500 件（实测 2.83）
+PASS  FAQ 邮寄盒 == llms 500 件（实测 2.48）
+== 2) 产品页（8 个）==
+PASS  product-drawer-jewelry-box 产品页价 == llms（实测 2.83）
+PASS  product-lid-and-base-jewelry-box 产品页价 == llms（实测 2.83）
+PASS  product-jewelry-box-with-insert 产品页价 == llms（实测 2.83）
+PASS  product-window-lid-rigid-gift-box 产品页价 == llms（实测 2.83）
+PASS  product-hinged-nonmagnetic-rigid-box 产品页价 == llms（实测 2.83）
+PASS  product-corrugated-roll-end-hinged-lid 产品页价 == llms（实测 2.48）
+PASS  product-euro-tote-paper-carrier 产品页价 == llms（实测 1.63）
+PASS  product-sos-paper-gift-bag 产品页价 == llms（实测 1.63）
+== 3) llms 里的每个价格都要在页面上找得到（不留孤儿数字）==
+PASS  llms 里解析出 4 个不同价格 ≥ 3
+PASS  llms 的每个价格都能在首页/产品页找到
+== 4) 报价引擎与页面一致（引擎直算，独立于 HTML）==
+PASS  引擎 500 件刚性格 == llms（实测 2.83）
+PASS  引擎 1,000 件刚性格 == llms（实测 2.34）
+PASS  引擎 500 件邮寄盒 == llms（实测 2.48）
+----------------------------------------
+PASS=32 FAIL=0

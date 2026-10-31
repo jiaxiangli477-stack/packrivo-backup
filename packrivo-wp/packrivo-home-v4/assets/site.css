@@ -1072,3 +1072,31 @@ body .pr-sticky .pr-sticky-main:hover {
   .pk-page-body,
   .pk-wrap { overflow-x: clip; }
 }
+
+/* 29y：/get-a-quote/ 的 H1（整页原来没有 H1）与产品页价格条（原来不显示价格，
+   数值由 pk_from_price() 算出，与首页卡片、llms.txt 同源）。 */
+.pk-h1 {
+  margin: 0 0 12px;
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+}
+.pk-wrap > .pk-h1 + .pk-lede { max-width: 62ch; }
+.pk-price-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 14px;
+  margin: 18px 0 0;
+  padding: 12px 16px;
+  border: 1px solid rgba(24, 22, 19, .14);
+  border-radius: 10px;
+  font-size: 14px;
+}
+.pk-price-bar strong { font-size: 16px; }
+.pk-price-bar span { color: #5d574e; }
+.pk-price-bar a { margin-left: auto; font-weight: 600; text-decoration: none; }
+.pk-price-bar a:hover { text-decoration: underline; }
+@media (max-width: 560px) {
+  .pk-price-bar a { margin-left: 0; }
+}

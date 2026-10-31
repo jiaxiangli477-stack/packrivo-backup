@@ -62,4 +62,14 @@ $params=array_filter(['group'=>$group==='all'?'':$group,'sub'=>$sub,'q'=>$search
  <div class="pk-pager"><?php if($q->max_num_pages>1) echo wp_kses_post(paginate_links(['base'=>esc_url_raw(add_query_arg(array_merge($params,['pg'=>'%#%']),$base)),'format'=>'','current'=>$paged,'total'=>$q->max_num_pages,'end_size'=>1,'mid_size'=>2])); ?></div>
  <section class="pk-section"><h2 class="pk-h2">Need something not on this page?</h2><p>Counter displays, rigid trays, book-style boxes — send a photo of the product and a rough volume, and we will come back with a structure and a price range.</p><a class="pk-btn" href="<?php echo esc_url($contact_url); ?>">Send a brief</a> <a class="pk-btn-ghost" href="<?php echo esc_url(home_url('/get-a-quote/')); ?>">Start from a price</a></section>
  </div></section>
+<?php // 29y 第 4 项：/products/ 的 ItemList —— 只列当前页真实渲染的产品卡片。 ?>
+<?php if ($q->posts) : ?>
+<?php
+$pk_list_items = [];
+foreach ($q->posts as $pk_post) {
+    $pk_list_items[] = ['url' => get_permalink($pk_post), 'name' => wp_strip_all_tags(get_the_title($pk_post))];
+}
+if (function_exists('pkv4_itemlist_jsonld')) echo pkv4_itemlist_jsonld($pk_list_items, get_permalink());
+?>
+<?php endif; ?>
 </main><?php get_footer(); ?>

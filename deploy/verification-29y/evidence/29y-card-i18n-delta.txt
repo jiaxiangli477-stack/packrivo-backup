@@ -1,0 +1,26 @@
+29y 第 3 项：子主题模板串补词 + 复扫对照
+========================================
+问题  产品卡片底条与产品页价格条是 sprintf 拼出来的（数字每次变），输出缓冲按整串匹配
+      替换不到，11 个语种的目录页都留着一行英文：from $2.83 / unit at 500 pcs · 9.5×9.5×4 cm
+
+改法  template-parts/product-card.php：$pkv4_t('from $%s / unit') + 'at %s pcs · %s cm'
+      page.php 价格条：'from $%s / unit' + 'at %s pcs · %s cm · full-colour print, matte'
+      词典新增 3 个模板键 × 11 语种 = 33 条（deploy/scripts-29y/add-card-i18n-29y.py，幂等）
+      "MOQ 500" 用例：各语种词典里本来就有更自然的译法，脚本不覆盖（冲突即 FAIL，本轮已按此处理）
+
+渲染实测（容器内 curl，SITE=https://www.packrivo.com，--resolve 到 172.19.0.1）
+  /de/product-drawer-jewelry-box/  ab $2.83 / Stück · ab 500 Stück · 9.5×9.5×4 cm · Vollfarbdruck, matt · Konfigurieren →
+  /fr/product-drawer-jewelry-box/  à partir de $2.83 / unité · à partir de 500 pièces · 9.5×9.5×4 cm · impression quadri, mat · Configurer →
+  /ja/product-drawer-jewelry-box/  $2.83 / 個〜 · 500個〜 · 9.5×9.5×4 cm · フルカラー印刷・マット · 仕様を選ぶ →
+  /product-drawer-jewelry-box/     from $2.83 / unit · at 500 pcs · 9.5×9.5×4 cm · full-colour print, matte · Configure →
+  四语种单价都是 $2.83 → 价格条与报价引擎同源，翻译只换外壳不动数字
+
+复扫对照（24 页：11 语种 /products/ + 11 语种 /product-drawer-jewelry-box/ + 2 个英文页）
+  11 个非英文 /products/：改前 4/13/6/0/0/4/4/6/6/5/5 词 → 改后全部 0 词（卡片底条清干净）
+  产品页：/ar 73→67、/it 92→72、/ja 73→67、/ko 73→67、/zh-CN 73→67、/zh-TW 73→67、
+          /de 71→71、/es 71→71、/fr 130→130、/nl 74→74、/pt 61→61
+          剩下的都是正文内容（概念段/规格段），不是模板串
+  24 页里 >5 词的：改前 15 → 改后 13
+
+结论  模板串这一类已经清零；剩下的 1049 页要靠正文词条。下一轮按语种批处理：
+      每次取一个语种的全部残留片段 → 写词典 → 复扫该语种 → 该语种不达标就继续。

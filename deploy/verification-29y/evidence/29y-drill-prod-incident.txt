@@ -1,0 +1,42 @@
+29y 报价演练误打生产 —— 事故记录
+=========================================
+时间：2026-10-30 18:08:41 / 18:11:45 / 18:13:12 UTC（本地 11:08 / 11:11 / 11:13 PDT）
+发现：2026-10-30 18:20 UTC 左右，在生产库 wp_posts 里查到 3 条 post_type=pkq_order 的记录
+
+一、写了什么（生产，只读查得）
+    ID 3646  PKQ-O24CQ   "PKQ-O24CQ · Packrivo 29y rehearsal"  2026-10-30 18:08:41
+    ID 3647  PKQ-9IK2C   "PKQ-9IK2C · Packrivo 29y rehearsal"  2026-10-30 18:11:45
+    ID 3648  PKQ-48FGX   "PKQ-48FGX · Packrivo 29y rehearsal"  2026-10-30 18:13:12
+    wp_postmeta 里跟着 pkq_ref / pkq_name=29y drill A / pkq_email=drill-29y@example.com /
+    pkq_company="Packrivo 29y rehearsal" / pkq_country=NL / pkq_phone=+31 20 000 0000 /
+    pkq_notes="29y headless drill..." 等字段
+    pkq_order 总数现在是 3（此前为 0）
+
+二、为什么
+    1. 宿主机连不到演练网关：curl --noproxy '*' --resolve www.packrivo.com:443:172.19.0.1
+       → "Failed to connect ... after 21031 ms"（Docker Desktop 的网段不从宿主路由）
+    2. 无头 Chrome 起在宿主机上，--host-resolver-rules=MAP www.packrivo.com 172.19.0.1
+       随后被 Chrome 的 Secure DNS / AsyncDns 绕过，按真实 DNS 解析到了线上（Cloudflare）
+    3. 线上 /nl/get-a-quote/ 与演练栈长得一样（同一个主题、同一份词典），页面没有任何可辨识差异，
+       于是演练脚本在线上页面里选款式、填尺寸、点「Deze prijsopgave aanvragen」，
+       每一次点击都在生产 wp_posts 里生成一条 pkq_order
+    4. 前两次（18:08、18:11）脚本判定"没拿到参考号"就退出了（线上返回慢 / 轮询窗口只有 60s），
+       我据此误以为是校验失败，又重跑了第三次 —— 三次都落库了
+
+三、闸门（v2 已加固，未再发生）
+    1. 浏览器改到演练网段里跑：selenium/standalone-chrome --network r28q-net，
+       宿主机只通过 127.0.0.1:4444 驱动它，浏览器自己无法解析到线上（MAP 到 172.19.0.5）
+    2. 关掉 DoH / AsyncDns：--dns-over-https-mode=off --disable-features=DnsOverHttps,AsyncDns
+    3. 动手前先取 /29y-marker.txt（演练站独有的随机串），内容不等于期望值就直接退出，
+       不碰表单、不发任何请求
+
+四、生产上的写操作：本次事故是唯一一次，且是本轮不允许的写。
+    需要负责人决定是否清理。清理命令（未执行）：
+      docker exec mysql mysql -u<user> -p<pass> www_packrivo_com -e \
+        "DELETE FROM wp_postmeta WHERE post_id IN (3646,3647,3648); DELETE FROM wp_posts WHERE ID IN (3646,3647,3648);"
+    另外三次提交会触发 pkq_order 的通知邮件（class-pkq-rest.php 的 notify），
+    收件人是站点配置的通知邮箱，需要负责人确认是否收到 3 封。
+
+五、除此之外对生产只做过只读：
+    SHOW TABLES / SELECT COUNT / SELECT ... LIMIT 5 / 读 wp-config 取 DB 常量 /
+    GET https://www.packrivo.com/wp-json/ 与 /wp-json/packrivo/v1（路由表）

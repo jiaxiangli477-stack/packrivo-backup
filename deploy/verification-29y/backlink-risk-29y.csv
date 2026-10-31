@@ -1,0 +1,5 @@
+domain,backlink_count,anchor_samples,judgment,source
+rankvance.com,162,"""High-quality backlink""、""#1 Backlink Agency""",付费外链农场/垃圾外链网络（锚文本与业务无关，站点与包装采购无任何关联）,DSH-TASK-2026-10-29y 第5条（Semrush 反向链接数据，235 条总数口径）
+8coint.com,任务单未单列,"""High-quality backlink"" 一类锚文本",疑似付费外链农场（域名本身为推广向域名，与包装采购无关）；条数含在 235 条总数内未单列,DSH-TASK-2026-10-29y 第5条
+link-pen.com,任务单未单列,"""#1 Backlink Agency"" 一类锚文本",疑似外链服务商自证站点（link 农场）；条数含在 235 条总数内未单列,DSH-TASK-2026-10-29y 第5条
+其他未点名域名,73（235-162 推算）,任务单未给出,任务单以「等」概括，属同一批垃圾外链；条数为 235 减去 rankvance 162 后的余额，含 8coint.com、link-pen.com 及其余未点名域名,DSH-TASK-2026-10-29y 第5条（推算值，非编造——见备注）

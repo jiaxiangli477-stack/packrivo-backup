@@ -285,11 +285,14 @@ echo wp_json_encode([
     '@graph' => [
         [
             '@type' => 'FAQPage',
+            // 外语页的可见问答是译文，schema 也必须给同样的译文，否则结构与页面不一致。
             'mainEntity' => array_map(function ($row) {
+                $q = function_exists('pkv4_schema_text') ? pkv4_schema_text($row[0]) : $row[0];
+                $a = function_exists('pkv4_schema_text') ? pkv4_schema_text($row[1]) : $row[1];
                 return [
                     '@type' => 'Question',
-                    'name' => $row[0],
-                    'acceptedAnswer' => ['@type' => 'Answer', 'text' => $row[1]],
+                    'name' => $q,
+                    'acceptedAnswer' => ['@type' => 'Answer', 'text' => $a],
                 ];
             }, $faq),
         ],

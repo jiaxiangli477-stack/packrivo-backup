@@ -1,0 +1,87 @@
+PASS  /bags-pouches/ 有 2 个 ld+json 块
+PASS  /bags-pouches/ 全部块可解析
+PASS  /bags-pouches/ @context 齐全
+PASS  /bags-pouches/ ItemList numberOfItems=10 == 元素数
+PASS  /bags-pouches/ ItemList position 1..10 连续唯一
+PASS  /bags-pouches/ ItemList 10 项都有 name+url
+PASS  /bags-pouches/ ItemList url 无重复
+PASS  /bags-pouches/ ItemList 每个条目都真实可见
+PASS  /de/ 有 2 个 ld+json 块
+PASS  /de/ 全部块可解析
+PASS  /de/ @context 齐全
+PASS  /de/ FAQPage 5 题问答都在页面上可见
+PASS  /de/jewelry-boxes/ 有 2 个 ld+json 块
+PASS  /de/jewelry-boxes/ 全部块可解析
+PASS  /de/jewelry-boxes/ @context 齐全
+PASS  /de/jewelry-boxes/ ItemList numberOfItems=16 == 元素数
+PASS  /de/jewelry-boxes/ ItemList position 1..16 连续唯一
+PASS  /de/jewelry-boxes/ ItemList 16 项都有 name+url
+PASS  /de/jewelry-boxes/ ItemList url 无重复
+PASS  /de/jewelry-boxes/ ItemList 每个条目都真实可见
+PASS  /de/product-drawer-jewelry-box/ 有 1 个 ld+json 块
+PASS  /de/product-drawer-jewelry-box/ 全部块可解析
+PASS  /de/product-drawer-jewelry-box/ @context 齐全
+PASS  /de/products/ 有 2 个 ld+json 块
+PASS  /de/products/ 全部块可解析
+PASS  /de/products/ @context 齐全
+PASS  /de/products/ ItemList numberOfItems=24 == 元素数
+PASS  /de/products/ ItemList position 1..24 连续唯一
+PASS  /de/products/ ItemList 24 项都有 name+url
+PASS  /de/products/ ItemList url 无重复
+PASS  /de/products/ ItemList 每个条目都真实可见
+PASS  /get-a-quote/ 有 1 个 ld+json 块
+PASS  /get-a-quote/ 全部块可解析
+PASS  /get-a-quote/ @context 齐全
+PASS  / 有 2 个 ld+json 块
+PASS  / 全部块可解析
+PASS  / @context 齐全
+PASS  / FAQPage 5 题问答都在页面上可见
+PASS  /inserts/ 有 2 个 ld+json 块
+PASS  /inserts/ 全部块可解析
+PASS  /inserts/ @context 齐全
+PASS  /inserts/ ItemList numberOfItems=20 == 元素数
+PASS  /inserts/ ItemList position 1..20 连续唯一
+PASS  /inserts/ ItemList 20 项都有 name+url
+PASS  /inserts/ ItemList url 无重复
+PASS  /inserts/ ItemList 每个条目都真实可见
+PASS  /jewelry-boxes/ 有 2 个 ld+json 块
+PASS  /jewelry-boxes/ 全部块可解析
+PASS  /jewelry-boxes/ @context 齐全
+PASS  /jewelry-boxes/ ItemList numberOfItems=16 == 元素数
+PASS  /jewelry-boxes/ ItemList position 1..16 连续唯一
+PASS  /jewelry-boxes/ ItemList 16 项都有 name+url
+PASS  /jewelry-boxes/ ItemList url 无重复
+PASS  /jewelry-boxes/ ItemList 每个条目都真实可见
+PASS  /mailer-boxes/ 有 2 个 ld+json 块
+PASS  /mailer-boxes/ 全部块可解析
+PASS  /mailer-boxes/ @context 齐全
+PASS  /mailer-boxes/ ItemList numberOfItems=32 == 元素数
+PASS  /mailer-boxes/ ItemList position 1..32 连续唯一
+PASS  /mailer-boxes/ ItemList 32 项都有 name+url
+PASS  /mailer-boxes/ ItemList url 无重复
+PASS  /mailer-boxes/ ItemList 每个条目都真实可见
+PASS  /product-drawer-jewelry-box/ 有 1 个 ld+json 块
+PASS  /product-drawer-jewelry-box/ 全部块可解析
+PASS  /product-drawer-jewelry-box/ @context 齐全
+PASS  /product-drawer-jewelry-box/ 产品页是 Service（name + provider.name=Packrivo）
+PASS  /product-drawer-jewelry-box/ 产品页没有 FAQPage（与可见内容一致）
+PASS  /product-euro-tote-paper-carrier/ 有 1 个 ld+json 块
+PASS  /product-euro-tote-paper-carrier/ 全部块可解析
+PASS  /product-euro-tote-paper-carrier/ @context 齐全
+PASS  /product-euro-tote-paper-carrier/ 产品页是 Service（name + provider.name=Packrivo）
+PASS  /product-euro-tote-paper-carrier/ 产品页没有 FAQPage（与可见内容一致）
+PASS  /product-magnetic-jewelry-box/ 有 1 个 ld+json 块
+PASS  /product-magnetic-jewelry-box/ 全部块可解析
+PASS  /product-magnetic-jewelry-box/ @context 齐全
+PASS  /product-magnetic-jewelry-box/ 产品页是 Service（name + provider.name=Packrivo）
+PASS  /product-magnetic-jewelry-box/ 产品页没有 FAQPage（与可见内容一致）
+PASS  /products/ 有 2 个 ld+json 块
+PASS  /products/ 全部块可解析
+PASS  /products/ @context 齐全
+PASS  /products/ ItemList numberOfItems=24 == 元素数
+PASS  /products/ ItemList position 1..24 连续唯一
+PASS  /products/ ItemList 24 项都有 name+url
+PASS  /products/ ItemList url 无重复
+PASS  /products/ ItemList 每个条目都真实可见
+----------------------------------------
+PASS=85 FAIL=0

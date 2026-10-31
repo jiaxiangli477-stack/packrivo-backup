@@ -1,0 +1,14 @@
+29y AFTER rescan per-page summary
+pages_with_residuals=314 total_pages_with_rows=314
+de: pages_with_rows=25 pages_over5words=0 (non-blog)
+fr: pages_with_rows=67 pages_over5words=0 (non-blog)
+es: pages_with_rows=24 pages_over5words=0 (non-blog)
+it: pages_with_rows=28 pages_over5words=0 (non-blog)
+nl: pages_with_rows=25 pages_over5words=0 (non-blog)
+pt: pages_with_rows=44 pages_over5words=0 (non-blog)
+ar: pages_with_rows=15 pages_over5words=0 (non-blog)
+ja: pages_with_rows=22 pages_over5words=0 (non-blog)
+ko: pages_with_rows=21 pages_over5words=0 (non-blog)
+zh-CN: pages_with_rows=22 pages_over5words=0 (non-blog)
+zh-TW: pages_with_rows=21 pages_over5words=0 (non-blog)
+non-blog pages over 5 words: 0

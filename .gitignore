@@ -22,3 +22,13 @@ node_modules/
 !deploy/verification-29w/logs/*.log
 !deploy/verification-29x/**/*.log
 *.29x-bak
+__pycache__/
+*.pyc
+*.pre29y-bak
+*.pre29y-card
+*.pre29y-batch
+*.negbak
+*.gatebak
+
+# 29y production read-only export (production data, never commit)
+deploy/verification-29y/export/

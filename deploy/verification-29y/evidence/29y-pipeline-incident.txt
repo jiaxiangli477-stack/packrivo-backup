@@ -1,0 +1,51 @@
+29y 词典被压成单行的肇事链与处置记录
+时间：2026-10-30 08:0x
+
+一、现象
+  it-dict.json 在 07:38 变成单行（1 行 1,567,368 B / 8143 键），git diff 显示 +1/-7742；
+  更早的 es-dict.json 在 07:26 出现过同样形态（1 行 1,544,591 B / 8139 键）。
+
+二、根因（两段，叠加）
+  1) 写文件的人：E:\Ai\ARTEX-Portable\app\data\tasks\67\i909\dict-add-29y-v2.py 第 56-57 行
+       with open(p, 'w', encoding='utf-8', newline='') as f:
+           json.dump(d, f, ensure_ascii=False, separators=(',', ':'))
+     separators=(',',':') 把整份词典压成一行；同时它直接 d['block'][k] = v 覆盖已有键
+     （it 的 'Download .txt' → 'Scaricare .txt'，nl 的 7 条术语都是这么被改的）。
+  2) 谁在反复触发它：Windows 计划任务
+       \29y-scan-921      cmd /c …\i921\start-scan-921.bat      2026-10-30T08:03:08
+       \29y-orch-921      cmd /c …\i921\start-orch-921.bat      2026-10-30T08:03:08
+       \29y-finisher-921  cmd /c …\i921\start-finisher-921.bat  2026-10-30T08:06:36 (Running)
+       \29y-probe         …                                    2026-10-30T08:02:10
+     第一轮 taskkill 之后 3 分钟就复活，换成 i921 目录重新拉起，所以只杀进程不解决问题。
+
+三、处置
+  1) Stop-ScheduledTask + Unregister-ScheduledTask 删除上面 4 个任务（全部 OK）
+  2) taskkill /T /F 清掉当时在跑的 python 进程树（orchestrator-29y.py、translate-29y.py --lang nl、
+     scan-residual.py、finisher-29y.py）
+  3) 复查：无 python 进程、无 29y 计划任务（两条查询均为空）
+  4) 词典从 HEAD + i18n/delta 重建，机器批次覆写的 8 条（it 1 + nl 7）转成显式 delta 改动
+     （i18n/delta/it-mod.json、i18n/delta/nl-mod.json），来源与理由都写在 §10.5
+
+四、统一写入口（deploy/verification-29y/scripts/dictio_29y.py）
+  head_dict(repo, lang)              读 HEAD 原文
+  write_dict(repo, lang, data)       indent=2 / sort_keys=False / newline="\n"，
+                                     写完自检：无 BOM、无 CRLF、行数≥HEAD、键数≥HEAD
+  apply_delta(d, delta_dir, lang)    HEAD + 增量（新增落桶尾、旧键原地替换）
+  mutate_and_write(repo, lang, fn)   HEAD + 回调 + 写
+  四个调用方全部改用它：
+    rebuild-dicts-from-head-29y.py / apply-translation-packets-29y.py /
+    i909/dict-add-29y-v2.py（改成 import 同一函数）/ report-dict-mods-29y.py（只读）
+
+五、门禁新增两条（check-commit-utf8-29y.py 词典专项）
+  ① 行数不得少于 HEAD:<同一文件> 的行数
+  ② git diff --numstat 删除行数不得大于 新增×2+50
+  实测 11 个词典全部 PASS：
+    de 8258 ≥ 7740 (+529/-11)   fr 8156 ≥ 7746 (+418/-8)   it 7783 ≥ 7742 (+48/-7)
+    其余 8 个 7691~7749 ≥ HEAD (+9/-5)
+  负向：把 it-dict.json 压成单行 →
+    FAIL … 行数 0 少于 HEAD 的 7742（被压成单行或重排）；删除 7742 行 vs 新增 1 行
+  还原后 合计 PASS 113 / FAIL 0
+
+六、每批复核原有译文
+  report-dict-mods-29y.py 逐键对 HEAD，落 evidence/dict-mods-29y.csv 与 dict-mods-29y.txt
+  当前 16 条：de 5 / fr 3 / it 1 / nl 7（见结果文档 §10.5 表）

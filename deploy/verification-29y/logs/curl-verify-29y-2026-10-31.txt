@@ -1,0 +1,36 @@
+===== A. pt 2 precision-fixed pages =====
+ok pt/product-shoulder-neck-rigid-box/ i976-fix: total=0 words, segments=0
+ok pt/product-sos-paper-gift-bag/ i976-fix: total=0 words, segments=0
+===== B. pt 3 other pages (no regression) =====
+ok pt/molded-pulp-insert/ : total=1 words, segments=1
+ok pt/product-flower-petal-top-gift-carton/ : total=0 words, segments=0
+ok pt/product-side-lock-display-carton/ : total=0 words, segments=0
+===== C. about: all 11 langs (expect 2-4 words) =====
+ok de/about/ about: total=4 words, segments=2
+ok fr/about/ about: total=2 words, segments=1
+ok es/about/ about: total=4 words, segments=2
+ok it/about/ about: total=2 words, segments=1
+ok nl/about/ about: total=4 words, segments=2
+ok pt/about/ about: total=4 words, segments=2
+ok ar/about/ about: total=2 words, segments=1
+ok ja/about/ about: total=2 words, segments=1
+ok ko/about/ about: total=2 words, segments=1
+ok zh-CN/about/ about: total=2 words, segments=1
+ok zh-TW/about/ about: total=2 words, segments=1
+===== D. de inquiry/about (expect 3 / 4) =====
+ok de/inquiry/ inquiry: total=3 words, segments=2
+ok de/about/ about: total=4 words, segments=2
+===== E. fr fixed pages (no regression) =====
+ok fr/product-folded-box-liner/ fr-fix: total=1 words, segments=1
+ok fr/guide-jewelry-insert-fit/ fr-fix: total=1 words, segments=1
+ok fr/compare/ fr-fix: total=5 words, segments=5
+===== F. inline-link spot checks =====
+OK  fr/about/ 'Obtenir un devis' present=True want=True
+OK  fr/product-folded-box-liner/ 'référence structurelle' present=True want=True
+OK  it/about/ 'Richiedi un preventivo' present=True want=True
+OK  it/about/ 'Un documento di chiarimento' present=True want=True
+OK  pt/product-shoulder-neck-rigid-box/ 'order planning policy is 500 pieces' present=False want=False
+OK  pt/product-shoulder-neck-rigid-box/ 'planejamento de pedidos da Packrivo' present=True want=True
+OK  pt/product-sos-paper-gift-bag/ 'expands the name as self opening square' present=False want=False
+OK  pt/product-sos-paper-gift-bag/ 'quadrado de abertura autom' present=True want=True
+===== TOTAL FAILS: 0 =====

@@ -1,0 +1,8 @@
+﻿per-page rows=314 over5_nonblog=0
+per-lang over5: {}
+copied E:\Ai\ARTEX-Portable\app\data\tasks\67\i907\residual-after-29y.csv -> E:\破甲工作区\packrivo-backup\deploy\verification-29y\csv\residual-after-29y.csv 80907
+copied E:\Ai\ARTEX-Portable\app\data\tasks\67\i907\residual-after-29y-perpage.csv -> E:\破甲工作区\packrivo-backup\deploy\verification-29y\csv\residual-after-29y-perpage.csv 18994
+copied E:\Ai\ARTEX-Portable\app\data\tasks\67\i907\residual-after-29y-unique.json -> E:\破甲工作区\packrivo-backup\deploy\verification-29y\evidence\residual-after-29y-unique.json 8786
+copied E:\Ai\ARTEX-Portable\app\data\tasks\67\i907\residual-after-29y-summary.txt -> E:\破甲工作区\packrivo-backup\deploy\verification-29y\evidence\residual-after-29y-summary.txt 719
+after csv rows: 942
+after unique sentences: 85

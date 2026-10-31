@@ -1,0 +1,35 @@
+29y 第 3 项：文本节点级补词管线 + 首个整页清零
+==============================================
+问题  句级清单不能直接当词典键。词典是整串替换，能命中的单位是 HTML 里两个标签之间
+      那段文字；句子切分出来的是跨标签拼接（面包屑 + 标题 + 段落 + 链接文字），
+      拿它当键永远换不掉。所以补词必须落在文本节点上。
+
+新增三件工具（都能直接跑）
+  1. deploy/verification-29y/scripts/extract-en-nodes-29y.php
+     用法 php extract-en-nodes-29y.php <urls.txt> <out.jsonl> [gateway] [min_en_hits]
+     取 <main> → 剥 script/style/svg → 抽 >文本< 节点 → 按英文功能词判定 → 输出
+     {lang,url,node,words,count}。第 4 个参数是英文功能词阈值，默认 2；
+     实测 2→3 只从 406 条降到 346 条，说明不是误报，残留确实是英文。
+  2. deploy/verification-29y/scripts/make-translation-packets-29y.py
+     节点去重成翻译包 <lang>-todo.csv/json（lang,node,pages,words_est,translation）
+  3. deploy/verification-29y/scripts/apply-translation-packets-29y.py
+     读填好的包写进词典。自检：空译文跳过、译文=原文 FAIL、%s 个数不一致 FAIL、
+     拉丁字母语种用「英文功能词 ≥3」判是否仍是英文、键冲突 FAIL。
+
+首个整页验证：/de/about/
+  改前  残留 195 词（4 个长段落节点）
+  第 1 批 20 条译文 → 残留 9 词
+        剩 "ein Muster-Revisionsprotokoll keeps changes tied to the version reviewed."
+        原因是这段被 <a> 切成多个节点：链接文字已翻，链接外的文字没翻
+  第 2 批 6 条（含带前后空格的变体）→ 残留 0 词
+  页面实测：德语段落 1 处命中、英文原句 0 处命中
+
+各语种翻译包体量（源词数按英文原文计）
+  it  337 节点 / 94 页 / 9,535 词
+  fr  337 节点 / 94 页 / 9,535 词（同结构）
+  pt  340 节点 / 93 页 / 9,558 词
+  → 单语种约 340 节点、9.5 千词；11 语种合计约 3,700 节点、10 万词
+
+结论  管线通了，剩下的纯是译文工作量：每语种约 340 条，按每轮 100–150 条推进，
+      一个语种 2–3 轮，全站 11 语种 30 轮上下。模板串一类（产品卡片底条、价格条）
+      已经清零，不在这个工作量里。

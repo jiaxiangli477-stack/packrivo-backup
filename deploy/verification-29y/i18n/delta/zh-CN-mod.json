@@ -1,0 +1,9 @@
+{
+  "block": {
+    "WhatsApp: +86 198 9984 6512": {
+      "old": "WhatsApp: +86 198 9984 6512",
+      "new": "WhatsApp：+86 198 9984 6512",
+      "why": "i942/i938 机器批次（i909/trans-<lang>.json）翻好的现有节点，绕过 delta 直接写了词典；收编进 delta 留档"
+    }
+  }
+}

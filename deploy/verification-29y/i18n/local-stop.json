@@ -1,0 +1,43 @@
+{
+  "_note": "每种目标语言里『确实属于该语言本族词、但同时也出现在英文停用词表里』的词。判定译文是否仍是英文时，先扣掉本表命中，再数英文功能词；否则德语 in / was / will、法语 plus、意大利语 in 这类正常译文会被误判成英文丢弃。",
+  "_usage": "apply-translation-packets-29y.py 与 scan 侧统计共用这一份，不再在代码里各写一套。",
+  "_rule": "只收该语言自己的常用功能词；英文独有词（the / and / with …）不要放进来。CJK 与阿拉伯语走字符集判定，不需要本表。",
+  "de": [
+    "aber", "alle", "als", "am", "an", "auch", "auf", "aus", "bei", "beim", "bis", "da", "damit",
+    "dann", "das", "dass", "dein", "dem", "den", "der", "des", "die", "dies", "diese", "dieser",
+    "doch", "dort", "du", "durch", "ein", "eine", "einem", "einen", "einer", "eines", "er", "es",
+    "für", "fur", "gegen", "gibt", "hat", "haben", "hier", "ich", "ihm", "ihn", "ihre", "im", "in",
+    "ist", "ja", "jede", "jeder", "je", "kann", "kein", "keine", "man", "mehr", "mit", "nach",
+    "nicht", "noch", "nur", "ob", "oder", "ohne", "pro", "sehr", "sein", "sich", "sie", "sind", "so",
+    "soll", "sondern", "um", "und", "uns", "unter", "über", "uber", "vom", "von", "vor", "war",
+    "was", "wenn", "werden", "wie", "wieder", "will", "wir", "wird", "wo", "zu", "zum", "zur",
+    "zwischen"
+  ],
+  "nl": [
+    "aan", "als", "bij", "dan", "dat", "de", "deze", "die", "dit", "een", "en", "er", "geen", "het",
+    "hier", "hoe", "hun", "in", "is", "je", "kan", "maar", "meer", "met", "naar", "niet", "nu",
+    "om", "onze", "ook", "op", "over", "te", "tot", "uit", "uw", "van", "voor", "waar", "wanneer",
+    "was", "wat", "wel", "welke", "werd", "worden", "ze", "zeer", "zij", "zijn", "zo", "zonder"
+  ],
+  "fr": [
+    "au", "aux", "avec", "avoir", "ce", "ces", "cet", "cette", "dans", "de", "des", "du", "elle",
+    "en", "est", "et", "être", "etre", "il", "ils", "la", "le", "les", "leur", "mais", "nous",
+    "notre", "on", "ou", "par", "pas", "plus", "pour", "que", "qui", "sans", "se", "ses", "son",
+    "sont", "sur", "un", "une", "votre", "vous", "y"
+  ],
+  "es": [
+    "al", "como", "con", "de", "del", "el", "en", "es", "esta", "este", "la", "las", "lo", "los",
+    "más", "mas", "no", "nuestro", "o", "para", "pero", "por", "que", "se", "sin", "sobre", "son",
+    "su", "sus", "un", "una", "y", "ya"
+  ],
+  "it": [
+    "al", "alla", "che", "chi", "come", "con", "da", "dal", "del", "della", "di", "e", "è", "gli",
+    "i", "il", "in", "la", "le", "lo", "ma", "nei", "nel", "non", "o", "per", "più", "piu", "se",
+    "senza", "si", "sono", "su", "suo", "tra", "un", "una", "uno"
+  ],
+  "pt": [
+    "a", "ao", "as", "com", "como", "da", "das", "de", "do", "dos", "e", "é", "em", "esta", "este",
+    "mais", "mas", "na", "nas", "no", "nos", "nossa", "o", "os", "ou", "para", "por", "que", "são",
+    "sao", "se", "sem", "seu", "um", "uma"
+  ]
+}

@@ -1,0 +1,97 @@
+{
+    "generated": "2026-10-30",
+    "engine": "PKQ_Pricing::price / pk_from_price",
+    "presets": {
+        "rigid_500": {
+            "label": "Rigid magnetic jewelry box",
+            "size": "9.5×9.5×4 cm",
+            "quantity": 500,
+            "material": "rigidboard",
+            "print": "full-color",
+            "finish": "matte",
+            "unit": 2.83,
+            "total": 1417.43
+        },
+        "rigid_1000": {
+            "label": "Rigid magnetic jewelry box",
+            "size": "9.5×9.5×4 cm",
+            "quantity": 1000,
+            "material": "rigidboard",
+            "print": "full-color",
+            "finish": "matte",
+            "unit": 2.34,
+            "total": 2344.03
+        },
+        "mailer_500": {
+            "label": "Printed mailer box",
+            "size": "30×22×12 cm",
+            "quantity": 500,
+            "material": "kraft",
+            "print": "full-color",
+            "finish": "matte",
+            "unit": 2.48,
+            "total": 1239.04
+        }
+    },
+    "cards": {
+        "product-drawer-jewelry-box": {
+            "title": "Custom Drawer Jewelry Boxes with Logo",
+            "unit": 2.83,
+            "size": "9.5×9.5×4 cm",
+            "style": "rigid",
+            "url": "https://www.packrivo.com/product-drawer-jewelry-box/"
+        },
+        "product-lid-and-base-jewelry-box": {
+            "title": "Custom Lid-and-Base Jewelry Boxes",
+            "unit": 2.83,
+            "size": "9.5×9.5×4 cm",
+            "style": "rigid",
+            "url": "https://www.packrivo.com/product-lid-and-base-jewelry-box/"
+        },
+        "product-jewelry-box-with-insert": {
+            "title": "Custom Jewelry Boxes with Fitted Inserts",
+            "unit": 2.83,
+            "size": "9.5×9.5×4 cm",
+            "style": "rigid",
+            "url": "https://www.packrivo.com/product-jewelry-box-with-insert/"
+        },
+        "product-window-lid-rigid-gift-box": {
+            "title": "Custom Window Lid Rigid Boxes",
+            "unit": 2.83,
+            "size": "9.5×9.5×4 cm",
+            "style": "rigid",
+            "url": "https://www.packrivo.com/product-window-lid-rigid-gift-box/"
+        },
+        "product-hinged-nonmagnetic-rigid-box": {
+            "title": "Custom Hinged Rigid Gift Boxes",
+            "unit": 2.83,
+            "size": "9.5×9.5×4 cm",
+            "style": "rigid",
+            "url": "https://www.packrivo.com/product-hinged-nonmagnetic-rigid-box/"
+        },
+        "product-corrugated-roll-end-hinged-lid": {
+            "title": "Custom Hinged Lid Boxes with Logo",
+            "unit": 2.48,
+            "size": "30×22×12 cm",
+            "style": "mailer",
+            "url": "https://www.packrivo.com/product-corrugated-roll-end-hinged-lid/"
+        },
+        "product-euro-tote-paper-carrier": {
+            "title": "Custom Paper Gift Bags with Logo",
+            "unit": 1.63,
+            "size": "18×8×22 cm",
+            "style": "bag",
+            "url": "https://www.packrivo.com/product-euro-tote-paper-carrier/"
+        },
+        "product-sos-paper-gift-bag": {
+            "title": "Custom SOS Paper Bags Bulk",
+            "unit": 1.63,
+            "size": "18×8×22 cm",
+            "style": "bag",
+            "url": "https://www.packrivo.com/product-sos-paper-gift-bag/"
+        }
+    },
+    "llms_sha256": "278a0c807e29d30328c9993f02d8d67ef20ea816872c99a10d5a1ff88f4a521a",
+    "llms_bytes": 7679,
+    "removed_manual_price_lines": 1
+}

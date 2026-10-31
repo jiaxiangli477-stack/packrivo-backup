@@ -1,0 +1,9 @@
+{
+  "block": {
+    "Download .txt": {
+      "old": "Download .txt",
+      "new": "Scarica .txt",
+      "why": "意大利语按钮用祈使式 Scarica；原串整条留着英文 UI 词没翻"
+    }
+  }
+}

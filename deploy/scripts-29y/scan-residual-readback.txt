@@ -1,0 +1,245 @@
+# -*- coding: utf-8 -*-
+"""29y item 3: scan 11 langs x paths for residual English inside <main>.
+
+SINGLE-THREADED SEQUENTIAL EDITION (per 29y single-thread rule; replaces the
+--workers ThreadPool version that was killed mid-run as task_63).
+
+The i18n plugin translates by exact string substitution (DOM structure is
+preserved). So a segment on a translated page that is byte-identical
+(normalized) to its English counterpart at the same position = untranslated
+residual English. Everything else (German/French text etc.) is translation.
+
+Checkpoint/resume: every N tasks the collected rows and the done-set are
+written to --state (JSON) and the CSV is rewritten, so an interruption loses
+at most N tasks.
+
+Usage:
+  python scan-residual.py --out-csv out.csv --out-json uniq.json --state scan-state.json
+"""
+import argparse, csv, html, json, re, subprocess, sys, os, time
+from html.parser import HTMLParser
+
+BASE = 'https://www.packrivo.com'
+UP = r'E:\破甲工作区\.tmp\28q\rehearsal\home\web\html\www.packrivo.com\wordpress\wp-content\uploads\packrivo-i18n'
+LANGS = ['de','fr','es','it','nl','pt','ar','ja','ko','zh-CN','zh-TW']
+CURL = ['curl.exe','-sk','--noproxy','*','--resolve','www.packrivo.com:443:127.0.0.1']
+
+# whitelist: brand names / units / codes that do not count as residual English words
+WL = set('''packrivo mm cm kg g ml oz in ft px moq ai faq usd usa eu uk gsm pet pvc pp pe
+abs pla gb mb kb b2b b2c rfq sku skus diy epe ncr 3d oem odm ip iq cfd fob cif iso
+rohs ce sgs astm fda pcs pc cny cbm lcl fcl uv led qr'''.split())
+WL_PAT = re.compile(r'^(?:catalog|pk|pr|r)[-_a-z0-9]*$', re.I)
+
+def norm(s):
+    return re.sub(r'\s+', ' ', html.unescape(s)).strip()
+
+def eng_words(s):
+    toks = re.findall(r"[A-Za-z][A-Za-z'\-]*[A-Za-z]", s)
+    out = []
+    for t in toks:
+        if t.lower() in WL: continue
+        if WL_PAT.match(t): continue
+        out.append(t)
+    return out
+
+def has_english(s):
+    return bool(eng_words(s))
+
+SKIP_TAGS = {'script','style','svg','noscript'}
+
+class PageWalker(HTMLParser):
+    """Collect text segments inside <main> as (kind, text): leaf elements and
+    loose text runs, skipping script/style/svg. Mirrors the plugin passes."""
+    def __init__(self):
+        super().__init__(convert_charrefs=False)
+        self.in_main = 0
+        self.skip_depth = 0
+        self.stack = []
+        self.bufs = []          # per-level text buffers
+        self.segments = []
+    def handle_starttag(self, tag, attrs):
+        if tag == 'main' and self.in_main == 0:
+            self.in_main = 1
+        if self.in_main:
+            if tag in SKIP_TAGS: self.skip_depth += 1
+            self.stack.append(tag)
+            self.bufs.append('')
+    def handle_endtag(self, tag):
+        if tag == 'main' and self.in_main:
+            self._flush_all()
+            self.in_main = 0
+            return
+        if not self.in_main: return
+        if tag in SKIP_TAGS and self.skip_depth > 0:
+            self.skip_depth -= 1
+            self.stack.pop()
+            self.bufs.pop()
+            return
+        inner_parts = []
+        while self.stack:
+            t = self.stack.pop()
+            b = self.bufs.pop() if self.bufs else ''
+            if self.skip_depth == 0 and b:
+                inner_parts.append(b)
+            if t == tag: break
+        if self.skip_depth == 0:
+            inner = ''.join(inner_parts)
+            n = norm(inner)
+            if not n: return
+            if not re.search(r'<[a-zA-Z]', inner):
+                self.segments.append(('leaf', n))
+            else:
+                self.segments.append(('text', n))
+    def _flush_all(self):
+        while self.stack:
+            self.stack.pop()
+            b = self.bufs.pop() if self.bufs else ''
+            if b and self.skip_depth == 0:
+                self.segments.append(('text', norm(b)))
+    def handle_data(self, data):
+        if not self.in_main or self.skip_depth: return
+        if self.bufs:
+            self.bufs[-1] = self.bufs[-1] + data
+
+def strip_blog_marker(h):
+    # The plugin appends '(English)' spans on blog list pages; remove them so
+    # the structure aligns with the English page.
+    h = re.sub(r'\s*<span class="packrivo-blog-language"[^>]*>\(English\)</span>', '', h)
+    h = re.sub(r'<script id="packrivo-i18n-runtime">.*?</script>', '', h, flags=re.S)
+    return h
+
+def fetch(url, tries=3, timeout=90):
+    for i in range(tries):
+        try:
+            r = subprocess.run(CURL + [url], capture_output=True, timeout=timeout)
+        except subprocess.TimeoutExpired:
+            print(f'  retry {url} (timeout)', file=sys.stderr, flush=True)
+            time.sleep(2)
+            continue
+        if r.returncode == 0 and r.stdout:
+            return r.stdout.decode('utf-8', errors='replace')
+        time.sleep(2)
+    print(f'  FETCH-FAIL {url}', file=sys.stderr, flush=True)
+    return ''
+
+def segments_of(body):
+    m = re.search(r'<main\b.*?</main>', body, re.S)
+    frag = m.group(0) if m else body
+    w = PageWalker()
+    try:
+        w.feed(frag)
+    except Exception:
+        pass
+    return [t for _, t in w.segments]
+
+def scan_page(lang, path, en_cache):
+    url = f'{BASE}/{lang}{path}' if path != '/' else f'{BASE}/{lang}/'
+    body = fetch(url)
+    body = strip_blog_marker(body)
+    segs = segments_of(body)
+    en_segs = en_cache[path]
+    residuals = []
+    n = min(len(segs), len(en_segs))
+    for i in range(n):
+        s = segs[i]
+        if not has_english(s): continue
+        if norm(s) == norm(en_segs[i]):
+            residuals.append(s)
+    return url, residuals
+
+def write_outputs(a, rows, uniq, state):
+    with open(a.out_csv, 'w', encoding='utf-8-sig', newline='') as f:
+        wcsv = csv.writer(f)
+        wcsv.writerow(['lang','url','sentence','en_words'])
+        for r in sorted(rows, key=lambda x: (x['lang'], x['url'])):
+            wcsv.writerow([r['lang'], r['url'], r['sentence'], r['en_words']])
+    with open(a.out_json, 'w', encoding='utf-8') as f:
+        json.dump({k: sorted(v) for k, v in uniq.items()}, f, ensure_ascii=False, indent=1)
+    with open(a.state, 'w', encoding='utf-8') as f:
+        json.dump(state, f, ensure_ascii=False)
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument('--out-csv', default='residual-29y.csv')
+    ap.add_argument('--out-json', default='residual-29y-unique.json')
+    ap.add_argument('--state', default='scan-state.json')
+    ap.add_argument('--langs', default=None)
+    ap.add_argument('--paths', default=None)
+    ap.add_argument('--checkpoint-every', type=int, default=25)
+    a = ap.parse_args()
+
+    langs = a.langs.split(',') if a.langs else LANGS
+    with open(os.path.join(UP, 'paths.json'), encoding='utf-8') as f:
+        allpaths = json.load(f)
+    paths = a.paths.split(',') if a.paths else allpaths
+
+    # ---- resume ----
+    state = {'en_done': [], 'en_segments': {}, 'done': [], 'rows': []}
+    if os.path.exists(a.state):
+        try:
+            state = json.load(open(a.state, encoding='utf-8'))
+            print(f'resume: en_done={len(state.get("en_done",[]))} done={len(state.get("done",[]))} rows={len(state.get("rows",[]))}', file=sys.stderr)
+        except Exception as e:
+            print(f'state unreadable, restarting: {e}', file=sys.stderr)
+            state = {'en_done': [], 'en_segments': {}, 'done': [], 'rows': []}
+    done = {tuple(x) for x in state.get('done', [])}
+    rows = state.get('rows', [])
+    uniq = {}
+    for r in rows:
+        uniq.setdefault(r['sentence'], set()).add(r['lang'])
+    en_segments = state.get('en_segments', {})
+    en_done = set(state.get('en_done', []))
+
+    # ---- English baseline pages (sequential) ----
+    t0 = time.time()
+    for pi, p in enumerate(paths, 1):
+        if p in en_done:
+            continue
+        body = fetch(BASE + p if p != '/' else BASE + '/')
+        en_segments[p] = segments_of(body)
+        en_done.add(p)
+        if pi % 25 == 0 or pi == len(paths):
+            state.update({'en_done': sorted(en_done), 'en_segments': en_segments, 'done': sorted(done), 'rows': rows})
+            write_outputs(a, rows, uniq, state)
+            print(f'en {pi}/{len(paths)}  {time.time()-t0:.0f}s', file=sys.stderr, flush=True)
+    print(f'english pages fetched: {len(en_segments)}', file=sys.stderr, flush=True)
+
+    # ---- all lang x path pages, strictly sequential ----
+    tasks = [(l, p) for l in langs for p in paths]
+    total = len(tasks)
+    ndone = len(done)
+    t_start = time.time()
+    for idx, (l, p) in enumerate(tasks, 1):
+        if (l, p) in done:
+            continue
+        try:
+            url, res = scan_page(l, p, en_segments)
+        except Exception as e:
+            print(f'ERR {l} {p}: {e}', file=sys.stderr, flush=True)
+            res = []
+            url = f'{BASE}/{l}{p}'
+        for s in res:
+            wc = len(eng_words(s))
+            rows.append({'lang': l, 'url': url, 'sentence': s, 'en_words': wc})
+            uniq.setdefault(s, set()).add(l)
+        done.add((l, p))
+        ndone += 1
+        if ndone % a.checkpoint_every == 0:
+            state.update({'en_done': sorted(en_done), 'en_segments': en_segments, 'done': sorted(done), 'rows': rows})
+            write_outputs(a, rows, uniq, state)
+        if ndone % 100 == 0:
+            el = time.time() - t_start
+            eta = el / max(ndone, 1) * (total - ndone)
+            print(f'{ndone}/{total}  residual_rows={len(rows)}  uniq={len(uniq)}  elapsed={el:.0f}s eta={eta:.0f}s', file=sys.stderr, flush=True)
+
+    # ---- final write ----
+    state.update({'en_done': sorted(en_done), 'en_segments': en_segments, 'done': sorted(done), 'rows': rows})
+    write_outputs(a, rows, uniq, state)
+    print(f'DONE csv_rows={len(rows)} unique_en_strings={len(uniq)}')
+    from collections import Counter
+    c = Counter(r['lang'] for r in rows)
+    for l in langs:
+        print(f'  {l}: {c.get(l, 0)} rows')
+
+if __name__ == '__main__':
+    main()

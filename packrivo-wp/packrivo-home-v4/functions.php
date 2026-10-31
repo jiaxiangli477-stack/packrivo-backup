@@ -7,7 +7,13 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('PKV4_VERSION', '4.0.4');
+define('PKV4_VERSION', '4.0.6');
+
+// 29y：/get-a-quote/ 的 H1 / title / meta description（11 语种走词典）。
+require_once get_stylesheet_directory() . '/inc/quote-page.php';
+
+// 29y：列表页 ItemList / 可见 FAQ 的 FAQPage（第 4 项结构化数据）。
+require_once get_stylesheet_directory() . '/inc/structured-data.php';
 
 function pkv4_assets()
 {

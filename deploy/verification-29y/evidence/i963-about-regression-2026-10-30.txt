@@ -1,0 +1,22 @@
+﻿=== about pages ===
+de     about: 4 words OK(<=5)  ['Shenzhen, China', 'hello@packrivo.com']
+fr     about: 2 words OK(<=5)  ['hello@packrivo.com']
+es     about: 4 words OK(<=5)  ['Shenzhen, China', 'hello@packrivo.com']
+it     about: 3 words OK(<=5)  ['Home', 'hello@packrivo.com']
+nl     about: 4 words OK(<=5)  ['Shenzhen, China', 'hello@packrivo.com']
+pt     about: 4 words OK(<=5)  ['Shenzhen, China', 'hello@packrivo.com']
+ar     about: 2 words OK(<=5)  ['hello@packrivo.com']
+ja     about: 2 words OK(<=5)  ['hello@packrivo.com']
+ko     about: 2 words OK(<=5)  ['hello@packrivo.com']
+zh-CN  about: 2 words OK(<=5)  ['hello@packrivo.com']
+zh-TW  about: 2 words OK(<=5)  ['hello@packrivo.com']
+=== de inquiry ===
+de     inquiry: 3 words OK  ['hello@packrivo.com', 'WhatsApp']
+=== de about (recheck) ===
+de     about: 4 words OK  ['Shenzhen, China', 'hello@packrivo.com']
+=== inline link labels still translated (spot: it about) ===
+  it has 'Un documento di chiarimento' : True
+  it has 'Richiedi un preventivo' : True
+  it has 'email a Packrivo' : True
+=== en about unchanged? ===
+  en has "keeps unresolved questions visible": True

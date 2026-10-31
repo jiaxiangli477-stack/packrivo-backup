@@ -1,0 +1,14 @@
+﻿main rows before: 1532  done=1606
+es: round2 csv rows=8 expected_paths=46
+it: round2 csv rows=33 expected_paths=138
+nl: round2 csv rows=12 expected_paths=45
+pt: round2 csv rows=13 expected_paths=49
+ko: round2 csv rows=0 expected_paths=28
+zh-CN: round2 csv rows=0 expected_paths=27
+zh-TW: round2 csv rows=0 expected_paths=2
+removed stale rows: 692  kept: 840
+added rescan rows: 102
+merged rows: 942  dup_sentences: 187
+pages total: 314  pages>5w: 314  blog>5w: 11  non-blog>5w: 0
+comparison written: E:\Ai\ARTEX-Portable\app\data\tasks\67\i970\merge-round2-before-after.csv (794 rows)
+MERGE WRITTEN: state + csv + uniq json

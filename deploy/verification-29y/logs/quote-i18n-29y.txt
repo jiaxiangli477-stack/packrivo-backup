@@ -1,0 +1,48 @@
+---- en  http=200  h1数=1
+     title: Custom Packaging Quote &amp; Price Calculator | Packrivo
+     h1   : Custom Packaging Quote &amp; Price Calculator
+     desc : Box size, quantity, print and finish set the unit price. See the published curve, then get a written scope and supplier confirmation.
+---- de  http=200  h1数=1
+     title: Individuelles Verpackungsangebot &amp; Preisrechner | Packrivo
+     h1   : Individuelles Verpackungsangebot &amp; Preisrechner
+     desc : Größe, Menge, Druck und Veredelung bestimmen den Stückpreis. Sehen Sie die veröffentlichte Kurve, dann schriftlicher Umfang und Lieferantenbestätigung.
+---- fr  http=200  h1数=1
+     title: Devis d&#039;emballage personnalisé et calculateur de prix | Packrivo
+     h1   : Devis d&#039;emballage personnalisé et calculateur de prix
+     desc : Dimensions, quantité, impression et finition fixent le prix unitaire. Consultez la courbe publiée, puis obtenez un périmètre écrit et la confirmation du fournisseur.
+---- es  http=200  h1数=1
+     title: Cotización de embalaje a medida y calculadora de precios | Packrivo
+     h1   : Cotización de embalaje a medida y calculadora de precios
+     desc : Tamaño, cantidad, impresión y acabado fijan el precio unitario. Consulte la curva publicada y reciba el alcance por escrito y la confirmación del proveedor.
+---- it  http=200  h1数=1
+     title: Preventivo imballaggio personalizzato e calcolatore di prezzo | Packrivo
+     h1   : Preventivo imballaggio personalizzato e calcolatore di prezzo
+     desc : Dimensioni, quantità, stampa e finitura determinano il prezzo unitario. Consulti la curva pubblicata, poi riceva perimetro scritto e conferma del fornitore.
+---- nl  http=200  h1数=1
+     title: Offerte voor custom packaging en prijscalculator | Packrivo
+     h1   : Offerte voor custom packaging en prijscalculator
+     desc : Formaat, aantal, druk en afwerking bepalen de stukprijs. Bekijk de gepubliceerde curve en ontvang daarna een schriftelijke scope en leveranciersbevestiging.
+---- pt  http=200  h1数=1
+     title: Orçamento de embalagem personalizada e calculadora de preço | Packrivo
+     h1   : Orçamento de embalagem personalizada e calculadora de preço
+     desc : Tamanho, quantidade, impressão e acabamento definem o preço unitário. Veja a curva publicada e receba o escopo por escrito e a confirmação do fornecedor.
+---- ar  http=200  h1数=1
+     title: عرض سعر تغليف مخصص وحاسبة أسعار | Packrivo
+     h1   : عرض سعر تغليف مخصص وحاسبة أسعار
+     desc : المقاس والكمية والطباعة والتشطيب تحدد سعر الوحدة. اطّلع على المنحنى المنشور، ثم احصل على نطاق عمل مكتوب وتأكيد من المورد.
+---- ja  http=200  h1数=1
+     title: カスタム包装の見積もりと価格計算ツール | Packrivo
+     h1   : カスタム包装の見積もりと価格計算ツール
+     desc : サイズ・数量・印刷・加工で単価が決まります。公開カーブをご確認のうえ、書面の範囲とサプライヤー確認をお受け取りください。
+---- ko  http=200  h1数=1
+     title: 맞춤 포장 견적 및 가격 계산기 | Packrivo
+     h1   : 맞춤 포장 견적 및 가격 계산기
+     desc : 크기, 수량, 인쇄, 마감이 단가를 결정합니다. 공개된 가격 곡선을 확인한 뒤 서면 범위와 공급업체 확인을 받으세요.
+---- zh-CN  http=200  h1数=1
+     title: 定制包装报价与价格计算器 | Packrivo
+     h1   : 定制包装报价与价格计算器
+     desc : 尺寸、数量、印刷与工艺决定单价。查看公开价格曲线，随后获得书面范围与供应商确认。
+---- zh-TW  http=200  h1数=1
+     title: 客製包裝報價與價格計算器 | Packrivo
+     h1   : 客製包裝報價與價格計算器
+     desc : 尺寸、數量、印刷與加工決定單價。查看公開價格曲線，隨後取得書面範圍與供應商確認。

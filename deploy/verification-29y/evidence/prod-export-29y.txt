@@ -1,0 +1,53 @@
+# 29y §0 生产只读导出记录（本次有效导出，2026-10-31 UTC）
+
+任务：packrivo-v2/docs/DSH-TASK-2026-10-29y.md 授权的唯一一次生产只读导出 + sha256 核验。
+目标 897：仅执行一次只读导出并计算 sha256，纳入 29y 交付。
+
+## 导出会话（同一会话，未另建）
+- 会话目录：`/home/web/backups/packrivo-29y-export-20261031-003939/`
+- 会话开始（export-start-utc.txt，保留未动）：`2026-10-31T00:39:39Z`
+- 会话内 stray 标记（被中断尝试遗留，保留未动）：`export-start-utc-stray.txt` = `2026-10-31T00:37:04Z`
+
+## 通道一（失败，如实记录）
+- 命令：`docker exec php wp --path=/var/www/html/www.packrivo.com/wordpress --allow-root db export /tmp/29y-prod.sql --skip-plugins --skip-themes`
+- 失败原文：`Error: Cannot do 'Process::run': The PHP functions proc_open() and/or proc_close() are disabled. Please check your PHP ini directive disable_functions or suhosin settings.`
+- 根因：php 容器（kjlion/php:fpm-alpine）php.ini disable_functions 含 proc_open/proc_close。
+- 处理：未修改 php.ini、未启用任何被禁函数（遵守约束），改走通道二。
+- 失败时间戳：2026-10-31T00:39:53Z（此间误写的 export-end-utc.txt 已被真实结束时间覆盖）。
+
+## 通道二（成功，只读）
+- 来源容器：`mysql`（image: mysql，MySQL Community Server 26.7.0-1.el9，Innovation，healthy 12 天）
+- 客户端：容器内 `/usr/bin/mysqldump`（`mysqldump  Ver 26.7.0 for Linux on x86_64 (MySQL Community Server - GPL)`）
+- 数据库连接：容器内 root 经本地 socket（`Host: localhost    Database: www_packrivo_com`，与 wp-config DB_NAME/DB_HOST=mysql 对应）
+- 实际命令（密码经容器环境变量 MYSQL_ROOT_PASSWORD 注入，此处脱敏）：
+  `docker exec mysql bash -lc 'mysqldump -uroot -p"$MYSQL_ROOT_PASSWORD" --single-transaction --quick --skip-lock-tables --skip-add-locks --no-tablespaces --set-gtid-purged=OFF --routines --events --triggers --default-character-set=utf8mb4 www_packrivo_com' > /home/web/backups/packrivo-29y-export-20261031-003939/29y-prod.sql`
+- 只读属性：--single-transaction（一致性快照）+ --skip-lock-tables（无 LOCK TABLES / FLUSH TABLES WITH READ LOCK）+ --skip-add-locks（不注入锁语句）+ --no-tablespaces + --set-gtid-purged=OFF；全程仅 SELECT 类查询，无任何写入。
+- 未修改 php.ini / 未启用 proc_open、proc_close / 未重启或改动任何生产容器与数据库 / 未执行第二个独立导出会话。
+
+## 核验结果
+| 项 | 值 |
+|---|---|
+| 表数量（information_schema） | 40（全部 InnoDB） |
+| dump 内 CREATE TABLE | 40 |
+| dump 内 INSERT INTO 块 | 56 |
+| 结束标记 | `-- Dump completed on 2026-10-31  0:45:26` |
+| 导出开始（UTC，实际命令执行） | 2026-10-31T00:45:25Z |
+| 导出结束（UTC，export-end-utc.txt） | 2026-10-31T00:45:26Z |
+| 字节数（29y-prod.bytes） | 35170138 |
+| 生产端 sha256（29y-prod.sha256） | 3007fb4aef2d2af4a5251d1196494ea12e6d5a9cd493e13cb2cddcc4bafd2820 |
+| 本机副本 sha256（Get-FileHash） | 3007FB4AEF2D2AF4A5251D1196494EA12E6D5A9CD493E13CB2CDDCC4BAFD2820 |
+| 双端哈希一致 | 是（HASH-MATCH: YES） |
+| 文件非空且含完整表/数据 | 是（40/40 表、结束标记在尾、head/tail 正常） |
+| 本机副本路径 | `deploy/verification-29y/export/29y-prod.sql`（git 忽略，不提交） |
+| 运行日志 | 远端 `export-run.log` + 本机 `deploy/verification-29y/export/export-run.log` |
+
+表清单（40）：wp_actionscheduler_actions/claims/groups/logs、wp_commentmeta、wp_comments、wp_ff_scheduled_actions、wp_fluentform_*（7）、wp_fsmpt_email_logs、wp_jetpack_waf_blocklog、wp_links、wp_options、wp_packrivo_intake_limits、wp_packrivo_lead_attachments、wp_packrivo_leads、wp_packrivo_ops_records、wp_pkpw_*（4）、wp_postmeta、wp_posts、wp_term_relationships、wp_term_taxonomy、wp_termmeta、wp_terms、wp_usermeta、wp_users、wp_yoast_*（5）。
+
+## 历史导出（未使用）
+- `/home/web/backups/packrivo-29y-export-20261030-105900/29y-prod.sql`（2026-10-30 10:59 UTC、35,072,521 B、sha256 cf6e40a51f30844ecb75e59485201aaae9e4486c3ae3db56397bb48b0d07aa0e）
+- 本次导出为独立新文件：字节数不同（35170138 vs 35072521）、哈希不同、时间戳为本次会话。历史导出仅作比对参照，未冒用。
+
+## 证据落盘
+- 远端：29y-prod.sql / 29y-prod.sha256 / 29y-prod.bytes / export-start-utc.txt / export-end-utc.txt / export-run.log
+- 本机：deploy/verification-29y/export/（上述全部 + 本机 sha256 校验记录）
+- 本文件：deploy/verification-29y/evidence/prod-export-29y.txt

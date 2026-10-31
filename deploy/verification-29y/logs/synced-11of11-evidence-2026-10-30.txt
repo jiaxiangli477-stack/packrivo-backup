@@ -1,0 +1,13 @@
+=== 29y translation sync evidence (intent 946) 2026-10-30T11:39:47 ===
+synced flags: 11/11 -> ['synced-ar.flag', 'synced-de.flag', 'synced-es.flag', 'synced-fr.flag', 'synced-it.flag', 'synced-ja.flag', 'synced-ko.flag', 'synced-nl.flag', 'synced-pt.flag', 'synced-zh-CN.flag', 'synced-zh-TW.flag']
+de     flag=2026-10-30T06:32:45 repo_md5=d5cea790b0 up_md5=d5cea790b0 equal=True block_entries=6785
+fr     flag=2026-10-30T07:00:48 repo_md5=475b9f9ef4 up_md5=475b9f9ef4 equal=True block_entries=6678
+es     flag=2026-10-30T07:26:01 repo_md5=da34499792 up_md5=da34499792 equal=True block_entries=6678
+it     flag=2026-10-30T07:38:35 repo_md5=09ae264154 up_md5=09ae264154 equal=True block_entries=6680
+nl     flag=2026-10-30T08:04:46 repo_md5=2e92727756 up_md5=2e92727756 equal=True block_entries=6676
+pt     flag=2026-10-30T08:31:35 repo_md5=ae6304cfc0 up_md5=ae6304cfc0 equal=True block_entries=6675
+ar     flag=2026-10-30T08:48:39 repo_md5=eda789e0cb up_md5=eda789e0cb equal=True block_entries=6675
+ja     flag=2026-10-30T09:04:07 repo_md5=57e020881b up_md5=57e020881b equal=True block_entries=6676
+ko     flag=2026-10-30T10:51:18 repo_md5=7194698002 up_md5=7194698002 equal=True block_entries=6674
+zh-CN  flag=2026-10-30T11:02:01 repo_md5=0fa9224c97 up_md5=0fa9224c97 equal=True block_entries=6674
+zh-TW  flag=2026-10-30T11:29:09 repo_md5=f64231b713 up_md5=f64231b713 equal=True block_entries=6674
