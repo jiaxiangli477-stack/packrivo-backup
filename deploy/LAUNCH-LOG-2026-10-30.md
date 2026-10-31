@@ -436,3 +436,23 @@ meta 抽查 /catalog-velvet-box/：len=104
 - 本节标题 1 行写的「中止」是第一次授权时的状态，以 A0–A10 为准：第三次授权（`09e272e`）已上线成功。
 - `/catalog-wooden-box-o1cn01rnjift1k/` 的新 meta 开头是「Black Wood-Grain Jewelry.」，读起来像被截断，后续精修 catalog 文案时一并看。
 - `29z-crawl-prod.mjs` / `29z-old-url-sources.mjs` 的参数实际是输出目录，手册写法有偏差（见 A9 末尾），下次改 RUNBOOK 时顺手修。
+
+## 29y 事故与处置：演练脚本误打生产（3 条 pkq_order）
+
+**事故**：2026-10-30 18:08:41 / 18:11:45 / 18:13:12 UTC，29y 的报价演练脚本在宿主机上跑无头 Chrome，
+`--host-resolver-rules` 被 Chrome 的 Secure DNS 绕过、宿主机又连不到演练网关，三次「提交」全部落到线上，
+在生产 `wp_posts` 生成 3 条 `pkq_order`（3646 PKQ-O24CQ / 3647 PKQ-9IK2C / 3648 PKQ-48FGX，
+公司名 `Packrivo 29y rehearsal`，邮箱 `drill-29y@example.com`）。
+
+**处置**（负责人书面授权，只删这三条）：
+- 删前核对 `post_type=pkq_order`、`pkq_email=drill-29y@example.com` 三条全对；
+- 先导出 `/home/web/backups/29y-drill-orders-20261031-030645.sql`（10,891 B，
+  sha256 `170637f6…a3ca71d`，含 3 行 posts + 66 行 postmeta）；
+- `wp post delete 3646 3647 3648 --force` → 三条 Success；
+- 删后 `pkq_order` 总数 0、`post_id IN (3646,3647,3648)` 的 postmeta 0 行、首页与两个报价页均 200；
+- 没清缓存、没碰其它数据、没读任何凭据文件。
+
+**加固**：浏览器改在演练网段内跑（`selenium/standalone-chrome --network r28q-net`），
+关掉 DoH/AsyncDns，并在动手前先取演练站独有标记 `/29y-marker.txt`；
+响应头出现 `Server: cloudflare` 或 `CF-RAY` 直接退出。细则见
+`deploy/verification-29y/evidence/29y-drill-prod-incident.txt` 与 `29y-prod-cleanup.txt`。

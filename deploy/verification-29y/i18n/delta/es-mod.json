@@ -1,9 +1,1 @@
-{
-  "block": {
-    "Explore →": {
-      "old": "Explore →",
-      "new": "Explorar →",
-      "why": "i942/i938 机器批次（i909/trans-<lang>.json）翻好的现有节点，绕过 delta 直接写了词典；收编进 delta 留档"
-    }
-  }
-}
+{}

@@ -36,5 +36,11 @@ try:
     print("UA:", d.execute_script("return navigator.userAgent"))
     print("演练标记 /nl/ 头部 H1:", d.execute_script(
         "var h=document.querySelector('h1');return h?h.textContent.trim():''"))
+    srv = (info.get("server") or "").lower()
+    print("闸门：Server =", info.get("server"), "| x-request-id =", info.get("reqId") or "-")
+    if "cloudflare" in srv:
+        print("FAIL 目标带 Cloudflare 头 —— 这是线上，不是演练栈")
+        raise SystemExit(3)
+    print("PASS 目标不是 Cloudflare 边缘")
 finally:
     d.quit()

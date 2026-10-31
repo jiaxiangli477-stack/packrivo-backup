@@ -1,15 +1,1 @@
-{
-  "title": {
-    "Custom Packaging Quote & Price Calculator | Packrivo": "客製包裝報價與價格計算器 | Packrivo"
-  },
-  "block": {
-    "at %s pcs · %s cm": "%s 件起 · %s cm",
-    "at %s pcs · %s cm · full-colour print, matte": "%s 件起 · %s cm · 全彩印刷，霧面",
-    "from $%s / unit": "每件 $%s 起",
-    "Email:": "電子郵件："
-  },
-  "text": {
-    "Box size, quantity, print and finish set the unit price. See the published curve, then get a written scope and supplier confirmation.": "尺寸、數量、印刷與加工決定單價。查看公開價格曲線，隨後取得書面範圍與供應商確認。",
-    "Custom Packaging Quote & Price Calculator": "客製包裝報價與價格計算器"
-  }
-}
+{}

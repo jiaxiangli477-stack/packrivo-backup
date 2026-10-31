@@ -60,14 +60,24 @@ def main():
 
     d = build_driver()
     try:
-        # 闸门一：确认目标就是演练栈
-        d.get(BASE + "/29y-marker.txt")
-        got = d.find_element(By.TAG_NAME, "body").text.strip()
-        print("标记文件内容:", got, "| 期望:", a.marker)
-        if got != a.marker:
+        # 闸门一：确认目标就是演练栈（标记文件 + 不允许出现 Cloudflare）
+        gate = d.execute_script("""
+          return (async () => {
+            const r = await fetch('/29y-marker.txt', {cache:'no-store'});
+            const t = await r.text();
+            return {text: t.trim(), server: (r.headers.get('server')||''),
+                    cfRay: (r.headers.get('cf-ray')||''), status: r.status};
+          })();
+        """)
+        print("标记文件内容:", gate["text"], "| 期望:", a.marker,
+              "| Server:", gate["server"], "| CF-RAY:", gate["cfRay"] or "-")
+        if "cloudflare" in gate["server"].lower() or gate["cfRay"]:
+            print("FAIL 目标带 Cloudflare 头，说明打到线上，立即停止（不碰表单）")
+            raise SystemExit(3)
+        if gate["text"] != a.marker:
             print("FAIL 目标不是演练栈，立即停止（不碰表单、不发任何请求）")
             raise SystemExit(2)
-        print("PASS 目标确认是演练栈")
+        print("PASS 目标确认是演练栈（标记一致，且无 Cloudflare 头）")
 
         d.get(BASE + "/nl/get-a-quote/")
         WebDriverWait(d, 60).until(EC.presence_of_element_located((By.CSS_SELECTOR, ".pkq-tile")))

@@ -1,0 +1,41 @@
+29y 生产事故处置记录（删除 3 条演练误建报价单）
+========================================================
+授权：负责人书面授权「只删 wp_posts ID 3646、3647、3648，不做别的」。
+时间：2026-10-30 20:07–20:15 PDT（2026-10-31 03:06–03:15 UTC）
+
+一、删除前逐条核对（全 PASS 才动手）
+$ wp post list --post_type=pkq_order --post_status=any --format=csv --fields=ID,post_type,post_title,post_status
+ID,post_type,post_title,post_status
+3648,pkq_order,"PKQ-48FGX · Packrivo 29y rehearsal",publish
+3647,pkq_order,"PKQ-9IK2C · Packrivo 29y rehearsal",publish
+3646,pkq_order,"PKQ-O24CQ · Packrivo 29y rehearsal",publish
+
+$ wp post get <id> --field=post_type      -> 3646 pkq_order / 3647 pkq_order / 3648 pkq_order
+$ wp post meta get <id> pkq_email         -> 3646 drill-29y@example.com / 3647 drill-29y@example.com / 3648 drill-29y@example.com
+$ wp post meta get <id> pkq_company       -> 三条都是 "Packrivo 29y rehearsal"
+判定：post_type 全对、pkq_email 全对 -> PASS 可以删
+
+二、先导出再删
+文件：/home/web/backups/29y-drill-orders-20261031-030645.sql
+字节：10,891
+sha256：170637f6180e9d99e8dac5c9fd1e88fab5e02bb3a4b7d1b597b79a1d7a3ca71d
+内容：wp_posts 3 行 INSERT + wp_postmeta 66 行 INSERT（脚本 wp eval-file 逐列转义输出，未读任何凭据文件）
+
+三、删除（wp-cli，非裸 SQL）
+$ wp post delete 3646 3647 3648 --force
+Success: Deleted post 3646.
+Success: Deleted post 3647.
+Success: Deleted post 3648.
+
+四、删后校验
+$ wp post list --post_type=pkq_order --post_status=any --format=count
+0                                   -> PASS pkq_order 总数 = 0
+$ wp eval-file（SELECT COUNT(*) FROM wp_postmeta WHERE post_id IN (3646,3647,3648)）
+postmeta_rows=0  posts_rows=0       -> PASS postmeta 0 行、posts 0 行
+$ curl -o /dev/null -w '%{http_code}'（外部）
+https://www.packrivo.com/            -> 200  PASS
+https://www.packrivo.com/get-a-quote/     -> 200  PASS
+https://www.packrivo.com/nl/get-a-quote/  -> 200  PASS
+
+五、没做的事：没清缓存、没动其它行、没改文件、没装插件、没读 wp-config/.env。
+    备份文件保留在 /home/web/backups/，需要回滚直接 source 那个 .sql 即可。

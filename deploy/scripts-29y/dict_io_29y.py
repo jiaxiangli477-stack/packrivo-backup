@@ -18,7 +18,7 @@ it-dict.json 一度被压成单行 1.5MB（git diff +1/-7742）。这里收成�
   deploy/verification-29y/i18n/local-stop.json
 不引用 ARTEX 目录，也不引用 .tmp。
 """
-import json, os, subprocess
+import hashlib, json, os, subprocess
 
 BUCKETS = ("title", "attr", "block", "text")
 LANGS = ["ar", "de", "es", "fr", "it", "ja", "ko", "nl", "pt", "zh-CN", "zh-TW"]
@@ -164,6 +164,10 @@ def write_dict(repo, lang, data, expect_head_base=True):
             problems.append(f"键数 {nk} 少于 HEAD 的 {hk}（丢键）")
     if problems:
         raise DictError(f"{lang}: " + "；".join(problems))
+    back = open(path, "rb").read()
+    if back != raw:
+        raise DictError(f"{lang}: 写出后回读不一致（磁盘 {len(back)} B / 期望 {len(raw)} B），"
+                        f"可能有别的进程同时在写")
     return {"lang": lang, "lines": lines, "bytes": len(raw),
             "keys": {b: len(data.get(b, {})) for b in BUCKETS}, "total": sum(len(v) for v in data.values())}
 
@@ -178,3 +182,62 @@ def save_dict(repo, lang, with_packets=True):
 def load_local_stop(repo):
     raw = json.load(open(local_stop_path(repo), encoding="utf-8"))
     return {k: set(v) for k, v in raw.items() if not k.startswith("_")}
+
+
+def _sha(raw):
+    return hashlib.sha256(raw).hexdigest() if raw else ""
+
+
+def verify_all(repo, langs=None):
+    """逐语种重建并和工作树比对；任何一步出问题都折成一行 FAIL，不抛异常。"""
+    rows = []
+    for lang in (langs or LANGS):
+        path = dict_path(repo, lang)
+        work = open(path, "rb").read() if os.path.exists(path) else b""
+        try:
+            d, info = build_dict(repo, lang, with_packets=True)
+        except DictError as exc:
+            rows.append({"lang": lang, "ok": False, "reason": str(exc),
+                         "rebuild_sha": "", "work_sha": _sha(work), "bytes": len(work),
+                         "add": 0, "mod": 0})
+            continue
+        except Exception as exc:  # noqa: BLE001 —— 损坏的 delta 也要落成 FAIL 行
+            rows.append({"lang": lang, "ok": False, "reason": f"{type(exc).__name__}: {exc}",
+                         "rebuild_sha": "", "work_sha": _sha(work), "bytes": len(work),
+                         "add": 0, "mod": 0})
+            continue
+        rebuilt = render(d)
+        ok = rebuilt == work
+        rows.append({"lang": lang, "ok": ok,
+                     "reason": "" if ok else _first_diff(rebuilt, work),
+                     "rebuild_sha": _sha(rebuilt), "work_sha": _sha(work),
+                     "bytes": len(work), "add": info.get("add", 0), "mod": info.get("mod", 0)})
+    return rows
+
+
+def _first_diff(a, b):
+    """给出第一处不同的大致位置，便于人工定位。"""
+    if len(a) != len(b):
+        return f"字节数不同：重建 {len(a)} / 工作树 {len(b)}"
+    for i in range(len(a)):
+        if a[i] != b[i]:
+            line = a[:i].count(b"\n") + 1
+            return f"第 {line} 行附近不一致（偏移 {i}）"
+    return "内容不同但定位失败"
+
+
+def report_verify(repo, langs=None, title="按 HEAD + delta + packets 重建并逐字节比对"):
+    print(f"\n{title}")
+    rows = verify_all(repo, langs)
+    print(f"{'语种':7}{'重建 sha256':19}{'工作树 sha256':19}{'字节':>9}  结果")
+    for r in rows:
+        head = ("PASS 逐字节一致" if r["ok"] else f"FAIL {r['reason']}")
+        print(f"{r['lang']:7}{r['rebuild_sha'][:16]:19}{r['work_sha'][:16]:19}{r['bytes']:>9}  {head}")
+    npass = sum(1 for r in rows if r["ok"])
+    print(f"汇总：PASS {npass} / FAIL {len(rows) - npass}（共 {len(rows)} 个词典）")
+    if npass != len(rows):
+        print("结论：FAIL 有词典无法从 HEAD + delta + packets 复现，先修 delta 再继续")
+        return False
+    print("结论：PASS 仓库内文件可独立复现全部词典")
+    return True
+
