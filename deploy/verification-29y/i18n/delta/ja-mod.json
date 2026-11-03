@@ -1,1 +1,48 @@
-{}
+{
+ "block": {
+  "Review your brief, then select Send My Packaging Request. Packrivo saves it only after submission succeeds and a request ID appears.": {
+   "old": "内容をご確認のうえ、「Send My Packaging Request」を選択してください。Packrivoは、送信が成功しリクエストIDが表示された後にのみ保存します。",
+   "new": "内容をご確認のうえ、「包装リクエストを送信」を選択してください。Packrivoは、送信が成功しリクエストIDが表示された後にのみ保存します。"
+  },
+  "The confirms the named packaging direction. Ask for a proposed dieline and assembled drawing; its title alone doesn't establish your closure geometry, dimensions or contents arrangement.": {
+   "old": "これは指定された包装方向性を確認します。提案されるダイラインと組立図面を請求ください。タイトルだけではClosure Geometry、寸法、内容物配置を保証しません。",
+   "new": "これは指定された包装方向性を確認します。提案されるダイラインと組立図面を請求ください。タイトルだけでは閉じ部形状、寸法、内容物配置を保証しません。"
+  },
+  "confirms the named packaging direction. Ask for a proposed dieline and assembled drawing; its title alone doesn't establish your closure geometry, dimensions or contents arrangement.": {
+   "old": "指定された包装方向性を確認します。提案されるダイラインと組立図面を請求ください。タイトルだけではClosure Geometry、寸法、内容物配置を保証しません。",
+   "new": "指定された包装方向性を確認します。提案されるダイラインと組立図面を請求ください。タイトルだけでは閉じ部形状、寸法、内容物配置を保証しません。"
+  },
+  "if a simple tuck closure is also being considered. Use the": {
+   "old": "シンプルなタック閉じも検討されている場合。Use the",
+   "new": "シンプルなタック閉じも検討されている場合は、"
+  },
+  "includes a No Gusset option and shows bags with an open serrated mouth and no carry handles. Its range also includes gusset variants, so keep the selected no-gusset form explicit in the brief.": {
+   "old": "No Gusset オプションを含み、開いたセレーション口と持ち手なしのバッグを示します。その範囲にはガセットのバリエーションも含まれるため、ブリーフでは選択したガセットなし形態を明示してください。",
+   "new": "ガセットなしオプションを含み、開いたセレーション口と持ち手なしのバッグを示します。その範囲にはガセットのバリエーションも含まれるため、ブリーフでは選択したガセットなし形態を明示してください。"
+  },
+  "Novolex's places merchandise bags within its Pinch Bottom Bags group, separately from SOS and die-cut handle bags. These references establish a flat merchandise/pinch-bottom direction; they do not supply the seam dimensions or usable cavity of your proposed bag.": {
+   "old": "Novolex はマーチャンダイズバッグを Pinch Bottom Bags グループに位置づけ、SOS やダイカットハンドルバッグとは分けています。これらの参照は、平らなマーチャンダイズ／ピンチボトム方向を確立するものですが、提案するバッグのシーム寸法や使用可能な収容空間を提供するものではありません。",
+   "new": "Novolex はマーチャンダイズバッグをピンチボトムバッグのグループに位置づけ、SOS やダイカットハンドルバッグとは分けています。これらの参照は、平らなマーチャンダイズ／ピンチボトム方向を確立するものですが、提案するバッグのシーム寸法や使用可能な収容空間を提供するものではありません。"
+  },
+  "This is an enquiry concept for a dry gift use. The supplier must confirm material, base joints and any closure or handle proposal for the actual project.": {
+   "old": "これは乾燥 Gift 用途の問い合わせコンセプトです。サプライヤーは実際のプロジェクトについて材料、ベースジョイント、および任意の Closure またはハンドル提案を確認しなければなりません。",
+   "new": "これは乾燥ギフト用途の問い合わせコンセプトです。サプライヤーは実際のプロジェクトについて材料、ベースジョイント、および任意の閉じ部またはハンドル提案を確認しなければなりません。"
+  },
+  "The expands the name as self opening square. Use that identity to request the actual base-fold drawing and setup demonstration. The catalogue's food or environmental language is not adopted for your gift pack.": {
+   "old": "これは名称を「self opening square」と展開しています。この識別情報を用いて、実際の底面折り線図と組み立てデモンストレーションを確認してください。カタログに記載された食品または環境に関する表現は、お客様のギフト包装には採用されません。",
+   "new": "これは名称を「セルフオープニングスクエア」と展開しています。この識別情報を用いて、実際の底面折り線図と組み立てデモンストレーションを確認してください。カタログに記載された食品または環境に関する表現は、お客様のギフト包装には採用されません。"
+  },
+  "expands the name as self opening square. Use that identity to request the actual base-fold drawing and setup demonstration. The catalogue's food or environmental language is not adopted for your gift pack.": {
+   "old": "名称を「self opening square」と展開しています。この識別情報を用いて、実際の底面折り線図と組み立てデモンストレーションを確認してください。カタログに記載された食品または環境に関する表現は、お客様のギフト包装には採用されません。",
+   "new": "名称を「セルフオープニングスクエア」と展開しています。この識別情報を用いて、実際の底面折り線図と組み立てデモンストレーションを確認してください。カタログに記載された食品または環境に関する表現は、お客様のギフト包装には採用されません。"
+  },
+  "describes its RP005 Partial Cover style as a gift box with window patching on the lid. Its body identifies a die-cut viewing window, clear patch and wrapped chipboard construction. It does not describe a shortened lid exposing the box body.": {
+   "old": "RP005 Partial Coverスタイルを、蓋に窓貼り加工を施したギフトボックスとして説明しています。その本文では、ダイカットの表示窓、透明パッチ、およびラッピングされたチップボード構造を特定しています。箱本体を露出させる短縮蓋については説明していません。",
+   "new": "RP005 パーシャルカバースタイルを、蓋に窓貼り加工を施したギフトボックスとして説明しています。その本文では、ダイカットの表示窓、透明パッチ、およびラッピングされたチップボード構造を特定しています。箱本体を露出させる短縮蓋については説明していません。"
+  },
+  "places merchandise bags within its Pinch Bottom Bags group, separately from SOS and die-cut handle bags. These references establish a flat merchandise/pinch-bottom direction; they do not supply the seam dimensions or usable cavity of your proposed bag.": {
+   "old": "Novolex はマーチャンダイズバッグを Pinch Bottom Bags グループに位置づけ、SOS やダイカットハンドルバッグとは分けています。これらの参照は、平らなマーチャンダイズ／ピンチボトム方向を確立するものですが、提案するバッグのシーム寸法や使用可能な収容空間を提供するものではありません。",
+   "new": "マーチャンダイズバッグをピンチボトムバッグのグループに位置づけ、SOS やダイカットハンドルバッグとは分けています。これらの参照は、平らなマーチャンダイズ／ピンチボトム方向を確立するものですが、提案するバッグのシーム寸法や使用可能な収容空間を提供するものではありません。"
+  }
+ }
+}

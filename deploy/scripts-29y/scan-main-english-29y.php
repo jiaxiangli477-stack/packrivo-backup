@@ -230,9 +230,14 @@ foreach ($lines as $line) {
 
     $isCjk = isset($CJK[$lang]);
     if ($isCjk) {
-        /* 只排除博客文章标题那一个 span：博客只有英文版、列表页显示英文标题是既定期望。
-           分类名 / Journal 标签 / All articles 这类界面文字照常扫、照常翻译。 */
-        $m[1] = (string) preg_replace('~<span\b[^>]*\bclass="[^"]*\bpk-post-title\b[^"]*"[^>]*>.*?</span>~si', ' ', $m[1]);
+        /* 排除整博客卡：博客只有英文版，卡上的标题（pk-post-title）与缩略图 <img alt>
+           （pk-post-thumb）都是英文博客内容，显示英文是既定期望。把含这两个 class 的 span
+           连同内容一并删掉；分类名 / Journal 标签 / All articles 这类界面文字照常扫、照常翻译。 */
+        /* 博客卡里 thumb / title 两个 span 都是卡的直接子级、内部不再嵌 span，
+           用 [^>]* 匹配到本卡第一个 </span> 即可整段删掉（[^>]* 跨行，s 修饰符可省）。
+           标题 span 没有属性时用 (?:[^>"']|"[^"]*")* 兼容，避免 class 后还有别的属性时失配。 */
+        $m[1] = (string) preg_replace('~<span\b(?:[^>"\']|"[^"]*")*\bclass="[^"]*\bpk-post-thumb\b[^"]*"[^>]*>.*?</span>~si', ' ', $m[1]);
+        $m[1] = (string) preg_replace('~<span\b(?:[^>"\']|"[^"]*")*\bclass="[^"]*\bpk-post-title\b[^"]*"[^>]*>.*?</span>~si', ' ', $m[1]);
     }
     $text = text_of($m[1]);
     $loc = array_flip($LOCAL[$lang] ?? []);

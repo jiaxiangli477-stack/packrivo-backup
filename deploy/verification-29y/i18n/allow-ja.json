@@ -77,6 +77,12 @@
    "word": "ISO",
    "type": "标准代号",
    "reason": "ISO 标准代号"
+  },
+  {
+   "phrase": "Packaging Corporation of America",
+   "type": "公司名",
+   "reason": "公司专名，原文引用，按拉丁语种同款处理：短语级、限页豁免",
+   "pages": ["/ja/product-full-overlap-slotted-outer-carton/"]
   }
  ]
 }

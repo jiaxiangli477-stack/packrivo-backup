@@ -1,16 +1,48 @@
-原有译文被改清单（工作区 vs HEAD），共 3 条
+原有译文被改清单（工作区 vs HEAD），共 11 条
 
-按语种：nl 3
+按语种：ja 11
 
-[1] nl · block
-    键：If a change is needed, identify whether it belongs to the tray, sleeve or packed contents. Widening the sleeve might alter the closed appearance; changing the tray might affect its holder. Keep those linked consequences visible before accepting the next revision.
-    旧：Is een wijziging nodig, bepaal dan of die bij de bak, hoes of de verpakte inhoud hoort. Een bredere hoes kan het gesloten uiterlijk veranderen; een aangepaste bak kan gevolgen hebben voor de houder. Maak die samenhangende gevolgen zichtbaar voordat u de volgende revisie goedkeurt.
-    新：Is een wijziging nodig, bepaal dan of die bij de tray, hoes of de verpakte inhoud hoort. Een bredere hoes kan het gesloten uiterlijk veranderen; een aangepaste tray kan gevolgen hebben voor de houder. Maak die samenhangende gevolgen zichtbaar voordat u de volgende revisie goedkeurt.
-[2] nl · block
-    键：Seat the proposed lid over a fully loaded tray and inspect its contact with the formed walls. Remove the lid through the intended grip, then remove the gift. If a wall return lifts with an insert or a card sits in the lid engagement area, locate that interface and ask for the next revision.
-    旧：Plaats het voorgestelde deksel op een volledig geladen bakje en controleer het contact met de gevormde wanden. Verwijder het deksel via de beoogde greep en verwijder vervolgens het geschenk. Als een teruglopende wand met een inzetstuk omhoogkomt of een kaart in het aangrijpingsgebied van het deksel zit, lokaliseer dan dat contactvlak en vraag om de volgende revisie.
-    新：Plaats het voorgestelde deksel op een volledig geladen tray en controleer het contact met de gevormde wanden. Verwijder het deksel via de beoogde greep en verwijder vervolgens het geschenk. Als een teruglopende wand met een inzetstuk omhoogkomt of een kaart in het aangrijpingsgebied van het deksel zit, lokaliseer dan dat contactvlak en vraag om de volgende revisie.
-[3] nl · block
-    键：The tray holds the contents and provides the surface from which they are removed. The sleeve surrounds that tray and establishes its opening path. Each piece has its own fold pattern, seam and artwork surfaces. Ask for the proposed construction of both, including whether the tray uses locking corners, glued parts or an additional holder.
-    旧：De bak bevat de inhoud en biedt het oppervlak waaruit deze wordt verwijderd. De hoes omsluit de bak en bepaalt de openingsrichting. Elk onderdeel heeft zijn eigen vouwpatroon, naad en bedrukbare oppervlakken. Vraag naar de voorgestelde constructie van beide onderdelen, inclusief de vraag of de bak vergrendelbare hoeken, gelijmde delen of een extra houder gebruikt.
-    新：De tray bevat de inhoud en biedt het oppervlak waaruit deze wordt verwijderd. De hoes omsluit de tray en bepaalt de openingsrichting. Elk onderdeel heeft zijn eigen vouwpatroon, naad en bedrukbare oppervlakken. Vraag naar de voorgestelde constructie van beide onderdelen, inclusief de vraag of de tray vergrendelbare hoeken, gelijmde delen of een extra houder gebruikt.
+[1] ja · block
+    键：if a simple tuck closure is also being considered. Use the
+    旧：シンプルなタック閉じも検討されている場合。Use the
+    新：シンプルなタック閉じも検討されている場合は、
+[2] ja · block
+    键：includes a No Gusset option and shows bags with an open serrated mouth and no carry handles. Its range also includes gusset variants, so keep the selected no-gusset form explicit in the brief.
+    旧：No Gusset オプションを含み、開いたセレーション口と持ち手なしのバッグを示します。その範囲にはガセットのバリエーションも含まれるため、ブリーフでは選択したガセットなし形態を明示してください。
+    新：ガセットなしオプションを含み、開いたセレーション口と持ち手なしのバッグを示します。その範囲にはガセットのバリエーションも含まれるため、ブリーフでは選択したガセットなし形態を明示してください。
+[3] ja · block
+    键：describes its RP005 Partial Cover style as a gift box with window patching on the lid. Its body identifies a die-cut viewing window, clear patch and wrapped chipboard construction. It does not describe a shortened lid exposing the box body.
+    旧：RP005 Partial Coverスタイルを、蓋に窓貼り加工を施したギフトボックスとして説明しています。その本文では、ダイカットの表示窓、透明パッチ、およびラッピングされたチップボード構造を特定しています。箱本体を露出させる短縮蓋については説明していません。
+    新：RP005 パーシャルカバースタイルを、蓋に窓貼り加工を施したギフトボックスとして説明しています。その本文では、ダイカットの表示窓、透明パッチ、およびラッピングされたチップボード構造を特定しています。箱本体を露出させる短縮蓋については説明していません。
+[4] ja · block
+    键：Novolex's places merchandise bags within its Pinch Bottom Bags group, separately from SOS and die-cut handle bags. These references establish a flat merchandise/pinch-bottom direction; they do not supply the seam dimensions or usable cavity of your proposed bag.
+    旧：Novolex はマーチャンダイズバッグを Pinch Bottom Bags グループに位置づけ、SOS やダイカットハンドルバッグとは分けています。これらの参照は、平らなマーチャンダイズ／ピンチボトム方向を確立するものですが、提案するバッグのシーム寸法や使用可能な収容空間を提供するものではありません。
+    新：Novolex はマーチャンダイズバッグをピンチボトムバッグのグループに位置づけ、SOS やダイカットハンドルバッグとは分けています。これらの参照は、平らなマーチャンダイズ／ピンチボトム方向を確立するものですが、提案するバッグのシーム寸法や使用可能な収容空間を提供するものではありません。
+[5] ja · block
+    键：The expands the name as self opening square. Use that identity to request the actual base-fold drawing and setup demonstration. The catalogue's food or environmental language is not adopted for your gift pack.
+    旧：これは名称を「self opening square」と展開しています。この識別情報を用いて、実際の底面折り線図と組み立てデモンストレーションを確認してください。カタログに記載された食品または環境に関する表現は、お客様のギフト包装には採用されません。
+    新：これは名称を「セルフオープニングスクエア」と展開しています。この識別情報を用いて、実際の底面折り線図と組み立てデモンストレーションを確認してください。カタログに記載された食品または環境に関する表現は、お客様のギフト包装には採用されません。
+[6] ja · block
+    键：The confirms the named packaging direction. Ask for a proposed dieline and assembled drawing; its title alone doesn't establish your closure geometry, dimensions or contents arrangement.
+    旧：これは指定された包装方向性を確認します。提案されるダイラインと組立図面を請求ください。タイトルだけではClosure Geometry、寸法、内容物配置を保証しません。
+    新：これは指定された包装方向性を確認します。提案されるダイラインと組立図面を請求ください。タイトルだけでは閉じ部形状、寸法、内容物配置を保証しません。
+[7] ja · block
+    键：This is an enquiry concept for a dry gift use. The supplier must confirm material, base joints and any closure or handle proposal for the actual project.
+    旧：これは乾燥 Gift 用途の問い合わせコンセプトです。サプライヤーは実際のプロジェクトについて材料、ベースジョイント、および任意の Closure またはハンドル提案を確認しなければなりません。
+    新：これは乾燥ギフト用途の問い合わせコンセプトです。サプライヤーは実際のプロジェクトについて材料、ベースジョイント、および任意の閉じ部またはハンドル提案を確認しなければなりません。
+[8] ja · block
+    键：Review your brief, then select Send My Packaging Request. Packrivo saves it only after submission succeeds and a request ID appears.
+    旧：内容をご確認のうえ、「Send My Packaging Request」を選択してください。Packrivoは、送信が成功しリクエストIDが表示された後にのみ保存します。
+    新：内容をご確認のうえ、「包装リクエストを送信」を選択してください。Packrivoは、送信が成功しリクエストIDが表示された後にのみ保存します。
+[9] ja · block
+    键：confirms the named packaging direction. Ask for a proposed dieline and assembled drawing; its title alone doesn't establish your closure geometry, dimensions or contents arrangement.
+    旧：指定された包装方向性を確認します。提案されるダイラインと組立図面を請求ください。タイトルだけではClosure Geometry、寸法、内容物配置を保証しません。
+    新：指定された包装方向性を確認します。提案されるダイラインと組立図面を請求ください。タイトルだけでは閉じ部形状、寸法、内容物配置を保証しません。
+[10] ja · block
+    键：places merchandise bags within its Pinch Bottom Bags group, separately from SOS and die-cut handle bags. These references establish a flat merchandise/pinch-bottom direction; they do not supply the seam dimensions or usable cavity of your proposed bag.
+    旧：Novolex はマーチャンダイズバッグを Pinch Bottom Bags グループに位置づけ、SOS やダイカットハンドルバッグとは分けています。これらの参照は、平らなマーチャンダイズ／ピンチボトム方向を確立するものですが、提案するバッグのシーム寸法や使用可能な収容空間を提供するものではありません。
+    新：マーチャンダイズバッグをピンチボトムバッグのグループに位置づけ、SOS やダイカットハンドルバッグとは分けています。これらの参照は、平らなマーチャンダイズ／ピンチボトム方向を確立するものですが、提案するバッグのシーム寸法や使用可能な収容空間を提供するものではありません。
+[11] ja · block
+    键：expands the name as self opening square. Use that identity to request the actual base-fold drawing and setup demonstration. The catalogue's food or environmental language is not adopted for your gift pack.
+    旧：名称を「self opening square」と展開しています。この識別情報を用いて、実際の底面折り線図と組み立てデモンストレーションを確認してください。カタログに記載された食品または環境に関する表現は、お客様のギフト包装には採用されません。
+    新：名称を「セルフオープニングスクエア」と展開しています。この識別情報を用いて、実際の底面折り線図と組み立てデモンストレーションを確認してください。カタログに記載された食品または環境に関する表現は、お客様のギフト包装には採用されません。
