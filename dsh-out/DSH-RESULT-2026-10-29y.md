@@ -919,4 +919,5 @@ v4 判据（与负责人给的口径一致）：连续 ≥3 个 token 都在英�
 | `/nl/products/` | 200 | 0 | 0 |
 
 - 126 页全量复扫的结论仍然成立：本批只动 1 页的 6 条译文 + 把 `tray` 加入白名单（`tray` 在 `en-lexicon` 里，入白名单只会减少英文证据，不会增加）。若要求词典哈希与 126 页证据严格同一时刻，需再跑一次全量复扫（约 17 分钟）。
-- 页内混用剩余的页面（负责人只点名修 1 页，其余未动）：`/nl/product-double-wall-tray-lid/` bak=1 tray=12、`/nl/product-folded-tray-sleeve-box/` bak=5 tray=14、`/nl/products/` bak=1 tray=9。
+- 2026-11-03 追加批复：另外 3 页一起收回，规则「只改英文原文是 tray 的那几处」。3 页剩余 bak 全部对应英文 `tray`（`a fully loaded tray` / `it belongs to the tray, sleeve…` / `changing the tray might affect its holder` / `whether the tray uses locking corners`），因此全清：`double-wall-tray-lid` 0/13、`folded-tray-sleeve-box` 0/19、`/nl/products/` 0/10。复扫 3 页 `http=200 词=0 段=0`。
+- `allow-nl.json` 补 `trays`（tray 复数，同一借词）：`/nl/products/` 上 `per set trays` 三词全在英文词表里会被判残留段，tray 既已定借词，复数同理。现 word 级 4 条。词典 md5 **`a0123e0e8d21a7b5404ae957d5eee071`**（1596371 B）。
