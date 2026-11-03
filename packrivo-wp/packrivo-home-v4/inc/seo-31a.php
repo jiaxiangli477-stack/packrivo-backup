@@ -31,7 +31,6 @@ function pkv4_31a_existing_orphan_links($html) {
     $rules = [
         'foldable-gift-boxes' => ['A paperboard direction for candles and small retail gifts.', 'candles', '/candle-gift-set-box/'],
         'inserts' => ['A printed layer for instructions, care or a thank-you message.', 'thank-you message', '/paper-insert-card/'],
-        'jewelry-boxes' => ['Plan a custom drawer jewelry box around the complete jewelry set. Choose the tray layout, usable interior and opening detail, then compare supplier proposals against the same requirements.', 'drawer jewelry box', '/drawer-box-with-ribbon/'],
     ];
     foreach ($rules as $page => $rule) {
         if (!is_page($page)) continue;
@@ -52,6 +51,47 @@ function pkv4_31a_journal_canonical() {
     return $url;
 }
 
+/** The journal template uses ?pg and a 12-post WP_Query, not WP's main paged query. */
+function pkv4_31a_journal_adjacent_urls() {
+    static $urls = null;
+    if ($urls !== null) return $urls;
+    $page = max(1, (int) get_query_var('paged'), isset($_GET['pg']) && is_scalar($_GET['pg']) ? (int) $_GET['pg'] : 1);
+    $args = [
+        'post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 12,
+        'paged' => 1, 'fields' => 'ids', 'ignore_sticky_posts' => true,
+        'update_post_meta_cache' => false, 'update_post_term_cache' => false,
+    ];
+    $topic = isset($_GET['topic']) && is_scalar($_GET['topic']) ? sanitize_title(wp_unslash($_GET['topic'])) : '';
+    if ($topic) $args['category_name'] = $topic;
+    $query = new WP_Query($args);
+    $base = get_permalink((int) get_option('page_for_posts')) ?: home_url('/blog/');
+    $urls = [
+        'prev' => $page > 1 ? ($page === 2 ? $base : add_query_arg('pg', $page - 1, $base)) : '',
+        'next' => $page < (int) $query->max_num_pages ? add_query_arg('pg', $page + 1, $base) : '',
+    ];
+    return $urls;
+}
+
+function pkv4_31a_is_english_journal() {
+    return is_home() && (!function_exists('packrivo_lang') || packrivo_lang() === null);
+}
+
+// Yoast only invokes its rel-link filters when its own adjacent URL is nonempty.
+// Seed a missing URL so its presenters can render the custom ?pg pagination.
+add_filter('wpseo_adjacent_rel_url', static function ($url, $rel) {
+    if (!pkv4_31a_is_english_journal() || !in_array($rel, ['next', 'prev'], true)) return $url;
+    $target = pkv4_31a_journal_adjacent_urls()[$rel];
+    return $target === '' ? '' : ($url !== '' ? $url : $target);
+}, 10, 2);
+
+foreach (['next', 'prev'] as $rel) {
+    add_filter('wpseo_' . $rel . '_rel_link', static function ($output) use ($rel) {
+        if (!pkv4_31a_is_english_journal()) return $output;
+        $target = pkv4_31a_journal_adjacent_urls()[$rel];
+        return $target === '' ? '' : '<link rel="' . $rel . '" href="' . esc_url($target) . '" />';
+    });
+}
+
 add_action('template_redirect', static function () {
     if (function_exists('packrivo_lang') && packrivo_lang() !== null) return;
     $uri = $_SERVER['REQUEST_URI'] ?? '/';
@@ -62,7 +102,9 @@ add_action('template_redirect', static function () {
     if (preg_match('~^/(?:wp-admin|wp-json|wp-content)(?:/|$)~i', $path)) return;
     if (preg_match('~\.[^/]+$~', $path)) return;
     if (preg_match('/[A-Z]/', $path)) {
-        wp_safe_redirect(home_url(strtolower($path)) . (isset($pieces[1]) ? '?' . $pieces[1] : ''), 301);
+        $lower = strtolower($path);
+        if (substr($lower, -1) !== '/' && (is_singular() || is_home())) $lower = user_trailingslashit($lower);
+        wp_safe_redirect(home_url($lower) . (isset($pieces[1]) ? '?' . $pieces[1] : ''), 301);
         exit;
     }
     if (preg_match('~^/collapsible-magnetic-gift-box/?$~', $path)) {

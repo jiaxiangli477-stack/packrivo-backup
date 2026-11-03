@@ -30,6 +30,10 @@ class Routes(unittest.TestCase):
         status, headers, _ = get('/PRIVACY/?x=AbC&x=2')
         self.assertEqual((status, headers.get('Location')), (301, BASE + '/privacy/?x=AbC&x=2'))
 
+    def test_uppercase_page_without_trailing_slash_redirects_once(self):
+        status, headers, _ = get('/PRIVACY?x=AbC')
+        self.assertEqual((status, headers.get('Location')), (301, BASE + '/privacy/?x=AbC'))
+
     def test_blog_pagination_redirect(self):
         status, headers, _ = get('/blog/page/2/')
         self.assertEqual((status, headers.get('Location')), (301, BASE + '/blog/?pg=2'))
@@ -58,10 +62,33 @@ class Routes(unittest.TestCase):
         self.assertEqual(status, 200)
         self.assertIn('A printed layer for instructions, care or a <a href="http://localhost:8081/paper-insert-card/">thank-you message</a>.', body)
 
-    def test_existing_drawer_words_link_to_ribbon_example(self):
+    def test_drawer_words_do_not_link_to_ribbon_example(self):
         status, _, body = get('/jewelry-boxes/')
         self.assertEqual(status, 200)
-        self.assertIn('Plan a custom <a href="http://localhost:8081/drawer-box-with-ribbon/">drawer jewelry box</a> around the complete jewelry set.', body)
+        self.assertNotIn('href="http://localhost:8081/drawer-box-with-ribbon/"', body)
+        self.assertIn('Plan a custom drawer jewelry box around the complete jewelry set.', body)
+        self.assertGreaterEqual(len(re.findall(r'<a\b[^>]*href=["\'][^"\']*/product-drawer-jewelry-box/', body, re.I)), 4)
+
+    def test_journal_adjacent_pagination(self):
+        status, _, first_page = get('/blog/')
+        self.assertEqual(status, 200)
+        page_numbers = [int(n) for n in re.findall(r'<a\b[^>]*href=["\']http://localhost:8081/blog/\?pg=(\d+)', first_page, re.I)]
+        self.assertTrue(page_numbers, 'Journal pagination has no numbered links')
+        last = max(page_numbers)
+        self.assertGreater(last, 3, 'This test requires at least four journal pages')
+        expected = {
+            '/blog/': (None, BASE + '/blog/?pg=2'),
+            '/blog/?pg=2': (BASE + '/blog/', BASE + '/blog/?pg=3'),
+            '/blog/?pg=3': (BASE + '/blog/?pg=2', BASE + '/blog/?pg=4'),
+            f'/blog/?pg={last}': (BASE + f'/blog/?pg={last-1}', None),
+        }
+        for path, (previous, following) in expected.items():
+            with self.subTest(path=path):
+                status, _, body = get(path)
+                self.assertEqual(status, 200)
+                found = re.findall(r'<link\s+rel="(prev|next)"\s+href="([^"]+)"', body)
+                self.assertEqual([url for rel, url in found if rel == 'prev'], [previous] if previous else [])
+                self.assertEqual([url for rel, url in found if rel == 'next'], [following] if following else [])
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
