@@ -12,7 +12,7 @@ get_header();
 while (have_posts()) :
     the_post();
     $native = (string) get_post_meta(get_the_ID(), '_packrivo_native_page', true) === '1';
-    $content = get_the_content();
+    $content = pkv4_31a_existing_orphan_links(pkv4_31a_catalog_links(get_the_content()));
 
     if ($native && is_page('inquiry')) {
         require_once get_stylesheet_directory() . '/inc/repair-inquiry.php';
