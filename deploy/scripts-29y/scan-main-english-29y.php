@@ -18,10 +18,25 @@ $list = $argv[1] ?? '';
 $out  = $argv[2] ?? '';
 $gw   = $argv[3] ?? '172.19.0.1';
 $locf = $argv[4] ?? '';
+$lexf = $argv[5] ?? '';
+$allowdir = $argv[6] ?? '';
 if ($list === '' || !is_readable($list) || $out === '') {
-    fwrite(STDERR, "usage: php scan-main-english-29y.php <urls.txt> <out.jsonl> [gateway] [local-stop.json]\n");
+    fwrite(STDERR, "usage: php scan-main-english-29y.php <urls.txt> <out.jsonl> [gateway] [local-stop.json] [en-lexicon.json] [allow-dir]\n");
     exit(2);
 }
+
+/* 与本族词表同形的英文词：只允许抵消孤立的单个词，不能拿它们把整句判成非英文。
+   真源是 local-stop.json 的 "_homo" 键（{"_homo":{"fr":[…],"it":[…]}}），下面这份只是读不到时的兜底。 */
+$HOMO = [
+    'it' => ['all', 'come', 'in', 'per', 'a'],
+    'pt' => ['as', 'do', 'no', 'a'],
+    'de' => ['an', 'in', 'so', 'was', 'will', 'die', 'war', 'man', 'also'],
+    'nl' => ['in', 'is', 'over', 'was', 'want'],
+    'fr' => ['on', 'or', 'but', 'plus',
+             'action', 'articles', 'configuration', 'direction', 'eva', 'expose', 'journal', 'large',
+             'motif', 'notes', 'production', 'protection', 'simple', 'structure', 'visible', 'zone'],
+    'es' => ['no', 'a'],
+];
 
 $EN = ['the','and','is','are','your','our','we','you','with','for','this','that','from','by','to','be','not','or','it',
        'as','at','on','will','can','need','each','per','has','have','of','in','a','an','if','than','then','when','what',
@@ -46,6 +61,13 @@ if ($locf !== '' && is_readable($locf)) {
             if (strpos($lg, '_') === 0 || !is_array($arr)) continue;
             $LOCAL[$lg] = array_values(array_unique(array_map('strtolower', $arr)));
         }
+        // 同形词表：只从 "_homo" 读，脚本里不硬编码
+        if (isset($j['_homo']) && is_array($j['_homo'])) {
+            foreach ($j['_homo'] as $lg => $arr) {
+                if (!is_array($arr)) continue;
+                $HOMO[$lg] = array_values(array_unique(array_map('strtolower', $arr)));
+            }
+        }
     }
 }
 
@@ -54,7 +76,52 @@ $ALLOW = array_flip([
     'netherlands','portugal','japan','korea','ddp','fob','cif','exw','moq','cbm','lcl','fcl','hs','iso','fsc','gsm','cmyk',
     'pantone','pdf','url','http','https','www','com','html','php','seo','geo','ai','sku','upc','ean','jpeg','jpg','png',
     'webp','svg','whatsapp','wechat','alibaba','amazon','shopify','cm','mm','kg','ml','pcs','pc',
+    'mib','gib','kib','mhz','ghz',
 ]);
+
+/* 按语种豁免表：只从 deploy/verification-29y/i18n/allow-<lang>.json 读，脚本里不硬编码任何豁免词。
+   两种粒度：
+     {"phrase":"Pinch Bottom Bags","type":"专有名词","reason":"…","pages":["/it/…/"]}  —— 只在 pages 列出的页面、
+        且整个短语完整出现时跳过；短语以外的单词（bags/bottom/cover/america…）照常算残留。
+     {"word":"packaging","type":"借词","reason":"…"}                                    —— 全站按单词豁免，每语种最多 15 个。
+   两种写法混在 entries 里，靠有没有 phrase 字段区分。 */
+function allow_of(string $dir, string $lang): array
+{
+    static $cache = [];
+    if (isset($cache[$lang])) return $cache[$lang];
+    $p = rtrim($dir, '/\\') . '/allow-' . $lang . '.json';
+    $res = ['words' => [], 'phrases' => []];
+    if ($dir !== '' && is_readable($p)) {
+        $j = json_decode((string) file_get_contents($p), true);
+        foreach (($j['entries'] ?? []) as $e) {
+            $type = (string) ($e['type'] ?? '');
+            if (isset($e['phrase']) && trim((string) $e['phrase']) !== '') {
+                $ph = trim((string) $e['phrase']);
+                $pages = array_values(array_filter(array_map(
+                    static fn($x) => trim((string) $x), (array) ($e['pages'] ?? [])
+                ), static fn($x) => $x !== ''));
+                $res['phrases'][] = ['phrase' => $ph, 'type' => $type, 'pages' => $pages];
+                continue;
+            }
+            $w = mb_strtolower(trim((string) ($e['word'] ?? '')), 'UTF-8');
+            if ($w !== '') $res['words'][$w] = $type;
+        }
+    }
+    return $cache[$lang] = $res;
+}
+
+/** 短语是否适用当前页面：pages 为空 = 不适用；否则按路径完全匹配或前缀匹配（含 /it/ 这种首页）。 */
+function allow_phrase_applies(array $ph, string $path): bool
+{
+    foreach ($ph['pages'] as $pp) {
+        if ($pp === $path) return true;
+        $a = rtrim($pp, '/');
+        $b = rtrim($path, '/');
+        if ($a === $b) return true;
+        if ($a !== '' && strpos($b . '/', $a . '/') === 0) return true;
+    }
+    return false;
+}
 
 function text_of(string $html): string
 {
@@ -78,7 +145,9 @@ function sentences(string $text): array
 
 function ascii_words(string $s): array
 {
-    preg_match_all('~[A-Za-z][A-Za-z\'\-]*~', $s, $m);
+    // 按「完整词」切，不能按 ASCII 字母切：'referência' 会被切成 'refer'+'ncia'，
+    // 而 'refer' 恰好在英文词表里 -> 葡语/法语页凭空多出英文票。\p{L} 把带重音的字母留在词内。
+    preg_match_all('~[\p{L}][\p{L}\'’\-]*~u', $s, $m);
     return array_map('strtolower', $m[0] ?: []);
 }
 
@@ -87,6 +156,19 @@ $lines = file($list, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 $total = count($lines);
 $n = 0; $flagged = 0; $bad = 0;
 $enSet = array_flip($EN);
+
+/* 长连续段判定用的英文词表：从站点英文原文（词典键）抽出来的 3k+ 词，取不到就退回功能词表 */
+$LEX = $enSet;
+if ($lexf !== '' && is_readable($lexf)) {
+    $jx = json_decode((string) file_get_contents($lexf), true);
+    if (is_array($jx) && isset($jx['words']) && is_array($jx['words']) && count($jx['words']) > 200) {
+        $LEX = array_flip($jx['words']);
+    } else {
+        fwrite(STDERR, "WARN 英文词表读不动（$lexf），长连续段判定退回功能词表\n");
+    }
+} else {
+    fwrite(STDERR, "WARN 未给 --en-lexicon，长连续段判定退回功能词表（会漏报）\n");
+}
 
 foreach ($lines as $line) {
     $n++;
@@ -133,22 +215,37 @@ foreach ($lines as $line) {
     $text = text_of($m[1]);
     $loc = array_flip($LOCAL[$lang] ?? []);
     $isLatinLocal = ($LOCAL[$lang] ?? []) !== [];
+    $alwCfg = allow_of($allowdir, $lang);   // 本语种豁免表：单词（全站）+ 短语（限页）
+    $alw = $alwCfg['words'];
+    $alwUsed = [];
+    $upath = (string) parse_url($url, PHP_URL_PATH);
+    if ($upath === '') $upath = '/';
+    foreach ($alwCfg['phrases'] as $ph) {
+        if (!allow_phrase_applies($ph, $upath)) continue;
+        $cnt = 0;
+        // 整短语命中才豁免：用句号替换，既消掉这些 token，也断开它们与相邻词的连续段
+        $text = (string) preg_replace('~' . preg_quote($ph['phrase'], '~') . '~iu', '. ', $text, -1, $cnt);
+        if ($cnt > 0) $alwUsed[$ph['phrase']] = $ph['type'] . '（短语，' . $cnt . ' 处）';
+    }
 
-    /* 逐句判英文（v2 口径），把命中词按原顺序摊平成一条流，供连续段判定用。 */
+    /* 逐句判英文（v2 口径），把命中词按原顺序摊平成一条流，供残留词数统计用。 */
     $stream = [];      // ['w' => word, 'local' => bool]
     $segments = [];
+    $homo = $HOMO[$lang] ?? [];            // 与英文同形的本族词：只抵消孤立单词，不参与整句判英文
     foreach (sentences($text) as $s) {
         $words = ascii_words($s);
         if (!$words) continue;
+        $words = array_map(static fn($w) => mb_strtolower($w, 'UTF-8'), $words); // 大小写不敏感：Le/le 同词
         $enHits = 0; $locHits = 0;
         foreach ($words as $w) {
             if (isset($enSet[$w])) $enHits++;
-            if (isset($loc[$w])) $locHits++;
+            if (isset($loc[$w]) && !isset($homo[$w])) $locHits++;
         }
         $isEn = $enHits >= 2 && ($isLatinLocal ? $enHits > $locHits : true);
         if (!$isEn) continue;
         $hit = false;
         foreach ($words as $w) {
+            if (isset($alw[$w])) { $alwUsed[$w] = $alw[$w]; continue; }   // 本语种豁免表
             if (isset($ALLOW[$w])) continue;          // 品牌/单位/代码不算
             if (strlen($w) < 2) continue;
             if (preg_match('~^\d+~', $w)) continue;
@@ -158,22 +255,35 @@ foreach ($lines as $line) {
         if ($hit) $segments[] = mb_substr($s, 0, 240, 'UTF-8');
     }
 
-    /* 连续段：只在「判为英文的句子」内部切。命中词序列里 >=3 个连续英文词算一段，
-       品牌/单位/代码与单字符、纯数字会打断一段（它们本来就不算残留）。 */
+    /* 连续段（v4 口径）：在**整页正文**上切，不受「整句判成英文」限制。
+       规则：连续 >=3 个 token 都在英文词表里，且其中至少 1 个不在本语种 LOCAL_STOP 里，就算一段。
+       品牌/单位/代码、单字符、纯数字、不在英文词表里的词都会打断一段。 */
     $runsOf = [];
     $runSamples = [];
-    foreach ($segments as $segText) {
+    $flushRun = static function (array $cur, array &$runsOf, array &$runSamples) use ($loc) {
+        if (count($cur) < 3) return;
+        $hasNonLocal = false;
+        foreach ($cur as $w) {
+            if (!isset($loc[$w])) { $hasNonLocal = true; break; }
+        }
+        if (!$hasNonLocal) return;
+        $runsOf[] = $cur;
+        if (count($runSamples) < 3) $runSamples[] = implode(' ', array_slice($cur, 0, 12));
+    };
+    foreach (sentences($text) as $s) {
         $cur = [];
-        foreach (ascii_words($segText) as $w) {
-            $ok = !isset($ALLOW[$w]) && strlen($w) >= 2 && !preg_match('~^\d+~', $w);
-            if ($ok) {
+        foreach (ascii_words($s) as $w) {
+            $w = mb_strtolower($w, 'UTF-8');
+            if (isset($alw[$w])) { $alwUsed[$w] = $alw[$w]; }
+            $isLex = isset($LEX[$w]) && !isset($ALLOW[$w]) && !isset($alw[$w]) && strlen($w) >= 2 && !preg_match('~^\d+~', $w);
+            if ($isLex) {
                 $cur[] = $w;
             } else {
-                if (count($cur) >= 3) $runsOf[] = $cur;
+                $flushRun($cur, $runsOf, $runSamples);
                 $cur = [];
             }
         }
-        if (count($cur) >= 3) $runsOf[] = $cur;
+        $flushRun($cur, $runsOf, $runSamples);
     }
 
     $localInRun = [];
@@ -209,6 +319,7 @@ foreach ($lines as $line) {
     $rec['long_runs'] = count($runsOf);
     $rec['long_run_words'] = $runWords;
     $rec['long_run_samples'] = $runSamples;
+    $rec['allowed_used'] = $alwUsed;              // 本页用到哪些豁免词（审计用）
     $rec['residual_words'] = array_keys($kept);
     $rec['english_segments'] = array_slice($segments, 0, 4);
     $rec['segment_count'] = count($segments);

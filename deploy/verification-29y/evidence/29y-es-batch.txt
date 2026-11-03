@@ -1,0 +1,161 @@
+29y 第 67 轮 · 两处纠正 + 插件入库 + es 批次全流程
+时间：2026-11-02　工作区：E:\破甲工作区\packrivo-backup　执行：单会话串行
+工作台 #1 保持暂停（与本会话写同一批 dict 会互相覆盖），本轮不交给工作台。
+
+====================================================================
+一、/pt/guide-jewelry-insert-fit/ 的 “O visão geral” —— 病因纠正 + 修复
+====================================================================
+【病因纠正】上一轮判成 mu-plugin 用 strtr($vault) 做子串替换，错。
+  已实读 packrivo-i18n.php（sha256 3bc3255…，见 §三）：$vault 只把
+  script/style/svg/noscript 换成占位符再放回，不替换任何文字；
+  packrivo_i18n_lookup 只做整段键精确匹配（含 html_entity_decode 重试），无子串替换。
+  真实病因：词典里有一条 block 键，本身就以 “The” 结尾，译文结尾写着 “O”。
+
+【定位过程】
+  grep 全部以 The 结尾的键，命中 pt block：
+    KEY 'after describing the product interfaces. The'
+    VAL 'depois de descrever as interfaces do produto. O'      （HEAD 值相同）
+  该 “O” 就是后面 <a>visão geral…</a> 的冠词，而 visão 是阴性 → 应为 “A”。
+
+【改动】走 apply-batch，delta/pt-mod.json 增加一条：
+  block['after describing the product interfaces. The']
+     old 'depois de descrever as interfaces do produto. O'
+     new 'depois de descrever as interfaces do produto. A'
+
+【验证（逐条）】
+  1. 该页渲染 PASS：
+     …opções de suporte</a> depois de descrever as interfaces do produto.
+     A <a href="https://packmojo.com/custom-packaging/custom-box-inserts/">visão geral do
+     inserto personalizado do transformador</a> é uma refer…
+  2. pt 全站 'O <a…>visão' 计数 = 0（PASS）；'A <a…>visão' = 1
+  3. apply-batch pt --sync：11/11 词典逐字节一致，sync md5 091f06875842
+  4. mu-plugin 未动（本轮任何一步都没改插件）
+
+====================================================================
+二、“The <a>” 4 条 FAIL —— 逐条打印 + 段落末尾补冠词，最终 78/78
+====================================================================
+【判定口径升级】核对脚本 v3 增加两种判定（fr / pt 都按新口径复算）：
+  前置限定词已存在（le/la/les/l'/o/a/os/as/um/uma/do/da…）→ 算达标
+  链接冠词 与 前置限定词 同时存在 → 判“重复冠词”，必须修
+
+【4 条的确切情况】这 4 条不是“前文已有冠词”，而是句首、且同一键另有句中用法：
+  key                                句首处             句中处
+  snap bottom slotted outer carton   '…incomplete tab.' + 裸 The   'Compare a <a>'
+  auto-bottom carton                 '…testing the cap' + 裸 The  'Compare the <a>'
+  dimensions and review-method guide '…tray fits.' + 裸 The       'Use the <a>'
+  paperboard roll-end dust-flap …    '…is the same.' + 裸 The     'Compare the <a>'
+  → 一个键只有一个值：补冠词到链接文字，会让句中那处变成 “Compare a A caixa”。
+  → 正解：把冠词补在**该段落键的译文末尾**（段落级键，唯一，只影响这一页）。
+
+【改动（fr/pt 各 4 条 block，均走 mod）】
+  pt: '…incomplete tab.' + ' A'；'Form the base before testing the cap' → '…. A'
+      '…the tray fits.' + ' O'；'…is the same.' + ' O'（同键 text 变体同步改 add）
+  fr: 同样 4 处，冠词 Le / Le / Le / La（按后随链接中心词性别）
+  段尾没有句号的（源文本身缺句号 'before testing the cap'）补 “. A”，避免 “tampa A caixa” 粘连
+
+【验证】
+  pt 页面：…incompleta. A <a>caixa externa com fundo de encaixe e ranhuras</a> tem uma tarefa…
+  fr 页面：…incomplète. Le <a>carton extérieur à fond clipsable et à fentes</a> présente…
+  核对 v3 复算：
+    pt 合计 78：PASS 78 / FAIL 0
+    fr 合计 78：PASS 78 / FAIL 0
+  残留 '>The ' 节点：fr 0 页 / pt 0 页
+
+====================================================================
+三、packrivo-i18n.php 收进仓库
+====================================================================
+【来源】29y 生产只读导出的本地副本 E:\破甲工作区\.tmp\29y\packrivo-i18n.php
+  （未 ssh 生产，未重新读取线上目录；该副本与演练宿主机绑定路径、容器内文件三者同哈希）
+【落位】deploy/site-29y/mu-plugins/packrivo-i18n.php
+【sha256】
+  源 副本        3bc325503b16a5de8cea7600801512653d4ab94db94739ac773e3d4a2741bb5e
+  入库副本        3bc325503b16a5de8cea7600801512653d4ab94db94739ac773e3d4a2741bb5e
+  演练容器内      3bc325503b16a5de8cea7600801512653d4ab94db94739ac773e3d4a2741bb5e
+  字节数 27649，逐字节一致 True，unified diff 0 行
+【结论】一致，没有需要报给你的差异，也没有做任何合并。
+
+====================================================================
+四、mib 移到扫描器全局单位表，allow-pt 借词回到 6 条
+====================================================================
+  scan-main-english-29y.php 的 $ALLOW 增加：'mib','gib','kib','mhz','ghz'
+  同一表另加竞品/供应商品牌名：arka,packlane,packhelp,pakfactory,novolex,duro,mart,packagingcorp
+    （en-lexicon 里含这些品牌串，会凑成连续英文段，属于“品牌不算语言证据”）
+  allow-pt.json 删除 mib 条目 → 现为 10 专名 + 6 借词（kraft packaging mailer sos liner layout）
+  ★ 另需向你报告：工作台在暂停前改过 allow-pt.json，擅自加了
+    base / pad / pocket / envelope 四个 **全局单词豁免**（type 规格代号）。
+    这四个词已由 LOCAL_STOP/_homo 按“本族同形词”处理，再全局豁免会把判据放宽，
+    且会让借词数变成 10 条，与本轮口径（6 条）冲突 → 已按你的口径重写 allow-pt.json 去掉。
+
+====================================================================
+五、es 批次（新语种，全流程）
+====================================================================
+【基线】es-v1 = 126 页，不达标 50 页（residual>0 或 long_runs>=1）
+【第一轮 44 条译文】来源 es-en-nodes.json（48 条独立英文节点）
+  分桶：text 1 / block 37 / title 6，与 HEAD 零冲突
+  说明：es 词典此前只译了部分节点，句首祈使动词与整段留给英文 → 表现为
+        “Compare el existente caja de regalo plegable when a lid/base enclosure is required.”
+  术语口径沿用现有 es 词典：presupuesto/cotización、500 piezas por diseño、brief、
+        mailer、kraft、liner、SOS；design → diseño；PE foam → espuma PE；
+        molded pulp → pulpa moldeada。专名全留原文。
+  复扫 es-v2 = 不达标 15 页
+【第二轮：扫描器口径修正（3 项，都不是译文问题）】
+  a) 品牌名进全局 $ALLOW（见 §四）→ 修掉 /es/compare/ 的
+     long_run 'packlane arka packhelp pakfactory' 与 vs 页的 'arka/packrivo' 误判
+  b) es LOCAL_STOP 补 a / e / u（西语正字），_homo['es'] = ['a','no']
+     理由：'Solicitar cotización Volver a Etiquetas → ¿Qué sucede a continuación?'
+     被两个 a（英文词表里有单字母 a）顶成英文句
+  c) 首页日志卡片标题只进 title 桶不生效 → 同一批 6 条译文同时写进 block 桶
+  复扫 es-v3 = 不达标 1 页（仅 /es/privacy/），即 125/126
+【第三轮：The 与冠词】
+  'The' -> ''（text 桶，新增键）
+  72 条链接文字按中心词性别补 El/La/Los/Las 并首字母小写
+    （词典里链接文字是“值”，键是英文原文 → 按“值→键”反查后改值，走 mod/add）
+  4 条共用键同样用“段落末尾补冠词”：La / El / La / La
+  首轮核对 0/78（bare The 全在）→ 补完后 78/78 PASS，残留 '>The ' 0 页
+  补冠词后全站重复冠词检查：126 页逐页扫所有带冠词链接的前两个词，疑似重复 0 处
+  ★ 自查发现并修掉：ART 表尾部漏了 4 条（referencia de cierre de tres solapas /
+    catálogo de funda con solapas / referencia de fabricante de doble puerta /
+    guía de formatos de apertura para joyería），补上后 78/78 才成立。
+【allow-es.json（新建，待你核）】10 专名 + 6 借词
+  专名（每条都在实际 es 页面验证过短语确实出现，0 条被剔除）：
+    Packaging Corporation of America（/es/product-full-overlap-slotted-outer-carton/）
+    Pinch Bottom Bags / Novolex / Duro / Paper Mart（/es/product-paper-merchandise-sleeve-bag/）
+    Partial Cover（/es/product-window-lid-rigid-gift-box/）
+    Packhelp（compare / vs-packhelp / snap-bottom-slotted）
+    PakFactory（compare / vs-pakfactory / bookend / double-wall-frame-tray-lid / hexagonal）
+    Packlane（compare / vs-packlane）　Arka（compare / vs-arka）
+  借词 6：kraft、mailer、packaging、sos、liner、clamshell
+【负向测试 3/3 PASS】（deploy/scripts-29y/negtest-es-29y.py，注入 /es/about/ 后还原）
+  A 纯英文句 'Keep the outer carton and the flat delivery state separate…'
+    → residual_count=12 long_runs=1（PASS 检出）
+  B 西语夹借词/同形词 'La caja usa liner kraft y packaging SOS…'
+    → residual_count=0 long_runs=0（PASS 不误报）
+  C 跨页专名 'Una prueba… cita Pinch Bottom Bags en una página…'
+    → residual_count=0 long_runs=1，段样 'pinch bottom bags'（PASS 页面限定生效）
+  三次注入均 REVERTED 7865，注入块已清除。
+【最终复扫 es-v4】126 页，不达标 1 页 = /es/privacy/（83 词 / 10 段，唯一豁免）
+  → 125 页 0 词 0 段
+【delta 现状】es-add.json {text 3, block 43, title 6}；es-mod.json {block 76}
+  apply-batch es --sync：11/11 词典逐字节一致，sync md5 615537e0453a
+
+====================================================================
+六、扫描器改动后的三语种复扫（确认无回归）
+====================================================================
+扫描器本轮改了 4 处：分词器（\p{L} 完整词）、$HOMO 从 local-stop 的 _homo 读、
+$ALLOW 加 mib/gib/kib/mhz/ghz 与竞品品牌名、allow 目录新增 allow-es.json。
+改完重推容器，三个文件 sha256 与仓库逐一核对一致后才开跑：
+  scan-main-english-29y.php  e61215622200b31bc6e5e3b5cc530bb43825295590e052ca658e41af96191c1a
+  local-stop.json            faf4f205febf50b5b36779de6152405af6c2684a15eb84be41674cca4a320ed8
+  allow-es.json              564c2eaf365fb054d6395b6522391b717ab77154e1a4af03beb7f15d1e9f073c
+
+  fr  126 页 → 不达标 1 页 = /fr/privacy/（83 词 / 10 段，豁免）→ 125 页 0 词 0 段
+  pt  125 页 → 不达标 1 页 = /pt/privacy/（91 词 / 14 段，豁免）→ 其余 0 词 0 段
+  es  126 页 → 不达标 1 页 = /es/privacy/（83 词 / 10 段，豁免）→ 125 页 0 词 0 段
+
+====================================================================
+七、待办
+====================================================================
+  · 全站 1386 页复扫（v4 口径 + allow 目录，/privacy/ 除外）—— 预计 5 小时以上，另起一轮
+  · nl → ja/ko/ar/zh 批次
+  · 三轮演练（forward → rollback → forward）+ 门禁 + HEAD..origin/main 为空 → 才提提交
+

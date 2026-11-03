@@ -1,0 +1,89 @@
+pt 批次（2026-11-02）：从 64 页不达标清到 125/126
+=================================================
+
+一、基线
+-------
+pt-v1（run-scan-29y.py，扫前 sha256 四文件核对 SAME）
+  126 页，不达标 64 页
+  高频残留：the 21 / and 18 / is 17 / for 12 / direction 11 / this 11 /
+            packrivo's 10 / minimum 10 / pieces 10 / per 10 / design 10
+
+二、译文（delta/pt-add.json 48 条 text + delta/pt-mod.json）
+--------------------------------------------------------
+口径：pt 词典存量是巴葡（Orçamento / Calculadora de preços / Cores / Próximo），沿用。
+  design -> modelo（不留 design 作借词；已翻句子里 "produto/design" 也一并改 modelo，9 处）
+  reverse tuck -> aba invertida；tuck-end -> extremidade de encaixe
+  SOS -> SOS（袋型缩写）；Packrivo's minimum -> "O mínimo da Packrivo"
+  月份缩写 jan./fev./mar./abr./mai./jun./jul./ago./set./out./nov./dez.
+  博客计数 Journal · {N} articles -> Jornal · {N} artigos；All {N} articles → -> Todos os {N} artigos →
+  6 篇侧栏文章标题、11 条 "O mínimo da Packrivo é de 500 peças por modelo." 家族句、
+  首页报价卡 per unit at 1,000 pieces -> por unidade em 1.000 peças
+apply-batch pt --sync：11/11 一致（md5 70a8c053311e）
+
+三、扫描器真源外置（与 fr 同口径）
+-------------------------------
+1) $HOMO 从 local-stop.json 的 "_homo" 读，脚本不再写死；
+   _homo = (LOCAL_STOP ∩ 英文词表) ∪ 额外本族同形词。
+   fr 额外 'or'(现在/金) 'but'(目标)：这两个是本族词但不在 fr LOCAL_STOP
+   （留着让它们能打断英文连续段），所以不能靠重算得到，必须显式保留 -> fr _homo 20 词。
+2) 分词器修真（deploy/scripts-29y/scan-main-english-29y.php）
+   原：preg_match_all('~[A-Za-z][A-Za-z\'\-]*~')
+   问题：'referência' 被切成 'refer' + 'ncia'，'refer' 恰在英文词表里，
+         pt/fr/es 页凭空多出英文票（pt 上最多，10 处假残留段）。
+   改为：'~[\p{L}][\p{L}\'’\-]*~u'（按完整词切，重音字母留在词内），php -l 通过。
+   影响面：只会减少假英文票，不会把已判干净的页面变脏；
+           改后 fr 复扫 fr-v6 仍 125/126（只 privacy），pt 复扫见下。
+
+四、pt 本族同形词
+---------------
+进 LOCAL_STOP['pt']（35 -> 50 词）：
+  real material final local base logo item volume total envelope bom exterior interface
+  interfaces for        （for = 虚拟式 se ... for a mesma；interfaces = as interfaces do produto）
+_homo['pt']（18 词）= a as com do no real material final local base logo item volume total
+                       envelope bom exterior interface
+（_homo 里不含 interfaces/for，因为它们不在英文词表里，谈不上"投英文票"；
+  我按 _homo = LOCAL∩LEX 的口径生成，这两个只进 LOCAL。）
+
+五、豁免表 allow-pt.json（新建，交负责人核）
+----------------------------------------
+专有名词 10 条（都在 pages 限定页生效）：
+  Packaging Corporation of America / Pinch Bottom Bags / Partial Cover / Novolex / Duro /
+  Packhelp / PakFactory / Packlane / Arka / Paper Mart
+借词/单位 7 条（<=15）：kraft / packaging / mailer / sos / liner / layout / mib
+  说明：mib 是 MiB 文件大小单位（"2 MiB cada e 5 MiB no total"），不翻译；
+        layout 是 pt-BR 沿用的版面词，没有等义单一译名。
+
+六、'The <a>' 结构与冠词
+--------------------
+pt 原来完全没做这一步：全站 78 处 'The <a>'，0 处带冠词。
+  1) dict 加 text "The" -> ""（裸节点清空）
+  2) 72 条链接文字补冠词（A/O/Os 按中心名词性数）
+     f -> A：referência/bandeja/base/caixa/descrição/direção/embalagem/ferramenta/
+            lista/orientação/planilha
+     m -> O：catálogo/conjunto/cartucho/divisor/expositor/guia/suporte
+     复数 m -> Os：exemplos
+  3) 4 条保留原状（英文原文句中还有 the/a，补了会与前面的 o/a 重复）：
+       auto-bottom carton / dimensions and review-method guide /
+       paperboard roll-end dust-flap carton / snap bottom slotted outer carton
+  复核（the-audit-lang.py pt）：78 处 PASS 74 / FAIL 4（即上面 4 条），残留 '>The ' 节点 0 处。
+
+七、结果
+-------
+pt-v4（最终）
+  126 页，不达标 1 = /pt/privacy/（词 91 段 14，§10.8 豁免）
+  其余 125 页 0 词 0 段。
+负向测试（negtest-allow-29y.py pt）
+  A 注入 'paper bags with lid cover' -> long_runs=1 PASS
+  B sleeve-bag 页 -> long_runs=0，残留词不含 pinch/bottom/bags PASS
+
+八、已知待修（不影响扫描判定，如实记）
+----------------------------------
+1) /pt/guide-jewelry-insert-fit/ 一句渲染为
+     "…as interfaces do produto. O <a>visão geral do inserto…</a> é uma referência estrutural…"
+   应为 "A visão geral…"（visão 阴性）。根因：
+     该处英文是 <p>Explore <a>holder directions</a> … interfaces. The <a>converter's custom
+     insert overview</a> …</p>，The 落在**长文本节点**里（"  after describing the product
+     interfaces. The "），整节点查不到词条，最后由 mu-plugin 的 strtr($vault) 子串表把 "The " 换成 "O "。
+   不是 dict 条目可修（dict 里没有 "The " 带空格的键），要改 $vault 来源或给该节点单独建条目。
+   同类结构在其它语种可能还会出现，遇到就按这条记录，不为了过扫描改句意。
+2) "Explore" 在该段落未被翻译（同段落其余部分已翻），同上属长节点未命中，后续单列修。

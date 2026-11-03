@@ -1,0 +1,98 @@
+29y 量具修正与隐私页改动（2026-10-31）
+=====================================
+
+一、隐私页：只对外语前缀生效
+--------------------------------
+需求：英文 /privacy/ 不加 noindex、不显示「仅提供英文」说明；只有外语前缀生效。
+
+落地：
+  deploy/site-29y/mu-plugins/packrivo-privacy-noindex-29y.php   v2.2
+    - 语言判定用 i18n 的 packrivo_lang()（i18n 在重写 REQUEST_URI 前 define 了 PACKRIVO_LANG）
+    - 条件：packrivo_lang() !== null 且 is_page('privacy')
+    - X-Robots-Tag / <meta name="robots"> / 说明块 三件事只在满足条件时输出
+    - 说明块用 ob_start（template_redirect 优先级 11，开在 i18n 的缓冲区之后 = 内层），
+      插入英文原串后由同一缓冲回调按词典翻成该语种；删插件文件即完全回滚
+  deploy/scripts-29y/privacy-note-29y.php revert 50
+    - 页面内容复原：7699 -> 7572 字节，privacy-lang-note 计数 0
+
+12 个网址实测（docker exec php curl -k -H 'Host: www.packrivo.com' https://172.19.0.5<path>）：
+  路径                  HTTP  X-Robots-Tag        meta robots               说明块  判定
+  /privacy/             200   （无）              （无）                    无      PASS
+  /ar/privacy/          200   noindex, nofollow   noindex, nofollow         有      PASS
+  /de/privacy/          200   noindex, nofollow   noindex, nofollow         有      PASS
+  /es/privacy/          200   noindex, nofollow   noindex, nofollow         有      PASS
+  /fr/privacy/          200   noindex, nofollow   noindex, nofollow         有      PASS
+  /it/privacy/          200   noindex, nofollow   noindex, nofollow         有      PASS
+  /ja/privacy/          200   noindex, nofollow   noindex, nofollow         有      PASS
+  /ko/privacy/          200   noindex, nofollow   noindex, nofollow         有      PASS
+  /nl/privacy/          200   noindex, nofollow   noindex, nofollow         有      PASS
+  /pt/privacy/          200   noindex, nofollow   noindex, nofollow         有      PASS
+  /zh-CN/privacy/       200   noindex, nofollow   noindex, nofollow         有      PASS
+  /zh-TW/privacy/       200   noindex, nofollow   noindex, nofollow         有      PASS
+  汇总：PASS 12 / FAIL 0
+
+  说明块内容（已翻译，非英文原串）：
+    ar  هذه السياسة متوفرة بالإنجليزية فقط. النسخة الإنجليزية هي المرجع المعتمد
+    de  Diese Datenschutzerklärung liegt nur auf Englisch vor. Die englische Fassung ist maßgeblich
+    es  Esta política de privacidad se ofrece únicamente en inglés. La versión en inglés es la auténtica
+    fr  Cette politique de confidentialité est fournie en anglais uniquement. La version anglaise fait foi
+    it  La presente informativa sulla privacy è disponibile solo in inglese. Fa fede la versione inglese
+    ja  本プライバシーポリシーは英語のみで提供されます。英語版が正式な内容となります。
+    ko  본 개인정보 처리방침은 영어로만 제공됩니다. 영어 버전이 정본입니다.
+    nl  Dit privacybeleid is alleen in het Engels beschikbaar. De Engelse versie is bepalend
+    pt  Esta política de privacidade é fornecida apenas em inglês. A versão em inglês é a oficial
+    zh-CN 本隐私政策仅以英文提供。以英文版本为准。
+    zh-TW 本隱私政策僅以英文提供。以英文版本為準。
+
+两个坑（都已在文档 §10.8 留档）：
+  1) 按 REQUEST_URI 判语言 -> i18n 早已把它重写成 /privacy/，判定恒为英文，11 个外语页全部 FAIL；
+  2) 插入锚点写死 '<main id="main">'，主题实际输出 '<main id="main" class="pk-main">'，strpos 找不到，说明块不出现。
+
+二、扫描器尺子：连续段改到整页正文（v4）
+--------------------------------------
+deploy/scripts-29y/scan-main-english-29y.php
+  - 新增第 5 个参数：英文词表 json（缺省时退回英文功能词表并打 WARN）
+  - $HOMO：与本族词表同形的英文词，只抵消孤立单词，不计入整句判英文的本族命中数
+  - long_runs 改为在整页正文上切：连续 >=3 token 都在英文词表里、且至少 1 个不在 LOCAL_STOP
+
+deploy/verification-29y/i18n/en-lexicon.json  （3050 词）
+  - 来源：11 个词典的英文键；只收小写词 + 句中出现的首字母大写词；两字母词只留英文功能词
+  - 目的：避免 IL/OR 这类大写缩写被当英文词，把意大利语短语拼成假连续段
+
+负向测试（deploy/scripts-29y/inject-test-29y.php，注入 -> 扫 -> 还原）：
+  it  Scatola regalo per gioielli con rigid gift box with magnetic closure e inserto.
+      long_runs=1 段样 ['rigid gift box with magnetic closure']  -> PASS
+  fr  Boite cadeau pour bijoux avec rigid gift box with magnetic closure et insert.  -> PASS
+  es  Caja regalo para joyas con rigid gift box with magnetic closure e inserto.     -> PASS
+  pt  Caixa presente para joias com rigid gift box with magnetic closure e inserto.  -> PASS
+  nl  Geschenkdoos voor sieraden met rigid gift box with magnetic closure en inleg.  -> PASS
+  de  Geschenkbox fuer Schmuck mit rigid gift box with magnetic closure und Einlage. -> PASS
+  每个语种扫完都 REVERTED（页面长度回到 16 字节，注入块消失）
+
+it 90 页两把尺子对比：
+  旧尺子（v3 + 扩充词表）  不达标 1 页（privacy）  >5 词 1  有连续段 1
+  新尺子（v4）             不达标 18 页            >5 词 1  有连续段 18
+  「旧判不达标、新判达标」的页：0 页
+
+新尺子新增的 17 页（全部同一现象：意语译文里夹英文行业词）：
+  /                                              段样 paper bags shopper in / logo shopper in / journal articles note
+  /inquiry/                                      段样 per mailer in
+  /inserts/                                      段样 per mailer in
+  /mailer-boxes/                                 段样 reverse tuck in
+  /product-auto-bottom-display-carton/           段样 unit retail come
+  /product-auto-lock-bottom-carton/              段样 unit per design
+  /product-die-cut-handle-paper-bag/             段样 packaging shopper in
+  /product-euro-tote-paper-carrier/              段样 packaging shopper in
+  /product-full-overlap-slotted-outer-carton/    段样 packaging corporation of
+  /product-paper-belly-band/                     段样 belly band in
+  /product-paper-merchandise-sleeve-bag/         段样 pinch bottom bags
+  /product-peg-hook-counter-display/             段样 unit retail complete
+  /product-poly-bubble-parcel-envelope/          段样 kraft in base
+  /product-rigid-paperboard-postal-envelope/     段样 per mailer in
+  /product-snap-bottom-slotted-outer-carton/     段样 establishes the named
+  /product-sos-paper-gift-bag/                   段样 come self opening square
+  /product-window-lid-rigid-gift-box/            段样 partial cover come
+
+处理方向：把这些英文行业词在意大利语译文里换成对应意语词（mailer -> busta，shopper -> sacchetto/shopper 视语境，
+packaging -> imballaggio，belly band -> fascia，kraft -> carta kraft 保留专名但补足意语），
+不是改尺子放水。

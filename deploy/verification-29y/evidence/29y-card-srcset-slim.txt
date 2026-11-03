@@ -1,0 +1,59 @@
+首页卡片图瘦身（2026-11-01）—— 480/960 两档，currentSrc 实测 + 截图
+====================================================================
+
+一、改动位置
+----------
+packrivo-wp/packrivo-home-v4/template-parts/product-card.php（共享卡片模板，
+首页 .pk-cards-4、single.php、template-products-v4.php 都用它）
+
+原写法两个问题：
+  1. srcset 只在 `$caption && $thumb_id && $small_id` 那条分支才输出，
+     而 _packrivo_card_800_id 这个 meta 实际是空的 → 线上 5 张卡片图全部走 fallback，
+     只有 src=-1536.webp、没有 srcset（1536×1024 / 151KB 一张）。
+  2. 那条死分支里写的是 800w/1200w 两档，但 -800/-1200 文件在生产上是 404（不存在的档）。
+
+二、现状取证（生产只读）
+---------------------
+p054 三档实测：-1536=200(151,326B)  -960=200(61,188B)  -480=200(16,054B)
+                -800=404  -1200=404  -768=404
+首页 5 张卡片图（p052/p054/p055/p070/p071）三档全部 200。
+图片实际尺寸 480×320 / 960×640 / 1536×1024 = **3:2**，不是 4:3；
+CSS 显示框 `.pk-product-card-image{aspect-ratio:4/3;object-fit:cover}` 负责裁切。
+→ width/height 按显示框 4:3 写 400×300（防 CLS），图片内容裁切方式不变。
+
+三、新写法
+----------
+  $card_src    = <base>-960.webp                       （src 用 960）
+  $card_srcset = <base>-480.webp 480w, <base>-960.webp 960w   （只两档，不放 1536）
+  sizes="(max-width:560px) calc(100vw - 48px), (max-width:900px) calc(50vw - 32px), (max-width:1100px) calc(33vw - 30px), 300px"
+  width="400" height="300" loading="lazy"
+按 URL 规律从 cover 派生两档，不再依赖空的 _packrivo_card_800_id。
+
+踩到的坑：第一版 $base.'-480'.$ext 漏了点，URL 变成 -960webp（无点），
+图片 404、naturalWidth=0；改成 '-480.'.'-960.' 后正常。已修。
+
+四、演练站准备
+------------
+演练站 uploads 本来没有这套图（29z 文档记过的环境缺口）。
+本轮判据要量 currentSrc + 截图，所以从生产只读下载 5 张 × 3 档 = 15 个 webp
+灌进演练站 wp-content/uploads/packrivo-scale-20261004/（15 个全部 HTTP 200，字节数与生产一致）。
+
+五、判据（deploy/scripts-29y/verify-card-srcset-29y.py，selenium 走 29y-sel 容器，CDP 设视口+DPR）
+----------------------------------------------------------------------------------------------
+A. 375 宽 DPR 3（手机）：
+   5 张卡片 currentSrc 全部 = -960.webp（naturalWidth=327 已加载），无一选 -1536 —— PASS ×15
+B. 1440 宽 DPR 1（桌面）：
+   5 张卡片 currentSrc 全部 = -480.webp（naturalWidth=300 已加载）—— PASS ×10
+   src=-960、srcset 只 480/960 两档、sizes 与排版一致、width/height=400/300、loading=lazy —— PASS ×5
+C. 截图（element 截图后 LANCZOS 3 倍放大）：
+   card-mobile-375-dpr3.png   375 视口卡片 981×1287（DPR3 截图）→ 2943×3861，盒面纹理/链条清晰
+   card-desktop-1440-dpr1.png 1440 视口卡片 271×371 → 813×1113，300px 显示框下 -480 清晰
+   两张都落在 deploy/verification-29y/evidence/card-shots/
+
+汇总：PASS 31 / FAIL 0
+
+六、带宽账（每张卡片）
+------------------
+手机 375 DPR3：原来 1536(151KB) → 现在 960(61KB)，省 60%
+桌面 1440 DPR1：原来 1536(151KB) → 现在 480(16KB)，省 89%
+首页 5 张卡片合计：755KB → 手机 305KB / 桌面 80KB

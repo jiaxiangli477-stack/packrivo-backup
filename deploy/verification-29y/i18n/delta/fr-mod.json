@@ -1,1 +1,320 @@
-{}
+{
+ "block": {
+  "PakFactory hexagon catalogue": {
+   "old": "Catalogue hexagonal de PakFactory",
+   "new": "Le catalogue hexagonal de PakFactory"
+  },
+  "through-cut EVA holder": {
+   "old": "support EVA à découpe traversante",
+   "new": "Le support EVA à découpe traversante"
+  },
+  "SOS bag catalogue": {
+   "old": "Catalogue de sacs SOS",
+   "new": "Le catalogue de sacs SOS"
+  },
+  "full-flap auto-bottom reference": {
+   "old": "référence fond automatique à rabats complets",
+   "new": "La référence fond automatique à rabats complets"
+  },
+  "original box-style reference": {
+   "old": "référence d'origine de style boîte",
+   "new": "La référence d'origine de style boîte"
+  },
+  "AI-assisted concept illustration. Keep header attachment and the hanging opening distinct in the retail brief.": {
+   "old": "Illustration conceptuelle assistée par IA. Distinguer la fixation de l’en-tête et l’ouverture de suspension dans le brief retail.",
+   "new": "Illustration conceptuelle assistée par IA. Distinguez la fixation de l’en-tête et l’ouverture de suspension dans le brief de vente au détail."
+  },
+  "includes a No Gusset option and shows bags with an open serrated mouth and no carry handles. Its range also includes gusset variants, so keep the selected no-gusset form explicit in the brief.": {
+   "old": "comprend une option No Gusset et montre des sacs avec une ouverture dentelée ouverte et sans poignées de transport. Sa gamme comprend aussi des variantes à soufflets, donc gardez explicite dans le brief la forme sans soufflet sélectionnée.",
+   "new": "comprend une option sans soufflet et montre des sacs avec une ouverture dentelée ouverte et sans poignées de transport. Sa gamme comprend aussi des variantes à soufflets, donc gardez explicite dans le brief la forme sans soufflet sélectionnée."
+  },
+  "Paper Mart’s": {
+   "old": "Paper Mart’s",
+   "new": "La"
+  },
+  "tooling scope guide": {
+   "old": "Guide du périmètre des outillages",
+   "new": "Le guide du périmètre des outillages"
+  },
+  "auto bottom display catalogue": {
+   "old": "catalogue de présentoirs à fond automatique",
+   "new": "Le catalogue de présentoirs à fond automatique"
+  },
+  "four corner display tray": {
+   "old": "plateau de présentation à quatre coins",
+   "new": "Le plateau de présentation à quatre coins"
+  },
+  "auto bottom slotted reference": {
+   "old": "référence de fond automatique à fentes",
+   "new": "La référence de fond automatique à fentes"
+  },
+  "delivery-state guide": {
+   "old": "guide de l'état de livraison",
+   "new": "Le guide de l'état de livraison"
+  },
+  "book style rigid box reference": {
+   "old": "référence de boîte rigide de style livre",
+   "new": "La référence de boîte rigide de style livre"
+  },
+  "FEFCO construction reference": {
+   "old": "Référence de construction FEFCO",
+   "new": "La référence de construction FEFCO"
+  },
+  "corrugated bottle carrier reference": {
+   "old": "référence de porte-bouteilles en carton ondulé",
+   "new": "La référence de porte-bouteilles en carton ondulé"
+  },
+  "corrugated gusset folder catalogue": {
+   "old": "catalogue de chemises à soufflet en carton ondulé",
+   "new": "Le catalogue de chemises à soufflet en carton ondulé"
+  },
+  "paperboard gusset folder tool": {
+   "old": "outil de pliage à soufflet en carton compact",
+   "new": "L'outil de pliage à soufflet en carton compact"
+  },
+  "corrugated reverse-tuck reference": {
+   "old": "référence de fermeture à rabat inversé en carton ondulé",
+   "new": "La référence de fermeture à rabat inversé en carton ondulé"
+  },
+  "roll ends with lid reference": {
+   "old": "référence d'extrémités de rouleau avec couvercle",
+   "new": "La référence d'extrémités de rouleau avec couvercle"
+  },
+  "tuck top auto bottom catalogue": {
+   "old": "catalogue à fond automatique et rabat supérieur rentrant",
+   "new": "Le catalogue à fond automatique et rabat supérieur rentrant"
+  },
+  "tuck top 1-2-3 bottom reference": {
+   "old": "référence à fond 1-2-3 et rabat supérieur rentrant",
+   "new": "La référence à fond 1-2-3 et rabat supérieur rentrant"
+  },
+  "original display-box structural reference": {
+   "old": "référence structurelle d'origine de boîte de présentation",
+   "new": "La référence structurelle d'origine de boîte de présentation"
+  },
+  "cube carrier reference": {
+   "old": "référence de porte-cube",
+   "new": "La référence de porte-cube"
+  },
+  "folding gift-box specification guide": {
+   "old": "guide de spécification de boîte cadeau pliante",
+   "new": "Le guide de spécification de boîte cadeau pliante"
+  },
+  "die-cut bag reference": {
+   "old": "référence de sac découpé à l'emporte-pièce",
+   "new": "La référence de sac découpé à l'emporte-pièce"
+  },
+  "gift presentation set": {
+   "old": "ensemble de présentation cadeau",
+   "new": "L'ensemble de présentation cadeau"
+  },
+  "frame tray and sleeve reference": {
+   "old": "référence de plateau cadre et fourreau",
+   "new": "La référence de plateau cadre et fourreau"
+  },
+  "double-wall tray-and-lid reference": {
+   "old": "référence de plateau et couvercle double paroi",
+   "new": "La référence de plateau et couvercle double paroi"
+  },
+  "double-wall frame tray-and-lid direction": {
+   "old": "piste de plateau et couvercle à cadre double paroi",
+   "new": "La piste de plateau et couvercle à cadre double paroi"
+  },
+  "folding lid-and-base set": {
+   "old": "ensemble pliant couvercle et base",
+   "new": "L'ensemble pliant couvercle et base"
+  },
+  "euro tote catalogue": {
+   "old": "catalogue de sacs cabas Euro",
+   "new": "Le catalogue de sacs cabas Euro"
+  },
+  "gift bag and tissue set": {
+   "old": "ensemble sac cadeau et papier de soie",
+   "new": "L'ensemble sac cadeau et papier de soie"
+  },
+  "contour-cut PU bed": {
+   "old": "lit en PU découpé selon contour",
+   "new": "Le lit en PU découpé selon contour"
+  },
+  "book-wrap corrugated pack": {
+   "old": "emballage en carton ondulé à enveloppement livre",
+   "new": "L'emballage en carton ondulé à enveloppement livre"
+  },
+  "original foldable lid-and-base reference": {
+   "old": "référence d'origine de couvercle et base pliants",
+   "new": "La référence d'origine de couvercle et base pliants"
+  },
+  "original box-liner structural reference": {
+   "old": "référence structurelle d'origine de doublure de boîte",
+   "new": "La référence structurelle d'origine de doublure de boîte"
+  },
+  "original tray-and-sleeve structural reference": {
+   "old": "référence structurelle d'origine de plateau et fourreau",
+   "new": "La référence structurelle d'origine de plateau et fourreau"
+  },
+  "four corner box reference": {
+   "old": "référence de boîte à quatre coins",
+   "new": "La référence de boîte à quatre coins"
+  },
+  "full overlap seal end reference": {
+   "old": "référence d'extrémité scellée à recouvrement total",
+   "new": "La référence d'extrémité scellée à recouvrement total"
+  },
+  "measurement method worksheet": {
+   "old": "fiche de méthode de mesure",
+   "new": "La fiche de méthode de mesure"
+  },
+  "original gable-box structural reference": {
+   "old": "référence structurelle d'origine de boîte à pignon",
+   "new": "La référence structurelle d'origine de boîte à pignon"
+  },
+  "original hanging and locking-tab reference": {
+   "old": "référence d'origine pour patte de suspension et patte de verrouillage",
+   "new": "La référence d'origine pour patte de suspension et patte de verrouillage"
+  },
+  "header card catalogue reference": {
+   "old": "référence catalogue de carte d’en-tête",
+   "new": "La référence catalogue de carte d’en-tête"
+  },
+  "rigid-box specification guide": {
+   "old": "guide de spécifications de boîte rigide",
+   "new": "Le guide de spécifications de boîte rigide"
+  },
+  "collapsible gift-box direction": {
+   "old": "Instructions pour boîte cadeau démontable",
+   "new": "Les instructions pour boîte cadeau démontable"
+  },
+  "original jewelry display-card guide": {
+   "old": "guide d'origine de carte de présentation pour bijoux",
+   "new": "Le guide d'origine de carte de présentation pour bijoux"
+  },
+  "lock-cap auto-bottom catalogue": {
+   "old": "catalogue de fonds automatiques à couvercle verrouillable",
+   "new": "Le catalogue de fonds automatiques à couvercle verrouillable"
+  },
+  "original corrugated end-cap reference": {
+   "old": "référence d'origine d'embout en carton ondulé",
+   "new": "La référence d'origine d'embout en carton ondulé"
+  },
+  "original packaging-sleeve reference": {
+   "old": "référence d'origine de fourreau d'emballage",
+   "new": "La référence d'origine de fourreau d'emballage"
+  },
+  "expandable parcel bag direction": {
+   "old": "piste de sac colis extensible",
+   "new": "La piste de sac colis extensible"
+  },
+  "paper padded envelope reference": {
+   "old": "référence d'enveloppe matelassée en papier",
+   "new": "La référence d'enveloppe matelassée en papier"
+  },
+  "packed-system guide": {
+   "old": "guide du système emballé",
+   "new": "Le guide du système emballé"
+  },
+  "paperboard divider reference": {
+   "old": "référence de séparateur en carton compact",
+   "new": "La référence de séparateur en carton compact"
+  },
+  "peg counter reference": {
+   "old": "référence de compteur à chevilles",
+   "new": "La référence de compteur à chevilles"
+  },
+  "pinch-lock tray description": {
+   "old": "description de plateau à fermeture par pincement",
+   "new": "La description de plateau à fermeture par pincement"
+  },
+  "poly bubble mailer reference": {
+   "old": "référence d'enveloppe à bulles en poly",
+   "new": "La référence d'enveloppe à bulles en poly"
+  },
+  "printed tissue reference": {
+   "old": "référence de papier de soie imprimé",
+   "new": "La référence de papier de soie imprimé"
+  },
+  "set checklist": {
+   "old": "liste de contrôle de l'ensemble",
+   "new": "La liste de contrôle de l'ensemble"
+  },
+  "paperboard grid divider": {
+   "old": "séparateur à grille en carton compact",
+   "new": "Le séparateur à grille en carton compact"
+  },
+  "board-mailer catalogue examples": {
+   "old": "exemples de catalogue d'emballages postaux en carton",
+   "new": "Les exemples de catalogue d'emballages postaux en carton"
+  },
+  "corrugated folder reference": {
+   "old": "référence de chemise en carton ondulé",
+   "new": "La référence de chemise en carton ondulé"
+  },
+  "multi-tier floor gift display": {
+   "old": "présentoir de sol à plusieurs niveaux pour cadeaux",
+   "new": "Le présentoir de sol à plusieurs niveaux pour cadeaux"
+  },
+  "single-tray counter display": {
+   "old": "présentoir de comptoir à plateau unique",
+   "new": "Le présentoir de comptoir à plateau unique"
+  },
+  "shipping-envelope reference": {
+   "old": "référence d'enveloppe d'expédition",
+   "new": "La référence d'enveloppe d'expédition"
+  },
+  "manufacturer's shoulder and neck reference": {
+   "old": "référence fabricant pour l'épaule et le col",
+   "new": "La référence fabricant pour l'épaule et le col"
+  },
+  "six corner catalogue reference": {
+   "old": "référence de catalogue à six coins",
+   "new": "La référence de catalogue à six coins"
+  },
+  "1-2-3 slotted container reference": {
+   "old": "Référence de caisse à fentes 1-2-3",
+   "new": "La référence de caisse à fentes 1-2-3"
+  },
+  "manufacturer's snap-lock format reference": {
+   "old": "Référence du format à fermeture à encliquetage du fabricant",
+   "new": "La référence du format à fermeture à encliquetage du fabricant"
+  },
+  "PakFactory straight tuck catalogue": {
+   "old": "Catalogue à rabats droits de PakFactory",
+   "new": "Le catalogue à rabats droits de PakFactory"
+  },
+  "tab-lock roll-end catalogue": {
+   "old": "catalogue roll-end à verrou à patte",
+   "new": "Le catalogue roll-end à verrou à patte"
+  },
+  "three flap lock reference": {
+   "old": "référence de verrou à trois rabats",
+   "new": "La référence de verrou à trois rabats"
+  },
+  "tuck end sleeve catalogue": {
+   "old": "catalogue de manchons à rabats rentrants",
+   "new": "Le catalogue de manchons à rabats rentrants"
+  },
+  "double door maker reference": {
+   "old": "référence de fabricant de porte double",
+   "new": "La référence de fabricant de porte double"
+  },
+  "jewelry opening-format guide": {
+   "old": "guide des formats d'ouverture de bijoux",
+   "new": "Le guide des formats d'ouverture de bijoux"
+  },
+  "Show the empty carton in its supplied state. Identify the prepared side seam and any remaining work. Keep the base inspection before the loading step so contents cannot hide an incomplete tab.": {
+   "old": "Présenter le carton vide dans son état de livraison. Identifier la couture latérale préparée et tout travail restant. Effectuer le contrôle de la base avant l’étape de chargement afin que le contenu ne puisse pas masquer une languette incomplète.",
+   "new": "Présenter le carton vide dans son état de livraison. Identifier la couture latérale préparée et tout travail restant. Effectuer le contrôle de la base avant l’étape de chargement afin que le contenu ne puisse pas masquer une languette incomplète. Le"
+  },
+  "Form the base before testing the cap": {
+   "old": "Former la base avant de tester le capuchon",
+   "new": "Former la base avant de tester le capuchon. Le"
+  },
+  "Have the converter return a tab/slot map and material proposal. Ask the packing owner to retain the empty-corner and loaded-access views under the same sample revision. The buyer can then resolve the corner, grip or outer-box fit separately instead of accepting a broad statement that the tray fits.": {
+   "old": "Demandez au transformateur de fournir un plan des pattes/fentes et une proposition de matériau. Demandez au responsable du conditionnement de conserver les vues du coin vide et de l’accès en charge sous la même révision d’échantillon. L’acheteur peut alors régler séparément l’ajustement du coin, de la préhension ou de la boîte extérieure au lieu d’accepter une affirmation générale selon laquelle le plateau s’ajuste.",
+   "new": "Demandez au transformateur de fournir un plan des pattes/fentes et une proposition de matériau. Demandez au responsable du conditionnement de conserver les vues du coin vide et de l’accès en charge sous la même révision d’échantillon. L’acheteur peut alors régler séparément l’ajustement du coin, de la préhension ou de la boîte extérieure au lieu d’accepter une affirmation générale selon laquelle le plateau s’ajuste. Le"
+  },
+  "as a direct comparison. Ask the converter to show which tab/receiver or wall-setup actions differ in the offered proposal. A new catalog name alone should not create another packing instruction if the actual interface is the same.": {
+   "old": "comme comparaison directe. Demandez au transformateur de montrer quelles actions de languette/récepteur ou de montage des parois diffèrent dans la proposition soumise. Un nouveau nom de catalogue ne doit pas à lui seul créer une autre instruction d'emballage si l'interface réelle est la même.",
+   "new": "comme comparaison directe. Demandez au transformateur de montrer quelles actions de languette/récepteur ou de montage des parois diffèrent dans la proposition soumise. Un nouveau nom de catalogue ne doit pas à lui seul créer une autre instruction d'emballage si l'interface réelle est la même. La"
+  }
+ }
+}

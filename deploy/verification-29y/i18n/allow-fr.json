@@ -1,0 +1,75 @@
+{
+  "_note": "29y 按语种豁免表（fr）。两种粒度：phrase 只在 pages 列出的页面、整短语完整出现时跳过；word 全站按单词豁免（借词，每语种 <=15）。扫描器只认这个文件，脚本里没有硬编码豁免词。",
+  "_lang": "fr",
+  "_updated": "2026-11-01",
+  "entries": [
+    {
+      "phrase": "Packaging Corporation of America",
+      "type": "专有名词",
+      "reason": "引用来源的公司全名，不能意译；单独出现的 corporation/america 照常算残留",
+      "pages": [
+        "/fr/product-full-overlap-slotted-outer-carton/"
+      ]
+    },
+    {
+      "phrase": "Pinch Bottom Bags",
+      "type": "专有名词",
+      "reason": "Novolex 的品类名；单独出现的 pinch/bottom/bags 照常算残留",
+      "pages": [
+        "/fr/product-paper-merchandise-sleeve-bag/"
+      ]
+    },
+    {
+      "phrase": "Partial Cover",
+      "type": "专有名词",
+      "reason": "款式正式名（RP005 Partial Cover）；单独出现的 partial/cover 照常算残留",
+      "pages": [
+        "/fr/product-window-lid-rigid-gift-box/"
+      ]
+    },
+    {
+      "phrase": "Novolex",
+      "type": "专有名词",
+      "reason": "包装制造商公司名，只在这页引用时出现",
+      "pages": [
+        "/fr/product-paper-merchandise-sleeve-bag/"
+      ]
+    },
+    {
+      "phrase": "Duro",
+      "type": "专有名词",
+      "reason": "Novolex 的产品线名，只在这页引用时出现",
+      "pages": [
+        "/fr/product-paper-merchandise-sleeve-bag/"
+      ]
+    },
+    {
+      "phrase": "Paper Mart",
+      "type": "专有名词",
+      "reason": "被引用的纸品供应商名（Paper Mart's page…），公司名保留原文",
+      "pages": [
+        "/fr/product-paper-merchandise-sleeve-bag/"
+      ]
+    },
+    {
+      "word": "mailer",
+      "type": "借词",
+      "reason": "法语物流包装行话仍用 mailer（邮寄盒/邮袋），7 页出现；复合产品名保留"
+    },
+    {
+      "word": "kraft",
+      "type": "借词",
+      "reason": "papier kraft 是法语固定说法，6 页出现"
+    },
+    {
+      "word": "packaging",
+      "type": "借词",
+      "reason": "法语包装行业 packaging/emballage 并用，6 页出现"
+    },
+    {
+      "word": "sos",
+      "type": "借词",
+      "reason": "SOS 袋型缩写（sac à fond carré SOS），法语行业直接写 SOS，5 页出现"
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+ "_note": "29y 按语种豁免表（it）。两种粒度：phrase 只在 pages 列出的页面、整短语完整出现时跳过；word 全站按单词豁免（借词，每语种 <=15）。扫描器只认这个文件，脚本里没有硬编码豁免词。",
+ "_lang": "it",
+ "_updated": "2026-10-31",
+ "entries": [
+  {
+   "phrase": "Packaging Corporation of America",
+   "type": "专有名词",
+   "reason": "引用来源的公司全名，不能意译；单独出现的 corporation/america 照常算残留",
+   "pages": [
+    "/it/product-full-overlap-slotted-outer-carton/"
+   ]
+  },
+  {
+   "phrase": "Pinch Bottom Bags",
+   "type": "专有名词",
+   "reason": "Novolex 的品类名；单独出现的 pinch/bottom/bags 照常算残留",
+   "pages": [
+    "/it/product-paper-merchandise-sleeve-bag/"
+   ]
+  },
+  {
+   "phrase": "Partial Cover",
+   "type": "专有名词",
+   "reason": "款式正式名（RP005 Partial Cover）；单独出现的 partial/cover 照常算残留",
+   "pages": [
+    "/it/product-window-lid-rigid-gift-box/"
+   ]
+  },
+  {
+   "phrase": "Novolex",
+   "type": "专有名词",
+   "reason": "包装制造商公司名，只在这页引用时出现",
+   "pages": [
+    "/it/product-paper-merchandise-sleeve-bag/"
+   ]
+  },
+  {
+   "phrase": "Duro",
+   "type": "专有名词",
+   "reason": "Novolex 的产品线名，只在这页引用时出现",
+   "pages": [
+    "/it/product-paper-merchandise-sleeve-bag/"
+   ]
+  },
+  {
+   "word": "packaging",
+   "type": "借词",
+   "reason": "意语包装行业通用借词（imballaggio/packaging 并用），站点小标题 DIREZIONE DI PACKAGING 即此写法"
+  },
+  {
+   "word": "shopper",
+   "type": "借词",
+   "reason": "意语行话指手提纸袋，全站已统一使用，改 sacchetto 会与其他页不一致"
+  },
+  {
+   "word": "kraft",
+   "type": "借词",
+   "reason": "carta kraft 是意语固定说法"
+  },
+  {
+   "word": "retail",
+   "type": "借词",
+   "reason": "意语零售行业通用借词；实体名词已按要求改为 unità di vendita"
+  },
+  {
+   "word": "mailer",
+   "type": "借词",
+   "reason": "意语物流包装行话仍用 mailer；实体名词已按要求改为 busta，仅复合产品名保留"
+  },
+  {
+   "word": "sos",
+   "type": "借词",
+   "reason": "SOS 袋型缩写，意语行业直接写 SOS（31 页出现）"
+  },
+  {
+   "word": "file",
+   "type": "借词",
+   "reason": "意语里 file 就是「文件（复数）」，i file 是常用说法；/it/gift-bag-tissue-set/ 的 “versioni dei file separate per i due componenti” 是意语原文，不是英文残留"
+  },
+  {
+   "word": "render",
+   "type": "借词",
+   "reason": "意语 3D/平面行话直接用 render（复数 render）；/it/terms/ 的 “Le immagini indicate come render concettuali” 是意语原文"
+  }
+ ]
+}

@@ -1,0 +1,42 @@
+29y 语种批次记录（it 第一批）
+=================================
+时间：2026-10-30 20:40–21:55 PDT
+流程：抽取英文节点 → 翻译入 delta/text → apply-batch-29y.py（强制 11/11）→ 同步演练站 → 复扫
+
+1) 抽取（演练栈内跑，不碰生产）
+$ docker exec php php /tmp/extract.php /tmp/it-bad-urls.txt it /tmp/it-en-nodes.jsonl 172.19.0.5 /tmp/local-stop.json
+  90 页 → 唯一英文文本节点 68 个
+  其中已是意大利语（检测误报）27 个，真正待译 41 个
+
+2) 写 delta + 强制校验
+$ python deploy/scripts-29y/apply-translations-29y.py it it-pairs.json
+  语种 it，待写 41 条；新增 41，更新 0，与 HEAD 相同 0，冲突 0
+  已写 deploy/verification-29y/i18n/delta/it-add.json
+  按 HEAD + delta + packets 重建并逐字节比对
+  it     93667494b44bb6d5   93667494b44bb6d5     1653624  PASS 逐字节一致
+  汇总：PASS 11 / FAIL 0（共 11 个词典）
+  结论：PASS 本批次完成（11/11 一致）
+
+3) 复扫（同一批 90 页，判定口径不变）
+  第 1 次复扫：>5 词 9 页，有连续段 10 页（共 10 页不达标）
+  第 2 次复扫：>5 词 2 页，不达标 3 页
+  第 3 次复扫：>5 词 1 页，不达标 1 页 —— 只剩 /it/privacy/（豁免）
+  结论：it 90 页从 90 不达标 → 0 不达标（privacy 走豁免）
+
+4) 本轮改了两处「量具」，都要交代清楚（不是为了让数字变小）
+   a. scan-main-english-29y.php：英文/本族词判定改成大小写不敏感。
+      原来 `Le`、`Per` 这类句首大写词匹配不到本族词表，意大利语句子因此被判成英文，
+      命中词又全被算成残留 —— 这是量具缺陷，不是译文问题。
+   b. i18n/local-stop.json 的 it 词表 38 → 135 个，只补虚词：
+      sul/sullo/sulla/sui/sugli/sulle/dei/degli/delle/ai/agli/alle/dallo/dalla/dai/dagli/dalle/
+      nella/nelle/negli/allo/questo/questa/questi/queste/quello/quella/quelli/quelle/essere/anche/
+      ancora/dove/quale/quali/quando/perché/quindi/invece/sotto/sopra/dopo/prima/durante/oltre/
+      verso/circa/ogni/altro/altra/altri/altre/molto/poco/tanto/così/già/meno/poi/qui/qua/loro/lei/
+      lui/noi/voi/tu/io/mio/mia/tuo/tua/sua/nostro/nostra/vostro/vostra/dell/dello/essa/esso/ciò/
+      ne/vi/ci/a/ho/ha/hanno/sia/viene
+      实词一个没加（etichette、rotolo、scatole、gioielli 这类都没进表）。
+   c. 影响：全量 1386 页的数字必须用新量具重跑一遍，旧数字（812/805/833）作废，
+      以最终复扫为准。
+
+5) 量具改动后 it 仍未过的页（1 页，豁免）
+  /it/privacy/  词 84  连续段 10  —— 隐私页，按 §10.8 豁免

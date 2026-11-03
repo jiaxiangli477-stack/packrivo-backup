@@ -1,1 +1,774 @@
-{}
+{
+ "title": {
+  "Custom Mailer Box Sourcing | Packrivo": {
+   "old": "Approvvigionamento di scatole mailer personalizzate | Packrivo",
+   "new": "Approvvigionamento di scatole a busta personalizzate | Packrivo"
+  },
+  "Custom Mailer Box with Fitted Insert Sourcing | Packrivo": {
+   "old": "Approvvigionamento di scatole mailer con inserto su misura personalizzate | Packrivo",
+   "new": "Approvvigionamento di scatole a busta con inserto su misura personalizzate | Packrivo"
+  }
+ },
+ "attr": {
+  "Mailer boxes category concept": {
+   "old": "Concept di categoria scatole mailer",
+   "new": "Concept di categoria scatole a busta"
+  },
+  "Corrugated mailer inlay concept": {
+   "old": "Concept dell'inserto per mailer in cartone ondulato",
+   "new": "Concept dell'inserto per busta in cartone ondulato"
+  },
+  "Mailer with fitted insert concept": {
+   "old": "Concept di mailer con inserto sagomato",
+   "new": "Concept di busta con inserto sagomato"
+  },
+  "Lightweight mailer direction concept": {
+   "old": "Concept di direzione per mailer leggero",
+   "new": "Concept di direzione per busta leggera"
+  },
+  "Custom Mailer Box Sourcing | Packrivo": {
+   "old": "Approvvigionamento di scatole mailer personalizzate | Packrivo",
+   "new": "Approvvigionamento di scatole a busta personalizzate | Packrivo"
+  },
+  "A closed display carton sits beside an opened header and front-access tray holding retail units.": {
+   "old": "Un cartone espositivo chiuso si trova accanto a una testata aperta e a un vassoio con accesso frontale contenente unità retail.",
+   "new": "Un cartone espositivo chiuso si trova accanto a una testata aperta e a un vassoio con accesso frontale contenente unità di vendita."
+  },
+  "Custom Mailer Box with Fitted Insert Sourcing | Packrivo": {
+   "old": "Approvvigionamento di scatole mailer con inserto su misura personalizzate | Packrivo",
+   "new": "Approvvigionamento di scatole a busta con inserto su misura personalizzate | Packrivo"
+  },
+  "Source custom mailer box with fitted insert with Packrivo. Define product layout, insert fit and outer dimensions for a scoped project quotation.": {
+   "old": "Richiedi a Packrivo scatole mailer personalizzate con inserto sagomato. Definire la disposizione del prodotto, l'accoppiamento dell'inserto e le dimensioni esterne per un preventivo di progetto con ambito definito.",
+   "new": "Richiedi a Packrivo scatole a busta personalizzate con inserto sagomato. Definire la disposizione del prodotto, l'accoppiamento dell'inserto e le dimensioni esterne per un preventivo di progetto con ambito definito."
+  },
+  "Explore an outer sleeve and sliding tray for your jewelry packaging brief. MOQ 500 pieces per design. Get a project quote.": {
+   "old": "Esplora una custodia esterna e un vassoio scorrevole per il tuo brief di packaging per gioielli. MOQ 500 pezzi per design. Richiedi un preventivo di progetto.",
+   "new": "Esplora una custodia esterna e un vassoio scorrevole per il tuo brief di packaging per gioielli. MOQ 500 pezzi per modello. Richiedi un preventivo di progetto."
+  },
+  "Compare roll and sheet packaging labels by surface, application and artwork. MOQ 500 per design. Send your label outline and get a project quote.": {
+   "old": "Confronti etichette di packaging in rotolo e in foglio per superficie, applicazione e grafica. MOQ 500 per design. Invii il profilo dell'etichetta e riceva un preventivo di progetto.",
+   "new": "Confronti etichette di packaging in rotolo e in foglio per superficie, applicazione e grafica. MOQ 500 per modello. Invii il profilo dell'etichetta e riceva un preventivo di progetto."
+  },
+  "Explore custom gift bags, mailer bags and jewelry pouches. MOQ 500 pieces per design. Specify dimensions, material and closure for a supplier quotation.": {
+   "old": "Esplora sacchetti regalo personalizzati, buste postali e pochette per gioielli. MOQ 500 pezzi per design. Specifica dimensioni, materiale e chiusura per un preventivo del fornitore.",
+   "new": "Esplora sacchetti regalo personalizzati, buste postali e pochette per gioielli. MOQ 500 pezzi per modello. Specifica dimensioni, materiale e chiusura per un preventivo del fornitore."
+  },
+  "Request a packaging quotation with your product, dimensions, quantity and destination. MOQ 500 per design. Add artwork or reference files for Packrivo review.": {
+   "old": "Richiedere un preventivo per il packaging con il proprio prodotto, dimensioni, quantità e destinazione. MOQ 500 per design. Aggiungere file grafici o di riferimento per la revisione di Packrivo.",
+   "new": "Richiedere un preventivo per il packaging con il proprio prodotto, dimensioni, quantità e destinazione. MOQ 500 per modello. Aggiungere file grafici o di riferimento per la revisione di Packrivo."
+  },
+  "Explore custom boxes, bags, labels and inserts with Packrivo in Shenzhen. Prepare your packaging brief and compare supplier proposals. MOQ 500 pieces per design.": {
+   "old": "Esplora scatole, sacchetti, etichette e inserti personalizzati con Packrivo a Shenzhen. Prepara il tuo brief di packaging e confronta le proposte dei fornitori. MOQ 500 pezzi per design.",
+   "new": "Esplora scatole, sacchetti, etichette e inserti personalizzati con Packrivo a Shenzhen. Prepara il tuo brief di packaging e confronta le proposte dei fornitori. MOQ 500 pezzi per modello."
+  },
+  "Book-style rigid boxes that open like a book for premium sets, with your logo and from 500 pieces. Get a price.": {
+   "old": "Scatole rigide a libro che si aprono come un libro per set premium, con il tuo logo, da 500 pezzi. Richiedi un preventivo.",
+   "new": "Scatole rigide a libro che si aprono come un libro per cofanetti regalo di pregio, con il tuo logo, da 500 pezzi. Richiedi un preventivo."
+  },
+  "Chipboard dividers with fixed cells for boxed sets, made to your layout from 500 pieces. Get a price.": {
+   "old": "Divisori in cartone pressato con scomparti fissi per set in scatola, sul tuo layout, da 500 pezzi. Richiedi un preventivo.",
+   "new": "Divisori in cartone pressato con scomparti fissi per confezioni in scatola, sul tuo layout, da 500 pezzi. Richiedi un preventivo."
+  }
+ },
+ "block": {
+  "Corrugated mailer inlay": {
+   "old": "Inserto per mailer in cartone ondulato",
+   "new": "Inserto per busta in cartone ondulato"
+  },
+  "Lightweight mailer option": {
+   "old": "Opzione mailer leggero",
+   "new": "Opzione busta leggera"
+  },
+  "Mailer with fitted insert": {
+   "old": "Scatola mailer con inserto sagomato",
+   "new": "Scatola busta con inserto sagomato"
+  },
+  "Custom Mailer Box Sourcing": {
+   "old": "Approvvigionamento di scatole mailer personalizzate",
+   "new": "Approvvigionamento di scatole a busta personalizzate"
+  },
+  "Review received, displayed and partly refilled states with actual retail units.": {
+   "old": "Verificare gli stati ricevuto, esposto e parzialmente ricaricato con unità retail effettive.",
+   "new": "Verificare gli stati ricevuto, esposto e parzialmente ricaricato con unità di vendita effettive."
+  },
+  "A paper belly band is a printed paper or board wrap placed around a product or an existing pack. Consider it when a gift needs a removable information or branding layer while the underlying box remains a separate component. Describe the wrapping path, supplied form and removal action so the band can be reviewed on the complete gift rather than as a flat graphic alone.": {
+   "old": "Una fascia belly band in carta è un avvolgimento stampato in carta o cartone posizionato attorno a un prodotto o a una confezione esistente. Considerarla quando un regalo necessita di uno strato rimovibile di informazioni o branding mentre la scatola sottostante resta un componente separato. Descrivere il percorso di avvolgimento, la forma fornita e l'azione di rimozione affinché la fascia possa essere esaminata sul regalo completo anziché come sola grafica piatta.",
+   "new": "Una fascia in carta è un avvolgimento stampato in carta o cartone posizionato attorno a un prodotto o a una confezione esistente. Considerarla quando un regalo necessita di uno strato rimovibile di informazioni o branding mentre la scatola sottostante resta un componente separato. Descrivere il percorso di avvolgimento, la forma fornita e l'azione di rimozione affinché la fascia possa essere esaminata sul regalo completo anziché come sola grafica piatta."
+  },
+  "Ask whether the locks are formed before or after retail units are loaded. That choice determines which parts staff need to reach and whether contents can obstruct the action.": {
+   "old": "Chiedere se i fermi vengono formati prima o dopo il carico delle unità retail. Tale scelta determina quali parti il personale deve raggiungere e se il contenuto può ostacolare l'azione.",
+   "new": "Chiedere se i fermi vengono formati prima o dopo il carico delle unità di vendita. Tale scelta determina quali parti il personale deve raggiungere e se il contenuto può ostacolare l'azione."
+  },
+  "Copy and artwork linked to the relevant display or retail-unit drawing.": {
+   "old": "Testo e grafica collegati al disegno pertinente dell'espositore o dell'unità retail.",
+   "new": "Testo e grafica collegati al disegno pertinente dell'espositore o dell'unità di vendita."
+  },
+  "Corrugated Mailer Inlay": {
+   "old": "Inserto per mailer in cartone ondulato",
+   "new": "Inserto per busta in cartone ondulato"
+  },
+  "Corrugated Reverse Tuck Pack": {
+   "old": "Confezione reverse tuck in cartone ondulato",
+   "new": "Confezione a linguetta inversa in cartone ondulato"
+  },
+  "Custom Mailer Box Sourcing | Packrivo": {
+   "old": "Approvvigionamento di scatole mailer personalizzate | Packrivo",
+   "new": "Approvvigionamento di scatole a busta personalizzate | Packrivo"
+  },
+  "Custom Mailer Box with Fitted Insert Sourcing": {
+   "old": "Approvvigionamento di scatole mailer con inserto su misura personalizzate",
+   "new": "Approvvigionamento di scatole a busta con inserto su misura personalizzate"
+  },
+  "Custom Mailer Box with Fitted Insert Sourcing | Packrivo": {
+   "old": "Approvvigionamento di scatole mailer con inserto su misura personalizzate | Packrivo",
+   "new": "Approvvigionamento di scatole a busta con inserto su misura personalizzate | Packrivo"
+  },
+  "Mailer Box With Insert: Dimensions and Fit Brief": {
+   "old": "Scatola mailer con inserto: dimensioni e brief di adattamento",
+   "new": "Scatola busta con inserto: dimensioni e brief di adattamento"
+  },
+  "Mailer Box with Fitted Insert": {
+   "old": "Scatola mailer con inserto sagomato",
+   "new": "Scatola busta con inserto sagomato"
+  },
+  "Provide the count, dimensions and weight of packed retail units, including dividers and padding. Show their arrangement from above. State whether the carton is filled at your site or elsewhere.": {
+   "old": "Fornire il conteggio, le dimensioni e il peso delle unità retail imballate, inclusi divisori e imbottitura. Mostrare la loro disposizione dall’alto. Indicare se il cartone viene riempito presso la vostra sede o altrove.",
+   "new": "Fornire il conteggio, le dimensioni e il peso delle unità di vendita imballate, inclusi divisori e imbottitura. Mostrare la loro disposizione dall’alto. Indicare se il cartone viene riempito presso la vostra sede o altrove."
+  },
+  "Provide the count, packed dimensions and actual weight of all retail units. Include dividers, padding and documents. If a weight remains unknown, leave a labeled gap rather than estimating a convenient load.": {
+   "old": "Fornire il conteggio, le dimensioni in imballo e il peso effettivo di tutte le unità retail. Includere divisori, imbottitura e documenti. Se un peso rimane sconosciuto, lasciare uno spazio etichettato invece di stimare un carico conveniente.",
+   "new": "Fornire il conteggio, le dimensioni in imballo e il peso effettivo di tutte le unità di vendita. Includere divisori, imbottitura e documenti. Se un peso rimane sconosciuto, lasciare uno spazio etichettato invece di stimare un carico conveniente."
+  },
+  "Submit the hook reference, full retail units, layout, counter setup, quantity and destination through": {
+   "old": "Inviate il riferimento del gancio, le unità retail complete, il layout, l'allestimento del banco, la quantità e la destinazione tramite",
+   "new": "Inviate il riferimento del gancio, le unità di vendita complete, il layout, l'allestimento del banco, la quantità e la destinazione tramite"
+  },
+  "Top and retail-unit arrangement": {
+   "old": "Disposizione della parte superiore e dell'unità retail",
+   "new": "Disposizione della parte superiore e dell'unità di vendita"
+  },
+  "Units by design, destination and packing or sample scope.": {
+   "old": "Unità per design, destinazione e ambito di imballaggio o campionatura.",
+   "new": "Unità per modello, destinazione e ambito di imballaggio o campionatura."
+  },
+  "Use the retail units as a defined load": {
+   "old": "Utilizzare le unità retail come carico definito",
+   "new": "Utilizzare le unità di vendita come carico definito"
+  },
+  "board-mailer catalogue examples": {
+   "old": "esempi di catalogo per mailer in cartone",
+   "new": "esempi di catalogo per busta in cartone"
+  },
+  "with the retail-unit arrangement and counter setup. Packrivo helps connect those tasks to a comparable supplier response and a sample review.": {
+   "old": "con la disposizione dell'unità retail e l'allestimento del bancone. Packrivo aiuta a collegare queste attività a una risposta comparabile del fornitore e a una revisione del campione.",
+   "new": "con la disposizione dell'unità di vendita e l'allestimento del bancone. Packrivo aiuta a collegare queste attività a una risposta comparabile del fornitore e a una revisione del campione."
+  },
+  "For a side lock display carton, specify how each side lock engages and how the top changes into a display opening. Review the closed and display states with the same retail-unit layout. The concept needs an agreed conversion action and a sample, not a closed-box image with a display label.": {
+   "old": "Per un cartone espositivo con chiusura laterale, specificare come si innesta ciascuna chiusura laterale e come la parte superiore si trasforma in un'apertura espositiva. Verificare gli stati chiuso ed espositivo con la stessa disposizione dell'unità retail. Il concetto richiede un'azione di conversione concordata e un campione, non un'immagine di scatola chiusa con un'etichetta espositiva.",
+   "new": "Per un cartone espositivo con chiusura laterale, specificare come si innesta ciascuna chiusura laterale e come la parte superiore si trasforma in un'apertura espositiva. Verificare gli stati chiuso ed espositivo con la stessa disposizione dell'unità di vendita. Il concetto richiede un'azione di conversione concordata e un campione, non un'immagine di scatola chiusa con un'etichetta espositiva."
+  },
+  "For an illustrative group of candle gift boxes, the retail boxes might already include fitted holders. That does not decide the outer-carton arrangement. Show the number and orientation of retail units, the proposed separation between them and the materials used around the group. The review should refer to that complete pack.": {
+   "old": "Per un gruppo illustrativo di scatole regalo per candela, le scatole retail potrebbero già includere supporti sagomati. Ciò non determina la disposizione del cartone esterno. Mostrare il numero e l'orientamento delle unità retail, la separazione proposta tra di esse e i materiali usati attorno al gruppo. La verifica deve riferirsi a quell'imballaggio completo.",
+   "new": "Per un gruppo illustrativo di scatole regalo per candela, le scatole retail potrebbero già includere supporti sagomati. Ciò non determina la disposizione del cartone esterno. Mostrare il numero e l'orientamento delle unità di vendita, la separazione proposta tra di esse e i materiali usati attorno al gruppo. La verifica deve riferirsi a quell'imballaggio completo."
+  },
+  "State the route and handling context to be reviewed. A parcel containing one gift and a master carton carrying several retail units are different packed systems. A construction name helps identify the proposed carton, while material selection and transport review still depend on the complete configuration.": {
+   "old": "Indicare il percorso e il contesto di movimentazione da valutare. Un pacco contenente un solo regalo e un cartone master che trasporta più unità retail sono sistemi imballati diversi. Il nome di una costruzione aiuta a identificare il cartone proposto, mentre la selezione dei materiali e la valutazione del trasporto dipendono comunque dalla configurazione completa.",
+   "new": "Indicare il percorso e il contesto di movimentazione da valutare. Un pacco contenente un solo regalo e un cartone master che trasporta più unità di vendita sono sistemi imballati diversi. Il nome di una costruzione aiuta a identificare il cartone proposto, mentre la selezione dei materiali e la valutazione del trasporto dipendono comunque dalla configurazione completa."
+  },
+  "Plan a pocket floor gift display by assigning a retail unit and access route to each pocket position. Review customer removal and staff refill separately. A gridded front image doesn't show the reach to different heights or the work needed to reload pockets while other stock remains in place.": {
+   "old": "Pianifica un espositore regalo da pavimento con tasche assegnando un'unità retail e un percorso di accesso a ogni posizione. Verifica separatamente il prelievo del cliente e il rifornimento del personale. Un'immagine frontale a griglia non mostra l'accessibilità alle diverse altezze né il lavoro necessario per ricaricare le tasche mentre le altre scorte restano al loro posto.",
+   "new": "Pianifica un espositore regalo da pavimento con tasche assegnando un'unità di vendita e un percorso di accesso a ogni posizione. Verifica separatamente il prelievo del cliente e il rifornimento del personale. Un'immagine frontale a griglia non mostra l'accessibilità alle diverse altezze né il lavoro necessario per ricaricare le tasche mentre le altre scorte restano al loro posto."
+  },
+  "Provide complete retail-unit envelopes and actual weights. Include backing cards, wrapping and projecting tabs. Assign them to pocket IDs so a taller unit cannot be swapped into a convenient position during the trial without a record.": {
+   "old": "Fornisci l'ingombro completo delle unità retail e i pesi effettivi. Includi schede di supporto, involucri e linguette sporgenti. Assegnale agli ID delle tasche, così durante la prova un'unità più alta non può essere spostata in una posizione più comoda senza registrarlo.",
+   "new": "Fornisci l'ingombro completo delle unità di vendita e i pesi effettivi. Includi schede di supporto, involucri e linguette sporgenti. Assegnale agli ID delle tasche, così durante la prova un'unità più alta non può essere spostata in una posizione più comoda senza registrarlo."
+  },
+  "The expands the name as self opening square. Use that identity to request the actual base-fold drawing and setup demonstration. The catalogue's food or environmental language is not adopted for your gift pack.": {
+   "old": "Il termine sviluppa la denominazione come self opening square. Utilizzi questa identità per richiedere il disegno effettivo della piegatura di base e una dimostrazione di montaggio. Il linguaggio del catalogo relativo ad alimenti o ambiente non viene adottato per il Suo confezionamento regalo.",
+   "new": "Il termine sviluppa la denominazione come sacchetto a fondo quadro (SOS). Utilizzi questa identità per richiedere il disegno effettivo della piegatura di base e una dimostrazione di montaggio. Il linguaggio del catalogo relativo ad alimenti o ambiente non viene adottato per il Suo confezionamento regalo."
+  },
+  "Packrivo's order planning policy is 500 pieces per product / design. Identify the proposed display and its retail-unit quantity basis in the brief, then review project feasibility, sample work, pricing and delivery conditions with the relevant parties.": {
+   "old": "La politica di pianificazione degli ordini di Packrivo prevede 500 pezzi per prodotto / design. Identifichi l'espositore proposto e la base quantitativa dell'unità retail nel brief, quindi riveda con le parti interessate la fattibilità del progetto, il lavoro sul campione, i prezzi e le condizioni di consegna.",
+   "new": "La politica di pianificazione degli ordini di Packrivo prevede 500 pezzi per prodotto / design. Identifichi l'espositore proposto e la base quantitativa dell'unità di vendita nel brief, quindi riveda con le parti interessate la fattibilità del progetto, il lavoro sul campione, i prezzi e le condizioni di consegna."
+  },
+  "general paper mailer direction": {
+   "old": "indicazioni generali per mailer in carta",
+   "new": "indicazioni generali per busta in carta"
+  },
+  "Lightweight mailer direction": {
+   "old": "Indicazioni per mailer leggero",
+   "new": "Indicazioni per busta leggera"
+  },
+  "Custom Mailer Boxes: Printed, MOQ 500": {
+   "old": "Scatole mailer personalizzate: stampate, MOQ 500",
+   "new": "Scatole buste personalizzate: stampate, MOQ 500"
+  },
+  "other mailer directions": {
+   "old": "altre indicazioni per mailer",
+   "new": "altre indicazioni per busta"
+  },
+  "mailer directions": {
+   "old": "direzioni per mailer",
+   "new": "direzioni per busta"
+  },
+  "expands the name as self opening square. Use that identity to request the actual base-fold drawing and setup demonstration. The catalogue's food or environmental language is not adopted for your gift pack.": {
+   "old": "sviluppa la denominazione come self opening square. Utilizzi questa identità per richiedere il disegno effettivo della piegatura di base e una dimostrazione di montaggio. Il linguaggio del catalogo relativo ad alimenti o ambiente non viene adottato per il Suo confezionamento regalo.",
+   "new": "sviluppa la denominazione come sacchetto a fondo quadro (SOS). Utilizzi questa identità per richiedere il disegno effettivo della piegatura di base e una dimostrazione di montaggio. Il linguaggio del catalogo relativo ad alimenti o ambiente non viene adottato per il Suo confezionamento regalo."
+  },
+  "MOQ 500 pieces per design for printed boxes. Unprinted stock ships from 100 pieces.": {
+   "old": "MOQ 500 pezzi per design per le scatole stampate. I modelli disponibili non stampati vengono spediti a partire da 100 pezzi.",
+   "new": "MOQ 500 pezzi per modello per le scatole stampate. I modelli disponibili non stampati vengono spediti a partire da 100 pezzi."
+  },
+  "MOQ 500 pieces per design.": {
+   "old": "MOQ 500 pezzi per design.",
+   "new": "MOQ 500 pezzi per modello."
+  },
+  "Both routes: MOQ 500 pieces per design.": {
+   "old": "Entrambe le soluzioni: MOQ 500 pezzi per design.",
+   "new": "Entrambe le soluzioni: MOQ 500 pezzi per modello."
+  },
+  "Typically 100–500 pieces per design for custom sizes.": {
+   "old": "In genere 100–500 pezzi per design per misure personalizzate.",
+   "new": "In genere 100–500 pezzi per modello per misure personalizzate."
+  },
+  "Typically 300–500 pieces per design for custom sizes.": {
+   "old": "In genere 300–500 pezzi per design per misure personalizzate.",
+   "new": "In genere 300–500 pezzi per modello per misure personalizzate."
+  },
+  "Packaging option · MOQ 500 pieces per product / design": {
+   "old": "Opzione di imballaggio · MOQ 500 pezzi per prodotto / design",
+   "new": "Opzione di imballaggio · MOQ 500 pezzi per prodotto / modello"
+  },
+  "Custom jewelry, candle and gift packaging at 500+ pieces per design": {
+   "old": "Imballaggi personalizzati per gioielli, candele e regali da 500+ pezzi per design",
+   "new": "Imballaggi personalizzati per gioielli, candele e regali da 500+ pezzi per modello"
+  },
+  "Share product dimensions, quantity per design, artwork and destination.": {
+   "old": "Condividere le dimensioni del prodotto, la quantità per design, il file grafico e la destinazione.",
+   "new": "Condividere le dimensioni del prodotto, la quantità per modello, il file grafico e la destinazione."
+  },
+  "The quantity per design changes how setup and production costs are distributed.": {
+   "old": "La quantità per design modifica la distribuzione dei costi di attrezzaggio e di produzione.",
+   "new": "La quantità per modello modifica la distribuzione dei costi di attrezzaggio e di produzione."
+  },
+  "Share your product, quantity per design and destination. Add dimensions or artwork when ready.": {
+   "old": "Condividere il prodotto, la quantità per design e la destinazione. Aggiungere dimensioni o grafica quando disponibili.",
+   "new": "Condividere il prodotto, la quantità per modello e la destinazione. Aggiungere dimensioni o grafica quando disponibili."
+  },
+  "MOQ 500 pieces per product/design. Quantities, sample scope and pricing are confirmed in the project quotation.": {
+   "old": "MOQ 500 pezzi per prodotto/design. Quantità, ambito del campione e prezzi sono confermati nel preventivo del progetto.",
+   "new": "MOQ 500 pezzi per prodotto/modello. Quantità, ambito del campione e prezzi sono confermati nel preventivo del progetto."
+  },
+  "Flexible outer packs, gift bags and jewelry pouches. Share the product, dimensions and quantity per design to compare construction and material choices.": {
+   "old": "Imballaggi esterni flessibili, sacchetti regalo e pochette per gioielli. Condividete il prodotto, le dimensioni e la quantità per design per confrontare costruzione e scelte dei materiali.",
+   "new": "Imballaggi esterni flessibili, sacchetti regalo e pochette per gioielli. Condividete il prodotto, le dimensioni e la quantità per modello per confrontare costruzione e scelte dei materiali."
+  },
+  "The current MOQ is 500 pieces per product / design. Include the quantity and design split in your brief so the proposed order can be reviewed correctly.": {
+   "old": "L'MOQ attuale è di 500 pezzi per prodotto / design. Includi la quantità e la ripartizione per design nel tuo brief in modo che l'ordine proposto possa essere valutato correttamente.",
+   "new": "L'MOQ attuale è di 500 pezzi per prodotto / modello. Includi la quantità e la ripartizione per modello nel tuo brief in modo che l'ordine proposto possa essere valutato correttamente."
+  },
+  "Our starting quantity is 500 pieces per product / design. State the quantity for each design so material, construction and artwork requirements can be quoted together.": {
+   "old": "La nostra quantità iniziale è 500 pezzi per prodotto / design. Indica la quantità per ciascun design in modo che i requisiti di materiale, costruzione e grafica possano essere preventivati insieme.",
+   "new": "La nostra quantità iniziale è 500 pezzi per prodotto / modello. Indica la quantità per ciascun design in modo che i requisiti di materiale, costruzione e grafica possano essere preventivati insieme."
+  },
+  "MOQ: 500 pieces per product / design. Final materials, construction, price, sample scope and delivery timing are confirmed for the agreed project with the relevant supplier.": {
+   "old": "MOQ: 500 pezzi per prodotto / design. Materiali finali, costruzione, prezzo, ambito del campione e tempi di consegna sono confermati per il progetto concordato con il fornitore pertinente.",
+   "new": "MOQ: 500 pezzi per prodotto / modello. Materiali finali, costruzione, prezzo, ambito del campione e tempi di consegna sono confermati per il progetto concordato con il fornitore pertinente."
+  },
+  "MOQ: 500 pieces per product/design. Packaging materials, construction, sampling, production price and delivery timing are confirmed for the agreed specification with the relevant supplier.": {
+   "old": "MOQ: 500 pezzi per prodotto/design. Materiali di imballaggio, costruzione, campionamento, prezzo di produzione e tempi di consegna sono confermati per la specifica concordata con il fornitore pertinente.",
+   "new": "MOQ: 500 pezzi per prodotto/modello. Materiali di imballaggio, costruzione, campionamento, prezzo di produzione e tempi di consegna sono confermati per la specifica concordata con il fornitore pertinente."
+  },
+  "Shenzhen-based Packrivo helps you source packaging with independent packaging suppliers, from product specifications and quotation comparison to sample review. MOQ: 500 pieces per product/design.": {
+   "old": "Packrivo, con sede a Shenzhen, supporta nel reperimento di imballaggi tramite fornitori di imballaggi indipendenti, dalle specifiche di prodotto e dal confronto dei preventivi alla revisione dei campioni. MOQ: 500 pezzi per prodotto/design.",
+   "new": "Packrivo, con sede a Shenzhen, supporta nel reperimento di imballaggi tramite fornitori di imballaggi indipendenti, dalle specifiche di prodotto e dal confronto dei preventivi alla revisione dei campioni. MOQ: 500 pezzi per prodotto/modello."
+  },
+  "Send the product dimensions, quantity by design and destination. Include the structure, material and artwork preferences you already know; flag open questions so supplier quotes use the same scope.": {
+   "old": "Invia le dimensioni del prodotto, la quantità per design e la destinazione. Includi le preferenze già note su struttura, materiale e grafica; segnala le domande aperte affinché le preventivi dei fornitori utilizzino lo stesso ambito.",
+   "new": "Invia le dimensioni del prodotto, la quantità per modello e la destinazione. Includi le preferenze già note su struttura, materiale e grafica; segnala le domande aperte affinché le preventivi dei fornitori utilizzino lo stesso ambito."
+  },
+  "Arka lists branded mailer production from 10 units and Packlane advertises low minimums, so both suit very small runs. Packhelp requires 100 pieces for custom-size mailers. Packrivo projects start at 500 pieces per design.": {
+   "old": "Arka indica una produzione di imballi postali personalizzati a partire da 10 unità e Packlane pubblicizza minimi bassi, quindi entrambi sono adatti a tirature molto piccole. Packhelp richiede 100 pezzi per imballi postali su misura. I progetti Packrivo partono da 500 pezzi per design.",
+   "new": "Arka indica una produzione di imballi postali personalizzati a partire da 10 unità e Packlane pubblicizza minimi bassi, quindi entrambi sono adatti a tirature molto piccole. Packhelp richiede 100 pezzi per imballi postali su misura. I progetti Packrivo partono da 500 pezzi per modello."
+  },
+  "Rigid jewelry boxes such as drawer, magnetic flip-lid and book-style boxes are usually made by specialist factories. Packrivo compares quotations from independent factories in China for these boxes from 500 pieces per design.": {
+   "old": "Le scatole rigide per gioielli, come le scatole a cassetto, con coperchio magnetico a ribalta e in stile libro, sono di solito prodotte da fabbriche specializzate. Packrivo confronta i preventivi di fabbriche indipendenti in Cina per queste scatole a partire da 500 pezzi per design.",
+   "new": "Le scatole rigide per gioielli, come le scatole a cassetto, con coperchio magnetico a ribalta e in stile libro, sono di solito prodotte da fabbriche specializzate. Packrivo confronta i preventivi di fabbriche indipendenti in Cina per queste scatole a partire da 500 pezzi per modello."
+  },
+  "Request the box or pouch, insert where needed, decoration, sampling, packing and delivery as separate cost items. Confirm the quoted specification, quantity, currency, trade terms and validity before comparing offers. MOQ: 500 pieces per product / design.": {
+   "old": "Richiedere scatola o pouch, inserto ove necessario, decorazione, campionatura, imballaggio e consegna come voci di costo separate. Confermare la specifica quotata, la quantità, la valuta, i termini commerciali e la validità prima di confrontare le offerte. MOQ: 500 pezzi per prodotto / design.",
+   "new": "Richiedere scatola o pouch, inserto ove necessario, decorazione, campionatura, imballaggio e consegna come voci di costo separate. Confermare la specifica quotata, la quantità, la valuta, i termini commerciali e la validità prima di confrontare le offerte. MOQ: 500 pezzi per prodotto / modello."
+  },
+  ". MOQ is 500 pieces per design. Final construction, material and commercial conditions are confirmed for the project.": {
+   "old": ". MOQ è 500 pezzi per design. La costruzione finale, il materiale e le condizioni commerciali vengono confermati per il progetto.",
+   "new": ". MOQ è 500 pezzi per modello. La costruzione finale, il materiale e le condizioni commerciali vengono confermati per il progetto."
+  },
+  ". MOQ is 500 pieces per design. Material, sampling and commercial details are confirmed for the project, with any shipping evaluation scoped to the complete proposed pack.": {
+   "old": ". MOQ è 500 pezzi per design. Materiale, campionatura e dettagli commerciali vengono confermati per il progetto, con qualsiasi valutazione di spedizione riferita alla confezione completa proposta.",
+   "new": ". MOQ è 500 pezzi per modello. Materiale, campionatura e dettagli commerciali vengono confermati per il progetto, con qualsiasi valutazione di spedizione riferita alla confezione completa proposta."
+  },
+  ". MOQ is 500 pieces per design. Packrivo helps prepare the brief and coordinate questions; the offered construction, sample arrangements and commercial terms are confirmed for the project.": {
+   "old": ". MOQ è 500 pezzi per design. Packrivo aiuta a preparare il brief e a coordinare le domande; la costruzione offerta, le modalità di campionatura e i termini commerciali vengono confermati per il progetto.",
+   "new": ". MOQ è 500 pezzi per modello. Packrivo aiuta a preparare il brief e a coordinare le domande; la costruzione offerta, le modalità di campionatura e i termini commerciali vengono confermati per il progetto."
+  },
+  ". MOQ is 500 pieces per design. Structure, material, samples and commercial terms are confirmed for the project.": {
+   "old": ". MOQ è 500 pezzi per design. Struttura, materiale, campioni e termini commerciali vengono confermati per il progetto.",
+   "new": ". MOQ è 500 pezzi per modello. Struttura, materiale, campioni e termini commerciali vengono confermati per il progetto."
+  },
+  ". MOQ is 500 pieces per design. The offered hinge, ribbon, wrapping, sample arrangements and commercial terms are confirmed for the project.": {
+   "old": ". MOQ è 500 pezzi per design. La cerniera offerta, il nastro, l'avvolgimento, le modalità di campionatura e i termini commerciali vengono confermati per il progetto.",
+   "new": ". MOQ è 500 pezzi per modello. La cerniera offerta, il nastro, l'avvolgimento, le modalità di campionatura e i termini commerciali vengono confermati per il progetto."
+  },
+  ". MOQ is 500 pieces per design. The project’s board, handle details, sample scope and commercial terms are confirmed against these inputs.": {
+   "old": ". MOQ è 500 pezzi per design. Il cartone del progetto, i dettagli della maniglia, l'ambito dei campioni e i termini commerciali vengono confermati in base a questi input.",
+   "new": ". MOQ è 500 pezzi per modello. Il cartone del progetto, i dettagli della maniglia, l'ambito dei campioni e i termini commerciali vengono confermati in base a questi input."
+  },
+  ". MOQ is 500 pieces per design; final materials, sample scope and commercial conditions are confirmed for the project.": {
+   "old": ". MOQ è 500 pezzi per design; i materiali finali, l'ambito dei campioni e le condizioni commerciali vengono confermati per il progetto.",
+   "new": ". MOQ è 500 pezzi per modello; i materiali finali, l'ambito dei campioni e le condizioni commerciali vengono confermati per il progetto."
+  },
+  ". MOQ is 500 pieces per design; final materials, samples and commercial conditions are confirmed against the project.": {
+   "old": ". MOQ è 500 pezzi per design; i materiali finali, i campioni e le condizioni commerciali vengono confermati in base al progetto.",
+   "new": ". MOQ è 500 pezzi per modello; i materiali finali, i campioni e le condizioni commerciali vengono confermati in base al progetto."
+  },
+  ". MOQ is 500 pieces per design; material, sample and commercial terms are confirmed against the project.": {
+   "old": ". MOQ è 500 pezzi per design; materiale, campione e termini commerciali vengono confermati in base al progetto.",
+   "new": ". MOQ è 500 pezzi per modello; materiale, campione e termini commerciali vengono confermati in base al progetto."
+  },
+  ". MOQ is 500 pieces per design; material, samples and commercial conditions are confirmed against the offered project design.": {
+   "old": ". MOQ è 500 pezzi per design; materiale, campioni e condizioni commerciali vengono confermati in base al design di progetto offerto.",
+   "new": ". MOQ è 500 pezzi per modello; materiale, campioni e condizioni commerciali vengono confermati in base al design di progetto offerto."
+  },
+  ". MOQ is 500 pieces per design; materials, sample scope and commercial terms are confirmed for the project.": {
+   "old": ". MOQ è 500 pezzi per design; materiali, ambito dei campioni e termini commerciali vengono confermati per il progetto.",
+   "new": ". MOQ è 500 pezzi per modello; materiali, ambito dei campioni e termini commerciali vengono confermati per il progetto."
+  },
+  ". MOQ is 500 pieces per design; materials, samples and commercial details are confirmed for the project.": {
+   "old": ". MOQ è 500 pezzi per design; materiali, campioni e dettagli commerciali vengono confermati per il progetto.",
+   "new": ". MOQ è 500 pezzi per modello; materiali, campioni e dettagli commerciali vengono confermati per il progetto."
+  },
+  ". MOQ is 500 pieces per design; materials, samples and commercial terms are confirmed for the project.": {
+   "old": ". MOQ è 500 pezzi per design; materiali, campioni e termini commerciali vengono confermati per il progetto.",
+   "new": ". MOQ è 500 pezzi per modello; materiali, campioni e termini commerciali vengono confermati per il progetto."
+  },
+  ". MOQ is 500 pieces per design; materials, sampling and commercial details are confirmed for the project.": {
+   "old": ". MOQ è 500 pezzi per design; materiali, campionatura e dettagli commerciali vengono confermati per il progetto.",
+   "new": ". MOQ è 500 pezzi per modello; materiali, campionatura e dettagli commerciali vengono confermati per il progetto."
+  },
+  ". MOQ is 500 pieces per design; materials, sampling and commercial terms are confirmed for the project.": {
+   "old": ". MOQ è 500 pezzi per design; materiali, campionatura e termini commerciali vengono confermati per il progetto.",
+   "new": ". MOQ è 500 pezzi per modello; materiali, campionatura e termini commerciali vengono confermati per il progetto."
+  },
+  ". MOQ is 500 pieces per design; offered material, structure, sample scope and commercial details are confirmed for the project.": {
+   "old": ". MOQ è 500 pezzi per design; materiale offerto, struttura, ambito dei campioni e dettagli commerciali vengono confermati per il progetto.",
+   "new": ". MOQ è 500 pezzi per modello; materiale offerto, struttura, ambito dei campioni e dettagli commerciali vengono confermati per il progetto."
+  },
+  ". MOQ is 500 pieces per design; offered materials, sample scope and commercial terms are confirmed for the project.": {
+   "old": ". MOQ è 500 pezzi per design; materiali offerti, ambito dei campioni e termini commerciali vengono confermati per il progetto.",
+   "new": ". MOQ è 500 pezzi per modello; materiali offerti, ambito dei campioni e termini commerciali vengono confermati per il progetto."
+  },
+  ". MOQ is 500 pieces per design; offered materials, samples and commercial conditions are confirmed for the project.": {
+   "old": ". MOQ è 500 pezzi per design; materiali offerti, campioni e condizioni commerciali vengono confermati per il progetto.",
+   "new": ". MOQ è 500 pezzi per modello; materiali offerti, campioni e condizioni commerciali vengono confermati per il progetto."
+  },
+  ". MOQ is 500 pieces per design; offered materials, samples and commercial details are confirmed for the project.": {
+   "old": ". MOQ è 500 pezzi per design; materiali offerti, campioni e dettagli commerciali vengono confermati per il progetto.",
+   "new": ". MOQ è 500 pezzi per modello; materiali offerti, campioni e dettagli commerciali vengono confermati per il progetto."
+  },
+  ". MOQ is 500 pieces per design; offered materials, sampling and commercial conditions are confirmed for the project.": {
+   "old": ". MOQ è 500 pezzi per design; materiali offerti, campionatura e condizioni commerciali vengono confermati per il progetto.",
+   "new": ". MOQ è 500 pezzi per modello; materiali offerti, campionatura e condizioni commerciali vengono confermati per il progetto."
+  },
+  ". MOQ is 500 pieces per design; proposed materials, samples and commercial conditions are confirmed for the project. Any required transport review applies to the complete proposed pack.": {
+   "old": ". MOQ è 500 pezzi per design; i materiali proposti, i campioni e le condizioni commerciali vengono confermati per il progetto. Qualsiasi valutazione di trasporto richiesta si applica alla confezione completa proposta.",
+   "new": ". MOQ è 500 pezzi per modello; i materiali proposti, i campioni e le condizioni commerciali vengono confermati per il progetto. Qualsiasi valutazione di trasporto richiesta si applica alla confezione completa proposta."
+  },
+  ". MOQ is 500 pieces per design; structure, material, samples and commercial terms are confirmed against the project.": {
+   "old": ". MOQ è 500 pezzi per design; struttura, materiale, campioni e termini commerciali vengono confermati in base al progetto.",
+   "new": ". MOQ è 500 pezzi per modello; struttura, materiale, campioni e termini commerciali vengono confermati in base al progetto."
+  },
+  ". MOQ is 500 pieces per design; the offered display construction, loading review, samples and commercial conditions are confirmed for the project.": {
+   "old": ". MOQ è 500 pezzi per design; la costruzione espositiva offerta, la valutazione di carico, i campioni e le condizioni commerciali vengono confermati per il progetto.",
+   "new": ". MOQ è 500 pezzi per modello; la costruzione espositiva offerta, la valutazione di carico, i campioni e le condizioni commerciali vengono confermati per il progetto."
+  },
+  ". Packrivo starts at 500 pieces per design. The cover construction, board, artwork, sample scope, price and timing are settled against the project brief.": {
+   "old": ". Packrivo parte da 500 pezzi per design. La costruzione della copertina, il cartone, la grafica, l'ambito dei campioni, il prezzo e i tempi vengono stabiliti in base al brief di progetto.",
+   "new": ". Packrivo parte da 500 pezzi per modello. La costruzione della copertina, il cartone, la grafica, l'ambito dei campioni, il prezzo e i tempi vengono stabiliti in base al brief di progetto."
+  },
+  ". Packrivo’s minimum is 500 pieces per design. Final components, sample scope, price and timing require project confirmation.": {
+   "old": ". Il minimo di Packrivo è 500 pezzi per design. Componenti finali, ambito dei campioni, prezzo e tempi richiedono conferma del progetto.",
+   "new": ". Il minimo di Packrivo è 500 pezzi per modello. Componenti finali, ambito dei campioni, prezzo e tempi richiedono conferma del progetto."
+  },
+  ". Packrivo’s minimum is 500 pieces per design. Final construction, materials, sample scope and commercial terms require project confirmation.": {
+   "old": ". Il minimo di Packrivo è 500 pezzi per design. Costruzione finale, materiali, ambito dei campioni e termini commerciali richiedono conferma del progetto.",
+   "new": ". Il minimo di Packrivo è 500 pezzi per modello. Costruzione finale, materiali, ambito dei campioni e termini commerciali richiedono conferma del progetto."
+  },
+  "Carton version, artwork, design quantities and sample scope.": {
+   "old": "Versione del cartone, grafica, quantità per design e ambito del campione.",
+   "new": "Versione del cartone, grafica, quantità per modello e ambito del campione."
+  },
+  "MOQ 500 pieces per product / design.": {
+   "old": "MOQ 500 pezzi per prodotto / design.",
+   "new": "MOQ 500 pezzi per prodotto / modello."
+  },
+  "MOQ per design": {
+   "old": "MOQ per design",
+   "new": "MOQ per modello"
+  },
+  "MOQ: 500 pieces per product / design.": {
+   "old": "MOQ: 500 pezzi per prodotto / design.",
+   "new": "MOQ: 500 pezzi per prodotto / modello."
+  },
+  "Plan design quantities and mounting work": {
+   "old": "Pianifica le quantità per design e le lavorazioni di montaggio",
+   "new": "Pianifica le quantità per modello e le lavorazioni di montaggio"
+  },
+  "Packrivo’s minimum is 500 pieces per design. Confirm the configuration, supplier proposal, sample scope and commercial terms for your project.": {
+   "old": "Il minimo di Packrivo è di 500 pezzi per design. Confermare la configurazione, la proposta del fornitore, l’ambito dei campioni e le condizioni commerciali per il proprio progetto.",
+   "new": "Il minimo di Packrivo è di 500 pezzi per modello. Confermare la configurazione, la proposta del fornitore, l’ambito dei campioni e le condizioni commerciali per il proprio progetto."
+  },
+  "Packrivo’s order planning policy is 500 pieces per product / design. Ask for the tray, sleeve, holder, print work and sampling to be described as separate scope items. Final material construction, pricing, production conditions and delivery timing are agreed for the reviewed configuration.": {
+   "old": "La politica di pianificazione degli ordini di Packrivo prevede 500 pezzi per prodotto / design. Richiedere che vassoio, astuccio, supporto, lavorazioni di stampa e campionatura siano descritti come voci di ambito separate. La costruzione finale dei materiali, i prezzi, le condizioni di produzione e i tempi di consegna vengono concordati per la configurazione esaminata.",
+   "new": "La politica di pianificazione degli ordini di Packrivo prevede 500 pezzi per prodotto / modello. Richiedere che vassoio, astuccio, supporto, lavorazioni di stampa e campionatura siano descritti come voci di ambito separate. La costruzione finale dei materiali, i prezzi, le condizioni di produzione e i tempi di consegna vengono concordati per la configurazione esaminata."
+  },
+  "Packrivo’s order planning policy is 500 pieces per product / design. Identify the carton, hanging component if separate, holder and sampling work in the proposal. Material, production conditions, pricing and delivery timing are confirmed for the project.": {
+   "old": "La politica di pianificazione degli ordini di Packrivo prevede 500 pezzi per prodotto / design. Individuare nel preventivo il cartone, l’eventuale componente per appendere se separato, il supporto e le attività di campionatura. Materiale, condizioni di produzione, prezzi e tempi di consegna sono confermati per il progetto.",
+   "new": "La politica di pianificazione degli ordini di Packrivo prevede 500 pezzi per prodotto / modello. Individuare nel preventivo il cartone, l’eventuale componente per appendere se separato, il supporto e le attività di campionatura. Materiale, condizioni di produzione, prezzi e tempi di consegna sono confermati per il progetto."
+  },
+  "Packrivo’s order planning policy is 500 pieces per product / design. Identify the envelope, backing, printed extras and sampling separately. Carrier classification, charges and route suitability depend on the actual shipment; final materials, production conditions, pricing and delivery timing are agreed for the project.": {
+   "old": "La politica di pianificazione degli ordini di Packrivo prevede 500 pezzi per prodotto / design. Individuare separatamente la busta, il supporto rigido, gli extra stampati e la campionatura. La classificazione del corriere, i costi e l’idoneità del percorso dipendono dalla spedizione effettiva; materiali finali, condizioni di produzione, prezzi e tempi di consegna vengono concordati per il progetto.",
+   "new": "La politica di pianificazione degli ordini di Packrivo prevede 500 pezzi per prodotto / modello. Individuare separatamente la busta, il supporto rigido, gli extra stampati e la campionatura. La classificazione del corriere, i costi e l’idoneità del percorso dipendono dalla spedizione effettiva; materiali finali, condizioni di produzione, prezzi e tempi di consegna vengono concordati per il progetto."
+  },
+  "Packrivo’s order planning policy is 500 pieces per product / design. Identify the proposed display and its retail-unit quantity basis in the brief, then review project feasibility, sample work, pricing and delivery conditions with the relevant parties.": {
+   "old": "La politica di pianificazione degli ordini di Packrivo prevede 500 pezzi per prodotto / design. Individuare nel brief il display proposto e la base quantitativa per unità di vendita, quindi esaminare la fattibilità del progetto, le attività di campionatura, i prezzi e le condizioni di consegna con le parti interessate.",
+   "new": "La politica di pianificazione degli ordini di Packrivo prevede 500 pezzi per prodotto / modello. Individuare nel brief il display proposto e la base quantitativa per unità di vendita, quindi esaminare la fattibilità del progetto, le attività di campionatura, i prezzi e le condizioni di consegna con le parti interessate."
+  },
+  "Packrivo’s order planning policy is 500 pieces per product / design. Identify the wrap, sealing component, printed extras and sample work in the scope. Actual carton data and the selected route determine the freight discussion; final construction, price, production conditions and delivery timing are confirmed for the project.": {
+   "old": "La politica di pianificazione degli ordini di Packrivo prevede 500 pezzi per prodotto / design. Individuare nell’ambito l’involucro, il componente di sigillatura, gli extra stampati e le attività di campionatura. I dati effettivi del cartone e il percorso selezionato determinano la trattativa sul trasporto; costruzione finale, prezzo, condizioni di produzione e tempi di consegna sono confermati per il progetto.",
+   "new": "La politica di pianificazione degli ordini di Packrivo prevede 500 pezzi per prodotto / modello. Individuare nell’ambito l’involucro, il componente di sigillatura, gli extra stampati e le attività di campionatura. I dati effettivi del cartone e il percorso selezionato determinano la trattativa sul trasporto; costruzione finale, prezzo, condizioni di produzione e tempi di consegna sono confermati per il progetto."
+  },
+  "Packrivo’s order planning policy is 500 pieces per product / design. Keep the carton, holder, assembly state and sample work visible in the scope. Final material construction, pricing, production conditions and delivery timing are agreed for the specific project.": {
+   "old": "La politica di pianificazione degli ordini di Packrivo prevede 500 pezzi per prodotto / design. Mantenere visibili nell’ambito il cartone, il supporto, lo stato di assemblaggio e le attività di campionatura. La costruzione finale dei materiali, i prezzi, le condizioni di produzione e i tempi di consegna vengono concordati per il progetto specifico.",
+   "new": "La politica di pianificazione degli ordini di Packrivo prevede 500 pezzi per prodotto / modello. Mantenere visibili nell’ambito il cartone, il supporto, lo stato di assemblaggio e le attività di campionatura. La costruzione finale dei materiali, i prezzi, le condizioni di produzione e i tempi di consegna vengono concordati per il progetto specifico."
+  },
+  "Packrivo’s order planning policy is 500 pieces per product / design. List the band and underlying box or product pack separately, including design quantities and sampling. Final materials, joining method, pricing, production conditions and delivery timing are confirmed for the project.": {
+   "old": "La politica di pianificazione degli ordini di Packrivo prevede 500 pezzi per prodotto / design. Elencare separatamente la fascia e la scatola sottostante o la confezione del prodotto, incluse le quantità per design e la campionatura. Materiali finali, metodo di unione, prezzi, condizioni di produzione e tempi di consegna sono confermati per il progetto.",
+   "new": "La politica di pianificazione degli ordini di Packrivo prevede 500 pezzi per prodotto / modello. Elencare separatamente la fascia e la scatola sottostante o la confezione del prodotto, incluse le quantità per modello e la campionatura. Materiali finali, metodo di unione, prezzi, condizioni di produzione e tempi di consegna sono confermati per il progetto."
+  },
+  "Packrivo’s order planning policy is 500 pieces per product / design. List the base, lid, holder and printed extras with their quantity and sample scope. Final materials, pricing, production conditions and delivery timing are reviewed for the agreed project.": {
+   "old": "La politica di pianificazione degli ordini di Packrivo prevede 500 pezzi per prodotto / design. Elencare base, coperchio, supporto ed extra stampati con le relative quantità e l’ambito di campionatura. Materiali finali, prezzi, condizioni di produzione e tempi di consegna vengono esaminati per il progetto concordato.",
+   "new": "La politica di pianificazione degli ordini di Packrivo prevede 500 pezzi per prodotto / modello. Elencare base, coperchio, supporto ed extra stampati con le relative quantità e l’ambito di campionatura. Materiali finali, prezzi, condizioni di produzione e tempi di consegna vengono esaminati per il progetto concordato."
+  },
+  "Packrivo’s order planning policy is 500 pieces per product / design. List the carton, prepared bottom work, additional parts and sampling in the proposal. The final material, price, production conditions and schedule are confirmed for that configuration.": {
+   "old": "La politica di pianificazione degli ordini di Packrivo prevede 500 pezzi per prodotto / design. Elencare nel preventivo il cartone, le lavorazioni preparatorie sul fondo, le parti aggiuntive e la campionatura. Materiale finale, prezzo, condizioni di produzione e programma sono confermati per quella configurazione.",
+   "new": "La politica di pianificazione degli ordini di Packrivo prevede 500 pezzi per prodotto / modello. Elencare nel preventivo il cartone, le lavorazioni preparatorie sul fondo, le parti aggiuntive e la campionatura. Materiale finale, prezzo, condizioni di produzione e programma sono confermati per quella configurazione."
+  },
+  "Packrivo’s order planning policy is 500 pieces per product / design. List the liner, enclosure and any holder separately, with their quantities and sample tasks. Final material, construction, pricing, production conditions and delivery timing are reviewed for the project.": {
+   "old": "La politica di pianificazione degli ordini di Packrivo prevede 500 pezzi per prodotto / design. Elencare separatamente il rivestimento interno, la custodia e l’eventuale supporto, con le relative quantità e attività di campionatura. Materiale finale, costruzione, prezzi, condizioni di produzione e tempi di consegna vengono esaminati per il progetto.",
+   "new": "La politica di pianificazione degli ordini di Packrivo prevede 500 pezzi per prodotto / modello. Elencare separatamente il rivestimento interno, la custodia e l’eventuale supporto, con le relative quantità e attività di campionatura. Materiale finale, costruzione, prezzi, condizioni di produzione e tempi di consegna vengono esaminati per il progetto."
+  },
+  "Packrivo’s order planning policy is 500 pieces per product / design. List the outer carton, dividers, sealing supplies and any packing work separately. Final material, pricing, production conditions, sample scope and delivery timing are reviewed for the project.": {
+   "old": "La politica di pianificazione degli ordini di Packrivo prevede 500 pezzi per prodotto / design. Elencare separatamente il cartone esterno, i divisori, i materiali di sigillatura e l’eventuale lavoro di imballaggio. Materiale finale, prezzi, condizioni di produzione, ambito dei campioni e tempi di consegna vengono esaminati per il progetto.",
+   "new": "La politica di pianificazione degli ordini di Packrivo prevede 500 pezzi per prodotto / modello. Elencare separatamente il cartone esterno, i divisori, i materiali di sigillatura e l’eventuale lavoro di imballaggio. Materiale finale, prezzi, condizioni di produzione, ambito dei campioni e tempi di consegna vengono esaminati per il progetto."
+  },
+  "Packrivo’s order planning policy is 500 pieces per product / design. Record different card artworks and attachment layouts as design questions, with the proposed mounting work and packaging components identified. Final material, pricing, production conditions and sample scope are agreed for the project.": {
+   "old": "La politica di pianificazione degli ordini di Packrivo prevede 500 pezzi per prodotto / design. Registrare come varianti di design i diversi artwork delle carte e le disposizioni degli elementi di fissaggio, individuando le lavorazioni di montaggio proposte e i componenti di packaging. Materiale finale, prezzi, condizioni di produzione e ambito dei campioni vengono concordati per il progetto.",
+   "new": "La politica di pianificazione degli ordini di Packrivo prevede 500 pezzi per prodotto / modello. Registrare come varianti di design i diversi artwork delle carte e le disposizioni degli elementi di fissaggio, individuando le lavorazioni di montaggio proposte e i componenti di packaging. Materiale finale, prezzi, condizioni di produzione e ambito dei campioni vengono concordati per il progetto."
+  },
+  "Packrivo’s order planning policy is 500 pieces per product / design. Separate the carton, holder and additional components in the proposal. Final construction, material, pricing, production conditions and delivery timing are agreed against the reviewed brief.": {
+   "old": "La politica di pianificazione degli ordini di Packrivo prevede 500 pezzi per prodotto / design. Separare nel preventivo il cartone, il supporto e i componenti aggiuntivi. Costruzione finale, materiale, prezzi, condizioni di produzione e tempi di consegna vengono concordati in base al brief esaminato.",
+   "new": "La politica di pianificazione degli ordini di Packrivo prevede 500 pezzi per prodotto / modello. Separare nel preventivo il cartone, il supporto e i componenti aggiuntivi. Costruzione finale, materiale, prezzi, condizioni di produzione e tempi di consegna vengono concordati in base al brief esaminato."
+  },
+  "Packrivo’s order planning policy is 500 pieces per product / design. Separate the shell, holder and any additional components in the proposal, with their quantities and sample work identified. Project materials, pricing, production conditions and delivery timing are confirmed against the agreed specification.": {
+   "old": "La politica di pianificazione degli ordini di Packrivo prevede 500 pezzi per prodotto / design. Separare nel preventivo il guscio, il supporto e gli eventuali componenti aggiuntivi, individuando le relative quantità e attività di campionatura. Materiali di progetto, prezzi, condizioni di produzione e tempi di consegna sono confermati in base alla specifica concordata.",
+   "new": "La politica di pianificazione degli ordini di Packrivo prevede 500 pezzi per prodotto / modello. Separare nel preventivo il guscio, il supporto e gli eventuali componenti aggiuntivi, individuando le relative quantità e attività di campionatura. Materiali di progetto, prezzi, condizioni di produzione e tempi di consegna sono confermati in base alla specifica concordata."
+  },
+  "Packrivo’s order planning policy is 500 pieces per product / design. State the number of end-cap pieces per finished pack and identify any different designs. Final construction, material, pricing, sample work, production conditions and delivery timing are reviewed for the project.": {
+   "old": "La politica di pianificazione degli ordini di Packrivo prevede 500 pezzi per prodotto / design. Indicare il numero di pezzi di testata per confezione finita e identificare le eventuali varianti di design. Costruzione finale, materiale, prezzi, attività di campionatura, condizioni di produzione e tempi di consegna vengono esaminati per il progetto.",
+   "new": "La politica di pianificazione degli ordini di Packrivo prevede 500 pezzi per prodotto / modello. Indicare il numero di pezzi di testata per confezione finita e identificare le eventuali varianti di design. Costruzione finale, materiale, prezzi, attività di campionatura, condizioni di produzione e tempi di consegna vengono esaminati per il progetto."
+  },
+  "Quantity by design, destination and sample decisions.": {
+   "old": "Quantità per design, destinazione e decisioni sul campione.",
+   "new": "Quantità per modello, destinazione e decisioni sul campione."
+  },
+  "Quantity by design, destination, packing state and the decisions still open.": {
+   "old": "Quantità per design, destinazione, stato di imballaggio e decisioni ancora aperte.",
+   "new": "Quantità per modello, destinazione, stato di imballaggio e decisioni ancora aperte."
+  },
+  "Quantity by design, supplied state, assembly responsibility and destination.": {
+   "old": "Quantità per design, stato di fornitura, responsabilità di assemblaggio e destinazione.",
+   "new": "Quantità per modello, stato di fornitura, responsabilità di assemblaggio e destinazione."
+  },
+  "Quantity by design, who mounts the jewelry and what the sample must answer.": {
+   "old": "Quantità per design, chi monta i gioielli e cosa deve rispondere il campione.",
+   "new": "Quantità per modello, chi monta i gioielli e cosa deve rispondere il campione."
+  },
+  "to send both contents lists, measured stacks, gusset observations, quantity and destination. The minimum is 500 pieces per design. The proposed folder, material, lock, samples and commercial terms are confirmed against that brief.": {
+   "old": "per inviare entrambi gli elenchi dei contenuti, le pile misurate, le osservazioni sul soffietto, la quantità e la destinazione. Il minimo è 500 pezzi per design. La cartella proposta, il materiale, la chiusura, i campioni e le condizioni commerciali sono confermati rispetto a quel brief.",
+   "new": "per inviare entrambi gli elenchi dei contenuti, le pile misurate, le osservazioni sul soffietto, la quantità e la destinazione. Il minimo è 500 pezzi per modello. La cartella proposta, il materiale, la chiusura, i campioni e le condizioni commerciali sono confermati rispetto a quel brief."
+  },
+  "to send end drawings, sealing responsibility, packed contents and weight, quantity and destination. The minimum is 500 pieces per design. Final construction, sample scope, pricing and timing require project confirmation.": {
+   "old": "per inviare i disegni delle estremità, la responsabilità della saldatura, i contenuti imballati e il peso, la quantità e la destinazione. Il minimo è 500 pezzi per design. La costruzione finale, l'ambito dei campioni, il prezzo e i tempi richiedono conferma del progetto.",
+   "new": "per inviare i disegni delle estremità, la responsabilità della saldatura, i contenuti imballati e il peso, la quantità e la destinazione. Il minimo è 500 pezzi per modello. La costruzione finale, l'ambito dei campioni, il prezzo e i tempi richiedono conferma del progetto."
+  },
+  "to send supplied and formed views, actual unit details, display layout, quantity and destination. The minimum is 500 pieces per design. Final components, sample work, price and timing require project confirmation.": {
+   "old": "per inviare le viste fornite e formate, i dettagli effettivi dell'unità, il layout espositivo, la quantità e la destinazione. Il minimo è 500 pezzi per design. I componenti finali, l'attività sui campioni, il prezzo e i tempi richiedono conferma del progetto.",
+   "new": "per inviare le viste fornite e formate, i dettagli effettivi dell'unità, il layout espositivo, la quantità e la destinazione. Il minimo è 500 pezzi per modello. I componenti finali, l'attività sui campioni, il prezzo e i tempi richiedono conferma del progetto."
+  },
+  "to send unit details, the panel sketch, dispensing states, refill plan, quantity and destination. The minimum is 500 pieces per design. Final materials, construction, samples, pricing and timing require project confirmation.": {
+   "old": "per inviare i dettagli dell'unità, lo schizzo del pannello, gli stati di erogazione, il piano di ricarica, la quantità e la destinazione. Il minimo è 500 pezzi per design. I materiali finali, la costruzione, i campioni, il prezzo e i tempi richiedono conferma del progetto.",
+   "new": "per inviare i dettagli dell'unità, lo schizzo del pannello, gli stati di erogazione, il piano di ricarica, la quantità e la destinazione. Il minimo è 500 pezzi per modello. I materiali finali, la costruzione, i campioni, il prezzo e i tempi richiedono conferma del progetto."
+  },
+  ". MOQ is 500 pieces per design. The offered material, sample scope and commercial terms are confirmed for the project.": {
+   "old": ". Il MOQ è di 500 pezzi per design. Il materiale offerto, l'ambito dei campioni e le condizioni commerciali vengono confermati per il progetto.",
+   "new": ". Il MOQ è di 500 pezzi per modello. Il materiale offerto, l'ambito dei campioni e le condizioni commerciali vengono confermati per il progetto."
+  },
+  ". MOQ is 500 pieces per design; geometry, materials, samples and commercial terms are confirmed against the project.": {
+   "old": ". Il MOQ è di 500 pezzi per design; geometria, materiali, campioni e condizioni commerciali vengono confermati in base al progetto.",
+   "new": ". Il MOQ è di 500 pezzi per modello; geometria, materiali, campioni e condizioni commerciali vengono confermati in base al progetto."
+  },
+  ". MOQ is 500 pieces per design; material, sample scope and commercial conditions are confirmed for the project.": {
+   "old": ". Il MOQ è di 500 pezzi per design; materiale, ambito dei campioni e condizioni commerciali vengono confermati per il progetto.",
+   "new": ". Il MOQ è di 500 pezzi per modello; materiale, ambito dei campioni e condizioni commerciali vengono confermati per il progetto."
+  },
+  ". MOQ is 500 pieces per design; material, sample scope and commercial terms are confirmed for the project.": {
+   "old": ". Il MOQ è di 500 pezzi per design; materiale, ambito dei campioni e condizioni commerciali vengono confermati per il progetto.",
+   "new": ". Il MOQ è di 500 pezzi per modello; materiale, ambito dei campioni e condizioni commerciali vengono confermati per il progetto."
+  },
+  ". MOQ is 500 pieces per design; material, samples and commercial details are confirmed for the project.": {
+   "old": ". Il MOQ è di 500 pezzi per design; materiale, campioni e dettagli commerciali vengono confermati per il progetto.",
+   "new": ". Il MOQ è di 500 pezzi per modello; materiale, campioni e dettagli commerciali vengono confermati per il progetto."
+  },
+  ". MOQ is 500 pieces per design; samples, materials and commercial conditions are confirmed for the project.": {
+   "old": ". Il MOQ è di 500 pezzi per design; campioni, materiali e condizioni commerciali vengono confermati per il progetto.",
+   "new": ". Il MOQ è di 500 pezzi per modello; campioni, materiali e condizioni commerciali vengono confermati per il progetto."
+  },
+  ". Packrivo’s minimum is 500 pieces per design. Final construction, samples and commercial terms require project confirmation.": {
+   "old": ". Il minimo di Packrivo è di 500 pezzi per design. La struttura definitiva, i campioni e le condizioni commerciali richiedono conferma per il progetto.",
+   "new": ". Il minimo di Packrivo è di 500 pezzi per modello. La struttura definitiva, i campioni e le condizioni commerciali richiedono conferma per il progetto."
+  },
+  ". Packrivo’s minimum is 500 pieces per design. Final construction, samples, price and timing require project confirmation.": {
+   "old": ". Il minimo di Packrivo è di 500 pezzi per design. La struttura definitiva, i campioni, il prezzo e le tempistiche richiedono conferma per il progetto.",
+   "new": ". Il minimo di Packrivo è di 500 pezzi per modello. La struttura definitiva, i campioni, il prezzo e le tempistiche richiedono conferma per il progetto."
+  },
+  ". Packrivo’s minimum is 500 pieces per design. Final construction, samples, pricing and timing require project confirmation.": {
+   "old": ". Il minimo di Packrivo è di 500 pezzi per design. La struttura definitiva, i campioni, i prezzi e le tempistiche richiedono conferma per il progetto.",
+   "new": ". Il minimo di Packrivo è di 500 pezzi per modello. La struttura definitiva, i campioni, i prezzi e le tempistiche richiedono conferma per il progetto."
+  },
+  ". The minimum is 500 pieces per design. Final construction, components, samples and commercial terms require project confirmation.": {
+   "old": ". Il minimo è di 500 pezzi per design. La struttura definitiva, i componenti, i campioni e le condizioni commerciali richiedono conferma per il progetto.",
+   "new": ". Il minimo è di 500 pezzi per modello. La struttura definitiva, i componenti, i campioni e le condizioni commerciali richiedono conferma per il progetto."
+  },
+  ". The minimum is 500 pieces per design. Final construction, materials, samples and commercial terms require project confirmation.": {
+   "old": ". Il minimo è di 500 pezzi per design. La struttura definitiva, i materiali, i campioni e le condizioni commerciali richiedono conferma per il progetto.",
+   "new": ". Il minimo è di 500 pezzi per modello. La struttura definitiva, i materiali, i campioni e le condizioni commerciali richiedono conferma per il progetto."
+  },
+  "Arka is an online platform for branded mailers, shippers and eco-friendly packaging. Packrivo is a sourcing coordinator in Shenzhen that compares quotations from independent factories for orders of 500 pieces per design. Here is how they differ, and when each is the better choice. Last checked October 22, 2026.": {
+   "old": "Arka è una piattaforma online per imballaggi da spedizione personalizzati e packaging ecologico. Packrivo è un coordinatore di approvvigionamento a Shenzhen che confronta i preventivi di fabbriche indipendenti per ordini da 500 pezzi per design. Ecco le differenze e quando conviene scegliere l'una o l'altra. Ultimo controllo: 22 ottobre 2026.",
+   "new": "Arka è una piattaforma online per imballaggi da spedizione personalizzati e packaging ecologico. Packrivo è un coordinatore di approvvigionamento a Shenzhen che confronta i preventivi di fabbriche indipendenti per ordini da 500 pezzi per modello. Ecco le differenze e quando conviene scegliere l'una o l'altra. Ultimo controllo: 22 ottobre 2026."
+  },
+  "Copy the completed sheet into your inquiry and highlight the first missing input or unresolved interface. For a custom project, state the quantity per design, starting at 500 pieces, and the destination. Packrivo can help prepare the brief and coordinate the next supplier questions.": {
+   "old": "Copia la scheda compilata nella tua richiesta e metti in evidenza il primo dato mancante o l'interfaccia ancora da definire. Per un progetto su misura, indica la quantità per design, a partire da 500 pezzi, e la destinazione. Packrivo può aiutarti a preparare il brief e coordinare le prossime domande ai fornitori.",
+   "new": "Copia la scheda compilata nella tua richiesta e metti in evidenza il primo dato mancante o l'interfaccia ancora da definire. Per un progetto su misura, indica la quantità per modello, a partire da 500 pezzi, e la destinazione. Packrivo può aiutarti a preparare il brief e coordinare le prossime domande ai fornitori."
+  },
+  "It depends on quantity and box type. Arka suits small runs ordered online. Packrivo works from 500 pieces per design, where factory unit prices fall; for example, stock drawer jewelry boxes start around US$0.10–0.33 per box ex-works before logo printing, freight and duties, plus an 8–15% coordination fee, with the calculation basis agreed in writing.": {
+   "old": "Dipende dalla quantità e dal tipo di scatola. Arka è adatta a piccoli quantitativi ordinati online. Packrivo opera da 500 pezzi per design, quando i prezzi unitari dei produttori diminuiscono; ad esempio, le scatole a cassetto disponibili per gioielli partono da circa US$0.10–0.33 per scatola franco fabbrica, prima di stampa del logo, trasporto e dazi, oltre a una commissione di coordinamento dell'8–15%, con base di calcolo concordata per iscritto.",
+   "new": "Dipende dalla quantità e dal tipo di scatola. Arka è adatta a piccoli quantitativi ordinati online. Packrivo opera da 500 pezzi per modello, quando i prezzi unitari dei produttori diminuiscono; ad esempio, le scatole a cassetto disponibili per gioielli partono da circa US$0.10–0.33 per scatola franco fabbrica, prima di stampa del logo, trasporto e dazi, oltre a una commissione di coordinamento dell'8–15%, con base di calcolo concordata per iscritto."
+  },
+  "It depends on quantity and box type. Packhelp suits small runs ordered online. Packrivo works from 500 pieces per design, where factory unit prices fall; for example, stock drawer jewelry boxes start around US$0.10–0.33 per box ex-works before logo printing, freight and duties, plus an 8–15% coordination fee, with the calculation basis agreed in writing.": {
+   "old": "Dipende dalla quantità e dal tipo di scatola. Packhelp è adatta a piccoli quantitativi ordinati online. Packrivo opera da 500 pezzi per design, quando i prezzi unitari dei produttori diminuiscono; ad esempio, le scatole a cassetto disponibili per gioielli partono da circa US$0.10–0.33 per scatola franco fabbrica, prima di stampa del logo, trasporto e dazi, oltre a una commissione di coordinamento dell'8–15%, con base di calcolo concordata per iscritto.",
+   "new": "Dipende dalla quantità e dal tipo di scatola. Packhelp è adatta a piccoli quantitativi ordinati online. Packrivo opera da 500 pezzi per modello, quando i prezzi unitari dei produttori diminuiscono; ad esempio, le scatole a cassetto disponibili per gioielli partono da circa US$0.10–0.33 per scatola franco fabbrica, prima di stampa del logo, trasporto e dazi, oltre a una commissione di coordinamento dell'8–15%, con base di calcolo concordata per iscritto."
+  },
+  "It depends on quantity and box type. Packlane suits small runs ordered online. Packrivo works from 500 pieces per design, where factory unit prices fall; for example, stock drawer jewelry boxes start around US$0.10–0.33 per box ex-works before logo printing, freight and duties, plus an 8–15% coordination fee, with the calculation basis agreed in writing.": {
+   "old": "Dipende dalla quantità e dal tipo di scatola. Packlane è adatta a piccoli quantitativi ordinati online. Packrivo opera da 500 pezzi per design, quando i prezzi unitari dei produttori diminuiscono; ad esempio, le scatole a cassetto disponibili per gioielli partono da circa US$0.10–0.33 per scatola franco fabbrica, prima di stampa del logo, trasporto e dazi, oltre a una commissione di coordinamento dell'8–15%, con base di calcolo concordata per iscritto.",
+   "new": "Dipende dalla quantità e dal tipo di scatola. Packlane è adatta a piccoli quantitativi ordinati online. Packrivo opera da 500 pezzi per modello, quando i prezzi unitari dei produttori diminuiscono; ad esempio, le scatole a cassetto disponibili per gioielli partono da circa US$0.10–0.33 per scatola franco fabbrica, prima di stampa del logo, trasporto e dazi, oltre a una commissione di coordinamento dell'8–15%, con base di calcolo concordata per iscritto."
+  },
+  "It depends on quantity and box type. PakFactory suits small runs ordered online. Packrivo works from 500 pieces per design, where factory unit prices fall; for example, stock drawer jewelry boxes start around US$0.10–0.33 per box ex-works before logo printing, freight and duties, plus an 8–15% coordination fee, with the calculation basis agreed in writing.": {
+   "old": "Dipende dalla quantità e dal tipo di scatola. PakFactory è adatta a piccoli quantitativi ordinati online. Packrivo opera da 500 pezzi per design, quando i prezzi unitari dei produttori diminuiscono; ad esempio, le scatole a cassetto disponibili per gioielli partono da circa US$0.10–0.33 per scatola franco fabbrica, prima di stampa del logo, trasporto e dazi, oltre a una commissione di coordinamento dell'8–15%, con base di calcolo concordata per iscritto.",
+   "new": "Dipende dalla quantità e dal tipo di scatola. PakFactory è adatta a piccoli quantitativi ordinati online. Packrivo opera da 500 pezzi per modello, quando i prezzi unitari dei produttori diminuiscono; ad esempio, le scatole a cassetto disponibili per gioielli partono da circa US$0.10–0.33 per scatola franco fabbrica, prima di stampa del logo, trasporto e dazi, oltre a una commissione di coordinamento dell'8–15%, con base di calcolo concordata per iscritto."
+  },
+  "Packhelp is a European online packaging platform for mailer boxes and product boxes. Packrivo is a sourcing coordinator in Shenzhen that compares quotations from independent factories for orders of 500 pieces per design. Here is how they differ, and when each is the better choice. Last checked October 22, 2026.": {
+   "old": "Packhelp è una piattaforma europea online per scatole per spedizioni e scatole prodotto. Packrivo è un coordinatore di approvvigionamento a Shenzhen che confronta i preventivi di fabbriche indipendenti per ordini da 500 pezzi per design. Ecco le differenze e quando conviene scegliere l'una o l'altra. Ultimo controllo: 22 ottobre 2026.",
+   "new": "Packhelp è una piattaforma europea online per scatole per spedizioni e scatole prodotto. Packrivo è un coordinatore di approvvigionamento a Shenzhen che confronta i preventivi di fabbriche indipendenti per ordini da 500 pezzi per modello. Ecco le differenze e quando conviene scegliere l'una o l'altra. Ultimo controllo: 22 ottobre 2026."
+  },
+  "Packlane is an online box builder with low minimums and an instant price as you configure. Packrivo is a sourcing coordinator in Shenzhen that compares quotations from independent factories for orders of 500 pieces per design. Here is how they differ, and when each is the better choice. Last checked October 22, 2026.": {
+   "old": "Packlane è un configuratore online di scatole con minimi d'ordine ridotti e prezzo immediato durante la configurazione. Packrivo è un coordinatore di approvvigionamento a Shenzhen che confronta i preventivi di fabbriche indipendenti per ordini da 500 pezzi per design. Ecco le differenze e quando conviene scegliere l'una o l'altra. Ultimo controllo: 22 ottobre 2026.",
+   "new": "Packlane è un configuratore online di scatole con minimi d'ordine ridotti e prezzo immediato durante la configurazione. Packrivo è un coordinatore di approvvigionamento a Shenzhen che confronta i preventivi di fabbriche indipendenti per ordini da 500 pezzi per modello. Ecco le differenze e quando conviene scegliere l'una o l'altra. Ultimo controllo: 22 ottobre 2026."
+  },
+  "Packrivo projects start at 500 pieces per design. Arka: Branded mailers: 1 sample, then production from 10 units; custom cartons 250 units.": {
+   "old": "I progetti Packrivo partono da 500 pezzi per design. Arka: buste da spedizione personalizzate, 1 campione e poi produzione da 10 unità; scatole personalizzate, 250 unità.",
+   "new": "I progetti Packrivo partono da 500 pezzi per modello. Arka: buste da spedizione personalizzate, 1 campione e poi produzione da 10 unità; scatole personalizzate, 250 unità."
+  },
+  "Packrivo projects start at 500 pieces per design. Packhelp: Custom-size mailers 100 pieces (plus a die-cut fee from €240 net on the first order); custom-size product boxes 1,000 pieces.": {
+   "old": "I progetti Packrivo partono da 500 pezzi per design. Packhelp: buste postali in formato personalizzato, 100 pezzi (oltre a una tariffa di fustellatura a partire da €240 netti sul primo ordine); scatole prodotto in formato personalizzato, 1.000 pezzi.",
+   "new": "I progetti Packrivo partono da 500 pezzi per modello. Packhelp: buste postali in formato personalizzato, 100 pezzi (oltre a una tariffa di fustellatura a partire da €240 netti sul primo ordine); scatole prodotto in formato personalizzato, 1.000 pezzi."
+  },
+  "Packrivo projects start at 500 pieces per design. Packlane: Low minimums; no fixed number published.": {
+   "old": "I progetti Packrivo partono da 500 pezzi per design. Packlane: minimi ridotti; non è pubblicato un numero fisso.",
+   "new": "I progetti Packrivo partono da 500 pezzi per modello. Packlane: minimi ridotti; non è pubblicato un numero fisso."
+  },
+  "Packrivo projects start at 500 pieces per design. PakFactory: Set per specification; no fixed minimum published.": {
+   "old": "I progetti Packrivo partono da 500 pezzi per design. PakFactory: quantità definita per specifica; non è pubblicato un minimo fisso.",
+   "new": "I progetti Packrivo partono da 500 pezzi per modello. PakFactory: quantità definita per specifica; non è pubblicato un minimo fisso."
+  },
+  "PakFactory is a custom packaging manufacturer and service with product specialists and in-house design support. Packrivo is a sourcing coordinator in Shenzhen that compares quotations from independent factories for orders of 500 pieces per design. Here is how they differ, and when each is the better choice. Last checked October 22, 2026.": {
+   "old": "PakFactory è un produttore e fornitore di servizi di packaging personalizzato con specialisti di prodotto e supporto di progettazione interno. Packrivo è un coordinatore di approvvigionamento a Shenzhen che confronta i preventivi di fabbriche indipendenti per ordini da 500 pezzi per design. Ecco le differenze e quando conviene scegliere l'una o l'altra. Ultimo controllo: 22 ottobre 2026.",
+   "new": "PakFactory è un produttore e fornitore di servizi di packaging personalizzato con specialisti di prodotto e supporto di progettazione interno. Packrivo è un coordinatore di approvvigionamento a Shenzhen che confronta i preventivi di fabbriche indipendenti per ordini da 500 pezzi per modello. Ecco le differenze e quando conviene scegliere l'una o l'altra. Ultimo controllo: 22 ottobre 2026."
+  },
+  "Plan quantities by design": {
+   "old": "Pianifica le quantità per design",
+   "new": "Pianifica le quantità per modello"
+  },
+  "Share your product dimensions, packaging style, quantity per design and destination.": {
+   "old": "Condividi le dimensioni del prodotto, lo stile di packaging, la quantità per design e la destinazione.",
+   "new": "Condividi le dimensioni del prodotto, lo stile di packaging, la quantità per modello e la destinazione."
+  },
+  "Small jewelry, candle and gift brands ordering 500+ custom boxes per design": {
+   "old": "Piccoli brand di gioielli, candele e regali che ordinano almeno 500 scatole personalizzate per design",
+   "new": "Piccoli brand di gioielli, candele e regali che ordinano almeno 500 scatole personalizzate per modello"
+  },
+  "You need custom-size product boxes below Packhelp’s 1,000-piece minimum: Packrivo projects start at 500 pieces per design.": {
+   "old": "Ti servono scatole prodotto di dimensioni personalizzate sotto il minimo di 1.000 pezzi di Packhelp: i progetti Packrivo partono da 500 pezzi per design.",
+   "new": "Ti servono scatole prodotto di dimensioni personalizzate sotto il minimo di 1.000 pezzi di Packhelp: i progetti Packrivo partono da 500 pezzi per modello."
+  },
+  "You order 500 or more pieces per design and want quotations from several factories compared on the same specification.": {
+   "old": "Ordini almeno 500 pezzi per design e vuoi confrontare i preventivi di diverse fabbriche sulla stessa specifica.",
+   "new": "Ordini almeno 500 pezzi per modello e vuoi confrontare i preventivi di diverse fabbriche sulla stessa specifica."
+  },
+  "You want factory quotations compared at 500+ pieces per design, where unit costs fall.": {
+   "old": "Vuoi confrontare preventivi di fabbriche da 500 o più pezzi per design, quando i costi unitari diminuiscono.",
+   "new": "Vuoi confrontare preventivi di fabbriche da 500 o più pezzi per modello, quando i costi unitari diminuiscono."
+  },
+  "Your project is a small jewelry, candle or gift brand order of 500+ pieces per design.": {
+   "old": "Il tuo progetto riguarda piccoli brand di gioielli, candele o regali che ordinano almeno 500 pezzi per design.",
+   "new": "Il tuo progetto riguarda piccoli brand di gioielli, candele o regali che ordinano almeno 500 pezzi per modello."
+  },
+  "Include the complete jewelry measurements, quantity per design and destination country. List the box, holder, pouch or cards you want included. Add any target date as a requirement for review. Packrivo coordinates the sourcing questions; construction, sample scope, price and timing will be confirmed for the proposed project.": {
+   "old": "Indica tutte le misure dei gioielli, la quantità per design e il paese di destinazione. Elenca scatola, supporto, sacchetto o cartoncini da includere. Aggiungi eventuali date desiderate come requisito da esaminare. Packrivo coordina le richieste di approvvigionamento; struttura, ambito del campione, prezzo e tempistiche saranno confermati per il progetto proposto.",
+   "new": "Indica tutte le misure dei gioielli, la quantità per modello e il paese di destinazione. Elenca scatola, supporto, sacchetto o cartoncini da includere. Aggiungi eventuali date desiderate come requisito da esaminare. Packrivo coordina le richieste di approvvigionamento; struttura, ambito del campione, prezzo e tempistiche saranno confermati per il progetto proposto."
+  },
+  "PROJECT / DATE / RECORD OWNER:PRODUCT REFERENCE AND VERSION:JEWELRY PIECE 1 — overall envelope / units:JEWELRY PIECE 1 — posts, clasp or other projections:JEWELRY PIECE 2 — overall envelope / units:JEWELRY PIECE 2 — posts, backs or other projections:CHAIN ROUTE / LOOSE PARTS:INTENDED DISPLAY ORIENTATION:CONTACT ALLOWED / CONTACT TO REVIEW:CUSTOMER LIFT POINT AND REMOVAL ORDER:BOX / DRAWING VERSION:INTERNAL CAVITY / MEASUREMENT BASIS:HOLDER / PROPOSED MATERIAL / DRAWING VERSION:CLOSED-LID RELATIONSHIP TO CHECK:DESIGN QUANTITY / DESTINATION:OPEN QUESTION / RESPONSIBLE PERSON / NEXT ACTION:ACTUAL SAMPLE ID / DATED OBSERVATION:DECISION / APPROVER / DATE:": {
+   "old": "PROGETTO / DATA / RESPONSABILE DELLA SCHEDA:RIFERIMENTO E VERSIONE PRODOTTO:ARTICOLO DI GIOIELLERIA 1 — ingombro complessivo / unità:ARTICOLO DI GIOIELLERIA 1 — perni, chiusura o altre sporgenze:ARTICOLO DI GIOIELLERIA 2 — ingombro complessivo / unità:ARTICOLO DI GIOIELLERIA 2 — perni, fermi o altre sporgenze:PERCORSO DELLA CATENA / PARTI SCIOLTE:ORIENTAMENTO DI ESPOSIZIONE PREVISTO:CONTATTO CONSENTITO / CONTATTO DA VERIFICARE:PUNTO DI SOLLEVAMENTO PER IL CLIENTE E ORDINE DI ESTRAZIONE:SCATOLA / VERSIONE DISEGNO:CAVITÀ INTERNA / BASE DI MISURAZIONE:SUPPORTO / MATERIALE PROPOSTO / VERSIONE DISEGNO:RAPPORTO CON COPERCHIO CHIUSO DA VERIFICARE:QUANTITÀ PER DESIGN / DESTINAZIONE:DOMANDA APERTA / RESPONSABILE / AZIONE SUCCESSIVA:ID CAMPIONE EFFETTIVO / OSSERVAZIONE DATATA:DECISIONE / APPROVATORE / DATA:",
+   "new": "PROGETTO / DATA / RESPONSABILE DELLA SCHEDA:RIFERIMENTO E VERSIONE PRODOTTO:ARTICOLO DI GIOIELLERIA 1 — ingombro complessivo / unità:ARTICOLO DI GIOIELLERIA 1 — perni, chiusura o altre sporgenze:ARTICOLO DI GIOIELLERIA 2 — ingombro complessivo / unità:ARTICOLO DI GIOIELLERIA 2 — perni, fermi o altre sporgenze:PERCORSO DELLA CATENA / PARTI SCIOLTE:ORIENTAMENTO DI ESPOSIZIONE PREVISTO:CONTATTO CONSENTITO / CONTATTO DA VERIFICARE:PUNTO DI SOLLEVAMENTO PER IL CLIENTE E ORDINE DI ESTRAZIONE:SCATOLA / VERSIONE DISEGNO:CAVITÀ INTERNA / BASE DI MISURAZIONE:SUPPORTO / MATERIALE PROPOSTO / VERSIONE DISEGNO:RAPPORTO CON COPERCHIO CHIUSO DA VERIFICARE:QUANTITÀ PER MODELLO / DESTINAZIONE:DOMANDA APERTA / RESPONSABILE / AZIONE SUCCESSIVA:ID CAMPIONE EFFETTIVO / OSSERVAZIONE DATATA:DECISIONE / APPROVATORE / DATA:"
+  },
+  "Copy the completed sheet into your enquiry and highlight the first missing input or unresolved interface. For a custom project, state the quantity per design, starting at 500 pieces, and the destination. Packrivo can help prepare the brief and coordinate the next supplier questions.": {
+   "old": "Copi il modulo compilato nella Sua richiesta e metta in evidenza il primo dato mancante o l'interfaccia irrisolta. Per un progetto personalizzato, indichi la quantità per design, a partire da 500 pezzi, e la destinazione. Packrivo può aiutare a preparare il brief e a coordinare le successive domande al fornitore.",
+   "new": "Copi il modulo compilato nella Sua richiesta e metta in evidenza il primo dato mancante o l'interfaccia irrisolta. Per un progetto personalizzato, indichi la quantità per modello, a partire da 500 pezzi, e la destinazione. Packrivo può aiutare a preparare il brief e a coordinare le successive domande al fornitore."
+  },
+  "Packrivo's order planning policy is 500 pieces per product / design. Identify the wrap, sealing component, printed extras and sample work in the scope. Actual carton data and the selected route determine the freight discussion; final construction, price, production conditions and delivery timing are confirmed for the project.": {
+   "old": "La politica di pianificazione ordini di Packrivo prevede 500 pezzi per prodotto / design. Identifichi nell'ambito l'involucro, il componente di sigillatura, gli elementi stampati aggiuntivi e il lavoro sui campioni. I dati effettivi del cartone e il percorso selezionato determinano la discussione sul trasporto; la costruzione finale, il prezzo, le condizioni di produzione e i tempi di consegna vengono confermati per il progetto.",
+   "new": "La politica di pianificazione ordini di Packrivo prevede 500 pezzi per prodotto / modello. Identifichi nell'ambito l'involucro, il componente di sigillatura, gli elementi stampati aggiuntivi e il lavoro sui campioni. I dati effettivi del cartone e il percorso selezionato determinano la discussione sul trasporto; la costruzione finale, il prezzo, le condizioni di produzione e i tempi di consegna vengono confermati per il progetto."
+  },
+  "Packrivo's order planning policy is 500 pieces per product / design. Ask for the tray, sleeve, holder, print work and sampling to be described as separate scope items. Final material construction, pricing, production conditions and delivery timing are agreed for the reviewed configuration.": {
+   "old": "La policy di pianificazione ordini di Packrivo prevede 500 pezzi per prodotto / design. Chieda che vassoio, guaina, supporto, stampa e campionatura siano descritti come voci di ambito separate. La costruzione finale del materiale, il prezzo, le condizioni di produzione e i tempi di consegna vengono concordati per la configurazione esaminata.",
+   "new": "La policy di pianificazione ordini di Packrivo prevede 500 pezzi per prodotto / modello. Chieda che vassoio, guaina, supporto, stampa e campionatura siano descritti come voci di ambito separate. La costruzione finale del materiale, il prezzo, le condizioni di produzione e i tempi di consegna vengono concordati per la configurazione esaminata."
+  },
+  "Packrivo's order planning policy is 500 pieces per product / design. Identify the envelope, backing, printed extras and sampling separately. Carrier classification, charges and route suitability depend on the actual shipment; final materials, production conditions, pricing and delivery timing are agreed for the project.": {
+   "old": "La policy di pianificazione ordini di Packrivo prevede 500 pezzi per prodotto / design. Identifichi separatamente l'involucro, il supporto, gli extra stampati e la campionatura. La classificazione del vettore, i costi e l'idoneità del percorso dipendono dalla spedizione effettiva; i materiali finali, le condizioni di produzione, il prezzo e i tempi di consegna vengono concordati per il progetto.",
+   "new": "La policy di pianificazione ordini di Packrivo prevede 500 pezzi per prodotto / modello. Identifichi separatamente l'involucro, il supporto, gli extra stampati e la campionatura. La classificazione del vettore, i costi e l'idoneità del percorso dipendono dalla spedizione effettiva; i materiali finali, le condizioni di produzione, il prezzo e i tempi di consegna vengono concordati per il progetto."
+  },
+  "Packrivo's order planning policy is 500 pieces per product / design. Record different card artworks and attachment layouts as design questions, with the proposed mounting work and packaging components identified. Final material, pricing, production conditions and sample scope are agreed for the project.": {
+   "old": "La policy di pianificazione ordini di Packrivo prevede 500 pezzi per prodotto / design. Registri le diverse grafiche dei cartoncini e le disposizioni di applicazione come questioni di design, identificando il lavoro di montaggio proposto e i componenti di packaging. Materiale finale, prezzo, condizioni di produzione e ambito della campionatura vengono concordati per il progetto.",
+   "new": "La policy di pianificazione ordini di Packrivo prevede 500 pezzi per prodotto / modello. Registri le diverse grafiche dei cartoncini e le disposizioni di applicazione come questioni di design, identificando il lavoro di montaggio proposto e i componenti di packaging. Materiale finale, prezzo, condizioni di produzione e ambito della campionatura vengono concordati per il progetto."
+  },
+  "Packrivo's order planning policy is 500 pieces per product / design. Separate the shell, holder and any additional components in the proposal, with their quantities and sample work identified. Project materials, pricing, production conditions and delivery timing are confirmed against the agreed specification.": {
+   "old": "La policy di pianificazione ordini di Packrivo prevede 500 pezzi per prodotto / design. Separi nella proposta il guscio, il supporto e qualsiasi componente aggiuntivo, identificandone le quantità e il lavoro di campionatura. Materiali di progetto, prezzo, condizioni di produzione e tempi di consegna vengono confermati in base alla specifica concordata.",
+   "new": "La policy di pianificazione ordini di Packrivo prevede 500 pezzi per prodotto / modello. Separi nella proposta il guscio, il supporto e qualsiasi componente aggiuntivo, identificandone le quantità e il lavoro di campionatura. Materiali di progetto, prezzo, condizioni di produzione e tempi di consegna vengono confermati in base alla specifica concordata."
+  },
+  "Packrivo's order planning policy is 500 pieces per product / design. State the number of end-cap pieces per finished pack and identify any different designs. Final construction, material, pricing, sample work, production conditions and delivery timing are reviewed for the project.": {
+   "old": "La policy di pianificazione ordini di Packrivo è di 500 pezzi per prodotto / design. Indichi il numero di pezzi di testata per pack finito e identifichi eventuali design diversi. Costruzione, materiale, prezzo, attività di campionatura, condizioni di produzione e tempi di consegna finali vengono valutati per il progetto.",
+   "new": "La policy di pianificazione ordini di Packrivo è di 500 pezzi per prodotto / modello. Indichi il numero di pezzi di testata per pack finito e identifichi eventuali design diversi. Costruzione, materiale, prezzo, attività di campionatura, condizioni di produzione e tempi di consegna finali vengono valutati per il progetto."
+  },
+  "Packrivo's order planning policy is 500 pieces per product / design. List the band and underlying box or product pack separately, including design quantities and sampling. Final materials, joining method, pricing, production conditions and delivery timing are confirmed for the project.": {
+   "old": "La policy di pianificazione ordini di Packrivo è di 500 pezzi per prodotto / design. Elenchi separatamente la fascia e la scatola sottostante o il pack prodotto, incluse le quantità per design e la campionatura. Materiali, metodo di giunzione, prezzo, condizioni di produzione e tempi di consegna finali vengono confermati per il progetto.",
+   "new": "La policy di pianificazione ordini di Packrivo è di 500 pezzi per prodotto / modello. Elenchi separatamente la fascia e la scatola sottostante o il pack prodotto, incluse le quantità per modello e la campionatura. Materiali, metodo di giunzione, prezzo, condizioni di produzione e tempi di consegna finali vengono confermati per il progetto."
+  },
+  "Packrivo's order planning policy is 500 pieces per product / design. List the liner, enclosure and any holder separately, with their quantities and sample tasks. Final material, construction, pricing, production conditions and delivery timing are reviewed for the project.": {
+   "old": "La policy di pianificazione ordini di Packrivo è di 500 pezzi per prodotto / design. Elenchi separatamente il rivestimento, l'involucro e l'eventuale supporto, con le relative quantità e attività di campionatura. Materiale, costruzione, prezzo, condizioni di produzione e tempi di consegna finali vengono valutati per il progetto.",
+   "new": "La policy di pianificazione ordini di Packrivo è di 500 pezzi per prodotto / modello. Elenchi separatamente il rivestimento, l'involucro e l'eventuale supporto, con le relative quantità e attività di campionatura. Materiale, costruzione, prezzo, condizioni di produzione e tempi di consegna finali vengono valutati per il progetto."
+  },
+  "Packrivo's order planning policy is 500 pieces per product / design. Keep the carton, holder, assembly state and sample work visible in the scope. Final material construction, pricing, production conditions and delivery timing are agreed for the specific project.": {
+   "old": "La politica di pianificazione ordini di Packrivo prevede 500 pezzi per prodotto / design. Mantenga visibili nell'ambito il cartone, il supporto, lo stato di assemblaggio e le attività di campionatura. La costruzione finale dei materiali, i prezzi, le condizioni di produzione e i tempi di consegna vengono concordati per il progetto specifico.",
+   "new": "La politica di pianificazione ordini di Packrivo prevede 500 pezzi per prodotto / modello. Mantenga visibili nell'ambito il cartone, il supporto, lo stato di assemblaggio e le attività di campionatura. La costruzione finale dei materiali, i prezzi, le condizioni di produzione e i tempi di consegna vengono concordati per il progetto specifico."
+  },
+  "Packrivo's order planning policy is 500 pieces per product / design. List the base, lid, holder and printed extras with their quantity and sample scope. Final materials, pricing, production conditions and delivery timing are reviewed for the agreed project.": {
+   "old": "La politica di pianificazione ordini di Packrivo prevede 500 pezzi per prodotto / design. Elenchi base, coperchio, supporto e accessori stampati con le rispettive quantità e l'ambito di campionatura. Materiali finali, prezzi, condizioni di produzione e tempi di consegna vengono verificati per il progetto concordato.",
+   "new": "La politica di pianificazione ordini di Packrivo prevede 500 pezzi per prodotto / modello. Elenchi base, coperchio, supporto e accessori stampati con le rispettive quantità e l'ambito di campionatura. Materiali finali, prezzi, condizioni di produzione e tempi di consegna vengono verificati per il progetto concordato."
+  },
+  "Packrivo's order planning policy is 500 pieces per product / design. List the outer carton, dividers, sealing supplies and any packing work separately. Final material, pricing, production conditions, sample scope and delivery timing are reviewed for the project.": {
+   "old": "La politica di pianificazione ordini di Packrivo prevede 500 pezzi per prodotto / design. Elenchi separatamente il cartone esterno, i divisori, i materiali di sigillatura e qualsiasi lavorazione di confezionamento. Materiale finale, prezzi, condizioni di produzione, ambito di campionatura e tempi di consegna vengono verificati per il progetto.",
+   "new": "La politica di pianificazione ordini di Packrivo prevede 500 pezzi per prodotto / modello. Elenchi separatamente il cartone esterno, i divisori, i materiali di sigillatura e qualsiasi lavorazione di confezionamento. Materiale finale, prezzi, condizioni di produzione, ambito di campionatura e tempi di consegna vengono verificati per il progetto."
+  },
+  "Bring your product drawing or marked photographs, known dimensions, quantity by design and destination. Add the outer-box reference if available. Feasibility, tooling, sample scope and commercial conditions for the actual molded-pulp proposal require confirmation.": {
+   "old": "Porti il disegno del prodotto o fotografie annotate, le dimensioni note, la quantità per design e la destinazione. Aggiunga il riferimento della scatola esterna, se disponibile. Fattibilità, attrezzature, ambito di campionatura e condizioni commerciali per la proposta effettiva in polpa stampata richiedono conferma.",
+   "new": "Porti il disegno del prodotto o fotografie annotate, le dimensioni note, la quantità per modello e la destinazione. Aggiunga il riferimento della scatola esterna, se disponibile. Fattibilità, attrezzature, ambito di campionatura e condizioni commerciali per la proposta effettiva in polpa stampata richiedono conferma."
+  },
+  "Packrivo's order planning policy is 500 pieces per product / design. List the carton, prepared bottom work, additional parts and sampling in the proposal. The final material, price, production conditions and schedule are confirmed for that configuration.": {
+   "old": "La politica di pianificazione degli ordini di Packrivo prevede 500 pezzi per prodotto / design. Elenchi nella proposta la scatola, la lavorazione del fondo preparato, le parti aggiuntive e il campionamento. Il materiale definitivo, il prezzo, le condizioni di produzione e la tempistica vengono confermati per quella configurazione.",
+   "new": "La politica di pianificazione degli ordini di Packrivo prevede 500 pezzi per prodotto / modello. Elenchi nella proposta la scatola, la lavorazione del fondo preparato, le parti aggiuntive e il campionamento. Il materiale definitivo, il prezzo, le condizioni di produzione e la tempistica vengono confermati per quella configurazione."
+  },
+  "Packrivo's order planning policy is 500 pieces per product / design. Identify the carton, hanging component if separate, holder and sampling work in the proposal. Material, production conditions, pricing and delivery timing are confirmed for the project.": {
+   "old": "La politica di pianificazione degli ordini di Packrivo prevede 500 pezzi per prodotto / design. Individui nella proposta la scatola, il componente di sospensione se separato, il supporto e il lavoro di campionamento. Materiale, condizioni di produzione, prezzo e tempi di consegna vengono confermati per il progetto.",
+   "new": "La politica di pianificazione degli ordini di Packrivo prevede 500 pezzi per prodotto / modello. Individui nella proposta la scatola, il componente di sospensione se separato, il supporto e il lavoro di campionamento. Materiale, condizioni di produzione, prezzo e tempi di consegna vengono confermati per il progetto."
+  },
+  "Packrivo's order planning policy is 500 pieces per product / design. Separate the carton, holder and additional components in the proposal. Final construction, material, pricing, production conditions and delivery timing are agreed against the reviewed brief.": {
+   "old": "La politica di pianificazione degli ordini di Packrivo prevede 500 pezzi per prodotto / design. Distingua nella proposta la scatola, il supporto e i componenti aggiuntivi. Costruzione definitiva, materiale, prezzo, condizioni di produzione e tempi di consegna vengono concordati in base al brief esaminato.",
+   "new": "La politica di pianificazione degli ordini di Packrivo prevede 500 pezzi per prodotto / modello. Distingua nella proposta la scatola, il supporto e i componenti aggiuntivi. Costruzione definitiva, materiale, prezzo, condizioni di produzione e tempi di consegna vengono concordati in base al brief esaminato."
+  },
+  "Packrivo is a packaging sourcing and project coordination brand based in Shenzhen, China. We help small jewelry, candle and gift brands define packaging, compare independent supplier proposals and review samples. MOQ: 500 pieces per product/design.": {
+   "old": "Packrivo è un marchio di sourcing di packaging e coordinamento di progetti con sede a Shenzhen, Cina. Aiutiamo piccoli marchi di gioielleria, candele e regali a definire il packaging, confrontare proposte di fornitori indipendenti e rivedere campioni. MOQ: 500 pezzi per prodotto/design.",
+   "new": "Packrivo è un marchio di sourcing di packaging e coordinamento di progetti con sede a Shenzhen, Cina. Aiutiamo piccoli marchi di gioielleria, candele e regali a definire il packaging, confrontare proposte di fornitori indipendenti e rivedere campioni. MOQ: 500 pezzi per prodotto/modello."
+  },
+  "Shenzhen-based Packrivo helps you source packaging through a network of 50+ independent suppliers, from product specifications and quotation comparison to sample review. MOQ: 500 pieces per product/design.": {
+   "old": "Packrivo, con sede a Shenzhen, La aiuta a reperire imballaggi tramite una rete di oltre 50 fornitori indipendenti, dalle specifiche di prodotto al confronto dei preventivi fino alla revisione dei campioni. MOQ: 500 pezzi per prodotto/design.",
+   "new": "Packrivo, con sede a Shenzhen, La aiuta a reperire imballaggi tramite una rete di oltre 50 fornitori indipendenti, dalle specifiche di prodotto al confronto dei preventivi fino alla revisione dei campioni. MOQ: 500 pezzi per prodotto/modello."
+  },
+  "For a conversation, tell us the product, quantity by design and destination. or with the details you are ready to share.": {
+   "old": "Per una conversazione, ci indichi il prodotto, la quantità per design e la destinazione. Oppure ci contatti con i dettagli che desidera condividere.",
+   "new": "Per una conversazione, ci indichi il prodotto, la quantità per modello e la destinazione. Oppure ci contatti con i dettagli che desidera condividere."
+  },
+  "500 pieces per product / design": {
+   "old": "500 pezzi per prodotto / design",
+   "new": "500 pezzi per prodotto / modello"
+  },
+  "For a conversation, tell us the product, quantity by design and destination.": {
+   "old": "Per una conversazione, ci indichi il prodotto, la quantità per design e la destinazione.",
+   "new": "Per una conversazione, ci indichi il prodotto, la quantità per modello e la destinazione."
+  },
+  "PROJECT / DATE / RECORD OWNER: PRODUCT REFERENCE AND VERSION: JEWELRY PIECE 1 — overall envelope / units: JEWELRY PIECE 1 — posts, clasp or other projections: JEWELRY PIECE 2 — overall envelope / units: JEWELRY PIECE 2 — posts, backs or other projections: CHAIN ROUTE / LOOSE PARTS: INTENDED DISPLAY ORIENTATION: CONTACT ALLOWED / CONTACT TO REVIEW: CUSTOMER LIFT POINT AND REMOVAL ORDER: BOX / DRAWING VERSION: INTERNAL CAVITY / MEASUREMENT BASIS: HOLDER / PROPOSED MATERIAL / DRAWING VERSION: CLOSED-LID RELATIONSHIP TO CHECK: DESIGN QUANTITY / DESTINATION: OPEN QUESTION / RESPONSIBLE PERSON / NEXT ACTION: ACTUAL SAMPLE ID / DATED OBSERVATION: DECISION / APPROVER / DATE:": {
+   "old": "PROGETTO / DATA / RESPONSABILE DELLA SCHEDA: RIFERIMENTO E VERSIONE PRODOTTO: ARTICOLO DI GIOIELLERIA 1 — ingombro complessivo / unità: ARTICOLO DI GIOIELLERIA 1 — perni, chiusura o altre sporgenze: ARTICOLO DI GIOIELLERIA 2 — ingombro complessivo / unità: ARTICOLO DI GIOIELLERIA 2 — perni, fermi o altre sporgenze: PERCORSO DELLA CATENA / PARTI SCIOLTE: ORIENTAMENTO DI ESPOSIZIONE PREVISTO: CONTATTO CONSENTITO / CONTATTO DA VERIFICARE: PUNTO DI SOLLEVAMENTO PER IL CLIENTE E ORDINE DI ESTRAZIONE: SCATOLA / VERSIONE DISEGNO: CAVITÀ INTERNA / BASE DI MISURAZIONE: SUPPORTO / MATERIALE PROPOSTO / VERSIONE DISEGNO: RAPPORTO CON COPERCHIO CHIUSO DA VERIFICARE: QUANTITÀ PER DESIGN / DESTINAZIONE: DOMANDA APERTA / RESPONSABILE / AZIONE SUCCESSIVA: ID CAMPIONE EFFETTIVO / OSSERVAZIONE DATATA: DECISIONE / APPROVATORE / DATA:",
+   "new": "PROGETTO / DATA / RESPONSABILE DELLA SCHEDA: RIFERIMENTO E VERSIONE PRODOTTO: ARTICOLO DI GIOIELLERIA 1 — ingombro complessivo / unità: ARTICOLO DI GIOIELLERIA 1 — perni, chiusura o altre sporgenze: ARTICOLO DI GIOIELLERIA 2 — ingombro complessivo / unità: ARTICOLO DI GIOIELLERIA 2 — perni, fermi o altre sporgenze: PERCORSO DELLA CATENA / PARTI SCIOLTE: ORIENTAMENTO DI ESPOSIZIONE PREVISTO: CONTATTO CONSENTITO / CONTATTO DA VERIFICARE: PUNTO DI SOLLEVAMENTO PER IL CLIENTE E ORDINE DI ESTRAZIONE: SCATOLA / VERSIONE DISEGNO: CAVITÀ INTERNA / BASE DI MISURAZIONE: SUPPORTO / MATERIALE PROPOSTO / VERSIONE DISEGNO: RAPPORTO CON COPERCHIO CHIUSO DA VERIFICARE: QUANTITÀ PER MODELLO / DESTINAZIONE: DOMANDA APERTA / RESPONSABILE / AZIONE SUCCESSIVA: ID CAMPIONE EFFETTIVO / OSSERVAZIONE DATATA: DECISIONE / APPROVATORE / DATA:"
+  },
+  "Book-style rigid boxes that open like a book for premium sets, with your logo and from 500 pieces. Get a price.": {
+   "old": "Scatole rigide a libro che si aprono come un libro per set premium, con il tuo logo, da 500 pezzi. Richiedi un preventivo.",
+   "new": "Scatole rigide a libro che si aprono come un libro per cofanetti regalo di pregio, con il tuo logo, da 500 pezzi. Richiedi un preventivo."
+  },
+  "Chipboard dividers with fixed cells for boxed sets, made to your layout from 500 pieces. Get a price.": {
+   "old": "Divisori in cartone pressato con scomparti fissi per set in scatola, sul tuo layout, da 500 pezzi. Richiedi un preventivo.",
+   "new": "Divisori in cartone pressato con scomparti fissi per confezioni in scatola, sul tuo layout, da 500 pezzi. Richiedi un preventivo."
+  }
+ },
+ "text": {
+  "Structures & fit": {
+   "old": "Strutture e adattamento",
+   "new": "Strutture e vestibilità"
+  },
+  "Supplier briefs": {
+   "old": "Brief dei fornitori",
+   "new": "Brief per fornitori"
+  },
+  "MOQ 500 pieces per design for printed boxes. Unprinted stock ships from 100 pieces.": {
+   "old": "MOQ 500 pezzi per design per le scatole stampate. I modelli disponibili non stampati vengono spediti a partire da 100 pezzi.",
+   "new": "MOQ 500 pezzi per modello per le scatole stampate. I modelli disponibili non stampati vengono spediti a partire da 100 pezzi."
+  },
+  "MOQ 500 pieces per product / design.": {
+   "old": "MOQ 500 pezzi per prodotto / design.",
+   "new": "MOQ 500 pezzi per prodotto / modello."
+  },
+  "Include the complete jewelry measurements, quantity per design and destination country. List the box, holder, pouch or cards you want included. Add any target date as a requirement for review. Packrivo coordinates the sourcing questions; construction, sample scope, price and timing will be confirmed for the proposed project.": {
+   "old": "Indica tutte le misure dei gioielli, la quantità per design e il paese di destinazione. Elenca scatola, supporto, sacchetto o cartoncini da includere. Aggiungi eventuali date desiderate come requisito da esaminare. Packrivo coordina le richieste di approvvigionamento; struttura, ambito del campione, prezzo e tempistiche saranno confermati per il progetto proposto.",
+   "new": "Indica tutte le misure dei gioielli, la quantità per modello e il paese di destinazione. Elenca scatola, supporto, sacchetto o cartoncini da includere. Aggiungi eventuali date desiderate come requisito da esaminare. Packrivo coordina le richieste di approvvigionamento; struttura, ambito del campione, prezzo e tempistiche saranno confermati per il progetto proposto."
+  }
+ }
+}

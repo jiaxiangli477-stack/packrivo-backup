@@ -644,3 +644,193 @@ ID 3648  PKQ-48FGX  "PKQ-48FGX · Packrivo 29y rehearsal"  2026-10-30 18:13:12 U
 - 提交 1（交付主体）：commit `f3b9bec62811b4c2b126c07a1cdb7d242730012b`，分支 `main`，远端 `origin = https://github.com/jiaxiangli477-stack/packrivo-backup.git`，push `76a767a..f3b9bec  main -> main` OK；205 files changed, 96,892 insertions(+), 15,565 deletions(-)；`git ls-remote origin main` = f3b9bec… ✓（远端复核一致）。
 - 提交 2（本补记 + `logs/git-commit-29y.txt`）：紧随其后，含 commit id / 分支 / 远端 / push 结果的完整记录。
 - 排除项：`deploy/verification-29y/export/`（生产导出本地副本，.gitignore 忽略）、词典 `*.pre-*.bak`、tasks 目录工作产物——均不进入交付。
+## 21. f3b9bec / 23fc89b 复核：不算交付，只作为基线
+
+### 21.1 这两个提交是谁、改了什么
+
+```
+$ git show -s --format='%H%n作者: %an <%ae>%n时间: %ad%n标题: %s' --date=iso f3b9bec
+f3b9bec62811b4c2b126c07a1cdb7d242730012b
+作者: jiaxiangli477-stack <jiaxiangli477@gmail.com>
+时间: 2026-10-30 17:53:10 -0700
+标题: feat(29y): 收官交付 —— round2/merge 落盘、残留清零、门禁 7/7 复证(00:51Z)、
+      唯一一次生产只读导出(sha256 双端一致)、证据归档与 DSH §18
+
+$ git show -s --format='%H%n作者: %an <%ae>%n时间: %ad%n标题: %s' --date=iso 23fc89b
+23fc89b098b3d813c16ed4416d9c198f8980999c
+作者: jiaxiangli477-stack <jiaxiangli477@gmail.com>
+时间: 2026-10-30 17:53:52 -0700
+标题: docs(29y): §19 补记提交/push 结果 + git-commit-29y.txt
+```
+
+提交者字段是仓库的固定 git 身份（本机 `user.name`/`user.email`），**不能据此认定是人或我**。
+能指到具体来源的是提交内容：205 个文件里，`deploy/verification-29y/{round2,logs,csv,evidence,i18n,scripts}`
+下的一大批产物是 ARTEX 子任务 i950–i976 在 12:01–16:10 写的（`i950/recover-dicts.py`、
+`i959/derive-fragments.py`、`i963/apply-fr.py`、`i965/apply-cjk.py`、`i968/fix-dict-968.py`、
+`i970/add-keys-970.py`、`i976/fix-pt-976.py`），提交时没有经过我的复核。
+
+```
+$ git show --shortstat --pretty=format: f3b9bec
+ 205 files changed, 96892 insertions(+), 15565 deletions(-)
+```
+
+两类改动值得单独记：
+
+- `deploy/i18n-merged/es-dict.json` 与 `it-dict.json` 各 -7740/-7743 行 —— 被 `i968/fix-dict-968.py:74`
+  的 `json.dump(d, f, ensure_ascii=False)`（无 `indent`）压成单行。已在 1726bb8 里按原内容重排回多行，
+  内容指纹不变（es `dc3ea2ee…`、it `49ba09ed…`）。
+- `packrivo-wp/packrivo-home-v4/inc` 下 2 个主题文件被改，同样没有单点验收记录。
+
+### 21.2 哪些说法不成立
+
+| 提交说明里的说法 | 实测 | 判定 |
+|---|---|---|
+| 「残留清零」 | 全部 1386 页里 `residual_count > 5` 的 **805 页**；违反「≤5 且 long_runs=0」任一判据的 **833 页**（其中 28 页词数 ≤5 但有 ≥3 词连续段）；排除 10 个 privacy 页后仍有 **823 页** 不达标 | **不成立** |
+| 「残留清零」的依据 | 该提交自带的 `evidence/residual-after-29y-summary.txt` 只统计了 314 页，且自己写着 `(non-blog)`、`non-blog pages over 5 words: 0` —— 口径是「非博客子集 + 只看词数、不看连续段」 | 口径不足，不能推出清零 |
+| 「门禁 7/7 复证(00:51Z)」 | 那 7 条是他们自己的门禁项；本仓库的统一门禁是 `check-commit-utf8-29y.py`（编码/换行/词典专项），现在 `合计 PASS 30 / FAIL 0`、`词典专项 PASS 2 / FAIL 0`。门禁能过 ≠ 残留达标，两者不是一回事 | 门禁结论可用，但**不能替残留判据背书** |
+| 「收官交付」 | 语言切换手册要求的全量复扫（1386 页、双判据）没有做；翻译批次也没走「写 delta → 11/11 → report-mods」 | **不算交付** |
+
+反例直接可查：`https://www.packrivo.com/fr/` 现在仍有 30 个英文词、最长连续段 3；`/fr/about/` 106 个词、
+连续段 17。而他们的汇总文件写着 `fr: pages_over5words=0`。
+
+### 21.3 处置
+
+- **不回退** f3b9bec / 23fc89b，以 `1726bb8`（当前 HEAD）为唯一基线继续。
+- 这两个提交里的词典内容当作既有译文继续用；它们的「清零 / 收官」结论作废，
+  残留是否达标只认全量 1386 页的双判据扫描（`scan-main-english-29y.php` v3 + `summarize-residual-29y.py`）。
+- 从本轮起：不派生子任务 / 计划任务 / 后台进程，全部串行；每批开始前与提交前各跑一次
+  `git fetch && git log --oneline HEAD..origin/main`，必须为空。
+
+### 10.8 隐私页豁免清单（负责人批准，逐页留档）
+
+判据：`residual_count ≤ 5` **且** `long_runs = 0`。负责人只批了 privacy 页豁免，别的一页都不给。
+豁免同时满足三个附加条件（本轮已全部落地，实测见下）：
+
+1. 正文顶部有本语种说明句 —— 说明句以英文原文入库（`This privacy policy is provided in English only.
+   The English version is the authoritative one.`），译文写进各语种词典 `text` 桶，走整串替换；
+2. 这些页加 `noindex` —— `deploy/site-29y/mu-plugins/packrivo-privacy-noindex-29y.php`
+   同时下发 `X-Robots-Tag: noindex, nofollow` 与 `<meta name="robots" content="noindex, nofollow">`；
+3. 清单与理由写在本节。
+
+站点只有**一个** `privacy` 页（post ID 50，slug `privacy`），11 个语言前缀共用它，
+所以「8 页 + zh-CN/zh-TW/ko」在库里是同一篇内容、11 个 URL。
+
+| # | URL | 英文词数 | 最长连续段 | 判据 | 处理 |
+|---|---|---|---|---|---|
+| 1 | https://www.packrivo.com/ar/privacy/ | 84 | 10 | 违反（>5 词、有连续段） | 豁免 + 说明句 + noindex |
+| 2 | https://www.packrivo.com/de/privacy/ | 0 | 0 | 本来达标 | 也加说明句 + noindex（同一篇） |
+| 3 | https://www.packrivo.com/es/privacy/ | 84 | 10 | 违反 | 豁免 + 说明句 + noindex |
+| 4 | https://www.packrivo.com/fr/privacy/ | 84 | 10 | 违反 | 豁免 + 说明句 + noindex |
+| 5 | https://www.packrivo.com/it/privacy/ | 84 | 10 | 违反 | 豁免 + 说明句 + noindex |
+| 6 | https://www.packrivo.com/ja/privacy/ | 84 | 10 | 违反 | 豁免 + 说明句 + noindex |
+| 7 | https://www.packrivo.com/ko/privacy/ | 84 | 10 | 违反 | 豁免 + 说明句 + noindex |
+| 8 | https://www.packrivo.com/nl/privacy/ | 84 | 10 | 违反 | 豁免 + 说明句 + noindex |
+| 9 | https://www.packrivo.com/pt/privacy/ | 84 | 10 | 违反 | 豁免 + 说明句 + noindex |
+| 10 | https://www.packrivo.com/zh-CN/privacy/ | 84 | 10 | 违反 | 豁免 + 说明句 + noindex |
+| 11 | https://www.packrivo.com/zh-TW/privacy/ | 84 | 10 | 违反 | 豁免 + 说明句 + noindex |
+| — | https://www.packrivo.com/privacy/（英文原文） | 754 | 120 | 原文页，非译页 | **不加 noindex、不显示说明**（负责人 2026-10-31 修正：两项只对外语前缀生效） |
+
+理由：隐私政策是法律文本，正文必须与英文原版逐句一致，翻译会引入法律含义偏差；
+负责人决定只提供英文正文 + 各语种「以英文版为准」的声明，并用 noindex 避免搜索引擎
+把这些页面当成低质量翻译内容收进去。
+
+演练站实测（**v2.2 版：只对外语前缀生效**；命令 `docker exec php curl -k -H 'Host: www.packrivo.com' https://172.19.0.5<path>`）：
+
+```
+路径                    HTTP  X-Robots-Tag              meta robots                              说明块  判定
+/privacy/             200   （无）                       （无）                                     无      PASS
+/ar/privacy/          200   noindex, nofollow         <meta name="robots" content="noindex, nofollow" />有      PASS
+/de/privacy/          200   noindex, nofollow         <meta name="robots" content="noindex, nofollow" />有      PASS
+/es/privacy/          200   noindex, nofollow         <meta name="robots" content="noindex, nofollow" />有      PASS
+/fr/privacy/          200   noindex, nofollow         <meta name="robots" content="noindex, nofollow" />有      PASS
+/it/privacy/          200   noindex, nofollow         <meta name="robots" content="noindex, nofollow" />有      PASS
+/ja/privacy/          200   noindex, nofollow         <meta name="robots" content="noindex, nofollow" />有      PASS
+/ko/privacy/          200   noindex, nofollow         <meta name="robots" content="noindex, nofollow" />有      PASS
+/nl/privacy/          200   noindex, nofollow         <meta name="robots" content="noindex, nofollow" />有      PASS
+/pt/privacy/          200   noindex, nofollow         <meta name="robots" content="noindex, nofollow" />有      PASS
+/zh-CN/privacy/       200   noindex, nofollow         <meta name="robots" content="noindex, nofollow" />有      PASS
+/zh-TW/privacy/       200   noindex, nofollow         <meta name="robots" content="noindex, nofollow" />有      PASS
+汇总：PASS 12 / FAIL 0
+```
+
+说明块实测（外语页已被词典整串替换，英文页不出现）：
+- `/ar/` هذه السياسة متوفرة بالإنجليزية فقط…
+- `/de/` Diese Datenschutzerklärung liegt nur auf Englisch vor…
+- `/fr/` Cette politique de confidentialité est fournie en anglais uniquement…
+- `/it/` La presente informativa sulla privacy è disponibile solo in inglese…
+- `/ja/` 本プライバシーポリシーは英語のみで提供されます…
+- `/ko/` 본 개인정보 처리방침은 영어로만 제공됩니다…
+- `/zh-CN/` 本隐私政策仅以英文提供。以英文版本为准。 `/zh-TW/` 本隱私政策僅以英文提供。以英文版本為準。
+
+落盘位置（v2.2）：
+- 说明句译文：`deploy/verification-29y/i18n/delta/<lang>-add.json` 的 `text` 桶（11 条），
+  经 `apply-batch-29y.py` 落盘后 11/11 PASS；
+- **页面不再改内容**：`deploy/scripts-29y/privacy-note-29y.php revert 50` 已把 7699 → 7572 字节还原，
+  说明块改由 mu-plugin 在渲染时输出（外语前缀才输出），因此英文页天然没有这句话；
+- noindex + 说明块：`deploy/site-29y/mu-plugins/packrivo-privacy-noindex-29y.php` v2.2，
+  语言判定用 i18n 的 `packrivo_lang()`（它把 `/it/...` 重写成英文路径前先 define 语言），
+  缓冲区开在 i18n 之后（`template_redirect` 优先级 11），插入的英文原串才会被同一缓冲回调翻译；删文件即回滚。
+- 踩过的坑（留档）：① 一开始按 `REQUEST_URI` 判语言，被 i18n 提前重写成 `/privacy/`，判定恒为英文 → 改用 `packrivo_lang()`；
+  ② 插入锚点原来写死 `<main id="main">`，主题实际输出 `<main id="main" class="pk-main">`，`strpos` 找不到 → 改正则。
+
+
+### 10.9 量具修正：连续段改到整页正文（v4，2026-10-31）
+
+负责人复核发现 v3 尺子有两个漏洞，已修：
+
+| 漏洞 | v3 行为 | v4 行为 |
+|---|---|---|
+| 连续段只在「整句被判英文」的句子里切 | 意大利语句子夹一段英文，因为本族虚词更多，整句不进英文判定，夹在里面的英文段直接漏报 | 连续段在**整页正文**上切，不受整句判定限制 |
+| 与本族词同形的英文词（it: all/come/in/per/a；pt: as/do/no/a；de: an/in/so/was/will/die/war/man/also；nl: in/is/over/was/want；fr: on/or/but/plus；es: no/a） | 会被计入本族命中数，把英文句压成非英文 | 只允许抵消**孤立的单个词**，不参与整句判英文 |
+
+v4 判据（与负责人给的口径一致）：连续 ≥3 个 token 都在英文词表里、且其中至少 1 个不在本语种 LOCAL_STOP 里，就算一段。
+
+英文词表怎么来的：deploy/verification-29y/i18n/en-lexicon.json（3050 词），从 11 个词典的**英文键**里抽 ——
+只收小写词与句中出现的首字母大写词，两字母词只保留英文功能词。这样 IL/OR 这类大写缩写不会被当成英文词，
+意大利语短语（如 per il packaging）不会被拼成假连续段。
+
+负向测试（每个拉丁语种各注入一句「本族语夹英文」，扫完还原，deploy/scripts-29y/inject-test-29y.php）：
+
+`
+--- it: Scatola regalo per gioielli con rigid gift box with magnetic closure e inserto.
+  long_runs=1 段样=['rigid gift box with magnetic closure'] residual_count=0  -> PASS
+--- fr / es / pt / nl / de 五句同结构，均 long_runs=1 -> PASS
+汇总：PASS 6 个拉丁语种都能抓到注入的英文段；注入块扫完已全部 REVERTED（页面长度回到 16）
+`
+
+修正后 it 90 页复扫（同一批页、同一台演练站）：
+
+| 尺子 | 不达标页 | >5 词 | 有连续段 |
+|---|---|---|---|
+| v3（旧，含扩充后的 it 词表） | 1 | 1 | 1 |
+| v4（新） | 18 | 1 | 18 |
+
+- 「旧尺子判不达标、新尺子判达标」的页：**0 页**（新尺子没有放水）。
+- 新增的 17 页全部是同一现象：意大利语译文里夹着英文行业词（mailer / shopper / packaging / belly band / kraft / pinch bottom bags / retail / tuck），
+  凑成 per mailer in、packaging shopper in、elly band in 这类 ≥3 词连续段。按 v4 口径它们算残留，
+  处理方式是把这些英文行业词换成意大利语对应词（不是改尺子）。
+- 旧的全量数字（812 / 805 / 833）作废，以 v4 全量复扫为准。
+
+
+### 10.10 用词表（跨语种术语对照，2026-10-31 起）
+
+规则：后续语种遇到同类术语**先查本表**；本表没有的，不要自己造词，列出来问负责人确认后再落盘。
+
+| 英文术语 | 语种 | 中文说明 | 采用译法 | 依据 / 确认 |
+|---|---|---|---|---|
+| reverse tuck (RTE) | it | 反向插舌盒 | `linguetta inversa` | 意语包装术语；整句「Confezione a linguetta inversa in cartone ondulato」。负责人 2026-10-31 认可 |
+| self opening square (SOS) | it | 自开底方袋 | `sacchetto a fondo quadro (SOS)` | 负责人 2026-10-31 指定；**不用** `apertura automatica quadrata` |
+| belly band | it | 腰封 | `fascia`（去掉冗余英文 belly band） | 页面标题已是「Fasce in carta stampate」 |
+| unit retail | it | 零售单元 | `unità di vendita` | 页面他处统一用此说法 |
+| mailer | it | 邮寄盒 / 邮袋 | 实体名词 `busta`；复合产品名保留 `mailer` | 负责人 2026-10-31 要求实体名词翻译 |
+| Units by design | it | 按款式计的数量 | `Unità per modello` | 与 `per modello` 全站统一 |
+| MOQ ... per design | it | 起订量按款 | `pezzi per modello` | 同上 |
+| Packaging Corporation of America | it | 引用来源公司名 | 原样保留（短语级豁免，仅该页） | 负责人 2026-10-31 规则：专有名词保留原文 |
+| Pinch Bottom Bags | it | Novolex 品类名 | 原样保留（短语级豁免，仅该页） | 同上 |
+| RP005 Partial Cover | it | 款式名 | 原样保留（短语级豁免，仅该页） | 同上 |
+
+豁免表的两种粒度（`allow-<lang>.json`，扫描器只认这个文件）：
+
+- `{"phrase":"…","type":"专有名词","pages":[…]}` —— **只在列出的页面、整短语完整出现**时跳过；单独出现的 `bags`/`bottom`/`cover`/`america` 照常算残留。
+- `{"word":"…","type":"借词"}` —— 全站按单词豁免，每语种最多 15 条。
+

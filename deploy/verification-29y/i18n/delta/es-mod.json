@@ -1,1 +1,308 @@
-{}
+{
+ "block": {
+  "Show the empty carton in its supplied state. Identify the prepared side seam and any remaining work. Keep the base inspection before the loading step so contents cannot hide an incomplete tab.": {
+   "old": "Muestre el cartón vacío en su estado de suministro. Identifique la costura lateral preparada y cualquier trabajo pendiente. Mantenga la inspección de la base antes del paso de carga para que el contenido no pueda ocultar una pestaña incompleta.",
+   "new": "Muestre el cartón vacío en su estado de suministro. Identifique la costura lateral preparada y cualquier trabajo pendiente. Mantenga la inspección de la base antes del paso de carga para que el contenido no pueda ocultar una pestaña incompleta. La"
+  },
+  "Form the base before testing the cap": {
+   "old": "Forme la base antes de probar la tapa",
+   "new": "Forme la base antes de probar la tapa. El"
+  },
+  "Have the converter return a tab/slot map and material proposal. Ask the packing owner to retain the empty-corner and loaded-access views under the same sample revision. The buyer can then resolve the corner, grip or outer-box fit separately instead of accepting a broad statement that the tray fits.": {
+   "old": "Solicite al convertidor que devuelva un mapa de pestañas/ranuras y una propuesta de material. Pida al responsable de empaque que conserve las vistas de esquina vacía y de acceso con carga bajo la misma revisión de muestra. El comprador puede entonces resolver por separado el ajuste de la esquina, el agarre o la caja exterior, en lugar de aceptar una afirmación general de que la bandeja encaja.",
+   "new": "Solicite al convertidor que devuelva un mapa de pestañas/ranuras y una propuesta de material. Pida al responsable de empaque que conserve las vistas de esquina vacía y de acceso con carga bajo la misma revisión de muestra. El comprador puede entonces resolver por separado el ajuste de la esquina, el agarre o la caja exterior, en lugar de aceptar una afirmación general de que la bandeja encaja. La"
+  },
+  "as a direct comparison. Ask the converter to show which tab/receiver or wall-setup actions differ in the offered proposal. A new catalog name alone should not create another packing instruction if the actual interface is the same.": {
+   "old": "como comparación directa. Pida al convertidor que muestre qué acciones de lengüeta/receptor o de montaje de pared difieren en la propuesta ofrecida. Un nuevo nombre de catálogo por sí solo no debería crear otra instrucción de embalaje si la interfaz real es la misma.",
+   "new": "como comparación directa. Pida al convertidor que muestre qué acciones de lengüeta/receptor o de montaje de pared difieren en la propuesta ofrecida. Un nuevo nombre de catálogo por sí solo no debería crear otra instrucción de embalaje si la interfaz real es la misma. La"
+  },
+  "tooling scope guide": {
+   "old": "Guía del alcance del utillaje",
+   "new": "La guía del alcance del utillaje"
+  },
+  "auto bottom display catalogue": {
+   "old": "catálogo de expositores con fondo automático",
+   "new": "El catálogo de expositores con fondo automático"
+  },
+  "four corner display tray": {
+   "old": "bandeja expositora de cuatro esquinas",
+   "new": "La bandeja expositora de cuatro esquinas"
+  },
+  "auto bottom slotted reference": {
+   "old": "referencia ranurada con fondo automático",
+   "new": "La referencia ranurada con fondo automático"
+  },
+  "delivery-state guide": {
+   "old": "guía del estado de entrega",
+   "new": "La guía del estado de entrega"
+  },
+  "book style rigid box reference": {
+   "old": "referencia de caja rígida estilo libro",
+   "new": "La referencia de caja rígida estilo libro"
+  },
+  "FEFCO construction reference": {
+   "old": "Referencia de construcción FEFCO",
+   "new": "La referencia de construcción FEFCO"
+  },
+  "corrugated bottle carrier reference": {
+   "old": "referencia de portabotellas de cartón corrugado",
+   "new": "La referencia de portabotellas de cartón corrugado"
+  },
+  "corrugated gusset folder catalogue": {
+   "old": "catálogo de carpetas con fuelle de cartón corrugado",
+   "new": "El catálogo de carpetas con fuelle de cartón corrugado"
+  },
+  "paperboard gusset folder tool": {
+   "old": "herramienta plegadora de fuelle de cartón",
+   "new": "La herramienta plegadora de fuelle de cartón"
+  },
+  "corrugated reverse-tuck reference": {
+   "old": "referencia de caja de cartón corrugado con solapa inversa",
+   "new": "La referencia de caja de cartón corrugado con solapa inversa"
+  },
+  "roll ends with lid reference": {
+   "old": "referencia de extremos de rollo con tapa",
+   "new": "La referencia de extremos de rollo con tapa"
+  },
+  "tuck top auto bottom catalogue": {
+   "old": "catálogo de caja con tapa de solapa y fondo automático",
+   "new": "El catálogo de caja con tapa de solapa y fondo automático"
+  },
+  "tuck top 1-2-3 bottom reference": {
+   "old": "referencia de caja con tapa de solapa y fondo 1-2-3",
+   "new": "La referencia de caja con tapa de solapa y fondo 1-2-3"
+  },
+  "original display-box structural reference": {
+   "old": "referencia estructural original de caja expositora",
+   "new": "La referencia estructural original de caja expositora"
+  },
+  "cube carrier reference": {
+   "old": "referencia de portador cúbico",
+   "new": "La referencia de portador cúbico"
+  },
+  "folding gift-box specification guide": {
+   "old": "guía de especificaciones de caja de regalo plegable",
+   "new": "La guía de especificaciones de caja de regalo plegable"
+  },
+  "die-cut bag reference": {
+   "old": "referencia de bolsa troquelada",
+   "new": "La referencia de bolsa troquelada"
+  },
+  "gift presentation set": {
+   "old": "conjunto de presentación de regalo",
+   "new": "El conjunto de presentación de regalo"
+  },
+  "frame tray and sleeve reference": {
+   "old": "referencia de bandeja con marco y funda",
+   "new": "La referencia de bandeja con marco y funda"
+  },
+  "double-wall tray-and-lid reference": {
+   "old": "referencia de bandeja y tapa de pared doble",
+   "new": "La referencia de bandeja y tapa de pared doble"
+  },
+  "double-wall frame tray-and-lid direction": {
+   "old": "dirección de bandeja y tapa con marco de doble pared",
+   "new": "La dirección de bandeja y tapa con marco de doble pared"
+  },
+  "folding lid-and-base set": {
+   "old": "conjunto de tapa y base plegables",
+   "new": "El conjunto de tapa y base plegables"
+  },
+  "euro tote catalogue": {
+   "old": "catálogo de bolsas tote Euro",
+   "new": "El catálogo de bolsas tote Euro"
+  },
+  "gift bag and tissue set": {
+   "old": "conjunto de bolsa de regalo y papel de seda",
+   "new": "El conjunto de bolsa de regalo y papel de seda"
+  },
+  "contour-cut PU bed": {
+   "old": "lecho de PU con corte de contorno",
+   "new": "El lecho de PU con corte de contorno"
+  },
+  "book-wrap corrugated pack": {
+   "old": "embalaje de cartón ondulado con envolvente tipo libro",
+   "new": "El embalaje de cartón ondulado con envolvente tipo libro"
+  },
+  "original foldable lid-and-base reference": {
+   "old": "referencia original de tapa y base plegables",
+   "new": "La referencia original de tapa y base plegables"
+  },
+  "original box-liner structural reference": {
+   "old": "referencia estructural original del forro de caja",
+   "new": "La referencia estructural original del forro de caja"
+  },
+  "original tray-and-sleeve structural reference": {
+   "old": "referencia estructural original de bandeja y funda",
+   "new": "La referencia estructural original de bandeja y funda"
+  },
+  "four corner box reference": {
+   "old": "referencia de caja de cuatro esquinas",
+   "new": "La referencia de caja de cuatro esquinas"
+  },
+  "full-flap auto-bottom reference": {
+   "old": "referencia de fondo automático con solapas completas",
+   "new": "La referencia de fondo automático con solapas completas"
+  },
+  "full overlap seal end reference": {
+   "old": "referencia de extremo sellado con solapamiento total",
+   "new": "La referencia de extremo sellado con solapamiento total"
+  },
+  "measurement method worksheet": {
+   "old": "hoja de trabajo del método de medición",
+   "new": "La hoja de trabajo del método de medición"
+  },
+  "original gable-box structural reference": {
+   "old": "referencia estructural original de caja de techo a dos aguas",
+   "new": "La referencia estructural original de caja de techo a dos aguas"
+  },
+  "original hanging and locking-tab reference": {
+   "old": "referencia original de colgado y lengüeta de bloqueo",
+   "new": "La referencia original de colgado y lengüeta de bloqueo"
+  },
+  "header card catalogue reference": {
+   "old": "referencia de catálogo de tarjeta cabecera",
+   "new": "La referencia de catálogo de tarjeta cabecera"
+  },
+  "PakFactory hexagon catalogue": {
+   "old": "Catálogo de hexágonos de PakFactory",
+   "new": "El catálogo de hexágonos de PakFactory"
+  },
+  "rigid-box specification guide": {
+   "old": "guía de especificaciones de cajas rígidas",
+   "new": "La guía de especificaciones de cajas rígidas"
+  },
+  "collapsible gift-box direction": {
+   "old": "instrucciones para la caja de regalo desmontable",
+   "new": "Las instrucciones para la caja de regalo desmontable"
+  },
+  "original jewelry display-card guide": {
+   "old": "guía original de tarjetas expositoras de joyería",
+   "new": "La guía original de tarjetas expositoras de joyería"
+  },
+  "lock-cap auto-bottom catalogue": {
+   "old": "catálogo de fondo automático con tapa de bloqueo",
+   "new": "El catálogo de fondo automático con tapa de bloqueo"
+  },
+  "original corrugated end-cap reference": {
+   "old": "referencia original de tapa de extremo corrugada",
+   "new": "La referencia original de tapa de extremo corrugada"
+  },
+  "original packaging-sleeve reference": {
+   "old": "referencia original de funda de embalaje",
+   "new": "La referencia original de funda de embalaje"
+  },
+  "expandable parcel bag direction": {
+   "old": "Instrucciones para la bolsa de paquetería expandible",
+   "new": "Las instrucciones para la bolsa de paquetería expandible"
+  },
+  "paper padded envelope reference": {
+   "old": "referencia de sobre acolchado de papel",
+   "new": "La referencia de sobre acolchado de papel"
+  },
+  "packed-system guide": {
+   "old": "guía del sistema envasado",
+   "new": "La guía del sistema envasado"
+  },
+  "paperboard divider reference": {
+   "old": "referencia de separador de cartón",
+   "new": "La referencia de separador de cartón"
+  },
+  "peg counter reference": {
+   "old": "referencia de contador de ganchos",
+   "new": "La referencia de contador de ganchos"
+  },
+  "pinch-lock tray description": {
+   "old": "descripción de bandeja con cierre de pinza",
+   "new": "La descripción de bandeja con cierre de pinza"
+  },
+  "poly bubble mailer reference": {
+   "old": "referencia de sobre acolchado de burbuja de polietileno",
+   "new": "La referencia de sobre acolchado de burbuja de polietileno"
+  },
+  "through-cut EVA holder": {
+   "old": "soporte de EVA con corte pasante",
+   "new": "El soporte de EVA con corte pasante"
+  },
+  "printed tissue reference": {
+   "old": "referencia de papel de seda impreso",
+   "new": "La referencia de papel de seda impreso"
+  },
+  "set checklist": {
+   "old": "lista de verificación del conjunto",
+   "new": "La lista de verificación del conjunto"
+  },
+  "original box-style reference": {
+   "old": "referencia original de estilo de caja",
+   "new": "La referencia original de estilo de caja"
+  },
+  "paperboard grid divider": {
+   "old": "separador de rejilla de cartón",
+   "new": "El separador de rejilla de cartón"
+  },
+  "board-mailer catalogue examples": {
+   "old": "ejemplos de catálogo de sobres de cartón",
+   "new": "Los ejemplos de catálogo de sobres de cartón"
+  },
+  "corrugated folder reference": {
+   "old": "referencia de carpeta de cartón corrugado",
+   "new": "La referencia de carpeta de cartón corrugado"
+  },
+  "multi-tier floor gift display": {
+   "old": "expositor de regalos de suelo de varios niveles",
+   "new": "El expositor de regalos de suelo de varios niveles"
+  },
+  "single-tray counter display": {
+   "old": "expositor de mostrador de una sola bandeja",
+   "new": "El expositor de mostrador de una sola bandeja"
+  },
+  "shipping-envelope reference": {
+   "old": "referencia de sobre de envío",
+   "new": "La referencia de sobre de envío"
+  },
+  "manufacturer's shoulder and neck reference": {
+   "old": "Referencia de hombro y cuello del fabricante",
+   "new": "La referencia de hombro y cuello del fabricante"
+  },
+  "six corner catalogue reference": {
+   "old": "referencia de catálogo de seis esquinas",
+   "new": "La referencia de catálogo de seis esquinas"
+  },
+  "1-2-3 slotted container reference": {
+   "old": "Referencia de caja ranurada 1-2-3",
+   "new": "La referencia de caja ranurada 1-2-3"
+  },
+  "manufacturer's snap-lock format reference": {
+   "old": "referencia del formato de cierre a presión del fabricante",
+   "new": "La referencia del formato de cierre a presión del fabricante"
+  },
+  "SOS bag catalogue": {
+   "old": "Catálogo de bolsas SOS",
+   "new": "El catálogo de bolsas SOS"
+  },
+  "PakFactory straight tuck catalogue": {
+   "old": "Catálogo de cajas con solapa recta de PakFactory",
+   "new": "El catálogo de cajas con solapa recta de PakFactory"
+  },
+  "tab-lock roll-end catalogue": {
+   "old": "catálogo de extremos de rollo con cierre de pestaña",
+   "new": "El catálogo de extremos de rollo con cierre de pestaña"
+  },
+  "three flap lock reference": {
+   "old": "referencia de cierre de tres solapas",
+   "new": "La referencia de cierre de tres solapas"
+  },
+  "tuck end sleeve catalogue": {
+   "old": "catálogo de funda con solapas",
+   "new": "El catálogo de funda con solapas"
+  },
+  "double door maker reference": {
+   "old": "referencia de fabricante de doble puerta",
+   "new": "La referencia de fabricante de doble puerta"
+  },
+  "jewelry opening-format guide": {
+   "old": "guía de formatos de apertura para joyería",
+   "new": "La guía de formatos de apertura para joyería"
+  }
+ }
+}

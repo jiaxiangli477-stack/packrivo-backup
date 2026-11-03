@@ -1,0 +1,58 @@
+29y 豁免表改两级粒度 + 负向测试 + 只用仓库脚本复扫（2026-10-31）
+=================================================================
+
+一、扫描器改动（deploy/scripts-29y/scan-main-english-29y.php）
+-----------------------------------------------------------
+allow_of() 现在返回 ['words'=>…, 'phrases'=>[…]]：
+  - {"phrase":"Pinch Bottom Bags","type":"专有名词","reason":"…","pages":[…]}  —— 只在该页、整短语完整出现时跳过；
+    匹配前把整短语替换成「. 」，既消掉这些 token，也断开它们与相邻英文的连续段；
+    单独出现的 bags / bottom / cover / america / partial 照常参与残留与连续段判定。
+  - {"word":"packaging","type":"借词"}  —— 全站按单词豁免（借词，每语种 <=15）。
+  - allow_phrase_applies()：pages 里按路径完全匹配或前缀匹配；pages 为空 = 不适用（漏写 pages 就不会放水）。
+  - allowed_used 现在会记「短语命中几处」，审计时能看出豁免是短语级还是单词级。
+
+二、allow-it.json 改写（条目形状换成新版）
+----------------------------------------
+专有名词（短语 + 页面，6 条）：
+  Packaging Corporation of America -> /it/product-full-overlap-slotted-outer-carton/
+  Pinch Bottom Bags                -> /it/product-paper-merchandise-sleeve-bag/
+  Partial Cover                    -> /it/product-window-lid-rigid-gift-box/
+  Novolex                          -> /it/product-paper-merchandise-sleeve-bag/
+  Duro                             -> /it/product-paper-merchandise-sleeve-bag/
+  Packhelp                         -> /it/product-snap-bottom-slotted-outer-carton/
+  （pages 不是我猜的：90 页逐页抓 main 正文匹配得出，每个短语都只出现在上面这一页）
+借词（全站单词，6 条 <=15）：packaging / shopper / kraft / retail / mailer / sos
+
+三、扫描只能用仓库里的文件（deploy/scripts-29y/run-scan-29y.py）
+--------------------------------------------------------------
+复制前后各算一次 sha256，比对不上就拒绝扫描：
+  scan-main-english-29y.php  81b3372a3a461945  81b3372a3a461945  SAME
+  en-lexicon.json            7513f1c3b1a7c931  7513f1c3b1a7c931  SAME
+  local-stop.json            c069dabad70fef6b  c069dabad70fef6b  SAME
+  allow-it.json              6f9075055537ea4a  6f9075055537ea4a  SAME
+  PASS 四个文件与仓库逐字节一致
+
+四、负向测试（deploy/scripts-29y/negtest-allow-29y.py）
+------------------------------------------------------
+A. /it/about/ 注入 "paper bags with lid cover"
+   -> long_runs=1，段样 ['paper bags with lid cover']
+   理由：bags/bottom/cover 已不再是单词级豁免，只有整短语在该页出现才跳过 —— PASS
+   注入后长度 7865 -> 7917，还原后 7865，仍有注入块: NO
+B. /it/product-paper-merchandise-sleeve-bag/
+   -> long_runs=0，残留词不含 pinch/bottom/bags
+   豁免命中 ['Pinch Bottom Bags','Novolex','Duro','packaging','shopper','sos'] —— PASS
+汇总：PASS A/B 两条都符合预期
+
+五、it 90 页复扫（新豁免逻辑）
+----------------------------
+不达标 1 页 = /it/privacy/（词 83 段 12，§10.8 豁免）；其余 89 页 0 词 0 段。
+新豁免逻辑没有引出新的残留，也没有新增任何豁免条目。
+豁免实际用量：packaging 89 页、mailer 27、retail 18、shopper 5、kraft 4、sos 4；
+               6 个专有名词短语各 1 页、各 1 处。
+
+六、用词修正
+----------
+self opening square -> "sacchetto a fondo quadro (SOS)"（负责人指定，弃用 apertura automatica quadrata），
+it 词典 2 条（block/text 各 1）已改，apply-batch 11/11 PASS，sync md5 9b306e0ed08a。
+reverse tuck -> linguetta inversa 保持。
+两条已写进 dsh-out/DSH-RESULT-2026-10-29y.md 新增的 §10.5 用词表（含 belly band / unit retail / mailer / Units by design）。

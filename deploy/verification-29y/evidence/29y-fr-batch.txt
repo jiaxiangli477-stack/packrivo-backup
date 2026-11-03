@@ -1,0 +1,74 @@
+fr 批次（2026-11-01）：126 页复扫只剩 privacy（豁免），125 页 0 词 0 段
+========================================================================
+
+一、基线 → 最终
+--------------
+fr-v1  不达标 48 页（>5词 33 / 有连续段 48）
+fr-final 不达标 1 页 = /fr/privacy/（词 83 段 11，§10.8 豁免）；其余 125 页 0 词 0 段
+
+二、做的事（按 it 流程）
+----------------------
+1. 抽英文节点（47 页 52 条，去法语误判后 46 条待翻）。
+2. 翻译 59 条进 delta（add 47 / 改值 0 / HEAD 已一致 12）：
+   - 首页动态串 Journal · {N} articles / All {N} articles →、12 个月份缩写、6 篇文章标题
+   - 产品页 direction 句（snap-lock/hanging/corrugated/lock-cap/pinch-lock/rigid 等）
+   - Packrivo's minimum is 500 pieces per design 系列 11 条（法语 par modèle）
+   - 被 <a> 截断的碎片（Compare this direction with / to keep the next decision clear 等）
+   apply-batch fr --sync 11/11 PASS。
+3. 复扫 v2 降到 15 页，剩余多为专有名词 + 英法同形词误判 + The <a> 残留。
+
+三、LOCAL_STOP 补法语本族同形词（关键，不是加豁免）
+------------------------------------------------
+这些词是法语自己的常用词，同时也在英文词表里，导致纯法语句被误判成英文连续段：
+  第一批 direction/protection/structure/zone/motif/action/configuration/large/visible/eva（46->56）
+  第二批 journal/articles/notes/expose/simple（56->61）
+  第三批 production（61->62）
+依据 local-stop.json 的收录规则（_rule：只收该语言自己的常用功能词；英文独有词 the/and/with 不放）。
+the 始终是英文独有词，没进 LOCAL，所以 The <a> 残留仍能被查出。
+
+四、The <a> 残留的处理（读了引擎源码才定的方案）
+----------------------------------------------
+引擎对最终 HTML 整串替换：块级正则处理不含内联 <a> 的块（整句键优先，146 条 The… 整句已翻好），
+松散文本节点 #>([^<>]+)<# 处理被 <a> 截断的节点，键是 trim 后的节点文本。
+→ 'The <a>…</a>' 里的 'The ' 是孤立节点，只能全局给一个值，无法按页区分 Le/La。
+方案：'The ' -> 空（省略冠词），并给 5 条引用链接文字的法语值补正确冠词：
+  PakFactory hexagon catalogue   -> Le catalogue hexagonal de PakFactory
+  through-cut EVA holder         -> Le support EVA à découpe traversante
+  SOS bag catalogue              -> Le catalogue de sacs SOS
+  full-flap auto-bottom reference-> La référence fond automatique à rabats complets
+  original box-style reference   -> La référence d'origine de style boîte
+5 页逐一复验：The 消失，句首以带冠词的链接开头（Le catalogue/Le support/La référence），法语自然。
+
+五、首页报价卡
+------------
+<dd>500 / design</dd> -> 500 / modèle；<dd>7–30 days</dd> -> 7–30 jours；
+Production 是法语同形词进 LOCAL。MOQ 恒 500、交付周期是固定文案，精确键可行。
+
+六、allow-fr.json（请负责人核）
+-----------------------------
+专有名词（短语级，限页）11 条：
+  Packaging Corporation of America / Pinch Bottom Bags / No Gusset / Partial Cover /
+  Novolex / Duro / Packhelp / PakFactory / Packlane / Arka / Paper Mart
+借词（全站单词）5 条 <=15：mailer / kraft / packaging / retail / sos
+（shopper 在 fr 是 0 页，未加）
+pages 不是猜的：126 页逐页抓 main 正文匹配得出（fr-allow-scan.json）。
+
+七、负向测试（negtest-allow-29y.py fr）
+------------------------------------
+A. /fr/about/ 注入 "paper bags with lid cover" -> long_runs=1（bags/cover 已降为短语级，单独出现仍报）PASS
+   还原 7865 字节，仍有注入块: NO
+B. /fr/product-paper-merchandise-sleeve-bag/ -> long_runs=0，残留词不含 pinch/bottom/bags
+   豁免命中 ['Pinch Bottom Bags','No Gusset','Novolex','Duro','Paper Mart','sos']  PASS
+汇总：PASS A/B 两条都符合预期
+
+八、扫描可信度
+------------
+每次扫描前 run-scan-29y.py 复制仓库文件到容器并核对 sha256（scan.php / en-lexicon.json /
+local-stop.json / allow-fr.json / allow-it.json），全部 SAME 才扫。
+负向测试确认：豁免表只按短语+页面放行，单独出现的 bags/cover 照常报。
+
+九、待确认 / 备注
+---------------
+- 术语：法语 mailer 保留作借词（法语物流包装行话）；SOS=sac à fond carré (SOS)；
+  reverse tuck 类术语法语用 langue/rabat d'insertion。均已写进 §10.10 用词表口径。
+- 扫描器的 §10.5 重号问题已修：术语表改为 §10.10，原 §10.5「原始译文被改动清单」保留。

@@ -1,0 +1,100 @@
+fr 第二轮补漏（2026-11-02）：同形词表外置 / 豁免表瘦身 / The 全站核对
+=========================================================================
+
+一、16 个同形实词进 $HOMO，且 $HOMO 改从 local-stop.json 的 "_homo" 读
+-------------------------------------------------------------------
+action / articles / configuration / direction / eva / expose / journal / large /
+motif / notes / production / protection / simple / structure / visible / zone
+
+改了什么
+  deploy/scripts-29y/scan-main-english-29y.php
+    - 内置 $HOMO['fr'] 追加这 16 个词（只作读不到时的兜底）
+    - 新增：从 local-stop.json 的 "_homo" 键读取并按语种覆盖 $HOMO
+      （if (isset($j['_homo']) …) { $HOMO[$lg] = …; }，脚本里不再写死真源）
+  deploy/verification-29y/i18n/local-stop.json
+    - 新增顶层 "_homo": {"fr": [...20 词，含原有 on/or/but/plus]}
+    - 16 个词同时保留在 "fr" 的 LOCAL_STOP 里（它们仍要打断连续段）
+
+为什么这样分
+  LOCAL_STOP 决定「连续 >=3 token 都在英文词表」时能不能成段（词在里面就打断段）；
+  _homo 只影响整句判英文时的本族语票数：同形词不投法语票，
+  所以 'Production notes and structure protection for the simple zone' 不会被凑成法语而被放过。
+
+负向测试 C（新增，deploy/scripts-29y/negtest-homograph-29y.py fr）
+  在 /fr/about/ 注入 'Production notes and structure protection for the simple zone'
+  -> residual_count=0  long_runs=1
+     段样 = ['production notes and structure protection for the simple zone']  PASS（要求 residual>0 或 long_runs>=1）
+  还原：REVERTED 7865 字节，仍有注入块 NO
+
+二、豁免表瘦身（10 专名 / 4 借词）
+-------------------------------
+删除 "No Gusset" -> 译成 "sans soufflet"
+  键 block:'includes a No Gusset option and shows bags with an open serrated mouth and no carry handles. Its range also includes gusset variants, so keep the selected no-gusset form explicit in the brief.'
+  新值 'comprend une option sans soufflet et montre des sacs avec une ouverture dentelée ouverte et sans poignées de transport. Sa gamme comprend aussi des variantes à soufflets, donc gardez explicite dans le brief la forme sans soufflet sélectionnée.'
+
+删除 "retail" -> 按上下文译成 "vente au détail"
+  只有一处句子，出现在 3 个页面（同一张交叉链接卡片）：
+    /fr/bags-pouches/、/fr/foldable-gift-boxes/、/fr/product-header-card-bag-topper/
+  英文键 block:'AI-assisted concept illustration. Keep header attachment and the hanging opening distinct in the retail brief.'
+  旧值 '…dans le brief retail.'
+  新值 '…dans le brief de vente au détail.'
+
+顺带修（不是豁免改动）：英文所有格残留 'Paper Mart’s' -> 'La'
+  原句渲染成 "Paper Mart's page de sac plat pour marchandises comprend…"
+  改后 "La page de sac plat pour marchandises comprend…"，去掉英文 's 残留。
+  豁免表里的 "Paper Mart" 条目按 owner 要求未动（现在该页不再命中，属备用条目）。
+
+豁免表现状
+  专有名词 10 条：Packaging Corporation of America / Pinch Bottom Bags / Partial Cover /
+                  Novolex / Duro / Packhelp / PakFactory / Packlane / Arka / Paper Mart
+  借词 4 条（<=15）：mailer / kraft / packaging / sos
+
+负向测试 A/B 复跑（negtest-allow-29y.py fr）
+  A 注入 'paper bags with lid cover' -> long_runs=1  PASS
+  B sleeve-bag 页 -> long_runs=0，残留词不含 pinch/bottom/bags
+    豁免命中 ['Pinch Bottom Bags','Novolex','Duro','Paper Mart','sos']（No Gusset 已不再命中）PASS
+
+三、'The <a>' 全站核对（78 处）
+------------------------------
+做法：用英文原页做锚，逐页取 <main>，在英文页里找 'The <a href=X>' 的位置，
+      再回 fr 页找同一 href，判断链接译文是否以 Le/La/Les/L' 开头 + 前置 The 是否已清。
+首次核对：合计 78 处，PASS 5 / FAIL 73，残留 '>The ' 文本节点 0 处。
+
+补冠词前的安全判定（不猜，查英文原文）
+  把 WP 库全部 771 篇 page/post 的 post_content 导出（7.56 MB）离线比对，
+  对每条链接文字统计 <a> 前面紧邻的限定词：
+    - 69 条只被句首 "The" 引导 -> 补冠词安全
+    - 4 条还存在句中 'the <a>X</a>' 或 'a <a>X</a>' -> 补冠词会与前面的 le/un 重复，保留原状：
+        auto-bottom carton / dimensions and review-method guide /
+        paperboard roll-end dust-flap carton / snap bottom slotted outer carton
+  实际改动 67 条词典值（另 2 条是同一键在不同页面重复出现）：
+    例 'tooling scope guide' 'Guide du périmètre des outillages' -> 'Le guide du périmètre des outillages'
+       'set checklist' "liste de contrôle de l'ensemble" -> "La liste de contrôle de l'ensemble"
+       'PakFactory straight tuck catalogue' 'Catalogue à rabats droits de PakFactory'
+         -> 'Le catalogue à rabats droits de PakFactory'
+  冠词按法语中心名词性数定；原文首字母大写（英文句首）的改为小写。
+  apply-batch fr --sync：11/11 PASS，原有译文被改清单 125 条（fr 75 / it 50）留档。
+
+四、重扫结果
+-----------
+fr-v5（run-scan-29y.py，扫前核对仓库文件 sha256 全部 SAME）
+  fr 共 126 页，不达标 1 = /fr/privacy/（词 83 段 11，§10.8 豁免）
+  其余 125 页：0 词 0 段
+  _homo 收紧后没有冒出新的残留（同形词句在负向测试里能被抓出，说明收紧生效而不是放过）。
+
+五、给后续语种的沿用口径
+-----------------------
+- 每个语种各自的 allow-<lang>.json，脚本里不写死豁免词。
+- 同形词一律进 local-stop.json 的 "_homo"，不进脚本。
+- 遇到 'The <a>' 结构：先用英文原页 + WP 原文判定该链接文字是否只出现在句首，
+  只对句首的补冠词；句中还有 the/a 的保留原状并列出。
+
+六、本轮之后又做的两处改动（影响所有拉丁语种，fr 已复验）
+----------------------------------------------------
+1)  真源 = (LOCAL_STOP ∩ 英文词表) ∪ 额外本族同形词
+   fr 额外保留 'or'/'but'：它们是本族词但不在 fr LOCAL_STOP（留着让它们打断英文连续段），
+   重算拿不到，必须显式写进 _homo。fr _homo 恢复为 20 词（16 同形实词 + on/or/but/plus）。
+2) 分词器按完整词切：'~[\p{L}][\p{L}\'’\-]*~u'
+   原写法把 'référence'/'referência' 切成 ASCII 前缀 + 后缀，'refer' 命中英文词表 -> 假残留。
+   php -l 通过；改后 fr 复扫 fr-v6 仍 126 页 / 不达标 1（/fr/privacy/，词 83 段 10），
+   125 页 0 词 0 段，与改前一致。

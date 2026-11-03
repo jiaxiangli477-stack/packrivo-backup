@@ -1,0 +1,55 @@
+首页大图 srcset 来源调查 + 主题内直接输出带 ?ver 的两档（2026-10-31）
+====================================================================
+
+一、srcset 是谁生成的（容器内 grep 原始输出）
+------------------------------------------
+$ docker exec php sh -lc "grep -rn 'hero-480' .../wp-content | head"
+  .../themes/packrivo-home-v4.zip:1156  packrivo-home-v4/assets/img/hero-480.webp  （二进制命中）
+  .../themes/packrivo-home-v4.zip:7397  packrivo-home-v4/assets/img/hero-480.webp  （zip 目录项）
+  → 解包后的主题目录里没有任何源码提到 hero-480
+$ docker exec php sh -lc "grep -rn '92vw' .../wp-content | head"
+  .../mu-plugins/packrivo-wave2.php:182                  $add .= ' sizes="(max-width: 767px) 92vw, 640px"';
+  .../mu-plugins/packrivo-wave2.php.bak-20261026-072727:110  （同一段的旧备份）
+  .../mu-plugins/packrivo-wave2.php.bak-20261026-074201:122
+  .../mu-plugins/packrivo-wave2.php.bak-20261026-074454:162
+  .../mu-plugins/packrivo-wave2.php.bak-20261026-091143:182
+  .../mu-plugins/packrivo-wave2.php.bak-20261026-111252:182
+  .../mu-plugins/packrivo-wave2.php.orig-29w:182
+
+结论：srcset 由 mu-plugin **packrivo-wave2.php**（285 行，sha256 73d43ba0262a9d74249b19a46380bc5c338f94bd9e0776baa46eddf074c9f259）在 template_redirect 优先 3 的输出缓冲里补的：
+  ob_start(function ($html) {
+      if (strpos($html, 'product-detail') === false) return $html;   // 首页也命中：首页 HTML 里 'product-detail' 出现 5 次
+      return preg_replace_callback('~<img\b[^>]*>~i', ... 按 -480/-768 变体存在则加 srcset + sizes ...);
+  });
+
+该文件不在仓库里（仓库只有 deploy/patches-29w/packrivo-wave2-font-path.patch 这个字体路径补丁），
+按负责人要求：**未改、未删、未动**，只报告。
+副作用补充：首页现在共 7 个带 srcset 的 img，除大图外还有 6 个是 wave2 补的裸 URL srcset；
+p054 这类没有 -480 变体的分类卡片不受影响（实测无 srcset、无 ?ver）。
+
+二、主题改动（packrivo-wp/packrivo-home-v4/front-page.php:75 附近）
+---------------------------------------------------------------
+  $pk_hero_ver = '?ver=' . rawurlencode(PKV4_VERSION);
+  <img src="…/hero.webp?ver=<?=PKV4_VERSION?>" srcset="…/hero-480.webp?ver=… 480w, …/hero.webp?ver=… 1200w"
+       sizes="(max-width: 767px) 92vw, 640px" alt="Two small cream gift boxes with brown satin ribbon, held in open hands"
+       width="1200" height="1200" loading="eager" />
+
+版本号取主题常量 PKV4_VERSION（functions.php:10 = '4.0.6'），没有写死；
+自己输出 srcset 后 wave2 的 `if (stripos($tag,'srcset=') !== false) return $tag;` 会跳过这颗图，
+所以不会出现两个大图 <img>、也不会重复 sizes。
+site.css 的版本本来就是 PKV4_VERSION（functions.php:21），实测 ?ver=4.0.6，无需额外改。
+
+三、判据（deploy/scripts-29y/verify-hero-srcset-29y.py，全部在演练容器内发请求）
+------------------------------------------------------------------------
+/ 与 /it/ 各 6 项 + 两档图片 4 项 + p054 卡片 3 项 = 19 项
+  [PASS] /   只有一个 hero <img>（1 个）
+  [PASS] /   src 带 ?ver=4.0.6
+  [PASS] /   srcset 两档都带 ?ver=4.0.6（hero-480 480w / hero 1200w）
+  [PASS] /   srcset 是 480w/1200w 两档
+  [PASS] /   sizes 未变（(max-width: 767px) 92vw, 640px）
+  [PASS] /   loading=eager 未变
+  [PASS] /it/ 同上 6 项全 PASS
+  [PASS] hero-480.webp HTTP 200，sha256 266032c7bdfc0f51…（8,866 B）
+  [PASS] hero.webp     HTTP 200，sha256 6a55801599da73d2…（33,758 B）
+  [PASS] p054 卡片图仍在、无 ?ver、无 srcset
+  汇总：PASS 19 / FAIL 0

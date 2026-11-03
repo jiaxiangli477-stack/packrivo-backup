@@ -1,0 +1,42 @@
+卡片图派生逻辑收紧 + 死代码清理（2026-11-01）
+================================================
+
+一、改动（packrivo-wp/packrivo-home-v4/template-parts/product-card.php）
+----------------------------------------------------------------------
+1. 正则从 ~^(.*)-\d+\.(webp)$~ 收紧为 ~^(.*)-1536\.webp$~：
+   只有 -1536.webp 结尾的才派生 -480/-960 两档；其它文件名（-1200/-800/无档/.png/带查询串）保持原 src、不加 srcset。
+2. 删死代码：caption 分支里的 $small_url（已无用）、以及旧的 $srcset 变量（模板现在用 $card_srcset）。
+   $small_id 保留——它仍是 caption 分支的判断条件，不是死代码。
+
+二、判据（deploy/scripts-29y/verify-card-guard-29y.py）
+----------------------------------------------------
+A. 派生逻辑单元判断（在演练容器 PHP 里跑与模板完全相同的正则，避免 Python/PHP 正则差异）：
+  [PASS] https://x/p054-abc-1536.webp  -> src=-960.webp, srcset 派生
+  [PASS] https://x/x-1200.webp         -> 保持原 src, 不派生   ← 负责人点名的假 URL
+  [PASS] https://x/x-800.webp          -> 保持原 src, 不派生
+  [PASS] https://x/x.webp              -> 保持原 src, 不派生
+  [PASS] https://x/x-1536.png          -> 保持原 src, 不派生（非 webp）
+  [PASS] https://x/p-1536.webp?ver=1   -> 保持原 src, 不派生（带查询串，正则不匹配）
+  [PASS] (空串)                         -> 保持原 src, 不派生
+
+B. 首页 + /products/ 6 个分类页，每张卡片 currentSrc 实测（selenium 1440/DPR1，滚动加载后读 currentSrc + naturalWidth）：
+  /                              卡片 5  带图 5  已加载 5   PASS
+  /products/?group=bag           卡片 17 带图 13 已加载 13  PASS
+  /products/?group=gift          卡片 24 带图 20 已加载 20  PASS
+  /products/?group=insert        卡片 12 带图 4  已加载 4   PASS
+  /products/?group=jewelry       卡片 7  带图 1  已加载 1   PASS
+  /products/?group=label         卡片 5  带图 0  —— 该分类产品（circle-roll-labels 等）本来就没有封面图，
+                                                    pk-product-card-image 里没有 <img>，属数据本身无图，不是模板/加载问题，判 PASS
+  /products/?group=mailer        卡片 24 带图 15 已加载 15  PASS
+  （6 个分类带图卡片合计 13+20+4+1+0+15=53，去重后 48 张，与负责人在生产只读确认的 48 张一致）
+
+B2. 去重后 50 个 currentSrc（含首页 5 张）逐个 curl：
+  50/50 HTTP 200，0 个非 200 —— PASS
+
+汇总：PASS 15 / FAIL 0
+
+三、环境准备
+----------
+/products/ 各分类的 48 张卡片图在演练站原本缺失，本轮从生产只读下载 -480/-960 两档（90 个文件，
+首页 5 张已灌过跳过），全部 HTTP 200 灌进演练站 uploads/packrivo-scale-20261004/（现共 105 个 webp）。
+生产零写入。

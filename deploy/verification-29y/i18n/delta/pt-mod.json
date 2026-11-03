@@ -1,1 +1,350 @@
-{}
+{
+ "text": {
+  "MOQ 500 pieces per product / design.": {
+   "old": "MOQ de 500 peças por produto/design.",
+   "new": "MOQ de 500 peças por produto/modelo."
+  }
+ },
+ "block": {
+  "MOQ 500 pieces per product/design. Quantities, sample scope and pricing are confirmed in the project quotation.": {
+   "old": "MOQ de 500 peças por produto/design. Quantidades, escopo da amostra e preço são confirmados na cotação do projeto.",
+   "new": "MOQ de 500 peças por produto/modelo. Quantidades, escopo da amostra e preço são confirmados na cotação do projeto."
+  },
+  "MOQ: 500 pieces per product / design. Final materials, construction, price, sample scope and delivery timing are confirmed for the agreed project with the relevant supplier.": {
+   "old": "MOQ: 500 peças por produto/design. Materiais finais, construção, preço, escopo da amostra e prazo de entrega são confirmados para o projeto acordado com o fornecedor responsável.",
+   "new": "MOQ: 500 peças por produto/modelo. Materiais finais, construção, preço, escopo da amostra e prazo de entrega são confirmados para o projeto acordado com o fornecedor responsável."
+  },
+  "MOQ: 500 pieces per product/design. Packaging materials, construction, sampling, production price and delivery timing are confirmed for the agreed specification with the relevant supplier.": {
+   "old": "MOQ: 500 peças por produto/design. Materiais de embalagem, construção, amostragem, preço de produção e prazo de entrega são confirmados para a especificação acordada com o fornecedor responsável.",
+   "new": "MOQ: 500 peças por produto/modelo. Materiais de embalagem, construção, amostragem, preço de produção e prazo de entrega são confirmados para a especificação acordada com o fornecedor responsável."
+  },
+  "Shenzhen-based Packrivo helps you source packaging with independent packaging suppliers, from product specifications and quotation comparison to sample review. MOQ: 500 pieces per product/design.": {
+   "old": "A Packrivo, sediada em Shenzhen, ajuda você a adquirir embalagens com fornecedores independentes de embalagens, desde as especificações do produto e a comparação de cotações até a análise de amostras. MOQ: 500 peças por produto/design.",
+   "new": "A Packrivo, sediada em Shenzhen, ajuda você a adquirir embalagens com fornecedores independentes de embalagens, desde as especificações do produto e a comparação de cotações até a análise de amostras. MOQ: 500 peças por produto/modelo."
+  },
+  "MOQ 500 pieces per product / design.": {
+   "old": "MOQ de 500 peças por produto/design.",
+   "new": "MOQ de 500 peças por produto/modelo."
+  },
+  "MOQ: 500 pieces per product / design.": {
+   "old": "MOQ: 500 peças por produto/design.",
+   "new": "MOQ: 500 peças por produto/modelo."
+  },
+  "Packrivo is a packaging sourcing and project coordination brand based in Shenzhen, China. We help small jewelry, candle and gift brands define packaging, compare independent supplier proposals and review samples. MOQ: 500 pieces per product/design.": {
+   "old": "A Packrivo é uma marca de sourcing de embalagens e coordenação de projetos sediada em Shenzhen, China. Ajudamos pequenas marcas de joalharia, velas e presentes a definir embalagens, comparar propostas de fornecedores independentes e avaliar amostras. MOQ: 500 peças por produto/design.",
+   "new": "A Packrivo é uma marca de sourcing de embalagens e coordenação de projetos sediada em Shenzhen, China. Ajudamos pequenas marcas de joalharia, velas e presentes a definir embalagens, comparar propostas de fornecedores independentes e avaliar amostras. MOQ: 500 peças por produto/modelo."
+  },
+  "Shenzhen-based Packrivo helps you source packaging through a network of 50+ independent suppliers, from product specifications and quotation comparison to sample review. MOQ: 500 pieces per product/design.": {
+   "old": "A Packrivo, sediada em Shenzhen, ajuda-o a adquirir embalagens através de uma rede de mais de 50 fornecedores independentes, desde as especificações do produto e a comparação de cotações até à revisão de amostras. MOQ: 500 peças por produto/design.",
+   "new": "A Packrivo, sediada em Shenzhen, ajuda-o a adquirir embalagens através de uma rede de mais de 50 fornecedores independentes, desde as especificações do produto e a comparação de cotações até à revisão de amostras. MOQ: 500 peças por produto/modelo."
+  },
+  "1-2-3 slotted container reference": {
+   "old": "Referência de caixa ranhurada 1-2-3",
+   "new": "A referência de caixa ranhurada 1-2-3"
+  },
+  "FEFCO construction reference": {
+   "old": "Referência de construção FEFCO",
+   "new": "A referência de construção FEFCO"
+  },
+  "PakFactory hexagon catalogue": {
+   "old": "Catálogo de hexágonos da PakFactory",
+   "new": "O catálogo de hexágonos da PakFactory"
+  },
+  "PakFactory straight tuck catalogue": {
+   "old": "Catálogo de caixas com fechamento tuck reto da PakFactory",
+   "new": "O catálogo de caixas com fechamento tuck reto da PakFactory"
+  },
+  "SOS bag catalogue": {
+   "old": "Catálogo de sacolas SOS",
+   "new": "O catálogo de sacolas SOS"
+  },
+  "auto bottom display catalogue": {
+   "old": "catálogo de displays com fundo automático",
+   "new": "O catálogo de displays com fundo automático"
+  },
+  "auto bottom slotted reference": {
+   "old": "referência de caixa com fundo automático e ranhuras",
+   "new": "A referência de caixa com fundo automático e ranhuras"
+  },
+  "board-mailer catalogue examples": {
+   "old": "exemplos de catálogo de envelopes de cartão",
+   "new": "Os exemplos de catálogo de envelopes de cartão"
+  },
+  "book style rigid box reference": {
+   "old": "referência de caixa rígida estilo livro",
+   "new": "A referência de caixa rígida estilo livro"
+  },
+  "book-wrap corrugated pack": {
+   "old": "embalagem de cartão canelado com envolvimento tipo livro",
+   "new": "A embalagem de cartão canelado com envolvimento tipo livro"
+  },
+  "collapsible gift-box direction": {
+   "old": "orientação da caixa de presente desmontável",
+   "new": "A orientação da caixa de presente desmontável"
+  },
+  "contour-cut PU bed": {
+   "old": "base de PU cortada em contorno",
+   "new": "A base de PU cortada em contorno"
+  },
+  "corrugated bottle carrier reference": {
+   "old": "referência de suporte de garrafas em cartão canelado",
+   "new": "A referência de suporte de garrafas em cartão canelado"
+  },
+  "corrugated folder reference": {
+   "old": "referência de pasta em cartão canelado",
+   "new": "A referência de pasta em cartão canelado"
+  },
+  "corrugated gusset folder catalogue": {
+   "old": "catálogo de pastas de cartão canelado com foles",
+   "new": "O catálogo de pastas de cartão canelado com foles"
+  },
+  "corrugated reverse-tuck reference": {
+   "old": "referência de caixa com abas de fecho invertido em cartão canelado",
+   "new": "A referência de caixa com abas de fecho invertido em cartão canelado"
+  },
+  "cube carrier reference": {
+   "old": "referência de suporte cúbico",
+   "new": "A referência de suporte cúbico"
+  },
+  "delivery-state guide": {
+   "old": "guia do estado de entrega",
+   "new": "O guia do estado de entrega"
+  },
+  "die-cut bag reference": {
+   "old": "referência de saco cortado",
+   "new": "A referência de saco cortado"
+  },
+  "double door maker reference": {
+   "old": "referência de fabricante de porta dupla",
+   "new": "A referência de fabricante de porta dupla"
+  },
+  "double-wall frame tray-and-lid direction": {
+   "old": "direção de tabuleiro e tampa com moldura de parede dupla",
+   "new": "A direção de tabuleiro e tampa com moldura de parede dupla"
+  },
+  "double-wall tray-and-lid reference": {
+   "old": "referência de bandeja e tampa com parede dupla",
+   "new": "A referência de bandeja e tampa com parede dupla"
+  },
+  "euro tote catalogue": {
+   "old": "catálogo de sacos tipo tote euro",
+   "new": "O catálogo de sacos tipo tote euro"
+  },
+  "expandable parcel bag direction": {
+   "old": "orientação para saco de encomenda expansível",
+   "new": "A orientação para saco de encomenda expansível"
+  },
+  "folding gift-box specification guide": {
+   "old": "guia de especificações de caixa-presente dobrável",
+   "new": "O guia de especificações de caixa-presente dobrável"
+  },
+  "folding lid-and-base set": {
+   "old": "conjunto dobrável de tampa e base",
+   "new": "O conjunto dobrável de tampa e base"
+  },
+  "four corner box reference": {
+   "old": "referência de caixa de quatro cantos",
+   "new": "A referência de caixa de quatro cantos"
+  },
+  "four corner display tray": {
+   "old": "bandeja expositora de quatro cantos",
+   "new": "A bandeja expositora de quatro cantos"
+  },
+  "frame tray and sleeve reference": {
+   "old": "referência de bandeja com moldura e luva",
+   "new": "A referência de bandeja com moldura e luva"
+  },
+  "full overlap seal end reference": {
+   "old": "referência de fechamento com vedação de sobreposição total",
+   "new": "A referência de fechamento com vedação de sobreposição total"
+  },
+  "full-flap auto-bottom reference": {
+   "old": "referência de fundo automático e abas completas",
+   "new": "A referência de fundo automático e abas completas"
+  },
+  "gift bag and tissue set": {
+   "old": "conjunto de sacola para presentes e papel de seda",
+   "new": "O conjunto de sacola para presentes e papel de seda"
+  },
+  "gift presentation set": {
+   "old": "conjunto de apresentação para presentes",
+   "new": "O conjunto de apresentação para presentes"
+  },
+  "header card catalogue reference": {
+   "old": "referência de catálogo de cartões de cabeçalho",
+   "new": "A referência de catálogo de cartões de cabeçalho"
+  },
+  "jewelry opening-format guide": {
+   "old": "guia de formatos de abertura para joias",
+   "new": "O guia de formatos de abertura para joias"
+  },
+  "lock-cap auto-bottom catalogue": {
+   "old": "catálogo de caixas com fundo automático e trava",
+   "new": "O catálogo de caixas com fundo automático e trava"
+  },
+  "manufacturer's shoulder and neck reference": {
+   "old": "referência do fabricante para ombro e gargalo",
+   "new": "A referência do fabricante para ombro e gargalo"
+  },
+  "manufacturer's snap-lock format reference": {
+   "old": "referência do formato de fecho de encaixe do fabricante",
+   "new": "A referência do formato de fecho de encaixe do fabricante"
+  },
+  "measurement method worksheet": {
+   "old": "planilha do método de medição",
+   "new": "A planilha do método de medição"
+  },
+  "multi-tier floor gift display": {
+   "old": "expositor de piso para presentes com vários níveis",
+   "new": "O expositor de piso para presentes com vários níveis"
+  },
+  "original box-liner structural reference": {
+   "old": "referência estrutural original do revestimento da caixa",
+   "new": "A referência estrutural original do revestimento da caixa"
+  },
+  "original box-style reference": {
+   "old": "referência original em estilo de caixa",
+   "new": "A referência original em estilo de caixa"
+  },
+  "original corrugated end-cap reference": {
+   "old": "referência original de acabamento de extremidade em papelão ondulado",
+   "new": "A referência original de acabamento de extremidade em papelão ondulado"
+  },
+  "original display-box structural reference": {
+   "old": "referência estrutural original de caixa expositora",
+   "new": "A referência estrutural original de caixa expositora"
+  },
+  "original foldable lid-and-base reference": {
+   "old": "referência original de tampa e base dobráveis",
+   "new": "A referência original de tampa e base dobráveis"
+  },
+  "original gable-box structural reference": {
+   "old": "referência estrutural original de caixa com aba de empena",
+   "new": "A referência estrutural original de caixa com aba de empena"
+  },
+  "original hanging and locking-tab reference": {
+   "old": "referência original de alça e aba de travamento",
+   "new": "A referência original de alça e aba de travamento"
+  },
+  "original jewelry display-card guide": {
+   "old": "guia original de cartão expositor de joias",
+   "new": "O guia original de cartão expositor de joias"
+  },
+  "original packaging-sleeve reference": {
+   "old": "referência original de cinta de embalagem",
+   "new": "A referência original de cinta de embalagem"
+  },
+  "original tray-and-sleeve structural reference": {
+   "old": "referência estrutural original de bandeja e cinta",
+   "new": "A referência estrutural original de bandeja e cinta"
+  },
+  "packed-system guide": {
+   "old": "guia do sistema embalado",
+   "new": "O guia do sistema embalado"
+  },
+  "paper padded envelope reference": {
+   "old": "referência de envelope acolchoado de papel",
+   "new": "A referência de envelope acolchoado de papel"
+  },
+  "paperboard divider reference": {
+   "old": "referência de divisor de cartão",
+   "new": "A referência de divisor de cartão"
+  },
+  "paperboard grid divider": {
+   "old": "divisor de grade de cartão",
+   "new": "O divisor de grade de cartão"
+  },
+  "paperboard gusset folder tool": {
+   "old": "ferramenta para pasta de cartão com aba de expansão",
+   "new": "A ferramenta para pasta de cartão com aba de expansão"
+  },
+  "peg counter reference": {
+   "old": "referência de expositor de balcão com ganchos",
+   "new": "A referência de expositor de balcão com ganchos"
+  },
+  "pinch-lock tray description": {
+   "old": "descrição de bandeja com trava de encaixe",
+   "new": "A descrição de bandeja com trava de encaixe"
+  },
+  "poly bubble mailer reference": {
+   "old": "referência de envelope plástico com bolhas",
+   "new": "A referência de envelope plástico com bolhas"
+  },
+  "printed tissue reference": {
+   "old": "referência de papel de seda impresso",
+   "new": "A referência de papel de seda impresso"
+  },
+  "rigid-box specification guide": {
+   "old": "guia de especificações para caixa rígida",
+   "new": "O guia de especificações para caixa rígida"
+  },
+  "roll ends with lid reference": {
+   "old": "referência de rolo com extremidades e tampa",
+   "new": "A referência de rolo com extremidades e tampa"
+  },
+  "set checklist": {
+   "old": "lista de verificação do conjunto",
+   "new": "A lista de verificação do conjunto"
+  },
+  "shipping-envelope reference": {
+   "old": "referência de envelope para envio",
+   "new": "A referência de envelope para envio"
+  },
+  "single-tray counter display": {
+   "old": "expositor de balcão com uma bandeja",
+   "new": "O expositor de balcão com uma bandeja"
+  },
+  "six corner catalogue reference": {
+   "old": "referência de catálogo de seis cantos",
+   "new": "A referência de catálogo de seis cantos"
+  },
+  "tab-lock roll-end catalogue": {
+   "old": "catálogo de extremidades enroladas com trava por aba",
+   "new": "O catálogo de extremidades enroladas com trava por aba"
+  },
+  "three flap lock reference": {
+   "old": "referência de trava com três abas",
+   "new": "A referência de trava com três abas"
+  },
+  "through-cut EVA holder": {
+   "old": "suporte de EVA com corte passante",
+   "new": "O suporte de EVA com corte passante"
+  },
+  "tooling scope guide": {
+   "old": "guia do âmbito de ferramentas",
+   "new": "O guia do âmbito de ferramentas"
+  },
+  "tuck end sleeve catalogue": {
+   "old": "catálogo de mangas com aba de encaixe nas extremidades",
+   "new": "O catálogo de mangas com aba de encaixe nas extremidades"
+  },
+  "tuck top 1-2-3 bottom reference": {
+   "old": "referência de tampa tuck 1-2-3 e fundo",
+   "new": "A referência de tampa tuck 1-2-3 e fundo"
+  },
+  "tuck top auto bottom catalogue": {
+   "old": "catálogo de tampa tuck e fundo automático",
+   "new": "O catálogo de tampa tuck e fundo automático"
+  },
+  "after describing the product interfaces. The": {
+   "old": "depois de descrever as interfaces do produto. O",
+   "new": "depois de descrever as interfaces do produto. A"
+  },
+  "Show the empty carton in its supplied state. Identify the prepared side seam and any remaining work. Keep the base inspection before the loading step so contents cannot hide an incomplete tab.": {
+   "old": "Mostre a caixa vazia no estado em que é fornecida. Identifique a costura lateral preparada e qualquer trabalho restante. Mantenha a inspeção da base antes da etapa de carregamento, para que o conteúdo não esconda uma patilha incompleta.",
+   "new": "Mostre a caixa vazia no estado em que é fornecida. Identifique a costura lateral preparada e qualquer trabalho restante. Mantenha a inspeção da base antes da etapa de carregamento, para que o conteúdo não esconda uma patilha incompleta. A"
+  },
+  "Form the base before testing the cap": {
+   "old": "Forme a base antes de testar a tampa",
+   "new": "Forme a base antes de testar a tampa. A"
+  },
+  "Have the converter return a tab/slot map and material proposal. Ask the packing owner to retain the empty-corner and loaded-access views under the same sample revision. The buyer can then resolve the corner, grip or outer-box fit separately instead of accepting a broad statement that the tray fits.": {
+   "old": "Peça ao conversor um mapa de abas/ranhuras e uma proposta de material. Solicite ao responsável pela embalagem que mantenha as vistas do canto vazio e do acesso com carga sob a mesma revisão de amostra. O comprador pode então resolver o canto, a pega ou o ajuste da caixa externa separadamente, em vez de aceitar uma afirmação genérica de que a bandeja se encaixa.",
+   "new": "Peça ao conversor um mapa de abas/ranhuras e uma proposta de material. Solicite ao responsável pela embalagem que mantenha as vistas do canto vazio e do acesso com carga sob a mesma revisão de amostra. O comprador pode então resolver o canto, a pega ou o ajuste da caixa externa separadamente, em vez de aceitar uma afirmação genérica de que a bandeja se encaixa. O"
+  },
+  "as a direct comparison. Ask the converter to show which tab/receiver or wall-setup actions differ in the offered proposal. A new catalog name alone should not create another packing instruction if the actual interface is the same.": {
+   "old": "como comparação direta. Peça ao transformador para indicar quais ações de aba/recetor ou de preparação das paredes diferem na proposta apresentada. Um novo nome de catálogo, por si só, não deve criar outra instrução de embalagem se a interface efetiva for a mesma.",
+   "new": "como comparação direta. Peça ao transformador para indicar quais ações de aba/recetor ou de preparação das paredes diferem na proposta apresentada. Um novo nome de catálogo, por si só, não deve criar outra instrução de embalagem se a interface efetiva for a mesma. O"
+  }
+ }
+}

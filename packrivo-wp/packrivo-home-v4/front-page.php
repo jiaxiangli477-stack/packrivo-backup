@@ -72,7 +72,12 @@ $faq = [
     </div>
     <figure class="pk-hero-media">
       <?php // 图里没有内衬、也不是棚拍实物：alt 只写看到的两个奶油色礼盒与棕色缎带。 ?>
-      <img src="<?php echo esc_url($img . '/hero.webp'); ?>" alt="Two small cream gift boxes with brown satin ribbon, held in open hands" width="1200" height="1200" loading="eager" />
+      <?php
+      // 大图两档写死在这里：mu-plugin packrivo-wave2 会按 hero-480.webp 的存在自动补 srcset，
+      // 但补出来的 URL 不带 ?ver，CDN 缓存键会与主题版本脱钩；自己输出 srcset 后 wave2 见 tag 已有 srcset 就跳过。
+      $pk_hero_ver = '?ver=' . rawurlencode(PKV4_VERSION);
+      ?>
+      <img src="<?php echo esc_url($img . '/hero.webp' . $pk_hero_ver); ?>" srcset="<?php echo esc_url($img . '/hero-480.webp' . $pk_hero_ver); ?> 480w, <?php echo esc_url($img . '/hero.webp' . $pk_hero_ver); ?> 1200w" sizes="(max-width: 767px) 92vw, 640px" alt="Two small cream gift boxes with brown satin ribbon, held in open hands" width="1200" height="1200" loading="eager" />
       <figcaption class="pk-hero-card">
         <?php // 图里是两只奶油色纸盒 + 棕色缎带，卡片文案加 Example quote 前缀，价格仍由报价引擎算，不动数字。 ?>
         <p class="pk-mono">Example quote · Rigid magnetic box · 9.5×9.5×4 cm</p>
@@ -221,10 +226,10 @@ if ($posts) :
   <div class="pk-wrap">
     <div class="pk-section-head">
       <div>
-        <p class="pk-eyebrow">Journal · <?php echo $post_count; ?> articles</p>
+        <p class="pk-eyebrow"><?php echo esc_html(pkv4_i18n_t('Journal · ' . $post_count . ' articles')); ?></p>
         <h2 class="pk-h2">Packaging notes from the floor</h2>
       </div>
-      <a class="pk-more" href="<?php echo esc_url(get_permalink((int) get_option('page_for_posts'))); ?>">All <?php echo $post_count; ?> articles →</a>
+      <a class="pk-more" href="<?php echo esc_url(get_permalink((int) get_option('page_for_posts'))); ?>"><?php echo esc_html(pkv4_i18n_t('All ' . $post_count . ' articles →')); ?></a>
     </div>
     <div class="pk-posts">
       <?php foreach ($posts as $post) : setup_postdata($post); ?>
@@ -235,7 +240,8 @@ if ($posts) :
           <span class="pk-post-meta pk-mono">
             <?php
             $cat = get_the_category();
-            echo esc_html(($cat ? $cat[0]->name . ' · ' : '') . get_the_date('M j, Y'));
+            $catName = $cat ? pkv4_i18n_t($cat[0]->name) : '';
+            echo esc_html(($catName !== '' ? $catName . ' · ' : '') . pkv4_i18n_date((int) get_post_timestamp()));
             ?>
           </span>
           <span class="pk-post-title"><?php the_title(); ?></span>

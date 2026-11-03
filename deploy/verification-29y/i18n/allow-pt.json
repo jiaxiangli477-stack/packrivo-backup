@@ -1,0 +1,85 @@
+{
+  "_note": "29y 按语种豁免表（pt）。两种粒度：phrase 只在 pages 列出的页面、整短语完整出现时跳过；word 全站按单词豁免（借词，每语种 <=15）。扫描器只认这个文件，脚本里没有硬编码豁免词；单位/品牌代号走扫描器全局 $ALLOW。",
+  "_lang": "pt",
+  "_updated": "2026-11-02",
+  "entries": [
+    {
+      "phrase": "Packaging Corporation of America",
+      "type": "专有名词",
+      "reason": "引用来源的公司全名，不能意译；单独出现的 corporation/america 照常算残留",
+      "pages": [
+        "/pt/product-full-overlap-slotted-outer-carton/"
+      ]
+    },
+    {
+      "phrase": "Pinch Bottom Bags",
+      "type": "专有名词",
+      "reason": "Novolex 的品类名；单独出现的 pinch/bottom/bags 照常算残留",
+      "pages": [
+        "/pt/product-paper-merchandise-sleeve-bag/"
+      ]
+    },
+    {
+      "phrase": "Partial Cover",
+      "type": "专有名词",
+      "reason": "款式正式名（RP005 Partial Cover）；单独出现的 partial/cover 照常算残留",
+      "pages": [
+        "/pt/product-window-lid-rigid-gift-box/"
+      ]
+    },
+    {
+      "phrase": "Novolex",
+      "type": "专有名词",
+      "reason": "包装制造商公司名，只在这页引用时出现",
+      "pages": [
+        "/pt/product-paper-merchandise-sleeve-bag/"
+      ]
+    },
+    {
+      "phrase": "Duro",
+      "type": "专有名词",
+      "reason": "Novolex 的产品线名，只在这页引用时出现",
+      "pages": [
+        "/pt/product-paper-merchandise-sleeve-bag/"
+      ]
+    },
+    {
+      "phrase": "Paper Mart",
+      "type": "专有名词",
+      "reason": "被引用的纸品供应商名，公司名保留原文",
+      "pages": [
+        "/pt/product-paper-merchandise-sleeve-bag/"
+      ]
+    },
+    {
+      "word": "kraft",
+      "type": "借词",
+      "reason": "papel kraft 是葡语固定说法"
+    },
+    {
+      "word": "packaging",
+      "type": "借词",
+      "reason": "包装行业 packaging/embalagem 并用"
+    },
+    {
+      "word": "mailer",
+      "type": "借词",
+      "reason": "邮寄盒/袋的行话仍用 mailer"
+    },
+    {
+      "word": "sos",
+      "type": "借词",
+      "reason": "SOS 袋型缩写，行业直接写 SOS"
+    },
+    {
+      "word": "liner",
+      "type": "借词",
+      "reason": "袋内衬/liner 的行业叫法，葡语页直接用 liner"
+    },
+    {
+      "word": "layout",
+      "type": "借词",
+      "reason": "pt-BR 沿用 layout（版面/排布），没有等义单一译名"
+    }
+  ]
+}

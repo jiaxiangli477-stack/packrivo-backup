@@ -1,1 +1,206 @@
-{}
+{
+ "text": {
+  "Freight is separate": {
+   "old": "Vracht is apart",
+   "new": "Vracht wordt apart berekend"
+  },
+  "— quoted per shipment, never buried in the unit price.": {
+   "old": "— per zending geoffreerd, nooit verborgen in de prijs per stuk.",
+   "new": "— per zending geoffreerd, nooit verborgen in de prijs voor elk stuk."
+  },
+  "All 333 articles →": {
+   "old": "Alle 333 artikelen →",
+   "new": "Alle 337 artikelen →"
+  },
+  "Journal · 333 articles": {
+   "old": "Journal · 333 artikelen",
+   "new": "Journal · 337 artikelen"
+  },
+  "Mailer box · 30×22×12 cm · kraft · full colour": {
+   "old": "Verzenddoos · 30×22×12 cm · kraft · full colour",
+   "new": "Verzenddoos · 30×22×12 cm · kraft · volkleur"
+  }
+ },
+ "block": {
+  "The current MOQ is 500 pieces per product / design. Include the quantity and design split in your brief so the proposed order can be reviewed correctly.": {
+   "old": "De huidige MOQ is 500 stuks per product / ontwerp. Neem de verdeling van hoeveelheid en ontwerp op in uw briefing, zodat de voorgestelde bestelling correct kan worden beoordeeld.",
+   "new": "De huidige MOQ 500 stuks per product / ontwerp. Neem de verdeling van hoeveelheid en ontwerp op in uw briefing, zodat de voorgestelde bestelling correct kan worden beoordeeld."
+  },
+  ". MOQ is 500 pieces per design. Final construction, material and commercial conditions are confirmed for the project.": {
+   "old": ". MOQ is 500 stuks per ontwerp. Definitieve constructie, materiaal en commerciële voorwaarden worden per project bevestigd.",
+   "new": ". MOQ 500 stuks per ontwerp. Definitieve constructie, materiaal en commerciële voorwaarden worden per project bevestigd."
+  },
+  ". MOQ is 500 pieces per design. Material, sampling and commercial details are confirmed for the project, with any shipping evaluation scoped to the complete proposed pack.": {
+   "old": ". MOQ is 500 stuks per ontwerp. Materiaal, monstername en commerciële details worden per project bevestigd, waarbij een eventuele verzendbeoordeling betrekking heeft op de volledige voorgestelde verpakking.",
+   "new": ". MOQ 500 stuks per ontwerp. Materiaal, monstername en commerciële details worden per project bevestigd, waarbij een eventuele verzendbeoordeling betrekking heeft op de volledige voorgestelde verpakking."
+  },
+  ". MOQ is 500 pieces per design. Packrivo helps prepare the brief and coordinate questions; the offered construction, sample arrangements and commercial terms are confirmed for the project.": {
+   "old": ". MOQ is 500 stuks per ontwerp. Packrivo helpt bij het voorbereiden van de briefing en het coördineren van vragen; de aangeboden constructie, monsterafspraken en commerciële voorwaarden worden per project bevestigd.",
+   "new": ". MOQ 500 stuks per ontwerp. Packrivo helpt bij het voorbereiden van de briefing en het coördineren van vragen; de aangeboden constructie, monsterafspraken en commerciële voorwaarden worden per project bevestigd."
+  },
+  ". MOQ is 500 pieces per design. Structure, material, samples and commercial terms are confirmed for the project.": {
+   "old": ". MOQ is 500 stuks per ontwerp. Structuur, materiaal, monsters en commerciële voorwaarden worden per project bevestigd.",
+   "new": ". MOQ 500 stuks per ontwerp. Structuur, materiaal, monsters en commerciële voorwaarden worden per project bevestigd."
+  },
+  ". MOQ is 500 pieces per design. The offered hinge, ribbon, wrapping, sample arrangements and commercial terms are confirmed for the project.": {
+   "old": ". MOQ is 500 stuks per ontwerp. Het aangeboden scharnier, lint, de wikkel, monsterafspraken en commerciële voorwaarden worden per project bevestigd.",
+   "new": ". MOQ 500 stuks per ontwerp. Het aangeboden scharnier, lint, de wikkel, monsterafspraken en commerciële voorwaarden worden per project bevestigd."
+  },
+  ". MOQ is 500 pieces per design. The project’s board, handle details, sample scope and commercial terms are confirmed against these inputs.": {
+   "old": ". MOQ is 500 stuks per ontwerp. Het karton, de hendeldetails, de monsteromvang en de commerciële voorwaarden van het project worden aan de hand van deze input bevestigd.",
+   "new": ". MOQ 500 stuks per ontwerp. Het karton, de hendeldetails, de monsteromvang en de commerciële voorwaarden van het project worden aan de hand van deze input bevestigd."
+  },
+  ". MOQ is 500 pieces per design; final materials, sample scope and commercial conditions are confirmed for the project.": {
+   "old": ". MOQ is 500 stuks per ontwerp; definitieve materialen, monsteromvang en commerciële voorwaarden worden per project bevestigd.",
+   "new": ". MOQ 500 stuks per ontwerp; definitieve materialen, monsteromvang en commerciële voorwaarden worden per project bevestigd."
+  },
+  ". MOQ is 500 pieces per design; final materials, samples and commercial conditions are confirmed against the project.": {
+   "old": ". MOQ is 500 stuks per ontwerp; definitieve materialen, monsters en commerciële voorwaarden worden aan de hand van het project bevestigd.",
+   "new": ". MOQ 500 stuks per ontwerp; definitieve materialen, monsters en commerciële voorwaarden worden aan de hand van het project bevestigd."
+  },
+  ". MOQ is 500 pieces per design; material, sample and commercial terms are confirmed against the project.": {
+   "old": ". MOQ is 500 stuks per ontwerp; materiaal, monster en commerciële voorwaarden worden aan de hand van het project bevestigd.",
+   "new": ". MOQ 500 stuks per ontwerp; materiaal, monster en commerciële voorwaarden worden aan de hand van het project bevestigd."
+  },
+  ". MOQ is 500 pieces per design; material, samples and commercial conditions are confirmed against the offered project design.": {
+   "old": ". MOQ is 500 stuks per ontwerp; materiaal, monsters en commerciële voorwaarden worden aan de hand van het aangeboden projectontwerp bevestigd.",
+   "new": ". MOQ 500 stuks per ontwerp; materiaal, monsters en commerciële voorwaarden worden aan de hand van het aangeboden projectontwerp bevestigd."
+  },
+  ". MOQ is 500 pieces per design; materials, sample scope and commercial terms are confirmed for the project.": {
+   "old": ". MOQ is 500 stuks per ontwerp; materialen, monsteromvang en commerciële voorwaarden worden per project bevestigd.",
+   "new": ". MOQ 500 stuks per ontwerp; materialen, monsteromvang en commerciële voorwaarden worden per project bevestigd."
+  },
+  ". MOQ is 500 pieces per design; materials, samples and commercial details are confirmed for the project.": {
+   "old": ". MOQ is 500 stuks per ontwerp; materialen, monsters en commerciële details worden per project bevestigd.",
+   "new": ". MOQ 500 stuks per ontwerp; materialen, monsters en commerciële details worden per project bevestigd."
+  },
+  ". MOQ is 500 pieces per design; materials, samples and commercial terms are confirmed for the project.": {
+   "old": ". MOQ is 500 stuks per ontwerp; materialen, monsters en commerciële voorwaarden worden per project bevestigd.",
+   "new": ". MOQ 500 stuks per ontwerp; materialen, monsters en commerciële voorwaarden worden per project bevestigd."
+  },
+  ". MOQ is 500 pieces per design; materials, sampling and commercial details are confirmed for the project.": {
+   "old": ". MOQ is 500 stuks per ontwerp; materialen, monstername en commerciële details worden per project bevestigd.",
+   "new": ". MOQ 500 stuks per ontwerp; materialen, monstername en commerciële details worden per project bevestigd."
+  },
+  ". MOQ is 500 pieces per design; materials, sampling and commercial terms are confirmed for the project.": {
+   "old": ". MOQ is 500 stuks per ontwerp; materialen, monstername en commerciële voorwaarden worden per project bevestigd.",
+   "new": ". MOQ 500 stuks per ontwerp; materialen, monstername en commerciële voorwaarden worden per project bevestigd."
+  },
+  ". MOQ is 500 pieces per design; offered material, structure, sample scope and commercial details are confirmed for the project.": {
+   "old": ". MOQ is 500 stuks per ontwerp; aangeboden materiaal, structuur, monsteromvang en commerciële details worden per project bevestigd.",
+   "new": ". MOQ 500 stuks per ontwerp; aangeboden materiaal, structuur, monsteromvang en commerciële details worden per project bevestigd."
+  },
+  ". MOQ is 500 pieces per design; offered materials, sample scope and commercial terms are confirmed for the project.": {
+   "old": ". MOQ is 500 stuks per ontwerp; aangeboden materialen, monsteromvang en commerciële voorwaarden worden per project bevestigd.",
+   "new": ". MOQ 500 stuks per ontwerp; aangeboden materialen, monsteromvang en commerciële voorwaarden worden per project bevestigd."
+  },
+  ". MOQ is 500 pieces per design; offered materials, samples and commercial conditions are confirmed for the project.": {
+   "old": ". MOQ is 500 stuks per ontwerp; aangeboden materialen, monsters en commerciële voorwaarden worden per project bevestigd.",
+   "new": ". MOQ 500 stuks per ontwerp; aangeboden materialen, monsters en commerciële voorwaarden worden per project bevestigd."
+  },
+  ". MOQ is 500 pieces per design; offered materials, samples and commercial details are confirmed for the project.": {
+   "old": ". MOQ is 500 stuks per ontwerp; aangeboden materialen, monsters en commerciële details worden per project bevestigd.",
+   "new": ". MOQ 500 stuks per ontwerp; aangeboden materialen, monsters en commerciële details worden per project bevestigd."
+  },
+  ". MOQ is 500 pieces per design; offered materials, sampling and commercial conditions are confirmed for the project.": {
+   "old": ". MOQ is 500 stuks per ontwerp; aangeboden materialen, monstername en commerciële voorwaarden worden per project bevestigd.",
+   "new": ". MOQ 500 stuks per ontwerp; aangeboden materialen, monstername en commerciële voorwaarden worden per project bevestigd."
+  },
+  ". MOQ is 500 pieces per design; proposed materials, samples and commercial conditions are confirmed for the project. Any required transport review applies to the complete proposed pack.": {
+   "old": ". MOQ is 500 stuks per ontwerp; voorgestelde materialen, monsters en commerciële voorwaarden worden per project bevestigd. Een eventueel vereiste transportbeoordeling heeft betrekking op de volledige voorgestelde verpakking.",
+   "new": ". MOQ 500 stuks per ontwerp; voorgestelde materialen, monsters en commerciële voorwaarden worden per project bevestigd. Een eventueel vereiste transportbeoordeling heeft betrekking op de volledige voorgestelde verpakking."
+  },
+  ". MOQ is 500 pieces per design; structure, material, samples and commercial terms are confirmed against the project.": {
+   "old": ". MOQ is 500 stuks per ontwerp; structuur, materiaal, monsters en commerciële voorwaarden worden aan de hand van het project bevestigd.",
+   "new": ". MOQ 500 stuks per ontwerp; structuur, materiaal, monsters en commerciële voorwaarden worden aan de hand van het project bevestigd."
+  },
+  ". MOQ is 500 pieces per design; the offered display construction, loading review, samples and commercial conditions are confirmed for the project.": {
+   "old": ". MOQ is 500 stuks per ontwerp; de aangeboden presentatieconstructie, beladingsbeoordeling, monsters en commerciële voorwaarden worden per project bevestigd.",
+   "new": ". MOQ 500 stuks per ontwerp; de aangeboden presentatieconstructie, beladingsbeoordeling, monsters en commerciële voorwaarden worden per project bevestigd."
+  },
+  ". MOQ is 500 pieces per design. The offered material, sample scope and commercial terms are confirmed for the project.": {
+   "old": "De MOQ is 500 stuks per ontwerp. Het aangeboden materiaal, de omvang van de monsters en de commerciële voorwaarden worden voor het project bevestigd.",
+   "new": "De MOQ 500 stuks per ontwerp. Het aangeboden materiaal, de omvang van de monsters en de commerciële voorwaarden worden voor het project bevestigd."
+  },
+  ". MOQ is 500 pieces per design; geometry, materials, samples and commercial terms are confirmed against the project.": {
+   "old": "De MOQ is 500 stuks per ontwerp; geometrie, materialen, monsters en commerciële voorwaarden worden voor het project bevestigd.",
+   "new": "De MOQ 500 stuks per ontwerp; geometrie, materialen, monsters en commerciële voorwaarden worden voor het project bevestigd."
+  },
+  ". MOQ is 500 pieces per design; material, sample scope and commercial conditions are confirmed for the project.": {
+   "old": "De MOQ is 500 stuks per ontwerp; het materiaal, de omvang van de monsters en de commerciële voorwaarden worden voor het project bevestigd.",
+   "new": "De MOQ 500 stuks per ontwerp; het materiaal, de omvang van de monsters en de commerciële voorwaarden worden voor het project bevestigd."
+  },
+  ". MOQ is 500 pieces per design; material, sample scope and commercial terms are confirmed for the project.": {
+   "old": "De MOQ is 500 stuks per ontwerp; het materiaal, de omvang van de monsters en de commerciële voorwaarden worden voor het project bevestigd.",
+   "new": "De MOQ 500 stuks per ontwerp; het materiaal, de omvang van de monsters en de commerciële voorwaarden worden voor het project bevestigd."
+  },
+  ". MOQ is 500 pieces per design; material, samples and commercial details are confirmed for the project.": {
+   "old": "De MOQ is 500 stuks per ontwerp; het materiaal, de monsters en de commerciële details worden voor het project bevestigd.",
+   "new": "De MOQ 500 stuks per ontwerp; het materiaal, de monsters en de commerciële details worden voor het project bevestigd."
+  },
+  ". MOQ is 500 pieces per design; samples, materials and commercial conditions are confirmed for the project.": {
+   "old": "De MOQ is 500 stuks per ontwerp; monsters, materialen en commerciële voorwaarden worden voor het project bevestigd.",
+   "new": "De MOQ 500 stuks per ontwerp; monsters, materialen en commerciële voorwaarden worden voor het project bevestigd."
+  },
+  "It depends on quantity and box type. Arka suits small runs ordered online. Packrivo works from 500 pieces per design, where factory unit prices fall; for example, stock drawer jewelry boxes start around US$0.10–0.33 per box ex-works before logo printing, freight and duties, plus an 8–15% coordination fee, with the calculation basis agreed in writing.": {
+   "old": "Dat hangt af van de hoeveelheid en het doosmodel. Arka is geschikt voor kleine oplagen die online worden besteld. Packrivo werkt vanaf 500 stuks per ontwerp, waarbij de fabrieksprijs per stuk daalt; standaard ladedozen voor sieraden beginnen bijvoorbeeld rond US$0.10–0.33 per doos af fabriek, vóór logobedrukking, vracht en invoerrechten, plus 8–15% coördinatiekosten, met de berekeningsbasis schriftelijk afgesproken.",
+   "new": "Dat hangt af van de hoeveelheid en het doosmodel. Arka is geschikt voor kleine oplagen die online worden besteld. Packrivo werkt vanaf 500 stuks per ontwerp, waarbij de fabrieksprijs voor elk stuk daalt; standaard ladedozen voor sieraden beginnen bijvoorbeeld rond US$0.10–0.33 per doos af fabriek, vóór logobedrukking, vracht en invoerrechten, plus 8–15% coördinatiekosten, met de berekeningsbasis schriftelijk afgesproken."
+  },
+  "It depends on quantity and box type. Packhelp suits small runs ordered online. Packrivo works from 500 pieces per design, where factory unit prices fall; for example, stock drawer jewelry boxes start around US$0.10–0.33 per box ex-works before logo printing, freight and duties, plus an 8–15% coordination fee, with the calculation basis agreed in writing.": {
+   "old": "Dat hangt af van de hoeveelheid en het doosmodel. Packhelp is geschikt voor kleine oplagen die online worden besteld. Packrivo werkt vanaf 500 stuks per ontwerp, waarbij de fabrieksprijs per stuk daalt; standaard ladedozen voor sieraden beginnen bijvoorbeeld rond US$0.10–0.33 per doos af fabriek, vóór logobedrukking, vracht en invoerrechten, plus 8–15% coördinatiekosten, met de berekeningsbasis schriftelijk afgesproken.",
+   "new": "Dat hangt af van de hoeveelheid en het doosmodel. Packhelp is geschikt voor kleine oplagen die online worden besteld. Packrivo werkt vanaf 500 stuks per ontwerp, waarbij de fabrieksprijs voor elk stuk daalt; standaard ladedozen voor sieraden beginnen bijvoorbeeld rond US$0.10–0.33 per doos af fabriek, vóór logobedrukking, vracht en invoerrechten, plus 8–15% coördinatiekosten, met de berekeningsbasis schriftelijk afgesproken."
+  },
+  "It depends on quantity and box type. Packlane suits small runs ordered online. Packrivo works from 500 pieces per design, where factory unit prices fall; for example, stock drawer jewelry boxes start around US$0.10–0.33 per box ex-works before logo printing, freight and duties, plus an 8–15% coordination fee, with the calculation basis agreed in writing.": {
+   "old": "Dat hangt af van de hoeveelheid en het doosmodel. Packlane is geschikt voor kleine oplagen die online worden besteld. Packrivo werkt vanaf 500 stuks per ontwerp, waarbij de fabrieksprijs per stuk daalt; standaard ladedozen voor sieraden beginnen bijvoorbeeld rond US$0.10–0.33 per doos af fabriek, vóór logobedrukking, vracht en invoerrechten, plus 8–15% coördinatiekosten, met de berekeningsbasis schriftelijk afgesproken.",
+   "new": "Dat hangt af van de hoeveelheid en het doosmodel. Packlane is geschikt voor kleine oplagen die online worden besteld. Packrivo werkt vanaf 500 stuks per ontwerp, waarbij de fabrieksprijs voor elk stuk daalt; standaard ladedozen voor sieraden beginnen bijvoorbeeld rond US$0.10–0.33 per doos af fabriek, vóór logobedrukking, vracht en invoerrechten, plus 8–15% coördinatiekosten, met de berekeningsbasis schriftelijk afgesproken."
+  },
+  "It depends on quantity and box type. PakFactory suits small runs ordered online. Packrivo works from 500 pieces per design, where factory unit prices fall; for example, stock drawer jewelry boxes start around US$0.10–0.33 per box ex-works before logo printing, freight and duties, plus an 8–15% coordination fee, with the calculation basis agreed in writing.": {
+   "old": "Dat hangt af van de hoeveelheid en het doosmodel. PakFactory is geschikt voor kleine oplagen die online worden besteld. Packrivo werkt vanaf 500 stuks per ontwerp, waarbij de fabrieksprijs per stuk daalt; standaard ladedozen voor sieraden beginnen bijvoorbeeld rond US$0.10–0.33 per doos af fabriek, vóór logobedrukking, vracht en invoerrechten, plus 8–15% coördinatiekosten, met de berekeningsbasis schriftelijk afgesproken.",
+   "new": "Dat hangt af van de hoeveelheid en het doosmodel. PakFactory is geschikt voor kleine oplagen die online worden besteld. Packrivo werkt vanaf 500 stuks per ontwerp, waarbij de fabrieksprijs voor elk stuk daalt; standaard ladedozen voor sieraden beginnen bijvoorbeeld rond US$0.10–0.33 per doos af fabriek, vóór logobedrukking, vracht en invoerrechten, plus 8–15% coördinatiekosten, met de berekeningsbasis schriftelijk afgesproken."
+  },
+  "Freight is separate": {
+   "old": "Vracht is apart",
+   "new": "Vracht wordt apart berekend"
+  },
+  "— quoted per shipment, never buried in the unit price.": {
+   "old": "— per zending geoffreerd, nooit verborgen in de prijs per stuk.",
+   "new": "— per zending geoffreerd, nooit verborgen in de prijs voor elk stuk."
+  },
+  "All 333 articles →": {
+   "old": "Alle 333 artikelen →",
+   "new": "Alle 337 artikelen →"
+  },
+  "Journal · 333 articles": {
+   "old": "Journal · 333 artikelen",
+   "new": "Journal · 337 artikelen"
+  },
+  "Mailer box · 30×22×12 cm · kraft · full colour": {
+   "old": "Verzenddoos · 30×22×12 cm · kraft · full colour",
+   "new": "Verzenddoos · 30×22×12 cm · kraft · volkleur"
+  },
+  "The expands the name as self opening square. Use that identity to request the actual base-fold drawing and setup demonstration. The catalogue's food or environmental language is not adopted for your gift pack.": {
+   "old": "De benaming staat voor self opening square. Gebruik die aanduiding om de daadwerkelijke bodemvouwtekening en een demonstratie van het opzetten op te vragen. De voedings- of milieutaal uit de catalogus wordt niet overgenomen voor uw geschenkverpakking.",
+   "new": "De benaming staat voor een zelfopenende vierkante bodem. Gebruik die aanduiding om de daadwerkelijke bodemvouwtekening en een demonstratie van het opzetten op te vragen. De voedings- of milieutaal uit de catalogus wordt niet overgenomen voor uw geschenkverpakking."
+  },
+  "expands the name as self opening square. Use that identity to request the actual base-fold drawing and setup demonstration. The catalogue's food or environmental language is not adopted for your gift pack.": {
+   "old": "staat voor self opening square. Gebruik die aanduiding om de daadwerkelijke bodemvouwtekening en een demonstratie van het opzetten op te vragen. De voedings- of milieutaal uit de catalogus wordt niet overgenomen voor uw geschenkverpakking.",
+   "new": "staat voor een zelfopenende vierkante bodem. Gebruik die aanduiding om de daadwerkelijke bodemvouwtekening en een demonstratie van het opzetten op te vragen. De voedings- of milieutaal uit de catalogus wordt niet overgenomen voor uw geschenkverpakking."
+  },
+  "Flat, partly formed or assembled for each component.": {
+   "old": "Plat, gedeeltelijk gevormd of gemonteerd per component.",
+   "new": "Plat, gedeeltelijk gevormd of gemonteerd voor elk onderdeel."
+  },
+  "Inspect the base after loading and the top after opening. Record visible movement by part and stage. Those observations can locate a revision question, while capacity or distribution requirements need their own agreed evaluation.": {
+   "old": "Controleer de bodem na het vullen en de bovenkant na het openen. Noteer zichtbare beweging per onderdeel en fase. Deze waarnemingen kunnen een revisievraag lokaliseren; draagvermogen of distributie-eisen vragen om een eigen overeengekomen beoordeling.",
+   "new": "Controleer de bodem na het vullen en de bovenkant na het openen. Noteer zichtbare beweging voor elk onderdeel en elke fase. Deze waarnemingen kunnen een revisievraag lokaliseren; draagvermogen of distributie-eisen vragen om een eigen overeengekomen beoordeling."
+  },
+  "Inspect the base after the actual contents are inserted, then inspect the final top seams. Name any visible movement by part and stage. A tidy empty base doesn’t establish a capacity for the loaded set.": {
+   "old": "Controleer de bodem nadat de daadwerkelijke inhoud is geplaatst en daarna de bovenste naden. Benoem zichtbare beweging per onderdeel en fase. Een nette lege bodem zegt niets over het draagvermogen met de gevulde set.",
+   "new": "Controleer de bodem nadat de daadwerkelijke inhoud is geplaatst en daarna de bovenste naden. Benoem zichtbare beweging voor elk onderdeel en elke fase. Een nette lege bodem zegt niets over het draagvermogen met de gevulde set."
+  },
+  "Inspect the base after the actual contents are inserted, then inspect the final top seams. Name any visible movement by part and stage. A tidy empty base doesn't establish a capacity for the loaded set.": {
+   "old": "Inspecteer de bodem nadat de werkelijke inhoud is geplaatst en inspecteer daarna de uiteindelijke bovennaden. Benoem zichtbare beweging per onderdeel en per fase. Een nette lege bodem toont geen capaciteit voor de beladen set aan.",
+   "new": "Inspecteer de bodem nadat de werkelijke inhoud is geplaatst en inspecteer daarna de uiteindelijke bovennaden. Benoem zichtbare beweging voor elk onderdeel en elke fase. Een nette lege bodem toont geen capaciteit voor de beladen set aan."
+  }
+ }
+}
