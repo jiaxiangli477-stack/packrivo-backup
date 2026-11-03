@@ -1,0 +1,33 @@
+{
+ "_note": "29y 按语种豁免表（nl）。两种粒度：phrase 只在 pages 列出的页面、整短语完整出现时跳过；word 全站按单词豁免（借词，每语种 <=15）。扫描器只认这个文件，脚本里没有硬编码豁免词。",
+ "_lang": "nl",
+ "_updated": "2026-11-02",
+ "entries": [
+  {
+   "phrase": "International Trade Administration",
+   "type": "专有名词",
+   "reason": "美国国际贸易署的机构全名；页面原文只写 International Trade Administration（没有 U.S. 前缀），只在这一页豁免，单独出现的 administration/trade 照常算残留",
+   "pages": [
+    "/nl/guide-mailer-rfq-checklist/"
+   ]
+  },
+  {
+   "phrase": "Packaging Corporation of America",
+   "type": "专有名词",
+   "reason": "引用来源的公司全名，不能意译；单独出现的 corporation/america/packaging 照常算残留",
+   "pages": [
+    "/nl/product-full-overlap-slotted-outer-carton/"
+   ]
+  },
+  {
+   "word": "logo",
+   "type": "借词",
+   "reason": "荷兰语本来就写 logo；merk 是「品牌」，意思不对，不能替换"
+  },
+  {
+   "word": "sos",
+   "type": "借词",
+   "reason": "SOS 袋型缩写，荷兰语行业直接写 SOS（与 it 同一处理）"
+  }
+ ]
+}

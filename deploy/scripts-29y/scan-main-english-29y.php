@@ -257,11 +257,19 @@ foreach ($lines as $line) {
 
     /* 连续段（v4 口径）：在**整页正文**上切，不受「整句判成英文」限制。
        规则：连续 >=3 个 token 都在英文词表里，且其中至少 1 个不在本语种 LOCAL_STOP 里，就算一段。
-       品牌/单位/代码、单字符、纯数字、不在英文词表里的词都会打断一段。 */
+       品牌/单位/代码、单字符、纯数字、不在英文词表里的词都会打断一段。
+       v4.1（2026-11-02 负责人）：整段都由本语种同形词（"_homo"）组成时不算一段。 */
     $runsOf = [];
     $runSamples = [];
-    $flushRun = static function (array $cur, array &$runsOf, array &$runSamples) use ($loc) {
+    $flushRun = static function (array $cur, array &$runsOf, array &$runSamples) use ($loc, $homo) {
         if (count($cur) < 3) return;
+        /* 整段都是本语种同形词（die we in / open is is / of contact die …）→ 不是英文残留。
+           负责人 2026-11-02 规则：段里只要混进一个真正的英文词，照常算残留。 */
+        $allHomo = true;
+        foreach ($cur as $w) {
+            if (!isset($homo[$w])) { $allHomo = false; break; }
+        }
+        if ($allHomo) return;
         $hasNonLocal = false;
         foreach ($cur as $w) {
             if (!isset($loc[$w])) { $hasNonLocal = true; break; }

@@ -828,9 +828,78 @@ v4 判据（与负责人给的口径一致）：连续 ≥3 个 token 都在英�
 | Packaging Corporation of America | it | 引用来源公司名 | 原样保留（短语级豁免，仅该页） | 负责人 2026-10-31 规则：专有名词保留原文 |
 | Pinch Bottom Bags | it | Novolex 品类名 | 原样保留（短语级豁免，仅该页） | 同上 |
 | RP005 Partial Cover | it | 款式名 | 原样保留（短语级豁免，仅该页） | 同上 |
+| Packaging Corporation of America | nl | 引用来源公司名 | 原样保留（短语级豁免，仅 `/nl/product-full-overlap-slotted-outer-carton/`） | 负责人 2026-11-02 规则：专有名词保留原文 |
+| International Trade Administration | nl | 美国国际贸易署机构名 | 原样保留（短语级豁免，仅 `/nl/guide-mailer-rfq-checklist/`）；页面原文只写 International Trade Administration，没有 U.S. 前缀 | 负责人 2026-11-02；phrase 必须与页面实际字串一致 |
+| logo | nl | 标志 | 保留 `logo`（word 级借词，不进 allow 的 merk） | 负责人 2026-11-02：merk 是「品牌」，意思不对 |
+| sos | nl | SOS 自开底袋型缩写 | 保留 `SOS`（word 级借词） | 与 it 同一处理；待负责人确认 |
+| poly mailer | nl | 塑料邮寄袋 | `poly verzendzak` | 与页面标题「Poly verzendzakken grootverpakking」统一；待负责人确认 |
+| tray | nl | 内托 / 盘式盒底 | `bak`（本批只改会形成英文连续段的 3 处：`of bak die`、`bak die later`、`bak, hoes of`） | 全站仍有 129 条词典值用 tray 借词，未扫；待负责人确认是否全量替换 |
+| tab flap | nl | 舌片 / 摇盖 | `lipje`（tab）、`flap`（保留荷兰语行话） | 待负责人确认 |
+| blind debossing | nl | 盲压凹 | `Blinddruk` | 待负责人确认 |
+| blind embossing | nl | 盲压凸 | `Reliëfdruk` | 与 Blinddruk 同排一致；待负责人确认 |
+| premium（作卖点词） | nl | 「高档」这类空泛描述 | `hoogwaardig` | 待负责人确认 |
+| in bulk | nl | 大宗 / 批量 | `in grote aantallen` | 待负责人确认 |
+| tape | nl | 胶带 | `plakband` | 待负责人确认 |
+| label | nl | 标签 | `etiket(ten)` | 待负责人确认 |
+| interface | nl | 接触层 / 界面 | `grensvlak` | 待负责人确认 |
+| complete set | nl | 整套 | `volledige set` | 待负责人确认 |
+| rigid（引号内的术语） | nl | 硬挺 | `stevig` | 待负责人确认 |
+| per product / design | nl | 每款 | `per product / ontwerp`（沿用全站既有写法，不另造 voor elk productontwerp） | 待负责人确认 |
+
+（2026-11-02 增补 nl 条；标「待负责人确认」的还没有批复，下一轮批复后改「负责人 yyyy-mm-dd 认可」。）
 
 豁免表的两种粒度（`allow-<lang>.json`，扫描器只认这个文件）：
 
 - `{"phrase":"…","type":"专有名词","pages":[…]}` —— **只在列出的页面、整短语完整出现**时跳过；单独出现的 `bags`/`bottom`/`cover`/`america` 照常算残留。
 - `{"word":"…","type":"借词"}` —— 全站按单词豁免，每语种最多 15 条。
 
+
+
+---
+
+## 22. nl 清零交付（2026-11-02 晚 · 本对话，接 HANDOFF §10）
+
+### 22.1 结论表
+
+| 项 | 结果 |
+|---|---|
+| 126 页复扫 | **清单 126 = 实扫 126**，HTTP 非 200 0 页、`<main>` 缺失 0 页 |
+| 不达标页 | **1 页**：`/nl/privacy/`（84 词 / 10 段），属 §10.8 已决例外（隐私政策只保留英文版，页面顶栏注明） |
+| 其余 125 页 | 0 词 0 段 |
+| `The <a>` 全站核对 | 78 处，v3 口径 **PASS 78 / FAIL 0**；残留 `>The ` 文本节点 **0** |
+| 裸英文冠词直查 | `>The` / `>An` / `>A` 紧跟锚标签或拉丁字母，126 页命中 **0** |
+| 词典 | `nl-dict.json` 1596371 字节，md5 `aef207d24c2e348f94c7c5190ec3eae6`，仓库=演练 |
+| 11 语种复现 | `apply-batch nl --sync` → **11/11 逐字节 PASS**，`sync nl PASS md5 aef207d24c2e` |
+
+复扫演变（同一把 v4.1 尺子、同一份 126 页清单）：连续段页 26 → 1，残留词页 4 → 1，词 104 → 84，段 41 → 10。
+
+### 22.2 本轮改动
+
+- `nl-mod.json` 48 条：第三批 38 条（tray/sleeve/premium/rigid/label/tape/poly mailer/complete set/per product·design 等）+ 本轮 10 条。
+- `nl-add.json` 5 条：`text: The→De`、`text: A→Een`、`block: An→Een`、`text: Paper bags→Papieren zakken`、`text: One-Piece Trays…→Eendelige bakken…`。
+- `local-stop.json`：nl 停用词 65 个，`_homo.nl` 18 个（负责人点的 die/we/of/door/open/later/term/band/product/contact/in/is 全部在内）。
+- `allow-nl.json`（新建）：phrase 2 条（`International Trade Administration` 仅 `/nl/guide-mailer-rfq-checklist/`、`Packaging Corporation of America` 仅 `/nl/product-full-overlap-slotted-outer-carton/`）+ word 2 条（`logo`、`sos`）。
+- 标尺 `scan-main-english-29y.php` 升 **v4.1**：一整段 token 全在 `_homo` 里就不算英文连续段（`die we in`、`open is is`、`of contact die` 这类纯荷兰语段不再成段）；混合段照旧算。17103 字节，md5 `c494e7f33fb80bc146072477cda5b063`。
+
+### 22.3 三个技术发现（都已复现验证）
+
+1. **短文本节点被抽取器过滤**：`The` / `A` / `An` 作为独立文本节点时不在源节点表里，任何语种的字典都没有它们 → 页面上留下英文冠词。fr/es/pt 的做法是 `"The": ""`（删掉），it 是 `"The": "Il"`。nl 原来一条都没有，所以 78 处 `The <a>` + 12 处 `A <a>` + 1 处 `An <a>` 全留着。本批按 it 的路子补 `De` / `Een`。
+2. **字典键不归一化、查询侧归一化**：`packrivo_i18n_lookup()` 先把节点文本 `packrivo_i18n_norm()` 压成 `"An"` 再 `isset($dict[$kind][$k])`，字典键是原始字符串 —— 键写成 `"An "`（多一个空格）永远命不中。第一轮补 `"An "` 页面没变，就是这个原因。
+3. **delta 的 add 与 HEAD 重叠会让 `apply-batch` 整批中止**：上一轮把 add 落盘后又提交，HEAD 里已有这些键（nl 53、es 52、fr 51、pt 49、it 48、其余各 1），撞 `新增键已存在` 直接中止且**不会执行 `--sync`**。用 `add-reconcile.py` 做减法后 11/11 逐字节 PASS。
+
+### 22.4 待负责人拍板
+
+- `tray` 全站仍有 129 条词典值用 tray 借词；本批只改会形成英文连续段的 4 处。是否全量换 `bak` 未定（全量会动 129 条，且「bak / hoes」与「tray / sleeve」混用问题需要一次性统一）。
+- `_homo.nl` 比负责人点的 12 词多 3 个（`details` / `opening` / `overlap`），判据同类（荷兰语原生、与英文同形），需确认。
+- 78 处 `The <a>` 用全局 `The→De`。het 词的 5 条链接译文换成了 de 词说法以避免性数错配（`bed→houder`、`buitenkarton→buitenverpakking`、`gereedschap→mal`、`werkblad meetmethode→meetmethode voor het werkblad`、`referentievoorbeeld→referentie voor verzendenvelop`）。
+- `/nl/blog/` 不在 126 页清单（博客列表页只有英文，插件按 `hreflang="en"` 标了 `(English)`），是否纳入未定。
+
+### 22.5 证据
+
+| 文件 | 内容 |
+|---|---|
+| `deploy/verification-29y/evidence/29y-nl-closed-2026-11-02.txt` | 扫描命令、逐页结果、78 处核对明细、哈希表 |
+| `deploy/verification-29y/evidence/29y-nl-final-scan.jsonl` | 本轮 126 页原始扫描输出 |
+| `deploy/verification-29y/evidence/29y-nl-pre-batch4-scan.jsonl` | 第三批前 126 页，用来对比 |
+| `deploy/verification-29y/evidence/29y-nl-the-audit-v3.json` | `The <a>` 78 处逐条判定 |
+| `deploy/verification-29y/evidence/dict-mods-29y.csv` / `.txt` | 改译文与新增译文的全量清单（48 + 5） |

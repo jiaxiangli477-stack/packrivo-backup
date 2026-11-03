@@ -1,0 +1,121 @@
+29y nl 清零取证 · 2026-11-02（本机演练站 www.packrivo.com，容器 php / 网关 172.19.0.1）
+====================================================================================================
+
+一、扫描命令（容器内执行，逐页 <main> 正文过英文标尺 v4.1）
+  docker exec php php /tmp/scan-main-english-29y.php \
+      /tmp/nl-urls.txt /tmp/nl-final2.jsonl 172.19.0.1 \
+      /tmp/local-stop.json /tmp/en-lexicon.json /tmp/allow
+  清单页数 126 / 实扫页数 126 / HTTP 非 200 0 / <main> 缺失 0
+  残留英文词合计 84 / 连续段合计 10 / 0 残留页数 125
+
+二、逐页结果（只列残留 >0 的页；其余按 0 计）
+  /nl/privacy/                                             词 84   段 10   ['the brief builder prepares', 'summary in your browser', 'packaging request transmits the request to']
+
+  判定：/nl/privacy/ 属 HANDOFF §10.8 已决例外（隐私政策只保留英文版，页面顶栏注明），
+        除此之外 125 页全部 0 残留。
+
+三、与第三批前的 126 页复扫对比
+  第三批前（nl-c2.jsonl）：连续段页 26 / 残留词页 4 / 词 104 / 段 41
+  本轮（nl-final2.jsonl）：连续段页 1 / 残留词页 1 / 词 84 / 段 10
+  中间三次复扫留档：nl-c4（连续段页 1）、nl-c6（连续段页 1）→ 只剩 privacy
+
+四、The <a> 全站核对（v3 口径，与 fr/it/es/pt 同一套判据）
+  判据：链接前还挂着裸 The -> FAIL；前置限定词与链接译文冠词两边都有 -> FAIL 重复；两边都无 -> FAIL 缺冠词；只有一个 -> PASS
+  合计 78 处：PASS 78 / FAIL 0；残留 ">The " 文本节点 0 处
+  PASS   /molded-pulp-insert/                           前置=有  链接冠词=无   NL: handleiding voor de omvang van matrijzen
+  PASS   /product-auto-bottom-display-carton/           前置=有  链接冠词=无   NL: catalogus voor displays met automatische bodem
+  PASS   /product-auto-bottom-display-carton/           前置=有  链接冠词=无   NL: vierhoekige displaytray
+  PASS   /product-auto-bottom-slotted-outer-carton/     前置=有  链接冠词=无   NL: referentie voor automatische bodem met sleuven
+  PASS   /product-auto-bottom-slotted-outer-carton/     前置=有  链接冠词=无   NL: handleiding voor leveringsstatus
+  PASS   /product-book-style-rigid-presentation-box/    前置=有  链接冠词=无   NL: referentie voor een stijve doos in boekstijl
+  PASS   /product-corrugated-book-wrap-mailer/          前置=有  链接冠词=无   NL: FEFCO-constructiereferentie
+  PASS   /product-corrugated-bottle-gift-carrier/       前置=有  链接冠词=无   NL: referentie voor een golfkartonnen flessendrager
+  PASS   /product-corrugated-gusset-folder/             前置=有  链接冠词=无   NL: catalogus voor een golfkartonnen map met zijvouwen
+  PASS   /product-corrugated-gusset-folder/             前置=有  链接冠词=无   NL: kartonnen gusset-vouwmal
+  PASS   /product-corrugated-reverse-tuck-pack/         前置=有  链接冠词=无   NL: referentie voor een omgekeerd insteekmodel
+  PASS   /product-corrugated-roll-end-hinged-lid/       前置=有  链接冠词=无   NL: referentie voor roleinden met deksel
+  PASS   /product-corrugated-tuck-top-auto-bottom/      前置=有  链接冠词=无   NL: catalogus voor tuck-top met automatische bodem
+  PASS   /product-corrugated-tuck-top-snap-bottom/      前置=有  链接冠词=无   NL: referentie voor tuck-top met 1-2-3-bodem
+  PASS   /product-corrugated-tuck-top-snap-bottom/      前置=有  链接冠词=无   NL: gesleufde buitenverpakking met klikbodem
+  PASS   /product-counter-display-carton/               前置=有  链接冠词=无   NL: oorspronkelijke structurele referentie voor displaydoos
+  PASS   /product-cube-carry-carton/                    前置=有  链接冠词=无   NL: referentie voor kubusdrager
+  PASS   /product-cube-carry-carton/                    前置=有  链接冠词=无   NL: specificatiehandleiding voor een vouwgeschenkdoos
+  PASS   /product-die-cut-handle-paper-bag/             前置=有  链接冠词=无   NL: referentie voor gestanst zakje
+  PASS   /product-die-cut-handle-paper-bag/             前置=有  链接冠词=无   NL: cadeaupresentatieset
+  PASS   /product-double-wall-frame-tray-sleeve/        前置=有  链接冠词=无   NL: referentie voor tray met rand en huls
+  PASS   /product-double-wall-tray-lid/                 前置=有  链接冠词=无   NL: referentie dubbelwandige tray met deksel
+  PASS   /product-double-wall-tray-lid/                 前置=有  链接冠词=无   NL: richting voor dubbelwandige frame-tray met deksel
+  PASS   /product-double-wall-tray-lid/                 前置=有  链接冠词=无   NL: set van vouwdeksel en basis
+  PASS   /product-euro-tote-paper-carrier/              前置=有  链接冠词=无   NL: catalogus met eurotassen
+  PASS   /product-euro-tote-paper-carrier/              前置=有  链接冠词=无   NL: set van geschenkzak en vloeipapier
+  PASS   /product-eva-foam-holder/                      前置=有  链接冠词=无   NL: contourgesneden PU-houder
+  PASS   /product-five-panel-corrugated-folder/         前置=有  链接冠词=无   NL: golfkartonnen verpakking in boekomslagstijl
+  PASS   /product-foldable-lid-base-box/                前置=有  链接冠词=无   NL: oorspronkelijke referentie voor een vouwbaar deksel en b
+  PASS   /product-folded-box-liner/                     前置=有  链接冠词=无   NL: oorspronkelijke structurele referentie voor doosvoering
+  PASS   /product-folded-tray-sleeve-box/               前置=有  链接冠词=无   NL: oorspronkelijke structurele referentie voor tray en hoes
+  PASS   /product-four-corner-pre-glued-carton/         前置=有  链接冠词=无   NL: referentie voor een vierhoekige doos
+  PASS   /product-four-corner-pre-glued-carton/         前置=有  链接冠词=无   NL: handleiding voor leveringsstatus
+  PASS   /product-full-flap-auto-bottom-carton/         前置=有  链接冠词=无   NL: referentie voor een doos met volledige kleppen en automa
+  PASS   /product-full-overlap-seal-end-carton/         前置=有  链接冠词=无   NL: referentie voor een volledig overlappende sluiting aan h
+  PASS   /product-gable-top-carry-carton/               前置=有  链接冠词=无   NL: meetmethode voor het werkblad
+  PASS   /product-gable-top-carry-carton/               前置=有  链接冠词=无   NL: oorspronkelijke structurele referentie voor geveldoos
+  PASS   /product-hanging-tab-retail-carton/            前置=有  链接冠词=无   NL: oorspronkelijke referentie voor ophang- en vergrendeling
+  PASS   /product-header-card-bag-topper/               前置=有  链接冠词=无   NL: headercard-catalogusreferentie
+  PASS   /product-hexagonal-folding-carton/             前置=有  链接冠词=无   NL: PakFactory-catalogus met zeshoekige verpakkingen
+  PASS   /product-hinged-nonmagnetic-rigid-box/         前置=有  链接冠词=无   NL: specificatiegids voor rigide dozen
+  PASS   /product-hinged-nonmagnetic-rigid-box/         前置=有  链接冠词=无   NL: richting voor opvouwbare geschenkdoos
+  PASS   /product-jewelry-mounting-card/                前置=有  链接冠词=无   NL: oorspronkelijke gids voor sieradendisplaykaarten
+  PASS   /product-lock-cap-auto-bottom-carton/          前置=有  链接冠词=无   NL: catalogus voor lock-cap auto-bottom
+  PASS   /product-lock-cap-auto-bottom-carton/          前置=有  链接冠词=无   NL: vouwdoos met automatische bodem
+  PASS   /product-paired-corrugated-end-caps/           前置=有  链接冠词=无   NL: oorspronkelijke referentie voor golfkartonnen eindkap
+  PASS   /product-paper-belly-band/                     前置=有  链接冠词=无   NL: oorspronkelijke referentie voor verpakkingshoes
+  PASS   /product-paper-merchandise-sleeve-bag/         前置=有  链接冠词=无   NL: richting voor uitbreidbare pakketzak
+  PASS   /product-paper-padded-parcel-envelope/         前置=有  链接冠词=无   NL: referentie papieren gewatteerde envelop
+  PASS   /product-paper-padded-parcel-envelope/         前置=有  链接冠词=无   NL: gids voor verpakte systemen
+  PASS   /product-paperboard-grid-divider/              前置=有  链接冠词=无   NL: referentie kartonnen scheidingswand
+  PASS   /product-peg-hook-counter-display/             前置=有  链接冠词=无   NL: referentie voor pegboard-display
+  PASS   /product-pinch-lock-paperboard-tray/           前置=有  链接冠词=无   NL: beschrijving van schaal met knijpsluiting
+  PASS   /product-pinch-lock-paperboard-tray/           前置=有  链接冠词=无   NL: handleiding voor afmetingen en beoordelingsmethode
+  PASS   /product-poly-bubble-parcel-envelope/          前置=有  链接冠词=无   NL: referentie voor polybubbelenvelop
+  PASS   /product-polyurethane-foam-holder/             前置=有  链接冠词=无   NL: doorgesneden EVA-houder
+  PASS   /product-printed-tissue-sheet/                 前置=有  链接冠词=无   NL: referentie bedrukt vloeipapier
+  PASS   /product-printed-tissue-sheet/                 前置=有  链接冠词=无   NL: setchecklist
+  PASS   /product-regular-slotted-shipping-carton/      前置=有  链接冠词=无   NL: oorspronkelijke referentie in doosstijl
+  PASS   /product-rigid-chipboard-divider/              前置=有  链接冠词=无   NL: kartonnen rasterscheidingswand
+  PASS   /product-rigid-paperboard-postal-envelope/     前置=有  链接冠词=无   NL: catalogusvoorbeelden van kartonnen verzenddozen
+  PASS   /product-self-locking-corrugated-folder/       前置=有  链接冠词=无   NL: referentie voor een golfkartonnen map
+  PASS   /product-shelf-counter-display/                前置=有  链接冠词=无   NL: gelaagde cadeaudisplay voor de vloer
+  PASS   /product-shelf-counter-display/                前置=有  链接冠词=无   NL: baliedisplay met één tray
+  PASS   /product-shipping-document-window-pouch/       前置=有  链接冠词=无   NL: referentie voor verzendenvelop
+  PASS   /product-shoulder-neck-rigid-box/              前置=有  链接冠词=无   NL: referentie voor schouder en hals van de fabrikant
+  PASS   /product-six-corner-pre-glued-carton/          前置=有  链接冠词=无   NL: catalogusreferentie zes hoeken
+  PASS   /product-snap-bottom-slotted-outer-carton/     前置=有  链接冠词=无   NL: referentie voor 1-2-3-sleufdoos
+  PASS   /product-snap-lock-bottom-carton/              前置=有  链接冠词=无   NL: formaatreferentie van de fabrikant voor snap-lock
+  PASS   /product-sos-paper-gift-bag/                   前置=有  链接冠词=无   NL: catalogus voor SOS-zakken
+  PASS   /product-sos-paper-gift-bag/                   前置=有  链接冠词=无   NL: set van geschenkzak en vloeipapier
+  PASS   /product-straight-tuck-retail-carton/          前置=有  链接冠词=无   NL: PakFactory-catalogus met straight-tuck-verpakkingen
+  PASS   /product-tab-lock-roll-end-corrugated-pack/    前置=有  链接冠词=无   NL: catalogus voor roll-end verpakkingen met lipvergrendelin
+  PASS   /product-tab-lock-roll-end-corrugated-pack/    前置=有  链接冠词=无   NL: kartonnen doos met rol-einde stofklep
+  PASS   /product-three-flap-lock-corrugated-pack/      前置=有  链接冠词=无   NL: drieklepsluiting-referentie
+  PASS   /product-tuck-end-sleeve-carton/               前置=有  链接冠词=无   NL: catalogus voor hoezen met insteekflappen
+  PASS   /product-two-door-rigid-presentation-box/      前置=有  链接冠词=无   NL: referentie voor dubbele-deurenmaker
+  PASS   /product-two-door-rigid-presentation-box/      前置=有  链接冠词=无   NL: gids voor openingsformaat van sieraden
+
+五、裸英文冠词直查（>The / >An / >A 紧跟锚标签或拉丁字母）
+  docker exec php curl ... 126 页 <main> 正则直查：命中 0 处（脚本 .tmp/29y/nl-article-leak.py）
+
+六、本次改动的文件与哈希
+  文件                                                   sha256 前 16      字节       说明
+  deploy\i18n-merged\nl-dict.json                      7ed0445e24aaf685 1596371  词典重建结果
+  deploy\verification-29y\i18n\delta\nl-mod.json       5f5abd8fbf848a95 45690    改译文 48 条
+  deploy\verification-29y\i18n\delta\nl-add.json       7e4957e34e25df2f 258      新增 5 条（文本节点级）
+  deploy\verification-29y\i18n\local-stop.json         1f638e973f04bfb7 7171     nl 本族词 65 + _homo 18
+  deploy\verification-29y\i18n\allow-nl.json           04e07570634453e6 1236     phrase 2 条 + word 2 条
+  deploy\scripts-29y\scan-main-english-29y.php         137a29745b51a351 17103    标尺 v4.1（整段同形豁免）
+
+  容器内 uploads/packrivo-i18n/nl-dict.json md5 = aef207d24c2e…（与仓库字节一致，apply-batch --sync 已校验 11/11）
+
+七、复现路径
+  1) python deploy/scripts-29y/apply-batch-29y.py nl --sync   # 11 个词典逐字节校验 + 上传
+  2) 上面第一条扫描命令
+  3) python .tmp/29y/nl-the-audit-v3.py（The <a> 核对）／nl-article-leak.py（裸冠词）
