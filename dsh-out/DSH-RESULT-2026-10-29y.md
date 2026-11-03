@@ -833,7 +833,7 @@ v4 判据（与负责人给的口径一致）：连续 ≥3 个 token 都在英�
 | logo | nl | 标志 | 保留 `logo`（word 级借词，不进 allow 的 merk） | 负责人 2026-11-02：merk 是「品牌」，意思不对 |
 | sos | nl | SOS 自开底袋型缩写 | 保留 `SOS`（word 级借词） | 与 it 同一处理；待负责人确认 |
 | poly mailer | nl | 塑料邮寄袋 | `poly verzendzak` | 与页面标题「Poly verzendzakken grootverpakking」统一；待负责人确认 |
-| tray | nl | 内托 / 盘式盒底 | `bak`（本批只改会形成英文连续段的 3 处：`of bak die`、`bak die later`、`bak, hoes of`） | 全站仍有 129 条词典值用 tray 借词，未扫；待负责人确认是否全量替换 |
+| tray | nl | 内托 / 盘式盒底 | 保留 `tray`（借词，已加进 `allow-nl.json` word 级） | **负责人 2026-11-02 确认**：荷兰语包装行业通用借词，不全量替换；同一页内不许 bak / tray 混用，`/nl/product-double-wall-frame-tray-lid/` 上本批改的 bak 已收回 tray |
 | tab flap | nl | 舌片 / 摇盖 | `lipje`（tab）、`flap`（保留荷兰语行话） | 待负责人确认 |
 | blind debossing | nl | 盲压凹 | `Blinddruk` | 待负责人确认 |
 | blind embossing | nl | 盲压凸 | `Reliëfdruk` | 与 Blinddruk 同排一致；待负责人确认 |
@@ -889,7 +889,7 @@ v4 判据（与负责人给的口径一致）：连续 ≥3 个 token 都在英�
 
 ### 22.4 待负责人拍板
 
-- `tray` 全站仍有 129 条词典值用 tray 借词；本批只改会形成英文连续段的 4 处。是否全量换 `bak` 未定（全量会动 129 条，且「bak / hoes」与「tray / sleeve」混用问题需要一次性统一）。
+- ~~`tray` 是否全量换 bak~~ → **负责人 2026-11-02 已决**：tray 是荷兰语包装行业通用借词，不全量替换，加进 `allow-nl.json` word 级（logo / sos / tray 共 3 条）；只把 `/nl/product-double-wall-frame-tray-lid/` 页内本批改的 bak 收回 tray，页内不许混用。见 §22.6。
 - `_homo.nl` 比负责人点的 12 词多 3 个（`details` / `opening` / `overlap`），判据同类（荷兰语原生、与英文同形），需确认。
 - 78 处 `The <a>` 用全局 `The→De`。het 词的 5 条链接译文换成了 de 词说法以避免性数错配（`bed→houder`、`buitenkarton→buitenverpakking`、`gereedschap→mal`、`werkblad meetmethode→meetmethode voor het werkblad`、`referentievoorbeeld→referentie voor verzendenvelop`）。
 - `/nl/blog/` 不在 126 页清单（博客列表页只有英文，插件按 `hreflang="en"` 标了 `(English)`），是否纳入未定。
@@ -903,3 +903,20 @@ v4 判据（与负责人给的口径一致）：连续 ≥3 个 token 都在英�
 | `deploy/verification-29y/evidence/29y-nl-pre-batch4-scan.jsonl` | 第三批前 126 页，用来对比 |
 | `deploy/verification-29y/evidence/29y-nl-the-audit-v3.json` | `The <a>` 78 处逐条判定 |
 | `deploy/verification-29y/evidence/dict-mods-29y.csv` / `.txt` | 改译文与新增译文的全量清单（48 + 5） |
+
+### 22.6 tray 批复后的追加改动（2026-11-02 晚）
+
+- `allow-nl.json` 加第 3 条 word：`tray`（借词，负责人确认）。
+- `/nl/product-double-wall-frame-tray-lid/` 页内 6 条 bak 收回 tray：`Custom Double-Wall Tray and Lid Sets`（text / block / title / attr 4 桶）→ `Dubbele trays met deksel per set`；`Record both part revisions…` → `goedgekeurde tray`；`After forming the tray…` → `vormen van de tray`。该页现在 `bak=0 / tray=9`。
+- 词典 md5 `aef207d24c2e…` → **`c97c8deff5cd4d6850269ac6c5499824`**（1596369 字节），`apply-batch nl --sync` 仍 11/11 逐字节 PASS。
+- 复扫（4 页，`/tmp/nl-tray-urls.txt`）：
+
+| 页面 | http | 残留词 | 连续段 |
+|---|---|---|---|
+| `/nl/product-double-wall-frame-tray-lid/` | 200 | 0 | 0 |
+| `/nl/product-double-wall-tray-lid/` | 200 | 0 | 0 |
+| `/nl/product-folded-tray-sleeve-box/` | 200 | 0 | 0 |
+| `/nl/products/` | 200 | 0 | 0 |
+
+- 126 页全量复扫的结论仍然成立：本批只动 1 页的 6 条译文 + 把 `tray` 加入白名单（`tray` 在 `en-lexicon` 里，入白名单只会减少英文证据，不会增加）。若要求词典哈希与 126 页证据严格同一时刻，需再跑一次全量复扫（约 17 分钟）。
+- 页内混用剩余的页面（负责人只点名修 1 页，其余未动）：`/nl/product-double-wall-tray-lid/` bak=1 tray=12、`/nl/product-folded-tray-sleeve-box/` bak=5 tray=14、`/nl/products/` bak=1 tray=9。

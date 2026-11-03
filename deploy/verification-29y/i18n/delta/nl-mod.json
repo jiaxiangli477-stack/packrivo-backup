@@ -25,8 +25,8 @@
    "new": "Verzenddozen met logo in grote aantallen"
   },
   "Custom Double-Wall Tray and Lid Sets": {
-   "old": "Dubbele trays met deksel per set",
-   "new": "Dubbele bakken met deksel per set"
+   "old": "Dubbele bakken met deksel per set",
+   "new": "Dubbele trays met deksel per set"
   }
  },
  "block": {
@@ -258,10 +258,6 @@
    "old": "Plaats het volledige hypothetische geschenkverpakking op het startpaneel en volg de aangeboden volgorde. Stop vóór de handelingen voor de eindflap en sluitlip om de inhoud en overlap te fotograferen. Open opnieuw langs de beoogde route voor de klant. Leg het punt vast waarop een tab, flap of verzegelde rand een andere handeling vereist; claim geen variabele hoogte tenzij het werkelijke ontwerp daarin voorziet.",
    "new": "Plaats het volledige hypothetische geschenkverpakking op het startpaneel en volg de aangeboden volgorde. Stop vóór de handelingen voor de eindflap en sluitlip om de inhoud en overlap te fotograferen. Open opnieuw langs de beoogde route voor de klant. Leg het punt vast waarop een lipje, flap of verzegelde rand een andere handeling vereist; claim geen variabele hoogte tenzij het werkelijke ontwerp daarin voorziet."
   },
-  "Record both part revisions together. An approved tray paired later with another lid should reopen the fit check.": {
-   "old": "Registreer beide revisies van de onderdelen samen. Een goedgekeurde tray die later met een ander deksel wordt gecombineerd, vereist een nieuwe pasvormcontrole.",
-   "new": "Registreer beide revisies van de onderdelen samen. Een goedgekeurde bak die later met een ander deksel wordt gecombineerd, vereist een nieuwe pasvormcontrole."
-  },
   "Send the offered base view, product footprint, insert arrangement and open overlap question through": {
    "old": "Stuur het voorgestelde basisaanzicht, de productvoetafdruk, de indeling van het inzetstuk en de openstaande vraag over overlap door",
    "new": "Stuur het voorgestelde basisaanzicht, de productvoetafdruk, de indeling van het inzetstuk en de openstaande vraag over de overlap door"
@@ -289,10 +285,6 @@
   "Bulk Shipping Boxes with Logo": {
    "old": "Verzenddozen met logo in bulk",
    "new": "Verzenddozen met logo in grote aantallen"
-  },
-  "Custom Double-Wall Tray and Lid Sets": {
-   "old": "Dubbele trays met deksel per set",
-   "new": "Dubbele bakken met deksel per set"
   },
   "Double-wall tray and lid sets for gift presentation, with your logo and from 500 pieces. Get a price.": {
    "old": "Trays met dubbele wand en deksel voor presentatie, met je logo en vanaf 500 stuks. Vraag een prijs aan.",
@@ -373,6 +365,18 @@
   "corrugated inlay direction": {
    "old": "Richting voor golfkartonnen inleg",
    "new": "richting voor golfkartonnen inleg"
+  },
+  "Record both part revisions together. An approved tray paired later with another lid should reopen the fit check.": {
+   "old": "Registreer beide revisies van de onderdelen samen. Een goedgekeurde bak die later met een ander deksel wordt gecombineerd, vereist een nieuwe pasvormcontrole.",
+   "new": "Registreer beide revisies van de onderdelen samen. Een goedgekeurde tray die later met een ander deksel wordt gecombineerd, vereist een nieuwe pasvormcontrole."
+  },
+  "Custom Double-Wall Tray and Lid Sets": {
+   "old": "Dubbele bakken met deksel per set",
+   "new": "Dubbele trays met deksel per set"
+  },
+  "After forming the tray, add the holder and product without using the frame as a lever. Photograph their final relationship before placing the lid. That view can reveal a height issue that the closed set would hide.": {
+   "old": "Voeg na het vormen van de bak de houder en het product toe zonder het frame als hefboom te gebruiken. Fotografeer hun uiteindelijke relatie voordat u het deksel plaatst. Die weergave kan een hoogteprobleem onthullen dat de gesloten set zou verbergen.",
+   "new": "Voeg na het vormen van de tray de houder en het product toe zonder het frame als hefboom te gebruiken. Fotografeer hun uiteindelijke relatie voordat u het deksel plaatst. Die weergave kan een hoogteprobleem onthullen dat de gesloten set zou verbergen."
   }
  },
  "title": {
@@ -381,8 +385,8 @@
    "new": "Verzenddozen met logo in grote aantallen | Packrivo"
   },
   "Custom Double-Wall Tray and Lid Sets | Packrivo": {
-   "old": "Dubbele trays met deksel per set | Packrivo",
-   "new": "Dubbele bakken met deksel per set | Packrivo"
+   "old": "Dubbele bakken met deksel per set | Packrivo",
+   "new": "Dubbele trays met deksel per set | Packrivo"
   }
  },
  "attr": {
@@ -395,8 +399,8 @@
    "new": "Verzenddozen met logo in grote aantallen"
   },
   "Custom Double-Wall Tray and Lid Sets": {
-   "old": "Dubbele trays met deksel per set",
-   "new": "Dubbele bakken met deksel per set"
+   "old": "Dubbele bakken met deksel per set",
+   "new": "Dubbele trays met deksel per set"
   }
  }
 }
