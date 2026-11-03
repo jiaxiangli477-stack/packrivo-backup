@@ -1,0 +1,80 @@
+29y · ja 语种收尾 + 拉丁语种回归 证据摘要
+生成时间：2026-11-03（本次会话）
+扫描器：deploy/scripts-29y/scan-main-english-29y.php
+  v4.1 = commit 2a2e0be 版本（无 CJK 分支、无 pair_count）
+  v4.3 = 当前仓库版本（CJK 分支 + pk-post-title/pk-post-thumb 整卡排除）
+命令口径：php scan.php <urls.txt> <out.jsonl> 172.19.0.1 /tmp/local-stop.json /tmp/en-lexicon.json /tmp/allow
+
+================================================================
+一、ja 基线 → 终局（126 页，v4.3）
+================================================================
+基线（ja-base.jsonl，v4.2 + local-stop 缺 _cjk 的错误状态）：
+  非 privacy：R1 含段页 39 ｜ R2 含对页 17 ｜ 段 110 ｜ 唯一对 24
+终局（29y-ja-final-scan.jsonl）：
+  非 privacy：R1 含段页 0 ｜ R2 含对页 0 ｜ R2 唯一对 0
+  仅剩 /ja/privacy/（负责人批准的英文例外页，段 10，不在本批范围）
+
+根因修复（两处，均在 CJK 分支内）：
+  1) 容器 /tmp/local-stop.json 缺 _cjk → ja 未进 CJK 分支，误套拉丁「整句判英文」
+     补拷仓库版后 ja/ko/zh-CN/zh-TW 正确进入 CJK 分支
+  2) CJK 分支原来只排除 pk-post-title，博客卡缩略图 <img alt> 里的英文博客描述
+     仍会被抓成段 → 增加 pk-post-thumb 整 span 排除
+     正则兼容属性顺序：(?:[^>"']|"[^"]*")*\bclass="..."[^>]*
+
+词典修复（apply-batch ja --sync，PASS 11/11 字节一致）：
+  mod 11 条 + add 84 条 = 95 条
+  类型一：撇号变体补键 —— HEAD 键用弯撇号（’），页面渲染是直撇号（'），
+          查不到 → 补直撇号键并复用 HEAD 的日文值
+  类型二：残留英文收回日文 —— Send My Packaging Request → 包装リクエストを送信、
+          Closure Geometry → 閉じ部形状、No Gusset → ガセットなし、
+          Pinch Bottom Bags → ピンチボトムバッグ、self opening square →
+          セルフオープニングスクエア、Partial Cover → パーシャルカバー、
+          Gift → ギフト、Use the（句尾英文）→ 場合は、
+  类型三：模板/界面键 —— per unit at 1,000 pieces → 1,000個時の単価、
+          Paper bags → 紙袋、Start from → 出発点：、
+          Compare this direction with(the/the existing) → このオプションを…
+
+R2 结论表：evidence/29y-ja-r2-conclusions.md（24 对逐条：23 译掉 + 1 privacy 例外）
+裸冠词审计（>The / >An / >A 文本节点，126 页正文，排除 privacy）：0 命中
+
+================================================================
+二、拉丁语种回归（v4.1 vs v4.3，同一词典状态）
+================================================================
+格式：逐页逐字段比对，14 个字段（http/bytes/main_found/main_text_len/residual_raw/
+      residual_raw_tokens/residual_count/residual_tokens/local_stop_removed/
+      long_runs/long_run_words/segment_count/english_segments/residual_words）
+
+nl：126 页 × 14 字段 —— 零差异
+    md5 v4.1 = 9DC847C803361D59BDCCC24DC9CC7949
+    md5 v4.3 = 9DC847C803361D59BDCCC24DC9CC7949   ← 整个文件逐字节相同
+    残留词合计 84 = 84 ｜ 含段页 1 = 1（即 /nl/privacy/ 例外页）
+it：126 页 × 14 字段 —— 零差异
+    md5 v4.1 = 53E2794799C0C40BFBE75948384DD8EA
+    md5 v4.3 = 53E2794799C0C40BFBE75948384DD8EA   ← 整个文件逐字节相同
+    含段页 1 = 1（/it/privacy/）
+
+结论：CJK 分支与博客卡排除全部落在 if ($isCjk) 内部，拉丁语种走原路径，
+      输出逐字节不变。
+
+配套 jsonl：
+  29y-regress-nl-v41.jsonl / 29y-regress-nl-v43.jsonl
+  29y-regress-it-v41.jsonl / 29y-regress-it-v43.jsonl
+  29y-ja-final-scan.jsonl
+
+================================================================
+三、主题文件：未改动
+================================================================
+负责人 2026-11-03 口径：hero 价格文案先查来源 —— 走词典则译，硬编码则登记 31b、不动主题
+（主题在 31a 分支上改，避免冲突）。
+
+核查结果：packrivo-wp/packrivo-home-v4/front-page.php
+  L104  <p class="pk-mono pk-muted">per unit at 1,000 pieces</p>
+  L166  <p class="pk-mono pk-muted">Mailer box · 30×22×12 cm · kraft · full colour</p>
+两处都是**裸写英文、没有 pkv4_i18n_t 包装**，但 mu-plugin
+wp-content/mu-plugins/packrivo-i18n.php 的全文文本节点替换
+（第 472 行 preg_replace_callback '#>([^<>]+)<#'）会按词典键翻译任意文本节点。
+所以：加词典键即可，**不需要改主题**，31b 清单本条为空。
+旁证：nl 页同一位置渲染为 "per stuk bij 1.000 stuks"（nl 词典有该键）；
+      ja 页加键后渲染为 "1,000個時の単価"（本次抽查命中）。
+
+本次未修改任何主题文件；git 变更清单见 commit 31ebcca 与本份摘要所属 commit。
