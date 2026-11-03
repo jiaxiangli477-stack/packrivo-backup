@@ -12,6 +12,16 @@
  *           即使它同时是本语种常用词（an / in / is / was / will / on / no / come …）。
  *           理由：这些词在英文里也是常用词，允许它们「抵消」等于给英文短语开后门。
  *
+ * v4.2（2026-11-03，负责人批）：CJK 语种（ja / ko / zh-CN / zh-TW）走分支——
+ *   CJK 正文没有空格分词，`ascii_words()` 会把整段日文/中文当成一个 token，
+ *   于是「词数」指标失效（/ja/ 首页 85 个"词"里 60+ 是日文串）。
+ *   CJK 分支改为：
+ *     R1 计分：连续 ≥3 个英文词成段（白名单、本族词过滤照旧）→ 页 PASS 判据 = 段数 0
+ *     R2 报备：连续 2 个英文词的对，单列成 "pairs" 清单，每条必须有人工结论（译掉 / 进 allow-<lang>）
+ *     整句判英文对 CJK 关闭（没有拉丁本族词可比，enHits>=2 必然误判）
+ *     只排除 <span class="pk-post-title">（博客文章标题，博客只有英文版是既定期望）
+ *   拉丁语种逻辑一行未动。
+ *
  * 跑法：php scan-main-english-29y.php <urls.txt> <out.jsonl> [gateway] [local-stop.json]
  */
 $list = $argv[1] ?? '';
@@ -54,6 +64,8 @@ $LOCAL = [
   'pt' => ['o','a','os','as','de','do','da','e','é','para','com','seu','nosso','uma','um','em','por','que','se','ao','como','mais','sem','sobre','este','esta'],
   'ar' => [], 'ja' => [], 'ko' => [], 'zh-CN' => [], 'zh-TW' => [],
 ];
+/* CJK 语种名单：从 local-stop.json 的 "_cjk" 读，脚本里不硬编码语种名。 */
+$CJK = [];
 if ($locf !== '' && is_readable($locf)) {
     $j = json_decode((string) file_get_contents($locf), true);
     if (is_array($j)) {
@@ -67,6 +79,10 @@ if ($locf !== '' && is_readable($locf)) {
                 if (!is_array($arr)) continue;
                 $HOMO[$lg] = array_values(array_unique(array_map('strtolower', $arr)));
             }
+        }
+        // CJK 语种名单：这些语种走「只认段」的计数分支
+        if (isset($j['_cjk']) && is_array($j['_cjk'])) {
+            foreach ($j['_cjk'] as $lg) $CJK[(string) $lg] = true;
         }
     }
 }
@@ -212,6 +228,12 @@ foreach ($lines as $line) {
         continue;
     }
 
+    $isCjk = isset($CJK[$lang]);
+    if ($isCjk) {
+        /* 只排除博客文章标题那一个 span：博客只有英文版、列表页显示英文标题是既定期望。
+           分类名 / Journal 标签 / All articles 这类界面文字照常扫、照常翻译。 */
+        $m[1] = (string) preg_replace('~<span\b[^>]*\bclass="[^"]*\bpk-post-title\b[^"]*"[^>]*>.*?</span>~si', ' ', $m[1]);
+    }
     $text = text_of($m[1]);
     $loc = array_flip($LOCAL[$lang] ?? []);
     $isLatinLocal = ($LOCAL[$lang] ?? []) !== [];
@@ -228,11 +250,12 @@ foreach ($lines as $line) {
         if ($cnt > 0) $alwUsed[$ph['phrase']] = $ph['type'] . '（短语，' . $cnt . ' 处）';
     }
 
-    /* 逐句判英文（v2 口径），把命中词按原顺序摊平成一条流，供残留词数统计用。 */
+    /* 逐句判英文（v2 口径），把命中词按原顺序摊平成一条流，供残留词数统计用。
+       CJK 语种整块跳过：没有拉丁本族词可比，enHits>=2 会把任何含两个英文词的日文/中文句判成英文。 */
     $stream = [];      // ['w' => word, 'local' => bool]
     $segments = [];
     $homo = $HOMO[$lang] ?? [];            // 与英文同形的本族词：只抵消孤立单词，不参与整句判英文
-    foreach (sentences($text) as $s) {
+    foreach (($isCjk ? [] : sentences($text)) as $s) {
         $words = ascii_words($s);
         if (!$words) continue;
         $words = array_map(static fn($w) => mb_strtolower($w, 'UTF-8'), $words); // 大小写不敏感：Le/le 同词
@@ -261,6 +284,7 @@ foreach ($lines as $line) {
        v4.1（2026-11-02 负责人）：整段都由本语种同形词（"_homo"）组成时不算一段。 */
     $runsOf = [];
     $runSamples = [];
+    $pairs = [];                                    // CJK 专有：连续 2 个英文词的对（R2 清单）
     $flushRun = static function (array $cur, array &$runsOf, array &$runSamples) use ($loc, $homo) {
         if (count($cur) < 3) return;
         /* 整段都是本语种同形词（die we in / open is is / of contact die …）→ 不是英文残留。
@@ -278,6 +302,9 @@ foreach ($lines as $line) {
         $runsOf[] = $cur;
         if (count($runSamples) < 3) $runSamples[] = implode(' ', array_slice($cur, 0, 12));
     };
+    /* 先切出「极大连续英文词序列」，再按长度分流：
+       ≥3 → 计分段（R1）；==2 → CJK 的报备清单（R2）；==1 → 不管。 */
+    $seqs = [];
     foreach (sentences($text) as $s) {
         $cur = [];
         foreach (ascii_words($s) as $w) {
@@ -287,11 +314,15 @@ foreach ($lines as $line) {
             if ($isLex) {
                 $cur[] = $w;
             } else {
-                $flushRun($cur, $runsOf, $runSamples);
+                if ($cur) $seqs[] = $cur;
                 $cur = [];
             }
         }
-        $flushRun($cur, $runsOf, $runSamples);
+        if ($cur) $seqs[] = $cur;
+    }
+    foreach ($seqs as $seq) {
+        $flushRun($seq, $runsOf, $runSamples);
+        if ($isCjk && count($seq) === 2) $pairs[] = implode(' ', $seq);
     }
 
     $localInRun = [];
@@ -317,21 +348,48 @@ foreach ($lines as $line) {
 
     $rec['main_found'] = true;
     $rec['main_text_len'] = mb_strlen($text, 'UTF-8');
-    // 口径 A：原始英文词数（去重，和 v2 基线同口径可比）
-    $rec['residual_raw'] = count($rawKept);
-    $rec['residual_raw_tokens'] = $rawCount;
-    // 口径 B：扣掉本语种功能词后的词数（去重）—— 验收看这个
-    $rec['residual_count'] = count($kept);
-    $rec['residual_tokens'] = $filteredCount;
-    $rec['local_stop_removed'] = count($rawKept) - count($kept);
-    $rec['long_runs'] = count($runsOf);
-    $rec['long_run_words'] = $runWords;
-    $rec['long_run_samples'] = $runSamples;
-    $rec['allowed_used'] = $alwUsed;              // 本页用到哪些豁免词（审计用）
-    $rec['residual_words'] = array_keys($kept);
-    $rec['english_segments'] = array_slice($segments, 0, 4);
-    $rec['segment_count'] = count($segments);
-    if ($filteredCount > 5) $flagged++;
+    if ($isCjk) {
+        /* CJK：词数指标不可用（整段日文/中文没有空格，会被切成一个 token），只按段计分。
+           residual_count = 段内英文词（去重）；residual_tokens = 段内英文词总数；
+           pairs = 连续 2 词的对，进证据文件，每条必须有人工结论（译掉 / 进 allow-<lang>）。 */
+        $rw = [];
+        $rt = 0;
+        foreach ($runsOf as $r) {
+            foreach ($r as $w) { $rw[$w] = true; $rt++; }
+        }
+        $pairU = array_values(array_unique($pairs));
+        $rec['residual_raw'] = count($rw);
+        $rec['residual_raw_tokens'] = $rt;
+        $rec['residual_count'] = count($rw);
+        $rec['residual_tokens'] = $rt;
+        $rec['local_stop_removed'] = 0;
+        $rec['long_runs'] = count($runsOf);
+        $rec['long_run_words'] = $rt;
+        $rec['long_run_samples'] = $runSamples;
+        $rec['pairs'] = array_slice($pairU, 0, 40);
+        $rec['pair_count'] = count($pairU);
+        $rec['allowed_used'] = $alwUsed;
+        $rec['residual_words'] = array_keys($rw);
+        $rec['english_segments'] = [];
+        $rec['segment_count'] = 0;
+        if ($runsOf !== []) $flagged++;
+    } else {
+        // 口径 A：原始英文词数（去重，和 v2 基线同口径可比）
+        $rec['residual_raw'] = count($rawKept);
+        $rec['residual_raw_tokens'] = $rawCount;
+        // 口径 B：扣掉本语种功能词后的词数（去重）—— 验收看这个
+        $rec['residual_count'] = count($kept);
+        $rec['residual_tokens'] = $filteredCount;
+        $rec['local_stop_removed'] = count($rawKept) - count($kept);
+        $rec['long_runs'] = count($runsOf);
+        $rec['long_run_words'] = $runWords;
+        $rec['long_run_samples'] = $runSamples;
+        $rec['allowed_used'] = $alwUsed;              // 本页用到哪些豁免词（审计用）
+        $rec['residual_words'] = array_keys($kept);
+        $rec['english_segments'] = array_slice($segments, 0, 4);
+        $rec['segment_count'] = count($segments);
+        if ($filteredCount > 5) $flagged++;
+    }
 
     fwrite($fh, json_encode($rec, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . "\n");
     if ($n % 50 === 0) {

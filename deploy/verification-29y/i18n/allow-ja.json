@@ -1,0 +1,82 @@
+{
+ "_note": "ja 语种豁免表。word 级：全站按单词豁免（≤15 条）；phrase 级：只在 pages 列出的页面、整短语出现时豁免。",
+ "_rule": "只放品牌/单位/代码/行业缩写的既有借词；design、unit、premium、per、set、MOQ 一律不进（要译）。",
+ "_updated": "2026-11-03",
+ "entries": [
+  {
+   "word": "Packrivo",
+   "type": "品牌名",
+   "reason": "本站品牌"
+  },
+  {
+   "word": "PakFactory",
+   "type": "品牌名",
+   "reason": "同集团品牌，页面对比表里出现"
+  },
+  {
+   "word": "Packlane",
+   "type": "品牌名",
+   "reason": "竞品牌名，blog 对比文里出现"
+  },
+  {
+   "word": "FEFCO",
+   "type": "行业代码",
+   "reason": "瓦楞纸箱国际代码体系"
+  },
+  {
+   "word": "WhatsApp",
+   "type": "产品名",
+   "reason": "联系方式按钮"
+  },
+  {
+   "word": "DDP",
+   "type": "贸易术语",
+   "reason": "Incoterms 2020 术语，日语报关实务里按原样使用"
+  },
+  {
+   "word": "FOB",
+   "type": "贸易术语",
+   "reason": "Incoterms 2020 术语"
+  },
+  {
+   "word": "SOS",
+   "type": "品类缩写",
+   "reason": "SOS 袋（self-opening sack），日语包装行业按原样使用"
+  },
+  {
+   "word": "PE",
+   "type": "材料缩写",
+   "reason": "ポリエチレン 的行业缩写"
+  },
+  {
+   "word": "PU",
+   "type": "材料缩写",
+   "reason": "ポリウレタン 的行业缩写"
+  },
+  {
+   "word": "PET",
+   "type": "材料缩写",
+   "reason": "PET 樹脂，日语按原样使用"
+  },
+  {
+   "word": "PP",
+   "type": "材料缩写",
+   "reason": "ポリプロピレン 的行业缩写"
+  },
+  {
+   "word": "CMYK",
+   "type": "印刷色",
+   "reason": "四色印刷色系名"
+  },
+  {
+   "word": "Pantone",
+   "type": "色号体系",
+   "reason": "品牌色号体系名"
+  },
+  {
+   "word": "ISO",
+   "type": "标准代号",
+   "reason": "ISO 标准代号"
+  }
+ ]
+}
