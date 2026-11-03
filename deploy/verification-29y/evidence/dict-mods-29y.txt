@@ -1,28 +1,12 @@
-原有译文被改清单（工作区 vs HEAD），共 6 条
+原有译文被改清单（工作区 vs HEAD），共 2 条
 
-按语种：nl 6
+按语种：nl 2
 
-[1] nl · title
-    键：Custom Double-Wall Tray and Lid Sets | Packrivo
-    旧：Dubbele bakken met deksel per set | Packrivo
-    新：Dubbele trays met deksel per set | Packrivo
-[2] nl · attr
-    键：Custom Double-Wall Tray and Lid Sets
-    旧：Dubbele bakken met deksel per set
-    新：Dubbele trays met deksel per set
-[3] nl · block
-    键：After forming the tray, add the holder and product without using the frame as a lever. Photograph their final relationship before placing the lid. That view can reveal a height issue that the closed set would hide.
-    旧：Voeg na het vormen van de bak de houder en het product toe zonder het frame als hefboom te gebruiken. Fotografeer hun uiteindelijke relatie voordat u het deksel plaatst. Die weergave kan een hoogteprobleem onthullen dat de gesloten set zou verbergen.
-    新：Voeg na het vormen van de tray de houder en het product toe zonder het frame als hefboom te gebruiken. Fotografeer hun uiteindelijke relatie voordat u het deksel plaatst. Die weergave kan een hoogteprobleem onthullen dat de gesloten set zou verbergen.
-[4] nl · block
-    键：Record both part revisions together. An approved tray paired later with another lid should reopen the fit check.
-    旧：Registreer beide revisies van de onderdelen samen. Een goedgekeurde bak die later met een ander deksel wordt gecombineerd, vereist een nieuwe pasvormcontrole.
-    新：Registreer beide revisies van de onderdelen samen. Een goedgekeurde tray die later met een ander deksel wordt gecombineerd, vereist een nieuwe pasvormcontrole.
-[5] nl · block
-    键：Custom Double-Wall Tray and Lid Sets
-    旧：Dubbele bakken met deksel per set
-    新：Dubbele trays met deksel per set
-[6] nl · text
-    键：Custom Double-Wall Tray and Lid Sets
-    旧：Dubbele bakken met deksel per set
-    新：Dubbele trays met deksel per set
+[1] nl · attr
+    键：Double-wall tray and lid sets for gift presentation, with your logo and from 500 pieces. Get a price.
+    旧：Bakken met dubbele wand en deksel voor presentatie, met je logo en vanaf 500 stuks. Vraag een prijs aan.
+    新：Trays met dubbele wand en deksel voor presentatie, met je logo en vanaf 500 stuks. Vraag een prijs aan.
+[2] nl · block
+    键：Double-wall tray and lid sets for gift presentation, with your logo and from 500 pieces. Get a price.
+    旧：Bakken met dubbele wand en deksel voor presentatie, met je logo en vanaf 500 stuks. Vraag een prijs aan.
+    新：Trays met dubbele wand en deksel voor presentatie, met je logo en vanaf 500 stuks. Vraag een prijs aan.
