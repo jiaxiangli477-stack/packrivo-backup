@@ -1,0 +1,53 @@
+29y · 并行写手审计快照
+采集时间：2026-11-03 22:18:01
+采集人：主会话（单会话串行执行者）
+
+== 1. 工作台任务：coverage（自动探索）与在飞数 ==
+id   状态        暂停      coverage  在飞     exploration   
+3    timeout_open True    True      0      3             
+4    done      False   True      0      4             
+5    done      False   True      0      5             
+6    done      False   True      0      6             
+7    paused    True    False     0      7             
+
+结论：task 3/4/5/6 建任务时 coverage=true，工作台 exploration 引擎据此自动拆意图并
+      派 worker 真改仓库（task 6 → intent 104~107，即 ko 的并行写手）。
+      task 7（ar）已 coverage=false + paused=True，in_flight=0，只有一次 planner 记录。
+
+== 2. 正在运行的 agent（绑定 + 在飞） ==
+  goals       角色=goals     绑定=kimi-k3.1-pro      enabled=True
+  planner     角色=planner   绑定=kimi-k3.1-pro      enabled=True
+  mainagent   角色=main      绑定=kimi-k3.1-pro      enabled=True
+  worker      角色=worker    绑定=deepseek-v4-pro    enabled=True
+  auto        角色=assistant 绑定=kimi-k3.1-pro      enabled=True
+  pentest     角色=assistant 绑定=deepseek-v4-pro    enabled=True
+  reporter    角色=assistant 绑定=kimi-k3.1-pro      enabled=True
+  retester    角色=assistant 绑定=deepseek-v4.1-flash enabled=True
+  （以上是 agent 定义，不代表在跑；在跑与否看 task.in_flight 与 transcript mtime）
+
+== 3. exploration transcript 最近写入（活跃写手指纹） ==
+  exp7-planner.jsonl                 2633 B  最后写入 22:16:38（1 分钟前）
+  exp6-planner.jsonl               279538 B  最后写入 20:40:42（97 分钟前）
+  exp6-worker-i107.jsonl           978733 B  最后写入 20:40:18（98 分钟前）
+  exp6-worker-i105.jsonl           844414 B  最后写入 19:39:03（159 分钟前）
+  exp6-worker-i103.jsonl          1177802 B  最后写入 18:54:43（203 分钟前）
+  exp6-worker-i98.jsonl            558465 B  最后写入 17:53:16（265 分钟前）
+  exp6-worker-i97.jsonl            508128 B  最后写入 17:52:20（266 分钟前）
+  exp6-worker-i99.jsonl            368074 B  最后写入 17:49:02（269 分钟前）
+
+== 4. git 写手指纹 ==
+  git status --short : '?? deploy/verification-29y/evidence/29y-writer-audit-2026-11-03.txt'
+  index.lock 存在    : False
+  HEAD               : 0a3615d fix(29y): ja/ko delta 归位——剔除已入 HEAD 的 add 键，重建 11/11 PASS
+
+== 5. 结论 ==
+  当前只有主会话在改 packrivo-backup：
+  · 3/4/5/6 已完成（不再派单）；7 已 paused=True 且 coverage=False
+  · 所有任务 in_flight = 0
+  · exp7-planner.jsonl 那一次写入发生在本快照前 1 分钟，是 task 7 建任务时的
+    规划器首跑（goals_total=0、未派 worker）；暂停后没有新写入
+  · exp6-* 全部是 task 6 当天 17:49~20:40 的历史 worker 记录，均已停止
+  · 仓库 git status 干净、无 index.lock
+
+  注：task 6 的 worker 在 20:40:18 停止，正好是它 commit fc41101 的时间；
+      主会话在 22:0x 接手后已重跑权威扫描并补 0a3615d，两边成果已合并、无双写。

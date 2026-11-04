@@ -1,0 +1,72 @@
+29y · /ar/privacy/ 阿语译文残留清零 · intent 117 · 2026-11-04
+==================================================================
+
+一、结论
+--------
+/ar/privacy/ 阿语译文残留已归零：
+  residual_count = 0
+  residual_raw   = 0
+  residual_raw_tokens = 0
+  residual_tokens     = 0
+  long_runs / long_run_words = 0
+  pairs / pair_count = 0
+  segment_count = 0
+仅剩 4 个已登记豁免项（品牌/产品名，均在 allow-ar.json）：
+  Google Analytics（短语，1 处，/ar/privacy/）
+  Google Tag（短语，1 处，/ar/privacy/）
+  packrivo（品牌名）
+  whatsapp（产品名）
+
+二、本次 intent 117 做了什么
+----------------------------
+1. 接续进度：上一 worker（ar 收尾）已完成 /ar/privacy/ 的整段键翻译落库
+   （ar-add.json 里 "The brief builder prepares a summary ... ask about your data at" →
+   阿语整段键），并在允许表 allow-ar.json 登记 Google Analytics / Google Tag
+   两个短语豁免（限 /ar/privacy/ 页）。本 worker 未改动任何字典/delta/允许表内容。
+2. 只做复现校验：用仓库内 scan-main-english-29y.php (v4.3) 对 /ar/privacy/ 单页
+   复扫，确认 residual_count 归零。
+3. 归档证据（本文件 + 相关 diff/输出）。
+
+三、复现命令与原始输出
+----------------------
+复扫命令（本 worker 执行）：
+  python deploy\scripts-29y\run-scan-29y.py ^
+      E:\破甲工作区\.tmp\29y\ar-priv1.txt ar-priv-117 172.19.0.1
+
+  run-scan-29y.py 先把仓库内 4 个扫描器依赖文件复制进 php 容器并校验 sha256：
+    scan-main-english-29y.php  1774ec45542fea4a  SAME
+    en-lexicon.json            25f985926ff333d3  SAME
+    local-stop.json            34907240d91159c7  SAME
+    allow-*.json（11 语种）    全部 SAME
+  然后 php /tmp/scan.php /tmp/ar-priv-117.list /tmp/ar-priv-117.jsonl ...
+
+单页扫描原始输出（/tmp/ar-priv-117.jsonl，抄回 .tmp/29y/ar-priv-117.jsonl）：
+{"lang":"ar","url":"https://www.packrivo.com/ar/privacy/","http":200,"bytes":118977,
+ "main_found":true,"main_text_len":3498,"residual_raw":0,"residual_raw_tokens":0,
+ "residual_count":0,"residual_tokens":0,"local_stop_removed":0,"long_runs":0,
+ "long_run_words":0,"long_run_samples":[],"pairs":[],"pair_count":0,
+ "allowed_used":{"Google Analytics":"产品名（短语，1 处）","Google Tag":"产品名（短语，1 处）",
+   "packrivo":"品牌名","whatsapp":"产品名"},
+ "residual_words":[],"english_segments":[],"segment_count":0}
+
+（同页证据：evidence/29y-ar-final-scan.jsonl 中 /ar/privacy/ 条目，本 worker 复现结果与其一致。）
+
+四、修复 diff 落盘清单
+----------------------
+- evidence/29y-ar-privacy-diff-i117.txt    （ar-add.json / ar-mod.json / local-stop.json /
+                                              allow-ar.json 相对 HEAD 的 diff，59,988 字节）
+- evidence/29y-ar-dict-stat-i117.txt       （ar-dict.json diffstat：124 行变动，+113/-11）
+- evidence/dict-mods-29y.txt/.csv          （已有，ar 9 条改值清单）
+- evidence/29y-ar-r2-conclusions.md        （已有，27 对 R2 结论：25 译掉 + 2 Google 产品名短语豁免（2026-11-04 定稿））
+- evidence/29y-ar-and-regression-summary.txt（已有，ar 126 页基线→终局 + nl/it/ja/ko 回归）
+
+五、工作区/HEAD 状态（本 worker 未做任何 git 写操作）
+--------------------------------------------------
+HEAD  = 0a3615ddbb206feb458d103ab2ea6ed3ac2da85d（main）
+工作区仍有上一 worker 留下的未提交改动（未 commit / 未 push，符合本 intent 边界）：
+  M deploy/i18n-merged/ar-dict.json
+  M deploy/verification-29y/evidence/dict-mods-29y.csv / .txt
+  M deploy/verification-29y/i18n/delta/ar-add.json / ar-mod.json
+  M deploy/verification-29y/i18n/local-stop.json
+  ?? deploy/verification-29y/i18n/allow-ar.json
+  ?? deploy/verification-29y/evidence/29y-ar-*.jsonl / .md / .txt 等证据

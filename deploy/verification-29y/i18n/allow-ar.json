@@ -1,0 +1,106 @@
+{
+ "_note": "ar 语种豁免表。word 级：全站按单词豁免（≤15 条）；phrase 级：只在 pages 列出的页面、整短语出现时豁免。",
+ "_rule": "只放品牌/单位/代码/行业缩写的既有借词；design、unit、premium、per、set、MOQ 一律不进（要译）。拉丁字母缩写按阿拉伯语包装实务原样使用。",
+ "_updated": "2026-11-04",
+ "entries": [
+  {
+   "word": "Packrivo",
+   "type": "品牌名",
+   "reason": "اسم العلامة التجارية للموقع"
+  },
+  {
+   "word": "PakFactory",
+   "type": "品牌名",
+   "reason": "علامة تجارية شقيقة، تظهر في جداول المقارنة"
+  },
+  {
+   "word": "Packlane",
+   "type": "品牌名",
+   "reason": "اسم منافس، يظهر في صفحات المقارنة"
+  },
+  {
+   "word": "FEFCO",
+   "type": "行业代码",
+   "reason": "رمز دولي لتصنيف صناديق الكرتون المضلع"
+  },
+  {
+   "word": "WhatsApp",
+   "type": "产品名",
+   "reason": "زر التواصل"
+  },
+  {
+   "word": "DDP",
+   "type": "贸易术语",
+   "reason": "مصطلح إنكوترمز 2020، يُستخدم كما هو في التخليص الجمركي"
+  },
+  {
+   "word": "FOB",
+   "type": "贸易术语",
+   "reason": "مصطلح إنكوترمز 2020"
+  },
+  {
+   "word": "SOS",
+   "type": "品类缩写",
+   "reason": "كيس SOS (self-opening sack)، يُستخدم كما هو في قطاع التغليف"
+  },
+  {
+   "word": "PE",
+   "type": "材料缩写",
+   "reason": "اختصار البولي إيثيلين"
+  },
+  {
+   "word": "PU",
+   "type": "材料缩写",
+   "reason": "اختصار البولي يوريثان"
+  },
+  {
+   "word": "PET",
+   "type": "材料缩写",
+   "reason": "راتنج PET، يُستخدم كما هو"
+  },
+  {
+   "word": "PP",
+   "type": "材料缩写",
+   "reason": "اختصار البولي بروبيلين"
+  },
+  {
+   "word": "CMYK",
+   "type": "印刷色",
+   "reason": "اسم نظام ألوان الطباعة الرباعية"
+  },
+  {
+   "word": "Pantone",
+   "type": "色号体系",
+   "reason": "اسم نظام ألوان بانتون"
+  },
+  {
+   "word": "ISO",
+   "type": "标准代号",
+   "reason": "رمز معيار ISO"
+  },
+  {
+   "phrase": "Packaging Corporation of America",
+   "type": "公司名",
+   "reason": "اسم شركة، مذكور نصًا في المصدر — معالجة على مستوى العبارة ومحصورة بصفحة واحدة",
+   "pages": ["/ar/product-full-overlap-slotted-outer-carton/"]
+  },
+  {
+   "phrase": "Paper Mart",
+   "type": "品牌名",
+   "reason": "اسم علامة تجارية في نص المصدر؛ 译成 `خاص بـ Paper Mart` 后品牌两个拉丁词会被判成一对，故按短语豁免、限该页",
+   "pages": ["/ar/product-paper-merchandise-sleeve-bag/"]
+  },
+  {
+   "phrase": "Google Analytics",
+   "type": "产品名",
+   "reason": "اسم منتج Google الرسمي؛ لا يُترجم في واجهات Google العربية، يظهر مرة واحدة في سياسة الخصوصية",
+   "pages": ["/ar/privacy/"]
+  },
+  {
+   "phrase": "Google Tag",
+   "type": "产品名",
+   "reason": "اسم منتج Google الرسمي المرتبط بـ Analytics 4؛ يبقى لاتينيًا",
+   "pages": ["/ar/privacy/"]
+  }
+ ]
+}

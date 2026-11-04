@@ -1,4 +1,40 @@
-原有译文被改清单（工作区 vs HEAD），共 0 条
+原有译文被改清单（工作区 vs HEAD），共 9 条
 
-按语种：无
+按语种：ar 9
 
+[1] ar · block
+    键：Novolex’s
+    旧：Novolex’s
+    新：Novolex
+[2] ar · block
+    键：Sonoco’s
+    旧：Sonoco’s
+    新：Sonoco
+[3] ar · block
+    键：establishes the named outer-carton format. Packhelp’s
+    旧：يحدد صيغة الكرتون الخارجي المحددة بالاسم. Packhelp’s
+    新：يحدد صيغة الكرتون الخارجي المحددة بالاسم. أما
+[4] ar · block
+    键：includes a No Gusset option and shows bags with an open serrated mouth and no carry handles. Its range also includes gusset variants, so keep the selected no-gusset form explicit in the brief.
+    旧：يتضمن خيار No Gusset ويعرض أكياساً بفتحة مفتوحة مسننة ومن دون مقابض حمل. وتشمل تشكيلته أيضاً أنواعاً ذات جيوب جانبية، لذا أبقِ الشكل المحدد بدون جيوب جانبية صريحاً في الموجز.
+    新：يتضمن خيار بدون جيوب جانبية ويعرض أكياساً بفتحة مفتوحة مسننة ومن دون مقابض حمل. وتشمل تشكيلته أيضاً أنواعاً ذات جيوب جانبية، لذا أبقِ الشكل المحدد بدون جيوب جانبية صريحاً في الموجز.
+[5] ar · block
+    键：is part of its opening structure. A separate belly band is an added wrap to specify in its own right. The names “band” and “packaging sleeve” can overlap, so the drawing and supplied form should decide the proposal.
+    旧：هو جزء من بنية فتحه. ويُعد شريط الالتفاف المنفصل غلافاً إضافياً يجب تحديده بذاته. قد تتداخل تسميتا “band” و“packaging sleeve”، لذا ينبغي أن يحدد الرسم والشكل المورد المقترح.
+    新：هو جزء من بنية فتحه. ويُعد شريط الالتفاف المنفصل غلافاً إضافياً يجب تحديده بذاته. قد تتداخل تسميتا «الشريط» و«غلاف التغليف»، لذا ينبغي أن يحدد الرسم والشكل المورد المقترح.
+[6] ar · block
+    键：describes its RP005 Partial Cover style as a gift box with window patching on the lid. Its body identifies a die-cut viewing window, clear patch and wrapped chipboard construction. It does not describe a shortened lid exposing the box body.
+    旧：يصف طراز RP005 Partial Cover الخاص به كصندوق هدايا مع ترقيع نافذة على الغطاء. يحدد جسمه نافذة مشاهدة مقطوعة بالقالب ورقعة شفافة وإنشاء من الكرتون المقوى المغلّف. لا يصف غطاءً مقصرًا يكشف جسم الصندوق.
+    新：يصف طراز RP005 الغطاء الجزئي الخاص به كصندوق هدايا مع ترقيع نافذة على الغطاء. يحدد جسمه نافذة مشاهدة مقطوعة بالقالب ورقعة شفافة وإنشاء من الكرتون المقوى المغلّف. لا يصف غطاءً مقصرًا يكشف جسم الصندوق.
+[7] ar · block
+    键：identifies the named set. Esko’s
+    旧：يحدد المجموعة المسمّاة. Esko’s
+    新：يحدد المجموعة المسمّاة. أما
+[8] ar · block
+    键：Novolex's places merchandise bags within its Pinch Bottom Bags group, separately from SOS and die-cut handle bags. These references establish a flat merchandise/pinch-bottom direction; they do not supply the seam dimensions or usable cavity of your proposed bag.
+    旧：تضع Novolex أكياس البضائع ضمن مجموعة Pinch Bottom Bags لديها، بصورة منفصلة عن أكياس SOS والأكياس ذات المقابض المقطوعة بالقالب. وتؤسس هذه المراجع توجهًا مسطحًا للبضائع/القاع المقروص؛ وهي لا توفر أبعاد الدرزات أو التجويف القابل للاستخدام في الكيس المقترح.
+    新：تضع Novolex أكياس البضائع ضمن مجموعة أكياس القاع المقروص لديها، بصورة منفصلة عن أكياس SOS والأكياس ذات المقابض المقطوعة بالقالب. وتؤسس هذه المراجع توجهًا مسطحًا للبضائع/القاع المقروص؛ وهي لا توفر أبعاد الدرزات أو التجويف القابل للاستخدام في الكيس المقترح.
+[9] ar · block
+    键：places merchandise bags within its Pinch Bottom Bags group, separately from SOS and die-cut handle bags. These references establish a flat merchandise/pinch-bottom direction; they do not supply the seam dimensions or usable cavity of your proposed bag.
+    旧：تضع Novolex أكياس البضائع ضمن مجموعة Pinch Bottom Bags لديها، بصورة منفصلة عن أكياس SOS والأكياس ذات المقابض المقطوعة بالقالب. وتؤسس هذه المراجع توجهًا مسطحًا للبضائع/القاع المقروص؛ وهي لا توفر أبعاد الدرزات أو التجويف القابل للاستخدام في الكيس المقترح.
+    新：تضع Novolex أكياس البضائع ضمن مجموعة أكياس القاع المقروص لديها، بصورة منفصلة عن أكياس SOS والأكياس ذات المقابض المقطوعة بالقالب. وتؤسس هذه المراجع توجهًا مسطحًا للبضائع/القاع المقروص؛ وهي لا توفر أبعاد الدرزات أو التجويف القابل للاستخدام في الكيس المقترح.

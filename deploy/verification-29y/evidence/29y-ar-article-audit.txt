@@ -1,0 +1,60 @@
+29y · ar 裸冠词（The/A/An）核对 · intent 117 · 2026-11-04
+==================================================================
+
+一、为什么查这一项
+------------------
+英文冠词 The / A / An 单独成节点时，若原样留在阿语页面，会变成一个孤立的拉丁词。
+ar 的 R1 只统计「连续 ≥3 个英文词」的段、R2 只统计「连续 2 词对」，所以**单独立着的
+The / A / An 两个规则都抓不到**（该页仍显示 PASS）。因此单列一项核对。
+
+二、两路核对
+------------
+1) 站点实渲染：126 页逐页 curl 取 DOM，剥离 <script>/<style>/标题缩略图节点后，
+   找「文本节点恰为 The/A/An」和「文本以 The/An/A + 空格开头」的节点。
+   脚本：E:\破甲工作区\.tmp\29y\cjk-article-audit.py（argv=语种）
+   清单：E:\破甲工作区\.tmp\29y\ar-urls.txt（126 行，<lang> <url> 两列）
+2) 词典侧：ar-add.json / ar-mod.json 里是否有「冠词单独成键」的碎片键，
+   或以冠词开头的键（后者若为整段则不是碎片）。
+
+三、站点实渲染原始输出
+----------------------
+清单：ar-urls.txt（126 行）
+  25/126 … 命中 0
+  50/126 … 命中 0
+  75/126 … 命中 0
+  100/126 … 命中 1
+  125/126 … 命中 1
+
+ar 裸冠词节点：1
+  /ar/product-multi-piece-pe-foam-support/             A وB مع بطاقات/ملحقات
+
+四、那 1 处的结论：保留（A/B 是变体标签，不是英文冠词）
+--------------------------------------------------------
+- 来源键（merged block）：`A and B with cards/accessories` → `A وB مع بطاقات/ملحقات`
+- A / B 指同一款内衬的 A、B 两种构型（对照另一键 `End A and end B, their contoured
+  parts, …` → `النهايتان A وB، …`，那里用的是「النهايتان（两个端）」+ A/B 标签）。
+- 它不是英文不定冠词 a/an 的残留：阿语里 a/an 无独立词形，译文里已无冠词成分；
+  这里的 A 是产品变体编号，属与 PE / DDP / FOB 同类的拉丁标签，保留。
+- 该页扫描记录（evidence/29y-ar-final-scan.jsonl）：
+  http=200 residual_count=0 long_runs=0 pair_count=0 segment_count=0
+  allowed_used = {pe: 材料缩写, packrivo: 品牌名}
+
+五、词典侧原始输出
+------------------
+ar delta 键总数：111
+独立冠词键（The/A/An 单独成键）：3
+   ar-add.json/text key='The' val=''
+   ar-add.json/text key='A' val=''
+   ar-add.json/text key='An' val=''
+冠词开头键（The/A/An + 空格）：2
+   ar-add.json text   len= 725 val_len= 607  The brief builder prepares a summary in your browser. Select
+   ar-add.json block  len= 725 val_len= 607  The brief builder prepares a summary in your browser. Select
+
+- 3 个独立冠词键的值是空串：阿语定冠词是前缀 «ال»、不定冠词无独立词形，英文冠词单独成
+  节点时无法对应，插件 lookup 命中空串即把该节点置空（nl 先例是把 The 译成 De，ar 语言上
+  不可对应，故置空）。不是「漏译」，是主动置空。
+- 2 个冠词开头的键都是 privacy 页那 725 字符的**整段**（text/block 双桶同一键），不是碎片键。
+
+六、判定
+--------
+裸冠词碎片键 = 0；站点上 1 处 A/B 变体标签已定性保留。本项 PASS。
