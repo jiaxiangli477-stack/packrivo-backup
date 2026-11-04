@@ -1,48 +1,76 @@
-原有译文被改清单（工作区 vs HEAD），共 11 条
+原有译文被改清单（工作区 vs HEAD），共 18 条
 
-按语种：ja 11
+按语种：ja 4、ko 14
 
 [1] ja · block
-    键：if a simple tuck closure is also being considered. Use the
-    旧：シンプルなタック閉じも検討されている場合。Use the
-    新：シンプルなタック閉じも検討されている場合は、
+    键：Journal · 337 articles
+    旧：ジャーナル · 333件の記事
+    新：ジャーナル · 337件の記事
 [2] ja · block
-    键：includes a No Gusset option and shows bags with an open serrated mouth and no carry handles. Its range also includes gusset variants, so keep the selected no-gusset form explicit in the brief.
-    旧：No Gusset オプションを含み、開いたセレーション口と持ち手なしのバッグを示します。その範囲にはガセットのバリエーションも含まれるため、ブリーフでは選択したガセットなし形態を明示してください。
-    新：ガセットなしオプションを含み、開いたセレーション口と持ち手なしのバッグを示します。その範囲にはガセットのバリエーションも含まれるため、ブリーフでは選択したガセットなし形態を明示してください。
-[3] ja · block
+    键：All 337 articles →
+    旧：333件の記事をすべて見る →
+    新：337件の記事をすべて見る →
+[3] ja · text
+    键：Journal · 337 articles
+    旧：ジャーナル · 333件の記事
+    新：ジャーナル · 337件の記事
+[4] ja · text
+    键：All 337 articles →
+    旧：333件の記事をすべて見る →
+    新：337件の記事をすべて見る →
+[5] ko · block
     键：describes its RP005 Partial Cover style as a gift box with window patching on the lid. Its body identifies a die-cut viewing window, clear patch and wrapped chipboard construction. It does not describe a shortened lid exposing the box body.
-    旧：RP005 Partial Coverスタイルを、蓋に窓貼り加工を施したギフトボックスとして説明しています。その本文では、ダイカットの表示窓、透明パッチ、およびラッピングされたチップボード構造を特定しています。箱本体を露出させる短縮蓋については説明していません。
-    新：RP005 パーシャルカバースタイルを、蓋に窓貼り加工を施したギフトボックスとして説明しています。その本文では、ダイカットの表示窓、透明パッチ、およびラッピングされたチップボード構造を特定しています。箱本体を露出させる短縮蓋については説明していません。
-[4] ja · block
+    旧：RP005 Partial Cover 스타일을 뚜껑에 윈도 패치가 적용된 선물 상자로 설명합니다. 본문은 다이컷 확인창, 투명 패치 및 래핑된 칩보드 구조를 식별합니다. 상자 본체가 노출되도록 축소된 뚜껑을 설명하는 것은 아닙니다.
+    新：RP005 파셜 커버 스타일을 뚜껑에 윈도 패치가 적용된 선물 상자로 설명합니다. 본문은 다이컷 확인창, 투명 패치 및 래핑된 칩보드 구조를 식별합니다. 상자 본체가 노출되도록 축소된 뚜껑을 설명하는 것은 아닙니다.
+[6] ko · block
+    键：euro tote catalogue
+    旧：euro tote 카탈로그
+    新：유로 토트 카탈로그
+[7] ko · block
+    键：includes a No Gusset option and shows bags with an open serrated mouth and no carry handles. Its range also includes gusset variants, so keep the selected no-gusset form explicit in the brief.
+    旧：No Gusset 옵션을 포함하며, 열린 톱니형 입구와 운반 손잡이가 없는 가방을 보여 줍니다. 해당 범위에는 거싯 변형도 포함되므로, 브리프에서 선택한 no-gusset 형태를 명확히 유지하십시오.
+    新：거싯 없음 옵션을 포함하며, 열린 톱니형 입구와 운반 손잡이가 없는 가방을 보여 줍니다. 해당 범위에는 거싯 변형도 포함되므로, 브리프에서 선택한 거싯 없는 형태를 명확히 유지하십시오.
+[8] ko · block
+    键：U.S. International Trade Administration Incoterms overview
+    旧：미국 국제무역청(International Trade Administration)의 Incoterms 개요
+    新：미국 국제무역청(ITA)의 Incoterms 개요
+[9] ko · block
     键：Novolex's places merchandise bags within its Pinch Bottom Bags group, separately from SOS and die-cut handle bags. These references establish a flat merchandise/pinch-bottom direction; they do not supply the seam dimensions or usable cavity of your proposed bag.
-    旧：Novolex はマーチャンダイズバッグを Pinch Bottom Bags グループに位置づけ、SOS やダイカットハンドルバッグとは分けています。これらの参照は、平らなマーチャンダイズ／ピンチボトム方向を確立するものですが、提案するバッグのシーム寸法や使用可能な収容空間を提供するものではありません。
-    新：Novolex はマーチャンダイズバッグをピンチボトムバッグのグループに位置づけ、SOS やダイカットハンドルバッグとは分けています。これらの参照は、平らなマーチャンダイズ／ピンチボトム方向を確立するものですが、提案するバッグのシーム寸法や使用可能な収容空間を提供するものではありません。
-[5] ja · block
+    旧：Novolex는 머천다이즈 백을 Pinch Bottom Bags 그룹 내에 배치하며, SOS 및 다이컷 핸들 백과는 별도로 분류합니다. 이러한 참조 자료는 평면형 머천다이즈/핀치보텀 방향성을 제시할 뿐, 제안하신 백의 시접 치수나 사용 가능한 내부 공간을 제공하지는 않습니다.
+    新：Novolex는 머천다이즈 백을 핀치 보텀 백 그룹 내에 배치하며, SOS 및 다이컷 핸들 백과는 별도로 분류합니다. 이러한 참조 자료는 평면형 머천다이즈/핀치보텀 방향성을 제시할 뿐, 제안하신 백의 시접 치수나 사용 가능한 내부 공간을 제공하지는 않습니다.
+[10] ko · block
+    键：Show which panels form the body before the lock actions begin. If rolled walls are part of the proposal, identify their final positions as a separate setup stage. Don't use the word lock to describe every fold in the pack.
+    旧：잠금 동작이 시작되기 전에 어떤 패널이 본체를 구성하는지 보여 주십시오. 롤드 월(rolled walls)이 제안에 포함되는 경우, 별도의 셋업 단계로 최종 위치를 명시해 주십시오. 포장의 모든 접힘을 'lock'이라는 단어로 표현하지 마십시오.
+    新：잠금 동작이 시작되기 전에 어떤 패널이 본체를 구성하는지 보여 주십시오. 롤드 월이 제안에 포함되는 경우, 별도의 셋업 단계로 최종 위치를 명시해 주십시오. 포장의 모든 접힘을 'lock'이라는 단어로 표현하지 마십시오.
+[11] ko · block
+    键：Review the proposed board and caliper against the actual fold pattern. If artwork spans a gusset, view it loaded at both thicknesses before confirming its position. A flat print proof alone can't show which part of that artwork becomes hidden in a fold.
+    旧：제안된 보드와 칼리퍼(caliper)를 실제 접힘 패턴과 대조하여 검토하십시오. 아트워크가 거싯(gusset)에 걸쳐 있는 경우, 위치를 확정하기 전에 두 가지 두께에 각각 적용된 상태로 확인하십시오. 평면 인쇄 교정본만으로는 해당 아트워크의 어느 부분이 접힘 안에서 가려지는지 보여 줄 수 없습니다.
+    新：제안된 보드와 칼리퍼를 실제 접힘 패턴과 대조하여 검토하십시오. 아트워크가 거싯에 걸쳐 있는 경우, 위치를 확정하기 전에 두 가지 두께에 각각 적용된 상태로 확인하십시오. 평면 인쇄 교정본만으로는 해당 아트워크의 어느 부분이 접힘 안에서 가려지는지 보여 줄 수 없습니다.
+[12] ko · block
+    键：Keep internal space and external carton dimensions separately labeled. Include proposed board caliper in the structural review. The supplier should resolve fold and flap allowances on the actual construction; don't add a universal clearance figure to the artwork file.
+    旧：내부 공간과 외부 카톤 치수를 별도로 표기해 주십시오. 제안된 판지 두께(caliper)를 구조 검토에 포함해 주십시오. 공급업체는 실제 구조에서 접힘 및 플랩 여유를 확정해야 하며, 아트워크 파일에 일률적인 클리어런스 수치를 추가하지 마십시오.
+    新：내부 공간과 외부 카톤 치수를 별도로 표기해 주십시오. 제안된 판지 두께를 구조 검토에 포함해 주십시오. 공급업체는 실제 구조에서 접힘 및 플랩 여유를 확정해야 하며, 아트워크 파일에 일률적인 클리어런스 수치를 추가하지 마십시오.
+[13] ko · block
     键：The expands the name as self opening square. Use that identity to request the actual base-fold drawing and setup demonstration. The catalogue's food or environmental language is not adopted for your gift pack.
-    旧：これは名称を「self opening square」と展開しています。この識別情報を用いて、実際の底面折り線図と組み立てデモンストレーションを確認してください。カタログに記載された食品または環境に関する表現は、お客様のギフト包装には採用されません。
-    新：これは名称を「セルフオープニングスクエア」と展開しています。この識別情報を用いて、実際の底面折り線図と組み立てデモンストレーションを確認してください。カタログに記載された食品または環境に関する表現は、お客様のギフト包装には採用されません。
-[6] ja · block
-    键：The confirms the named packaging direction. Ask for a proposed dieline and assembled drawing; its title alone doesn't establish your closure geometry, dimensions or contents arrangement.
-    旧：これは指定された包装方向性を確認します。提案されるダイラインと組立図面を請求ください。タイトルだけではClosure Geometry、寸法、内容物配置を保証しません。
-    新：これは指定された包装方向性を確認します。提案されるダイラインと組立図面を請求ください。タイトルだけでは閉じ部形状、寸法、内容物配置を保証しません。
-[7] ja · block
-    键：This is an enquiry concept for a dry gift use. The supplier must confirm material, base joints and any closure or handle proposal for the actual project.
-    旧：これは乾燥 Gift 用途の問い合わせコンセプトです。サプライヤーは実際のプロジェクトについて材料、ベースジョイント、および任意の Closure またはハンドル提案を確認しなければなりません。
-    新：これは乾燥ギフト用途の問い合わせコンセプトです。サプライヤーは実際のプロジェクトについて材料、ベースジョイント、および任意の閉じ部またはハンドル提案を確認しなければなりません。
-[8] ja · block
-    键：Review your brief, then select Send My Packaging Request. Packrivo saves it only after submission succeeds and a request ID appears.
-    旧：内容をご確認のうえ、「Send My Packaging Request」を選択してください。Packrivoは、送信が成功しリクエストIDが表示された後にのみ保存します。
-    新：内容をご確認のうえ、「包装リクエストを送信」を選択してください。Packrivoは、送信が成功しリクエストIDが表示された後にのみ保存します。
-[9] ja · block
-    键：confirms the named packaging direction. Ask for a proposed dieline and assembled drawing; its title alone doesn't establish your closure geometry, dimensions or contents arrangement.
-    旧：指定された包装方向性を確認します。提案されるダイラインと組立図面を請求ください。タイトルだけではClosure Geometry、寸法、内容物配置を保証しません。
-    新：指定された包装方向性を確認します。提案されるダイラインと組立図面を請求ください。タイトルだけでは閉じ部形状、寸法、内容物配置を保証しません。
-[10] ja · block
+    旧：해당 명칭은 self opening square로 확장됩니다. 그 명칭을 기준으로 실제 바닥 접기 도면과 설치 시연을 요청하십시오. 귀사의 기프트 팩에는 카탈로그의 식품 또는 환경 관련 표현을 적용하지 않습니다.
+    新：해당 명칭은 셀프 오프닝 스퀘어로 확장됩니다. 그 명칭을 기준으로 실제 바닥 접기 도면과 설치 시연을 요청하십시오. 귀사의 기프트 팩에는 카탈로그의 식품 또는 환경 관련 표현을 적용하지 않습니다.
+[14] ko · block
+    键：PakFactory's identifies a reversed bottom end compared with the straight tuck style. Use that narrow structural distinction to discuss flap orientation; it doesn't establish the strength of your finished pack.
+    旧：PakFactory의 이 항목은 스트레이트 턱(straight tuck) 스타일과 비교하여 뒤집힌 바닥 끝단을 식별합니다. 이처럼 좁은 구조적 차이를 플랩 방향을 논의하는 데 사용하십시오. 완성된 포장의 강도를 입증하는 것은 아닙니다.
+    新：PakFactory의 이 항목은 스트레이트 턱 스타일과 비교하여 뒤집힌 바닥 끝단을 식별합니다. 이처럼 좁은 구조적 차이를 플랩 방향을 논의하는 데 사용하십시오. 완성된 포장의 강도를 입증하는 것은 아닙니다.
+[15] ko · block
+    键：Packrivo is a packaging sourcing and project coordination brand based in Shenzhen, China. We help small jewelry, candle and gift brands define packaging, compare independent supplier proposals and review samples. MOQ: 500 pieces per product/design.
+    旧：Packrivo는 중국 선전에 본사를 둔 포장 소싱 및 프로젝트 조정 브랜드입니다. 저희는 소규모 주얼리, 캔들 및 기프트 브랜드가 포장을 정의하고 독립 공급업체 제안을 비교하며 샘플을 검토하도록 돕습니다. MOQ: 500 pieces per product/design.
+    新：Packrivo는 중국 선전에 본사를 둔 포장 소싱 및 프로젝트 조정 브랜드입니다. 저희는 소규모 주얼리, 캔들 및 기프트 브랜드가 포장을 정의하고 독립 공급업체 제안을 비교하며 샘플을 검토하도록 돕습니다. 최소 주문 수량: 제품/디자인당 500개.
+[16] ko · block
     键：places merchandise bags within its Pinch Bottom Bags group, separately from SOS and die-cut handle bags. These references establish a flat merchandise/pinch-bottom direction; they do not supply the seam dimensions or usable cavity of your proposed bag.
-    旧：Novolex はマーチャンダイズバッグを Pinch Bottom Bags グループに位置づけ、SOS やダイカットハンドルバッグとは分けています。これらの参照は、平らなマーチャンダイズ／ピンチボトム方向を確立するものですが、提案するバッグのシーム寸法や使用可能な収容空間を提供するものではありません。
-    新：マーチャンダイズバッグをピンチボトムバッグのグループに位置づけ、SOS やダイカットハンドルバッグとは分けています。これらの参照は、平らなマーチャンダイズ／ピンチボトム方向を確立するものですが、提案するバッグのシーム寸法や使用可能な収容空間を提供するものではありません。
-[11] ja · block
+    旧：Novolex는 머천다이즈 백을 Pinch Bottom Bags 그룹 내에 배치하며, SOS 및 다이컷 핸들 백과는 별도로 분류합니다. 이러한 참조 자료는 평면형 머천다이즈/핀치보텀 방향성을 제시할 뿐, 제안하신 백의 시접 치수나 사용 가능한 내부 공간을 제공하지는 않습니다.
+    新：Novolex는 머천다이즈 백을 핀치 보텀 백 그룹 내에 배치하며, SOS 및 다이컷 핸들 백과는 별도로 분류합니다. 이러한 참조 자료는 평면형 머천다이즈/핀치보텀 방향성을 제시할 뿐, 제안하신 백의 시접 치수나 사용 가능한 내부 공간을 제공하지는 않습니다.
+[17] ko · block
+    键：identifies a reversed bottom end compared with the straight tuck style. Use that narrow structural distinction to discuss flap orientation; it doesn't establish the strength of your finished pack.
+    旧：PakFactory의 이 항목은 스트레이트 턱(straight tuck) 스타일과 비교하여 뒤집힌 바닥 끝단을 식별합니다. 이처럼 좁은 구조적 차이를 플랩 방향을 논의하는 데 사용하십시오. 완성된 포장의 강도를 입증하는 것은 아닙니다.
+    新：PakFactory의 이 항목은 스트레이트 턱 스타일과 비교하여 뒤집힌 바닥 끝단을 식별합니다. 이처럼 좁은 구조적 차이를 플랩 방향을 논의하는 데 사용하십시오. 완성된 포장의 강도를 입증하는 것은 아닙니다.
+[18] ko · block
     键：expands the name as self opening square. Use that identity to request the actual base-fold drawing and setup demonstration. The catalogue's food or environmental language is not adopted for your gift pack.
-    旧：名称を「self opening square」と展開しています。この識別情報を用いて、実際の底面折り線図と組み立てデモンストレーションを確認してください。カタログに記載された食品または環境に関する表現は、お客様のギフト包装には採用されません。
-    新：名称を「セルフオープニングスクエア」と展開しています。この識別情報を用いて、実際の底面折り線図と組み立てデモンストレーションを確認してください。カタログに記載された食品または環境に関する表現は、お客様のギフト包装には採用されません。
+    旧：해당 명칭은 self opening square로 확장됩니다. 그 명칭을 기준으로 실제 바닥 접기 도면과 설치 시연을 요청하십시오. 귀사의 기프트 팩에는 카탈로그의 식품 또는 환경 관련 표현을 적용하지 않습니다.
+    新：해당 명칭은 셀프 오프닝 스퀘어로 확장됩니다. 그 명칭을 기준으로 실제 바닥 접기 도면과 설치 시연을 요청하십시오. 귀사의 기프트 팩에는 카탈로그의 식품 또는 환경 관련 표현을 적용하지 않습니다.

@@ -7801,8 +7801,8 @@
     ". Packrivo's minimum is 500 pieces per design. Final construction, sample work and commercial terms require project confirmation.": ". Packrivoの最小発注数量はデザインごとに500個です。最終構造、サンプル制作、商取引条件はプロジェクトごとの確認が必要です。",
     ". Packrivo's minimum is 500 pieces per design. Final construction, sample scope and commercial terms are confirmed for the project.": ". Packrivoの最小発注数量はデザインごとに500個です。最終構造、サンプルの範囲、商取引条件はプロジェクトごとに確定します。",
     ". Packrivo's minimum is 500 pieces per design. Final construction, materials, sample scope and commercial terms require project confirmation.": ". Packrivoの最低数量はデザインあたり500個です。最終的な構造、材料、サンプル範囲、取引条件はプロジェクトでの確認が必要です。",
-    "Journal · 337 articles": "ジャーナル · 333件の記事",
-    "All 337 articles →": "333件の記事をすべて見る →",
+    "Journal · 337 articles": "ジャーナル · 337件の記事",
+    "All 337 articles →": "337件の記事をすべて見る →",
     "as a tuck-end carton with a hinged front. This reference supports the cover-and-body relationship. Optional windows, materials and finishes need their own proposal; they aren't assumed features of this direction.": "ヒンジ付き前面を備えたタックエンドカートンとして。この参照はカバーと本体の関係を裏付ける。オプションの窓、材料、仕上げには独自の提案が必要であり、これらはこの仕様の想定機能ではない。",
     "Compare this direction with the existing": "この選択肢を既存のものと比較してください",
     "for a different presentation role. This corrugated direction adds flute/fold and outer-pack contact questions. The comparison should keep the product arrangement and intended route visible, without assuming that a material name establishes transit protection.": "異なる演出用途の場合。この段ボールオプションでは、フルート／折り目および外装接触に関する確認事項が追加されます。比較では、素材名が輸送保護を保証すると仮定せず、製品配置と想定経路を可視化したままにしてください。",
@@ -7825,7 +7825,9 @@
     "when a missing input affects the next review.": "不足情報が次のレビューに影響する場合は、",
     "to keep the next decision clear.": "次の判断を明確に保つため。",
     "Paper bags": "紙袋",
-    "per unit at 1,000 pieces": "1,000個時の単価"
+    "per unit at 1,000 pieces": "1,000個時の単価",
+    "Journal · {N} articles": "ジャーナル · {N}件の記事",
+    "All {N} articles →": "{N}件の記事をすべて見る →"
   },
   "text": {
     "Sample kit": "サンプルキット",
@@ -8228,8 +8230,8 @@
     ". Packrivo's minimum is 500 pieces per design. Final construction, sample work and commercial terms require project confirmation.": ". Packrivoの最小発注数量はデザインごとに500個です。最終構造、サンプル制作、商取引条件はプロジェクトごとの確認が必要です。",
     ". Packrivo's minimum is 500 pieces per design. Final construction, sample scope and commercial terms are confirmed for the project.": ". Packrivoの最小発注数量はデザインごとに500個です。最終構造、サンプルの範囲、商取引条件はプロジェクトごとに確定します。",
     ". Packrivo's minimum is 500 pieces per design. Final construction, materials, sample scope and commercial terms require project confirmation.": ". Packrivoの最低数量はデザインあたり500個です。最終的な構造、材料、サンプル範囲、取引条件はプロジェクトでの確認が必要です。",
-    "Journal · 337 articles": "ジャーナル · 333件の記事",
-    "All 337 articles →": "333件の記事をすべて見る →",
+    "Journal · 337 articles": "ジャーナル · 337件の記事",
+    "All 337 articles →": "337件の記事をすべて見る →",
     "as a tuck-end carton with a hinged front. This reference supports the cover-and-body relationship. Optional windows, materials and finishes need their own proposal; they aren't assumed features of this direction.": "ヒンジ付き前面を備えたタックエンドカートンとして。この参照はカバーと本体の関係を裏付ける。オプションの窓、材料、仕上げには独自の提案が必要であり、これらはこの仕様の想定機能ではない。",
     "Compare this direction with the existing": "この選択肢を既存のものと比較してください",
     "for a different presentation role. This corrugated direction adds flute/fold and outer-pack contact questions. The comparison should keep the product arrangement and intended route visible, without assuming that a material name establishes transit protection.": "異なる演出用途の場合。この段ボールオプションでは、フルート／折り目および外装接触に関する確認事項が追加されます。比較では、素材名が輸送保護を保証すると仮定せず、製品配置と想定経路を可視化したままにしてください。",
@@ -8252,6 +8254,8 @@
     "when a missing input affects the next review.": "不足情報が次のレビューに影響する場合は、",
     "to keep the next decision clear.": "次の判断を明確に保つため。",
     "Paper bags": "紙袋",
-    "per unit at 1,000 pieces": "1,000個時の単価"
+    "per unit at 1,000 pieces": "1,000個時の単価",
+    "Journal · {N} articles": "ジャーナル · {N}件の記事",
+    "All {N} articles →": "{N}件の記事をすべて見る →"
   }
 }
