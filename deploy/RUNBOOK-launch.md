@@ -1,5 +1,16 @@
 # 上线手册 · Packrivo 一次性上线（RUNBOOK）
 
+## 32a 升级时的选项迁移（仅站长获单独上线授权后执行）
+
+先完成数据库备份、核验备份可恢复，并部署复核通过的 32a 插件和主题。将 `deploy/32a/mu-plugins/001-packrivo-32a-404-title.php` 部署到 mu-plugins（在现有语言路由插件之前加载）。将本提交的 `deploy/32a-update-options.php` 放到 PHP 容器内，例如 `/pkg/32a-update-options.php`，然后用已配置的 `$WPCLI` 执行：
+
+```sh
+$WPCLI eval-file /pkg/32a-update-options.php
+$WPCLI eval-file /pkg/32a-update-options.php
+```
+
+第一次只将 `pkq_settings.min_qty` 设为 250，并在缺失时补上 `fee_percent=15`、`min_fee=150`；已有费率值及其他键不改。另将 Yoast 的 `wpseo_titles.title-404-wpseo` 设为 `Page not found | Packrivo`。第二次应显示两个 `unchanged`。回滚时从本次数据库备份恢复对应选项。翻译清单 `dsh-out/32a-new-strings.csv` 需先交给 dsh；不得把本地验收视为上线授权。
+
 > **上线以本文件为准。`deploy/README.md` 里按轮次堆的 27g…28q 记录只作历史参考，命令和顺序以这里为唯一口径。**
 > 本文件不含任何密码、密钥或 token：wp-cli 走服务器上已有的 SSH/容器配置，Cloudflare 清缓存走本机 `E:\破甲工作区\i18n\.cf.env`（只引用路径，不抄值）。
 >

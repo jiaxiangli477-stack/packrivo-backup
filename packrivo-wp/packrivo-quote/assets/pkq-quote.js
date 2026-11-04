@@ -29,8 +29,8 @@
     emboss: { label: 'Blind emboss', add: 0.24 }
   };
 
-  var TIERS = [500, 1000, 2500, 5000, 10000, 25000];
-  var TIER_FACTORS = [1.0, 0.93, 0.85, 0.78, 0.72, 0.66];
+  var TIERS = [100, 250, 500, 1000, 2500, 5000, 10000, 25000];
+  var TIER_FACTORS = [2.864, 1.468, 1.0, 0.93, 0.85, 0.78, 0.72, 0.66];
 
   var STYLE_DIMS = {
     mailer: [[25, 20, 10], [30, 22, 12], [40, 30, 15]],
@@ -89,10 +89,18 @@
       if (qty < Number((cfg.rules || {}).freeDieFrom || 5000)) setup += cfg.setupDie;
     }
     var rush = state.rush ? 1 + cfg.rushPercent / 100 : 1;
-    var unit = (style.base * mat.factor * size + print.add + finish.add) * tier * rush + setup / qty;
+    var goodsUnit = (style.base * mat.factor * size + print.add + finish.add) * tier * rush + setup / qty;
+    var goodsTotal = goodsUnit * qty;
+    var calculatedFee = goodsTotal * cfg.feePercent / 100;
+    var fee = Math.max(cfg.minFee, calculatedFee);
+    var total = goodsTotal + fee;
     return {
-      unit: Math.round(unit * 100) / 100,
-      total: Math.round(unit * qty * 100) / 100,
+      unit: Math.round(total / qty * 100) / 100,
+      total: Math.round(total * 100) / 100,
+      goods_unit: Math.round(goodsUnit * 100) / 100,
+      goods_total: Math.round(goodsTotal * 100) / 100,
+      fee: Math.round(fee * 100) / 100,
+      fee_is_min: calculatedFee < cfg.minFee,
       setup: setup,
       qty: qty
     };
@@ -105,7 +113,9 @@
 
   /** wp_localize_script hands numbers over as strings; coerce everything once. */
   function normaliseConfig(cfg) {
-    ['minQty', 'maxQty', 'setupPrint', 'setupDie', 'rushPercent'].forEach(function (k) {
+    cfg.feePercent = cfg.feePercent == null ? 15 : cfg.feePercent;
+    cfg.minFee = cfg.minFee == null ? 150 : cfg.minFee;
+    ['minQty', 'maxQty', 'setupPrint', 'setupDie', 'rushPercent', 'feePercent', 'minFee'].forEach(function (k) {
       cfg[k] = Number(cfg[k]) || 0;
     });
     Object.keys(cfg.styles || {}).forEach(function (k) {
@@ -247,7 +257,7 @@
     function render() {
       Array.prototype.forEach.call(steps.children, function (b, i) {
         b.className = 'pkq-step' + (i === state.step ? ' is-active' : '') + (i < state.step ? ' is-done' : '');
-        b.disabled = !state.style && i > 0;
+        b.disabled = (!state.style && i > 0) || (i === 4 && (state.qty < cfg.minQty || state.qty > cfg.maxQty));
       });
 
       main.innerHTML = '';
@@ -353,13 +363,25 @@
 
       if (state.step === 3) {
         main.appendChild(el('h3', 'pkq-h3', t('Quantity')));
-        main.appendChild(el('p', 'pkq-big', tf('{qty} units', { qty: p.qty.toLocaleString() })));
+        var qtyInput = el('input', 'pkq-input');
+        qtyInput.type = 'number';
+        qtyInput.min = '1';
+        qtyInput.max = String(cfg.maxQty);
+        qtyInput.value = String(state.qty);
+        qtyInput.setAttribute('aria-label', t('Quantity'));
+        main.appendChild(qtyInput);
+        var manual = el('p', 'pkq-note');
+        var manualLink = el('a', '', t('Under 250? Send the brief and we\'ll quote by hand.'));
+        manualLink.href = cfg.inquiryUrl || '/contact/';
+        manual.appendChild(manualLink);
+        manual.hidden = state.qty >= cfg.minQty;
+        main.appendChild(manual);
 
         var range = el('input', 'pkq-range');
         range.type = 'range';
         range.min = String(cfg.minQty);
         range.max = String(cfg.maxQty);
-        range.step = '500';
+        range.step = '1';
         range.value = String(p.qty);
         range.addEventListener('input', function () {
           state.qty = parseInt(range.value, 10);
@@ -376,7 +398,7 @@
         thead.appendChild(hr);
         table.appendChild(thead);
         var tbody = el('tbody');
-        TIERS.forEach(function (q) {
+        TIERS.filter(function (q) { return q >= cfg.minQty && q <= cfg.maxQty; }).forEach(function (q) {
           var row = price(Object.assign({}, state, { qty: q }), cfg);
           var tr = el('tr', q === p.qty ? 'is-active' : '');
           tr.appendChild(el('td', '', q.toLocaleString()));
@@ -390,6 +412,15 @@
         });
         table.appendChild(tbody);
         main.appendChild(table);
+        qtyInput.addEventListener('input', function () {
+          state.qty = parseInt(qtyInput.value, 10) || 0;
+          manual.hidden = state.qty >= cfg.minQty;
+          range.value = String(Math.max(cfg.minQty, state.qty));
+          updateAside();
+          var next = main.querySelector('.pkq-btn');
+          if (next) next.disabled = state.qty < cfg.minQty || state.qty > cfg.maxQty;
+          steps.children[4].disabled = state.qty < cfg.minQty || state.qty > cfg.maxQty;
+        });
       }
 
       if (state.step === 4) {
@@ -483,7 +514,7 @@
       if (state.step < 4) {
         var next = el('button', 'pkq-btn', t('Continue'));
         next.type = 'button';
-        next.disabled = !state.style;
+        next.disabled = !state.style || state.qty < cfg.minQty || state.qty > cfg.maxQty;
         next.addEventListener('click', function () {
           state.step = Math.min(4, state.step + 1);
           render();
@@ -499,6 +530,7 @@
     function updateAside() {
       var p = price(state, cfg);
       aside.innerHTML = '';
+      if (state.qty < cfg.minQty || state.qty > cfg.maxQty) return;
       var card = el('div', 'pkq-card');
       card.appendChild(el('p', 'pkq-label', t('Live estimate')));
       card.appendChild(el('p', 'pkq-price', money(p.unit)));
@@ -518,6 +550,11 @@
         list.appendChild(d);
       });
       card.appendChild(list);
+      card.appendChild(el('p', 'pkq-note', tf('Goods {goods} · Sourcing fee {fee} ({percent}%, min. {minimum}) · Total {total}', {
+        goods: money(p.goods_total), fee: money(p.fee), percent: cfg.feePercent,
+        minimum: money(cfg.minFee), total: money(p.total)
+      })));
+      card.appendChild(el('p', 'pkq-fine', tf('Instant quotes include the sourcing fee at {percent}%; your final rate is confirmed on the written quote.', {percent: cfg.feePercent})));
       card.appendChild(el('p', 'pkq-fine', t('Ex-works. Freight quoted separately. Setup amortised into the unit price.')));
       aside.appendChild(card);
     }

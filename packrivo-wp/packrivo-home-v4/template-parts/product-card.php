@@ -30,7 +30,7 @@ $pkv4_t = static function ($s) {
 ?>
 <article class="pk-product-card">
   <a class="pk-product-card-main" href="<?php echo esc_url(get_permalink($p)); ?>">
-    <span class="pk-product-card-image"><?php if ($cover) : ?><img src="<?php echo esc_url($cover); ?>" <?php if ($srcset) : ?>srcset="<?php echo esc_attr($srcset); ?>" sizes="(max-width:560px) 100vw, 25vw"<?php endif; ?> alt="<?php echo esc_attr($photo_alt ?: $card_title); ?>" loading="lazy" /><?php endif; ?><span class="pk-product-moq"><?php echo esc_html($pkv4_t('MOQ 500')); ?></span></span>
+    <span class="pk-product-card-image"><?php if ($cover) : ?><img src="<?php echo esc_url($cover); ?>" <?php if ($srcset) : ?>srcset="<?php echo esc_attr($srcset); ?>" sizes="(max-width:560px) 100vw, 25vw"<?php endif; ?> alt="<?php echo esc_attr($photo_alt ?: $card_title); ?>" loading="lazy" /><?php endif; ?><span class="pk-product-moq"><?php echo esc_html($pkv4_t('MOQ 250')); ?></span></span>
     <span class="pk-product-card-copy"><span class="pk-product-card-group"><?php echo esc_html($args['group'] ?? ''); ?></span><span class="pk-card-title"><?php echo esc_html($card_title); ?></span><span class="pk-product-card-desc"><?php echo esc_html(wp_strip_all_tags($desc ?: $p->post_excerpt)); ?></span></span>
   </a>
   <?php if ($caption) : ?><small class="pk-product-photo-caption"><?php echo esc_html($caption); ?></small><?php endif; ?>

@@ -55,6 +55,8 @@ final class PKQ_Admin
             'pkq_company' => __('Company', 'packrivo-quote'),
             'pkq_qty' => __('Qty', 'packrivo-quote'),
             'pkq_total' => __('Total', 'packrivo-quote'),
+            'pkq_goods_total' => __('Goods total', 'packrivo-quote'),
+            'pkq_fee' => __('Sourcing fee', 'packrivo-quote'),
             'pkq_status' => __('Status', 'packrivo-quote'),
             'date' => __('Date', 'packrivo-quote'),
         ];
@@ -72,6 +74,11 @@ final class PKQ_Admin
         }
         if ($col === 'pkq_qty') {
             echo esc_html(number_format_i18n((int) get_post_meta($post_id, 'pkq_quantity', true)));
+            return;
+        }
+        if ($col === 'pkq_goods_total' || $col === 'pkq_fee') {
+            $value = get_post_meta($post_id, $col, true);
+            echo $value === '' ? '—' : esc_html(number_format((float) $value, 2));
             return;
         }
         if ($col === 'pkq_total') {
@@ -115,6 +122,8 @@ final class PKQ_Admin
             'pkq_quantity' => 'Quantity',
             'pkq_unit' => 'Unit price',
             'pkq_total' => 'Order total',
+            'pkq_goods_total' => 'Goods total',
+            'pkq_fee' => 'Sourcing fee',
             'pkq_setup' => 'Setup',
             'pkq_notes' => 'Notes',
         ];
@@ -156,7 +165,7 @@ final class PKQ_Admin
 
         $out = fopen('php://output', 'w');
         fwrite($out, "\xEF\xBB\xBF");
-        fputcsv($out, ['reference', 'created', 'name', 'email', 'company', 'country', 'phone', 'style', 'material', 'print', 'finish', 'quantity', 'length', 'width', 'height', 'rush', 'unit', 'total', 'setup', 'status', 'notes']);
+        fputcsv($out, ['reference', 'created', 'name', 'email', 'company', 'country', 'phone', 'style', 'material', 'print', 'finish', 'quantity', 'length', 'width', 'height', 'rush', 'unit', 'total', 'setup', 'status', 'notes', 'goods_total', 'fee']);
         foreach ($posts as $p) {
             $get = function ($k) use ($p) {
                 return get_post_meta($p->ID, $k, true);
@@ -189,6 +198,8 @@ final class PKQ_Admin
                 $get('pkq_setup'),
                 $cell($get('pkq_status')),
                 $cell(str_replace(["\r", "\n"], ' ', (string) $get('pkq_notes'))),
+                $get('pkq_goods_total'),
+                $get('pkq_fee'),
             ]);
         }
         fclose($out);
@@ -258,6 +269,11 @@ final class PKQ_Admin
                             <input name="rush_percent" type="number" step="0.1" value="<?php echo esc_attr($s['rush_percent']); ?>" class="small-text" />
                         </td>
                     </tr>
+                    <tr>
+                        <th><?php esc_html_e('Sourcing fee', 'packrivo-quote'); ?></th>
+                        <td><label>Percent <input name="fee_percent" type="number" min="0" step="0.01" value="<?php echo esc_attr($s['fee_percent']); ?>" class="small-text" /></label>
+                            <label>Minimum (USD) <input name="min_fee" type="number" min="0" step="0.01" value="<?php echo esc_attr($s['min_fee']); ?>" class="small-text" /></label></td>
+                    </tr>
                 </table>
 
                 <h2><?php esc_html_e('Base price per style (unit, at 500 pcs)', 'packrivo-quote'); ?></h2>
@@ -318,6 +334,8 @@ final class PKQ_Admin
             'setup_print' => (float) ($_POST['setup_print'] ?? $current['setup_print']),
             'setup_die' => (float) ($_POST['setup_die'] ?? $current['setup_die']),
             'rush_percent' => (float) ($_POST['rush_percent'] ?? $current['rush_percent']),
+            'fee_percent' => max(0, (float) ($_POST['fee_percent'] ?? $current['fee_percent'])),
+            'min_fee' => max(0, (float) ($_POST['min_fee'] ?? $current['min_fee'])),
             'styles' => $styles ?: $current['styles'],
         ];
 

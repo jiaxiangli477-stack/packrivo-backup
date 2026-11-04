@@ -1,0 +1,26 @@
+﻿英文原文,出现位置,涉及页面
+Custom packaging · MOQ 250 · 11 languages,首页 hero 眉标,/
+"per unit at 1,000 pieces, sourcing fee included",首页 hero 价格说明,/
+From · 250 pcs,首页 stats 标签,/
+250 / design,首页 stats 值,/
+MOQ 250 pieces per design for printed boxes. Unprinted stock ships from 100 pieces. Runs of 100–249 are quoted on request.,首页 FAQ 回答,/
+"We coordinate sampling, production, inspection and freight with vetted suppliers, and charge an 8–15% sourcing fee on the order value, with a $150 minimum per order. Instant quotes include the fee at 15%; your final rate is confirmed on the written quote.",首页 FAQ 回答,/
+"At 500 pieces, a 9.5×9.5×4 cm rigid jewelry box is about $%s per unit and a 30×22×12 cm printed mailer box about $%s. The unit price drops as quantity goes up — the quote builder shows the full curve for your size.",首页 FAQ 动态模板；数值随设置变化,/
+"At 500 pieces, a 9.5×9.5×4 cm rigid jewelry box is about $3.26 per unit and a 30×22×12 cm printed mailer box about $2.85. The unit price drops as quantity goes up — the quote builder shows the full curve for your size.",首页 FAQ 当前彩排值，仅供匹配参考,/
+MOQ 250 · Dielines included · Live prices in the quote builder,产品总览提示,/products/
+MOQ 250,产品卡片标签,产品卡片
+Under 250? Send the brief and we'll quote by hand.,数量低于起订量的人工询价链接,/get-a-quote/
+"Goods {goods} · Sourcing fee {fee} ({percent}%, min. {minimum}) · Total {total}",报价明细模板,/get-a-quote/
+Instant quotes include the sourcing fee at {percent}%; your final rate is confirmed on the written quote.,报价旁说明模板,/get-a-quote/
+Page not found | Packrivo,英文及语言 404 标题,404
+Goods total,后台列表及详情标题,wp-admin
+Sourcing fee,后台列表及详情标题,wp-admin
+Percent,后台设置,wp-admin
+Minimum (USD),后台设置,wp-admin
+Goods total: {goods_total},通知邮件动态字段,通知邮件
+Sourcing fee: {fee},通知邮件动态字段,通知邮件
+"Thanks {name},
+
+We have your request for {quantity} units at {unit} each. Goods total: {goods_total}. Sourcing fee: {fee}. An engineer replies within one business day.
+
+Reference: {ref}",客户确认邮件动态模板,通知邮件

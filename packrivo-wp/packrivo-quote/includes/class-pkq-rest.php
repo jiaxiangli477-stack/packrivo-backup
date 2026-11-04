@@ -158,6 +158,8 @@ final class PKQ_REST
                 'pkq_rush' => $data['rush'] ? 1 : 0,
                 'pkq_unit' => $priced['unit'],
                 'pkq_total' => $priced['total'],
+                'pkq_goods_total' => $priced['goods_total'],
+                'pkq_fee' => $priced['fee'],
                 'pkq_setup' => $priced['setup'],
                 'pkq_status' => 'new',
                 'pkq_ip' => self::client_ip(),
@@ -175,6 +177,8 @@ final class PKQ_REST
             'ref' => $ref,
             'unit' => $priced['unit'],
             'total' => $priced['total'],
+            'goods_total' => $priced['goods_total'],
+            'fee' => $priced['fee'],
             'quantity' => $priced['quantity'],
         ]);
     }
@@ -200,6 +204,8 @@ final class PKQ_REST
             'Finish: ' . $data['finish'],
             'Quantity: ' . number_format_i18n($priced['quantity']),
             'Unit: ' . $priced['unit'],
+            'Goods total: ' . $priced['goods_total'],
+            'Sourcing fee: ' . $priced['fee'],
             'Total: ' . $priced['total'],
             'Rush: ' . ($data['rush'] ? 'yes' : 'no'),
             '',
@@ -214,7 +220,7 @@ final class PKQ_REST
             wp_mail(
                 $data['email'],
                 sprintf('We received your quote request (%s)', $ref),
-                "Thanks {$data['name']},\n\nWe have your request for {$priced['quantity']} units at {$priced['unit']} each. An engineer replies within one business day.\n\nReference: {$ref}\n"
+                "Thanks {$data['name']},\n\nWe have your request for {$priced['quantity']} units at {$priced['unit']} each. Goods total: {$priced['goods_total']}. Sourcing fee: {$priced['fee']}. An engineer replies within one business day.\n\nReference: {$ref}\n"
             );
         }
     }

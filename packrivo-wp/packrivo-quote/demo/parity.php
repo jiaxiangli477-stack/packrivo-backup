@@ -12,7 +12,7 @@ function is_wp_error($t) { return $t instanceof WP_Error; }
 require_once __DIR__ . '/../includes/class-pkq-pricing.php';
 
 $settings = [
-    'min_qty' => 500,
+    'min_qty' => 250,
     'max_qty' => 250000,
     'setup_print' => 220,
     'setup_die' => 120,
@@ -30,16 +30,13 @@ $settings = [
     ],
 ];
 
-$cases = [
-    ['style' => 'mailer', 'material' => 'kraft', 'print' => 'full-color', 'finish' => 'matte', 'quantity' => 1000, 'length' => 30, 'width' => 22, 'height' => 12, 'rush' => false],
-    ['style' => 'rigid', 'material' => 'rigidboard', 'print' => 'full-color', 'finish' => 'soft-touch', 'quantity' => 2500, 'length' => 22, 'width' => 16, 'height' => 8, 'rush' => false],
-    ['style' => 'carton', 'material' => 'white', 'print' => 'one-color', 'finish' => 'none', 'quantity' => 500, 'length' => 12, 'width' => 4, 'height' => 16, 'rush' => false],
-    ['style' => 'pouch', 'material' => 'kraftpoly', 'print' => 'full-color', 'finish' => 'matte', 'quantity' => 5000, 'length' => 19, 'width' => 7, 'height' => 28, 'rush' => true],
-];
+$cases = array_map(function ($quantity) {
+    return ['style'=>'rigid','material'=>'rigidboard','print'=>'none','finish'=>'foil','quantity'=>$quantity,'length'=>9.5,'width'=>9.5,'height'=>4,'rush'=>false];
+}, [250,300,400,499,500,1000]);
 
 $out = [];
 foreach ($cases as $c) {
     $p = PKQ_Pricing::price($c, $settings);
-    $out[] = ['input' => $c, 'unit' => $p['unit'], 'total' => $p['total']];
+    $out[] = ['input' => $c, 'unit' => $p['unit'], 'fee' => $p['fee'], 'total' => $p['total']];
 }
 echo json_encode($out, JSON_PRETTY_PRINT), "\n";

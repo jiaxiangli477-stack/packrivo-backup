@@ -267,7 +267,7 @@ function pk_pricing_tables_ready()
     return true;
 }
 
-function pk_from_price($post_id)
+function pk_from_price($post_id, $quantity = 500)
 {
     if (!pk_pricing_tables_ready()) return null;
     $style = pk_engine_style_for($post_id);
@@ -275,7 +275,7 @@ function pk_from_price($post_id)
     if (!$style || !$reference) return null;
     $raw = file_get_contents(PKQ_DIR . 'includes/pricing.json');
     $settings = PKQ_Plugin::settings();
-    $input = ['style'=>$style,'material'=>$reference[3],'print'=>'full-color','finish'=>'matte','quantity'=>500,'length'=>$reference[0],'width'=>$reference[1],'height'=>$reference[2],'rush'=>false];
+    $input = ['style'=>$style,'material'=>$reference[3],'print'=>'full-color','finish'=>'matte','quantity'=>(int)$quantity,'length'=>$reference[0],'width'=>$reference[1],'height'=>$reference[2],'rush'=>false];
     $key = 'pk_card_' . md5($raw . wp_json_encode([$input,$settings]));
     $cached = get_transient($key);
     if ($cached !== false) return (float) $cached;

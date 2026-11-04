@@ -32,10 +32,10 @@ final class PKQ_Pricing
                 'none' => 0.0, 'matte' => 0.06, 'gloss' => 0.05, 'soft-touch' => 0.13,
                 'spot-uv' => 0.16, 'foil' => 0.35, 'emboss' => 0.24,
             ],
-            'tiers' => [500 => 1.00, 1000 => 0.93, 2500 => 0.85, 5000 => 0.78, 10000 => 0.72, 25000 => 0.66],
+            'tiers' => [100 => 2.864, 250 => 1.468, 500 => 1.00, 1000 => 0.93, 2500 => 0.85, 5000 => 0.78, 10000 => 0.72, 25000 => 0.66],
             'setup' => ['print' => 220.0, 'die' => 120.0],
             'sizeRef' => [30, 20, 10],
-            'rules' => ['rushPercent' => 22.0, 'tierFloor' => 0.64, 'freePrintSetupFrom' => 2500, 'freeDieFrom' => 5000],
+            'rules' => ['rushPercent' => 22.0, 'tierFloor' => 0.64, 'freePrintSetupFrom' => 2500, 'freeDieFrom' => 5000, 'fee_percent' => 15, 'min_fee' => 150],
         ];
 
         $path = __DIR__ . '/pricing.json';
@@ -106,6 +106,8 @@ final class PKQ_Pricing
                 'tierFloor' => (float) ($json['rules']['tierFloor'] ?? 0.64),
                 'freePrintSetupFrom' => (int) ($json['rules']['freePrintSetupFrom'] ?? 2500),
                 'freeDieFrom' => (int) ($json['rules']['freeDieFrom'] ?? 5000),
+                'fee_percent' => (float) ($json['rules']['fee_percent'] ?? 15),
+                'min_fee' => (float) ($json['rules']['min_fee'] ?? 150),
             ],
         ];
 
@@ -210,7 +212,7 @@ final class PKQ_Pricing
         }
 
         $qty = (int) round((float) ($in['quantity'] ?? 500));
-        $min = (int) ($settings['min_qty'] ?? 500);
+        $min = (int) ($settings['min_qty'] ?? 250);
         $max = (int) ($settings['max_qty'] ?? 250000);
         if ($qty < $min || $qty > $max) {
             return new WP_Error('pkq_qty', sprintf('Quantity must be between %d and %d.', $min, $max), ['status' => 422]);
@@ -245,11 +247,20 @@ final class PKQ_Pricing
         $rush_factor = $rush ? 1 + ((float) ($settings['rush_percent'] ?? $d['rules']['rushPercent']) / 100) : 1.0;
 
         $variable = ($base * $mat * $size + $print + $finish) * $tier * $rush_factor;
-        $unit = $variable + ($setup / $qty);
+        $goods_unit = $variable + ($setup / $qty);
+        $goods_total = $goods_unit * $qty;
+        $minimum_fee = (float) ($settings['min_fee'] ?? $d['rules']['min_fee']);
+        $calculated_fee = $goods_total * (float) ($settings['fee_percent'] ?? $d['rules']['fee_percent']) / 100;
+        $fee = max($minimum_fee, $calculated_fee);
+        $total = $goods_total + $fee;
 
         return [
-            'unit' => round($unit, 2),
-            'total' => round($unit * $qty, 2),
+            'unit' => round($total / $qty, 2),
+            'total' => round($total, 2),
+            'goods_unit' => round($goods_unit, 2),
+            'goods_total' => round($goods_total, 2),
+            'fee' => round($fee, 2),
+            'fee_is_min' => $calculated_fee < $minimum_fee,
             'setup' => round($setup, 2),
             'quantity' => $qty,
             'size_factor' => round($size, 4),
