@@ -35,6 +35,12 @@ $steps = [
     ['03', 'Produce', 'Artwork goes to plate, the run is scheduled, and we send press sheets before packing.'],
     ['04', 'Deliver', 'DDP or FOB, palletised, with photos and the material declaration per order.'],
 ];
+$step_photos = [
+    ['brief',1600,1200,'Supplier sample room with shelves of rigid gift boxes and jewelry boxes','Supplier sample room, Dongguan. Structures are chosen from real samples before artwork starts.'],
+    ['sample',1600,1200,'Operator feeding a printed proof sheet into a wide-format digital proofing printer','Digital proof printing at a supplier in Dongguan.'],
+    ['produce',1600,1200,'Multi-colour sheet-fed offset printing press in a packaging factory','Sheet-fed offset press used for production runs.'],
+    ['deliver',1040,780,'Finished jewelry boxes packed in export cartons before shipping','Finished boxes packed into cartons, Shantou.'],
+];
 
 $faq_price_answer = 'The quote builder shows the full curve for your size.';
 if (pk_pricing_tables_ready()) {
@@ -115,7 +121,7 @@ $faq = [
         <p class="pk-eyebrow">What we make</p>
         <h2 class="pk-h2">Custom jewelry boxes, pouches and gift boxes with your logo</h2>
       </div>
-      <a class="pk-more" href="<?php echo esc_url(home_url('/products/')); ?>">All products →</a>
+      <a class="pk-more" href="<?php echo esc_url(home_url('/products/')); ?>">All products →</a><?php if (pk31b_is_english()) : ?><a class="pk-more" href="<?php echo esc_url(home_url('/bags-pouches/')); ?>">Bags &amp; pouches</a><?php endif; echo "\n"; ?>
     </div>
     <div class="pk-cards pk-cards-4">
       <?php foreach ($home_products as $card) : get_template_part('template-parts/product-card', null, $card); endforeach; ?>
@@ -132,14 +138,14 @@ $faq = [
       </div>
     </div>
     <ol class="pk-steps">
-      <?php foreach ($steps as [$num, $title, $body]) : ?>
-        <li>
+      <?php foreach ($steps as $pk_step_index => [$num, $title, $body]) : [$photo,$width,$height,$alt,$caption]=$step_photos[$pk_step_index]; $base=$img.'/31b-process/'.$photo.'-'; ?>
+        <li><figure class="pk-step-photo" style="margin:0 0 1rem"><img src="<?php echo esc_url($base.'960.webp'); ?>" srcset="<?php echo esc_attr($base.'480.webp 480w, '.$base.'960.webp 960w, '.$base.$width.'.webp '.$width.'w'); ?>" sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 25vw" width="<?php echo (int)$width; ?>" height="<?php echo (int)$height; ?>" alt="<?php echo esc_attr($alt); ?>" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover"><figcaption style="font-size:.75rem;line-height:1.4;color:#e2e9e3;opacity:1;margin-top:.5rem;min-height:clamp(0px,calc(100vw - 1100px),5.6em)"><?php echo esc_html($caption); ?></figcaption></figure>
           <span class="pk-step-num"><?php echo esc_html($num); ?></span>
           <span class="pk-step-title"><?php echo esc_html($title); ?></span>
           <span class="pk-step-text"><?php echo esc_html($body); ?></span>
         </li>
       <?php endforeach; ?>
-    </ol>
+    </ol><p class="pk-step-photo-note" style="font-size:.75rem;line-height:1.4;color:#e2e9e3;margin-top:.5rem">Supplier photos, used with permission.</p>
   </div>
 </section>
 

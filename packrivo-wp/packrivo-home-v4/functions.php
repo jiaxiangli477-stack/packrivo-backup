@@ -10,6 +10,7 @@ if (!defined('ABSPATH')) {
 define('PKV4_VERSION', '4.0.6');
 
 require_once get_stylesheet_directory() . '/inc/seo-31a.php';
+require_once get_stylesheet_directory() . '/inc/site-31b.php';
 
 // 29y：/get-a-quote/ 的 H1 / title / meta description（11 语种走词典）。
 require_once get_stylesheet_directory() . '/inc/quote-page.php';

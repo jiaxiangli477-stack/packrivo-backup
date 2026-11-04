@@ -12,7 +12,7 @@ get_header();
 while (have_posts()) :
     the_post();
     $native = (string) get_post_meta(get_the_ID(), '_packrivo_native_page', true) === '1';
-    $content = pkv4_31a_existing_orphan_links(pkv4_31a_catalog_links(get_the_content()));
+    $content = pk31b_orphan_links(pkv4_31a_existing_orphan_links(pkv4_31a_catalog_links(get_the_content())));
 
     if ($native && is_page('inquiry')) {
         require_once get_stylesheet_directory() . '/inc/repair-inquiry.php';
@@ -139,6 +139,9 @@ while (have_posts()) :
                 <?php endif; ?>
                 <?php // Must run the content filters, otherwise shortcodes such as [packrivo_quote] stay literal. ?>
                 <article class="article"><?php echo apply_filters('the_content', $content); ?></article>
+                <?php if (pkv4_is_quote_page() && pk31b_is_english()) : $pk_email=function_exists('packrivo_master_contact_email') ? packrivo_master_contact_email() : ''; ?>
+                  <noscript><p>For a quote, email us or contact us on WhatsApp.</p><p><?php if ($pk_email) : ?><a href="<?php echo esc_url('mailto:'.$pk_email); ?>"><?php echo esc_html($pk_email); ?></a><?php endif; ?> <a href="<?php echo esc_url(packrivo_whatsapp_url()); ?>">WhatsApp</a></p></noscript>
+                <?php endif; ?>
             </div>
         <?php endif; ?>
     </main>

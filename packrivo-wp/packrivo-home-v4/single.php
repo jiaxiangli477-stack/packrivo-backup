@@ -41,10 +41,30 @@ while (have_posts()) :
                 <div class="pk-post-body" style="margin-top:28px;max-width:70ch"><?php the_content(); ?></div>
             </article>
 
-            <?php $pk_structures = pk_related_structures($pk_id); if ($pk_structures['ids']) : ?>
+            <?php if (pk31b_is_english()) :
+                $pk_related = get_posts(['post_type'=>'post','post_status'=>'publish','posts_per_page'=>3,'post__not_in'=>[$pk_id], 'category__in'=>$pk_cat ? wp_list_pluck($pk_cat,'term_id') : [], 'orderby'=>'date','order'=>'DESC']);
+                if (count($pk_related)<3) {
+                    $excluded=array_merge([$pk_id],wp_list_pluck($pk_related,'ID'));
+                    $pk_related=array_merge($pk_related,get_posts(['post_type'=>'post','post_status'=>'publish','posts_per_page'=>3-count($pk_related),'post__not_in'=>$excluded,'orderby'=>'date','order'=>'DESC']));
+                }
+                $pk_structures=pk_related_structures($pk_id);
+                $pk_product_ids=array_slice($pk_structures['ids'],0,2);
+                if (!$pk_product_ids) {
+                    $fallback=['jewelry'=>'product-drawer-jewelry-box','gift'=>'product-collapsible-magnetic-gift-box','mailer'=>'product-front-tuck-mailer','bag'=>'product-euro-tote-paper-carrier','label'=>'product-sheet-labels','insert'=>'product-die-cut-insert'];
+                    $product=get_page_by_path($fallback[$pk_structures['group']] ?? $fallback['jewelry']);
+                    if ($product && $product->post_status==='publish') $pk_product_ids[]=$product->ID;
+                }
+            ?>
+                <section class="pk-related" data-pk31b-related style="margin-top:56px;padding-top:28px;border-top:1px solid var(--pk-line)">
+                  <h2 class="pk-h2">Related reading</h2><ul class="pk-list">
+                    <?php foreach($pk_related as $pk_post) : ?><li><a href="<?php echo esc_url(get_permalink($pk_post)); ?>"><?php echo esc_html(get_the_title($pk_post)); ?></a></li><?php endforeach; ?>
+                    <?php foreach($pk_product_ids as $pk_product_id) : ?><li><a href="<?php echo esc_url(get_permalink($pk_product_id)); ?>"><?php echo esc_html(get_the_title($pk_product_id)); ?></a></li><?php endforeach; ?>
+                  </ul>
+                </section>
+            <?php else : $pk_structures = pk_related_structures($pk_id); if ($pk_structures['ids']) : ?>
                 <section class="pk-related" style="margin-top:56px" data-product-group="<?php echo esc_attr($pk_structures['group']); ?>">
                     <h2 class="pk-h2">Related structures</h2>
-                    <div class="pk-cards pk-cards-4"><?php foreach ($pk_structures['ids'] as $pk_product) get_template_part('template-parts/product-card', null, ['product'=>$pk_product,'group'=>$pk_structures['group']]); ?></div>
+                    <div class="pk-cards pk-cards-4"><?php foreach (array_slice($pk_structures['ids'], 0, 2) as $pk_product) get_template_part('template-parts/product-card', null, ['product'=>$pk_product,'group'=>$pk_structures['group']]); ?></div>
                 </section>
             <?php endif; ?>
             <?php
@@ -70,6 +90,7 @@ while (have_posts()) :
                         <?php endforeach; ?>
                     </div>
                 </section>
+            <?php endif; ?>
             <?php endif; ?>
         </div>
 

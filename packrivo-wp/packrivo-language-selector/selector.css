@@ -1,0 +1,35 @@
+#packrivo-language-root{font:14px/1.5 system-ui,sans-serif;color:var(--text,#183b30);flex:0 0 auto}
+#packrivo-language-trigger{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:42px;padding:8px 10px;background:transparent;color:inherit;border:1px solid #c8d7cd;border-radius:999px;cursor:pointer;font:600 12px/1 system-ui,sans-serif;white-space:nowrap}
+#packrivo-language-trigger:hover{background:var(--panel,#e8efe9);color:var(--text,#183b30);border-color:var(--accent,#698c79)}
+#packrivo-language-trigger:focus-visible,#packrivo-language-dialog button:focus-visible{outline:3px solid #558c70;outline-offset:3px}
+#packrivo-language-dialog{box-sizing:border-box;position:fixed;inset:84px 24px auto auto;margin:0;width:min(540px,calc(100vw - 48px));max-width:none;max-height:calc(100dvh - 108px);padding:24px;border:1px solid #d9e2d9;border-radius:18px;background:#fafbf8;color:#183b30;box-shadow:0 20px 70px #10281e30;overflow:auto;text-align:start}
+#packrivo-language-dialog::backdrop{background:#10281e66}
+#packrivo-language-dialog .plh-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:20px}
+#packrivo-language-dialog h2{font:600 23px/1.2 system-ui,sans-serif;letter-spacing:-.5px;margin:0 0 6px;color:inherit}
+#packrivo-language-dialog p{font:13px/1.5 system-ui,sans-serif;margin:0;color:#52685d}
+#packrivo-language-close{display:grid;place-items:center;flex-shrink:0;background:transparent;color:inherit;border:1px solid #cedacf;border-radius:50%;width:40px;height:40px;cursor:pointer}
+#packrivo-language-dialog label{display:block;font:600 12px/1.5 system-ui,sans-serif;margin-bottom:7px}
+#packrivo-language-search{box-sizing:border-box;display:block;width:100%;padding:12px 14px;min-height:46px;margin:0 0 18px;background:#fff;border:1px solid #b6c8ba;border-radius:9px;color:#183b30;font:14px/1.4 system-ui,sans-serif}
+#packrivo-language-search:focus{outline:2px solid #558c70;outline-offset:2px}
+#packrivo-language-list{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+#packrivo-language-list a{box-sizing:border-box;position:relative;display:flex;align-items:center;min-height:58px;padding:9px 30px 9px 12px;border:1px solid #dde5dd;border-radius:9px;background:#fff;color:#183b30;text-decoration:none;cursor:pointer;font:600 14px/1.3 system-ui,sans-serif}
+#packrivo-language-list button small{font:11px/1.5 system-ui,sans-serif;color:#53695d;margin-top:2px}
+#packrivo-language-list a:hover,#packrivo-language-list a:focus-visible{border-color:#71927c;background:#eef4ed;outline:3px solid #558c70}
+#packrivo-language-list button[aria-pressed=true]{border-color:#37664f;background:#e7efe6}
+#packrivo-language-list button[aria-pressed=true]::after{content:'✓';position:absolute;inset-inline-end:11px;top:13px;color:#37664f}
+#packrivo-language-list a[hidden],#packrivo-language-empty[hidden]{display:none}
+#packrivo-language-dialog .plh-footer{border-top:1px solid #d9e2d9;margin-top:18px;padding-top:14px}
+#packrivo-language-engine{margin-top:12px;min-height:40px;text-align:start}
+#packrivo-language-engine img{display:inline-block!important;width:auto!important;max-width:none!important;height:16px!important;vertical-align:middle}
+#packrivo-language-engine select{max-width:100%;min-height:36px;border:1px solid #b6c8ba;border-radius:5px;background:#fff;color:#183b30}
+#packrivo-language-status{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:10000;background:#183b30;color:#fff;padding:10px 16px;border-radius:9px;max-width:calc(100vw - 32px);font:13px/1.5 system-ui,sans-serif;box-shadow:0 5px 20px #0002}
+#packrivo-language-status:empty{display:none}
+#packrivo-language-dialog #packrivo-language-status{position:static;transform:none;max-width:none;width:auto;margin:0 0 12px;color:#fff}
+@media(max-width:767px){
+ #packrivo-language-root{margin-inline-start:auto}
+ #packrivo-language-trigger{min-width:60px;min-height:42px;padding:7px 9px}
+ #packrivo-language-dialog{inset:auto 0 0 0;margin:0;width:100%;max-height:85dvh;padding:22px 18px max(22px,env(safe-area-inset-bottom));border-radius:20px 20px 0 0}
+ #packrivo-language-dialog h2{font-size:21px}
+ #packrivo-language-status{bottom:78px;width:max-content}
+}
+@media(prefers-reduced-motion:no-preference){#packrivo-language-dialog[open]{animation:plh-appear .18s ease-out}@keyframes plh-appear{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}}

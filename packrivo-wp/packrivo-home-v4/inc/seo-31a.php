@@ -65,6 +65,7 @@ function pkv4_31a_journal_adjacent_urls() {
     if ($topic) $args['category_name'] = $topic;
     $query = new WP_Query($args);
     $base = get_permalink((int) get_option('page_for_posts')) ?: home_url('/blog/');
+    if ($topic) $base = add_query_arg('topic', $topic, $base);
     $urls = [
         'prev' => $page > 1 ? ($page === 2 ? $base : add_query_arg('pg', $page - 1, $base)) : '',
         'next' => $page < (int) $query->max_num_pages ? add_query_arg('pg', $page + 1, $base) : '',
