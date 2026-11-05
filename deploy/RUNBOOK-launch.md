@@ -1,5 +1,40 @@
 # 上线手册 · Packrivo 一次性上线（RUNBOOK）
 
+## 32a-3 硬闸门：11 语言翻译（所有 32a 写入之前）
+
+仅站长获得另行上线授权后执行。先定义本手册中的 `$PKG`、`$PKGC`、`$BACKUP`、`$WPC` 和 `$WPCLI`，核验数据库备份可恢复，并让站点保持维护状态直到所有步骤及回归完成。dsh 完成翻译并合并到**本次实际待部署的** 11 份字典与报价插件包后，将脚本、完整 `32a-new-strings.csv`、最终 `i18n-merged/` 和解包后的报价插件放到 `$PKG`；路径须对应实际将部署的文件：
+
+```sh
+if ! python3 "$PKG/32a-i18n-gate.py" \
+  --csv "$PKG/32a-new-strings.csv" \
+  --dict-dir "$PKG/i18n-merged" \
+  --quote-dir "$PKG/packrivo-quote/includes/quote-i18n" \
+  --report "$BACKUP/32a-i18n-missing.csv"; then
+  echo 'STOP: missing or invalid translation keys; no 32a deployment or migration'
+  exit 1
+fi
+```
+
+所有 11 种语言的 `missing`、`quote_missing`、`quote_invalid` 均为 0 且 `GATE PASS` 才继续。报价组件通过单独的 `quote-i18n` 查找字符串，因此同时检查其三个新键及占位符。闸门验证键及非空值，不代替翻译质量、正确桶位和实际语言页验收；不得以脚本通过冒充这些验收。`32a-moq-content.php` 不能单独上线。
+
+已知限制：语言路由对不存在的路径提前退出，当前 `001-packrivo-32a-404-title.php` 固定输出英文 404 标题，不会因为词典新增键而自动翻译。正式上线前还须单独解决并验证该路径，不能只凭键存在就认为外语 404 已翻译。
+
+### 32a-3：工作区快照的单字段备份（在任何 32a 数据改动和插件替换之前）
+
+在上述翻译闸门通过及数据库备份可恢复后，将 `32a-workspace-moq-{lib,backup,migrate,rollback}.php` 放入 `$PKG` 并复制到同一 `$PKGC` 目录。备份不得覆盖旧文件；备份 CSV 只含 revision、page ID、lane、旧 MOQ 及前后/非 MOQ 哈希，不含完整产品记录：
+
+```sh
+for name in lib backup migrate rollback; do docker cp "$PKG/32a-workspace-moq-$name.php" php:"$PKGC/32a-workspace-moq-$name.php"; done
+test ! -e "$BACKUP/32a-workspace-moq.csv" || { echo 'STOP: backup already exists'; exit 1; }
+$WPCLI eval-file "$PKGC/32a-workspace-moq-backup.php" > "$BACKUP/32a-workspace-moq.csv" || { echo 'STOP: workspace backup failed'; exit 1; }
+test "$(wc -l < "$BACKUP/32a-workspace-moq.csv")" -gt 1 || { echo 'STOP: empty workspace backup'; exit 1; }
+sha256sum "$BACKUP/32a-workspace-moq.csv"
+docker cp "$BACKUP/32a-workspace-moq.csv" php:"$PKGC/32a-workspace-moq.csv"
+docker exec php sha256sum "$PKGC/32a-workspace-moq.csv"
+```
+
+核对两份 CSV 哈希相同并妥善保管；备份与后续操作期间若快照增删或非 MOQ 内容改变，迁移会报错退出，须重新核对，不能覆盖旧备份。
+
 ## 32a 升级时的选项迁移（仅站长获单独上线授权后执行）
 
 先完成数据库备份、核验备份可恢复，并部署复核通过的 32a 插件和主题。将 `deploy/32a/mu-plugins/001-packrivo-32a-404-title.php` 部署到 mu-plugins（在现有语言路由插件之前加载）。将本提交的 `deploy/32a-update-options.php` 放到 PHP 容器内，例如 `/pkg/32a-update-options.php`，然后用已配置的 `$WPCLI` 执行：
@@ -28,56 +63,89 @@ $WPCLI eval-file "$PKGC/32a-moq-content.php"
 
 ### 32a-2：旧 mu-plugin 的生产现场核对和精确替换
 
-`packrivo-wave1.php`、`packrivo-site-remediation-20261022.php`、`packrivo-product-workspace/includes/class-product-renderer.php` 和父主题 `packrivo-static-bridge-1.2.38/functions.php` 不在本仓库跟踪文件或任何 Git 引用中；32a 本地快照中分别存在 sticky CTA、产品规格/结构化数据及 About 文案、产品工作区显示模板和产品摘要。**不能用本地快照覆盖生产文件。** 站长应在正式授权后从当时生产容器获取原文件、备份并生成候选；以下命令使用本手册定义的 `$WPC`、`$PKG`、`$PKGC` 和 `$BACKUP`：
+`packrivo-wave1.php`、`packrivo-site-remediation-20261022.php`、产品工作区的 renderer、admin、validation 文件和父主题 `packrivo-static-bridge-1.2.38/functions.php` 不在本仓库跟踪文件或任何 Git 引用中。**不能用本地快照覆盖生产文件。** 站长应在正式授权后从当时生产容器获取原文件、备份并生成候选；以下命令使用本手册定义的 `$WPC`、`$PKG`、`$PKGC` 和 `$BACKUP`：
 
 ```sh
+for name in wave1 remediation workspace admin validation parent; do test ! -e "$BACKUP/32a-$name.before.php" || { echo "STOP: existing $name backup"; exit 1; }; done
 docker cp php:"$WPC/wp-content/mu-plugins/packrivo-wave1.php" "$BACKUP/32a-wave1.before.php"
 docker cp php:"$WPC/wp-content/mu-plugins/packrivo-site-remediation-20261022.php" "$BACKUP/32a-remediation.before.php"
 docker cp php:"$WPC/wp-content/plugins/packrivo-product-workspace/includes/class-product-renderer.php" "$BACKUP/32a-workspace.before.php"
+docker cp php:"$WPC/wp-content/plugins/packrivo-product-workspace/includes/class-product-admin.php" "$BACKUP/32a-admin.before.php"
+docker cp php:"$WPC/wp-content/plugins/packrivo-product-workspace/includes/class-product-validation.php" "$BACKUP/32a-validation.before.php"
 docker cp php:"$WPC/wp-content/themes/packrivo-static-bridge-1.2.38/functions.php" "$BACKUP/32a-parent.before.php"
 docker cp "$BACKUP/32a-wave1.before.php" php:"$PKGC/32a-wave1.before.php"
 docker cp "$BACKUP/32a-remediation.before.php" php:"$PKGC/32a-remediation.before.php"
 docker cp "$BACKUP/32a-workspace.before.php" php:"$PKGC/32a-workspace.before.php"
+docker cp "$BACKUP/32a-admin.before.php" php:"$PKGC/32a-admin.before.php"
+docker cp "$BACKUP/32a-validation.before.php" php:"$PKGC/32a-validation.before.php"
 docker cp "$BACKUP/32a-parent.before.php" php:"$PKGC/32a-parent.before.php"
 docker cp "$PKG/32a-patch-legacy-moq.php" php:"$PKGC/32a-patch-legacy-moq.php"
 docker exec php php "$PKGC/32a-patch-legacy-moq.php" wave1 "$PKGC/32a-wave1.before.php" "$PKGC/32a-wave1.candidate.php"
 docker exec php php "$PKGC/32a-patch-legacy-moq.php" remediation "$PKGC/32a-remediation.before.php" "$PKGC/32a-remediation.candidate.php"
 docker exec php php "$PKGC/32a-patch-legacy-moq.php" workspace-renderer "$PKGC/32a-workspace.before.php" "$PKGC/32a-workspace.candidate.php"
+docker exec php php "$PKGC/32a-patch-legacy-moq.php" workspace-admin "$PKGC/32a-admin.before.php" "$PKGC/32a-admin.candidate.php"
+docker exec php php "$PKGC/32a-patch-legacy-moq.php" workspace-validation "$PKGC/32a-validation.before.php" "$PKGC/32a-validation.candidate.php"
 docker exec php php "$PKGC/32a-patch-legacy-moq.php" parent-functions "$PKGC/32a-parent.before.php" "$PKGC/32a-parent.candidate.php"
-docker exec php php -l "$PKGC/32a-wave1.candidate.php"
-docker exec php php -l "$PKGC/32a-remediation.candidate.php"
-docker exec php php -l "$PKGC/32a-workspace.candidate.php"
-docker exec php php -l "$PKGC/32a-parent.candidate.php"
 docker cp php:"$PKGC/32a-wave1.candidate.php" "$BACKUP/32a-wave1.candidate.php"
 docker cp php:"$PKGC/32a-remediation.candidate.php" "$BACKUP/32a-remediation.candidate.php"
 docker cp php:"$PKGC/32a-workspace.candidate.php" "$BACKUP/32a-workspace.candidate.php"
+docker cp php:"$PKGC/32a-admin.candidate.php" "$BACKUP/32a-admin.candidate.php"
+docker cp php:"$PKGC/32a-validation.candidate.php" "$BACKUP/32a-validation.candidate.php"
 docker cp php:"$PKGC/32a-parent.candidate.php" "$BACKUP/32a-parent.candidate.php"
 diff -u "$BACKUP/32a-wave1.before.php" "$BACKUP/32a-wave1.candidate.php" || true
 diff -u "$BACKUP/32a-remediation.before.php" "$BACKUP/32a-remediation.candidate.php" || true
 diff -u "$BACKUP/32a-workspace.before.php" "$BACKUP/32a-workspace.candidate.php" || true
+diff -u "$BACKUP/32a-admin.before.php" "$BACKUP/32a-admin.candidate.php" || true
+diff -u "$BACKUP/32a-validation.before.php" "$BACKUP/32a-validation.candidate.php" || true
 diff -u "$BACKUP/32a-parent.before.php" "$BACKUP/32a-parent.candidate.php" || true
 ```
 
-脚本要求 sticky 旧串恰好 1 处、remediation 的三种旧串分别恰好 2、1、1 处、工作区显示的两种旧串各 1 处、父主题摘要旧串 1 处，否则不写候选并停下人工核对；不得用猜测覆盖不同版本。站长逐行确认差异仅为 MOQ 数字、四个 `php -l` 通过后，核对生产文件与备份的 SHA-256 仍分别相同：
+脚本要求 sticky 旧串 1 处、remediation 的三种旧串分别 2、1、1 处、renderer 两种旧串各 1 处、admin 两处、validation 三处、父主题摘要旧串 1 处；不匹配则不写候选并停下。逐行检查 diff：validation 除数值外还在公开投影中对两条已知旧 FAQ/SEO 句子做精确归一，旧记录原文不变。随后执行语法检查：
+
+```sh
+for name in wave1 remediation workspace admin validation parent; do docker exec php php -l "$PKGC/32a-$name.candidate.php" || exit 1; done
+```
+
+全部通过后核对生产文件与备份的 SHA-256：
 
 ```sh
 docker exec php sha256sum "$WPC/wp-content/mu-plugins/packrivo-wave1.php" "$WPC/wp-content/mu-plugins/packrivo-site-remediation-20261022.php" "$WPC/wp-content/plugins/packrivo-product-workspace/includes/class-product-renderer.php"
 docker exec php sha256sum "$WPC/wp-content/themes/packrivo-static-bridge-1.2.38/functions.php"
-sha256sum "$BACKUP/32a-wave1.before.php" "$BACKUP/32a-remediation.before.php" "$BACKUP/32a-workspace.before.php" "$BACKUP/32a-parent.before.php"
+docker exec php sha256sum "$WPC/wp-content/plugins/packrivo-product-workspace/includes/class-product-admin.php" "$WPC/wp-content/plugins/packrivo-product-workspace/includes/class-product-validation.php"
+sha256sum "$BACKUP/32a-wave1.before.php" "$BACKUP/32a-remediation.before.php" "$BACKUP/32a-workspace.before.php" "$BACKUP/32a-parent.before.php" "$BACKUP/32a-admin.before.php" "$BACKUP/32a-validation.before.php"
 ```
 
-只有四组哈希分别一致后，才执行下列替换，并验证产品页 sticky、规格及 About：
+只有六组哈希分别一致且仍处于维护状态时，才执行下列替换，然后立即执行下方快照迁移；不得以半更新状态向访客开放：
 
 ```sh
 docker cp "$BACKUP/32a-wave1.candidate.php" php:"$WPC/wp-content/mu-plugins/packrivo-wave1.php"
 docker cp "$BACKUP/32a-remediation.candidate.php" php:"$WPC/wp-content/mu-plugins/packrivo-site-remediation-20261022.php"
 docker cp "$BACKUP/32a-workspace.candidate.php" php:"$WPC/wp-content/plugins/packrivo-product-workspace/includes/class-product-renderer.php"
+docker cp "$BACKUP/32a-admin.candidate.php" php:"$WPC/wp-content/plugins/packrivo-product-workspace/includes/class-product-admin.php"
+docker cp "$BACKUP/32a-validation.candidate.php" php:"$WPC/wp-content/plugins/packrivo-product-workspace/includes/class-product-validation.php"
 docker cp "$BACKUP/32a-parent.candidate.php" php:"$WPC/wp-content/themes/packrivo-static-bridge-1.2.38/functions.php"
 ```
 
 回滚使用该次 `.before.php` 备份。上述步骤不构成本轮上线授权。
 
-**产品工作区契约待复核：**32a 本地 `pkpw_pilot_enabled()` 为真，`pkpw_store()->read_public(11)` 的 `commercial.moq` 仍为 500；该旧插件的管理表单、校验和公开投影也固定 500。已按本轮范围只在独立实例彩排可见模板文案，未修改产品记录或工作区数据契约；本地 drawer 页抓取未发现 `MOQ 500`，但不能据此证明所有投影消费者都不读取该值。上线前须由负责人单独审查 250 的数据契约、旧记录兼容和发布流程，处理完成并回归后再决定是否部署本轮。不得只改管理页面显示来掩盖数据仍为 500。
+### 32a-3：迁移工作区快照（紧接插件替换）
+
+使用前面核对过哈希的同一 CSV，不得重新生成或覆盖它。迁移只改变 `record_json` 内 `commercial.moq` 的数字 token，逐条校验其余字节哈希；记录增删、哈希不符或非预期值会回滚整个事务：
+
+```sh
+$WPCLI eval-file "$PKGC/32a-workspace-moq-migrate.php" "$PKGC/32a-workspace-moq.csv"
+$WPCLI eval-file "$PKGC/32a-workspace-moq-migrate.php" "$PKGC/32a-workspace-moq.csv"
+```
+
+第二次必须 `replaced=0`。然后核对 public、candidate 和历史预览的 MOQ、产品页和 REST/结构化数据；保留明确的 500 件数量例子。需要回退时先进入维护状态，执行下述数据回滚，并将上面备份的 validation/admin 源文件恢复到对应原路径；数据和代码均恢复后再核对公开版本为旧值，不能只回滚其中一部分：
+
+```sh
+$WPCLI eval-file "$PKGC/32a-workspace-moq-rollback.php" "$PKGC/32a-workspace-moq.csv"
+docker cp "$BACKUP/32a-validation.before.php" php:"$WPC/wp-content/plugins/packrivo-product-workspace/includes/class-product-validation.php"
+docker cp "$BACKUP/32a-admin.before.php" php:"$WPC/wp-content/plugins/packrivo-product-workspace/includes/class-product-admin.php"
+```
+
+AI 摘要另须验收：本地独立实例的 `/llms.txt` 和 `/llms-full.txt` 均为 404，无法实际验证其输出；仓库历史 `deploy/artifacts-29y/llms.txt` 仍含 `Minimum order quantity: 500`，`llms-full.base.txt` 也有旧 MOQ。它们不是工作区投影的直接读取方，不能拿本地 404 认定线上内容正确；上线前须基于当时审核通过的页面及报价生成并核对最终摘要，保留明确的 500 件报价示例，确认没有过时的 500 起订量说法后才继续。
 
 > **上线以本文件为准。`deploy/README.md` 里按轮次堆的 27g…28q 记录只作历史参考，命令和顺序以这里为唯一口径。**
 > 本文件不含任何密码、密钥或 token：wp-cli 走服务器上已有的 SSH/容器配置，Cloudflare 清缓存走本机 `E:\破甲工作区\i18n\.cf.env`（只引用路径，不抄值）。

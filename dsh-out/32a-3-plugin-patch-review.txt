@@ -1,0 +1,62 @@
+BACKUP class-product-validation.php SHA256 799d426ab68bfa52c329c2890851380f74b423fb0a572fd38e8cd238ca0fd44f
+workspace-validation replacements=3 source_sha256=799d426ab68bfa52c329c2890851380f74b423fb0a572fd38e8cd238ca0fd44f candidate_sha256=bf36db3c0ce5721790bc7c011581786280db728dfb7e2423369c270144e95387
+DIFF workspace-validation
+diff --git "a/E:\\\347\240\264\347\224\262\345\267\245\344\275\234\345\214\272\\packrivo-backup-32a\\.rehearsal-32a\\legacy-originals\\class-product-validation.php" "b/E:\\\347\240\264\347\224\262\345\267\245\344\275\234\345\214\272\\packrivo-backup-32a\\.rehearsal-32a\\32a-3-patch-qa\\workspace-validation.php"
+index 490f42f..5f122d2 100644
+--- "a/E:\\\347\240\264\347\224\262\345\267\245\344\275\234\345\214\272\\packrivo-backup-32a\\.rehearsal-32a\\legacy-originals\\class-product-validation.php"
++++ "b/E:\\\347\240\264\347\224\262\345\267\245\344\275\234\345\214\272\\packrivo-backup-32a\\.rehearsal-32a\\32a-3-patch-qa\\workspace-validation.php"
+@@ -54,7 +54,7 @@ final class PKPW_Product_Validation {
+             }
+         }
+         $commercial=$record['commercial'] ?? [];
+-        if (!is_array($commercial) || ($commercial['moq'] ?? null)!==500 || ($commercial['moq_basis'] ?? '')!=='per_product_design' ||
++        if (!is_array($commercial) || ($commercial['moq'] ?? null)!==250 || ($commercial['moq_basis'] ?? '')!=='per_product_design' ||
+             ($commercial['unit'] ?? '')!=='pieces' || ($commercial['pricing_mode'] ?? '')!=='quote_only' || !empty($commercial['verified_tiers'])) $errors[]='commercial';
+         if (!is_array($record['gallery'] ?? null) || count($record['gallery'] ?? [])>6) $errors[]='gallery';
+         $ids=[];$roles=[];
+@@ -101,7 +101,7 @@ final class PKPW_Product_Validation {
+             $out['specs'][$key]=[];
+             foreach(['label','value','unit','status','basis','measurement_state'] as $field)$out['specs'][$key][$field]=$spec[$field] ?? null;
+         }
+-        $out['commercial']=['moq'=>500,'moq_basis'=>'per_product_design','unit'=>'pieces','pricing_mode'=>'quote_only'];
++        $out['commercial']=['moq'=>250,'moq_basis'=>'per_product_design','unit'=>'pieces','pricing_mode'=>'quote_only'];
+         $out['gallery']=[];
+         foreach (($record['gallery'] ?? []) as $image) {
+             $safe=[];foreach(['attachment_id','role','alt','caption','public_qualification'] as $key)$safe[$key]=$image[$key] ?? null;
+@@ -111,6 +111,12 @@ final class PKPW_Product_Validation {
+         $out['detail_sections']=array_map(static fn($section)=>['title'=>$section['title'],'body'=>$section['body']],$record['detail_sections'] ?? []);
+         $out['faqs']=array_map(static fn($faq)=>['question'=>$faq['question'],'answer'=>$faq['answer']],$record['faqs'] ?? []);
+         $out['seo']=['title'=>$record['seo']['title'] ?? '', 'description'=>$record['seo']['description'] ?? ''];
++        // Legacy snapshots keep their approved text; normalize only the two known MOQ statements in public output.
++        foreach ($out['faqs'] as &$faq) {
++            $faq['answer']=str_replace('The current MOQ is 500 pieces per product / design.', 'The current MOQ is 250 pieces per product / design.', $faq['answer']);
++        }
++        unset($faq);
++        $out['seo']['description']=str_replace('MOQ 500 pieces per product/design;', 'MOQ 250 pieces per product/design;', $out['seo']['description']);
+         return $out;
+     }
+ }
+
+No syntax errors detected in /work/.rehearsal-32a/32a-3-patch-qa/workspace-validation.php
+HASH_CHECK candidate=bf36db3c0ce5721790bc7c011581786280db728dfb7e2423369c270144e95387 runtime=bf36db3c0ce5721790bc7c011581786280db728dfb7e2423369c270144e95387 equal=True
+BACKUP class-product-admin.php SHA256 9b0b4270f593e3533e8c1f25c13f32e02233019615bc0869b4dde9da36b2ff9f
+workspace-admin replacements=2 source_sha256=9b0b4270f593e3533e8c1f25c13f32e02233019615bc0869b4dde9da36b2ff9f candidate_sha256=d553a30617ace5d8c9917cb24291deb11a5b993dc9ba34b8976867b25be67d70
+DIFF workspace-admin
+diff --git "a/E:\\\347\240\264\347\224\262\345\267\245\344\275\234\345\214\272\\packrivo-backup-32a\\.rehearsal-32a\\legacy-originals\\class-product-admin.php" "b/E:\\\347\240\264\347\224\262\345\267\245\344\275\234\345\214\272\\packrivo-backup-32a\\.rehearsal-32a\\32a-3-patch-qa\\workspace-admin.php"
+index 721b9e5..79f243d 100644
+--- "a/E:\\\347\240\264\347\224\262\345\267\245\344\275\234\345\214\272\\packrivo-backup-32a\\.rehearsal-32a\\legacy-originals\\class-product-admin.php"
++++ "b/E:\\\347\240\264\347\224\262\345\267\245\344\275\234\345\214\272\\packrivo-backup-32a\\.rehearsal-32a\\32a-3-patch-qa\\workspace-admin.php"
+@@ -241,8 +241,8 @@ final class PKPW_Product_Admin {
+         echo '<details class="pkpw-panel" open><summary>4 · 规格与尺寸依据</summary>';
+         foreach((array)($record['specs']??[]) as $key=>$spec){if(!is_array($spec))$spec=[];$n='record[specs]['.$key.']';echo '<fieldset class="pkpw-spec"><legend>'.esc_html(self::field_text($spec['label']??$key)).' <small>'.esc_html($key).'</small></legend><div class="pkpw-grid">';$this->input($n.'[label]','网站字段名（英文）',$spec['label']??'');$this->input($n.'[value]','规格值（未知留空）',$spec['value']??'');$this->select($n.'[status]','确认状态',$spec['status']??'to_confirm',['to_confirm'=>'待确认 · to_confirm','custom'=>'项目定制 · custom','confirmed'=>'已确认 · confirmed']);$this->input($n.'[unit]','单位（尺寸仅 mm / cm / in）',$spec['unit']??'');$this->input($n.'[basis]','依据（尺寸基础不可互换）',$spec['basis']??'');$this->select($n.'[measurement_state]','测量依据',$spec['measurement_state']??'',[''=>'未知 / 不适用','estimated'=>'估计 · estimated','measured'=>'实测 · measured','supplier_confirmed'=>'供应商确认 · supplier_confirmed']);echo '</div></fieldset>';}
+         echo '<p>product_outline = 完整产品外形；usable_internal_space = 可用内空间；formed_box_external = 成盒外尺寸。估计值不能标为 confirmed。</p></details>';
+-        echo '<details class="pkpw-panel" open><summary>5 · 商业条件</summary><p>MOQ 500 pieces per product / design。当前公开策略为 quote-only；未核验价格与成本不进入公开内容。</p>';
+-        foreach(['moq'=>500,'moq_basis'=>'per_product_design','unit'=>'pieces','pricing_mode'=>'quote_only'] as $key=>$value)$this->hidden('record[commercial]['.$key.']',$value);echo '</details>';
++        echo '<details class="pkpw-panel" open><summary>5 · 商业条件</summary><p>MOQ 250 pieces per product / design。当前公开策略为 quote-only；未核验价格与成本不进入公开内容。</p>';
++        foreach(['moq'=>250,'moq_basis'=>'per_product_design','unit'=>'pieces','pricing_mode'=>'quote_only'] as $key=>$value)$this->hidden('record[commercial]['.$key.']',$value);echo '</details>';
+         echo '<details class="pkpw-panel" open><summary>6 · 详细内容、FAQ 与 SEO</summary>';
+         foreach(['detail_sections'=>'详细内容小节','faqs'=>'常见问题'] as $kind=>$label){echo '<h3>'.$label.'</h3><div data-list="'.$kind.'" data-max="30">';foreach((array)($record[$kind]??[]) as $i=>$item)$this->pair_row($kind,$i,$item);echo '</div><button type="button" class="button" data-add="'.$kind.'">添加'.$label.'</button><template id="pkpw-template-'.$kind.'">';$this->pair_row($kind,0,[]);echo '</template>';}
+         $this->input('record[seo][title]','SEO 标题（英文）',$record['seo']['title']??'');$this->area('record[seo][description]','SEO description（英文）',$record['seo']['description']??'');echo '</details>';
+
+No syntax errors detected in /work/.rehearsal-32a/32a-3-patch-qa/workspace-admin.php
+HASH_CHECK candidate=d553a30617ace5d8c9917cb24291deb11a5b993dc9ba34b8976867b25be67d70 runtime=d553a30617ace5d8c9917cb24291deb11a5b993dc9ba34b8976867b25be67d70 equal=True
