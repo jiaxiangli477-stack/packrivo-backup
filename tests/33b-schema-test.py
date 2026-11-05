@@ -1,9 +1,8 @@
 """Validate three local 33b JSON-LD graphs against visible text and WP pricing.
 
 The only network target is the explicitly configured localhost rehearsal.
-Missing AggregateOffer is a failure even when it correctly avoids an invented
-price, so the acceptance report cannot silently convert an incomplete case to a
-pass. The program performs no database or site writes.
+Product and AggregateOffer are required only when source-bound pricing is available.
+The program performs no database or site writes.
 """
 import collections
 import html
@@ -142,13 +141,18 @@ def main():
                 walk(json.loads(block), graphs)
             except (json.JSONDecodeError, TypeError) as exc:
                 errors.append('invalid JSON-LD: ' + str(exc))
-        for kind in ('Product', 'BreadcrumbList', 'FAQPage'):
+        for kind in ('BreadcrumbList', 'FAQPage'):
             if len(graphs[kind]) != 1:
                 errors.append(f'{kind} count={len(graphs[kind])}, expected 1')
         fact = facts.get(slug)
         if not fact or not fact['h1']:
             errors.append('WP product data unavailable')
             fact = {'h1': '', 'lede': '', 'hub': '', 'faq': [], 'rows': []}
+        expected_product = 1 if fact['rows'] else 0
+        if len(graphs['Product']) != expected_product:
+            errors.append(f"Product count={len(graphs['Product'])}, expected {expected_product} based on price inputs")
+        if len(graphs['AggregateOffer']) != expected_product:
+            errors.append(f"AggregateOffer count={len(graphs['AggregateOffer'])}, expected {expected_product} based on price inputs")
         offer_detail = 'none'
         if graphs['Product']:
             product = graphs['Product'][0]

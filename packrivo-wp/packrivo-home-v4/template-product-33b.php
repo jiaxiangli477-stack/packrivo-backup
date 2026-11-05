@@ -105,7 +105,7 @@ get_header();
 
   <section class="pk33b-section pk33b-dieline<?php echo $dimensions ? '' : ' pk33b-dieline-no-image'; ?>"><?php if ($dimensions) : $l=(float)$dimensions['length'];$w=(float)$dimensions['width'];$h=(float)$dimensions['height'];$vw=$l+2*$h;$vh=$w+2*$h; ?><div class="pk33b-illustration"><svg viewBox="0 0 <?php echo esc_attr($vw.' '.$vh); ?>" role="img" aria-label="Illustrative flat layout"><rect x="<?php echo esc_attr($h); ?>" y="<?php echo esc_attr($h); ?>" width="<?php echo esc_attr($l); ?>" height="<?php echo esc_attr($w); ?>"/><rect x="<?php echo esc_attr($h); ?>" y="0" width="<?php echo esc_attr($l); ?>" height="<?php echo esc_attr($h); ?>"/><rect x="<?php echo esc_attr($h); ?>" y="<?php echo esc_attr($h+$w); ?>" width="<?php echo esc_attr($l); ?>" height="<?php echo esc_attr($h); ?>"/><rect x="0" y="<?php echo esc_attr($h); ?>" width="<?php echo esc_attr($h); ?>" height="<?php echo esc_attr($w); ?>"/><rect x="<?php echo esc_attr($h+$l); ?>" y="<?php echo esc_attr($h); ?>" width="<?php echo esc_attr($h); ?>" height="<?php echo esc_attr($w); ?>"/></svg><p>Illustrative only; not a production dieline.</p></div><?php endif; ?><div><p class="pk33b-kicker">Dieline</p><h2>A dieline comes with every quote</h2><?php $quote_form('Get the dieline with your quote',$qty); ?></div></section>
 
-  <section class="pk33b-section" aria-labelledby="pk33b-shipping-heading"><div class="pk33b-section-title"><p class="pk33b-kicker">Delivery</p><h2 id="pk33b-shipping-heading">Shipping options</h2><p>Freight &amp; duties quoted per destination.</p></div><div class="pk33b-options"><div class="pk33b-panel"><h3>DDP to door</h3><p>Destination and terms are confirmed on the written quote.</p></div><div class="pk33b-panel"><h3>FOB Shenzhen</h3><p>FOB is available for shipment from Shenzhen.</p></div><div class="pk33b-panel"><h3>Consolidation</h3><p>FOB is available if you consolidate.</p></div></div></section>
+  <section class="pk33b-section" aria-labelledby="pk33b-shipping-heading"><div class="pk33b-section-title"><p class="pk33b-kicker">Delivery</p><h2 id="pk33b-shipping-heading">Shipping options</h2><p>Freight &amp; duties quoted per destination.</p></div><div class="pk33b-options"><div class="pk33b-panel"><h3>DDP to door</h3><p>Destination and terms are confirmed on the written quote.</p></div><div class="pk33b-panel"><h3>FOB Shenzhen</h3><p>FOB is available for shipment from Shenzhen.</p></div><div class="pk33b-panel"><h3>Consolidation</h3><p>Ask us to combine several items into one shipment; we confirm whether it works on the written quote.</p></div></div></section>
 
   <section class="pk33b-section" id="pk33b-quote" aria-labelledby="pk33b-quote-heading"><div class="pk33b-section-title"><p class="pk33b-kicker">Your brief</p><h2 id="pk33b-quote-heading">Build your quote</h2><p>Confirm the dimensions and material for your project.</p></div><?php if (shortcode_exists('packrivo_quote')) echo do_shortcode('[packrivo_quote style="'.esc_attr($style).'" qty="'.(int)$qty.'" product="'.esc_attr($slug).'" require_size="'.$require_size.'" require_material="'.$require_material.'"]'); ?></section>
 
@@ -114,14 +114,14 @@ get_header();
  </div>
 </main>
 <?php
-$product_schema=['@context'=>'https://schema.org','@type'=>'Product','name'=>$product['h1'],'brand'=>['@type'=>'Brand','name'=>'Packrivo']];
-if (trim($product['lede']) !== '') $product_schema['description']=$product['lede'];
-if ($images) $product_schema['image']=array_values(array_column($images,'url'));
 if ($rows && strtoupper((string)($settings['currency'] ?? 'USD')) === 'USD') {
+    $product_schema=['@context'=>'https://schema.org','@type'=>'Product','name'=>$product['h1'],'brand'=>['@type'=>'Brand','name'=>'Packrivo']];
+    if (trim($product['lede']) !== '') $product_schema['description']=$product['lede'];
+    if ($images) $product_schema['image']=array_values(array_column($images,'url'));
     $units=array_map(static function($row){return (float)$row['unit'];},$rows);
     $product_schema['offers']=['@type'=>'AggregateOffer','priceCurrency'=>'USD','lowPrice'=>min($units),'highPrice'=>max($units),'offerCount'=>count($units)];
+    echo '<script type="application/ld+json" class="pk33b-product-data">'.wp_json_encode($product_schema,JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE|JSON_HEX_TAG).'</script>';
 }
-echo '<script type="application/ld+json" class="pk33b-product-data">'.wp_json_encode($product_schema,JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE|JSON_HEX_TAG).'</script>';
 $faq_schema=[]; foreach ($visible_faq as $entry) $faq_schema[]=['@type'=>'Question','name'=>$entry['question'],'acceptedAnswer'=>['@type'=>'Answer','text'=>$entry['answer']]];
 if ($faq_schema) echo '<script type="application/ld+json" class="pk33b-faq-data">'.wp_json_encode(['@context'=>'https://schema.org','@type'=>'FAQPage','mainEntity'=>$faq_schema],JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE|JSON_HEX_TAG).'</script>';
 get_footer();
