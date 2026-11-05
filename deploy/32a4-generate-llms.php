@@ -26,7 +26,7 @@ $cards=[];foreach($slugs as $slug){
 $md="## Reference prices (from the quote builder)\n\n";
 $md.="| Structure | Size | Quantity | Unit price (USD) |\n|---|---|---|---|\n";
 foreach($rows as $row)$md.=sprintf("| %s | %s | %s | $%s |\n",$row['label'],$row['size'],number_format($row['quantity']),number_format($row['unit'],2));
-$md.="\nCard prices (500 pieces, size as shown on the product card, full-colour print, matte):\n\n";
+$md.="\nProduct reference prices (500 pieces, size as shown on the product card, full-colour print, matte):\n\n";
 foreach($cards as $card)$md.=sprintf("- [%s](%s) — %s, from $%s per unit.\n",$card['title'],$card['url'],$card['size'],number_format($card['unit'],2));
 $md.="\n**Basis for every price above:** ex-works Shenzhen; includes full-colour print, matte finish, plate and die setup spread over the run, and the sourcing fee at 15% with a $150 minimum per order; excludes freight, duties and sampling. Your final rate is confirmed on the written quote.\n";
 $source=(string)file_get_contents($base);$lines=preg_split('/\R/',$source);$kept=[];$removed=0;

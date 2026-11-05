@@ -61,6 +61,33 @@ $WPCLI eval-file "$PKGC/32a-moq-content.php"
 
 父主题的独立 `packrivo_moq` 选项控制产品规格中的动态 MOQ；缺失时默认 500，和报价插件 `pkq_settings.min_qty` 是两个设置。本步骤在同一事务中将缺失或 500 的 `packrivo_moq` 设置为 250；若已是其他非 250 的值则停下核对，不覆盖未知设置。首次记录 `before`、`after`、`replaced`、`yoast_cache_replaced` 和 `site_moq_updated`；第二次要求三种更新数为 0。剩余的一条 `500 pieces per` 是保留的 500 件具体报价示例。然后抓取 `/about/`、两个目标产品页和 `/products/`，确认标题及正文。若需回滚，从本次备份按受影响的页面、meta、Yoast indexable 和 `packrivo_moq` 恢复（原先缺失则删除该新增选项），不覆盖其他业务变动。
 
+### 32a-5：已发布博客的精确句子迁移（紧接页面迁移之后）
+
+仅在另行取得生产上线授权、翻译闸门通过且完整数据库备份可恢复后执行。确认计划对应上线时的数据库快照，若已发布文章有新增、删除或变化，先重新核对清单和计划；脚本的 318 条、post ID、slug、状态及原句数量不符会整体中止。原计划中符合替换条件的命中均在正文；已发布博客 Yoast title/metadesc/indexable 的旧 MOQ 命中属于须整篇重写的 post 448，保留原样。post 448 的 slug `packaging-moq-design-planning` 不变，不增加 301。
+
+```sh
+docker cp "$PKG/32a5-blog-migrate.php" php:"$PKGC/32a5-blog-migrate.php"
+docker cp "$PKG/32a5-blog-plan.json" php:"$PKGC/32a5-blog-plan.json"
+BLOG_BACKUP="$PKGC/32a5-blog-$LAUNCH.json"
+$WPCLI eval-file "$PKGC/32a5-blog-migrate.php" dry-run "$BLOG_BACKUP"
+$WPCLI eval-file "$PKGC/32a5-blog-migrate.php" backup "$BLOG_BACKUP"
+test ! -e "$BACKUP/32a5-blog-$LAUNCH.json" || { echo 'STOP: backup exists'; exit 1; }
+docker cp php:"$BLOG_BACKUP" "$BACKUP/32a5-blog-$LAUNCH.json"
+docker exec php sha256sum "$BLOG_BACKUP"
+sha256sum "$BACKUP/32a5-blog-$LAUNCH.json"
+```
+
+核对两份备份哈希一致并保护其完整文章内容后，才可执行：
+
+```sh
+$WPCLI eval-file "$PKGC/32a5-blog-migrate.php" apply "$BLOG_BACKUP"
+$WPCLI eval-file "$PKGC/32a5-blog-migrate.php" apply "$BLOG_BACKUP"
+```
+
+第一次 `changed=318`，第二次 `changed=0`。若需回滚，在维护状态下执行 `$WPCLI eval-file "$PKGC/32a5-blog-migrate.php" rollback "$BLOG_BACKUP"`；任一相关文章在迁移后被其他人修改则停止，先人工核对，不能覆盖新内容。保留报告中标为 rewrite 的文章及其链接供 dsh 重写。
+
+32a 在生产上线并通过正常公开 URL 验证后，由站长另行把 `E:/CodexHome/automations/packrivo-03-00-packrivo-2/automation.toml` 的每日博客任务起订量从 500 改为 250；此前保持原设置。本轮没有修改定时任务。
+
 ### 32a-2：旧 mu-plugin 的生产现场核对和精确替换
 
 `packrivo-wave1.php`、`packrivo-site-remediation-20261022.php`、产品工作区的 renderer、admin、validation 文件和父主题 `packrivo-static-bridge-1.2.38/functions.php` 不在本仓库跟踪文件或任何 Git 引用中。**不能用本地快照覆盖生产文件。** 站长应在正式授权后从当时生产容器获取原文件、备份并生成候选；以下命令使用本手册定义的 `$WPC`、`$PKG`、`$PKGC` 和 `$BACKUP`：

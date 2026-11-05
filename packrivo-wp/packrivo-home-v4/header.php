@@ -54,7 +54,7 @@ $quote_url = home_url($pk_lang_prefix . '/get-a-quote/');
                 </div>
               <?php endforeach; ?>
             </div>
-            <p class="pk-panel-note">Every structure is priced from 500 units. Dielines included.</p>
+            <p class="pk-panel-note">Every structure is priced from 250 units. Dielines included.</p>
           </div>
         </li>
 
