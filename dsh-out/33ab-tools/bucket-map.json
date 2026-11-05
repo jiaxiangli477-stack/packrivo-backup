@@ -1,0 +1,1424 @@
+[
+ {
+  "en": "Samples %s days",
+  "bucket": "text",
+  "where": [
+   "front-page.php <span>"
+  ],
+  "tags": [
+   "span"
+  ]
+ },
+ {
+  "en": "DDP or FOB",
+  "bucket": "text",
+  "where": [
+   "front-page.php <?>",
+   "front-page.php <span>",
+   "template-product-33b.php <div>"
+  ],
+  "tags": [
+   "?",
+   "div",
+   "span"
+  ]
+ },
+ {
+  "en": "Sourcing fee %s",
+  "bucket": "text",
+  "where": [
+   "front-page.php <span>"
+  ],
+  "tags": [
+   "span"
+  ]
+ },
+ {
+  "en": "Example quote · Rigid magnetic box",
+  "bucket": "text",
+  "where": [
+   "front-page.php <p>"
+  ],
+  "tags": [
+   "p"
+  ]
+ },
+ {
+  "en": "Size",
+  "bucket": "text",
+  "where": [
+   "front-page.php <dt>",
+   "class-pkq-admin.php <?>",
+   "class-pkq-rest.php <?>",
+   "pkq-quote.js <js>",
+   "pkq-quote.js <js>",
+   "pkq-quote.js <js>",
+   "pkq-quote.js <js>",
+   "pkq-quote.js <js>",
+   "pkq-quote.js <js>"
+  ],
+  "tags": [
+   "?",
+   "dt",
+   "js"
+  ]
+ },
+ {
+  "en": "Board",
+  "bucket": "text",
+  "where": [
+   "front-page.php <dt>",
+   "front-page.php <th>",
+   "pkq-quote.js <js>"
+  ],
+  "tags": [
+   "dt",
+   "js",
+   "th"
+  ]
+ },
+ {
+  "en": "Rigid greyboard",
+  "bucket": "text",
+  "where": [
+   "front-page.php <dd>",
+   "front-page.php <td>",
+   "pkq-quote.js <js>"
+  ],
+  "tags": [
+   "dd",
+   "js",
+   "td"
+  ]
+ },
+ {
+  "en": "%s pieces, sourcing fee included",
+  "bucket": "text",
+  "where": [
+   "front-page.php <dt>"
+  ],
+  "tags": [
+   "dt"
+  ]
+ },
+ {
+  "en": "Samples",
+  "bucket": "text",
+  "where": [
+   "front-page.php <span>",
+   "front-page.php <dt>",
+   "front-page.php <p>",
+   "functions.php <?>",
+   "header.php <a>",
+   "template-product-33b.php <div>"
+  ],
+  "tags": [
+   "?",
+   "a",
+   "div",
+   "dt",
+   "p",
+   "span"
+  ]
+ },
+ {
+  "en": "Milestone: Brief",
+  "bucket": "UNSEEN",
+  "where": [],
+  "tags": []
+ },
+ {
+  "en": "Milestone: Sample",
+  "bucket": "UNSEEN",
+  "where": [],
+  "tags": []
+ },
+ {
+  "en": "Milestone: Produce",
+  "bucket": "UNSEEN",
+  "where": [],
+  "tags": []
+ },
+ {
+  "en": "Milestone: Deliver",
+  "bucket": "UNSEEN",
+  "where": [],
+  "tags": []
+ },
+ {
+  "en": "Freight & duties quoted per destination",
+  "bucket": "text",
+  "where": [
+   "front-page.php <p>",
+   "pkq-quote.js <js>"
+  ],
+  "tags": [
+   "js",
+   "p"
+  ]
+ },
+ {
+  "en": "Quantity",
+  "bucket": "text",
+  "where": [
+   "front-page.php <label>",
+   "template-product-33b.php <h2>",
+   "template-product-33b.php <th>",
+   "class-pkq-admin.php <?>",
+   "class-pkq-admin.php <th>",
+   "class-pkq-pricing.php <?>",
+   "class-pkq-rest.php <?>",
+   "pkq-quote.js <js>",
+   "pkq-quote.js <js>",
+   "pkq-quote.js <js>",
+   "pkq-quote.js <js>",
+   "pkq-quote.js <js>",
+   "pkq-quote.js <js>"
+  ],
+  "tags": [
+   "?",
+   "h2",
+   "js",
+   "label",
+   "th"
+  ]
+ },
+ {
+  "en": "2,500 · print setup waived",
+  "bucket": "UNSEEN",
+  "where": [],
+  "tags": []
+ },
+ {
+  "en": "5,000 · die setup waived",
+  "bucket": "UNSEEN",
+  "where": [],
+  "tags": []
+ },
+ {
+  "en": "Goods",
+  "bucket": "text",
+  "where": [
+   "front-page.php <dt>",
+   "template-product-33b.php <th>",
+   "class-pkq-admin.php <?>",
+   "class-pkq-admin.php <?>",
+   "class-pkq-rest.php <?>",
+   "class-pkq-rest.php <?>",
+   "pkq-quote.js <js>"
+  ],
+  "tags": [
+   "?",
+   "dt",
+   "js",
+   "th"
+  ]
+ },
+ {
+  "en": "Sourcing fee",
+  "bucket": "text",
+  "where": [
+   "front-page.php <span>",
+   "front-page.php <dt>",
+   "front-page.php <dt>",
+   "class-pkq-admin.php <?>",
+   "class-pkq-admin.php <?>",
+   "class-pkq-admin.php <th>",
+   "class-pkq-rest.php <?>",
+   "class-pkq-rest.php <?>",
+   "pkq-quote.js <js>"
+  ],
+  "tags": [
+   "?",
+   "dt",
+   "js",
+   "span",
+   "th"
+  ]
+ },
+ {
+  "en": "Unit price, sourcing fee included",
+  "bucket": "text",
+  "where": [
+   "front-page.php <dt>"
+  ],
+  "tags": [
+   "dt"
+  ]
+ },
+ {
+  "en": "Order total",
+  "bucket": "text",
+  "where": [
+   "front-page.php <dt>",
+   "class-pkq-admin.php <?>",
+   "pkq-quote.js <js>"
+  ],
+  "tags": [
+   "?",
+   "dt",
+   "js"
+  ]
+ },
+ {
+  "en": "Print setup is waived from %1$s pieces; die setup is waived from %2$s pieces.",
+  "bucket": "block",
+  "where": [
+   "front-page.php <li>"
+  ],
+  "tags": [
+   "li"
+  ]
+ },
+ {
+  "en": "Kraft corrugated · E/B/F/EB/BC",
+  "bucket": "text",
+  "where": [
+   "front-page.php <td>"
+  ],
+  "tags": [
+   "td"
+  ]
+ },
+ {
+  "en": "Rigid greyboard · %1$s coated paper over %2$s greyboard",
+  "bucket": "text",
+  "where": [
+   "front-page.php <td>"
+  ],
+  "tags": [
+   "td"
+  ]
+ },
+ {
+  "en": "%s recycled greyboard",
+  "bucket": "text",
+  "where": [
+   "front-page.php <td>"
+  ],
+  "tags": [
+   "td"
+  ]
+ },
+ {
+  "en": "Folding carton · %s",
+  "bucket": "text",
+  "where": [
+   "front-page.php <td>"
+  ],
+  "tags": [
+   "td"
+  ]
+ },
+ {
+  "en": "Folding boxes",
+  "bucket": "text",
+  "where": [
+   "front-page.php <td>"
+  ],
+  "tags": [
+   "td"
+  ]
+ },
+ {
+  "en": "Inserts, trays · on request, mould quoted separately",
+  "bucket": "text",
+  "where": [
+   "front-page.php <td>"
+  ],
+  "tags": [
+   "td"
+  ]
+ },
+ {
+  "en": "EVA / PU",
+  "bucket": "text",
+  "where": [
+   "front-page.php <td>"
+  ],
+  "tags": [
+   "td"
+  ]
+ },
+ {
+  "en": "Protective inserts",
+  "bucket": "text",
+  "where": [
+   "front-page.php <td>"
+  ],
+  "tags": [
+   "td"
+  ]
+ },
+ {
+  "en": "Multi-colour sheet-fed offset printing press in a packaging workshop",
+  "bucket": "text",
+  "where": [
+   "front-page.php <?>"
+  ],
+  "tags": [
+   "?"
+  ]
+ },
+ {
+  "en": "Topics",
+  "bucket": "text",
+  "where": [
+   "template-journal-v4.php <h2>"
+  ],
+  "tags": [
+   "h2"
+  ]
+ },
+ {
+  "en": "%s articles",
+  "bucket": "text",
+  "where": [
+   "journal-topic-card.php <?>"
+  ],
+  "tags": [
+   "?"
+  ]
+ },
+ {
+  "en": "Read",
+  "bucket": "text",
+  "where": [
+   "journal-card.php <a>",
+   "packrivo-language-selector.php <p>",
+   "pkq-quote.js <js>",
+   "pkq-quote.js <js>",
+   "pkq-quote.js <js>",
+   "pkq-quote.js <js>",
+   "pkq-quote.js <js>",
+   "pkq-quote.js <js>",
+   "pkq-quote.js <js>",
+   "pkq-quote.js <js>",
+   "pkq-quote.js <js>",
+   "pkq-quote.js <js>",
+   "pkq-quote.js <js>",
+   "pkq-quote.js <js>",
+   "pkq-quote.js <js>",
+   "pkq-quote.js <js>",
+   "pkq-quote.js <js>",
+   "pkq-quote.js <js>",
+   "pkq-quote.js <js>",
+   "pkq-quote.js <js>",
+   "pkq-quote.js <js>",
+   "pkq-quote.js <js>",
+   "pkq-quote.js <js>"
+  ],
+  "tags": [
+   "a",
+   "js",
+   "p"
+  ]
+ },
+ {
+  "en": "print setup waived",
+  "bucket": "text",
+  "where": [
+   "front-page.php <bdi>"
+  ],
+  "tags": [
+   "bdi"
+  ]
+ },
+ {
+  "en": "die setup waived",
+  "bucket": "text",
+  "where": [
+   "front-page.php <bdi>"
+  ],
+  "tags": [
+   "bdi"
+  ]
+ },
+ {
+  "en": "Product categories",
+  "bucket": "text",
+  "where": [
+   "33a-category-cards.php <?>"
+  ],
+  "tags": [
+   "?"
+  ]
+ },
+ {
+  "en": "From %s units",
+  "bucket": "text",
+  "where": [
+   "33a-category-cards.php <?>"
+  ],
+  "tags": [
+   "?"
+  ]
+ },
+ {
+  "en": "/ unit",
+  "bucket": "text",
+  "where": [
+   "front-page.php <bdi>",
+   "front-page.php <bdi>",
+   "page.php <main>",
+   "page.php <strong>",
+   "template-product-33b.php <bdi>",
+   "template-product-33b.php <bdi>",
+   "template-product-33b.php <bdi>",
+   "33a-category-cards.php <?>",
+   "class-pkq-admin.php <?>"
+  ],
+  "tags": [
+   "?",
+   "bdi",
+   "main",
+   "strong"
+  ]
+ },
+ {
+  "en": "Reference estimate",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <p>",
+   "33a-category-cards.php <?>"
+  ],
+  "tags": [
+   "?",
+   "p"
+  ]
+ },
+ {
+  "en": "Ex-works. Freight & duties quoted per destination. Setup amortised into the unit price.",
+  "bucket": "block",
+  "where": [
+   "pkq-quote.js <js>"
+  ],
+  "tags": [
+   "js"
+  ]
+ },
+ {
+  "en": "Freight & duties quoted per destination. At 5,000 pieces the unit price is %s% lower than at 500. Final price confirmed after dieline review.",
+  "bucket": "block",
+  "where": [
+   "front-page.php <p>"
+  ],
+  "tags": [
+   "p"
+  ]
+ },
+ {
+  "en": "%s days",
+  "bucket": "text",
+  "where": [
+   "front-page.php <span>",
+   "front-page.php <dd>"
+  ],
+  "tags": [
+   "dd",
+   "span"
+  ]
+ },
+ {
+  "en": "Breadcrumb",
+  "bucket": "attr",
+  "where": [
+   "single.php <nav aria-label>",
+   "template-product-33b.php <nav aria-label>",
+   "33b-integration.php <?>"
+  ],
+  "tags": [
+   "?",
+   "nav"
+  ]
+ },
+ {
+  "en": "Home",
+  "bucket": "text",
+  "where": [
+   "single.php <a>",
+   "template-product-33b.php <a>",
+   "33b-integration.php <?>"
+  ],
+  "tags": [
+   "?",
+   "a"
+  ]
+ },
+ {
+  "en": "Product images",
+  "bucket": "attr",
+  "where": [
+   "template-product-33b.php <div aria-label>"
+  ],
+  "tags": [
+   "div"
+  ]
+ },
+ {
+  "en": "View image %s",
+  "bucket": "attr",
+  "where": [
+   "template-product-33b.php <a tag>"
+  ],
+  "tags": [
+   "a"
+  ]
+ },
+ {
+  "en": "Samples 5–10 days",
+  "bucket": "UNSEEN",
+  "where": [],
+  "tags": []
+ },
+ {
+  "en": "Dieline with every quote",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <div>"
+  ],
+  "tags": [
+   "div"
+  ]
+ },
+ {
+  "en": "Reference size",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <legend>"
+  ],
+  "tags": [
+   "legend"
+  ]
+ },
+ {
+  "en": "Estimate, sourcing fee included",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <p>"
+  ],
+  "tags": [
+   "p"
+  ]
+ },
+ {
+  "en": "1,000 pieces",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <small>",
+   "template-product-33b.php <small>"
+  ],
+  "tags": [
+   "small"
+  ]
+ },
+ {
+  "en": "From 250 pieces",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <small>"
+  ],
+  "tags": [
+   "small"
+  ]
+ },
+ {
+  "en": "Reference estimate: unprinted, no finish; inserts are quoted on request.",
+  "bucket": "block",
+  "where": [
+   "template-product-33b.php <p>"
+  ],
+  "tags": [
+   "p"
+  ]
+ },
+ {
+  "en": "Sample 5–10 days",
+  "bucket": "UNSEEN",
+  "where": [],
+  "tags": []
+ },
+ {
+  "en": "Production 7–30 days after sample approval",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <['p']*composite: Production>"
+  ],
+  "tags": [
+   "p"
+  ]
+ },
+ {
+  "en": "Configure this box →",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <div>"
+  ],
+  "tags": [
+   "div"
+  ]
+ },
+ {
+  "en": "Get the dieline with your quote",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <div>",
+   "template-product-33b.php <h2>"
+  ],
+  "tags": [
+   "div",
+   "h2"
+  ]
+ },
+ {
+  "en": "Order a sample",
+  "bucket": "text",
+  "where": [
+   "front-page.php <a btn>",
+   "front-page.php <a btn>",
+   "functions.php <?>",
+   "single.php <a btn>",
+   "template-product-33b.php <a btn>"
+  ],
+  "tags": [
+   "?",
+   "a"
+  ]
+ },
+ {
+  "en": "Construction details to define",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <h2>"
+  ],
+  "tags": [
+   "h2"
+  ]
+ },
+ {
+  "en": "Estimate",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <p>",
+   "template-product-33b.php <p>",
+   "template-product-33b.php <small>"
+  ],
+  "tags": [
+   "p",
+   "small"
+  ]
+ },
+ {
+  "en": "Quantity and price",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <h2>"
+  ],
+  "tags": [
+   "h2"
+  ]
+ },
+ {
+  "en": "Prices include the sourcing fee. Freight & duties quoted per destination.",
+  "bucket": "UNSEEN",
+  "where": [],
+  "tags": []
+ },
+ {
+  "en": "Scrollable price table",
+  "bucket": "attr",
+  "where": [
+   "template-product-33b.php <div aria-label>"
+  ],
+  "tags": [
+   "div"
+  ]
+ },
+ {
+  "en": "Unit price, fee included",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <th>"
+  ],
+  "tags": [
+   "th"
+  ]
+ },
+ {
+  "en": "Savings against minimum",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <th>"
+  ],
+  "tags": [
+   "th"
+  ]
+ },
+ {
+  "en": "Setup",
+  "bucket": "text",
+  "where": [
+   "front-page.php <ul>",
+   "front-page.php <li>",
+   "front-page.php <bdi>",
+   "template-product-33b.php <th>",
+   "class-pkq-admin.php <?>",
+   "class-pkq-admin.php <th>",
+   "class-pkq-pricing.php <?>",
+   "class-pkq-pricing.php <?>",
+   "class-pkq-pricing.php <?>",
+   "class-pkq-pricing.php <?>",
+   "pkq-quote.js <js>",
+   "pkq-quote.js <js>"
+  ],
+  "tags": [
+   "?",
+   "bdi",
+   "js",
+   "li",
+   "th",
+   "ul"
+  ]
+ },
+ {
+  "en": "Goods total",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <th>",
+   "class-pkq-admin.php <?>",
+   "class-pkq-admin.php <?>",
+   "class-pkq-rest.php <?>",
+   "class-pkq-rest.php <?>"
+  ],
+  "tags": [
+   "?",
+   "th"
+  ]
+ },
+ {
+  "en": "Freight & duties",
+  "bucket": "text",
+  "where": [
+   "front-page.php <p>",
+   "pkq-quote.js <js>"
+  ],
+  "tags": [
+   "js",
+   "p"
+  ]
+ },
+ {
+  "en": "Waived",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <bdi>"
+  ],
+  "tags": [
+   "bdi"
+  ]
+ },
+ {
+  "en": "Quoted per destination",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <td>"
+  ],
+  "tags": [
+   "td"
+  ]
+ },
+ {
+  "en": "Select",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <td>",
+   "packrivo-language-selector.php <?>",
+   "packrivo-language-selector.php <?>",
+   "33a-curve.js <js>",
+   "33a-curve.js <js>",
+   "33a-curve.js <js>",
+   "33a-curve.js <js>",
+   "33b-product.js <js>",
+   "33b-product.js <js>",
+   "33b-product.js <js>",
+   "33b-product.js <js>",
+   "33b-product.js <js>",
+   "cta-28l.js <js>",
+   "nav.js <js>",
+   "nav.js <js>",
+   "nav.js <js>",
+   "nav.js <js>",
+   "nav.js <js>",
+   "nav.js <js>",
+   "nav.js <js>",
+   "selector-v1.0.7.js <js>",
+   "selector-v1.0.7.js <js>",
+   "selector-v1.0.7.js <js>",
+   "selector-v1.0.7.js <js>",
+   "selector-v1.0.7.js <js>",
+   "pkq-quote.js <js>",
+   "pkq-quote.js <js>",
+   "pkq-quote.js <js>",
+   "pkq-quote.js <js>"
+  ],
+  "tags": [
+   "?",
+   "js",
+   "td"
+  ]
+ },
+ {
+  "en": "Options",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <p>"
+  ],
+  "tags": [
+   "p"
+  ]
+ },
+ {
+  "en": "Customization options",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <h2>"
+  ],
+  "tags": [
+   "h2"
+  ]
+ },
+ {
+  "en": "Surface finishes",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <div>"
+  ],
+  "tags": [
+   "div"
+  ]
+ },
+ {
+  "en": "Logo finishes",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <div>"
+  ],
+  "tags": [
+   "div"
+  ]
+ },
+ {
+  "en": "Estimate at 1,000 pieces, sourcing fee included.",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <small>"
+  ],
+  "tags": [
+   "small"
+  ]
+ },
+ {
+  "en": "Inserts",
+  "bucket": "text",
+  "where": [
+   "front-page.php <td>",
+   "functions.php <?>",
+   "template-product-33b.php <h3>",
+   "template-products-v4.php <?>"
+  ],
+  "tags": [
+   "?",
+   "h3",
+   "td"
+  ]
+ },
+ {
+  "en": "EVA insert",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <?>"
+  ],
+  "tags": [
+   "?"
+  ]
+ },
+ {
+  "en": "PU insert",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <?>"
+  ],
+  "tags": [
+   "?"
+  ]
+ },
+ {
+  "en": "Paperboard insert",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <?>"
+  ],
+  "tags": [
+   "?"
+  ]
+ },
+ {
+  "en": "Corrugated insert",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <?>"
+  ],
+  "tags": [
+   "?"
+  ]
+ },
+ {
+  "en": "Molded pulp insert",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <?>"
+  ],
+  "tags": [
+   "?"
+  ]
+ },
+ {
+  "en": "Clear film frame",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <?>"
+  ],
+  "tags": [
+   "?"
+  ]
+ },
+ {
+  "en": "on request, mould quoted separately",
+  "bucket": "text",
+  "where": [
+   "front-page.php <td>",
+   "template-product-33b.php <small>"
+  ],
+  "tags": [
+   "small",
+   "td"
+  ]
+ },
+ {
+  "en": "quoted on request",
+  "bucket": "text",
+  "where": [
+   "front-page.php <?>",
+   "template-product-33b.php <p>",
+   "template-product-33b.php <small>"
+  ],
+  "tags": [
+   "?",
+   "p",
+   "small"
+  ]
+ },
+ {
+  "en": "Specification",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <p>",
+   "template-product-33b.php <h2>"
+  ],
+  "tags": [
+   "h2",
+   "p"
+  ]
+ },
+ {
+  "en": "Specifications and review",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <h2>"
+  ],
+  "tags": [
+   "h2"
+  ]
+ },
+ {
+  "en": "Structure and materials",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <div>"
+  ],
+  "tags": [
+   "div"
+  ]
+ },
+ {
+  "en": "Sampling and review",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <div>"
+  ],
+  "tags": [
+   "div"
+  ]
+ },
+ {
+  "en": "Dieline",
+  "bucket": "text",
+  "where": [
+   "header.php <p>",
+   "template-product-33b.php <div>",
+   "template-product-33b.php <p>",
+   "template-products-v4.php <p>"
+  ],
+  "tags": [
+   "div",
+   "p"
+  ]
+ },
+ {
+  "en": "Illustrative flat layout",
+  "bucket": "attr",
+  "where": [
+   "template-product-33b.php <svg aria-label>"
+  ],
+  "tags": [
+   "svg"
+  ]
+ },
+ {
+  "en": "Illustrative only; not a production dieline.",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <p>"
+  ],
+  "tags": [
+   "p"
+  ]
+ },
+ {
+  "en": "A dieline comes with every quote",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <h2>"
+  ],
+  "tags": [
+   "h2"
+  ]
+ },
+ {
+  "en": "Delivery",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <p>"
+  ],
+  "tags": [
+   "p"
+  ]
+ },
+ {
+  "en": "Shipping options",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <h2>"
+  ],
+  "tags": [
+   "h2"
+  ]
+ },
+ {
+  "en": "Freight & duties quoted per destination.",
+  "bucket": "text",
+  "where": [
+   "front-page.php <p>",
+   "pkq-quote.js <js>"
+  ],
+  "tags": [
+   "js",
+   "p"
+  ]
+ },
+ {
+  "en": "DDP to door",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <h3>"
+  ],
+  "tags": [
+   "h3"
+  ]
+ },
+ {
+  "en": "Destination and terms are confirmed on the written quote.",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <p>"
+  ],
+  "tags": [
+   "p"
+  ]
+ },
+ {
+  "en": "FOB Shenzhen",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <h3>"
+  ],
+  "tags": [
+   "h3"
+  ]
+ },
+ {
+  "en": "FOB is available for shipment from Shenzhen.",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <p>"
+  ],
+  "tags": [
+   "p"
+  ]
+ },
+ {
+  "en": "Consolidation",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <h3>"
+  ],
+  "tags": [
+   "h3"
+  ]
+ },
+ {
+  "en": "Ask us to combine several items into one shipment; we confirm whether it works on the written quote.",
+  "bucket": "block",
+  "where": [
+   "template-product-33b.php <p>"
+  ],
+  "tags": [
+   "p"
+  ]
+ },
+ {
+  "en": "Your brief",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <p>"
+  ],
+  "tags": [
+   "p"
+  ]
+ },
+ {
+  "en": "Build your quote",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <h2>",
+   "packrivo-quote.php <?>",
+   "index.php <?>"
+  ],
+  "tags": [
+   "?",
+   "h2"
+  ]
+ },
+ {
+  "en": "Confirm the dimensions and material for your project.",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <p>"
+  ],
+  "tags": [
+   "p"
+  ]
+ },
+ {
+  "en": "Questions",
+  "bucket": "text",
+  "where": [
+   "front-page.php <p>",
+   "template-product-33b.php <p>"
+  ],
+  "tags": [
+   "p"
+  ]
+ },
+ {
+  "en": "Frequently asked questions",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <h2>"
+  ],
+  "tags": [
+   "h2"
+  ]
+ },
+ {
+  "en": "Explore",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <p>"
+  ],
+  "tags": [
+   "p"
+  ]
+ },
+ {
+  "en": "Related products",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <h2>"
+  ],
+  "tags": [
+   "h2"
+  ]
+ },
+ {
+  "en": "Share the missing specifications for a tailored estimate.",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <p>"
+  ],
+  "tags": [
+   "p"
+  ]
+ },
+ {
+  "en": "MOQ",
+  "bucket": "text",
+  "where": [
+   "front-page.php <?>",
+   "front-page.php <p>",
+   "front-page.php <dt>",
+   "front-page.php <dt>",
+   "template-product-33b.php <span>",
+   "template-products-v4.php <p>",
+   "33a-category-cards.php <?>",
+   "33a-category-cards.php <?>",
+   "product-card.php <span>"
+  ],
+  "tags": [
+   "?",
+   "dt",
+   "p",
+   "span"
+  ]
+ },
+ {
+  "en": "None",
+  "bucket": "text",
+  "where": [
+   "pkq-quote.js <js>"
+  ],
+  "tags": [
+   "js"
+  ]
+ },
+ {
+  "en": "Matte varnish",
+  "bucket": "text",
+  "where": [
+   "pkq-quote.js <js>"
+  ],
+  "tags": [
+   "js"
+  ]
+ },
+ {
+  "en": "Gloss varnish",
+  "bucket": "text",
+  "where": [
+   "pkq-quote.js <js>"
+  ],
+  "tags": [
+   "js"
+  ]
+ },
+ {
+  "en": "Soft-touch lamination",
+  "bucket": "text",
+  "where": [
+   "pkq-quote.js <js>"
+  ],
+  "tags": [
+   "js"
+  ]
+ },
+ {
+  "en": "Spot UV",
+  "bucket": "text",
+  "where": [
+   "pkq-quote.js <js>"
+  ],
+  "tags": [
+   "js"
+  ]
+ },
+ {
+  "en": "Foil stamp",
+  "bucket": "text",
+  "where": [
+   "pkq-quote.js <js>"
+  ],
+  "tags": [
+   "js"
+  ]
+ },
+ {
+  "en": "Blind emboss",
+  "bucket": "text",
+  "where": [
+   "pkq-quote.js <js>"
+  ],
+  "tags": [
+   "js"
+  ]
+ },
+ {
+  "en": "Enter dimensions from 2 to 120 cm (one decimal place) and choose a material before viewing an estimate.",
+  "bucket": "block",
+  "where": [
+   "pkq-quote.js <js>"
+  ],
+  "tags": [
+   "js"
+  ]
+ },
+ {
+  "en": "Enter dimensions from 2 to 120 cm (one decimal place) before viewing an estimate.",
+  "bucket": "block",
+  "where": [
+   "pkq-quote.js <js>"
+  ],
+  "tags": [
+   "js"
+  ]
+ },
+ {
+  "en": "Choose a material before viewing an estimate.",
+  "bucket": "text",
+  "where": [
+   "pkq-quote.js <js>"
+  ],
+  "tags": [
+   "js"
+  ]
+ },
+ {
+  "en": "To request a quote without JavaScript, email hello@packrivo.com with your dimensions and material.",
+  "bucket": "block",
+  "where": [
+   "packrivo-quote.php <?>"
+  ],
+  "tags": [
+   "?"
+  ]
+ },
+ {
+  "en": "Complete dimensions and material for an estimate.",
+  "bucket": "text",
+  "where": [
+   "template-product-33b.php <p>"
+  ],
+  "tags": [
+   "p"
+  ]
+ }
+]

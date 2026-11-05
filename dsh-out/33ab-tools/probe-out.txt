@@ -1,0 +1,42 @@
+header 33a: ['英文原文', '展示位置', '涉及页面', '旧英文', 'source']
+header 33b: ['英文原文', '展示位置', '涉及页面', '旧英文', 'source']
+rows 33a=43 33b=85 total=128
+unique english = 124 (dupes merged = 4)
+merged duplicates:
+  [33a<-33b] DDP or FOB
+  [33a<-33b] / unit
+  [33a<-33b] Freight & duties quoted per destination
+  [33a<-33b] Quantity
+dict ar    buckets={'title': 295, 'attr': 879, 'block': 7123, 'text': 426}
+dict de    buckets={'title': 295, 'attr': 880, 'block': 7170, 'text': 477}
+dict es    buckets={'title': 301, 'attr': 880, 'block': 7121, 'text': 469}
+dict fr    buckets={'title': 301, 'attr': 880, 'block': 7118, 'text': 476}
+dict it    buckets={'title': 301, 'attr': 880, 'block': 7120, 'text': 471}
+dict ja    buckets={'title': 295, 'attr': 879, 'block': 7126, 'text': 426}
+dict ko    buckets={'title': 295, 'attr': 880, 'block': 7128, 'text': 424}
+dict nl    buckets={'title': 301, 'attr': 880, 'block': 7122, 'text': 475}
+dict pt    buckets={'title': 301, 'attr': 880, 'block': 7129, 'text': 475}
+dict zh-CN buckets={'title': 295, 'attr': 881, 'block': 7128, 'text': 474}
+dict zh-TW buckets={'title': 295, 'attr': 879, 'block': 7126, 'text': 426}
+bucket names = ['attr', 'block', 'text', 'title']
+
+=== coverage of 33a/33b english keys in 32a dicts (zh-CN as probe) ===
+HIT  ['block']                                     Size
+HIT  ['block', 'text']                             Board
+HIT  ['block', 'text']                             Rigid greyboard
+HIT  ['block', 'text']                             Samples
+HIT  ['block']                                     Quantity
+HIT  ['block', 'text']                             Sourcing fee
+HIT  ['attr']                                      Breadcrumb
+HIT  ['block', 'text']                             Home
+HIT  ['block', 'text']                             Order a sample
+HIT  ['block']                                     Setup
+HIT  ['text']                                      Goods total
+HIT  ['block', 'text']                             Inserts
+HIT  ['block']                                     Paperboard insert
+HIT  ['block']                                     Delivery
+HIT  ['block', 'text']                             Questions
+HIT  ['block']                                     Frequently asked questions
+HIT  ['block']                                     Explore
+HIT  ['block']                                     Blind emboss
+strings with at least one same-bucket-agnostic hit: 18 / 124

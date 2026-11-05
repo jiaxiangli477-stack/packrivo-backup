@@ -1,0 +1,25 @@
+bytes           100651
+bom             no
+crlf            0
+physical lines  1365 (incl header)
+header          round,en,bucket,lang,value,origin
+data rows       1364
+langs           ar:124 de:124 es:124 fr:124 it:124 ja:124 ko:124 nl:124 pt:124 zh-CN:124 zh-TW:124
+unique pairs    1364  duplicates 0
+unique en       124
+empty values    0
+buckets         Counter({'text': 1232, 'block': 77, 'attr': 55})
+origins         Counter({'new': 1166, 'reused': 198})
+ph mismatches   0
+percent mism    0
+num mismatches  0
+entity mism     0
+markup mism     0
+reused rows     198 (values taken verbatim from 32a dictionary)
+token 250                  en rows  11
+token 5–10                 en rows  22
+token 7–30                 en rows  11
+token 2 to 120             en rows  22
+token hello@packrivo.com   en rows  11
+
+PASS all checks

@@ -1,0 +1,137 @@
+  1 text   Samples %s days                                                                                  | tags=span | front-page.php <span>
+  2 text   DDP or FOB                                                                                       | tags=?,div,span | front-page.php <?> front-page.php <span> template-product-33b.php <div>
+  3 text   Sourcing fee %s                                                                                  | tags=span | front-page.php <span>
+  4 text   Example quote · Rigid magnetic box                                                               | tags=p | front-page.php <p>
+  5 text   Size                                                                                             | tags=?,dt,js | front-page.php <dt> class-pkq-admin.php <?> class-pkq-rest.php <?> pkq-quote.js <js> pkq-quote.js <js> pkq-quote.js <js> pkq-quote.js <js> pkq-quote.js <js> pkq-quote.js 
+  6 text   Board                                                                                            | tags=dt,js,th | front-page.php <dt> front-page.php <th> pkq-quote.js <js>
+  7 text   Rigid greyboard                                                                                  | tags=dd,js,td | front-page.php <dd> front-page.php <td> pkq-quote.js <js>
+  8 text   %s pieces, sourcing fee included                                                                 | tags=dt | front-page.php <dt>
+  9 text   Samples                                                                                          | tags=?,a,div,dt,p,span | front-page.php <span> front-page.php <dt> front-page.php <p> functions.php <?> header.php <a> template-product-33b.php <div>
+ 10 UNSEEN Milestone: Brief                                                                                 | tags= | 
+ 11 UNSEEN Milestone: Sample                                                                                | tags= | 
+ 12 UNSEEN Milestone: Produce                                                                               | tags= | 
+ 13 UNSEEN Milestone: Deliver                                                                               | tags= | 
+ 14 text   Freight & duties quoted per destination                                                          | tags=js,p | front-page.php <p> pkq-quote.js <js>
+ 15 text   Quantity                                                                                         | tags=?,h2,js,label,th | front-page.php <label> template-product-33b.php <h2> template-product-33b.php <th> class-pkq-admin.php <?> class-pkq-admin.php <th> class-pkq-pricing.php <?> class-pkq-re
+ 16 UNSEEN 2,500 · print setup waived                                                                       | tags= | 
+ 17 UNSEEN 5,000 · die setup waived                                                                         | tags= | 
+ 18 text   Goods                                                                                            | tags=?,dt,js,th | front-page.php <dt> template-product-33b.php <th> class-pkq-admin.php <?> class-pkq-admin.php <?> class-pkq-rest.php <?> class-pkq-rest.php <?> pkq-quote.js <js>
+ 19 text   Sourcing fee                                                                                     | tags=?,dt,js,span,th | front-page.php <span> front-page.php <dt> front-page.php <dt> class-pkq-admin.php <?> class-pkq-admin.php <?> class-pkq-admin.php <th> class-pkq-rest.php <?> class-pkq-re
+ 20 text   Unit price, sourcing fee included                                                                | tags=dt | front-page.php <dt>
+ 21 text   Order total                                                                                      | tags=?,dt,js | front-page.php <dt> class-pkq-admin.php <?> pkq-quote.js <js>
+ 22 block  Print setup is waived from %1$s pieces; die setup is waived from %2$s pieces.                    | tags=li | front-page.php <li>
+ 23 text   Kraft corrugated · E/B/F/EB/BC                                                                   | tags=td | front-page.php <td>
+ 24 text   Rigid greyboard · %1$s coated paper over %2$s greyboard                                          | tags=td | front-page.php <td>
+ 25 text   %s recycled greyboard                                                                            | tags=td | front-page.php <td>
+ 26 text   Folding carton · %s                                                                              | tags=td | front-page.php <td>
+ 27 text   Folding boxes                                                                                    | tags=td | front-page.php <td>
+ 28 text   Inserts, trays · on request, mould quoted separately                                             | tags=td | front-page.php <td>
+ 29 text   EVA / PU                                                                                         | tags=td | front-page.php <td>
+ 30 text   Protective inserts                                                                               | tags=td | front-page.php <td>
+ 31 text   Multi-colour sheet-fed offset printing press in a packaging workshop                             | tags=? | front-page.php <?>
+ 32 text   Topics                                                                                           | tags=h2 | template-journal-v4.php <h2>
+ 33 text   %s articles                                                                                      | tags=? | journal-topic-card.php <?>
+ 34 text   Read                                                                                             | tags=a,js,p | journal-card.php <a> packrivo-language-selector.php <p> pkq-quote.js <js> pkq-quote.js <js> pkq-quote.js <js> pkq-quote.js <js> pkq-quote.js <js> pkq-quote.js <js> pkq-qu
+ 35 text   print setup waived                                                                               | tags=bdi | front-page.php <bdi>
+ 36 text   die setup waived                                                                                 | tags=bdi | front-page.php <bdi>
+ 37 text   Product categories                                                                               | tags=? | 33a-category-cards.php <?>
+ 38 text   From %s units                                                                                    | tags=? | 33a-category-cards.php <?>
+ 39 text   / unit                                                                                           | tags=?,bdi,main,strong | front-page.php <bdi> front-page.php <bdi> page.php <main> page.php <strong> template-product-33b.php <bdi> template-product-33b.php <bdi> template-product-33b.php <bdi> 3
+ 40 text   Reference estimate                                                                               | tags=?,p | template-product-33b.php <p> 33a-category-cards.php <?>
+ 41 block  Ex-works. Freight & duties quoted per destination. Setup amortised into the unit price.          | tags=js | pkq-quote.js <js>
+ 42 block  Freight & duties quoted per destination. At 5,000 pieces the unit price is %s% lower than at 500 | tags=p | front-page.php <p>
+ 43 text   %s days                                                                                          | tags=dd,span | front-page.php <span> front-page.php <dd>
+ 44 attr   Breadcrumb                                                                                       | tags=?,nav | single.php <nav aria-label> template-product-33b.php <nav aria-label> 33b-integration.php <?>
+ 45 text   Home                                                                                             | tags=?,a | single.php <a> template-product-33b.php <a> 33b-integration.php <?>
+ 46 attr   Product images                                                                                   | tags=div | template-product-33b.php <div aria-label>
+ 47 attr   View image %s                                                                                    | tags=a | template-product-33b.php <a tag>
+ 48 UNSEEN Samples 5–10 days                                                                                | tags= | 
+ 49 text   Dieline with every quote                                                                         | tags=div | template-product-33b.php <div>
+ 50 text   Reference size                                                                                   | tags=legend | template-product-33b.php <legend>
+ 51 text   Estimate, sourcing fee included                                                                  | tags=p | template-product-33b.php <p>
+ 52 text   1,000 pieces                                                                                     | tags=small | template-product-33b.php <small> template-product-33b.php <small>
+ 53 text   From 250 pieces                                                                                  | tags=small | template-product-33b.php <small>
+ 54 block  Reference estimate: unprinted, no finish; inserts are quoted on request.                         | tags=p | template-product-33b.php <p>
+ 55 UNSEEN Sample 5–10 days                                                                                 | tags= | 
+ 56 text   Production 7–30 days after sample approval                                                       | tags=p | template-product-33b.php <['p']*composite: Production>
+ 57 text   Configure this box →                                                                             | tags=div | template-product-33b.php <div>
+ 58 text   Get the dieline with your quote                                                                  | tags=div,h2 | template-product-33b.php <div> template-product-33b.php <h2>
+ 59 text   Order a sample                                                                                   | tags=?,a | front-page.php <a btn> front-page.php <a btn> functions.php <?> single.php <a btn> template-product-33b.php <a btn>
+ 60 text   Construction details to define                                                                   | tags=h2 | template-product-33b.php <h2>
+ 61 text   Estimate                                                                                         | tags=p,small | template-product-33b.php <p> template-product-33b.php <p> template-product-33b.php <small>
+ 62 text   Quantity and price                                                                               | tags=h2 | template-product-33b.php <h2>
+ 63 UNSEEN Prices include the sourcing fee. Freight & duties quoted per destination.                        | tags= | 
+ 64 attr   Scrollable price table                                                                           | tags=div | template-product-33b.php <div aria-label>
+ 65 text   Unit price, fee included                                                                         | tags=th | template-product-33b.php <th>
+ 66 text   Savings against minimum                                                                          | tags=th | template-product-33b.php <th>
+ 67 text   Setup                                                                                            | tags=?,bdi,js,li,th,ul | front-page.php <ul> front-page.php <li> front-page.php <bdi> template-product-33b.php <th> class-pkq-admin.php <?> class-pkq-admin.php <th> class-pkq-pricing.php <?> clas
+ 68 text   Goods total                                                                                      | tags=?,th | template-product-33b.php <th> class-pkq-admin.php <?> class-pkq-admin.php <?> class-pkq-rest.php <?> class-pkq-rest.php <?>
+ 69 text   Freight & duties                                                                                 | tags=js,p | front-page.php <p> pkq-quote.js <js>
+ 70 text   Waived                                                                                           | tags=bdi | template-product-33b.php <bdi>
+ 71 text   Quoted per destination                                                                           | tags=td | template-product-33b.php <td>
+ 72 text   Select                                                                                           | tags=?,js,td | template-product-33b.php <td> packrivo-language-selector.php <?> packrivo-language-selector.php <?> 33a-curve.js <js> 33a-curve.js <js> 33a-curve.js <js> 33a-curve.js <js
+ 73 text   Options                                                                                          | tags=p | template-product-33b.php <p>
+ 74 text   Customization options                                                                            | tags=h2 | template-product-33b.php <h2>
+ 75 text   Surface finishes                                                                                 | tags=div | template-product-33b.php <div>
+ 76 text   Logo finishes                                                                                    | tags=div | template-product-33b.php <div>
+ 77 text   Estimate at 1,000 pieces, sourcing fee included.                                                 | tags=small | template-product-33b.php <small>
+ 78 text   Inserts                                                                                          | tags=?,h3,td | front-page.php <td> functions.php <?> template-product-33b.php <h3> template-products-v4.php <?>
+ 79 text   EVA insert                                                                                       | tags=? | template-product-33b.php <?>
+ 80 text   PU insert                                                                                        | tags=? | template-product-33b.php <?>
+ 81 text   Paperboard insert                                                                                | tags=? | template-product-33b.php <?>
+ 82 text   Corrugated insert                                                                                | tags=? | template-product-33b.php <?>
+ 83 text   Molded pulp insert                                                                               | tags=? | template-product-33b.php <?>
+ 84 text   Clear film frame                                                                                 | tags=? | template-product-33b.php <?>
+ 85 text   on request, mould quoted separately                                                              | tags=small,td | front-page.php <td> template-product-33b.php <small>
+ 86 text   quoted on request                                                                                | tags=?,p,small | front-page.php <?> template-product-33b.php <p> template-product-33b.php <small>
+ 87 text   Specification                                                                                    | tags=h2,p | template-product-33b.php <p> template-product-33b.php <h2>
+ 88 text   Specifications and review                                                                        | tags=h2 | template-product-33b.php <h2>
+ 89 text   Structure and materials                                                                          | tags=div | template-product-33b.php <div>
+ 90 text   Sampling and review                                                                              | tags=div | template-product-33b.php <div>
+ 91 text   Dieline                                                                                          | tags=div,p | header.php <p> template-product-33b.php <div> template-product-33b.php <p> template-products-v4.php <p>
+ 92 attr   Illustrative flat layout                                                                         | tags=svg | template-product-33b.php <svg aria-label>
+ 93 text   Illustrative only; not a production dieline.                                                     | tags=p | template-product-33b.php <p>
+ 94 text   A dieline comes with every quote                                                                 | tags=h2 | template-product-33b.php <h2>
+ 95 text   Delivery                                                                                         | tags=p | template-product-33b.php <p>
+ 96 text   Shipping options                                                                                 | tags=h2 | template-product-33b.php <h2>
+ 97 text   Freight & duties quoted per destination.                                                         | tags=js,p | front-page.php <p> pkq-quote.js <js>
+ 98 text   DDP to door                                                                                      | tags=h3 | template-product-33b.php <h3>
+ 99 text   Destination and terms are confirmed on the written quote.                                        | tags=p | template-product-33b.php <p>
+100 text   FOB Shenzhen                                                                                     | tags=h3 | template-product-33b.php <h3>
+101 text   FOB is available for shipment from Shenzhen.                                                     | tags=p | template-product-33b.php <p>
+102 text   Consolidation                                                                                    | tags=h3 | template-product-33b.php <h3>
+103 block  Ask us to combine several items into one shipment; we confirm whether it works on the written qu | tags=p | template-product-33b.php <p>
+104 text   Your brief                                                                                       | tags=p | template-product-33b.php <p>
+105 text   Build your quote                                                                                 | tags=?,h2 | template-product-33b.php <h2> packrivo-quote.php <?> index.php <?>
+106 text   Confirm the dimensions and material for your project.                                            | tags=p | template-product-33b.php <p>
+107 text   Questions                                                                                        | tags=p | front-page.php <p> template-product-33b.php <p>
+108 text   Frequently asked questions                                                                       | tags=h2 | template-product-33b.php <h2>
+109 text   Explore                                                                                          | tags=p | template-product-33b.php <p>
+110 text   Related products                                                                                 | tags=h2 | template-product-33b.php <h2>
+111 text   Share the missing specifications for a tailored estimate.                                        | tags=p | template-product-33b.php <p>
+112 text   MOQ                                                                                              | tags=?,dt,p,span | front-page.php <?> front-page.php <p> front-page.php <dt> front-page.php <dt> template-product-33b.php <span> template-products-v4.php <p> 33a-category-cards.php <?> 33a-
+113 text   None                                                                                             | tags=js | pkq-quote.js <js>
+114 text   Matte varnish                                                                                    | tags=js | pkq-quote.js <js>
+115 text   Gloss varnish                                                                                    | tags=js | pkq-quote.js <js>
+116 text   Soft-touch lamination                                                                            | tags=js | pkq-quote.js <js>
+117 text   Spot UV                                                                                          | tags=js | pkq-quote.js <js>
+118 text   Foil stamp                                                                                       | tags=js | pkq-quote.js <js>
+119 text   Blind emboss                                                                                     | tags=js | pkq-quote.js <js>
+120 block  Enter dimensions from 2 to 120 cm (one decimal place) and choose a material before viewing an es | tags=js | pkq-quote.js <js>
+121 block  Enter dimensions from 2 to 120 cm (one decimal place) before viewing an estimate.                | tags=js | pkq-quote.js <js>
+122 text   Choose a material before viewing an estimate.                                                    | tags=js | pkq-quote.js <js>
+123 block  To request a quote without JavaScript, email hello@packrivo.com with your dimensions and materia | tags=? | packrivo-quote.php <?>
+124 text   Complete dimensions and material for an estimate.                                                | tags=p | template-product-33b.php <p>
+
+## UNSEEN
+    Milestone: Brief
+    Milestone: Sample
+    Milestone: Produce
+    Milestone: Deliver
+    2,500 · print setup waived
+    5,000 · die setup waived
+    Samples 5–10 days
+    Sample 5–10 days
+    Prices include the sourcing fee. Freight & duties quoted per destination.
+
+## 分布 {"text": 102, "UNSEEN": 9, "block": 8, "attr": 5}

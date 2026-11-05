@@ -1,0 +1,17 @@
+text   Size                                     | المقاس
+text   Board                                    | الورق المقوّى
+text   Rigid greyboard                          | ورق مقوّى رمادي صلب
+text   Samples                                  | عينات
+text   Quantity                                 | الكمية
+text   Sourcing fee                             | رسوم التوريد
+attr   Breadcrumb                               | مسار التنقل
+text   Home                                     | الرئيسية
+text   Setup                                    | الإعداد
+text   Goods total                              | إجمالي البضائع
+text   Inserts                                  | الإدراجات
+text   Paperboard insert                        | حشوة من الكرتون
+text   Delivery                                 | التسليم
+text   Questions                                | الأسئلة
+text   Frequently asked questions               | الأسئلة الشائعة
+text   Explore                                  | استكشف
+text   Blind emboss                             | نقش بارز بدون حبر

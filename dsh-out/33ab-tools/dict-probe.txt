@@ -1,0 +1,113 @@
+[MISS] Ex-works. Freight quoted separately. Setup amortised into the unit price.
+[MISS] Indicative, excludes freight. At 5,000 pieces the unit price is %s% lower than at 500. Final price confirmed after dieline review.
+[MISS] Freight & duties quoted per destination. At 5,000 pieces the unit price is %s% lower than at 500. Final price confirmed after dieline review.
+[block] Sourcing fee
+      de     Beschaffungsgebühr
+      ja     調達手数料
+      zh-CN  采购协调费
+[MISS] Reference estimate
+[MISS] Order total
+[MISS] Goods
+[block] Quantity
+      de     Menge
+      ja     数量
+      zh-CN  数量
+[block] Samples
+      de     Muster
+      ja     サンプル
+      zh-CN  样品
+[block] Board
+      de     Karton
+      ja     板紙
+      zh-CN  纸板
+[block] Size
+      de     Größe
+      ja     サイズ
+      zh-CN  尺寸
+[block] Rigid greyboard
+      de     Feste Graupappe
+      ja     硬質グレー板紙
+      zh-CN  硬质灰板
+[MISS] Unit price, sourcing fee included
+[MISS] Estimate
+[MISS] Select
+[MISS] Options
+[MISS] Specification
+[MISS] Dieline
+[block] Delivery
+      de     Lieferung
+      ja     納品
+      zh-CN  交付
+[MISS] MOQ
+[MISS] None
+[block] Inserts
+      de     Einleger
+      ja     インサート
+      zh-CN  内衬
+[block] Setup
+      de     Einrichtung
+      ja     セットアップ
+      zh-CN  设置
+[text] Goods total
+      de     Warenwert
+      ja     商品合計
+      zh-CN  货款合计
+[block] Home
+      de     Startseite
+      ja     ホーム
+      zh-CN  首页
+[block] Questions
+      de     Fragen
+      ja     ご質問
+      zh-CN  常见问题
+[block] Explore
+      de     Entdecken
+      ja     詳しく見る
+      zh-CN  探索
+[MISS] Read
+[MISS] Topics
+[block] Frequently asked questions
+      de     Häufig gestellte Fragen
+      ja     よくある質問
+      zh-CN  常见问题解答
+[block] Order a sample
+      de     Muster bestellen
+      ja     サンプルを依頼
+      zh-CN  订购样品
+[block] Blind emboss
+      de     Blindprägung als Hochprägung
+      ja     空浮き出し（エンボス加工）
+      zh-CN  盲压凸
+[block] Paperboard insert
+      de     Kartoneinsatz
+      ja     板紙製インサート
+      zh-CN  纸板内衬
+[attr] Breadcrumb
+      de     Navigationspfad
+      ja     パンくず
+      zh-CN  面包屑导航
+[MISS] Product images
+[MISS] View image %s
+[MISS] %s articles
+[MISS] From %s units
+[MISS] Freight & duties
+[MISS] Waived
+[MISS] Quoted per destination
+[MISS] Customization options
+[MISS] Surface finishes
+[MISS] Logo finishes
+[MISS] Shipping options
+[MISS] Consolidation
+[MISS] Related products
+[MISS] Example quote · Rigid magnetic box
+[MISS] Milestone: Brief
+[MISS] Protective inserts
+[MISS] EVA / PU
+[MISS] Folding boxes
+[MISS] Reference size
+[MISS] From 250 pieces
+[MISS] Illustrative flat layout
+[MISS] DDP to door
+[MISS] FOB Shenzhen
+[MISS] Your brief
+[MISS] Build your quote

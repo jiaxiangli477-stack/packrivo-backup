@@ -1,0 +1,29 @@
+build.py raw output
+csv            E:\破甲工作区\packrivo-backup-33b\dsh-out\33ab-i18n.csv
+rows           1364
+unique en      124
+new en written 106
+lines (wc -l)  1365
+
+per language   new / reused / total
+  ar       106    18   124
+  de       106    18   124
+  es       106    18   124
+  fr       106    18   124
+  it       106    18   124
+  ja       106    18   124
+  ko       106    18   124
+  nl       106    18   124
+  pt       106    18   124
+  zh-CN    106    18   124
+  zh-TW    106    18   124
+
+placeholder / number / entity / markup mismatches   0
+empty values                                        0
+
+bucket x origin
+  attr   new        44
+  attr   reused     11
+  block  new        77
+  text   new      1045
+  text   reused    187

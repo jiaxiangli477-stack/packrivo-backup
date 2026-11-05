@@ -1,0 +1,1122 @@
+{
+ "order": [
+  "Samples %s days",
+  "DDP or FOB",
+  "Sourcing fee %s",
+  "Example quote · Rigid magnetic box",
+  "Size",
+  "Board",
+  "Rigid greyboard",
+  "%s pieces, sourcing fee included",
+  "Samples",
+  "Milestone: Brief",
+  "Milestone: Sample",
+  "Milestone: Produce",
+  "Milestone: Deliver",
+  "Freight & duties quoted per destination",
+  "Quantity",
+  "2,500 · print setup waived",
+  "5,000 · die setup waived",
+  "Goods",
+  "Sourcing fee",
+  "Unit price, sourcing fee included",
+  "Order total",
+  "Print setup is waived from %1$s pieces; die setup is waived from %2$s pieces.",
+  "Kraft corrugated · E/B/F/EB/BC",
+  "Rigid greyboard · %1$s coated paper over %2$s greyboard",
+  "%s recycled greyboard",
+  "Folding carton · %s",
+  "Folding boxes",
+  "Inserts, trays · on request, mould quoted separately",
+  "EVA / PU",
+  "Protective inserts",
+  "Multi-colour sheet-fed offset printing press in a packaging workshop",
+  "Topics",
+  "%s articles",
+  "Read",
+  "print setup waived",
+  "die setup waived",
+  "Product categories",
+  "From %s units",
+  "/ unit",
+  "Reference estimate",
+  "Ex-works. Freight & duties quoted per destination. Setup amortised into the unit price.",
+  "Freight & duties quoted per destination. At 5,000 pieces the unit price is %s% lower than at 500. Final price confirmed after dieline review.",
+  "%s days",
+  "Breadcrumb",
+  "Home",
+  "Product images",
+  "View image %s",
+  "Samples 5–10 days",
+  "Dieline with every quote",
+  "Reference size",
+  "Estimate, sourcing fee included",
+  "1,000 pieces",
+  "From 250 pieces",
+  "Reference estimate: unprinted, no finish; inserts are quoted on request.",
+  "Sample 5–10 days",
+  "Production 7–30 days after sample approval",
+  "Configure this box →",
+  "Get the dieline with your quote",
+  "Order a sample",
+  "Construction details to define",
+  "Estimate",
+  "Quantity and price",
+  "Prices include the sourcing fee. Freight & duties quoted per destination.",
+  "Scrollable price table",
+  "Unit price, fee included",
+  "Savings against minimum",
+  "Setup",
+  "Goods total",
+  "Freight & duties",
+  "Waived",
+  "Quoted per destination",
+  "Select",
+  "Options",
+  "Customization options",
+  "Surface finishes",
+  "Logo finishes",
+  "Estimate at 1,000 pieces, sourcing fee included.",
+  "Inserts",
+  "EVA insert",
+  "PU insert",
+  "Paperboard insert",
+  "Corrugated insert",
+  "Molded pulp insert",
+  "Clear film frame",
+  "on request, mould quoted separately",
+  "quoted on request",
+  "Specification",
+  "Specifications and review",
+  "Structure and materials",
+  "Sampling and review",
+  "Dieline",
+  "Illustrative flat layout",
+  "Illustrative only; not a production dieline.",
+  "A dieline comes with every quote",
+  "Delivery",
+  "Shipping options",
+  "Freight & duties quoted per destination.",
+  "DDP to door",
+  "Destination and terms are confirmed on the written quote.",
+  "FOB Shenzhen",
+  "FOB is available for shipment from Shenzhen.",
+  "Consolidation",
+  "Ask us to combine several items into one shipment; we confirm whether it works on the written quote.",
+  "Your brief",
+  "Build your quote",
+  "Confirm the dimensions and material for your project.",
+  "Questions",
+  "Frequently asked questions",
+  "Explore",
+  "Related products",
+  "Share the missing specifications for a tailored estimate.",
+  "MOQ",
+  "None",
+  "Matte varnish",
+  "Gloss varnish",
+  "Soft-touch lamination",
+  "Spot UV",
+  "Foil stamp",
+  "Blind emboss",
+  "Enter dimensions from 2 to 120 cm (one decimal place) and choose a material before viewing an estimate.",
+  "Enter dimensions from 2 to 120 cm (one decimal place) before viewing an estimate.",
+  "Choose a material before viewing an estimate.",
+  "To request a quote without JavaScript, email hello@packrivo.com with your dimensions and material.",
+  "Complete dimensions and material for an estimate."
+ ],
+ "meta": {
+  "Samples %s days": {
+   "round": "33a",
+   "en": "Samples %s days",
+   "where": "首页 Hero 事实卡",
+   "pages": "/",
+   "old": "",
+   "source": "theme"
+  },
+  "DDP or FOB": {
+   "round": "33a",
+   "en": "DDP or FOB",
+   "where": "首页 Hero 事实卡",
+   "pages": "/",
+   "old": "",
+   "source": "theme"
+  },
+  "Sourcing fee %s": {
+   "round": "33a",
+   "en": "Sourcing fee %s",
+   "where": "首页 Hero 事实卡",
+   "pages": "/",
+   "old": "",
+   "source": "theme"
+  },
+  "Example quote · Rigid magnetic box": {
+   "round": "33a",
+   "en": "Example quote · Rigid magnetic box",
+   "where": "首页 Hero 规格卡",
+   "pages": "/",
+   "old": "",
+   "source": "theme"
+  },
+  "Size": {
+   "round": "33a",
+   "en": "Size",
+   "where": "首页 Hero 规格卡",
+   "pages": "/",
+   "old": "",
+   "source": "theme"
+  },
+  "Board": {
+   "round": "33a",
+   "en": "Board",
+   "where": "首页 Hero 规格卡",
+   "pages": "/",
+   "old": "",
+   "source": "theme"
+  },
+  "Rigid greyboard": {
+   "round": "33a",
+   "en": "Rigid greyboard",
+   "where": "首页 Hero 规格卡",
+   "pages": "/",
+   "old": "",
+   "source": "theme"
+  },
+  "%s pieces, sourcing fee included": {
+   "round": "33a",
+   "en": "%s pieces, sourcing fee included",
+   "where": "首页 Hero 规格卡",
+   "pages": "/",
+   "old": "",
+   "source": "theme"
+  },
+  "Samples": {
+   "round": "33a",
+   "en": "Samples",
+   "where": "首页 Hero 规格卡",
+   "pages": "/",
+   "old": "",
+   "source": "theme"
+  },
+  "Milestone: Brief": {
+   "round": "33a",
+   "en": "Milestone: Brief",
+   "where": "首页四步流程",
+   "pages": "/",
+   "old": "",
+   "source": "theme"
+  },
+  "Milestone: Sample": {
+   "round": "33a",
+   "en": "Milestone: Sample",
+   "where": "首页四步流程",
+   "pages": "/",
+   "old": "",
+   "source": "theme"
+  },
+  "Milestone: Produce": {
+   "round": "33a",
+   "en": "Milestone: Produce",
+   "where": "首页四步流程",
+   "pages": "/",
+   "old": "",
+   "source": "theme"
+  },
+  "Milestone: Deliver": {
+   "round": "33a",
+   "en": "Milestone: Deliver",
+   "where": "首页四步流程",
+   "pages": "/",
+   "old": "",
+   "source": "theme"
+  },
+  "Freight & duties quoted per destination": {
+   "round": "33a",
+   "en": "Freight & duties quoted per destination",
+   "where": "首页价格曲线",
+   "pages": "/",
+   "old": "",
+   "source": "theme"
+  },
+  "Quantity": {
+   "round": "33a",
+   "en": "Quantity",
+   "where": "首页价格曲线",
+   "pages": "/",
+   "old": "",
+   "source": "theme"
+  },
+  "2,500 · print setup waived": {
+   "round": "33a",
+   "en": "2,500 · print setup waived",
+   "where": "首页价格曲线",
+   "pages": "/",
+   "old": "",
+   "source": "theme"
+  },
+  "5,000 · die setup waived": {
+   "round": "33a",
+   "en": "5,000 · die setup waived",
+   "where": "首页价格曲线",
+   "pages": "/",
+   "old": "",
+   "source": "theme"
+  },
+  "Goods": {
+   "round": "33a",
+   "en": "Goods",
+   "where": "首页价格曲线",
+   "pages": "/",
+   "old": "",
+   "source": "theme"
+  },
+  "Sourcing fee": {
+   "round": "33a",
+   "en": "Sourcing fee",
+   "where": "首页价格曲线",
+   "pages": "/",
+   "old": "",
+   "source": "theme"
+  },
+  "Unit price, sourcing fee included": {
+   "round": "33a",
+   "en": "Unit price, sourcing fee included",
+   "where": "首页价格曲线",
+   "pages": "/",
+   "old": "",
+   "source": "theme"
+  },
+  "Order total": {
+   "round": "33a",
+   "en": "Order total",
+   "where": "首页价格曲线",
+   "pages": "/",
+   "old": "",
+   "source": "theme"
+  },
+  "Print setup is waived from %1$s pieces; die setup is waived from %2$s pieces.": {
+   "round": "33a",
+   "en": "Print setup is waived from %1$s pieces; die setup is waived from %2$s pieces.",
+   "where": "首页价格曲线",
+   "pages": "/",
+   "old": "",
+   "source": "theme"
+  },
+  "Kraft corrugated · E/B/F/EB/BC": {
+   "round": "33a",
+   "en": "Kraft corrugated · E/B/F/EB/BC",
+   "where": "首页材料表",
+   "pages": "/",
+   "old": "",
+   "source": "theme"
+  },
+  "Rigid greyboard · %1$s coated paper over %2$s greyboard": {
+   "round": "33a",
+   "en": "Rigid greyboard · %1$s coated paper over %2$s greyboard",
+   "where": "首页材料表",
+   "pages": "/",
+   "old": "",
+   "source": "theme"
+  },
+  "%s recycled greyboard": {
+   "round": "33a",
+   "en": "%s recycled greyboard",
+   "where": "首页材料表",
+   "pages": "/",
+   "old": "",
+   "source": "theme"
+  },
+  "Folding carton · %s": {
+   "round": "33a",
+   "en": "Folding carton · %s",
+   "where": "首页材料表",
+   "pages": "/",
+   "old": "",
+   "source": "theme"
+  },
+  "Folding boxes": {
+   "round": "33a",
+   "en": "Folding boxes",
+   "where": "首页材料表",
+   "pages": "/",
+   "old": "",
+   "source": "theme"
+  },
+  "Inserts, trays · on request, mould quoted separately": {
+   "round": "33a",
+   "en": "Inserts, trays · on request, mould quoted separately",
+   "where": "首页材料表",
+   "pages": "/",
+   "old": "",
+   "source": "theme"
+  },
+  "EVA / PU": {
+   "round": "33a",
+   "en": "EVA / PU",
+   "where": "首页材料表",
+   "pages": "/",
+   "old": "",
+   "source": "theme"
+  },
+  "Protective inserts": {
+   "round": "33a",
+   "en": "Protective inserts",
+   "where": "首页材料表",
+   "pages": "/",
+   "old": "",
+   "source": "theme"
+  },
+  "Multi-colour sheet-fed offset printing press in a packaging workshop": {
+   "round": "33a",
+   "en": "Multi-colour sheet-fed offset printing press in a packaging workshop",
+   "where": "首页流程图片替代文字",
+   "pages": "/",
+   "old": "",
+   "source": "theme"
+  },
+  "Topics": {
+   "round": "33a",
+   "en": "Topics",
+   "where": "博客专题网格标题",
+   "pages": "/blog/",
+   "old": "",
+   "source": "theme"
+  },
+  "%s articles": {
+   "round": "33a",
+   "en": "%s articles",
+   "where": "博客专题卡片文章数量",
+   "pages": "/blog/",
+   "old": "",
+   "source": "theme"
+  },
+  "Read": {
+   "round": "33a",
+   "en": "Read",
+   "where": "博客文章卡片链接",
+   "pages": "/blog/、/blog/topic/*/",
+   "old": "",
+   "source": "theme"
+  },
+  "print setup waived": {
+   "round": "33a",
+   "en": "print setup waived",
+   "where": "首页价格曲线",
+   "pages": "/",
+   "old": "",
+   "source": "theme"
+  },
+  "die setup waived": {
+   "round": "33a",
+   "en": "die setup waived",
+   "where": "首页价格曲线",
+   "pages": "/",
+   "old": "",
+   "source": "theme"
+  },
+  "Product categories": {
+   "round": "33a",
+   "en": "Product categories",
+   "where": "品类页筛选导航的无障碍标签",
+   "pages": "首页、/products/、品类页",
+   "old": "",
+   "source": "theme"
+  },
+  "From %s units": {
+   "round": "33a",
+   "en": "From %s units",
+   "where": "产品卡数量标签",
+   "pages": "首页、/products/、品类页",
+   "old": "",
+   "source": "theme"
+  },
+  "/ unit": {
+   "round": "33a",
+   "en": "/ unit",
+   "where": "产品卡单价单位",
+   "pages": "首页、/products/、品类页",
+   "old": "",
+   "source": "theme"
+  },
+  "Reference estimate": {
+   "round": "33a",
+   "en": "Reference estimate",
+   "where": "产品卡参考价说明",
+   "pages": "首页、/products/、品类页",
+   "old": "",
+   "source": "theme"
+  },
+  "Ex-works. Freight & duties quoted per destination. Setup amortised into the unit price.": {
+   "round": "33a",
+   "en": "Ex-works. Freight & duties quoted per destination. Setup amortised into the unit price.",
+   "where": "报价器费用说明",
+   "pages": "/get-a-quote/",
+   "old": "Ex-works. Freight quoted separately. Setup amortised into the unit price.",
+   "source": "quote-i18n"
+  },
+  "Freight & duties quoted per destination. At 5,000 pieces the unit price is %s% lower than at 500. Final price confirmed after dieline review.": {
+   "round": "33a",
+   "en": "Freight & duties quoted per destination. At 5,000 pieces the unit price is %s% lower than at 500. Final price confirmed after dieline review.",
+   "where": "首页价格阶梯对比",
+   "pages": "/",
+   "old": "Indicative, excludes freight. At 5,000 pieces the unit price is %s% lower than at 500. Final price confirmed after dieline review.",
+   "source": "theme"
+  },
+  "%s days": {
+   "round": "33a",
+   "en": "%s days",
+   "where": "首页 Hero 规格卡",
+   "pages": "/",
+   "old": "",
+   "source": "theme"
+  },
+  "Breadcrumb": {
+   "round": "33b",
+   "en": "Breadcrumb",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Home": {
+   "round": "33b",
+   "en": "Home",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Product images": {
+   "round": "33b",
+   "en": "Product images",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "View image %s": {
+   "round": "33b",
+   "en": "View image %s",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Samples 5–10 days": {
+   "round": "33b",
+   "en": "Samples 5–10 days",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Dieline with every quote": {
+   "round": "33b",
+   "en": "Dieline with every quote",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Reference size": {
+   "round": "33b",
+   "en": "Reference size",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Estimate, sourcing fee included": {
+   "round": "33b",
+   "en": "Estimate, sourcing fee included",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "1,000 pieces": {
+   "round": "33b",
+   "en": "1,000 pieces",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "From 250 pieces": {
+   "round": "33b",
+   "en": "From 250 pieces",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Reference estimate: unprinted, no finish; inserts are quoted on request.": {
+   "round": "33b",
+   "en": "Reference estimate: unprinted, no finish; inserts are quoted on request.",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Sample 5–10 days": {
+   "round": "33b",
+   "en": "Sample 5–10 days",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Production 7–30 days after sample approval": {
+   "round": "33b",
+   "en": "Production 7–30 days after sample approval",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Configure this box →": {
+   "round": "33b",
+   "en": "Configure this box →",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Get the dieline with your quote": {
+   "round": "33b",
+   "en": "Get the dieline with your quote",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Order a sample": {
+   "round": "33b",
+   "en": "Order a sample",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Construction details to define": {
+   "round": "33b",
+   "en": "Construction details to define",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Estimate": {
+   "round": "33b",
+   "en": "Estimate",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Quantity and price": {
+   "round": "33b",
+   "en": "Quantity and price",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Prices include the sourcing fee. Freight & duties quoted per destination.": {
+   "round": "33b",
+   "en": "Prices include the sourcing fee. Freight & duties quoted per destination.",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Scrollable price table": {
+   "round": "33b",
+   "en": "Scrollable price table",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Unit price, fee included": {
+   "round": "33b",
+   "en": "Unit price, fee included",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Savings against minimum": {
+   "round": "33b",
+   "en": "Savings against minimum",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Setup": {
+   "round": "33b",
+   "en": "Setup",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Goods total": {
+   "round": "33b",
+   "en": "Goods total",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Freight & duties": {
+   "round": "33b",
+   "en": "Freight & duties",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Waived": {
+   "round": "33b",
+   "en": "Waived",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Quoted per destination": {
+   "round": "33b",
+   "en": "Quoted per destination",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Select": {
+   "round": "33b",
+   "en": "Select",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Options": {
+   "round": "33b",
+   "en": "Options",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Customization options": {
+   "round": "33b",
+   "en": "Customization options",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Surface finishes": {
+   "round": "33b",
+   "en": "Surface finishes",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Logo finishes": {
+   "round": "33b",
+   "en": "Logo finishes",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Estimate at 1,000 pieces, sourcing fee included.": {
+   "round": "33b",
+   "en": "Estimate at 1,000 pieces, sourcing fee included.",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Inserts": {
+   "round": "33b",
+   "en": "Inserts",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "EVA insert": {
+   "round": "33b",
+   "en": "EVA insert",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "PU insert": {
+   "round": "33b",
+   "en": "PU insert",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Paperboard insert": {
+   "round": "33b",
+   "en": "Paperboard insert",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Corrugated insert": {
+   "round": "33b",
+   "en": "Corrugated insert",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Molded pulp insert": {
+   "round": "33b",
+   "en": "Molded pulp insert",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Clear film frame": {
+   "round": "33b",
+   "en": "Clear film frame",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "on request, mould quoted separately": {
+   "round": "33b",
+   "en": "on request, mould quoted separately",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "quoted on request": {
+   "round": "33b",
+   "en": "quoted on request",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Specification": {
+   "round": "33b",
+   "en": "Specification",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Specifications and review": {
+   "round": "33b",
+   "en": "Specifications and review",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Structure and materials": {
+   "round": "33b",
+   "en": "Structure and materials",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Sampling and review": {
+   "round": "33b",
+   "en": "Sampling and review",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Dieline": {
+   "round": "33b",
+   "en": "Dieline",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Illustrative flat layout": {
+   "round": "33b",
+   "en": "Illustrative flat layout",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Illustrative only; not a production dieline.": {
+   "round": "33b",
+   "en": "Illustrative only; not a production dieline.",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "A dieline comes with every quote": {
+   "round": "33b",
+   "en": "A dieline comes with every quote",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Delivery": {
+   "round": "33b",
+   "en": "Delivery",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Shipping options": {
+   "round": "33b",
+   "en": "Shipping options",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Freight & duties quoted per destination.": {
+   "round": "33b",
+   "en": "Freight & duties quoted per destination.",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "DDP to door": {
+   "round": "33b",
+   "en": "DDP to door",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Destination and terms are confirmed on the written quote.": {
+   "round": "33b",
+   "en": "Destination and terms are confirmed on the written quote.",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "FOB Shenzhen": {
+   "round": "33b",
+   "en": "FOB Shenzhen",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "FOB is available for shipment from Shenzhen.": {
+   "round": "33b",
+   "en": "FOB is available for shipment from Shenzhen.",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Consolidation": {
+   "round": "33b",
+   "en": "Consolidation",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Ask us to combine several items into one shipment; we confirm whether it works on the written quote.": {
+   "round": "33b",
+   "en": "Ask us to combine several items into one shipment; we confirm whether it works on the written quote.",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Your brief": {
+   "round": "33b",
+   "en": "Your brief",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Build your quote": {
+   "round": "33b",
+   "en": "Build your quote",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Confirm the dimensions and material for your project.": {
+   "round": "33b",
+   "en": "Confirm the dimensions and material for your project.",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Questions": {
+   "round": "33b",
+   "en": "Questions",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Frequently asked questions": {
+   "round": "33b",
+   "en": "Frequently asked questions",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Explore": {
+   "round": "33b",
+   "en": "Explore",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Related products": {
+   "round": "33b",
+   "en": "Related products",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Share the missing specifications for a tailored estimate.": {
+   "round": "33b",
+   "en": "Share the missing specifications for a tailored estimate.",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "MOQ": {
+   "round": "33b",
+   "en": "MOQ",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "None": {
+   "round": "33b",
+   "en": "None",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Matte varnish": {
+   "round": "33b",
+   "en": "Matte varnish",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Gloss varnish": {
+   "round": "33b",
+   "en": "Gloss varnish",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Soft-touch lamination": {
+   "round": "33b",
+   "en": "Soft-touch lamination",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Spot UV": {
+   "round": "33b",
+   "en": "Spot UV",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Foil stamp": {
+   "round": "33b",
+   "en": "Foil stamp",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Blind emboss": {
+   "round": "33b",
+   "en": "Blind emboss",
+   "where": "结构化产品详情模板",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  },
+  "Enter dimensions from 2 to 120 cm (one decimal place) and choose a material before viewing an estimate.": {
+   "round": "33b",
+   "en": "Enter dimensions from 2 to 120 cm (one decimal place) and choose a material before viewing an estimate.",
+   "where": "尺寸与材料缺失提示",
+   "pages": "33b 产品详情及报价页",
+   "old": "",
+   "source": "quote-i18n"
+  },
+  "Enter dimensions from 2 to 120 cm (one decimal place) before viewing an estimate.": {
+   "round": "33b",
+   "en": "Enter dimensions from 2 to 120 cm (one decimal place) before viewing an estimate.",
+   "where": "尺寸缺失提示",
+   "pages": "33b 产品详情及报价页",
+   "old": "",
+   "source": "quote-i18n"
+  },
+  "Choose a material before viewing an estimate.": {
+   "round": "33b",
+   "en": "Choose a material before viewing an estimate.",
+   "where": "材料缺失提示",
+   "pages": "33b 产品详情及报价页",
+   "old": "",
+   "source": "quote-i18n"
+  },
+  "To request a quote without JavaScript, email hello@packrivo.com with your dimensions and material.": {
+   "round": "33b",
+   "en": "To request a quote without JavaScript, email hello@packrivo.com with your dimensions and material.",
+   "where": "无 JavaScript 询价提示",
+   "pages": "33b 产品详情及报价页",
+   "old": "",
+   "source": "quote-i18n"
+  },
+  "Complete dimensions and material for an estimate.": {
+   "round": "33b",
+   "en": "Complete dimensions and material for an estimate.",
+   "where": "规格缺失时的价格阶梯说明",
+   "pages": "product-*",
+   "old": "",
+   "source": "theme"
+  }
+ }
+}

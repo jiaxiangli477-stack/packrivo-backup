@@ -1,0 +1,106 @@
+  1|text|33a|Samples %s days
+  2|text|33a|DDP or FOB
+  3|text|33a|Sourcing fee %s
+  4|text|33a|Example quote · Rigid magnetic box
+  5|text|33a|%s pieces, sourcing fee included
+  6|text|33a|Milestone: Brief
+  7|text|33a|Milestone: Sample
+  8|text|33a|Milestone: Produce
+  9|text|33a|Milestone: Deliver
+ 10|text|33a|Freight & duties quoted per destination
+ 11|text|33a|2,500 · print setup waived
+ 12|text|33a|5,000 · die setup waived
+ 13|text|33a|Goods
+ 14|text|33a|Unit price, sourcing fee included
+ 15|text|33a|Order total
+ 16|block|33a|Print setup is waived from %1$s pieces; die setup is waived from %2$s pieces.
+ 17|text|33a|Kraft corrugated · E/B/F/EB/BC
+ 18|text|33a|Rigid greyboard · %1$s coated paper over %2$s greyboard
+ 19|text|33a|%s recycled greyboard
+ 20|text|33a|Folding carton · %s
+ 21|text|33a|Folding boxes
+ 22|text|33a|Inserts, trays · on request, mould quoted separately
+ 23|text|33a|EVA / PU
+ 24|text|33a|Protective inserts
+ 25|text|33a|Multi-colour sheet-fed offset printing press in a packaging workshop
+ 26|text|33a|Topics
+ 27|text|33a|%s articles
+ 28|text|33a|Read
+ 29|text|33a|print setup waived
+ 30|text|33a|die setup waived
+ 31|text|33a|Product categories
+ 32|text|33a|From %s units
+ 33|text|33a|/ unit
+ 34|text|33a|Reference estimate
+ 35|block|33a|Ex-works. Freight & duties quoted per destination. Setup amortised into the unit price.
+ 36|block|33a|Freight & duties quoted per destination. At 5,000 pieces the unit price is %s% lower than at 500. Final price confirmed after dieline review.
+ 37|text|33a|%s days
+ 38|attr|33b|Product images
+ 39|attr|33b|View image %s
+ 40|text|33b|Samples 5–10 days
+ 41|text|33b|Dieline with every quote
+ 42|text|33b|Reference size
+ 43|text|33b|Estimate, sourcing fee included
+ 44|text|33b|1,000 pieces
+ 45|text|33b|From 250 pieces
+ 46|block|33b|Reference estimate: unprinted, no finish; inserts are quoted on request.
+ 47|text|33b|Sample 5–10 days
+ 48|text|33b|Production 7–30 days after sample approval
+ 49|text|33b|Configure this box →
+ 50|text|33b|Get the dieline with your quote
+ 51|text|33b|Construction details to define
+ 52|text|33b|Estimate
+ 53|text|33b|Quantity and price
+ 54|block|33b|Prices include the sourcing fee. Freight & duties quoted per destination.
+ 55|attr|33b|Scrollable price table
+ 56|text|33b|Unit price, fee included
+ 57|text|33b|Savings against minimum
+ 58|text|33b|Freight & duties
+ 59|text|33b|Waived
+ 60|text|33b|Quoted per destination
+ 61|text|33b|Select
+ 62|text|33b|Options
+ 63|text|33b|Customization options
+ 64|text|33b|Surface finishes
+ 65|text|33b|Logo finishes
+ 66|text|33b|Estimate at 1,000 pieces, sourcing fee included.
+ 67|text|33b|EVA insert
+ 68|text|33b|PU insert
+ 69|text|33b|Corrugated insert
+ 70|text|33b|Molded pulp insert
+ 71|text|33b|Clear film frame
+ 72|text|33b|on request, mould quoted separately
+ 73|text|33b|quoted on request
+ 74|text|33b|Specification
+ 75|text|33b|Specifications and review
+ 76|text|33b|Structure and materials
+ 77|text|33b|Sampling and review
+ 78|text|33b|Dieline
+ 79|attr|33b|Illustrative flat layout
+ 80|text|33b|Illustrative only; not a production dieline.
+ 81|text|33b|A dieline comes with every quote
+ 82|text|33b|Shipping options
+ 83|text|33b|Freight & duties quoted per destination.
+ 84|text|33b|DDP to door
+ 85|text|33b|Destination and terms are confirmed on the written quote.
+ 86|text|33b|FOB Shenzhen
+ 87|text|33b|FOB is available for shipment from Shenzhen.
+ 88|text|33b|Consolidation
+ 89|block|33b|Ask us to combine several items into one shipment; we confirm whether it works on the written quote.
+ 90|text|33b|Your brief
+ 91|text|33b|Build your quote
+ 92|text|33b|Confirm the dimensions and material for your project.
+ 93|text|33b|Related products
+ 94|text|33b|Share the missing specifications for a tailored estimate.
+ 95|text|33b|MOQ
+ 96|text|33b|None
+ 97|text|33b|Matte varnish
+ 98|text|33b|Gloss varnish
+ 99|text|33b|Soft-touch lamination
+100|text|33b|Spot UV
+101|text|33b|Foil stamp
+102|text|33b|Enter dimensions from 2 to 120 cm (one decimal place) and choose a material before viewing an estimate.
+103|text|33b|Enter dimensions from 2 to 120 cm (one decimal place) before viewing an estimate.
+104|text|33b|Choose a material before viewing an estimate.
+105|block|33b|To request a quote without JavaScript, email hello@packrivo.com with your dimensions and material.
+106|text|33b|Complete dimensions and material for an estimate.

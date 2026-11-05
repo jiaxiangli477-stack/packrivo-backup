@@ -1,0 +1,168 @@
+### Sourcing fee
+  ar     رسوم التوريد
+  de     Beschaffungsgebühr
+  es     Comisión de abastecimiento
+  fr     Frais d’approvisionnement
+  it     Commissione di approvvigionamento
+  ja     調達手数料
+  ko     조달 수수료
+  nl     Inkoopvergoeding
+  pt     Taxa de fornecimento
+  zh-CN  采购协调费
+  zh-TW  採購協調費
+### Setup
+  ar     الإعداد
+  de     Einrichtung
+  es     Preparación
+  fr     Réglage
+  it     Attrezzaggio
+  ja     セットアップ
+  ko     셋업
+  nl     Opmaak
+  pt     Preparação
+  zh-CN  设置
+  zh-TW  成型
+### Inserts
+  ar     الإدراجات
+  de     Einleger
+  es     Insertos
+  fr     Inserts
+  it     Inserti
+  ja     インサート
+  ko     인서트
+  nl     Inzetten
+  pt     Insertos
+  zh-CN  内衬
+  zh-TW  內襯
+### Delivery
+  ar     التسليم
+  de     Lieferung
+  es     Entrega
+  fr     Livraison
+  it     Consegna
+  ja     納品
+  ko     납품
+  nl     Levering
+  pt     Entrega
+  zh-CN  交付
+  zh-TW  交付
+### Samples
+  ar     عينات
+  de     Muster
+  es     Muestras
+  fr     Échantillons
+  it     Campioni
+  ja     サンプル
+  ko     샘플
+  nl     Monsters
+  pt     Amostras
+  zh-CN  样品
+  zh-TW  樣品
+### Quantity
+  ar     الكمية
+  de     Menge
+  es     Cantidad
+  fr     Quantité
+  it     Quantità
+  ja     数量
+  ko     수량
+  nl     Hoeveelheid
+  pt     Quantidade
+  zh-CN  数量
+  zh-TW  數量
+### Board
+  ar     الورق المقوّى
+  de     Karton
+  es     Cartón
+  fr     Carton
+  it     Cartone
+  ja     板紙
+  ko     보드
+  nl     Karton
+  pt     Papelão
+  zh-CN  纸板
+  zh-TW  紙板
+### Size
+  ar     المقاس
+  de     Größe
+  es     Tamaño
+  fr     Dimension
+  it     Dimensione
+  ja     サイズ
+  ko     크기
+  nl     Formaat
+  pt     Dimensões
+  zh-CN  尺寸
+  zh-TW  尺寸
+### Rigid greyboard
+  ar     ورق مقوّى رمادي صلب
+  de     Feste Graupappe
+  es     Cartón gris rígido
+  fr     Carton gris rigide
+  it     Cartone grigio rigido
+  ja     硬質グレー板紙
+  ko     경질 회색 보드
+  nl     Stevig grijsbord
+  pt     Papelão cinza rígido
+  zh-CN  硬质灰板
+  zh-TW  硬質灰板
+### Paperboard insert
+  ar     حشوة من الكرتون
+  de     Kartoneinsatz
+  es     Inserto de cartón
+  fr     Insert en carton
+  it     Inserto in cartone
+  ja     板紙製インサート
+  ko     판지 인서트
+  nl     Kartonnen inzetstuk
+  pt     Inserto de cartão
+  zh-CN  纸板内衬
+  zh-TW  紙板內襯
+### Goods total
+  ar     إجمالي البضائع
+  de     Warenwert
+  es     Total de mercancía
+  fr     Total marchandise
+  it     Totale merci
+  ja     商品合計
+  ko     상품 합계
+  nl     Goederentotaal
+  pt     Total de mercadorias
+  zh-CN  货款合计
+  zh-TW  貨品小計
+### Blind emboss
+  ar     نقش بارز بدون حبر
+  de     Blindprägung als Hochprägung
+  es     Relieve en seco sin tinta
+  fr     Gaufrage en relief sans encre
+  it     Embossing a secco
+  ja     空浮き出し（エンボス加工）
+  ko     무색 양각(엠보싱)
+  nl     Blind embossing
+  pt     Relevo sem tinta
+  zh-CN  盲压凸
+  zh-TW  無色燙壓凹凸中的凸壓
+### Explore
+  ar     استكشف
+  de     Entdecken
+  es     Explorar
+  fr     Explorer
+  it     Esplora
+  ja     詳しく見る
+  ko     살펴보기
+  nl     Ontdek
+  pt     Explorar
+  zh-CN  探索
+  zh-TW  探索
+### Questions
+  ar     الأسئلة
+  de     Fragen
+  es     Preguntas
+  fr     Questions
+  it     Domande
+  ja     ご質問
+  ko     질문
+  nl     Vragen
+  pt     Perguntas
+  zh-CN  常见问题
+  zh-TW  常見問題

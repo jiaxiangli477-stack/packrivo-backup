@@ -1,0 +1,12 @@
+— and waived above 2,500 printed pieces. || {"where": ["/"], "kind": "text", "missing": ["ar", "de", "es", "fr", "it", "ja", "ko", "nl", "pt", "zh-CN", "zh-TW"]}
+— one-time plate and die cost, shown before you submit. || {"where": ["/"], "kind": "text", "missing": ["ar", "de", "es", "fr", "it", "ja", "ko", "nl", "pt", "zh-CN", "zh-TW"]}
+— quoted per shipment, never buried in the unit price. || {"where": ["/"], "kind": "text", "missing": ["ar", "de", "es", "fr", "it", "ja", "ko", "nl", "pt", "zh-CN", "zh-TW"]}
+. The proposed material and actual-size artwork determine the physical evidence needed next. || {"where": ["/jewelry-boxes/"], "kind": "text", "missing": ["ar", "de", "es", "fr", "it", "ja", "ko", "nl", "pt", "zh-CN", "zh-TW"]}
+134 structures || {"where": ["/products/"], "kind": "block", "missing": ["ar", "de", "es", "fr", "it", "ja", "ko", "nl", "pt", "zh-CN", "zh-TW"]}
+17 packaging directions in this group. || {"where": ["/jewelry-boxes/"], "kind": "block", "missing": ["ar", "de", "es", "fr", "it", "ja", "ko", "nl", "pt", "zh-CN", "zh-TW"]}
+A clear next step || {"where": ["/jewelry-boxes/"], "kind": "block", "missing": ["ar", "de", "es", "fr", "it", "ja", "ko", "nl", "pt", "zh-CN", "zh-TW"]}
+A physical sample in your artwork, produced in 5–10 days. Nothing is committed before you hold it. || {"where": ["/"], "kind": "text", "missing": ["ar", "de", "es", "fr", "it", "ja", "ko", "nl", "pt", "zh-CN", "zh-TW"]}
+A price curve, not a contact form || {"where": ["/"], "kind": "block", "missing": ["ar", "de", "es", "fr", "it", "ja", "ko", "nl", "pt", "zh-CN", "zh-TW"]}
+A textile jewelry pouch is a soft packaging direction for presentation or storage. || {"where": ["/jewelry-boxes/"], "kind": "block", "missing": ["ar", "de", "es", "fr", "it", "ja", "ko", "nl", "pt", "zh-CN", "zh-TW"]}
+All || {"where": ["/products/", "/blog/"], "kind": "text", "missing": ["ar", "de", "es", "fr", "it", "ja", "ko", "nl", "pt", "zh-CN", "zh-TW"]}
+All 333 articles → || {"where": ["/"], "kind": "text", "missing": ["ar", "de", "es", "fr", "it", "ja", "ko", "nl", "pt", "zh-CN", "zh-TW"]}

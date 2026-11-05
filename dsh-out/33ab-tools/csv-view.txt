@@ -1,0 +1,132 @@
+=== 33a-new-strings.csv
+HDR 英文原文 | 展示位置 | 涉及页面 | 旧英文 | source
+  1 | Samples %s days                                                | 首页 Hero 事实卡                | /
+  2 | DDP or FOB                                                     | 首页 Hero 事实卡                | /
+  3 | Sourcing fee %s                                                | 首页 Hero 事实卡                | /
+  4 | Example quote · Rigid magnetic box                             | 首页 Hero 规格卡                | /
+  5 | Size                                                           | 首页 Hero 规格卡                | /
+  6 | Board                                                          | 首页 Hero 规格卡                | /
+  7 | Rigid greyboard                                                | 首页 Hero 规格卡                | /
+  8 | %s pieces, sourcing fee included                               | 首页 Hero 规格卡                | /
+  9 | Samples                                                        | 首页 Hero 规格卡                | /
+ 10 | Milestone: Brief                                               | 首页四步流程                     | /
+ 11 | Milestone: Sample                                              | 首页四步流程                     | /
+ 12 | Milestone: Produce                                             | 首页四步流程                     | /
+ 13 | Milestone: Deliver                                             | 首页四步流程                     | /
+ 14 | Freight & duties quoted per destination                        | 首页价格曲线                     | /
+ 15 | Quantity                                                       | 首页价格曲线                     | /
+ 16 | 2,500 · print setup waived                                     | 首页价格曲线                     | /
+ 17 | 5,000 · die setup waived                                       | 首页价格曲线                     | /
+ 18 | Goods                                                          | 首页价格曲线                     | /
+ 19 | Sourcing fee                                                   | 首页价格曲线                     | /
+ 20 | Unit price, sourcing fee included                              | 首页价格曲线                     | /
+ 21 | Order total                                                    | 首页价格曲线                     | /
+ 22 | Print setup is waived from %1$s pieces; die setup is waived fr | 首页价格曲线                     | /
+ 23 | Kraft corrugated · E/B/F/EB/BC                                 | 首页材料表                      | /
+ 24 | Rigid greyboard · %1$s coated paper over %2$s greyboard        | 首页材料表                      | /
+ 25 | %s recycled greyboard                                          | 首页材料表                      | /
+ 26 | Folding carton · %s                                            | 首页材料表                      | /
+ 27 | Folding boxes                                                  | 首页材料表                      | /
+ 28 | Inserts, trays · on request, mould quoted separately           | 首页材料表                      | /
+ 29 | EVA / PU                                                       | 首页材料表                      | /
+ 30 | Protective inserts                                             | 首页材料表                      | /
+ 31 | Multi-colour sheet-fed offset printing press in a packaging wo | 首页流程图片替代文字                 | /
+ 32 | Topics                                                         | 博客专题网格标题                   | /blog/
+ 33 | %s articles                                                    | 博客专题卡片文章数量                 | /blog/
+ 34 | Read                                                           | 博客文章卡片链接                   | /blog/、/blog/topic/*/
+ 35 | print setup waived                                             | 首页价格曲线                     | /
+ 36 | die setup waived                                               | 首页价格曲线                     | /
+ 37 | Product categories                                             | 品类页筛选导航的无障碍标签              | 首页、/products/、品类页
+ 38 | From %s units                                                  | 产品卡数量标签                    | 首页、/products/、品类页
+ 39 | / unit                                                         | 产品卡单价单位                    | 首页、/products/、品类页
+ 40 | Reference estimate                                             | 产品卡参考价说明                   | 首页、/products/、品类页
+ 41 | Ex-works. Freight & duties quoted per destination. Setup amort | 报价器费用说明                    | /get-a-quote/
+ 42 | Freight & duties quoted per destination. At 5,000 pieces the u | 首页价格阶梯对比                   | /
+ 43 | %s days                                                        | 首页 Hero 规格卡                | /
+=== 33b-new-strings.csv
+HDR 英文原文 | 展示位置 | 涉及页面 | 旧英文 | source
+  1 | Breadcrumb                                                     | 结构化产品详情模板                  | product-*
+  2 | Home                                                           | 结构化产品详情模板                  | product-*
+  3 | Product images                                                 | 结构化产品详情模板                  | product-*
+  4 | View image %s                                                  | 结构化产品详情模板                  | product-*
+  5 | Samples 5–10 days                                              | 结构化产品详情模板                  | product-*
+  6 | DDP or FOB                                                     | 结构化产品详情模板                  | product-*
+  7 | Dieline with every quote                                       | 结构化产品详情模板                  | product-*
+  8 | Reference size                                                 | 结构化产品详情模板                  | product-*
+  9 | Estimate, sourcing fee included                                | 结构化产品详情模板                  | product-*
+ 10 | 1,000 pieces                                                   | 结构化产品详情模板                  | product-*
+ 11 | From 250 pieces                                                | 结构化产品详情模板                  | product-*
+ 12 | / unit                                                         | 结构化产品详情模板                  | product-*
+ 13 | Reference estimate: unprinted, no finish; inserts are quoted o | 结构化产品详情模板                  | product-*
+ 14 | Freight & duties quoted per destination                        | 结构化产品详情模板                  | product-*
+ 15 | Sample 5–10 days                                               | 结构化产品详情模板                  | product-*
+ 16 | Production 7–30 days after sample approval                     | 结构化产品详情模板                  | product-*
+ 17 | Configure this box →                                           | 结构化产品详情模板                  | product-*
+ 18 | Get the dieline with your quote                                | 结构化产品详情模板                  | product-*
+ 19 | Order a sample                                                 | 结构化产品详情模板                  | product-*
+ 20 | Construction details to define                                 | 结构化产品详情模板                  | product-*
+ 21 | Estimate                                                       | 结构化产品详情模板                  | product-*
+ 22 | Quantity and price                                             | 结构化产品详情模板                  | product-*
+ 23 | Prices include the sourcing fee. Freight & duties quoted per d | 结构化产品详情模板                  | product-*
+ 24 | Scrollable price table                                         | 结构化产品详情模板                  | product-*
+ 25 | Quantity                                                       | 结构化产品详情模板                  | product-*
+ 26 | Unit price, fee included                                       | 结构化产品详情模板                  | product-*
+ 27 | Savings against minimum                                        | 结构化产品详情模板                  | product-*
+ 28 | Setup                                                          | 结构化产品详情模板                  | product-*
+ 29 | Goods total                                                    | 结构化产品详情模板                  | product-*
+ 30 | Freight & duties                                               | 结构化产品详情模板                  | product-*
+ 31 | Waived                                                         | 结构化产品详情模板                  | product-*
+ 32 | Quoted per destination                                         | 结构化产品详情模板                  | product-*
+ 33 | Select                                                         | 结构化产品详情模板                  | product-*
+ 34 | Options                                                        | 结构化产品详情模板                  | product-*
+ 35 | Customization options                                          | 结构化产品详情模板                  | product-*
+ 36 | Surface finishes                                               | 结构化产品详情模板                  | product-*
+ 37 | Logo finishes                                                  | 结构化产品详情模板                  | product-*
+ 38 | Estimate at 1,000 pieces, sourcing fee included.               | 结构化产品详情模板                  | product-*
+ 39 | Inserts                                                        | 结构化产品详情模板                  | product-*
+ 40 | EVA insert                                                     | 结构化产品详情模板                  | product-*
+ 41 | PU insert                                                      | 结构化产品详情模板                  | product-*
+ 42 | Paperboard insert                                              | 结构化产品详情模板                  | product-*
+ 43 | Corrugated insert                                              | 结构化产品详情模板                  | product-*
+ 44 | Molded pulp insert                                             | 结构化产品详情模板                  | product-*
+ 45 | Clear film frame                                               | 结构化产品详情模板                  | product-*
+ 46 | on request, mould quoted separately                            | 结构化产品详情模板                  | product-*
+ 47 | quoted on request                                              | 结构化产品详情模板                  | product-*
+ 48 | Specification                                                  | 结构化产品详情模板                  | product-*
+ 49 | Specifications and review                                      | 结构化产品详情模板                  | product-*
+ 50 | Structure and materials                                        | 结构化产品详情模板                  | product-*
+ 51 | Sampling and review                                            | 结构化产品详情模板                  | product-*
+ 52 | Dieline                                                        | 结构化产品详情模板                  | product-*
+ 53 | Illustrative flat layout                                       | 结构化产品详情模板                  | product-*
+ 54 | Illustrative only; not a production dieline.                   | 结构化产品详情模板                  | product-*
+ 55 | A dieline comes with every quote                               | 结构化产品详情模板                  | product-*
+ 56 | Delivery                                                       | 结构化产品详情模板                  | product-*
+ 57 | Shipping options                                               | 结构化产品详情模板                  | product-*
+ 58 | Freight & duties quoted per destination.                       | 结构化产品详情模板                  | product-*
+ 59 | DDP to door                                                    | 结构化产品详情模板                  | product-*
+ 60 | Destination and terms are confirmed on the written quote.      | 结构化产品详情模板                  | product-*
+ 61 | FOB Shenzhen                                                   | 结构化产品详情模板                  | product-*
+ 62 | FOB is available for shipment from Shenzhen.                   | 结构化产品详情模板                  | product-*
+ 63 | Consolidation                                                  | 结构化产品详情模板                  | product-*
+ 64 | Ask us to combine several items into one shipment; we confirm  | 结构化产品详情模板                  | product-*
+ 65 | Your brief                                                     | 结构化产品详情模板                  | product-*
+ 66 | Build your quote                                               | 结构化产品详情模板                  | product-*
+ 67 | Confirm the dimensions and material for your project.          | 结构化产品详情模板                  | product-*
+ 68 | Questions                                                      | 结构化产品详情模板                  | product-*
+ 69 | Frequently asked questions                                     | 结构化产品详情模板                  | product-*
+ 70 | Explore                                                        | 结构化产品详情模板                  | product-*
+ 71 | Related products                                               | 结构化产品详情模板                  | product-*
+ 72 | Share the missing specifications for a tailored estimate.      | 结构化产品详情模板                  | product-*
+ 73 | MOQ                                                            | 结构化产品详情模板                  | product-*
+ 74 | None                                                           | 结构化产品详情模板                  | product-*
+ 75 | Matte varnish                                                  | 结构化产品详情模板                  | product-*
+ 76 | Gloss varnish                                                  | 结构化产品详情模板                  | product-*
+ 77 | Soft-touch lamination                                          | 结构化产品详情模板                  | product-*
+ 78 | Spot UV                                                        | 结构化产品详情模板                  | product-*
+ 79 | Foil stamp                                                     | 结构化产品详情模板                  | product-*
+ 80 | Blind emboss                                                   | 结构化产品详情模板                  | product-*
+ 81 | Enter dimensions from 2 to 120 cm (one decimal place) and choo | 尺寸与材料缺失提示                  | 33b 产品详情及报价页
+ 82 | Enter dimensions from 2 to 120 cm (one decimal place) before v | 尺寸缺失提示                     | 33b 产品详情及报价页
+ 83 | Choose a material before viewing an estimate.                  | 材料缺失提示                     | 33b 产品详情及报价页
+ 84 | To request a quote without JavaScript, email hello@packrivo.co | 无 JavaScript 询价提示          | 33b 产品详情及报价页
+ 85 | Complete dimensions and material for an estimate.              | 规格缺失时的价格阶梯说明               | product-*

@@ -1,0 +1,1365 @@
+round,en,bucket,lang,value,origin
+33a,Samples %s days,text,ar,عينات خلال %s أيام,new
+33a,Samples %s days,text,de,Muster in %s Tagen,new
+33a,Samples %s days,text,es,Muestras en %s días,new
+33a,Samples %s days,text,fr,Échantillons en %s jours,new
+33a,Samples %s days,text,it,Campioni in %s giorni,new
+33a,Samples %s days,text,ja,サンプル %s日,new
+33a,Samples %s days,text,ko,샘플 %s일,new
+33a,Samples %s days,text,nl,Monsters in %s dagen,new
+33a,Samples %s days,text,pt,Amostras em %s dias,new
+33a,Samples %s days,text,zh-CN,样品 %s 天,new
+33a,Samples %s days,text,zh-TW,樣品 %s 天,new
+33a,DDP or FOB,text,ar,DDP أو FOB,new
+33a,DDP or FOB,text,de,DDP oder FOB,new
+33a,DDP or FOB,text,es,DDP o FOB,new
+33a,DDP or FOB,text,fr,DDP ou FOB,new
+33a,DDP or FOB,text,it,DDP o FOB,new
+33a,DDP or FOB,text,ja,DDP または FOB,new
+33a,DDP or FOB,text,ko,DDP 또는 FOB,new
+33a,DDP or FOB,text,nl,DDP of FOB,new
+33a,DDP or FOB,text,pt,DDP ou FOB,new
+33a,DDP or FOB,text,zh-CN,DDP 或 FOB,new
+33a,DDP or FOB,text,zh-TW,DDP 或 FOB,new
+33a,Sourcing fee %s,text,ar,رسوم التوريد %s,new
+33a,Sourcing fee %s,text,de,Beschaffungsgebühr %s,new
+33a,Sourcing fee %s,text,es,Comisión de abastecimiento %s,new
+33a,Sourcing fee %s,text,fr,Frais d’approvisionnement %s,new
+33a,Sourcing fee %s,text,it,Commissione di approvvigionamento %s,new
+33a,Sourcing fee %s,text,ja,調達手数料 %s,new
+33a,Sourcing fee %s,text,ko,조달 수수료 %s,new
+33a,Sourcing fee %s,text,nl,Inkoopvergoeding %s,new
+33a,Sourcing fee %s,text,pt,Taxa de fornecimento %s,new
+33a,Sourcing fee %s,text,zh-CN,采购协调费 %s,new
+33a,Sourcing fee %s,text,zh-TW,採購協調費 %s,new
+33a,Example quote · Rigid magnetic box,text,ar,عرض سعر نموذجي · علبة مغناطيسية صلبة,new
+33a,Example quote · Rigid magnetic box,text,de,Beispielangebot · feste Magnetbox,new
+33a,Example quote · Rigid magnetic box,text,es,Presupuesto de ejemplo · Caja magnética rígida,new
+33a,Example quote · Rigid magnetic box,text,fr,Devis d’exemple · Boîte magnétique rigide,new
+33a,Example quote · Rigid magnetic box,text,it,Preventivo di esempio · Scatola magnetica rigida,new
+33a,Example quote · Rigid magnetic box,text,ja,見積例 · マグネット式硬質箱,new
+33a,Example quote · Rigid magnetic box,text,ko,견적 예시 · 경질 자석 상자,new
+33a,Example quote · Rigid magnetic box,text,nl,Voorbeeldofferte · stevige magneetdoos,new
+33a,Example quote · Rigid magnetic box,text,pt,Orçamento de exemplo · Caixa magnética rígida,new
+33a,Example quote · Rigid magnetic box,text,zh-CN,示例报价 · 硬质磁吸盒,new
+33a,Example quote · Rigid magnetic box,text,zh-TW,範例報價 · 硬質磁吸盒,new
+33a,Size,text,ar,المقاس,reused
+33a,Size,text,de,Größe,reused
+33a,Size,text,es,Tamaño,reused
+33a,Size,text,fr,Dimension,reused
+33a,Size,text,it,Dimensione,reused
+33a,Size,text,ja,サイズ,reused
+33a,Size,text,ko,크기,reused
+33a,Size,text,nl,Formaat,reused
+33a,Size,text,pt,Dimensões,reused
+33a,Size,text,zh-CN,尺寸,reused
+33a,Size,text,zh-TW,尺寸,reused
+33a,Board,text,ar,الورق المقوّى,reused
+33a,Board,text,de,Karton,reused
+33a,Board,text,es,Cartón,reused
+33a,Board,text,fr,Carton,reused
+33a,Board,text,it,Cartone,reused
+33a,Board,text,ja,板紙,reused
+33a,Board,text,ko,보드,reused
+33a,Board,text,nl,Karton,reused
+33a,Board,text,pt,Papelão,reused
+33a,Board,text,zh-CN,纸板,reused
+33a,Board,text,zh-TW,紙板,reused
+33a,Rigid greyboard,text,ar,ورق مقوّى رمادي صلب,reused
+33a,Rigid greyboard,text,de,Feste Graupappe,reused
+33a,Rigid greyboard,text,es,Cartón gris rígido,reused
+33a,Rigid greyboard,text,fr,Carton gris rigide,reused
+33a,Rigid greyboard,text,it,Cartone grigio rigido,reused
+33a,Rigid greyboard,text,ja,硬質グレー板紙,reused
+33a,Rigid greyboard,text,ko,경질 회색 보드,reused
+33a,Rigid greyboard,text,nl,Stevig grijsbord,reused
+33a,Rigid greyboard,text,pt,Papelão cinza rígido,reused
+33a,Rigid greyboard,text,zh-CN,硬质灰板,reused
+33a,Rigid greyboard,text,zh-TW,硬質灰板,reused
+33a,"%s pieces, sourcing fee included",text,ar,%s قطعة، شاملة رسوم التوريد,new
+33a,"%s pieces, sourcing fee included",text,de,"%s Stück, inkl. Beschaffungsgebühr",new
+33a,"%s pieces, sourcing fee included",text,es,"%s unidades, comisión de abastecimiento incluida",new
+33a,"%s pieces, sourcing fee included",text,fr,"%s pièces, frais d’approvisionnement inclus",new
+33a,"%s pieces, sourcing fee included",text,it,"%s pezzi, commissione di approvvigionamento inclusa",new
+33a,"%s pieces, sourcing fee included",text,ja,%s個（調達手数料込み）,new
+33a,"%s pieces, sourcing fee included",text,ko,"%s개, 조달 수수료 포함",new
+33a,"%s pieces, sourcing fee included",text,nl,"%s stuks, inkoopvergoeding inbegrepen",new
+33a,"%s pieces, sourcing fee included",text,pt,"%s unidades, taxa de fornecimento incluída",new
+33a,"%s pieces, sourcing fee included",text,zh-CN,%s 件，含采购协调费,new
+33a,"%s pieces, sourcing fee included",text,zh-TW,%s 件，含採購協調費,new
+33a,Samples,text,ar,عينات,reused
+33a,Samples,text,de,Muster,reused
+33a,Samples,text,es,Muestras,reused
+33a,Samples,text,fr,Échantillons,reused
+33a,Samples,text,it,Campioni,reused
+33a,Samples,text,ja,サンプル,reused
+33a,Samples,text,ko,샘플,reused
+33a,Samples,text,nl,Monsters,reused
+33a,Samples,text,pt,Amostras,reused
+33a,Samples,text,zh-CN,样品,reused
+33a,Samples,text,zh-TW,樣品,reused
+33a,Milestone: Brief,text,ar,المرحلة: الموجز,new
+33a,Milestone: Brief,text,de,Meilenstein: Briefing,new
+33a,Milestone: Brief,text,es,Hito: Briefing,new
+33a,Milestone: Brief,text,fr,Étape : Brief,new
+33a,Milestone: Brief,text,it,Fase: Brief,new
+33a,Milestone: Brief,text,ja,ステップ：要件整理,new
+33a,Milestone: Brief,text,ko,단계: 브리프,new
+33a,Milestone: Brief,text,nl,Mijlpaal: Briefing,new
+33a,Milestone: Brief,text,pt,Etapa: Briefing,new
+33a,Milestone: Brief,text,zh-CN,阶段：需求简报,new
+33a,Milestone: Brief,text,zh-TW,階段：需求簡報,new
+33a,Milestone: Sample,text,ar,المرحلة: العينة,new
+33a,Milestone: Sample,text,de,Meilenstein: Muster,new
+33a,Milestone: Sample,text,es,Hito: Muestra,new
+33a,Milestone: Sample,text,fr,Étape : Échantillon,new
+33a,Milestone: Sample,text,it,Fase: Campione,new
+33a,Milestone: Sample,text,ja,ステップ：サンプル,new
+33a,Milestone: Sample,text,ko,단계: 샘플,new
+33a,Milestone: Sample,text,nl,Mijlpaal: Monster,new
+33a,Milestone: Sample,text,pt,Etapa: Amostra,new
+33a,Milestone: Sample,text,zh-CN,阶段：样品,new
+33a,Milestone: Sample,text,zh-TW,階段：樣品,new
+33a,Milestone: Produce,text,ar,المرحلة: الإنتاج,new
+33a,Milestone: Produce,text,de,Meilenstein: Produktion,new
+33a,Milestone: Produce,text,es,Hito: Producción,new
+33a,Milestone: Produce,text,fr,Étape : Production,new
+33a,Milestone: Produce,text,it,Fase: Produzione,new
+33a,Milestone: Produce,text,ja,ステップ：生産,new
+33a,Milestone: Produce,text,ko,단계: 생산,new
+33a,Milestone: Produce,text,nl,Mijlpaal: Productie,new
+33a,Milestone: Produce,text,pt,Etapa: Produção,new
+33a,Milestone: Produce,text,zh-CN,阶段：生产,new
+33a,Milestone: Produce,text,zh-TW,階段：生產,new
+33a,Milestone: Deliver,text,ar,المرحلة: التسليم,new
+33a,Milestone: Deliver,text,de,Meilenstein: Lieferung,new
+33a,Milestone: Deliver,text,es,Hito: Entrega,new
+33a,Milestone: Deliver,text,fr,Étape : Livraison,new
+33a,Milestone: Deliver,text,it,Fase: Consegna,new
+33a,Milestone: Deliver,text,ja,ステップ：納品,new
+33a,Milestone: Deliver,text,ko,단계: 납품,new
+33a,Milestone: Deliver,text,nl,Mijlpaal: Levering,new
+33a,Milestone: Deliver,text,pt,Etapa: Entrega,new
+33a,Milestone: Deliver,text,zh-CN,阶段：交付,new
+33a,Milestone: Deliver,text,zh-TW,階段：交付,new
+33a,Freight & duties quoted per destination,text,ar,الشحن والرسوم الجمركية حسب الوجهة,new
+33a,Freight & duties quoted per destination,text,de,Fracht & Zölle je Bestimmungsland,new
+33a,Freight & duties quoted per destination,text,es,Transporte y aranceles según destino,new
+33a,Freight & duties quoted per destination,text,fr,Transport et droits de douane selon la destination,new
+33a,Freight & duties quoted per destination,text,it,Trasporto e dazi in base alla destinazione,new
+33a,Freight & duties quoted per destination,text,ja,輸送費・関税は仕向地ごとに算出,new
+33a,Freight & duties quoted per destination,text,ko,운송비·관세는 목적지별 산정,new
+33a,Freight & duties quoted per destination,text,nl,Vracht & douane per bestemming,new
+33a,Freight & duties quoted per destination,text,pt,Frete e direitos conforme o destino,new
+33a,Freight & duties quoted per destination,text,zh-CN,运费与关税按目的地核算,new
+33a,Freight & duties quoted per destination,text,zh-TW,運費與關稅依目的地核算,new
+33a,Quantity,text,ar,الكمية,reused
+33a,Quantity,text,de,Menge,reused
+33a,Quantity,text,es,Cantidad,reused
+33a,Quantity,text,fr,Quantité,reused
+33a,Quantity,text,it,Quantità,reused
+33a,Quantity,text,ja,数量,reused
+33a,Quantity,text,ko,수량,reused
+33a,Quantity,text,nl,Hoeveelheid,reused
+33a,Quantity,text,pt,Quantidade,reused
+33a,Quantity,text,zh-CN,数量,reused
+33a,Quantity,text,zh-TW,數量,reused
+33a,"2,500 · print setup waived",text,ar,"2,500 · إعفاء من إعداد الطباعة",new
+33a,"2,500 · print setup waived",text,de,"2,500 · Druckeinrichtung entfällt",new
+33a,"2,500 · print setup waived",text,es,"2,500 · preparación de impresión sin coste",new
+33a,"2,500 · print setup waived",text,fr,"2,500 · réglage impression offert",new
+33a,"2,500 · print setup waived",text,it,"2,500 · attrezzaggio stampa non addebitato",new
+33a,"2,500 · print setup waived",text,ja,"2,500 · 印刷セットアップ無料",new
+33a,"2,500 · print setup waived",text,ko,"2,500 · 인쇄 셋업 면제",new
+33a,"2,500 · print setup waived",text,nl,"2,500 · drukopmaak kosteloos",new
+33a,"2,500 · print setup waived",text,pt,"2,500 · preparação de impressão isenta",new
+33a,"2,500 · print setup waived",text,zh-CN,"2,500 · 免印刷开机费",new
+33a,"2,500 · print setup waived",text,zh-TW,"2,500 · 免印刷開機費",new
+33a,"5,000 · die setup waived",text,ar,"5,000 · إعفاء من إعداد قالب القطع",new
+33a,"5,000 · die setup waived",text,de,"5,000 · Stanzeinrichtung entfällt",new
+33a,"5,000 · die setup waived",text,es,"5,000 · preparación de troquel sin coste",new
+33a,"5,000 · die setup waived",text,fr,"5,000 · réglage de découpe offert",new
+33a,"5,000 · die setup waived",text,it,"5,000 · attrezzaggio fustella non addebitato",new
+33a,"5,000 · die setup waived",text,ja,"5,000 · 抜き型セットアップ無料",new
+33a,"5,000 · die setup waived",text,ko,"5,000 · 다이 셋업 면제",new
+33a,"5,000 · die setup waived",text,nl,"5,000 · stansopmaak kosteloos",new
+33a,"5,000 · die setup waived",text,pt,"5,000 · preparação de corte isenta",new
+33a,"5,000 · die setup waived",text,zh-CN,"5,000 · 免刀模开机费",new
+33a,"5,000 · die setup waived",text,zh-TW,"5,000 · 免刀模開機費",new
+33a,Goods,text,ar,البضائع,new
+33a,Goods,text,de,Ware,new
+33a,Goods,text,es,Mercancía,new
+33a,Goods,text,fr,Marchandise,new
+33a,Goods,text,it,Merci,new
+33a,Goods,text,ja,商品,new
+33a,Goods,text,ko,상품,new
+33a,Goods,text,nl,Goederen,new
+33a,Goods,text,pt,Mercadoria,new
+33a,Goods,text,zh-CN,货款,new
+33a,Goods,text,zh-TW,貨品,new
+33a,Sourcing fee,text,ar,رسوم التوريد,reused
+33a,Sourcing fee,text,de,Beschaffungsgebühr,reused
+33a,Sourcing fee,text,es,Comisión de abastecimiento,reused
+33a,Sourcing fee,text,fr,Frais d’approvisionnement,reused
+33a,Sourcing fee,text,it,Commissione di approvvigionamento,reused
+33a,Sourcing fee,text,ja,調達手数料,reused
+33a,Sourcing fee,text,ko,조달 수수료,reused
+33a,Sourcing fee,text,nl,Inkoopvergoeding,reused
+33a,Sourcing fee,text,pt,Taxa de fornecimento,reused
+33a,Sourcing fee,text,zh-CN,采购协调费,reused
+33a,Sourcing fee,text,zh-TW,採購協調費,reused
+33a,"Unit price, sourcing fee included",text,ar,سعر الوحدة، شامل رسوم التوريد,new
+33a,"Unit price, sourcing fee included",text,de,Stückpreis inkl. Beschaffungsgebühr,new
+33a,"Unit price, sourcing fee included",text,es,"Precio unitario, comisión de abastecimiento incluida",new
+33a,"Unit price, sourcing fee included",text,fr,"Prix unitaire, frais d’approvisionnement inclus",new
+33a,"Unit price, sourcing fee included",text,it,"Prezzo unitario, commissione di approvvigionamento inclusa",new
+33a,"Unit price, sourcing fee included",text,ja,単価（調達手数料込み）,new
+33a,"Unit price, sourcing fee included",text,ko,"단가, 조달 수수료 포함",new
+33a,"Unit price, sourcing fee included",text,nl,"Stukprijs, inkoopvergoeding inbegrepen",new
+33a,"Unit price, sourcing fee included",text,pt,"Preço unitário, taxa de fornecimento incluída",new
+33a,"Unit price, sourcing fee included",text,zh-CN,单价，含采购协调费,new
+33a,"Unit price, sourcing fee included",text,zh-TW,單價，含採購協調費,new
+33a,Order total,text,ar,إجمالي الطلب,new
+33a,Order total,text,de,Bestellsumme,new
+33a,Order total,text,es,Total del pedido,new
+33a,Order total,text,fr,Total de la commande,new
+33a,Order total,text,it,Totale ordine,new
+33a,Order total,text,ja,ご注文合計,new
+33a,Order total,text,ko,주문 합계,new
+33a,Order total,text,nl,Besteltotaal,new
+33a,Order total,text,pt,Total do pedido,new
+33a,Order total,text,zh-CN,订单合计,new
+33a,Order total,text,zh-TW,訂單合計,new
+33a,Print setup is waived from %1$s pieces; die setup is waived from %2$s pieces.,block,ar,يُعفى من إعداد الطباعة بدءًا من %1$s قطعة، ويُعفى من إعداد قالب القطع بدءًا من %2$s قطعة.,new
+33a,Print setup is waived from %1$s pieces; die setup is waived from %2$s pieces.,block,de,Druckeinrichtung entfällt ab %1$s Stück; Stanzeinrichtung entfällt ab %2$s Stück.,new
+33a,Print setup is waived from %1$s pieces; die setup is waived from %2$s pieces.,block,es,La preparación de impresión no se cobra a partir de %1$s unidades; la preparación de troquel no se cobra a partir de %2$s unidades.,new
+33a,Print setup is waived from %1$s pieces; die setup is waived from %2$s pieces.,block,fr,Le réglage impression est offert à partir de %1$s pièces ; le réglage de découpe est offert à partir de %2$s pièces.,new
+33a,Print setup is waived from %1$s pieces; die setup is waived from %2$s pieces.,block,it,L’attrezzaggio stampa non è addebitato da %1$s pezzi; l’attrezzaggio fustella non è addebitato da %2$s pezzi.,new
+33a,Print setup is waived from %1$s pieces; die setup is waived from %2$s pieces.,block,ja,印刷セットアップは%1$s個から無料、抜き型セットアップは%2$s個から無料です。,new
+33a,Print setup is waived from %1$s pieces; die setup is waived from %2$s pieces.,block,ko,"인쇄 셋업은 %1$s개부터, 다이 셋업은 %2$s개부터 면제됩니다.",new
+33a,Print setup is waived from %1$s pieces; die setup is waived from %2$s pieces.,block,nl,Drukopmaak is kosteloos vanaf %1$s stuks; stansopmaak is kosteloos vanaf %2$s stuks.,new
+33a,Print setup is waived from %1$s pieces; die setup is waived from %2$s pieces.,block,pt,A preparação de impressão é isenta a partir de %1$s unidades; a preparação de corte é isenta a partir de %2$s unidades.,new
+33a,Print setup is waived from %1$s pieces; die setup is waived from %2$s pieces.,block,zh-CN,印刷开机费 %1$s 件起免收；刀模开机费 %2$s 件起免收。,new
+33a,Print setup is waived from %1$s pieces; die setup is waived from %2$s pieces.,block,zh-TW,印刷開機費 %1$s 件起免收；刀模開機費 %2$s 件起免收。,new
+33a,Kraft corrugated · E/B/F/EB/BC,text,ar,كرافت مضلع · E/B/F/EB/BC,new
+33a,Kraft corrugated · E/B/F/EB/BC,text,de,Wellpappe aus Kraftpapier · E/B/F/EB/BC,new
+33a,Kraft corrugated · E/B/F/EB/BC,text,es,Corrugado kraft · E/B/F/EB/BC,new
+33a,Kraft corrugated · E/B/F/EB/BC,text,fr,Carton ondulé kraft · E/B/F/EB/BC,new
+33a,Kraft corrugated · E/B/F/EB/BC,text,it,Cartone ondulato kraft · E/B/F/EB/BC,new
+33a,Kraft corrugated · E/B/F/EB/BC,text,ja,クラフト段ボール · E/B/F/EB/BC,new
+33a,Kraft corrugated · E/B/F/EB/BC,text,ko,크라프트 골판지 · E/B/F/EB/BC,new
+33a,Kraft corrugated · E/B/F/EB/BC,text,nl,Kraft golfkarton · E/B/F/EB/BC,new
+33a,Kraft corrugated · E/B/F/EB/BC,text,pt,Cartão canelado kraft · E/B/F/EB/BC,new
+33a,Kraft corrugated · E/B/F/EB/BC,text,zh-CN,牛皮瓦楞 · E/B/F/EB/BC,new
+33a,Kraft corrugated · E/B/F/EB/BC,text,zh-TW,牛皮瓦楞 · E/B/F/EB/BC,new
+33a,Rigid greyboard · %1$s coated paper over %2$s greyboard,text,ar,ورق مقوّى رمادي صلب · ورق مطلي %1$s على كرتون رمادي %2$s,new
+33a,Rigid greyboard · %1$s coated paper over %2$s greyboard,text,de,Feste Graupappe · %1$s gestrichenes Papier auf %2$s Graupappe,new
+33a,Rigid greyboard · %1$s coated paper over %2$s greyboard,text,es,Cartón gris rígido · papel estucado %1$s sobre cartón gris %2$s,new
+33a,Rigid greyboard · %1$s coated paper over %2$s greyboard,text,fr,Carton gris rigide · papier couché %1$s sur carton gris %2$s,new
+33a,Rigid greyboard · %1$s coated paper over %2$s greyboard,text,it,Cartone grigio rigido · carta patinata %1$s su cartone grigio %2$s,new
+33a,Rigid greyboard · %1$s coated paper over %2$s greyboard,text,ja,硬質グレー板紙 · %1$s コート紙／%2$s グレー板紙,new
+33a,Rigid greyboard · %1$s coated paper over %2$s greyboard,text,ko,경질 회색 보드 · %1$s 코팅지／%2$s 회색 보드,new
+33a,Rigid greyboard · %1$s coated paper over %2$s greyboard,text,nl,Stevig grijsbord · %1$s gestreken papier op %2$s grijsbord,new
+33a,Rigid greyboard · %1$s coated paper over %2$s greyboard,text,pt,Papelão cinza rígido · papel couché %1$s sobre papelão cinza %2$s,new
+33a,Rigid greyboard · %1$s coated paper over %2$s greyboard,text,zh-CN,硬质灰板 · %1$s 铜版纸裱 %2$s 灰板,new
+33a,Rigid greyboard · %1$s coated paper over %2$s greyboard,text,zh-TW,硬質灰板 · %1$s 銅版紙裱 %2$s 灰板,new
+33a,%s recycled greyboard,text,ar,ورق مقوّى رمادي معاد تدويره %s,new
+33a,%s recycled greyboard,text,de,%s recycelte Graupappe,new
+33a,%s recycled greyboard,text,es,cartón gris reciclado %s,new
+33a,%s recycled greyboard,text,fr,carton gris recyclé %s,new
+33a,%s recycled greyboard,text,it,cartone grigio riciclato %s,new
+33a,%s recycled greyboard,text,ja,%s 再生グレー板紙,new
+33a,%s recycled greyboard,text,ko,%s 재생 회색 보드,new
+33a,%s recycled greyboard,text,nl,%s gerecycled grijsbord,new
+33a,%s recycled greyboard,text,pt,papelão cinza reciclado %s,new
+33a,%s recycled greyboard,text,zh-CN,%s 再生灰板,new
+33a,%s recycled greyboard,text,zh-TW,%s 再生灰板,new
+33a,Folding carton · %s,text,ar,كرتون قابل للطي · %s,new
+33a,Folding carton · %s,text,de,Faltschachtel · %s,new
+33a,Folding carton · %s,text,es,Estuche de cartón · %s,new
+33a,Folding carton · %s,text,fr,Étui pliant · %s,new
+33a,Folding carton · %s,text,it,Astuccio in cartoncino · %s,new
+33a,Folding carton · %s,text,ja,折り箱 · %s,new
+33a,Folding carton · %s,text,ko,접이식 카톤 · %s,new
+33a,Folding carton · %s,text,nl,Vouwdoos · %s,new
+33a,Folding carton · %s,text,pt,Cartonagem dobrável · %s,new
+33a,Folding carton · %s,text,zh-CN,折叠纸盒 · %s,new
+33a,Folding carton · %s,text,zh-TW,折疊紙盒 · %s,new
+33a,Folding boxes,text,ar,صناديق قابلة للطي,new
+33a,Folding boxes,text,de,Faltschachteln,new
+33a,Folding boxes,text,es,Cajas plegables,new
+33a,Folding boxes,text,fr,Boîtes pliantes,new
+33a,Folding boxes,text,it,Scatole pieghevoli,new
+33a,Folding boxes,text,ja,折り箱,new
+33a,Folding boxes,text,ko,접이식 상자,new
+33a,Folding boxes,text,nl,Vouwdozen,new
+33a,Folding boxes,text,pt,Caixas dobráveis,new
+33a,Folding boxes,text,zh-CN,折叠盒,new
+33a,Folding boxes,text,zh-TW,折疊盒,new
+33a,"Inserts, trays · on request, mould quoted separately",text,ar,إدراجات وصواني · عند الطلب، ويُسعّر القالب بشكل منفصل,new
+33a,"Inserts, trays · on request, mould quoted separately",text,de,"Einleger, Einsätze · auf Anfrage, Form separat berechnet",new
+33a,"Inserts, trays · on request, mould quoted separately",text,es,"Insertos y bandejas · a petición, molde presupuestado aparte",new
+33a,"Inserts, trays · on request, mould quoted separately",text,fr,"Inserts, plateaux · sur demande, moule chiffré séparément",new
+33a,"Inserts, trays · on request, mould quoted separately",text,it,"Inserti e vassoi · su richiesta, stampo quotato a parte",new
+33a,"Inserts, trays · on request, mould quoted separately",text,ja,インサート・トレー · ご要望ベース、型代は別途お見積もり,new
+33a,"Inserts, trays · on request, mould quoted separately",text,ko,"인서트·트레이 · 요청 시, 금형은 별도 견적",new
+33a,"Inserts, trays · on request, mould quoted separately",text,nl,"Inzetstukken, bladen · op aanvraag, matrijs apart geprijsd",new
+33a,"Inserts, trays · on request, mould quoted separately",text,pt,"Insertos e tabuleiros · a pedido, molde orçamentado à parte",new
+33a,"Inserts, trays · on request, mould quoted separately",text,zh-CN,内衬、托盘 · 按需提供，模具单独报价,new
+33a,"Inserts, trays · on request, mould quoted separately",text,zh-TW,內襯、托盤 · 依需求提供，模具另行報價,new
+33a,EVA / PU,text,ar,EVA / PU,new
+33a,EVA / PU,text,de,EVA / PU,new
+33a,EVA / PU,text,es,EVA / PU,new
+33a,EVA / PU,text,fr,EVA / PU,new
+33a,EVA / PU,text,it,EVA / PU,new
+33a,EVA / PU,text,ja,EVA / PU,new
+33a,EVA / PU,text,ko,EVA / PU,new
+33a,EVA / PU,text,nl,EVA / PU,new
+33a,EVA / PU,text,pt,EVA / PU,new
+33a,EVA / PU,text,zh-CN,EVA / PU,new
+33a,EVA / PU,text,zh-TW,EVA / PU,new
+33a,Protective inserts,text,ar,إدراجات واقية,new
+33a,Protective inserts,text,de,Schutzeinleger,new
+33a,Protective inserts,text,es,Insertos protectores,new
+33a,Protective inserts,text,fr,Inserts de protection,new
+33a,Protective inserts,text,it,Inserti protettivi,new
+33a,Protective inserts,text,ja,保護用インサート,new
+33a,Protective inserts,text,ko,보호용 인서트,new
+33a,Protective inserts,text,nl,Beschermende inzetstukken,new
+33a,Protective inserts,text,pt,Insertos de proteção,new
+33a,Protective inserts,text,zh-CN,保护内衬,new
+33a,Protective inserts,text,zh-TW,保護內襯,new
+33a,Multi-colour sheet-fed offset printing press in a packaging workshop,text,ar,ماكينة طباعة أوفست متعددة الألوان بأفرخ في ورشة تعبئة,new
+33a,Multi-colour sheet-fed offset printing press in a packaging workshop,text,de,Mehrfarbige Bogenoffsetdruckmaschine in einer Verpackungswerkstatt,new
+33a,Multi-colour sheet-fed offset printing press in a packaging workshop,text,es,Prensa offset de pliegos multicromática en un taller de envases,new
+33a,Multi-colour sheet-fed offset printing press in a packaging workshop,text,fr,Presse offset feuilles multicolore dans un atelier d’emballage,new
+33a,Multi-colour sheet-fed offset printing press in a packaging workshop,text,it,Stampa offset a fogli multicolore in un laboratorio di imballaggi,new
+33a,Multi-colour sheet-fed offset printing press in a packaging workshop,text,ja,製函工房にある多色枚葉オフセット印刷機,new
+33a,Multi-colour sheet-fed offset printing press in a packaging workshop,text,ko,포장 공방의 다색 매엽 오프셋 인쇄기,new
+33a,Multi-colour sheet-fed offset printing press in a packaging workshop,text,nl,Meerkleuren-veloffsetpers in een verpakkingswerkplaats,new
+33a,Multi-colour sheet-fed offset printing press in a packaging workshop,text,pt,Impressora offset de folhas multicor numa oficina de embalagens,new
+33a,Multi-colour sheet-fed offset printing press in a packaging workshop,text,zh-CN,包装车间的多色单张纸胶印机,new
+33a,Multi-colour sheet-fed offset printing press in a packaging workshop,text,zh-TW,包裝車間的多色單張紙平版印刷機,new
+33a,Topics,text,ar,الموضوعات,new
+33a,Topics,text,de,Themen,new
+33a,Topics,text,es,Temas,new
+33a,Topics,text,fr,Sujets,new
+33a,Topics,text,it,Argomenti,new
+33a,Topics,text,ja,トピック,new
+33a,Topics,text,ko,주제,new
+33a,Topics,text,nl,Onderwerpen,new
+33a,Topics,text,pt,Temas,new
+33a,Topics,text,zh-CN,专题,new
+33a,Topics,text,zh-TW,專題,new
+33a,%s articles,text,ar,%s مقالة,new
+33a,%s articles,text,de,%s Artikel,new
+33a,%s articles,text,es,%s artículos,new
+33a,%s articles,text,fr,%s articles,new
+33a,%s articles,text,it,%s articoli,new
+33a,%s articles,text,ja,%s件の記事,new
+33a,%s articles,text,ko,글 %s개,new
+33a,%s articles,text,nl,%s artikelen,new
+33a,%s articles,text,pt,%s artigos,new
+33a,%s articles,text,zh-CN,%s 篇文章,new
+33a,%s articles,text,zh-TW,%s 篇文章,new
+33a,Read,text,ar,اقرأ,new
+33a,Read,text,de,Lesen,new
+33a,Read,text,es,Leer,new
+33a,Read,text,fr,Lire,new
+33a,Read,text,it,Leggi,new
+33a,Read,text,ja,読む,new
+33a,Read,text,ko,읽기,new
+33a,Read,text,nl,Lezen,new
+33a,Read,text,pt,Ler,new
+33a,Read,text,zh-CN,阅读,new
+33a,Read,text,zh-TW,閱讀,new
+33a,print setup waived,text,ar,إعفاء من إعداد الطباعة,new
+33a,print setup waived,text,de,Druckeinrichtung entfällt,new
+33a,print setup waived,text,es,preparación de impresión sin coste,new
+33a,print setup waived,text,fr,réglage impression offert,new
+33a,print setup waived,text,it,attrezzaggio stampa non addebitato,new
+33a,print setup waived,text,ja,印刷セットアップ無料,new
+33a,print setup waived,text,ko,인쇄 셋업 면제,new
+33a,print setup waived,text,nl,drukopmaak kosteloos,new
+33a,print setup waived,text,pt,preparação de impressão isenta,new
+33a,print setup waived,text,zh-CN,免印刷开机费,new
+33a,print setup waived,text,zh-TW,免印刷開機費,new
+33a,die setup waived,text,ar,إعفاء من إعداد قالب القطع,new
+33a,die setup waived,text,de,Stanzeinrichtung entfällt,new
+33a,die setup waived,text,es,preparación de troquel sin coste,new
+33a,die setup waived,text,fr,réglage de découpe offert,new
+33a,die setup waived,text,it,attrezzaggio fustella non addebitato,new
+33a,die setup waived,text,ja,抜き型セットアップ無料,new
+33a,die setup waived,text,ko,다이 셋업 면제,new
+33a,die setup waived,text,nl,stansopmaak kosteloos,new
+33a,die setup waived,text,pt,preparação de corte isenta,new
+33a,die setup waived,text,zh-CN,免刀模开机费,new
+33a,die setup waived,text,zh-TW,免刀模開機費,new
+33a,Product categories,text,ar,فئات المنتجات,new
+33a,Product categories,text,de,Produktkategorien,new
+33a,Product categories,text,es,Categorías de producto,new
+33a,Product categories,text,fr,Catégories de produits,new
+33a,Product categories,text,it,Categorie di prodotto,new
+33a,Product categories,text,ja,製品カテゴリー,new
+33a,Product categories,text,ko,제품 카테고리,new
+33a,Product categories,text,nl,Productcategorieën,new
+33a,Product categories,text,pt,Categorias de produtos,new
+33a,Product categories,text,zh-CN,产品品类,new
+33a,Product categories,text,zh-TW,產品品類,new
+33a,From %s units,text,ar,من %s وحدة,new
+33a,From %s units,text,de,ab %s Stück,new
+33a,From %s units,text,es,desde %s unidades,new
+33a,From %s units,text,fr,à partir de %s pièces,new
+33a,From %s units,text,it,da %s pezzi,new
+33a,From %s units,text,ja,%s個から,new
+33a,From %s units,text,ko,%s개부터,new
+33a,From %s units,text,nl,vanaf %s stuks,new
+33a,From %s units,text,pt,a partir de %s unidades,new
+33a,From %s units,text,zh-CN,%s 件起,new
+33a,From %s units,text,zh-TW,%s 件起,new
+33a,/ unit,text,ar,/ للوحدة,new
+33a,/ unit,text,de,/ Stück,new
+33a,/ unit,text,es,/ unidad,new
+33a,/ unit,text,fr,/ pièce,new
+33a,/ unit,text,it,/ pezzo,new
+33a,/ unit,text,ja,/ 個,new
+33a,/ unit,text,ko,/ 개,new
+33a,/ unit,text,nl,/ stuk,new
+33a,/ unit,text,pt,/ unidade,new
+33a,/ unit,text,zh-CN,/ 件,new
+33a,/ unit,text,zh-TW,/ 件,new
+33a,Reference estimate,text,ar,تقدير مرجعي,new
+33a,Reference estimate,text,de,Richtwert,new
+33a,Reference estimate,text,es,Estimación orientativa,new
+33a,Reference estimate,text,fr,Estimation indicative,new
+33a,Reference estimate,text,it,Stima indicativa,new
+33a,Reference estimate,text,ja,参考見積もり,new
+33a,Reference estimate,text,ko,참고 견적,new
+33a,Reference estimate,text,nl,Indicatieve schatting,new
+33a,Reference estimate,text,pt,Estimativa de referência,new
+33a,Reference estimate,text,zh-CN,参考估价,new
+33a,Reference estimate,text,zh-TW,參考估價,new
+33a,Ex-works. Freight & duties quoted per destination. Setup amortised into the unit price.,block,ar,تسليم من المصنع. تُحتسب أجرة الشحن والرسوم الجمركية حسب الوجهة. ويُوزّع الإعداد على سعر الوحدة.,new
+33a,Ex-works. Freight & duties quoted per destination. Setup amortised into the unit price.,block,de,Ab Werk. Fracht & Zölle je Bestimmungsland. Einrichtung auf den Stückpreis umgelegt.,new
+33a,Ex-works. Freight & duties quoted per destination. Setup amortised into the unit price.,block,es,En fábrica. Transporte y aranceles según destino. Preparación prorrateada en el precio unitario.,new
+33a,Ex-works. Freight & duties quoted per destination. Setup amortised into the unit price.,block,fr,Départ usine. Transport et droits de douane selon la destination. Réglage amorti dans le prix unitaire.,new
+33a,Ex-works. Freight & duties quoted per destination. Setup amortised into the unit price.,block,it,Franco fabbrica. Trasporto e dazi in base alla destinazione. Attrezzaggio ammortizzato nel prezzo unitario.,new
+33a,Ex-works. Freight & duties quoted per destination. Setup amortised into the unit price.,block,ja,工場渡し。輸送費・関税は仕向地ごとに算出。セットアップ費は単価に按分済み。,new
+33a,Ex-works. Freight & duties quoted per destination. Setup amortised into the unit price.,block,ko,공장 인도. 운송비·관세는 목적지별 산정. 셋업 비용은 단가에 분할 반영.,new
+33a,Ex-works. Freight & duties quoted per destination. Setup amortised into the unit price.,block,nl,Af fabriek. Vracht & douane per bestemming. Opmaak verrekend in de stukprijs.,new
+33a,Ex-works. Freight & duties quoted per destination. Setup amortised into the unit price.,block,pt,À saída da fábrica. Frete e direitos conforme o destino. Preparação diluída no preço unitário.,new
+33a,Ex-works. Freight & duties quoted per destination. Setup amortised into the unit price.,block,zh-CN,工厂交货。运费与关税按目的地核算。开机费已摊入单价。,new
+33a,Ex-works. Freight & duties quoted per destination. Setup amortised into the unit price.,block,zh-TW,工廠交貨。運費與關稅依目的地核算。開機費已攤入單價。,new
+33a,"Freight & duties quoted per destination. At 5,000 pieces the unit price is %s% lower than at 500. Final price confirmed after dieline review.",block,ar,"تُحتسب أجرة الشحن والرسوم الجمركية حسب الوجهة. عند 5,000 قطعة يكون سعر الوحدة أقل بنسبة %s% مقارنة بـ 500 قطعة. ويُعتمد السعر النهائي بعد مراجعة مخطط القطع.",new
+33a,"Freight & duties quoted per destination. At 5,000 pieces the unit price is %s% lower than at 500. Final price confirmed after dieline review.",block,de,"Fracht & Zölle je Bestimmungsland. Bei 5,000 Stück liegt der Stückpreis %s% unter dem Preis bei 500 Stück. Endpreis nach Prüfung der Stanzkontur.",new
+33a,"Freight & duties quoted per destination. At 5,000 pieces the unit price is %s% lower than at 500. Final price confirmed after dieline review.",block,es,"Transporte y aranceles según destino. Con 5,000 unidades el precio unitario es un %s% más bajo que con 500. Precio final confirmado tras revisar la línea de troquel.",new
+33a,"Freight & duties quoted per destination. At 5,000 pieces the unit price is %s% lower than at 500. Final price confirmed after dieline review.",block,fr,"Transport et droits de douane selon la destination. À 5,000 pièces, le prix unitaire est %s% plus bas qu’à 500. Prix final confirmé après validation du gabarit de découpe.",new
+33a,"Freight & duties quoted per destination. At 5,000 pieces the unit price is %s% lower than at 500. Final price confirmed after dieline review.",block,it,"Trasporto e dazi in base alla destinazione. A 5,000 pezzi il prezzo unitario è inferiore del %s% rispetto a 500. Prezzo finale confermato dopo la verifica della linea di fustellatura.",new
+33a,"Freight & duties quoted per destination. At 5,000 pieces the unit price is %s% lower than at 500. Final price confirmed after dieline review.",block,ja,"輸送費・関税は仕向地ごとに算出。5,000個では500個のときより単価が%s%低くなります。最終価格は抜き型図面の確認後に確定します。",new
+33a,"Freight & duties quoted per destination. At 5,000 pieces the unit price is %s% lower than at 500. Final price confirmed after dieline review.",block,ko,"운송비·관세는 목적지별 산정. 5,000개 기준 단가는 500개 대비 %s% 낮습니다. 최종 가격은 다이 라인 검토 후 확정됩니다.",new
+33a,"Freight & duties quoted per destination. At 5,000 pieces the unit price is %s% lower than at 500. Final price confirmed after dieline review.",block,nl,"Vracht & douane per bestemming. Bij 5,000 stuks ligt de stukprijs %s% lager dan bij 500. Definitieve prijs na controle van de stanslijn.",new
+33a,"Freight & duties quoted per destination. At 5,000 pieces the unit price is %s% lower than at 500. Final price confirmed after dieline review.",block,pt,"Frete e direitos conforme o destino. Com 5,000 unidades, o preço unitário é %s% mais baixo do que com 500. Preço final confirmado após revisão da linha de corte.",new
+33a,"Freight & duties quoted per destination. At 5,000 pieces the unit price is %s% lower than at 500. Final price confirmed after dieline review.",block,zh-CN,"运费与关税按目的地核算。5,000 件时单价比 500 件低 %s%。最终价格在刀模图确认后确定。",new
+33a,"Freight & duties quoted per destination. At 5,000 pieces the unit price is %s% lower than at 500. Final price confirmed after dieline review.",block,zh-TW,"運費與關稅依目的地核算。5,000 件時單價比 500 件低 %s%。最終價格於刀模圖確認後定案。",new
+33a,%s days,text,ar,%s أيام,new
+33a,%s days,text,de,%s Tage,new
+33a,%s days,text,es,%s días,new
+33a,%s days,text,fr,%s jours,new
+33a,%s days,text,it,%s giorni,new
+33a,%s days,text,ja,%s日,new
+33a,%s days,text,ko,%s일,new
+33a,%s days,text,nl,%s dagen,new
+33a,%s days,text,pt,%s dias,new
+33a,%s days,text,zh-CN,%s 天,new
+33a,%s days,text,zh-TW,%s 天,new
+33b,Breadcrumb,attr,ar,مسار التنقل,reused
+33b,Breadcrumb,attr,de,Navigationspfad,reused
+33b,Breadcrumb,attr,es,Ruta de navegación,reused
+33b,Breadcrumb,attr,fr,Fil d'Ariane,reused
+33b,Breadcrumb,attr,it,Percorso di navigazione,reused
+33b,Breadcrumb,attr,ja,パンくず,reused
+33b,Breadcrumb,attr,ko,브레드크럼,reused
+33b,Breadcrumb,attr,nl,Kruimelpad,reused
+33b,Breadcrumb,attr,pt,Trilha de navegação,reused
+33b,Breadcrumb,attr,zh-CN,面包屑导航,reused
+33b,Breadcrumb,attr,zh-TW,麵包屑,reused
+33b,Home,text,ar,الرئيسية,reused
+33b,Home,text,de,Startseite,reused
+33b,Home,text,es,Inicio,reused
+33b,Home,text,fr,Accueil,reused
+33b,Home,text,it,Pagina iniziale,reused
+33b,Home,text,ja,ホーム,reused
+33b,Home,text,ko,홈,reused
+33b,Home,text,nl,Startpagina,reused
+33b,Home,text,pt,Início,reused
+33b,Home,text,zh-CN,首页,reused
+33b,Home,text,zh-TW,首頁,reused
+33b,Product images,attr,ar,صور المنتج,new
+33b,Product images,attr,de,Produktbilder,new
+33b,Product images,attr,es,Imágenes del producto,new
+33b,Product images,attr,fr,Images du produit,new
+33b,Product images,attr,it,Immagini del prodotto,new
+33b,Product images,attr,ja,製品画像,new
+33b,Product images,attr,ko,제품 이미지,new
+33b,Product images,attr,nl,Productafbeeldingen,new
+33b,Product images,attr,pt,Imagens do produto,new
+33b,Product images,attr,zh-CN,产品图片,new
+33b,Product images,attr,zh-TW,產品圖片,new
+33b,View image %s,attr,ar,عرض الصورة %s,new
+33b,View image %s,attr,de,Bild %s ansehen,new
+33b,View image %s,attr,es,Ver imagen %s,new
+33b,View image %s,attr,fr,Voir l’image %s,new
+33b,View image %s,attr,it,Visualizza immagine %s,new
+33b,View image %s,attr,ja,画像 %s を表示,new
+33b,View image %s,attr,ko,이미지 %s 보기,new
+33b,View image %s,attr,nl,Afbeelding %s bekijken,new
+33b,View image %s,attr,pt,Ver imagem %s,new
+33b,View image %s,attr,zh-CN,查看图片 %s,new
+33b,View image %s,attr,zh-TW,檢視圖片 %s,new
+33b,Samples 5–10 days,text,ar,عينات خلال 5–10 أيام,new
+33b,Samples 5–10 days,text,de,Muster in 5–10 Tagen,new
+33b,Samples 5–10 days,text,es,Muestras en 5–10 días,new
+33b,Samples 5–10 days,text,fr,Échantillons en 5–10 jours,new
+33b,Samples 5–10 days,text,it,Campioni in 5–10 giorni,new
+33b,Samples 5–10 days,text,ja,サンプル 5–10日,new
+33b,Samples 5–10 days,text,ko,샘플 5–10일,new
+33b,Samples 5–10 days,text,nl,Monsters in 5–10 dagen,new
+33b,Samples 5–10 days,text,pt,Amostras em 5–10 dias,new
+33b,Samples 5–10 days,text,zh-CN,样品 5–10 天,new
+33b,Samples 5–10 days,text,zh-TW,樣品 5–10 天,new
+33b,Dieline with every quote,text,ar,مخطط القطع مع كل عرض سعر,new
+33b,Dieline with every quote,text,de,Stanzkontur zu jedem Angebot,new
+33b,Dieline with every quote,text,es,Línea de troquel con cada presupuesto,new
+33b,Dieline with every quote,text,fr,Gabarit de découpe avec chaque devis,new
+33b,Dieline with every quote,text,it,Linea di fustellatura con ogni preventivo,new
+33b,Dieline with every quote,text,ja,すべての見積もりに抜き型図面付き,new
+33b,Dieline with every quote,text,ko,모든 견적에 다이 라인 포함,new
+33b,Dieline with every quote,text,nl,Stanslijn bij elke offerte,new
+33b,Dieline with every quote,text,pt,Linha de corte com cada orçamento,new
+33b,Dieline with every quote,text,zh-CN,每份报价附刀模图,new
+33b,Dieline with every quote,text,zh-TW,每份報價附刀模圖,new
+33b,Reference size,text,ar,المقاس المرجعي,new
+33b,Reference size,text,de,Referenzgröße,new
+33b,Reference size,text,es,Tamaño de referencia,new
+33b,Reference size,text,fr,Dimension de référence,new
+33b,Reference size,text,it,Dimensione di riferimento,new
+33b,Reference size,text,ja,参考サイズ,new
+33b,Reference size,text,ko,참고 크기,new
+33b,Reference size,text,nl,Referentieformaat,new
+33b,Reference size,text,pt,Dimensão de referência,new
+33b,Reference size,text,zh-CN,参考尺寸,new
+33b,Reference size,text,zh-TW,參考尺寸,new
+33b,"Estimate, sourcing fee included",text,ar,تقدير، شامل رسوم التوريد,new
+33b,"Estimate, sourcing fee included",text,de,Richtwert inkl. Beschaffungsgebühr,new
+33b,"Estimate, sourcing fee included",text,es,"Estimación, comisión de abastecimiento incluida",new
+33b,"Estimate, sourcing fee included",text,fr,"Estimation, frais d’approvisionnement inclus",new
+33b,"Estimate, sourcing fee included",text,it,"Stima, commissione di approvvigionamento inclusa",new
+33b,"Estimate, sourcing fee included",text,ja,概算（調達手数料込み）,new
+33b,"Estimate, sourcing fee included",text,ko,"예상 견적, 조달 수수료 포함",new
+33b,"Estimate, sourcing fee included",text,nl,"Schatting, inkoopvergoeding inbegrepen",new
+33b,"Estimate, sourcing fee included",text,pt,"Estimativa, taxa de fornecimento incluída",new
+33b,"Estimate, sourcing fee included",text,zh-CN,估价，含采购协调费,new
+33b,"Estimate, sourcing fee included",text,zh-TW,估價，含採購協調費,new
+33b,"1,000 pieces",text,ar,"1,000 قطعة",new
+33b,"1,000 pieces",text,de,"1,000 Stück",new
+33b,"1,000 pieces",text,es,"1,000 unidades",new
+33b,"1,000 pieces",text,fr,"1,000 pièces",new
+33b,"1,000 pieces",text,it,"1,000 pezzi",new
+33b,"1,000 pieces",text,ja,"1,000個",new
+33b,"1,000 pieces",text,ko,"1,000개",new
+33b,"1,000 pieces",text,nl,"1,000 stuks",new
+33b,"1,000 pieces",text,pt,"1,000 unidades",new
+33b,"1,000 pieces",text,zh-CN,"1,000 件",new
+33b,"1,000 pieces",text,zh-TW,"1,000 件",new
+33b,From 250 pieces,text,ar,من 250 قطعة,new
+33b,From 250 pieces,text,de,ab 250 Stück,new
+33b,From 250 pieces,text,es,desde 250 unidades,new
+33b,From 250 pieces,text,fr,à partir de 250 pièces,new
+33b,From 250 pieces,text,it,da 250 pezzi,new
+33b,From 250 pieces,text,ja,250個から,new
+33b,From 250 pieces,text,ko,250개부터,new
+33b,From 250 pieces,text,nl,vanaf 250 stuks,new
+33b,From 250 pieces,text,pt,a partir de 250 unidades,new
+33b,From 250 pieces,text,zh-CN,250 件起,new
+33b,From 250 pieces,text,zh-TW,250 件起,new
+33b,"Reference estimate: unprinted, no finish; inserts are quoted on request.",block,ar,تقدير مرجعي: بدون طباعة وبدون تشطيب؛ وتُسعّر الإدراجات عند الطلب.,new
+33b,"Reference estimate: unprinted, no finish; inserts are quoted on request.",block,de,"Richtwert: unbedruckt, ohne Veredelung; Einleger auf Anfrage.",new
+33b,"Reference estimate: unprinted, no finish; inserts are quoted on request.",block,es,Estimación orientativa: sin impresión y sin acabado; los insertos se presupuestan a petición.,new
+33b,"Reference estimate: unprinted, no finish; inserts are quoted on request.",block,fr,"Estimation indicative : non imprimé, sans finition ; les inserts sont chiffrés sur demande.",new
+33b,"Reference estimate: unprinted, no finish; inserts are quoted on request.",block,it,"Stima indicativa: non stampato, senza finitura; gli inserti sono quotati su richiesta.",new
+33b,"Reference estimate: unprinted, no finish; inserts are quoted on request.",block,ja,参考見積もり：未印刷・加工なし。インサートはご要望時にお見積もりします。,new
+33b,"Reference estimate: unprinted, no finish; inserts are quoted on request.",block,ko,참고 견적: 무인쇄·후가공 없음. 인서트는 요청 시 견적합니다.,new
+33b,"Reference estimate: unprinted, no finish; inserts are quoted on request.",block,nl,"Indicatieve schatting: onbedrukt, zonder afwerking; inzetstukken op aanvraag.",new
+33b,"Reference estimate: unprinted, no finish; inserts are quoted on request.",block,pt,Estimativa de referência: sem impressão e sem acabamento; os insertos são orçamentados a pedido.,new
+33b,"Reference estimate: unprinted, no finish; inserts are quoted on request.",block,zh-CN,参考估价：不印刷、不做表面处理；内衬按需单独报价。,new
+33b,"Reference estimate: unprinted, no finish; inserts are quoted on request.",block,zh-TW,參考估價：不印刷、不做表面處理；內襯依需求另行報價。,new
+33b,Sample 5–10 days,text,ar,عينة خلال 5–10 أيام,new
+33b,Sample 5–10 days,text,de,Muster in 5–10 Tagen,new
+33b,Sample 5–10 days,text,es,Muestra en 5–10 días,new
+33b,Sample 5–10 days,text,fr,Échantillon en 5–10 jours,new
+33b,Sample 5–10 days,text,it,Campione in 5–10 giorni,new
+33b,Sample 5–10 days,text,ja,サンプル 5–10日,new
+33b,Sample 5–10 days,text,ko,샘플 5–10일,new
+33b,Sample 5–10 days,text,nl,Monster in 5–10 dagen,new
+33b,Sample 5–10 days,text,pt,Amostra em 5–10 dias,new
+33b,Sample 5–10 days,text,zh-CN,样品 5–10 天,new
+33b,Sample 5–10 days,text,zh-TW,樣品 5–10 天,new
+33b,Production 7–30 days after sample approval,text,ar,الإنتاج خلال 7–30 يومًا بعد اعتماد العينة,new
+33b,Production 7–30 days after sample approval,text,de,Produktion 7–30 Tage nach Musterfreigabe,new
+33b,Production 7–30 days after sample approval,text,es,Producción 7–30 días tras la aprobación de la muestra,new
+33b,Production 7–30 days after sample approval,text,fr,Production 7–30 jours après validation de l’échantillon,new
+33b,Production 7–30 days after sample approval,text,it,Produzione 7–30 giorni dopo l’approvazione del campione,new
+33b,Production 7–30 days after sample approval,text,ja,サンプル承認後 7–30日で生産,new
+33b,Production 7–30 days after sample approval,text,ko,샘플 승인 후 7–30일 생산,new
+33b,Production 7–30 days after sample approval,text,nl,Productie 7–30 dagen na monsterakkoord,new
+33b,Production 7–30 days after sample approval,text,pt,Produção 7–30 dias após aprovação da amostra,new
+33b,Production 7–30 days after sample approval,text,zh-CN,样品确认后 7–30 天生产,new
+33b,Production 7–30 days after sample approval,text,zh-TW,樣品確認後 7–30 天生產,new
+33b,Configure this box →,text,ar,اضبط هذا الصندوق ←,new
+33b,Configure this box →,text,de,Diesen Karton konfigurieren →,new
+33b,Configure this box →,text,es,Configura esta caja →,new
+33b,Configure this box →,text,fr,Configurer cette boîte →,new
+33b,Configure this box →,text,it,Configura questa scatola →,new
+33b,Configure this box →,text,ja,この箱を設定する →,new
+33b,Configure this box →,text,ko,이 상자 구성하기 →,new
+33b,Configure this box →,text,nl,Deze doos samenstellen →,new
+33b,Configure this box →,text,pt,Configurar esta caixa →,new
+33b,Configure this box →,text,zh-CN,配置这个盒子 →,new
+33b,Configure this box →,text,zh-TW,配置這個盒子 →,new
+33b,Get the dieline with your quote,text,ar,احصل على مخطط القطع مع عرض السعر,new
+33b,Get the dieline with your quote,text,de,Stanzkontur zum Angebot erhalten,new
+33b,Get the dieline with your quote,text,es,Recibe la línea de troquel con tu presupuesto,new
+33b,Get the dieline with your quote,text,fr,Recevez le gabarit de découpe avec votre devis,new
+33b,Get the dieline with your quote,text,it,Ricevi la linea di fustellatura con il preventivo,new
+33b,Get the dieline with your quote,text,ja,見積もりと一緒に抜き型図面をお受け取りください,new
+33b,Get the dieline with your quote,text,ko,견적과 함께 다이 라인을 받아보세요,new
+33b,Get the dieline with your quote,text,nl,Ontvang de stanslijn bij je offerte,new
+33b,Get the dieline with your quote,text,pt,Receba a linha de corte com o seu orçamento,new
+33b,Get the dieline with your quote,text,zh-CN,报价同时获取刀模图,new
+33b,Get the dieline with your quote,text,zh-TW,報價同時取得刀模圖,new
+33b,Order a sample,text,ar,اطلب عينة,reused
+33b,Order a sample,text,de,Muster bestellen,reused
+33b,Order a sample,text,es,Pedir una muestra,reused
+33b,Order a sample,text,fr,Commander un échantillon,reused
+33b,Order a sample,text,it,Ordina un campione,reused
+33b,Order a sample,text,ja,サンプルを依頼,reused
+33b,Order a sample,text,ko,샘플 주문,reused
+33b,Order a sample,text,nl,Bestel een staal,reused
+33b,Order a sample,text,pt,Pedir uma amostra,reused
+33b,Order a sample,text,zh-CN,订购样品,reused
+33b,Order a sample,text,zh-TW,索取樣品,reused
+33b,Construction details to define,text,ar,تفاصيل التركيب المطلوب تحديدها,new
+33b,Construction details to define,text,de,Konstruktionsdetails festlegen,new
+33b,Construction details to define,text,es,Detalles de construcción por definir,new
+33b,Construction details to define,text,fr,Détails de construction à définir,new
+33b,Construction details to define,text,it,Dettagli costruttivi da definire,new
+33b,Construction details to define,text,ja,決めておきたい構造の詳細,new
+33b,Construction details to define,text,ko,정해야 할 구조 세부 사항,new
+33b,Construction details to define,text,nl,Constructiedetails om te bepalen,new
+33b,Construction details to define,text,pt,Detalhes de construção a definir,new
+33b,Construction details to define,text,zh-CN,需要确定的结构细节,new
+33b,Construction details to define,text,zh-TW,需要確認的結構細節,new
+33b,Estimate,text,ar,تقدير,new
+33b,Estimate,text,de,Richtwert,new
+33b,Estimate,text,es,Estimación,new
+33b,Estimate,text,fr,Estimation,new
+33b,Estimate,text,it,Stima,new
+33b,Estimate,text,ja,概算,new
+33b,Estimate,text,ko,예상 견적,new
+33b,Estimate,text,nl,Schatting,new
+33b,Estimate,text,pt,Estimativa,new
+33b,Estimate,text,zh-CN,估价,new
+33b,Estimate,text,zh-TW,估價,new
+33b,Quantity and price,text,ar,الكمية والسعر,new
+33b,Quantity and price,text,de,Menge und Preis,new
+33b,Quantity and price,text,es,Cantidad y precio,new
+33b,Quantity and price,text,fr,Quantité et prix,new
+33b,Quantity and price,text,it,Quantità e prezzo,new
+33b,Quantity and price,text,ja,数量と価格,new
+33b,Quantity and price,text,ko,수량과 가격,new
+33b,Quantity and price,text,nl,Hoeveelheid en prijs,new
+33b,Quantity and price,text,pt,Quantidade e preço,new
+33b,Quantity and price,text,zh-CN,数量与价格,new
+33b,Quantity and price,text,zh-TW,數量與價格,new
+33b,Prices include the sourcing fee. Freight & duties quoted per destination.,block,ar,الأسعار شاملة رسوم التوريد. وتُحتسب أجرة الشحن والرسوم الجمركية حسب الوجهة.,new
+33b,Prices include the sourcing fee. Freight & duties quoted per destination.,block,de,Preise inkl. Beschaffungsgebühr. Fracht & Zölle je Bestimmungsland.,new
+33b,Prices include the sourcing fee. Freight & duties quoted per destination.,block,es,Los precios incluyen la comisión de abastecimiento. Transporte y aranceles según destino.,new
+33b,Prices include the sourcing fee. Freight & duties quoted per destination.,block,fr,Les prix incluent les frais d’approvisionnement. Transport et droits de douane selon la destination.,new
+33b,Prices include the sourcing fee. Freight & duties quoted per destination.,block,it,I prezzi includono la commissione di approvvigionamento. Trasporto e dazi in base alla destinazione.,new
+33b,Prices include the sourcing fee. Freight & duties quoted per destination.,block,ja,価格には調達手数料が含まれます。輸送費・関税は仕向地ごとに算出します。,new
+33b,Prices include the sourcing fee. Freight & duties quoted per destination.,block,ko,가격에는 조달 수수료가 포함됩니다. 운송비·관세는 목적지별 산정입니다.,new
+33b,Prices include the sourcing fee. Freight & duties quoted per destination.,block,nl,Prijzen zijn inclusief inkoopvergoeding. Vracht & douane per bestemming.,new
+33b,Prices include the sourcing fee. Freight & duties quoted per destination.,block,pt,Os preços incluem a taxa de fornecimento. Frete e direitos conforme o destino.,new
+33b,Prices include the sourcing fee. Freight & duties quoted per destination.,block,zh-CN,价格含采购协调费。运费与关税按目的地核算。,new
+33b,Prices include the sourcing fee. Freight & duties quoted per destination.,block,zh-TW,價格含採購協調費。運費與關稅依目的地核算。,new
+33b,Scrollable price table,attr,ar,جدول أسعار قابل للتمرير,new
+33b,Scrollable price table,attr,de,Scrollbare Preistabelle,new
+33b,Scrollable price table,attr,es,Tabla de precios desplazable,new
+33b,Scrollable price table,attr,fr,Tableau de prix défilable,new
+33b,Scrollable price table,attr,it,Tabella prezzi scorrevole,new
+33b,Scrollable price table,attr,ja,スクロール可能な価格表,new
+33b,Scrollable price table,attr,ko,스크롤 가능한 가격표,new
+33b,Scrollable price table,attr,nl,Scrollbare prijstabel,new
+33b,Scrollable price table,attr,pt,Tabela de preços deslizável,new
+33b,Scrollable price table,attr,zh-CN,可滚动价格表,new
+33b,Scrollable price table,attr,zh-TW,可捲動價格表,new
+33b,"Unit price, fee included",text,ar,سعر الوحدة، شامل الرسوم,new
+33b,"Unit price, fee included",text,de,Stückpreis inkl. Gebühr,new
+33b,"Unit price, fee included",text,es,"Precio unitario, comisión incluida",new
+33b,"Unit price, fee included",text,fr,"Prix unitaire, frais inclus",new
+33b,"Unit price, fee included",text,it,"Prezzo unitario, commissione inclusa",new
+33b,"Unit price, fee included",text,ja,単価（手数料込み）,new
+33b,"Unit price, fee included",text,ko,"단가, 수수료 포함",new
+33b,"Unit price, fee included",text,nl,"Stukprijs, vergoeding inbegrepen",new
+33b,"Unit price, fee included",text,pt,"Preço unitário, taxa incluída",new
+33b,"Unit price, fee included",text,zh-CN,单价，含协调费,new
+33b,"Unit price, fee included",text,zh-TW,單價，含協調費,new
+33b,Savings against minimum,text,ar,الوفر مقارنة بالحد الأدنى,new
+33b,Savings against minimum,text,de,Ersparnis gegenüber Mindestmenge,new
+33b,Savings against minimum,text,es,Ahorro frente al mínimo,new
+33b,Savings against minimum,text,fr,Économie par rapport au minimum,new
+33b,Savings against minimum,text,it,Risparmio rispetto al minimo,new
+33b,Savings against minimum,text,ja,最小ロット比の削減額,new
+33b,Savings against minimum,text,ko,최소 수량 대비 절감액,new
+33b,Savings against minimum,text,nl,Besparing ten opzichte van minimum,new
+33b,Savings against minimum,text,pt,Poupança face ao mínimo,new
+33b,Savings against minimum,text,zh-CN,相对起订量的节省,new
+33b,Savings against minimum,text,zh-TW,相對起訂量的節省,new
+33b,Setup,text,ar,الإعداد,reused
+33b,Setup,text,de,Einrichtung,reused
+33b,Setup,text,es,Preparación,reused
+33b,Setup,text,fr,Réglage,reused
+33b,Setup,text,it,Attrezzaggio,reused
+33b,Setup,text,ja,セットアップ,reused
+33b,Setup,text,ko,셋업,reused
+33b,Setup,text,nl,Opmaak,reused
+33b,Setup,text,pt,Preparação,reused
+33b,Setup,text,zh-CN,设置,reused
+33b,Setup,text,zh-TW,成型,reused
+33b,Goods total,text,ar,إجمالي البضائع,reused
+33b,Goods total,text,de,Warenwert,reused
+33b,Goods total,text,es,Total de mercancía,reused
+33b,Goods total,text,fr,Total marchandise,reused
+33b,Goods total,text,it,Totale merci,reused
+33b,Goods total,text,ja,商品合計,reused
+33b,Goods total,text,ko,상품 합계,reused
+33b,Goods total,text,nl,Goederentotaal,reused
+33b,Goods total,text,pt,Total de mercadorias,reused
+33b,Goods total,text,zh-CN,货款合计,reused
+33b,Goods total,text,zh-TW,貨品小計,reused
+33b,Freight & duties,text,ar,الشحن والرسوم الجمركية,new
+33b,Freight & duties,text,de,Fracht & Zölle,new
+33b,Freight & duties,text,es,Transporte y aranceles,new
+33b,Freight & duties,text,fr,Transport et droits de douane,new
+33b,Freight & duties,text,it,Trasporto e dazi,new
+33b,Freight & duties,text,ja,輸送費・関税,new
+33b,Freight & duties,text,ko,운송비·관세,new
+33b,Freight & duties,text,nl,Vracht & douane,new
+33b,Freight & duties,text,pt,Frete e direitos,new
+33b,Freight & duties,text,zh-CN,运费与关税,new
+33b,Freight & duties,text,zh-TW,運費與關稅,new
+33b,Waived,text,ar,معفى,new
+33b,Waived,text,de,entfällt,new
+33b,Waived,text,es,sin coste,new
+33b,Waived,text,fr,offert,new
+33b,Waived,text,it,non addebitato,new
+33b,Waived,text,ja,無料,new
+33b,Waived,text,ko,면제,new
+33b,Waived,text,nl,kosteloos,new
+33b,Waived,text,pt,isento,new
+33b,Waived,text,zh-CN,免收,new
+33b,Waived,text,zh-TW,免收,new
+33b,Quoted per destination,text,ar,يُسعّر حسب الوجهة,new
+33b,Quoted per destination,text,de,je Bestimmungsland berechnet,new
+33b,Quoted per destination,text,es,Presupuestado según destino,new
+33b,Quoted per destination,text,fr,Chiffré selon la destination,new
+33b,Quoted per destination,text,it,Quotato per destinazione,new
+33b,Quoted per destination,text,ja,仕向地ごとに算出,new
+33b,Quoted per destination,text,ko,목적지별 산정,new
+33b,Quoted per destination,text,nl,Geprijsd per bestemming,new
+33b,Quoted per destination,text,pt,Orçamentado por destino,new
+33b,Quoted per destination,text,zh-CN,按目的地报价,new
+33b,Quoted per destination,text,zh-TW,依目的地報價,new
+33b,Select,text,ar,اختر,new
+33b,Select,text,de,Auswählen,new
+33b,Select,text,es,Seleccionar,new
+33b,Select,text,fr,Sélectionner,new
+33b,Select,text,it,Seleziona,new
+33b,Select,text,ja,選択,new
+33b,Select,text,ko,선택,new
+33b,Select,text,nl,Selecteren,new
+33b,Select,text,pt,Selecionar,new
+33b,Select,text,zh-CN,选择,new
+33b,Select,text,zh-TW,選擇,new
+33b,Options,text,ar,الخيارات,new
+33b,Options,text,de,Optionen,new
+33b,Options,text,es,Opciones,new
+33b,Options,text,fr,Options,new
+33b,Options,text,it,Opzioni,new
+33b,Options,text,ja,オプション,new
+33b,Options,text,ko,옵션,new
+33b,Options,text,nl,Opties,new
+33b,Options,text,pt,Opções,new
+33b,Options,text,zh-CN,选项,new
+33b,Options,text,zh-TW,選項,new
+33b,Customization options,text,ar,خيارات التخصيص,new
+33b,Customization options,text,de,Anpassungsoptionen,new
+33b,Customization options,text,es,Opciones de personalización,new
+33b,Customization options,text,fr,Options de personnalisation,new
+33b,Customization options,text,it,Opzioni di personalizzazione,new
+33b,Customization options,text,ja,カスタマイズ項目,new
+33b,Customization options,text,ko,맞춤 옵션,new
+33b,Customization options,text,nl,Aanpassingsopties,new
+33b,Customization options,text,pt,Opções de personalização,new
+33b,Customization options,text,zh-CN,定制选项,new
+33b,Customization options,text,zh-TW,客製選項,new
+33b,Surface finishes,text,ar,تشطيبات السطح,new
+33b,Surface finishes,text,de,Oberflächenveredelung,new
+33b,Surface finishes,text,es,Acabados superficiales,new
+33b,Surface finishes,text,fr,Finitions de surface,new
+33b,Surface finishes,text,it,Finizioni superficiali,new
+33b,Surface finishes,text,ja,表面加工,new
+33b,Surface finishes,text,ko,표면 후가공,new
+33b,Surface finishes,text,nl,Oppervlakteafwerking,new
+33b,Surface finishes,text,pt,Acabamentos de superfície,new
+33b,Surface finishes,text,zh-CN,表面处理,new
+33b,Surface finishes,text,zh-TW,表面加工,new
+33b,Logo finishes,text,ar,تشطيبات الشعار,new
+33b,Logo finishes,text,de,Logo-Veredelung,new
+33b,Logo finishes,text,es,Acabados del logotipo,new
+33b,Logo finishes,text,fr,Finitions du logo,new
+33b,Logo finishes,text,it,Finizioni del logo,new
+33b,Logo finishes,text,ja,ロゴ加工,new
+33b,Logo finishes,text,ko,로고 후가공,new
+33b,Logo finishes,text,nl,Logo-afwerking,new
+33b,Logo finishes,text,pt,Acabamentos do logótipo,new
+33b,Logo finishes,text,zh-CN,标志工艺,new
+33b,Logo finishes,text,zh-TW,標誌工藝,new
+33b,"Estimate at 1,000 pieces, sourcing fee included.",text,ar,"تقدير عند 1,000 قطعة، شامل رسوم التوريد.",new
+33b,"Estimate at 1,000 pieces, sourcing fee included.",text,de,"Richtwert bei 1,000 Stück, inkl. Beschaffungsgebühr.",new
+33b,"Estimate at 1,000 pieces, sourcing fee included.",text,es,"Estimación con 1,000 unidades, comisión de abastecimiento incluida.",new
+33b,"Estimate at 1,000 pieces, sourcing fee included.",text,fr,"Estimation à 1,000 pièces, frais d’approvisionnement inclus.",new
+33b,"Estimate at 1,000 pieces, sourcing fee included.",text,it,"Stima a 1,000 pezzi, commissione di approvvigionamento inclusa.",new
+33b,"Estimate at 1,000 pieces, sourcing fee included.",text,ja,"1,000個時の概算（調達手数料込み）。",new
+33b,"Estimate at 1,000 pieces, sourcing fee included.",text,ko,"1,000개 기준 예상 견적, 조달 수수료 포함.",new
+33b,"Estimate at 1,000 pieces, sourcing fee included.",text,nl,"Schatting bij 1,000 stuks, inkoopvergoeding inbegrepen.",new
+33b,"Estimate at 1,000 pieces, sourcing fee included.",text,pt,"Estimativa com 1,000 unidades, taxa de fornecimento incluída.",new
+33b,"Estimate at 1,000 pieces, sourcing fee included.",text,zh-CN,"1,000 件估价，含采购协调费。",new
+33b,"Estimate at 1,000 pieces, sourcing fee included.",text,zh-TW,"1,000 件估價，含採購協調費。",new
+33b,Inserts,text,ar,الإدراجات,reused
+33b,Inserts,text,de,Einleger,reused
+33b,Inserts,text,es,Insertos,reused
+33b,Inserts,text,fr,Inserts,reused
+33b,Inserts,text,it,Inserti,reused
+33b,Inserts,text,ja,インサート,reused
+33b,Inserts,text,ko,인서트,reused
+33b,Inserts,text,nl,Inzetten,reused
+33b,Inserts,text,pt,Insertos,reused
+33b,Inserts,text,zh-CN,内衬,reused
+33b,Inserts,text,zh-TW,內襯,reused
+33b,EVA insert,text,ar,إدراج EVA,new
+33b,EVA insert,text,de,EVA-Einleger,new
+33b,EVA insert,text,es,Inserto de EVA,new
+33b,EVA insert,text,fr,Insert en EVA,new
+33b,EVA insert,text,it,Inserto in EVA,new
+33b,EVA insert,text,ja,EVA製インサート,new
+33b,EVA insert,text,ko,EVA 인서트,new
+33b,EVA insert,text,nl,EVA-inzetstuk,new
+33b,EVA insert,text,pt,Inserto de EVA,new
+33b,EVA insert,text,zh-CN,EVA 内衬,new
+33b,EVA insert,text,zh-TW,EVA 內襯,new
+33b,PU insert,text,ar,إدراج PU,new
+33b,PU insert,text,de,PU-Einleger,new
+33b,PU insert,text,es,Inserto de PU,new
+33b,PU insert,text,fr,Insert en PU,new
+33b,PU insert,text,it,Inserto in PU,new
+33b,PU insert,text,ja,PU製インサート,new
+33b,PU insert,text,ko,PU 인서트,new
+33b,PU insert,text,nl,PU-inzetstuk,new
+33b,PU insert,text,pt,Inserto de PU,new
+33b,PU insert,text,zh-CN,PU 内衬,new
+33b,PU insert,text,zh-TW,PU 內襯,new
+33b,Paperboard insert,text,ar,حشوة من الكرتون,reused
+33b,Paperboard insert,text,de,Kartoneinsatz,reused
+33b,Paperboard insert,text,es,Inserto de cartón,reused
+33b,Paperboard insert,text,fr,Insert en carton,reused
+33b,Paperboard insert,text,it,Inserto in cartone,reused
+33b,Paperboard insert,text,ja,板紙製インサート,reused
+33b,Paperboard insert,text,ko,판지 인서트,reused
+33b,Paperboard insert,text,nl,Kartonnen inzetstuk,reused
+33b,Paperboard insert,text,pt,Inserto de cartão,reused
+33b,Paperboard insert,text,zh-CN,纸板内衬,reused
+33b,Paperboard insert,text,zh-TW,紙板內襯,reused
+33b,Corrugated insert,text,ar,إدراج من الكرتون المضلع,new
+33b,Corrugated insert,text,de,Wellpapp-Einleger,new
+33b,Corrugated insert,text,es,Inserto de corrugado,new
+33b,Corrugated insert,text,fr,Insert en carton ondulé,new
+33b,Corrugated insert,text,it,Inserto in cartone ondulato,new
+33b,Corrugated insert,text,ja,段ボール製インサート,new
+33b,Corrugated insert,text,ko,골판지 인서트,new
+33b,Corrugated insert,text,nl,Golfkartonnen inzetstuk,new
+33b,Corrugated insert,text,pt,Inserto de cartão canelado,new
+33b,Corrugated insert,text,zh-CN,瓦楞内衬,new
+33b,Corrugated insert,text,zh-TW,瓦楞內襯,new
+33b,Molded pulp insert,text,ar,إدراج من اللب المصبوب,new
+33b,Molded pulp insert,text,de,Einleger aus Formpappe,new
+33b,Molded pulp insert,text,es,Inserto de pulpa moldeada,new
+33b,Molded pulp insert,text,fr,Insert en pâte moulée,new
+33b,Molded pulp insert,text,it,Inserto in polpa stampata,new
+33b,Molded pulp insert,text,ja,パルプモールド製インサート,new
+33b,Molded pulp insert,text,ko,펄프 몰드 인서트,new
+33b,Molded pulp insert,text,nl,Inzetstuk van gevormde pulp,new
+33b,Molded pulp insert,text,pt,Inserto de polpa moldada,new
+33b,Molded pulp insert,text,zh-CN,纸浆模塑内衬,new
+33b,Molded pulp insert,text,zh-TW,紙漿模塑內襯,new
+33b,Clear film frame,text,ar,إطار من فيلم شفاف,new
+33b,Clear film frame,text,de,Rahmen aus Klarfolie,new
+33b,Clear film frame,text,es,Marco de film transparente,new
+33b,Clear film frame,text,fr,Cadre en film transparent,new
+33b,Clear film frame,text,it,Cornice in film trasparente,new
+33b,Clear film frame,text,ja,透明フィルムフレーム,new
+33b,Clear film frame,text,ko,투명 필름 프레임,new
+33b,Clear film frame,text,nl,Kader van transparant folie,new
+33b,Clear film frame,text,pt,Moldura de filme transparente,new
+33b,Clear film frame,text,zh-CN,透明胶片框,new
+33b,Clear film frame,text,zh-TW,透明膠片框,new
+33b,"on request, mould quoted separately",text,ar,عند الطلب، ويُسعّر القالب بشكل منفصل,new
+33b,"on request, mould quoted separately",text,de,"auf Anfrage, Form separat berechnet",new
+33b,"on request, mould quoted separately",text,es,"a petición, molde presupuestado aparte",new
+33b,"on request, mould quoted separately",text,fr,"sur demande, moule chiffré séparément",new
+33b,"on request, mould quoted separately",text,it,"su richiesta, stampo quotato a parte",new
+33b,"on request, mould quoted separately",text,ja,ご要望ベース、型代は別途,new
+33b,"on request, mould quoted separately",text,ko,"요청 시, 금형은 별도 견적",new
+33b,"on request, mould quoted separately",text,nl,"op aanvraag, matrijs apart geprijsd",new
+33b,"on request, mould quoted separately",text,pt,"a pedido, molde orçamentado à parte",new
+33b,"on request, mould quoted separately",text,zh-CN,按需提供，模具单独报价,new
+33b,"on request, mould quoted separately",text,zh-TW,依需求提供，模具另行報價,new
+33b,quoted on request,text,ar,يُسعّر عند الطلب,new
+33b,quoted on request,text,de,auf Anfrage,new
+33b,quoted on request,text,es,presupuestado a petición,new
+33b,quoted on request,text,fr,chiffré sur demande,new
+33b,quoted on request,text,it,quotato su richiesta,new
+33b,quoted on request,text,ja,ご要望時にお見積もり,new
+33b,quoted on request,text,ko,요청 시 견적,new
+33b,quoted on request,text,nl,op aanvraag geprijsd,new
+33b,quoted on request,text,pt,orçamentado a pedido,new
+33b,quoted on request,text,zh-CN,按需报价,new
+33b,quoted on request,text,zh-TW,依需求報價,new
+33b,Specification,text,ar,المواصفات,new
+33b,Specification,text,de,Spezifikation,new
+33b,Specification,text,es,Especificación,new
+33b,Specification,text,fr,Spécification,new
+33b,Specification,text,it,Specifica,new
+33b,Specification,text,ja,仕様,new
+33b,Specification,text,ko,사양,new
+33b,Specification,text,nl,Specificatie,new
+33b,Specification,text,pt,Especificação,new
+33b,Specification,text,zh-CN,规格,new
+33b,Specification,text,zh-TW,規格,new
+33b,Specifications and review,text,ar,المواصفات والمراجعة,new
+33b,Specifications and review,text,de,Spezifikation und Prüfung,new
+33b,Specifications and review,text,es,Especificaciones y revisión,new
+33b,Specifications and review,text,fr,Spécifications et validation,new
+33b,Specifications and review,text,it,Specifiche e verifica,new
+33b,Specifications and review,text,ja,仕様と確認,new
+33b,Specifications and review,text,ko,사양과 검토,new
+33b,Specifications and review,text,nl,Specificatie en controle,new
+33b,Specifications and review,text,pt,Especificações e revisão,new
+33b,Specifications and review,text,zh-CN,规格与确认,new
+33b,Specifications and review,text,zh-TW,規格與確認,new
+33b,Structure and materials,text,ar,التركيب والمواد,new
+33b,Structure and materials,text,de,Aufbau und Materialien,new
+33b,Structure and materials,text,es,Estructura y materiales,new
+33b,Structure and materials,text,fr,Structure et matériaux,new
+33b,Structure and materials,text,it,Struttura e materiali,new
+33b,Structure and materials,text,ja,構造と素材,new
+33b,Structure and materials,text,ko,구조와 소재,new
+33b,Structure and materials,text,nl,Structuur en materialen,new
+33b,Structure and materials,text,pt,Estrutura e materiais,new
+33b,Structure and materials,text,zh-CN,结构与材料,new
+33b,Structure and materials,text,zh-TW,結構與材料,new
+33b,Sampling and review,text,ar,العينات والمراجعة,new
+33b,Sampling and review,text,de,Musterung und Prüfung,new
+33b,Sampling and review,text,es,Muestreo y revisión,new
+33b,Sampling and review,text,fr,Échantillonnage et validation,new
+33b,Sampling and review,text,it,Campionatura e verifica,new
+33b,Sampling and review,text,ja,サンプルと確認,new
+33b,Sampling and review,text,ko,샘플과 검토,new
+33b,Sampling and review,text,nl,Monsterneming en controle,new
+33b,Sampling and review,text,pt,Amostragem e revisão,new
+33b,Sampling and review,text,zh-CN,打样与确认,new
+33b,Sampling and review,text,zh-TW,打樣與確認,new
+33b,Dieline,text,ar,مخطط القطع,new
+33b,Dieline,text,de,Stanzkontur,new
+33b,Dieline,text,es,Línea de troquel,new
+33b,Dieline,text,fr,Gabarit de découpe,new
+33b,Dieline,text,it,Linea di fustellatura,new
+33b,Dieline,text,ja,抜き型図面,new
+33b,Dieline,text,ko,다이 라인,new
+33b,Dieline,text,nl,Stanslijn,new
+33b,Dieline,text,pt,Linha de corte,new
+33b,Dieline,text,zh-CN,刀模图,new
+33b,Dieline,text,zh-TW,刀模圖,new
+33b,Illustrative flat layout,attr,ar,تخطيط مسطح توضيحي,new
+33b,Illustrative flat layout,attr,de,Schematische Abwicklung,new
+33b,Illustrative flat layout,attr,es,Plano desplegado ilustrativo,new
+33b,Illustrative flat layout,attr,fr,Plan à plat illustratif,new
+33b,Illustrative flat layout,attr,it,Sviluppo piano illustrativo,new
+33b,Illustrative flat layout,attr,ja,展開図（イメージ）,new
+33b,Illustrative flat layout,attr,ko,펼친 도면(예시),new
+33b,Illustrative flat layout,attr,nl,Illustratieve uitslag,new
+33b,Illustrative flat layout,attr,pt,Planificado ilustrativo,new
+33b,Illustrative flat layout,attr,zh-CN,示意展开图,new
+33b,Illustrative flat layout,attr,zh-TW,示意展開圖,new
+33b,Illustrative only; not a production dieline.,text,ar,لأغراض التوضيح فقط؛ ليس مخطط قطع للإنتاج.,new
+33b,Illustrative only; not a production dieline.,text,de,Nur zur Veranschaulichung; keine produktionsfähige Stanzkontur.,new
+33b,Illustrative only; not a production dieline.,text,es,Solo ilustrativo; no es una línea de troquel de producción.,new
+33b,Illustrative only; not a production dieline.,text,fr,Illustration uniquement ; ne constitue pas un gabarit de découpe de production.,new
+33b,Illustrative only; not a production dieline.,text,it,Solo a scopo illustrativo; non è una linea di fustellatura di produzione.,new
+33b,Illustrative only; not a production dieline.,text,ja,イメージです。生産用の抜き型図面ではありません。,new
+33b,Illustrative only; not a production dieline.,text,ko,예시용이며 실제 생산용 다이 라인이 아닙니다.,new
+33b,Illustrative only; not a production dieline.,text,nl,Uitsluitend ter illustratie; geen productieklare stanslijn.,new
+33b,Illustrative only; not a production dieline.,text,pt,Apenas ilustrativo; não é uma linha de corte de produção.,new
+33b,Illustrative only; not a production dieline.,text,zh-CN,仅作示意，不是生产用刀模图。,new
+33b,Illustrative only; not a production dieline.,text,zh-TW,僅示意用，非生產用刀模圖。,new
+33b,A dieline comes with every quote,text,ar,مخطط القطع مرفق مع كل عرض سعر,new
+33b,A dieline comes with every quote,text,de,Zu jedem Angebot gibt es die Stanzkontur,new
+33b,A dieline comes with every quote,text,es,Cada presupuesto incluye la línea de troquel,new
+33b,A dieline comes with every quote,text,fr,Chaque devis comprend le gabarit de découpe,new
+33b,A dieline comes with every quote,text,it,Ogni preventivo include la linea di fustellatura,new
+33b,A dieline comes with every quote,text,ja,すべての見積もりに抜き型図面が付きます,new
+33b,A dieline comes with every quote,text,ko,모든 견적에 다이 라인이 함께 제공됩니다,new
+33b,A dieline comes with every quote,text,nl,Bij elke offerte zit de stanslijn,new
+33b,A dieline comes with every quote,text,pt,Cada orçamento inclui a linha de corte,new
+33b,A dieline comes with every quote,text,zh-CN,每份报价都附刀模图,new
+33b,A dieline comes with every quote,text,zh-TW,每份報價都附刀模圖,new
+33b,Delivery,text,ar,التسليم,reused
+33b,Delivery,text,de,Lieferung,reused
+33b,Delivery,text,es,Entrega,reused
+33b,Delivery,text,fr,Livraison,reused
+33b,Delivery,text,it,Consegna,reused
+33b,Delivery,text,ja,納品,reused
+33b,Delivery,text,ko,납품,reused
+33b,Delivery,text,nl,Levering,reused
+33b,Delivery,text,pt,Entrega,reused
+33b,Delivery,text,zh-CN,交付,reused
+33b,Delivery,text,zh-TW,交付,reused
+33b,Shipping options,text,ar,خيارات الشحن,new
+33b,Shipping options,text,de,Versandoptionen,new
+33b,Shipping options,text,es,Opciones de envío,new
+33b,Shipping options,text,fr,Options d’expédition,new
+33b,Shipping options,text,it,Opzioni di spedizione,new
+33b,Shipping options,text,ja,配送オプション,new
+33b,Shipping options,text,ko,배송 옵션,new
+33b,Shipping options,text,nl,Verzendopties,new
+33b,Shipping options,text,pt,Opções de envio,new
+33b,Shipping options,text,zh-CN,运输方式,new
+33b,Shipping options,text,zh-TW,運輸方式,new
+33b,Freight & duties quoted per destination.,text,ar,تُحتسب أجرة الشحن والرسوم الجمركية حسب الوجهة.,new
+33b,Freight & duties quoted per destination.,text,de,Fracht & Zölle je Bestimmungsland.,new
+33b,Freight & duties quoted per destination.,text,es,Transporte y aranceles según destino.,new
+33b,Freight & duties quoted per destination.,text,fr,Transport et droits de douane selon la destination.,new
+33b,Freight & duties quoted per destination.,text,it,Trasporto e dazi in base alla destinazione.,new
+33b,Freight & duties quoted per destination.,text,ja,輸送費・関税は仕向地ごとに算出します。,new
+33b,Freight & duties quoted per destination.,text,ko,운송비·관세는 목적지별로 산정됩니다.,new
+33b,Freight & duties quoted per destination.,text,nl,Vracht & douane per bestemming.,new
+33b,Freight & duties quoted per destination.,text,pt,Frete e direitos conforme o destino.,new
+33b,Freight & duties quoted per destination.,text,zh-CN,运费与关税按目的地核算。,new
+33b,Freight & duties quoted per destination.,text,zh-TW,運費與關稅依目的地核算。,new
+33b,DDP to door,text,ar,DDP حتى باب العميل,new
+33b,DDP to door,text,de,DDP bis zur Tür,new
+33b,DDP to door,text,es,DDP hasta la puerta,new
+33b,DDP to door,text,fr,DDP jusqu’à la porte,new
+33b,DDP to door,text,it,DDP a destino,new
+33b,DDP to door,text,ja,DDP（お届け先まで）,new
+33b,DDP to door,text,ko,DDP 도어 배송,new
+33b,DDP to door,text,nl,DDP tot aan de deur,new
+33b,DDP to door,text,pt,DDP até à porta,new
+33b,DDP to door,text,zh-CN,DDP 门到门,new
+33b,DDP to door,text,zh-TW,DDP 門到門,new
+33b,Destination and terms are confirmed on the written quote.,text,ar,تُؤكَّد الوجهة والشروط في عرض السعر المكتوب.,new
+33b,Destination and terms are confirmed on the written quote.,text,de,Bestimmungsort und Konditionen werden im schriftlichen Angebot bestätigt.,new
+33b,Destination and terms are confirmed on the written quote.,text,es,El destino y las condiciones se confirman en el presupuesto escrito.,new
+33b,Destination and terms are confirmed on the written quote.,text,fr,La destination et les conditions sont confirmées sur le devis écrit.,new
+33b,Destination and terms are confirmed on the written quote.,text,it,Destinazione e condizioni sono confermate nel preventivo scritto.,new
+33b,Destination and terms are confirmed on the written quote.,text,ja,仕向地と条件は書面のお見積もりで確定します。,new
+33b,Destination and terms are confirmed on the written quote.,text,ko,목적지와 조건은 서면 견적에서 확정됩니다.,new
+33b,Destination and terms are confirmed on the written quote.,text,nl,Bestemming en voorwaarden worden in de schriftelijke offerte bevestigd.,new
+33b,Destination and terms are confirmed on the written quote.,text,pt,O destino e as condições são confirmados no orçamento escrito.,new
+33b,Destination and terms are confirmed on the written quote.,text,zh-CN,目的地与条款在书面报价中确认。,new
+33b,Destination and terms are confirmed on the written quote.,text,zh-TW,目的地與條款於書面報價中確認。,new
+33b,FOB Shenzhen,text,ar,FOB شنتشن,new
+33b,FOB Shenzhen,text,de,FOB Shenzhen,new
+33b,FOB Shenzhen,text,es,FOB Shenzhen,new
+33b,FOB Shenzhen,text,fr,FOB Shenzhen,new
+33b,FOB Shenzhen,text,it,FOB Shenzhen,new
+33b,FOB Shenzhen,text,ja,FOB 深圳,new
+33b,FOB Shenzhen,text,ko,FOB 선전,new
+33b,FOB Shenzhen,text,nl,FOB Shenzhen,new
+33b,FOB Shenzhen,text,pt,FOB Shenzhen,new
+33b,FOB Shenzhen,text,zh-CN,FOB 深圳,new
+33b,FOB Shenzhen,text,zh-TW,FOB 深圳,new
+33b,FOB is available for shipment from Shenzhen.,text,ar,يتوفر شرط FOB للشحن من شنتشن.,new
+33b,FOB is available for shipment from Shenzhen.,text,de,FOB ist für den Versand ab Shenzhen verfügbar.,new
+33b,FOB is available for shipment from Shenzhen.,text,es,FOB está disponible para el envío desde Shenzhen.,new
+33b,FOB is available for shipment from Shenzhen.,text,fr,FOB est disponible pour un départ de Shenzhen.,new
+33b,FOB is available for shipment from Shenzhen.,text,it,FOB è disponibile per la spedizione da Shenzhen.,new
+33b,FOB is available for shipment from Shenzhen.,text,ja,深圳からの出荷でFOBをご利用いただけます。,new
+33b,FOB is available for shipment from Shenzhen.,text,ko,선전 발송 기준 FOB를 이용할 수 있습니다.,new
+33b,FOB is available for shipment from Shenzhen.,text,nl,FOB is beschikbaar voor verzending vanaf Shenzhen.,new
+33b,FOB is available for shipment from Shenzhen.,text,pt,FOB está disponível para envio a partir de Shenzhen.,new
+33b,FOB is available for shipment from Shenzhen.,text,zh-CN,深圳发货可选 FOB。,new
+33b,FOB is available for shipment from Shenzhen.,text,zh-TW,深圳出貨可選 FOB。,new
+33b,Consolidation,text,ar,تجميع الشحنات,new
+33b,Consolidation,text,de,Sendungskonsolidierung,new
+33b,Consolidation,text,es,Consolidación,new
+33b,Consolidation,text,fr,Regroupement,new
+33b,Consolidation,text,it,Consolidamento,new
+33b,Consolidation,text,ja,同梱,new
+33b,Consolidation,text,ko,합배송,new
+33b,Consolidation,text,nl,Consolidatie,new
+33b,Consolidation,text,pt,Consolidação,new
+33b,Consolidation,text,zh-CN,拼单发货,new
+33b,Consolidation,text,zh-TW,合併出貨,new
+33b,Ask us to combine several items into one shipment; we confirm whether it works on the written quote.,block,ar,اطلب منا دمج عدة أصناف في شحنة واحدة؛ ونؤكد إمكان ذلك في عرض السعر المكتوب.,new
+33b,Ask us to combine several items into one shipment; we confirm whether it works on the written quote.,block,de,"Bitten Sie uns, mehrere Artikel zu einer Sendung zusammenzufassen; ob es geht, bestätigen wir im schriftlichen Angebot.",new
+33b,Ask us to combine several items into one shipment; we confirm whether it works on the written quote.,block,es,Pídenos combinar varios artículos en un solo envío; confirmamos si es posible en el presupuesto escrito.,new
+33b,Ask us to combine several items into one shipment; we confirm whether it works on the written quote.,block,fr,Demandez-nous de regrouper plusieurs articles dans un seul envoi ; nous confirmons la faisabilité sur le devis écrit.,new
+33b,Ask us to combine several items into one shipment; we confirm whether it works on the written quote.,block,it,Chiedici di riunire più articoli in un’unica spedizione; confermiamo se è possibile nel preventivo scritto.,new
+33b,Ask us to combine several items into one shipment; we confirm whether it works on the written quote.,block,ja,複数の品目をまとめて出荷したい場合はご依頼ください。可能かどうかは書面のお見積もりでご確認いただけます。,new
+33b,Ask us to combine several items into one shipment; we confirm whether it works on the written quote.,block,ko,"여러 품목을 한 번의 배송으로 합쳐 달라고 요청하시면, 가능 여부를 서면 견적에서 확인해 드립니다.",new
+33b,Ask us to combine several items into one shipment; we confirm whether it works on the written quote.,block,nl,"Vraag ons om meerdere artikelen in één zending te combineren; of dat kan, bevestigen we in de schriftelijke offerte.",new
+33b,Ask us to combine several items into one shipment; we confirm whether it works on the written quote.,block,pt,Peça-nos para combinar vários artigos numa só remessa; confirmamos se é possível no orçamento escrito.,new
+33b,Ask us to combine several items into one shipment; we confirm whether it works on the written quote.,block,zh-CN,可以要求把多件商品合并成一次发货；能否合并会在书面报价里确认。,new
+33b,Ask us to combine several items into one shipment; we confirm whether it works on the written quote.,block,zh-TW,可要求將多項商品合併為一次出貨；是否可行會於書面報價中確認。,new
+33b,Your brief,text,ar,موجزك,new
+33b,Your brief,text,de,Ihr Briefing,new
+33b,Your brief,text,es,Tu briefing,new
+33b,Your brief,text,fr,Votre brief,new
+33b,Your brief,text,it,Il tuo brief,new
+33b,Your brief,text,ja,ご要件,new
+33b,Your brief,text,ko,요청 브리프,new
+33b,Your brief,text,nl,Je briefing,new
+33b,Your brief,text,pt,O seu briefing,new
+33b,Your brief,text,zh-CN,你的需求,new
+33b,Your brief,text,zh-TW,你的需求,new
+33b,Build your quote,text,ar,أنشئ عرض السعر,new
+33b,Build your quote,text,de,Angebot erstellen,new
+33b,Build your quote,text,es,Crea tu presupuesto,new
+33b,Build your quote,text,fr,Créez votre devis,new
+33b,Build your quote,text,it,Crea il tuo preventivo,new
+33b,Build your quote,text,ja,見積もりを作成,new
+33b,Build your quote,text,ko,견적 만들기,new
+33b,Build your quote,text,nl,Stel je offerte samen,new
+33b,Build your quote,text,pt,Crie o seu orçamento,new
+33b,Build your quote,text,zh-CN,生成你的报价,new
+33b,Build your quote,text,zh-TW,產生你的報價,new
+33b,Confirm the dimensions and material for your project.,text,ar,أكّد المقاسات والمواد لمشروعك.,new
+33b,Confirm the dimensions and material for your project.,text,de,Bestätigen Sie Größe und Material für Ihr Projekt.,new
+33b,Confirm the dimensions and material for your project.,text,es,Confirma las medidas y el material de tu proyecto.,new
+33b,Confirm the dimensions and material for your project.,text,fr,Confirmez les dimensions et la matière de votre projet.,new
+33b,Confirm the dimensions and material for your project.,text,it,Conferma le dimensioni e il materiale del tuo progetto.,new
+33b,Confirm the dimensions and material for your project.,text,ja,プロジェクトのサイズと素材を確定してください。,new
+33b,Confirm the dimensions and material for your project.,text,ko,프로젝트의 크기와 소재를 확인하세요.,new
+33b,Confirm the dimensions and material for your project.,text,nl,Bevestig de afmetingen en het materiaal voor je project.,new
+33b,Confirm the dimensions and material for your project.,text,pt,Confirme as dimensões e o material do seu projeto.,new
+33b,Confirm the dimensions and material for your project.,text,zh-CN,确认项目的尺寸与材料。,new
+33b,Confirm the dimensions and material for your project.,text,zh-TW,確認專案的尺寸與材料。,new
+33b,Questions,text,ar,الأسئلة,reused
+33b,Questions,text,de,Fragen,reused
+33b,Questions,text,es,Preguntas,reused
+33b,Questions,text,fr,Questions,reused
+33b,Questions,text,it,Domande,reused
+33b,Questions,text,ja,ご質問,reused
+33b,Questions,text,ko,질문,reused
+33b,Questions,text,nl,Vragen,reused
+33b,Questions,text,pt,Perguntas,reused
+33b,Questions,text,zh-CN,常见问题,reused
+33b,Questions,text,zh-TW,常見問題,reused
+33b,Frequently asked questions,text,ar,الأسئلة الشائعة,reused
+33b,Frequently asked questions,text,de,Häufig gestellte Fragen,reused
+33b,Frequently asked questions,text,es,Preguntas frecuentes,reused
+33b,Frequently asked questions,text,fr,Questions fréquentes,reused
+33b,Frequently asked questions,text,it,Domande frequenti,reused
+33b,Frequently asked questions,text,ja,よくある質問,reused
+33b,Frequently asked questions,text,ko,자주 묻는 질문,reused
+33b,Frequently asked questions,text,nl,Veelgestelde vragen,reused
+33b,Frequently asked questions,text,pt,Perguntas frequentes,reused
+33b,Frequently asked questions,text,zh-CN,常见问题解答,reused
+33b,Frequently asked questions,text,zh-TW,常見問題,reused
+33b,Explore,text,ar,استكشف,reused
+33b,Explore,text,de,Entdecken,reused
+33b,Explore,text,es,Explorar,reused
+33b,Explore,text,fr,Explorer,reused
+33b,Explore,text,it,Esplora,reused
+33b,Explore,text,ja,詳しく見る,reused
+33b,Explore,text,ko,살펴보기,reused
+33b,Explore,text,nl,Ontdek,reused
+33b,Explore,text,pt,Explorar,reused
+33b,Explore,text,zh-CN,探索,reused
+33b,Explore,text,zh-TW,探索,reused
+33b,Related products,text,ar,منتجات ذات صلة,new
+33b,Related products,text,de,Ähnliche Produkte,new
+33b,Related products,text,es,Productos relacionados,new
+33b,Related products,text,fr,Produits associés,new
+33b,Related products,text,it,Prodotti correlati,new
+33b,Related products,text,ja,関連製品,new
+33b,Related products,text,ko,관련 제품,new
+33b,Related products,text,nl,Gerelateerde producten,new
+33b,Related products,text,pt,Produtos relacionados,new
+33b,Related products,text,zh-CN,相关产品,new
+33b,Related products,text,zh-TW,相關產品,new
+33b,Share the missing specifications for a tailored estimate.,text,ar,شاركنا المواصفات الناقصة للحصول على تقدير مخصص.,new
+33b,Share the missing specifications for a tailored estimate.,text,de,Teilen Sie uns die fehlenden Angaben für einen passenden Richtwert mit.,new
+33b,Share the missing specifications for a tailored estimate.,text,es,Comparte las especificaciones que faltan para una estimación a medida.,new
+33b,Share the missing specifications for a tailored estimate.,text,fr,Communiquez les spécifications manquantes pour une estimation sur mesure.,new
+33b,Share the missing specifications for a tailored estimate.,text,it,Indica le specifiche mancanti per una stima su misura.,new
+33b,Share the missing specifications for a tailored estimate.,text,ja,不足している仕様をお知らせいただければ、個別にお見積もりします。,new
+33b,Share the missing specifications for a tailored estimate.,text,ko,누락된 사양을 알려주시면 맞춤 견적을 드립니다.,new
+33b,Share the missing specifications for a tailored estimate.,text,nl,Deel de ontbrekende specificaties voor een schatting op maat.,new
+33b,Share the missing specifications for a tailored estimate.,text,pt,Partilhe as especificações em falta para uma estimativa à medida.,new
+33b,Share the missing specifications for a tailored estimate.,text,zh-CN,补充缺失规格，即可获取定制估价。,new
+33b,Share the missing specifications for a tailored estimate.,text,zh-TW,補充缺少的規格，即可取得客製估價。,new
+33b,MOQ,text,ar,MOQ,new
+33b,MOQ,text,de,MOQ,new
+33b,MOQ,text,es,MOQ,new
+33b,MOQ,text,fr,MOQ,new
+33b,MOQ,text,it,MOQ,new
+33b,MOQ,text,ja,MOQ,new
+33b,MOQ,text,ko,MOQ,new
+33b,MOQ,text,nl,MOQ,new
+33b,MOQ,text,pt,MOQ,new
+33b,MOQ,text,zh-CN,MOQ,new
+33b,MOQ,text,zh-TW,MOQ,new
+33b,None,text,ar,لا شيء,new
+33b,None,text,de,Keine,new
+33b,None,text,es,Ninguno,new
+33b,None,text,fr,Aucun,new
+33b,None,text,it,Nessuno,new
+33b,None,text,ja,なし,new
+33b,None,text,ko,없음,new
+33b,None,text,nl,Geen,new
+33b,None,text,pt,Nenhum,new
+33b,None,text,zh-CN,无,new
+33b,None,text,zh-TW,無,new
+33b,Matte varnish,text,ar,ورنيش مطفي,new
+33b,Matte varnish,text,de,Mattlack,new
+33b,Matte varnish,text,es,Barniz mate,new
+33b,Matte varnish,text,fr,Vernis mat,new
+33b,Matte varnish,text,it,Vernice opaca,new
+33b,Matte varnish,text,ja,マットニス,new
+33b,Matte varnish,text,ko,매트 바니시,new
+33b,Matte varnish,text,nl,Matte vernis,new
+33b,Matte varnish,text,pt,Verniz mate,new
+33b,Matte varnish,text,zh-CN,哑光油,new
+33b,Matte varnish,text,zh-TW,霧面油,new
+33b,Gloss varnish,text,ar,ورنيش لامع,new
+33b,Gloss varnish,text,de,Glanzlack,new
+33b,Gloss varnish,text,es,Barniz brillante,new
+33b,Gloss varnish,text,fr,Vernis brillant,new
+33b,Gloss varnish,text,it,Vernice lucida,new
+33b,Gloss varnish,text,ja,グロスニス,new
+33b,Gloss varnish,text,ko,광택 바니시,new
+33b,Gloss varnish,text,nl,Glanzende vernis,new
+33b,Gloss varnish,text,pt,Verniz brilhante,new
+33b,Gloss varnish,text,zh-CN,亮光油,new
+33b,Gloss varnish,text,zh-TW,亮面油,new
+33b,Soft-touch lamination,text,ar,تغليف بملمس ناعم,new
+33b,Soft-touch lamination,text,de,Softtouch-Laminierung,new
+33b,Soft-touch lamination,text,es,Laminado soft-touch,new
+33b,Soft-touch lamination,text,fr,Pelliculage soft touch,new
+33b,Soft-touch lamination,text,it,Plastificazione soft touch,new
+33b,Soft-touch lamination,text,ja,ソフトタッチ加工,new
+33b,Soft-touch lamination,text,ko,소프트터치 라미네이팅,new
+33b,Soft-touch lamination,text,nl,Softtouch-laminering,new
+33b,Soft-touch lamination,text,pt,Laminagem soft-touch,new
+33b,Soft-touch lamination,text,zh-CN,触感膜,new
+33b,Soft-touch lamination,text,zh-TW,觸感膜,new
+33b,Spot UV,text,ar,UV موضعي,new
+33b,Spot UV,text,de,Spot-UV,new
+33b,Spot UV,text,es,UV localizado,new
+33b,Spot UV,text,fr,UV sélectif,new
+33b,Spot UV,text,it,UV spot,new
+33b,Spot UV,text,ja,スポットUV,new
+33b,Spot UV,text,ko,부분 UV,new
+33b,Spot UV,text,nl,Spot-UV,new
+33b,Spot UV,text,pt,UV localizado,new
+33b,Spot UV,text,zh-CN,局部UV,new
+33b,Spot UV,text,zh-TW,局部UV,new
+33b,Foil stamp,text,ar,ختم بالرقائق المعدنية,new
+33b,Foil stamp,text,de,Folienprägung,new
+33b,Foil stamp,text,es,Estampado en caliente,new
+33b,Foil stamp,text,fr,Dorure à chaud,new
+33b,Foil stamp,text,it,Stampa a caldo,new
+33b,Foil stamp,text,ja,箔押し,new
+33b,Foil stamp,text,ko,박 인쇄,new
+33b,Foil stamp,text,nl,Foliedruk,new
+33b,Foil stamp,text,pt,Estampagem a quente,new
+33b,Foil stamp,text,zh-CN,烫金,new
+33b,Foil stamp,text,zh-TW,燙金,new
+33b,Blind emboss,text,ar,نقش بارز بدون حبر,reused
+33b,Blind emboss,text,de,Blindprägung als Hochprägung,reused
+33b,Blind emboss,text,es,Relieve en seco sin tinta,reused
+33b,Blind emboss,text,fr,Gaufrage en relief sans encre,reused
+33b,Blind emboss,text,it,Embossing a secco,reused
+33b,Blind emboss,text,ja,空浮き出し（エンボス加工）,reused
+33b,Blind emboss,text,ko,무색 양각(엠보싱),reused
+33b,Blind emboss,text,nl,Blind embossing,reused
+33b,Blind emboss,text,pt,Relevo sem tinta,reused
+33b,Blind emboss,text,zh-CN,盲压凸,reused
+33b,Blind emboss,text,zh-TW,無色燙壓凹凸中的凸壓,reused
+33b,Enter dimensions from 2 to 120 cm (one decimal place) and choose a material before viewing an estimate.,text,ar,أدخل المقاسات من 2 إلى 120 سم (خانة عشرية واحدة) واختر مادة قبل عرض التقدير.,new
+33b,Enter dimensions from 2 to 120 cm (one decimal place) and choose a material before viewing an estimate.,text,de,"Geben Sie die Maße von 2 bis 120 cm ein (eine Nachkommastelle) und wählen Sie ein Material, bevor Sie einen Richtwert sehen.",new
+33b,Enter dimensions from 2 to 120 cm (one decimal place) and choose a material before viewing an estimate.,text,es,Introduce las medidas de 2 a 120 cm (un decimal) y elige un material antes de ver la estimación.,new
+33b,Enter dimensions from 2 to 120 cm (one decimal place) and choose a material before viewing an estimate.,text,fr,Saisissez les dimensions de 2 à 120 cm (une décimale) et choisissez une matière avant d’afficher une estimation.,new
+33b,Enter dimensions from 2 to 120 cm (one decimal place) and choose a material before viewing an estimate.,text,it,Inserisci le dimensioni da 2 a 120 cm (un decimale) e scegli un materiale prima di vedere una stima.,new
+33b,Enter dimensions from 2 to 120 cm (one decimal place) and choose a material before viewing an estimate.,text,ja,2〜120cm（小数点以下も可）でサイズを入力し、素材を選ぶと概算が表示されます。,new
+33b,Enter dimensions from 2 to 120 cm (one decimal place) and choose a material before viewing an estimate.,text,ko,2~120cm(소수점 한 자리)로 크기를 입력하고 소재를 선택해야 예상 견적이 표시됩니다.,new
+33b,Enter dimensions from 2 to 120 cm (one decimal place) and choose a material before viewing an estimate.,text,nl,Voer de afmetingen in van 2 tot 120 cm (één decimaal) en kies een materiaal voordat je een schatting ziet.,new
+33b,Enter dimensions from 2 to 120 cm (one decimal place) and choose a material before viewing an estimate.,text,pt,Introduza as medidas de 2 a 120 cm (uma casa decimal) e escolha um material antes de ver uma estimativa.,new
+33b,Enter dimensions from 2 to 120 cm (one decimal place) and choose a material before viewing an estimate.,text,zh-CN,输入 2 至 120 cm 的尺寸（保留一位小数）并选择材料后查看估价。,new
+33b,Enter dimensions from 2 to 120 cm (one decimal place) and choose a material before viewing an estimate.,text,zh-TW,輸入 2 至 120 cm 的尺寸（保留一位小數）並選擇材料後檢視估價。,new
+33b,Enter dimensions from 2 to 120 cm (one decimal place) before viewing an estimate.,text,ar,أدخل المقاسات من 2 إلى 120 سم (خانة عشرية واحدة) قبل عرض التقدير.,new
+33b,Enter dimensions from 2 to 120 cm (one decimal place) before viewing an estimate.,text,de,"Geben Sie die Maße von 2 bis 120 cm ein (eine Nachkommastelle), bevor Sie einen Richtwert sehen.",new
+33b,Enter dimensions from 2 to 120 cm (one decimal place) before viewing an estimate.,text,es,Introduce las medidas de 2 a 120 cm (un decimal) antes de ver la estimación.,new
+33b,Enter dimensions from 2 to 120 cm (one decimal place) before viewing an estimate.,text,fr,Saisissez les dimensions de 2 à 120 cm (une décimale) avant d’afficher une estimation.,new
+33b,Enter dimensions from 2 to 120 cm (one decimal place) before viewing an estimate.,text,it,Inserisci le dimensioni da 2 a 120 cm (un decimale) prima di vedere una stima.,new
+33b,Enter dimensions from 2 to 120 cm (one decimal place) before viewing an estimate.,text,ja,概算を表示する前に、2〜120cm（小数点以下も可）でサイズを入力してください。,new
+33b,Enter dimensions from 2 to 120 cm (one decimal place) before viewing an estimate.,text,ko,예상 견적을 보기 전에 2~120cm(소수점 한 자리)로 크기를 입력하세요.,new
+33b,Enter dimensions from 2 to 120 cm (one decimal place) before viewing an estimate.,text,nl,Voer de afmetingen in van 2 tot 120 cm (één decimaal) voordat je een schatting ziet.,new
+33b,Enter dimensions from 2 to 120 cm (one decimal place) before viewing an estimate.,text,pt,Introduza as medidas de 2 a 120 cm (uma casa decimal) antes de ver uma estimativa.,new
+33b,Enter dimensions from 2 to 120 cm (one decimal place) before viewing an estimate.,text,zh-CN,查看估价前请先输入 2 至 120 cm 的尺寸（保留一位小数）。,new
+33b,Enter dimensions from 2 to 120 cm (one decimal place) before viewing an estimate.,text,zh-TW,檢視估價前請先輸入 2 至 120 cm 的尺寸（保留一位小數）。,new
+33b,Choose a material before viewing an estimate.,text,ar,اختر مادة قبل عرض التقدير.,new
+33b,Choose a material before viewing an estimate.,text,de,"Wählen Sie ein Material, bevor Sie einen Richtwert sehen.",new
+33b,Choose a material before viewing an estimate.,text,es,Elige un material antes de ver la estimación.,new
+33b,Choose a material before viewing an estimate.,text,fr,Choisissez une matière avant d’afficher une estimation.,new
+33b,Choose a material before viewing an estimate.,text,it,Scegli un materiale prima di vedere una stima.,new
+33b,Choose a material before viewing an estimate.,text,ja,概算を表示する前に素材を選択してください。,new
+33b,Choose a material before viewing an estimate.,text,ko,예상 견적을 보기 전에 소재를 선택하세요.,new
+33b,Choose a material before viewing an estimate.,text,nl,Kies een materiaal voordat je een schatting ziet.,new
+33b,Choose a material before viewing an estimate.,text,pt,Escolha um material antes de ver uma estimativa.,new
+33b,Choose a material before viewing an estimate.,text,zh-CN,查看估价前请先选择材料。,new
+33b,Choose a material before viewing an estimate.,text,zh-TW,檢視估價前請先選擇材料。,new
+33b,"To request a quote without JavaScript, email hello@packrivo.com with your dimensions and material.",block,ar,لطلب عرض سعر بدون JavaScript، راسلنا على hello@packrivo.com مع ذكر المقاسات والمواد.,new
+33b,"To request a quote without JavaScript, email hello@packrivo.com with your dimensions and material.",block,de,"Um ohne JavaScript ein Angebot anzufordern, schreiben Sie eine E-Mail mit Größe und Material an hello@packrivo.com.",new
+33b,"To request a quote without JavaScript, email hello@packrivo.com with your dimensions and material.",block,es,"Para solicitar un presupuesto sin JavaScript, escribe a hello@packrivo.com con tus medidas y material.",new
+33b,"To request a quote without JavaScript, email hello@packrivo.com with your dimensions and material.",block,fr,"Pour demander un devis sans JavaScript, écrivez à hello@packrivo.com en indiquant les dimensions et la matière.",new
+33b,"To request a quote without JavaScript, email hello@packrivo.com with your dimensions and material.",block,it,"Per richiedere un preventivo senza JavaScript, scrivi a hello@packrivo.com indicando dimensioni e materiale.",new
+33b,"To request a quote without JavaScript, email hello@packrivo.com with your dimensions and material.",block,ja,JavaScriptをご利用いただけない場合は、サイズと素材を記載のうえ hello@packrivo.com までメールでお問い合わせください。,new
+33b,"To request a quote without JavaScript, email hello@packrivo.com with your dimensions and material.",block,ko,JavaScript 없이 견적을 요청하시려면 크기와 소재를 적어 hello@packrivo.com 으로 이메일을 보내주세요.,new
+33b,"To request a quote without JavaScript, email hello@packrivo.com with your dimensions and material.",block,nl,"Wil je een offerte aanvragen zonder JavaScript, mail dan je afmetingen en materiaal naar hello@packrivo.com.",new
+33b,"To request a quote without JavaScript, email hello@packrivo.com with your dimensions and material.",block,pt,"Para pedir um orçamento sem JavaScript, envie um e-mail para hello@packrivo.com com as dimensões e o material.",new
+33b,"To request a quote without JavaScript, email hello@packrivo.com with your dimensions and material.",block,zh-CN,如需在无 JavaScript 环境下获取报价，请将尺寸与材料发邮件至 hello@packrivo.com。,new
+33b,"To request a quote without JavaScript, email hello@packrivo.com with your dimensions and material.",block,zh-TW,如需在無 JavaScript 環境下取得報價，請將尺寸與材料寄至 hello@packrivo.com。,new
+33b,Complete dimensions and material for an estimate.,text,ar,أكمل المقاسات والمواد للحصول على تقدير.,new
+33b,Complete dimensions and material for an estimate.,text,de,Größe und Material für einen Richtwert ergänzen.,new
+33b,Complete dimensions and material for an estimate.,text,es,Completa medidas y material para una estimación.,new
+33b,Complete dimensions and material for an estimate.,text,fr,Complétez les dimensions et la matière pour une estimation.,new
+33b,Complete dimensions and material for an estimate.,text,it,Completa dimensioni e materiale per una stima.,new
+33b,Complete dimensions and material for an estimate.,text,ja,サイズと素材を入力すると概算が表示されます。,new
+33b,Complete dimensions and material for an estimate.,text,ko,크기와 소재를 입력하면 예상 견적이 표시됩니다.,new
+33b,Complete dimensions and material for an estimate.,text,nl,Vul afmetingen en materiaal in voor een schatting.,new
+33b,Complete dimensions and material for an estimate.,text,pt,Complete as dimensões e o material para uma estimativa.,new
+33b,Complete dimensions and material for an estimate.,text,zh-CN,补全尺寸与材料即可获得估价。,new
+33b,Complete dimensions and material for an estimate.,text,zh-TW,補齊尺寸與材料即可取得估價。,new
