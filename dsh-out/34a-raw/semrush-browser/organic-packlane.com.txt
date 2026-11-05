@@ -1,0 +1,63 @@
+# Semrush Organic Research | packlane.com | US | 2026-11-03 data | page 1 of 53 (top by traffic)
+# totals: US 5,280 keywords, traffic 13.2K/mo, traffic cost $94.9K; CA 234; UK 109
+# keyword|intent|position|traffic|volume|KD|url
+packlane boxes|CN|1|256|320|47|/
+design box design|I|1|248|1K|32|/
+product packaging|I|2|196|2.4K|50|/
+mailer box|-|2|193|4.4K|22|/products/mailer-box
+packaging|C|9|165|33.1K|77|/
+custom boxes|C|4|158|6.6K|59|/
+custom subscription boxes|CI|1|95|720|7|/products/mailer-box
+custom packaging|C|5|85|6.6K|51|/
+custom box|C|3|84|2.4K|61|/
+custom boxes with logo|C|5|77|2.4K|30|/
+custom packaging boxes|CI|10|72|3.6K|47|/
+custom mailer box|C|1|72|880|29|/products/mailer-box
+pr boxes|CI|1|63|480|11|/pr-boxes
+box packaging design|-|1|63|480|37|/
+personalized cardboard boxes|C|1|63|480|35|/
+custom gift boxes with logo|IT|1|63|480|18|/custom-gift-boxes
+customized boxes|T|1|59|720|42|/
+custom boxes logo|I|1|59|720|45|/
+pr box|I|2|57|880|10|/pr-boxes
+custom mailer boxes|T|4|57|2.4K|27|/products/mailer-box
+custom printed boxes|C|5|57|2.4K|34|/
+custom product packaging|-|3|57|1.3K|53|/
+shipping box design|I|1|52|210|28|/
+custom mailing boxes|C|1|51|390|30|/products/mailer-box
+custom printed packaging|C|2|48|590|50|/
+custom shipping boxes|C|4|46|3.6K|38|/
+custom box packaging|C|4|45|1.3K|42|/
+professional packaging design services for small businesses|CI|7|45|1.3K|53|/
+custom packing boxes|C|1|42|170|48|/
+custom box with logo|IT|1|42|170|39|/
+custom mailer boxes with logo|IT|1|42|320|33|/products/mailer-box
+custom packaging design|I|8|41|1K|47|/
+custom gift boxes|C|4|41|1.9K|34|/custom-gift-boxes
+custom mailer|I|1|39|480|28|/products/mailer-box
+cheapest custom mailer boxes|CI|1|38|590|29|/products/mailer-box
+box packaging|CI|2|38|590|46|/
+custom packaging for small business|C|4|38|880|49|/
+custom product boxes|T|4|35|1K|40|/
+box companies|C|9|35|590|53|/
+custom flat pouch packaging|C|1|34|140|19|/products/flat-pouches
+printed lay flat pouches|C|1|34|140|7|/products/flat-pouches
+custom packaging companies|C|1|34|260|50|/
+custom ecommerce boxes|CI|1|34|140|18|/
+custom boxes manufacturer|C|1|34|140|64|/
+custom corrugated mailers|T|1|34|140|32|/products/mailer-box
+custom size mailer boxes|C|1|34|140|32|/products/mailer-box
+custom mailers|N|8|32|1.6K|30|/products/mailer-box
+personalized mailer boxes|C|2|31|480|29|/products/mailer-box
+personalized shipping boxes|C|5|30|1K|32|/
+p r packaging|I|1|27|210|12|/pr-boxes
+custom box supplier|C|1|27|110|55|/
+printed mailer boxes|CI|1|27|210|33|/products/mailer-box
+custom flat pouches|C|2|27|210|8|/products/custom-pouches
+custom packaging box|C|1|26|320|44|/products/product-boxes
+custom gift wrap|T|4|26|880|18|/products/wrapping-paper
+holiday packaging|I|9|26|320|15|/blog/holiday-packaging-ideas/
+custom stand up pouches|C|3|25|590|18|/products/stand-up-pouches
+stand up pouch|CI|4|24|1K|25|/products/stand-up-pouches
+custom gift wrapping paper|C|8|24|1.9K|15|/products/wrapping-paper
+# blog traffic examples: common fonts 1.9K; how to remove tape residue 2.4K (KD7); most popular fonts 880

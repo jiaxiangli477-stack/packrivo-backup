@@ -1,0 +1,47 @@
+# Semrush KMT | seed=custom packaging supplier | US | broad | relevance top100, vol>=40 | 2026-11-04
+# total 103.8K keywords, volume 3,625,600, avg KD 29%. NOTE: head terms are KD 50-70 (hard); *.com "packaging supplies" rows are navigational noise.
+custom packaging|6.6K|53|3.78|C
+custom packaging solutions|1.6K|68|3.45|I
+custom product packaging|1.3K|53|3.80|-
+custom packaging design|1.0K|47|4.20|I
+custom packaging supplies|590|37|3.86|C
+custom printed packaging|590|50|4.04|C
+customized packaging|590|52|3.50|C
+custom packaging boxes with logo|480|37|2.82|I
+personalized packaging boxes|480|41|3.87|C
+custom packaging bags|480|18|3.00|I
+custom packaging supplier|390|56|3.86|C
+custom packaging company|390|52|5.28|C
+custom packaging manufacturer|390|59|4.70|C
+custom boxes and packaging|390|43|3.87|C
+customizable packaging|390|35|3.50|I
+printed packaging|390|31|3.83|C
+custom packaging manufacturers|320|60|4.70|C
+custom cardboard packaging boxes|320|45|3.80|C
+custom packaging suppliers|260|50|3.86|C
+custom packaging companies|260|54|5.28|C
+custom packaging printing|210|38|3.63|C
+personal product packaging|210|22|3.80|I
+customized packaging solution|170|12|3.96|C
+custom design packaging|170|7|5.01|C
+custom brand packaging|170|47|4.04|C
+custom branded packaging|170|47|4.04|IC
+custom apparel packaging|170|19|2.73|C
+custom printed packaging boxes|170|37|3.88|C
+custom packaging materials|140|48|3.68|C
+custom product packaging boxes|140|35|4.89|C
+custom packaging boxes wholesale|140|46|4.75|C
+wholesale custom packaging|140|50|3.93|C
+cheap custom packaging|140|42|3.70|IC
+custom boxes for business|140|34|3.52|C
+order custom packaging|140|37|3.26|C
+custom bag packaging|110|26|2.72|C
+custom packaging for products|90|48|3.80|C
+custom packaging wholesale|90|44|3.69|C
+custom made packaging|90|46|3.18|C
+custom printed retail packaging|90|32|4.41|-
+custom packaging service|70|50|4.21|C
+custom business packaging|70|50|3.78|C
+custom packaging box manufacturers|50|41|0.00|C
+custom product packaging vendors|50|46|0.00|I
+custom packaging vendors|40|47|6.08|C

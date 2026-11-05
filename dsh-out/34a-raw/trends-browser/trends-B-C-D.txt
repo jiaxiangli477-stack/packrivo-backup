@@ -1,0 +1,17 @@
+# Google Trends | US | past 5 years | captured 2026-11-04 | averages are relative within each group (not comparable across groups)
+## Group B: rigid box / magnetic box / gift box / mailer box / candle box
+AVERAGES: rigid box 1 | magnetic box 1 | gift box 14 | mailer box <1 | candle box 1
+- gift box: Dec peak (~40 in Dec 2025) + spring 2026 spike (69 at 2026-03-29, back to ~10 by Jul 2026).
+- RISING: rigid box -> "luxury rigid box" +600%, "rigid packout box" +180% (tool box, noise); candle box -> "candle gift set" +500%, "candle box set" +350%; mailer box -> "paper cushion mailer" (breakout); gift box -> novelty consumer noise.
+## Group C: custom packaging / custom boxes / packaging supplier / box manufacturer / wholesale boxes
+AVERAGES: custom packaging 14 | custom boxes 20 | packaging supplier 3 | box manufacturer 6 | wholesale boxes 8
+- TREND: "custom packaging" roughly doubled since early 2025 (9-10 in 2024 -> 23 in Jul 2025 / Jan 2026 -> 40 in Apr 2026, 10-18 since). "packaging supplier" and "box manufacturer" also rose 2025-2026 (likely US buyers re-sourcing after tariff changes; not verified).
+- "wholesale boxes" is slowly declining (24 in late 2021 -> ~5-6 in 2025-26).
+- RISING: custom packaging -> custom cereal boxes +450%, jewelry set packaging gift box (china wholesale stock custom logo) +550%; custom boxes -> custom cream boxes +700%, custom mylar bags +600%, custom watch boxes +400%; box manufacturer -> custom box manufacturer +90%, rigid box manufacturer +70%, custom packaging box manufacturer +60%; wholesale boxes -> custom rigid boxes +550%, faire +1,400%.
+## Group D: candle packaging / cosmetic packaging / perfume box / soap box / tissue paper custom
+AVERAGES: candle packaging <1 | cosmetic packaging 1 | perfume box 7 | soap box 9 | tissue paper custom 1
+- RISING: candle packaging -> "rigid boxes" (breakout); cosmetic packaging -> luxury cosmetic packaging +170%, skincare packaging +140%, cosmetic packaging company +70%; tissue paper custom -> custom tissue paper with logo +200%, logo tissue paper +90%.
+## TAKEAWAYS for 34a
+1. Use "custom boxes" / "custom packaging" phrasing (rising); de-emphasise "wholesale boxes" (declining).
+2. Rising B2B terms worth secondary keywords: custom rigid boxes, luxury rigid box, rigid box manufacturer, custom watch boxes, luxury cosmetic packaging, skincare packaging, custom tissue paper with logo, candle gift set box.
+3. Seasonality: gift/jewelry demand peaks Nov-Dec; B2B lead time means content/refresh should be live by Aug-Sep.

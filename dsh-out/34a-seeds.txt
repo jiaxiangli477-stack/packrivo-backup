@@ -1,0 +1,155 @@
+# 34a 种子词 | 来源：page-sitemap.xml 英文页（product-* 逐页提取 + 品类/服务页映射）+ 品类场景 + 材料工艺
+# 生成器: E:\破甲工作区\.tmp\34a\gen-seeds.py | 2026-11-04
+# 计数: 150 条（产品页 90 / 品类服务页 40 / 场景词 12 / 材料工艺 9）
+# 另附 22 条场景组合扩展根（只给 suggest 扩展用，不计入种子数）：jewelry packaging / ring boxes / ring packaging / necklace boxes / necklace packaging / earring boxes / earring packaging / watch boxes / watch packaging / candle boxes / candle packaging / cosmetic boxes / cosmetic packaging / perfume boxes / perfume packaging / soap packaging / gift boxes / gift packaging / subscription boxes / subscription packaging / apparel boxes / apparel packaging
+
+auto bottom display carton
+corrugated gusset folder
+cube carry carton
+corrugated tuck top auto bottom
+book style rigid presentation box
+collapsible magnetic gift box
+corrugated roll end hinged lid
+corrugated tuck top snap bottom
+corrugated bottle gift carrier
+coated labels
+die cut insert
+drawstring fabric gift bag
+corrugated divider
+bookend folding carton
+double wall tray lid
+double wall frame tray lid
+box bottom fabric tote
+auto bottom slotted outer carton
+corrugated book wrap mailer
+die cut handle paper bag
+corrugated reverse tuck pack
+double wall frame tray sleeve
+eva foam holder
+counter display carton
+euro tote paper carrier
+auto lock bottom carton
+four corner display tray
+folding carton
+hinged nonmagnetic rigid box
+flower petal top gift carton
+five panel corrugated folder
+information card
+hanging tab retail carton
+header card bag topper
+four corner pre glued carton
+foldable lid base box
+full overlap seal end carton
+full overlap slotted outer carton
+folded tray sleeve box
+gusset folder carton
+flip out dispenser carton
+folded box liner
+gable top carry carton
+full flap auto bottom carton
+hexagonal folding carton
+pillow jewelry box
+mailer with insert
+rectangle roll labels
+paperboard insert
+paperboard grid divider
+polyurethane foam holder
+rigid chipboard divider
+multi piece pe foam support
+paper merchandise sleeve bag
+returnable paper parcel bag
+returnable poly parcel bag
+paper padded parcel envelope
+poly bubble parcel envelope
+peg hook counter display
+printed tissue sheet
+regular slotted shipping carton
+paper belly band
+paired corrugated end caps
+reverse tuck retail carton
+lock cap auto bottom carton
+paperboard roll end dust flap carton
+pinch lock paperboard tray
+drawer jewelry box
+lid and base jewelry box
+sheet labels
+tab lock roll end corrugated pack
+self locking corrugated folder
+two door rigid presentation box
+snap bottom slotted outer carton
+window lid rigid gift box
+sos paper gift bag
+shelf counter display
+shipping document window pouch
+zippered fabric gift pouch
+shoulder neck rigid box
+snap lock bottom carton
+rigid paperboard postal envelope
+straight tuck retail carton
+six corner pre glued carton
+side lock display carton
+side lock hinged gift tray
+tuck end sleeve carton
+three flap lock corrugated pack
+magnetic jewelry box
+jewelry box with insert
+custom packaging customization
+custom packaging samples
+packlane alternatives
+arka alternatives
+packhelp alternatives
+pakfactory alternatives
+packaging minimum order quantity
+jewelry box supplier
+mailer box supplier
+packaging samples
+packaging lead time
+custom packaging supplier
+packaging quote
+packaging cost
+soap boxes
+printed tissue paper
+kraft stand up pouch
+corrugated wine shipper
+magnetic book style box
+kraft cosmetic boxes
+candle gift set box
+subscription box packaging
+drawer box packaging
+jewelry pouch and box set
+jewelry boxes
+foldable gift boxes
+bags and pouches
+custom labels
+packaging inserts
+mailer boxes
+paper mailer bag
+clear display box
+molded pulp insert
+gift bag and tissue paper
+poly mailer bag
+cardboard tube box
+windowed folding carton
+textile jewelry pouch
+thermoformed insert tray
+jewelry
+ring
+necklace
+earring
+watch
+candle
+cosmetic
+perfume
+soap
+gift
+subscription
+apparel
+rigid
+kraft
+corrugated
+velvet
+linen paper
+foil stamping
+embossed
+spot uv
+window

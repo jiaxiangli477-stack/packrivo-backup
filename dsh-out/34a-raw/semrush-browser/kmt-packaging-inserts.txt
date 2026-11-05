@@ -1,0 +1,17 @@
+# Semrush KMT | seed=packaging inserts | US | broad | relevance top100, vol>=40 | 2026-11-04
+# total 84.0K keywords, volume 1,252,670
+packaging inserts|720|21|5.51|I
+custom packaging inserts|260|18|4.25|C
+packaging insert|140|22|5.51|I
+custom package inserts|110|22|5.47|I
+custom inserts for packaging|110|22|4.25|C
+inserts for packaging|70|20|2.89|C
+box inserts custom|50|10|0.00|C
+cardboard box insert|50|6|7.74|I
+corrugated cardboard inserts|50|10|16.60|I
+custom insert boxes|50|14|9.43|I
+product box inserts|50|4|0.00|C
+creative packaging inserts|40|0|0.00|IC
+custom folded inserts|40|2|0.00|C
+packaging inserts examples|40|22|2.54|I
+packaging inserts suppliers|40|11|0.00|IC

@@ -1,0 +1,60 @@
+# 29y 路 ko 语种 126 页复扫（第 2/4 步 · ko 分片）· 收尾结论 · intent 122 · 2026-11-04
+
+## 一句话结论
+ko 语种 126 页复扫全部 http=200、非 privacy 页 15 字段零差异（与已归档的 29y-ko-final-scan.jsonl 逐页逐字段一致）、裸冠词审计 0 命中；allow-ko 恰好 15 条 word 级词条且不含 design/unit/premium/per/set/MOQ（6 项禁词全 False）。本轮未改任何字典/delta/allow 资源（无判据偏差），故无需修复；不启动 zh-CN，未执行 commit/push。
+
+## 1. 复扫命令与原始输出落盘
+命令：
+  python deploy\scripts-29y\run-scan-29y.py E:\破甲工作区\.tmp\29y\ko-urls.txt ko-i122-rescan 172.19.0.1
+扫描器：deploy/scripts-29y/scan-main-english-29y.php（v4.2 CJK 分支）。
+校验：脚本先复制 4 个仓库文件（scan.php / en-lexicon.json / local-stop.json + 11 份 allow-*.json）进 php 容器并逐字节 sha256 比对，全部 SAME 后才扫描。
+原始输出（run-scan 打印的尾部）：
+  == 复制仓库文件到容器并核对 sha256 ==
+    scan-main-english-29y.php        1774ec45542fea4a  1774ec45542fea4a  SAME
+    en-lexicon.json                  25f985926ff333d3  25f985926ff333d3  SAME
+    local-stop.json                  34907240d91159c7  34907240d91159c7  SAME
+    allow-ar.json                    dd676c64e8a526a5  dd676c64e8a526a5  SAME
+    allow-es.json                    2082a7081d54300d  2082a7081d54300d  SAME
+    allow-fr.json                    327240d4eb52060f  327240d4eb52060f  SAME
+    allow-it.json                    6a519671c8550a05  6a519671c8550a05  SAME
+    allow-ja.json                    6c6e351e54f050df  6c6e351e54f050df  SAME
+    allow-ko.json                    e6af90a9957ff45f  e6af90a9957ff45f  SAME
+    allow-nl.json                    4ea9262290b45b8a  4ea9262290b45b8a  SAME
+    allow-pt.json                    776497a0f584c2fe  776497a0f584c2fe  SAME
+    PASS 文件与仓库逐字节一致（sha256 相同）
+  输出: E:\破甲工作区\.tmp\29y\ko-i122-rescan.jsonl
+逐页原始输出：deploy/verification-29y/evidence/29y-ko-rescan-i122.jsonl（126 行，已归档）。
+完整命令原始输出：deploy/verification-29y/evidence/29y-ko-rescan-rawoutput-i122.txt（已归档）。
+
+## 2. 汇总校验（15 字段零差异 / 裸冠词 0）
+扫描页数：126（ko-urls.txt 126 行，全部 http=200，main_found=true）。
+非 privacy 页非零页数：0（long_runs=0、residual_count=0、pair_count=0 全为 0）。
+privacy 例外页：/ko/privacy/ 保持既有残留（cnt 0 / runs 0 / pairs 1）——这是负责人在先前 ko R2 结论表里批准的英文例外页，不属于本批复扫判据范围（判据：非 privacy 页 15 字段零差异）。
+
+逐页逐字段对比（baseline = evidence/29y-ko-final-scan.jsonl，HEAD 已归档版本）：
+  base pages: 126  new pages: 126
+  url set equal: True
+  15 字段逐页逐字段完全一致 (zero diff) PASS
+（对比字段：http/bytes/main_found/main_text_len/residual_raw/residual_raw_tokens/residual_count/residual_tokens/local_stop_removed/long_runs/long_run_words/pair_count/segment_count/residual_words/pairs）
+
+裸冠词审计：python ko-article-audit.py → 裸冠词节点：0（>The / >An / >A 开头文本节点命中 0，排除 pk-post-title 与 privacy）。
+
+## 3. allow-ko 核对（15 条 / 禁词 0）
+allow-ko.json word 级词条恰好 15 条：
+  Packrivo / PakFactory / Packlane / FEFCO / WhatsApp / DDP / FOB / SOS / PE / PU / PET / PP / CMYK / Pantone / ISO
+phrase 级词条 1 条：Packaging Corporation of America（限 /ko/product-full-overlap-slotted-outer-carton/）。
+禁词检查（design/unit/premium/per/set/MOQ）：6 项全部 False，未进入 allow-ko。
+  → allow-ko 恰好 15 条且不含禁词，判据 PASS。
+
+## 4. 改动 diff
+本轮未做任何修复（无判据偏差），git 状态：
+  git diff -- deploy/verification-29y/i18n/allow-ko.json deploy/verification-29y/i18n/delta/ko-add.json
+             deploy/verification-29y/i18n/delta/ko-mod.json deploy/i18n-merged/ko-dict.json
+  → 空输出（无 diff）。ko 相关资源与 HEAD 完全一致。
+本轮新增归档文件（未提交）：
+  deploy/verification-29y/evidence/29y-ko-rescan-i122.jsonl
+  deploy/verification-29y/evidence/29y-ko-rescan-i122.txt（本 close 文件）
+  deploy/verification-29y/evidence/29y-ko-rescan-rawoutput-i122.txt
+
+## 5. commit 边界
+未执行 commit/push（符合意图边界）；工作区保持 ar 收尾（intent 117）遗留的未提交改动不变。

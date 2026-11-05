@@ -1,0 +1,21 @@
+# Semrush KMT | seed=custom folding cartons | US | broad | relevance top100, vol>=50 | 2026-11-04
+folding cartons|880|29|5.86|I
+folding carton|720|29|5.86|I
+custom folding cartons|480|27|5.60|C
+folding carton packaging|480|31|4.19|C
+folding carton boxes|260|27|5.40|I
+folding cartons packaging|210|24|4.19|IC
+custom folding carton packaging|140|28|0.00|IC
+paperboard folding cartons|140|23|3.71|I
+custom folding carton boxes|110|31|4.43|C
+custom folding boxes|110|19|5.95|C
+folding cartons suppliers|110|29|0.00|C
+custom printed folding cartons|90|29|0.00|C
+custom folding carton|90|25|5.60|C
+folding carton designs|90|12|3.19|I
+printed folding cartons|90|29|5.56|I
+custom foldable boxes|90|26|6.50|C
+types of folding cartons|90|5|7.19|I
+folding carton printing|70|12|0.00|IC
+foldable carton box|70|18|5.40|IC
+paper folding cartons|70|25|0.00|I

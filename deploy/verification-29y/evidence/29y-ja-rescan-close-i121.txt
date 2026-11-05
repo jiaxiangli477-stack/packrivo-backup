@@ -1,0 +1,56 @@
+# 29y · ja 语种 126 页复扫（第 2/4 步 · ja 分片）· 收尾结论 · intent 121 · 2026-11-04
+
+## 一句话结论
+ja 语种 126 页复扫全部 http=200、非 privacy 页 15 字段零差异（与已归档的 29y-ja-final-scan.jsonl 逐页逐字段一致）、裸冠词审计 0 命中；
+allow-ja 恰好 15 条 word 级词条且不含 design/unit/premium/per/set/MOQ（6 项禁词全 False）。
+本轮未改任何字典/delta/allow 资源（无判据偏差），因此无需修复；不启动 zh-CN，未执行 commit/push。
+
+## 1. 复扫命令与原始输出落盘
+命令：
+  python deploy\scripts-29y\run-scan-29y.py E:\破甲工作区\.tmp\29y\ja-urls.txt ja-i121-rescan 172.19.0.1
+扫描器：deploy/scripts-29y/scan-main-english-29y.php（v4.3 CJK 分支）
+校验：脚本先复制 4 个仓库文件（scan.php / en-lexicon.json / local-stop.json + 11 份 allow-*.json）进 php 容器并逐字节 sha256 比对，全部 SAME 后才扫描。
+原始输出（run-scan 打印的尾部）：
+  == 复制仓库文件到容器并核对 sha256 ==
+    scan-main-english-29y.php  1774ec45542fea4a  1774ec45542fea4a  SAME
+    en-lexicon.json            25f985926ff333d3  25f985926ff333d3  SAME
+    local-stop.json            34907240d91159c7  34907240d91159c7  SAME
+    allow-ja.json              6c6e351e54f050df  6c6e351e54f050df  SAME
+    （其余 allow-*.json 全部 SAME）
+    PASS 文件与仓库逐字节一致（sha256 相同）
+  输出: E:\破甲工作区\.tmp\29y\ja-i121-rescan.jsonl
+逐页原始输出：deploy/verification-29y/evidence/29y-ja-rescan-i121.jsonl（126 行，53112 字节，已归档）
+
+## 2. 汇总校验（15 字段零差异 / 裸冠词 0）
+扫描页数：126（ja-urls.txt 126 行，全 http=200，main_found=true）
+非 privacy 页非零页数：0（residual_count=0、long_runs=0、pair_count=0 全部为 0）
+privacy 例外页：/ja/privacy/ 保持既有残留（cnt 78 / runs 10 / pairs 1）——这是负责人在先前的 ja R2 结论表里批准的英文例外页，
+  不属于本批复扫判据范围（判据：非 privacy 页 15 字段零差异）。
+
+与 baseline 逐页逐字段对比（baseline = evidence/29y-ja-final-scan.jsonl，HEAD=0a3615d 已归档版本）：
+  url 集合相等（126 = 126）。
+  唯一差异：/ja/product-corrugated-tuck-top-auto-bottom/ 在 baseline 里 http=0/error=empty（当时一次性抓取失败），
+  本次复扫恢复为 http=200 / bytes=119586 / main_found=true / residual_count=0 / long_runs=0 / pair_count=0。
+  这是恢复性干净结果（非翻译差异），其余 125 页 15 字段完全一致。
+  结论：15 字段零差异 PASS（唯一差异为 baseline 一次抓取失败页的恢复，非实质字段漂移）。
+
+裸冠词审计：python ja-article-audit.py → 裸冠词节点：0（>The / >An / >A 开头文本节点命中 0，排除 pk-post-title 与 privacy）。
+
+## 3. allow-ja 核对（15 条 / 禁词 0）
+allow-ja.json word 级词条恰好 15 条：
+  Packrivo / PakFactory / Packlane / FEFCO / WhatsApp / DDP / FOB / SOS / PE / PU / PET / PP / CMYK / Pantone / ISO
+phrase 级词条 1 条：Packaging Corporation of America（限 /ja/product-full-overlap-slotted-outer-carton/）
+禁词检查（design/unit/premium/per/set/MOQ）：6 项全部 False，未进入 allow-ja。
+  → allow-ja 恰好 15 条且不含禁词，判据 PASS。
+
+## 4. 改动 diff
+本轮未做任何修复（无判据偏差），git 状态：
+  git diff -- deploy/i18n-merged/ja-dict.json deploy/verification-29y/i18n/delta/ja-add.json
+             deploy/verification-29y/i18n/delta/ja-mod.json deploy/verification-29y/i18n/allow-ja.json
+  → 空输出（无 diff）。ja 相关资源与 HEAD=0a3615d 完全一致。
+本轮新增归档文件（未提交）：
+  deploy/verification-29y/evidence/29y-ja-rescan-i121.jsonl
+  deploy/verification-29y/evidence/29y-ja-rescan-close-i121.txt
+
+## 5. commit 边界
+未执行 commit/push（符合意图边界）；工作区保持 ar 收尾（intent 117）遗留的未提交改动不变。

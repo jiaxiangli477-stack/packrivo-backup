@@ -1,0 +1,41 @@
+29y 路 nl 语种分片复扫 证据摘录 · intent 119 · 2026-11-04
+================================================================
+
+一、复扫命令（容器内执行，仓库脚本 + 仓库 i18n 资源，先 sha256 核对比再扫）
+  python deploy\scripts-29y\run-scan-29y.py E:\破甲工作区\.tmp\29y\nl-urls.txt nl-i119 172.19.0.1
+  网关 172.19.0.1（docker network 实测 gateway）；php 容器 IP 172.19.0.5。
+  复制进容器的文件 sha256 全部 SAME：
+    scan-main-english-29y.php  1774ec45542fea4a  SAME
+    en-lexicon.json            25f985926ff333d3  SAME
+    local-stop.json            34907240d91159c7  SAME
+    allow-nl.json              4ea9262290b45b8a  SAME
+    allow-ar.json              dd676c64e8a526a5  SAME
+    （其余 allow-es/fr/it/ja/ko/pt 同样 SAME）
+
+二、逐页逐字段对比（基线 = evidence/29y-regress-nl-v41.jsonl，v4.1 byte-identical 版）
+  FIELDS(14) = http, bytes, main_found, main_text_len, residual_raw,
+               residual_raw_tokens, residual_count, residual_tokens,
+               local_stop_removed, long_runs, long_run_words, segment_count,
+               english_segments, residual_words
+  基线 126 页 / 本轮 126 页 / URL 集合完全一致（base-only=[] new-only=[]）。
+  逐页逐字段零差异：126 页 × 14 字段，0 处差异。
+  残词合计：基线=84  本轮=84（全部来自 /nl/privacy/，HANDOFF §10.8 已决策豁免）。
+  含连续段页：基线=1  本轮=1（仅 /nl/privacy/，long_runs=10）。
+  字节级一致：nl-i119.jsonl 与 29y-regress-nl-v41.jsonl 的 SHA256 完全相同
+    B46D3843ECF148D9CE0881ADD3F751DB32A06D93C964D422A1FDF7CF63484830
+
+三、裸英文冠词直查（>The / >A / >An 紧跟 <a> 或拉丁字母）
+  python E:\破甲工作区\.tmp\29y\nl-article-leak.py  →  命中 0 处（126 页）
+
+四、allow-ar 词条核对
+  word 级 15 条（恰好 15）：
+    Packrivo, PakFactory, Packlane, FEFCO, WhatsApp, DDP, FOB, SOS,
+    PE, PU, PET, PP, CMYK, Pantone, ISO
+  phrase 级 4 条（均限单页）：
+    Packaging Corporation of America, Paper Mart, Google Analytics, Google Tag
+  禁用词整词命中（word 与 phrase 级均查 \b 边界）：design/unit/premium/per/set/MOQ → 0 命中。
+
+五、本轮改动
+  nl 相关资源零改动（nl-dict.json / allow-nl.json / delta/nl-add.json / delta/nl-mod.json 相对 HEAD 无 diff）。
+  git 未做任何写操作；未 commit / 未 push（符合边界）。
+  工作区新增证据文件：deploy/verification-29y/evidence/29y-nl-rescan-i119.jsonl（= .tmp/29y/nl-i119.jsonl，50048 字节）。

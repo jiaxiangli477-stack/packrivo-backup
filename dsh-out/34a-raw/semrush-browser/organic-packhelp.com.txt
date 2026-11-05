@@ -1,0 +1,43 @@
+# Semrush Organic Research | packhelp.com | US | 2026-11-03 | page 1 | keyword|intent|position|volume|KD|url
+# totals: US 2.2K keywords; NL 937. Pattern: blog-led (discreet packaging, eco-friendly examples, cmyk vs rgb, embossing, box templates, packaging fillers).
+discreet packaging|I|1|1.9K|23|/blog/discreet-packaging/
+thank you for your purchase|T|6|1.9K|11|/blog/thank-you-for-your-purchase/
+packaging services|C|8|2.9K|10|/
+custom packaging solutions|I|7|1.6K|68|/
+sustainable packaging|I|11|3.6K|72|/blog/eco-friendly-packaging-examples/
+eco friendly packaging|CI|12|1.9K|34|/blog/eco-friendly-packaging-examples/
+eco-friendly packaging|CI|7|1K|38|/blog/eco-friendly-packaging-examples/
+packaging design|I|9|4.4K|55|/blog/packaging-design/
+how to design packaging|I|7|1.6K|58|/blog/packaging-design/
+template:box|N|8|1.6K|37|/box-templates/
+frustration free packaging|I|8|1K|18|/blog/frustration-free-packaging/
+packaging service|C|8|880|33|/
+environmentally friendly packaging|CI|8|880|31|/blog/eco-friendly-packaging-examples/
+tea packaging|C|5|720|9|/blog/tea-packaging/
+custom packaging supplier europe middle east|I|6|720|14|/
+embossment definition|I|3|720|26|/blog/embossing-debossing/
+color cmyk rgb|I|4|590|47|/blog/cmyk-vs-rgb-whats-the-drill/
+packing filler|I|5|590|22|/blog/what-are-packaging-fillers/
+boxes template|I|6|590|32|/box-templates/
+doypack|I|7|590|11|/p/doypack/plain/
+carton box template|C|8|320|24|/box-templates/
+packaging software|CI|3|320|11|/box-design-software/
+kinds of cardboard|I|5|320|23|/blog/types-of-cardboard/
+small business packaging supplies|C|1|260|20|/packaging-supplies/
+unique packaging|C|3|260|24|/blog/unique-packaging-designs/
+product packaging companies|C|4|260|49|/
+packaging ideas|I|5|260|27|/packaging-ideas/
+sustainable packaging design|I|7|260|34|/blog/sustainable-packaging/
+packaging box template|I|6|210|37|/box-templates/
+stealth packaging|I|1|170|18|/blog/discreet-packaging/
+ecommerce packaging boxes|CI|1|140|7|/packaging/boxes/?industry=e-commerce
+etsy packaging|I|2|140|22|/blog/etsy-packaging/
+packaging types|I|3|140|20|/blog/types-of-packaging/
+glasses packaging|I|7|140|4|/blog/sunglasses-packaging/
+custom ecommerce packaging|I|1|110|1|/packaging/boxes/?industry=e-commerce
+fashion packaging|I|1|110|4|/packaging/?industry=apparel-fashion
+embossed cardboard|I|8|110|9|/blog/embossing-debossing/
+die cut cardboard|CI|10|110|6|/blog/die-cutting-process/
+standard tissue paper size|I|4|90|11|/help/topic/what-are-the-sizes-of-tissue-paper/
+luxury candle packaging ideas|I|9|70|26|/blog/candle-packaging-ideas/
+board game packaging|I|3|70|4|/blog/board-game-packaging/

@@ -1,0 +1,29 @@
+# Semrush KMT | seed=custom ring boxes | US | broad | relevance top100 | 2026-11-04
+# total 98.5K keywords, volume 6,315,270. NOTE: mostly consumer proposal intent; B2B-usable subset below, consumer ones listed after.
+custom ring box|590|10|0.77|C
+personalized ring box|720|21|0.77|C
+custom engagement ring box|480|5|1.03|C
+custom ring boxes|320|4|0.76|C
+custom proposal ring box|170|4|1.03|C
+personalized engagement ring box|170|9|1.03|C
+ring boxes jewelry boxes|140|28|0.48|C
+customizable ring box|110|13|0.77|C
+personalized ring boxes|110|10|0.80|C
+custom engagement ring boxes|90|4|0.81|C
+custom wedding ring box|90|3|0.80|C
+ring box custom|70|12|0.77|C
+display ring boxes|70|15|0.34|IC
+linen ring box|50|10|0.71|C
+ring jewelry gift box|50|31|0.58|C
+customized ring box|40|14|0.70|C
+luxury ring boxes|40|1|1.19|C
+ring box luxury|40|-|1.19|-
+collapsible ring box|40|22|0.00|I
+bespoke ring box(es)|30|-|0.00|-
+clamshell ring box|30|-|0.47|-
+clear ring boxes|30|-|0.39|-
+custom ring boxes wholesale|30|-|1.63|-
+designer ring box|30|-|0.77|-
+individual ring boxes|30|-|0.00|-
+jewelry store ring box|30|-|0.00|-
+CONSUMER (probably skip): ring engagement box 2.9K; rings in box 1.0K; ring ring box 720; ring boxes for engagement 210; box for ring 170; casket ring box 170; proposal ring in box 170; bridal ring box 140; proposal ring boxes 140; glass ring box 110; where to buy a ring box for engagement ring 90; funny ring box 70; promise ring boxes 30

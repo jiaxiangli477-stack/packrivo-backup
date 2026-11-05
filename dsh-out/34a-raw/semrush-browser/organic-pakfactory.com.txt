@@ -1,0 +1,63 @@
+# Semrush Organic Research | pakfactory.com | US | 2026-11-03 | page 1 (top by traffic) | keyword|intent|position|volume|KD|url
+# totals: US 9.8K keywords; IN 652; CA 558. Pattern: much of its traffic comes from blog explainer posts (box dimensions, dieline, PMS, foil stamping, PR package, RSC, aqueous coating).
+length width height|-|2|22.2K|19|/blog/how-to-measure-a-box-dimension
+carton cartons|CI|3|14.8K|37|/folding-carton-paperboard-boxes.html
+pacdora|IT|8|27.1K|44|/blog/pacdora-the-best-online-3d-packaging-design-tool
+dieline|I|5|3.6K|39|/blog/what-is-a-dieline
+offset printing|C|9|3.6K|33|/blog/what-is-offset-printing
+box dimensions|I|3|2.9K|25|/blog/how-to-measure-a-box-dimension
+pms colors|I|3|2.9K|16|/blog/what-is-pantone-color-matching-system
+corrugated carton box|C|4|2.9K|26|/blog/corrugated-box-101
+packaging for manufacturers|C|2|2.4K|37|/
+product packaging|I|3|2.4K|50|/
+custom boxes with logo|C|5|2.4K|30|/sleek-white-box-with-black-logo.html
+height width and length of box|I|2|1.9K|18|/blog/how-to-measure-a-box-dimension
+pms color|I|2|1.9K|13|/blog/what-is-pantone-color-matching-system
+discreet packaging|I|6|1.9K|23|/blog/discreet-packaging-shipping
+custom packaging solutions|I|2|1.6K|68|/
+packaging manufacturers|C|1|1.6K|26|/
+foil stamping|CI|10|1.6K|9|/blog/what-is-foil-stamping
+public relations package|I|7|1.6K|8|/blog/pr-packages-guide-examples
+rigid boxes|IT|4|1.6K|33|/custom-rigid-setup-boxes.html
+custom rigid boxes|C|1|1.3K|31|/custom-shape-rigid-boxes.html
+what is a pr package|I|2|1.3K|18|/blog/pr-packages-guide-examples
+box measurements|I|2|1.3K|18|/blog/how-to-measure-a-box-dimension
+how to measure boxes|I|3|1.3K|16|/blog/how-to-measure-a-box-dimension
+how to measure a box for shipping|I|4|1.3K|8|/blog/how-to-measure-a-box-dimension
+how to ship shoes|I|3|1.3K|26|/blog/how-to-package-ship-shoes
+packaging manufacturer|I|1|1K|24|/
+custom corrugated boxes|C|3|1K|37|/custom-printed-corrugated-boxes.html
+pr package meaning|CI|3|1K|7|/blog/pr-packages-guide-examples
+candy packaging|I|4|1K|6|/custom-candy-packaging.html
+what are pr packages|I|2|880|9|/blog/pr-packages-guide-examples
+tin packaging|C|2|880|26|/custom-tin-boxes.html
+luxury packaging|I|4|880|31|/eco-luxury-boxes.html
+die line|I|3|880|39|/blog/what-is-a-dieline
+custom bakery boxes|I|5|880|12|/custom-bakery-packaging-boxes.html
+pakfactory|N|1|720|41|/
+printed sbs paperboard|CI|1|720|5|/solid-bleached-board-c1s.html
+folding carton|I|1|720|29|/folding-carton-paperboard-boxes.html
+foldable gift box|I|2|720|16|/collapsible-rigid-gift-boxes.html
+tea packaging|C|4|720|9|/custom-tea-packaging.html
+folding carton packaging|C|2|590|32|/folding-carton-paperboard-boxes.html
+rsc box|I|2|590|14|/blog/what-is-rsc-box-vs-die-cut-boxes
+custom packaging manufacturer|C|1|390|76|/
+aqueous coating|I|1|390|15|/blog/what-is-aq-aqueous-coating
+custom petal top boxes|C|1|390|0|/petal-top-boxes.html
+custom booklet boxes|IT|2|390|7|/book-style-rigid-boxes.html
+custom product displays|C|2|390|29|/custom-cardboard-displays.html
+carton packaging|I|1|320|32|/folding-carton-paperboard-boxes.html
+custom supplement packaging|I|7|320|10|/dietary-supplement-packaging.html
+eva foam customized|CI|1|210|7|/ethylene-vinyl-acetate-eva-foam-insert.html
+paperboard cartons|CI|1|210|16|/folding-carton-paperboard-boxes.html
+custom book boxes|C|1|210|9|/book-style-rigid-boxes.html
+folding carton boxes|T|1|210|30|/folding-carton-paperboard-boxes.html
+folding carton design|CI|1|210|26|/folding-carton-paperboard-boxes.html
+custom corrugated inserts|C|1|170|23|/custom-packaging-inserts.html
+cosmetic packaging boxes|C|1|170|28|/custom-cosmetic-packaging-boxes.html
+luxury box packaging|C|1|140|6|/eco-luxury-boxes.html
+corrugated pop displays|CI|1|140|20|/cardboard-floor-displays.html
+rigid box maker|I|1|110|33|/custom-rigid-setup-boxes.html
+custom chocolate box packaging|C|1|110|18|/custom-chocolate-packaging-boxes.html
+luxury boxes packaging|C|1|110|8|/eco-luxury-boxes.html
+custom medical packaging|C|1|110|16|/custom-pharmaceutical-packaging-boxes.html

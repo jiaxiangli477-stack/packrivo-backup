@@ -1,0 +1,20 @@
+# Semrush KMT | seed=dieline | US | broad | relevance top100, vol>=50 | 2026-11-04  (informational → blog/guide targets; we already promise "dieline with every quote")
+dieline|3.6K|36|3.87|I
+dielines|880|44|3.87|I
+die line|880|22|3.65|I
+die lines|590|31|3.65|I
+dieline packaging|390|24|3.24|I
+dieline meaning|210|28|0.00|I
+box dieline|210|28|7.90|I
+what is a dieline|210|10|0.00|I
+what is a die line|170|16|0.00|I
+packaging and dielines|170|19|3.24|I
+what are dielines|140|9|0.00|I
+what is a dieline in packaging|140|16|0.00|I
+dielines packaging|110|38|3.60|I
+what is a dieline in printing|110|11|0.00|I
+dielines meaning|90|15|0.00|I
+define dieline|70|15|0.00|I
+what are die lines|70|9|0.00|I
+dieline box|50|14|3.41|I
+(navigational, skip: the dieline 880 / thedieline 480 = a design magazine)

@@ -1,0 +1,18 @@
+# Semrush KMT | seed=pr boxes | US | broad | relevance top100, vol>=50 | 2026-11-04
+# (seed "eva foam insert" returned no rows in this account — skipped)
+pr box|880|7|9.28|IC
+pr boxes|480|11|0.00|IC
+custom pr boxes|320|23|11.65|IC
+how to get pr boxes|210|8|1.96|I
+p r packaging|210|12|3.96|I
+what are pr boxes|170|12|0.00|I
+pr boxes for influencers|140|5|5.06|I
+how do you get pr boxes|140|4|1.96|I
+whats a pr box|140|12|0.00|I
+pr packaging boxes|70|21|13.41|IC
+fully customizable pr boxes|70|15|0.00|IC
+custom pr packaging|70|15|9.82|I
+influencer pr boxes|70|1|8.13|I
+pr boxes custom|50|12|14.23|C
+pr package box|50|14|21.92|I
+# related (pakfactory/arka organic): what is a pr package 1.3K KD18; public relations package 1.6K KD8; pr package meaning 1K KD7; what are pr packages 880 KD9; what is pr packaging 720 KD3

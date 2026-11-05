@@ -1,0 +1,7 @@
+# Semrush KMT | seed=drawer box | US | broad | relevance top100 | 2026-11-04
+# WARNING: almost all volume is FURNITURE / kitchen-cabinet drawers, not packaging. Do NOT target plain "drawer box(es)" / "custom drawer boxes" (720, cabinet intent).
+# Use packaging-qualified phrasing only (see kmt-custom-rigid-boxes: "drawer box packaging" topic (539 = keyword count, not volume); jewelry pouches LOW list).
+drawer boxes|2.9K|30|1.91|C   (furniture)
+drawer box|1.9K|26|1.91|C     (furniture)
+custom drawer boxes|720|33|2.47|C  (cabinet)
+drawer box with handle|140|6|0.00|IC (mixed)

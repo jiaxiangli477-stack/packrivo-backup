@@ -1,0 +1,24 @@
+# Semrush KMT | seed=jewelry packaging | US | broad | relevance top100, vol>=50 | 2026-11-04
+# total 74.3K keywords, volume 1,852,290, avg KD 26%. Topics: jewelry packaging and boxes 2.1K; jewelry bags and pouches 1.5K
+jewelry packaging|1.0K|12|1.55|C
+jewelry packaging supplies|260|24|1.53|C
+jewelry packaging box|210|18|1.42|I
+jewel box packaging|140|23|1.42|IC
+jewelry box packaging|140|20|1.80|I
+packaging for jewelry|110|11|1.30|C
+jewel packaging|110|4|0.66|I
+jewelry boxes packaging|90|6|1.80|I
+necklace presentation gift box|90|20|0.00|C
+fine jewelry packaging|70|25|1.34|C
+custom necklace boxes|70|12|0.96|I
+jewelry packaging custom|70|0|2.07|C
+packaging supplies for jewelry|70|22|1.53|C
+personalized jewelry packaging wholesale|70|16|0.00|C
+bulk jewelry packaging|50|30|2.18|IC
+custom made boxes for jewelry with logo for business|50|15|0.00|IC
+custom made jewelry packaging|50|10|2.63|IC
+custom packaging for jewelry|50|7|2.07|C
+customizable jewelry packaging|50|2|2.13|C
+jewellery packaging boxes|50|10|1.42|C
+wholesale jewelry packaging suppliers boxes pouches cards|50|26|0.00|IC
+# also from custom-jewelry-boxes relevance view (vol): custom jewelry boxes 1.6K KD14; custom jewelry box packaging 210; custom jewelry packaging boxes 170; custom jewelry packaging wholesale 170; custom logo jewelry boxes 70; wholesale jewelry boxes with logo 70; jewelry packaging with logo 40; jewelry shipping box 40; custom jewelry shipping boxes 40; custom wholesale jewelry boxes 40; jewelry retail packaging 40; retail jewelry boxes 30; custom jewelry boxes for business 30

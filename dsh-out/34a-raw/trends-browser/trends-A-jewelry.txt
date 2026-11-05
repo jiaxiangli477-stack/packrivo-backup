@@ -1,0 +1,10 @@
+# Google Trends | US | past 5 years | web search | captured 2026-11-04
+# Group A: jewelry box / ring box / jewelry packaging / jewelry pouch / necklace box  (relative interest, 100 = peak of the group)
+AVERAGES: jewelry box 15 | ring box 10 | jewelry packaging 0 (<1) | jewelry pouch 0 (<1) | necklace box 4
+SEASONALITY: jewelry box rises from early Nov and peaks early-mid Dec every year (~25-29 vs baseline ~11-12), drops after Christmas. Packaging buyers order 6-10 weeks earlier -> publish/refresh gift-season content by Aug-Sep.
+ANOMALY: 2026-03-29 to 2026-06-21 "ring box" spiked to 100 and "necklace box" to 74 (consumer/news spike, not B2B); back to baseline by July 2026.
+RISING related queries:
+  jewelry packaging: china wholesale stock custom logo foil ... jewelry set packaging gift box (breakout); ring packaging +130%; bracelet packaging +120%; packaging for jewelry +110%
+  jewelry pouch: ring pouch +150%; jewelry pouch for travel +130%
+  jewelry box: consumer/brand noise (heaven mayhem, quince, trove...)
+TAKEAWAY: in Google, "jewelry packaging" is tiny next to consumer "jewelry box"; use "jewelry box(es)" + B2B modifiers (custom / wholesale / with logo) rather than "jewelry packaging" as the head term; add ring packaging and bracelet packaging (rising) as secondary terms.

@@ -1,0 +1,9 @@
+# Semrush Organic Research | packrivo.com | US | 2026-11-03 data
+# totals: US 9 keywords, traffic 0; NL 4; DZ 2. All 9 are informational blog URLs; no product/category page ranks in top 100.
+sample packing|I|90|vol 90|KD23|/2026/09/21/custom-packaging-sample-checklist/
+labels for tapered containers|I|16|vol 110|KD0|/2026/10/10/tapered-container-label-shape-fit-trial/
+jewelry box measurements|I|18,20,62|vol 90|KD5|/2026/09/21/jewelry-box-insert-fit-measurements/
+usps dim weight|I|75|vol 110|KD25|/2026/10/11/usps-rectangular-parcel-dim-weight-rounding/
+non machinable envelopes|I|64|vol 70|KD23|/2026/10/12/usps-letter-nonmachinable-packaging/
+usps calculate dimensional weight|NT|76|vol 70|KD68|/2026/10/11/usps-rectangular-parcel-dim-weight-rounding/
+dimension packaging|I|94|vol 40|KD19|/2026/10/01/dimensions-acceptance-method/

@@ -1,0 +1,90 @@
+# 34a 第二段复核结论（Claude，2026-11-04 夜）
+
+**结论：有条件通过。按下面 M1–M4、G1–G4 改完，在本文件末尾追加"整改记录"，然后停下。** 改完不用再等我复核这一段，直接把整改后的 keyword-map 和 gap-plan 当作定稿交 Codex 写入（写入排在 Codex 32a 之后）。
+
+## 第一段 4 处整改：已核实全部落地
+- Topics 带入的行，搜索量残留 = 0；
+- gable boxes = 1900 / Semrush KMT；
+- 意图来源列已加；inferred 里标 T 的只剩 199 行；
+- noissue 两词已移入 dropped。
+- 另外，tsv 解析漏掉的 101 行补回来了，这个修得好。
+
+## 我核实过、没问题的部分（keyword-map 141 行）
+- 新 title 全部 ≤60 字符，结尾都是 "| Packrivo"；新 meta 全部在 120–155 字符之间；没有重复的 meta。
+- 141 个主词无重复，没有空主词。
+- 有搜索量的 15 个主词，我逐个对了 Semrush 原文件，全部一致：custom mailer boxes 2.4K、custom tissue paper 2.9K、magnetic closure gift boxes 1.9K、custom jewelry boxes 1.6K、custom bags with logo 2.9K 等。
+- 红线 grep 命中 5 处，都是允许的写法："not a factory"、"Find a … Manufacturer"、"How to choose a … manufacturer"，都不是自称工厂。
+- 00-机会清单里的主词，大部分已作为主词落到对应页面。没落到的（candle、rigid、paper bags、pr、folding cartons、small business），gap-plan 已列为新落地页。
+
+## keyword-map 必须改的 4 处
+**M1. 有排名的 8 个"保留排名"页，title 和 H1 改动过度。**
+- 规则是"主词保持不变，只补次关键词"。但现在 /products/ 的主词从 Custom Packaging 改成了 Packaging Products；/inserts/ 去掉了 "Foam, Paperboard, Fit Check"；/foldable-gift-boxes/ 和 /services/ 的标题也换了写法。
+- 改法：这 8 页的**新 title 和新 H1 一律照抄现有的**，只允许一种改动：把 "MOQ 500" 换成 "MOQ 250"（涉及 /jewelry-boxes/、/products/）。
+- meta 和建议新增的 H2 可以照新方案写。理由：这几页平均排名在 3.7–17.6 名，是全站仅有的商业排名，标题一动就可能掉。
+
+**M2. 18 页的新 title 里没有主词。**
+- 最重要的是 /magnetic-book-style-box/：主词 magnetic closure gift boxes（1.9K）不在标题里，要放进去，例如 "Magnetic Closure Gift Boxes, Book-Style | Packrivo"。
+- 同样要改的还有：
+  - /printed-tissue-paper/：要包含连续的 "custom tissue paper"；
+  - /textile-jewelry-pouch/：要包含 "custom jewelry pouches"；
+  - 4 个 /packrivo-vs-*/：GSC 里真实出现过 "pakfactory alternatives"，标题要带 "Alternative"。
+- 其余几页（molded-pulp、candle-gift-set、wine-shipper、samples、inquiry、cases、customization 等）二选一：要么主词进标题，要么把主词改成标题里实际用的那个词。
+
+**M3. 主词撞车：/eco-kraft-cosmetic-box/ 和 gap-plan 新建的 /custom-cosmetic-boxes/ 都用 custom cosmetic boxes。**
+- 改法：既然要新建品类页，eco-kraft 页改用 kraft 类长尾词（必须是库里有的词）。
+- 再跑一次全量交叉检查：keyword-map 的主词、gap-plan 新落地页的主词、40 个新博客的主词，三者之间两两不能重复。附上脚本输出。
+
+**M4. 主词和次词不在词库里。** 指令要求次关键词"都要来自词库"，实测有 102 个主词、341 个次词（共 720 个）在词库里找不到，单复数和词序归一后仍然找不到。例如 reverse tuck boxes、rigid gift boxes、candle packaging、roll labels。
+- 改法：把这些词逐个用第一段的 Google 联想脚本查一遍（限速同前）。
+  - 联想里出现的词，补进 universe，来源写 suggest-google，搜索量留空；
+  - 联想里没有的词，换成库里最接近的词；
+  - 产品结构名实在找不到替代的，可以保留，但要在备注里写"库外结构名，无搜索证据"。
+- 汇报三类各多少个。
+
+## gap-plan 必须改的 4 处
+**G1. 博客和落地页抢词。** "custom X boxes"这类商业词应该给落地页或产品页，不该再开一篇博客去抢。
+- 规则：博客主词如果已经是某个现有页或新落地页的主词或次词，就从博客里拿掉，并入那个页面的次关键词；空出来的选题，从 34a-questions.csv 和信息类（I）簇里补。
+- 这条规则下要处理的：
+  - #7 custom tissue paper with logo：它是 /printed-tissue-paper/ 的次词；
+  - #20 paper bags with logo、#16 custom rigid boxes wholesale、#22 cheapest custom mailer boxes、#24 custom mailer：都和对应落地页同意图；
+  - #30–32 serum / lipstick / lip balm：把它们改成 /custom-cosmetic-boxes/ 的 H2 小节，比写成博客更有用。
+- **dieline 的 5 篇（#1–5）合并成 2 篇**：
+  - 一篇主词 what is a dieline，dieline meaning、what are dielines、box dieline 作为它的 H2；
+  - 一篇讲交付，主词 dieline packaging。
+- 合并改完后，博客总数不足 40 也没关系，宁少勿滥。
+
+**G2. 指令点名的科普词漏了。** 第 7 步要求改现有博客的标题去对准科普词，但 21 条改标题里一条都没有覆盖这些词。我查了 wp-posts.jsonl，站上就有现成的文章可以对：
+- foil stamping（1.6K/KD9）→ `/2026/09/21/foil-embossing-spot-uv-packaging/`；
+- box dimensions / how to measure a box（2.9K / 1.3K，KD8）→ `/2026/10/01/dimensions-acceptance-method/`；
+  - `/2026/09/21/jewelry-box-insert-fit-measurements/` 也是这个主题，但它在 Semrush 里已有排名（jewelry box measurements），**标题不动**，只加次词。
+- dieline（3.6K）→ `/2026/10/01/packaging-dieline-change-control/`，或者交给 G1 合并后的新文；
+- cmyk vs rgb → `/2026/10/12/rgb-colour-printing-gamut/`。搜索量要从 Semrush 原文件里找；找不到就留空，不估算。
+- what is a PR package（1.3K/KD18，见机会清单第二轮）：站上 0 篇，**加进新博客**，可以替换掉 #40（170 的量更小）。
+- discreet packaging：站上 0 篇，有对应的 I 类词就加一篇，没有就跳过。
+
+**G3. 有 4 个博客角度会逼写手编数字，换掉。**
+- #10 "Magnet Grade and Pull"：磁铁等级是 35a 的红线；
+- #16 "Volume Steps / 价格台阶"：价格只能来自报价引擎，博客里不写具体价格；
+- #17 "Handle Load / 提手承重实测"：我们没有实测数据；
+- #29 "Tolerance Budget"：公差是红线。
+- 改成只用已确认事实就能写的角度：结构选择、要给供应商的信息清单、打样怎么核对。
+
+**G4. 改标题这节去掉硬塞关键词的条目。**
+- 删掉 #14、#15：袖扣成对、折叠结构这两篇，被硬套了 "Custom Gift Boxes Wholesale:"，标题读不通，而且这个词只有 140 的量。
+- 删掉 #21：title 和 H1 讲的是两件事。
+- 删掉 #1、2、16、17：用 jewelry box（60,500）去套"擦拭布、LED、礼品卡、填充物"这类窄题，几乎不可能排上这个消费级大词，反而让标题变差。
+- #7（MOQ 那篇）：正文写的是 500。等 Codex 32a 上线、正文一起改成 250 之后再改标题，在备注里标"依赖 32a"。
+- 空出来的名额，用 G2 的科普词补。
+
+## 执行顺序提醒（写进 gap-plan §5）
+- 有 15 个新 title 带 "(MOQ 250)" 或 "MOQ 250"。**Codex 写入 34a 必须排在 32a 上线之后**，否则页面标题和报价工具会自相矛盾。
+
+## 验收（改完附原始输出）
+1. M1：8 个保留排名页，新旧 title 的 diff（只允许出现 500→250）；
+2. M2：title 里不含主词的页数 = 0（脚本输出）；
+3. M3：三方主词交叉检查，重复数 = 0；
+4. M4：三类各多少个，以及新补进 universe 的行数；
+5. G1–G4：改后的博客数、改标题条数，以及科普词覆盖了哪几个；
+6. title 和 meta 长度、红线 grep，重跑一遍。
+
+改完停下。

@@ -1,0 +1,14 @@
+# Semrush KMT | seed=custom subscription boxes | US | broad | relevance top100, vol>=40 | 2026-11-04
+custom subscription boxes|720|7|0.77|IC
+subscription box designer|210|13|1.09|I
+custom subscription box|140|10|0.77|IC
+subscription box packaging|90|7|2.37|IC
+subscription boxes for business|90|5|2.63|I
+custom printed subscription boxes|50|6|0.00|IC
+box subscription business|50|30|2.63|I
+custom subscription box packaging|40|11|2.92|IC
+custom subscription box design|40|-|0.00|-
+how to create a subscription box service|40|25|5.11|I
+how to make subscription boxes|40|21|0.58|I
+packaging subscription boxes|40|7|0.00|I
+starting a subscription box|40|19|3.48|I

@@ -1,0 +1,18 @@
+# Bing Webmaster | Search Performance | www.packrivo.com | 3 months (data visible from 2026-10-22) | captured 2026-11-04
+# totals: clicks 1, impressions 241, CTR 0.41%. 89 keywords, almost all informational/navigational noise.
+# keyword|impressions|clicks|avg position (top 25)
+site:packrivo.com|20|0|5.5
+site:www.packrivo.com|10|0|5.5
+read more about product labeling and packaging may split costs into payments|5|0|1.2
+largest inpost locker size|4|0|10
+inpost largest locker size|3|0|5
+max size parcel inpost|2|0|8
+全重叠纸箱|2|0|3.5
+column stacking vs interlock stacking|2|0|9
+difference between physical case and unit cases|2|0|3
+verify case pack of a master carton|2|0|2
+metamerism in packaging|2|0|3
+リテールカートン|2|0|3.5
+packlane, arka, ecoenclose|1|0|7
+首饰包装|1|0|3
+# Conclusion: Bing shows the same pattern as GSC — no commercial keyword impressions. (Copilot citations, 12 over 3 months, are tracked separately under AI Performance.)

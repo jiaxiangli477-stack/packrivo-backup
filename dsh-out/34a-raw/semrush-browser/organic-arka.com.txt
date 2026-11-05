@@ -1,0 +1,50 @@
+# Semrush Organic Research | arka.com | US | 2026-11-03 | page 1 | keyword|intent|position|volume|KD|url
+# totals: US 4.7K keywords. Pattern: one strong /collections/custom-boxes hub + many product pages by box type and size ("16x16x16 box") + explainer pages (rgb vs cmyk, 300dpi, what is a pr box).
+custom packaging|C|3|6.6K|51|/collections/custom-boxes
+custom packaging boxes|CI|2|3.6K|47|/collections/custom-boxes
+custom box packaging|C|3|1.3K|42|/collections/custom-boxes
+custom packaging design|I|3|1K|47|/collections/custom-boxes
+custom retail packaging|C|2|880|46|/collections/custom-boxes
+custom packaging for small business|C|6|880|49|/collections/custom-boxes
+custom printed shipping boxes|CI|2|720|56|/collections/custom-boxes
+customized packaging box|C|3|720|46|/collections/custom-boxes
+branded boxes|C|3|590|38|/collections/custom-boxes
+custom packaging supplies|C|3|590|51|/collections/custom-boxes
+personalized packaging boxes|C|3|590|50|/collections/custom-boxes
+custom packaging supplier|C|2|480|50|/collections/custom-boxes
+custom packaging boxes with logo|IT|3|480|34|/collections/custom-boxes
+custom boxes wholesale|C|1|390|47|/collections/custom-boxes
+customize boxes|C|4|390|38|/collections/custom-boxes
+personalized boxes|C|4|390|39|/collections/custom-boxes
+custom packaging small business|CI|2|260|40|/collections/custom-boxes
+custom branded boxes|T|3|260|45|/collections/custom-boxes
+custom box sizes|C|3|210|13|/collections/custom-boxes
+rgb and cmyk|I|3|2.4K|13|/pages/rgb-vs-cmyk
+300 dpi|I|5|1.9K|21|/blogs/news/300dpi
+300dpi|I|7|1.3K|32|/blogs/news/300dpi
+minimalist luxury household cleaning packaging design 2025|I|7|1.9K|12|/pages/minimalist-packaging-design-ideas
+what is pr packaging|I|2|720|3|/pages/what-is-a-pr-package-box
+whats a pr box|I|1|140|17|/pages/what-is-a-pr-package-box
+pr boxes|CI|3|480|11|/products/custom-pr-boxes
+screen printing vs digital printing|C|4|590|27|/pages/screen-printing-vs-digital-printing
+mail bubble|I|10|3.6K|41|/pages/how-to-mail-a-bubble-mailer
+10x10x10|I|13|5.4K|34|/products/10x10x10-box
+6x6x6|-|21|9.9K|29|/products/6x6x6-box
+16x16x16|I|4|1.3K|18|/products/16x16x16-box
+14x14x14 box|CI|2|480|12|/products/14x14x14-box
+4x4x4 shipping boxes|C|2|320|21|/products/4x4x4-box
+custom folding cartons|C|2|480|31|/products/custom-carton-boxes
+folding cartons|I|7|880|29|/products/custom-carton-boxes
+custom cereal box(es)|CI|3-4|590|12-23|/products/custom-cereal-boxes
+premium tea packaging|I|4|590|11|/products/custom-tea-boxes
+hat shipping boxes|C|2|480|5|/products/custom-hat-boxes
+perfume packaging|C|4|390|5|/products/custom-perfume-boxes
+custom booklet boxes|IT|6|390|7|/products/custom-book-boxes
+custom box inserts|C|5|320|12|/products/custom-inserts
+custom mailer boxes with inserts|T|1|90|17|/products/custom-inserts
+custom shoe boxes|C|5|320|15|/products/custom-shoe-boxes
+lash boxes|C|2|170|4|/products/custom-lash-boxes
+custom makeup boxes|CI|1|110|12|/collections/custom-makeup-packaging
+custom board game box|C|2|110|7|/products/custom-board-game-boxes
+blank mailer boxes|C|1|70|34|/products/blank-mailer
+arka packaging minimum order quantity official|I|6|50|18|/pages/faq

@@ -1,0 +1,18 @@
+﻿== 复制仓库文件到容器并核对 sha256 ==
+  scan-main-english-29y.php        1774ec45542fea4a  1774ec45542fea4a  SAME
+  en-lexicon.json                  25f985926ff333d3  25f985926ff333d3  SAME
+  local-stop.json                  34907240d91159c7  34907240d91159c7  SAME
+  allow-ar.json                    dd676c64e8a526a5  dd676c64e8a526a5  SAME
+  allow-es.json                    2082a7081d54300d  2082a7081d54300d  SAME
+  allow-fr.json                    327240d4eb52060f  327240d4eb52060f  SAME
+  allow-it.json                    6a519671c8550a05  6a519671c8550a05  SAME
+  allow-ja.json                    6c6e351e54f050df  6c6e351e54f050df  SAME
+  allow-ko.json                    e6af90a9957ff45f  e6af90a9957ff45f  SAME
+  allow-nl.json                    4ea9262290b45b8a  4ea9262290b45b8a  SAME
+  allow-pt.json                    776497a0f584c2fe  776497a0f584c2fe  SAME
+  PASS 四个文件与仓库逐字节一致（sha256 相同）
+
+== 扫描 E:\破甲工作区\.tmp\29y\ko-urls.txt ==
+
+输出: E:\破甲工作区\.tmp\29y\ko-i122-rescan.jsonl
+

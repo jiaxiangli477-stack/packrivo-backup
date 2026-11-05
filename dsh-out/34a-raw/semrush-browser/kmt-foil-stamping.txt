@@ -1,0 +1,9 @@
+# Semrush KMT | seed=foil stamping | US | broad | relevance top100, vol>=90 | 2026-11-04  (blog/guide target; 翔丰 does hot foil in-house)
+foil stamping|1.6K|9|2.56|IC
+foil stamping printing|320|23|3.14|IC
+gold foil stamping|210|19|0.95|I
+what is foil stamping|140|14|1.09|I
+hot foil stamp|140|21|0.54|IT
+foil hot stamping|90|15|0.85|IC
+what is foil stamping in printing|90|15|1.09|I
+hot foil stamped|90|13|0.54|I
