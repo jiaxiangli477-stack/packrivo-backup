@@ -15,9 +15,9 @@ if ! python3 "$PKG/32a-i18n-gate.py" \
 fi
 ```
 
-所有 11 种语言的 `missing`、`quote_missing`、`quote_invalid` 均为 0 且 `GATE PASS` 才继续。报价组件通过单独的 `quote-i18n` 查找字符串，因此同时检查其三个新键及占位符。闸门验证键及非空值，不代替翻译质量、正确桶位和实际语言页验收；不得以脚本通过冒充这些验收。`32a-moq-content.php` 不能单独上线。
+所有 11 种语言的 `missing`、`quote_missing`、`quote_invalid`、`title_missing` 均为 0 且 `GATE PASS` 才继续。报价组件通过单独的 `quote-i18n` 查找字符串，因此同时检查其三个新键及占位符；404 键必须位于 `title` 桶。闸门验证键及非空值，不代替翻译质量、其他键的正确桶位和实际语言页验收；不得以脚本通过冒充这些验收。`32a-moq-content.php` 不能单独上线。
 
-已知限制：语言路由对不存在的路径提前退出，当前 `001-packrivo-32a-404-title.php` 固定输出英文 404 标题，不会因为词典新增键而自动翻译。正式上线前还须单独解决并验证该路径，不能只凭键存在就认为外语 404 已翻译。
+语言路由对不存在的路径提前退出；更新后的 `001-packrivo-32a-404-title.php` 直接读取对应语种词典的 `title` 桶，缺键、空值或文件异常时回退英文。正式上线前仍须通过真实翻译字典抓取 11 种语言的 404 页面验证；不得以合成测试代替。
 
 ### 32a-3：工作区快照的单字段备份（在任何 32a 数据改动和插件替换之前）
 
@@ -145,7 +145,44 @@ docker cp "$BACKUP/32a-validation.before.php" php:"$WPC/wp-content/plugins/packr
 docker cp "$BACKUP/32a-admin.before.php" php:"$WPC/wp-content/plugins/packrivo-product-workspace/includes/class-product-admin.php"
 ```
 
-AI 摘要另须验收：本地独立实例的 `/llms.txt` 和 `/llms-full.txt` 均为 404，无法实际验证其输出；仓库历史 `deploy/artifacts-29y/llms.txt` 仍含 `Minimum order quantity: 500`，`llms-full.base.txt` 也有旧 MOQ。它们不是工作区投影的直接读取方，不能拿本地 404 认定线上内容正确；上线前须基于当时审核通过的页面及报价生成并核对最终摘要，保留明确的 500 件报价示例，确认没有过时的 500 起订量说法后才继续。
+### 32a-4：重新生成并核验 AI 摘要（仅另行授权上线时）
+
+历史 `deploy/artifacts-29y/llms.txt` 和 `llms-full.base.txt` 仍含旧 500 件起订量，不得直接用于本轮上线。先完成翻译闸门、页面/报价迁移及其验收；确认 `$LLMS_INTERNAL_ORIGIN` 是能访问**当前已更新站点**的容器内部反向代理地址（不要使用可能仍缓存旧页的 CDN），`Host` 必须匹配站点。将本提交的三个生成脚本及 `deploy/32a4/llms.base.txt` 放入 `$PKG`；下面使用本次 `$LAUNCH` 创建一个不得重用的暂存目录：
+
+```sh
+LLMS_STAGE="$PKGC/32a4-llms-$LAUNCH"
+if docker exec php test -e "$LLMS_STAGE"; then echo 'STOP: llms stage exists'; exit 1; fi
+docker exec php mkdir -p "$LLMS_STAGE"
+docker cp "$PKG/32a4-generate-llms.php" php:"$LLMS_STAGE/32a4-generate-llms.php"
+docker cp "$PKG/32a4-generate-llms-full.php" php:"$LLMS_STAGE/32a4-generate-llms-full.php"
+docker cp "$PKG/32a4-llms-text.php" php:"$LLMS_STAGE/32a4-llms-text.php"
+docker cp "$PKG/32a4/llms.base.txt" php:"$LLMS_STAGE/32a4-llms.base.txt"
+docker exec php php -l "$LLMS_STAGE/32a4-generate-llms.php"
+docker exec php php -l "$LLMS_STAGE/32a4-generate-llms-full.php"
+docker exec php php -l "$LLMS_STAGE/32a4-llms-text.php"
+docker exec php php -r 'foreach (["curl","dom","SimpleXML"] as $x) { if (!extension_loaded($x)) { fwrite(STDERR,"Missing $x\n"); exit(1); } }'
+$WPCLI eval-file "$LLMS_STAGE/32a4-generate-llms.php" "$LLMS_STAGE/32a4-llms.base.txt" "$LLMS_STAGE/llms.txt" "$LLMS_STAGE/llms-prices.json"
+docker exec php php "$LLMS_STAGE/32a4-generate-llms-full.php" "$LLMS_INTERNAL_ORIGIN" 'www.packrivo.com' 'https://www.packrivo.com' "$LLMS_STAGE/llms-full.txt" 3
+docker exec php php -r '$d=$argv[1]; require $d."/32a4-llms-text.php"; foreach (["llms.txt","llms-full.txt"] as $f) { $s=file_get_contents($d."/".$f); if ($s===false || pk32a4_old_moq($s)) { fwrite(STDERR,"STOP: stale MOQ or missing $f\n"); exit(1); } echo "$f stale_moq=0\n"; }' "$LLMS_STAGE"
+```
+
+摘要价格由当前 `PKQ_Pricing::price()` 和 `pk_from_price()` 计算，生成器要求设置为 250／15%／$150，口径明确包含协调费；`llms-full` 抓取英文 page sitemap 的去重路径，只提取服务器渲染主内容，不执行 JS 或抓取外部资源。任一页面非 200、noindex、站外、旧 MOQ 或解析失败均停止且不写完整摘要。人工核对最新页面、价格、明确的 500 件报价例子与输出哈希后，再在另行授权的维护步骤中备份并替换生产静态文件；不得仅凭本地结果发布。
+
+### 32a-4：临时调试插件现场核查（仅另行授权上线时）
+
+本地 31a/31b/32a 快照均含 `zz-debug-29y.php`，其注释标明临时排障用途；现有证据不能确定生产是否存在。32a 本地已禁用。站长获上线授权后，如实际生产路径存在该文件，先备份、比较哈希，再删除原文件：
+
+```sh
+if docker exec php test -f "$WPC/wp-content/mu-plugins/zz-debug-29y.php"; then
+  test ! -e "$BACKUP/zz-debug-29y.php" || { echo 'STOP: debug backup exists'; exit 1; }
+  docker cp php:"$WPC/wp-content/mu-plugins/zz-debug-29y.php" "$BACKUP/zz-debug-29y.php"
+  docker exec php sha256sum "$WPC/wp-content/mu-plugins/zz-debug-29y.php"
+  sha256sum "$BACKUP/zz-debug-29y.php"
+  echo 'Compare hashes; only if equal, remove the production original in the authorized maintenance step.'
+fi
+```
+
+两份哈希确认一致后，才执行 `docker exec php rm "$WPC/wp-content/mu-plugins/zz-debug-29y.php"`；之后检查页面没有 `DBG29Y`。生产文件是否存在和该删除均未在本轮核验或执行。
 
 > **上线以本文件为准。`deploy/README.md` 里按轮次堆的 27g…28q 记录只作历史参考，命令和顺序以这里为唯一口径。**
 > 本文件不含任何密码、密钥或 token：wp-cli 走服务器上已有的 SSH/容器配置，Cloudflare 清缓存走本机 `E:\破甲工作区\i18n\.cf.env`（只引用路径，不抄值）。
