@@ -86,6 +86,43 @@ $WPCLI eval-file "$PKGC/32a5-blog-migrate.php" apply "$BLOG_BACKUP"
 
 第一次 `changed=318`，第二次 `changed=0`。若需回滚，在维护状态下执行 `$WPCLI eval-file "$PKGC/32a5-blog-migrate.php" rollback "$BLOG_BACKUP"`；任一相关文章在迁移后被其他人修改则停止，先人工核对，不能覆盖新内容。保留报告中标为 rewrite 的文章及其链接供 dsh 重写。
 
+### 32a-6：导入三篇博客的七条改写（紧接 32a-5）
+
+仅在另行获得生产上线授权、翻译闸门通过并确认完整数据库备份可恢复后执行。把 `dsh-out/32a-blog-rewrite.csv` 放到 `$PKG/32a-blog-rewrite.csv`，并将本提交的 `32a6-blog-rewrite.php` 和 `32a6-blog-rollback.php` 放到 `$PKG`。脚本要求七条旧值各精确命中一次；448 正文必须整段匹配。预检、备份、执行之间若内容、meta 或 Yoast indexable 变化，停下人工核对，不绕过校验。
+
+```sh
+for name in 32a6-blog-rewrite.php 32a6-blog-rollback.php 32a-blog-rewrite.csv; do
+  docker cp "$PKG/$name" php:"$PKGC/$name" || { echo "STOP: copy failed: $name"; exit 1; }
+done
+BLOG6_CSV="$PKGC/32a-blog-rewrite.csv"
+BLOG6_BACKUP="$PKGC/32a6-blog-$LAUNCH.json"
+$WPCLI eval-file "$PKGC/32a6-blog-rewrite.php" dry-run "$BLOG6_CSV" "$BLOG6_BACKUP" || { echo 'STOP: preflight failed'; exit 1; }
+$WPCLI eval-file "$PKGC/32a6-blog-rewrite.php" backup "$BLOG6_CSV" "$BLOG6_BACKUP" || { echo 'STOP: backup failed'; exit 1; }
+test ! -e "$BACKUP/32a6-blog-$LAUNCH.json" || { echo 'STOP: backup exists'; exit 1; }
+docker cp php:"$BLOG6_BACKUP" "$BACKUP/32a6-blog-$LAUNCH.json" || { echo 'STOP: backup copy failed'; exit 1; }
+BLOG6_HOST_SHA=$(sha256sum "$BACKUP/32a6-blog-$LAUNCH.json" | cut -d' ' -f1)
+BLOG6_CONTAINER_SHA=$(docker exec php sha256sum "$BLOG6_BACKUP" | cut -d' ' -f1)
+printf 'host=%s container=%s\n' "$BLOG6_HOST_SHA" "$BLOG6_CONTAINER_SHA"
+test -n "$BLOG6_HOST_SHA" && test "$BLOG6_HOST_SHA" = "$BLOG6_CONTAINER_SHA" || { echo 'STOP: backup hash mismatch'; exit 1; }
+```
+
+核对备份哈希一致并妥善保管完整文章和元数据，才执行：
+
+```sh
+$WPCLI eval-file "$PKGC/32a6-blog-rewrite.php" apply "$BLOG6_CSV" "$BLOG6_BACKUP" || { echo 'STOP: migration failed'; exit 1; }
+$WPCLI eval-file "$PKGC/32a6-blog-rewrite.php" apply "$BLOG6_CSV" "$BLOG6_BACKUP" || { echo 'STOP: idempotence check failed'; exit 1; }
+```
+
+首次应为 `changed=7`，第二次应为 `changed=0`。脚本同步更新 448 对应的 Yoast indexable；它只从正文移除 `01-worksheet` 和 `b03-448-teaching` 的两个 figure，不删除媒体库文件。之后如果重新做图，再把新图放回正文。
+
+需要回滚时，先核对备份哈希并保持维护状态，再执行：
+
+```sh
+$WPCLI eval-file "$PKGC/32a6-blog-rollback.php" "$BLOG6_CSV" "$BLOG6_BACKUP"
+```
+
+回滚前如果目标字段或 Yoast indexable 已被其他操作修改，脚本会中止，需先人工核对，不能覆盖新内容。
+
 32a 在生产上线并通过正常公开 URL 验证后，由站长另行把 `E:/CodexHome/automations/packrivo-03-00-packrivo-2/automation.toml` 的每日博客任务起订量从 500 改为 250；此前保持原设置。本轮没有修改定时任务。
 
 ### 32a-2：旧 mu-plugin 的生产现场核对和精确替换
