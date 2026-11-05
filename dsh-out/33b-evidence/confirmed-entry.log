@@ -1,0 +1,3 @@
+SAME_STYLE_BEFORE $3.41 AFTER $3.41 DIMS ["9.5","9.5","4"]
+MISSING_STYLE_ENTRY {"style":"rigid","length":"9.5","width":"9.5","height":"4","guardSize":"1","guardMaterial":"1","price":"$3.41"}
+exit=0

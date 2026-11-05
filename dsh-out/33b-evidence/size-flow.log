@@ -1,0 +1,5 @@
+SELECT_SIZE_URL http://localhost:8087/product-drawer-jewelry-box/?size=1
+DRAWER_CONFIGURE http://localhost:8087/get-a-quote/?product=product-drawer-jewelry-box&style=rigid&qty=250&size=1&require_material=1 {"length":"7","width":"9","height":"3.5","qty":"250","material":"","requireMaterial":"1","prices":0}
+COLLAPSIBLE_GUARD Enter dimensions from 2 to 120 cm (one decimal place) and choose a material before viewing an estimate.
+COLLAPSIBLE_BLANK_DIMS ["","",""]
+exit=0

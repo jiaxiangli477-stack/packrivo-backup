@@ -1,0 +1,6 @@
+PREFLIGHT_OK {"style":"rigid","product":"product-magnetic-jewelry-box","qty":"250","length":"9.5","width":"9.5","height":"4","material":"rigidboard","print":"none","finish":"none"} JS_ERRORS []
+POST_COUNT 1 HTTP 200 RESPONSE {"ok":true,"ref":"PKQ-NMSIW","unit":3.41,"total":852.76,"goods_total":702.76,"fee":150,"quantity":250}
+REQUEST_SPEC {"style":"rigid","product":"product-magnetic-jewelry-box","material":"rigidboard","print":"none","finish":"none","quantity":250,"length":9.5,"width":9.5,"height":4}
+VISIBLE_RESULT quested PKQ-NMSIW We reply within one business day with a proof timeline. Reference PKQ-NMSIW. LIVE ESTIMATE $3.41 per unit · 250 units Style Rigid box Size 9.5 × 9.5 × 4 cm Material Rigid greyboard Print Unprinted Finish None Order total $852.76 Goods $702.76 · Sourcing fee $150 (15%, min. $150) · Total $852.76 Instant quotes include the sourcing fee at 15%; your final rate is confirmed on the written quote. Ex-works. Freight & duties quoted per destination. Setup amortised into the unit price.
+JS_ERRORS []
+exit=0

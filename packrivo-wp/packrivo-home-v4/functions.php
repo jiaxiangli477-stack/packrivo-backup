@@ -18,6 +18,9 @@ require_once get_stylesheet_directory() . '/inc/quote-page.php';
 // 29y：列表页 ItemList / 可见 FAQ 的 FAQPage（第 4 项结构化数据）。
 require_once get_stylesheet_directory() . '/inc/structured-data.php';
 require_once get_stylesheet_directory() . '/inc/33a-category-cards.php';
+require_once get_stylesheet_directory() . '/inc/33b-product-data.php';
+require_once get_stylesheet_directory() . '/inc/33b-pricing.php';
+require_once get_stylesheet_directory() . '/inc/33b-integration.php';
 
 function pkv4_assets()
 {

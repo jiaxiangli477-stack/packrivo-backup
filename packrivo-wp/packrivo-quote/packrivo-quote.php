@@ -189,7 +189,7 @@ final class PKQ_Plugin
             'lang' => self::lang(),
         ]);
 
-        $atts = shortcode_atts(['style' => '', 'qty' => '', 'product' => ''], $atts, 'packrivo_quote');
+        $atts = shortcode_atts(['style' => '', 'qty' => '', 'product' => '', 'require_size' => '', 'require_material' => ''], $atts, 'packrivo_quote');
         $style_input = $atts['style'] !== '' ? $atts['style'] : ($_GET['style'] ?? '');
         $qty_input = $atts['qty'] !== '' ? $atts['qty'] : ($_GET['qty'] ?? '');
         $product_input = $atts['product'] !== '' ? $atts['product'] : ($_GET['product'] ?? '');
@@ -199,6 +199,10 @@ final class PKQ_Plugin
         }
         $qty = is_scalar($qty_input) && $qty_input !== '' ? max((int) $settings['min_qty'], min((int) $settings['max_qty'], (int) $qty_input)) : 0;
         $product = is_scalar($product_input) ? sanitize_title(wp_unslash($product_input)) : '';
+        // A structured product may provide its confirmed engine style when an
+        // older incoming link only carries the product slug.
+        $resolved_style = apply_filters('pkq_product_style', $style, $product);
+        if (is_string($resolved_style) && isset($settings['styles'][$resolved_style])) $style = $resolved_style;
 
         // A product entry point prices one reference spec; the theme owns that spec,
         // so it hands it over through a filter. No product means the plain defaults.
@@ -209,6 +213,30 @@ final class PKQ_Plugin
             $spec_attrs .= sprintf(' data-%s="%s"', $key, esc_attr((string) $spec[$key]));
         }
 
+        // These opt-in flags only strengthen input requirements. Query string
+        // values cannot disable a requirement explicitly set by the shortcode.
+        $requires = [];
+        foreach (['size', 'material'] as $field) {
+            $key = 'require_' . $field;
+            $attr = $atts[$key] ?? '';
+            $query = $_GET[$key] ?? '';
+            $requires[$field] = (is_scalar($attr) && (string)$attr === '1') || (is_scalar($query) && (string)$query === '1');
+        }
+        // A structured product can require confirmation even when the visitor
+        // arrives via an older catalogue link lacking the explicit flags.
+        $derived = apply_filters('pkq_required_fields', [], $product, $style, $spec);
+        if (is_array($derived)) foreach (['size', 'material'] as $field) $requires[$field] = $requires[$field] || !empty($derived[$field]);
+        foreach (['size', 'material'] as $field) if ($requires[$field]) $spec_attrs .= ' data-require-' . $field . '="1"';
+        if ($requires['size'] || $requires['material']) {
+            // This response needs the guard-aware JS even when a visitor has
+            // cached the 33a calculator; legacy responses retain their URL.
+            $scripts = wp_scripts();
+            if (isset($scripts->registered['pkq-quote'])) $scripts->registered['pkq-quote']->ver = PKQ_VERSION . '-33b-guard';
+        }
+        $no_js = ($requires['size'] || $requires['material'])
+            ? 'To request a quote without JavaScript, email hello@packrivo.com with your dimensions and material.'
+            : 'This configurator needs JavaScript. Email hello@packrivo.com and we will quote manually.';
+
         return sprintf(
             '<div class="pkq-root" data-style="%s" data-qty="%d" data-product="%s"%s%s><noscript>%s</noscript></div>',
             esc_attr($style),
@@ -216,7 +244,7 @@ final class PKQ_Plugin
             esc_attr($product),
             $spec_attrs,
             self::lang() === 'ar' ? ' dir="rtl"' : '',
-            esc_html(self::t('This configurator needs JavaScript. Email hello@packrivo.com and we will quote manually.'))
+            esc_html(self::t($no_js))
         );
     }
 }

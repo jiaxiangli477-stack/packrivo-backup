@@ -1,0 +1,7 @@
+product-magnetic-jewelry-box HTTP 200 JSON_BLOCKS 3 PRODUCT 1 BREADCRUMB 1 FAQ 1 SERVICE 1 OFFER 1 OFFER_DETAIL USD low=1.45 high=3.41 expected=1.45/3.41 tiers=7 ERRORS 0
+product-drawer-jewelry-box HTTP 200 JSON_BLOCKS 3 PRODUCT 1 BREADCRUMB 1 FAQ 1 SERVICE 1 OFFER 0 OFFER_DETAIL none ERRORS 1
+  FAIL AggregateOffer missing; source dimensions/material may be incomplete
+product-collapsible-magnetic-gift-box HTTP 200 JSON_BLOCKS 3 PRODUCT 1 BREADCRUMB 1 FAQ 1 SERVICE 1 OFFER 0 OFFER_DETAIL none ERRORS 1
+  FAIL AggregateOffer missing; source dimensions/material may be incomplete
+TOTAL_PAGES 3 ERRORS 2
+exit=1

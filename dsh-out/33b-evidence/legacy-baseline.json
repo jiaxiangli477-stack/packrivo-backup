@@ -1,0 +1,37 @@
+[
+  {
+    "slug": "product-auto-bottom-display-carton",
+    "url": "http://127.0.0.1:8087/product-auto-bottom-display-carton/",
+    "bytes": 96197,
+    "sha256": "6995a45557c883bcf4d3ec157cc7d90d924f319adb22c3f49764656d0c2abe81",
+    "repeat_equal": true
+  },
+  {
+    "slug": "product-bookend-folding-carton",
+    "url": "http://127.0.0.1:8087/product-bookend-folding-carton/",
+    "bytes": 96355,
+    "sha256": "2075899424108142b7ddccf79070ab8b9ffe51765d015d2b2e92e4ae6cbb5e5a",
+    "repeat_equal": true
+  },
+  {
+    "slug": "product-molded-pulp-corner-cradle",
+    "url": "http://127.0.0.1:8087/product-molded-pulp-corner-cradle/",
+    "bytes": 86358,
+    "sha256": "9fcc7aa7426bbaf73ba63ad9d45ad89ae7aac50ce5dae4e5eb6b4d5a2c50fb56",
+    "repeat_equal": true
+  },
+  {
+    "slug": "product-slide-in-card-blister",
+    "url": "http://127.0.0.1:8087/product-slide-in-card-blister/",
+    "bytes": 95393,
+    "sha256": "e7c614ee49bbf5fe8edb04166b923ccaecc40d19b17a04b2fffb8de34a6299b0",
+    "repeat_equal": true
+  },
+  {
+    "slug": "product-six-corner-pre-glued-carton",
+    "url": "http://127.0.0.1:8087/product-six-corner-pre-glued-carton/",
+    "bytes": 96221,
+    "sha256": "f2e1795bad314d7be241bb0feaacb165e0aed693363dd18d79d3008993de72a0",
+    "repeat_equal": true
+  }
+]

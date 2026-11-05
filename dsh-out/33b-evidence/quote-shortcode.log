@@ -1,0 +1,14 @@
+PASS legacy shortcode output unchanged
+PASS legacy script asset version unchanged
+PASS shortcode flags guard missing fields
+PASS guarded script uses distinct cache version
+PASS guarded no-JavaScript fallback
+PASS GET flags propagate to quote page
+PASS GET guard also varies script cache version
+PASS GET cannot weaken shortcode flags
+PASS invalid GET flags ignored safely
+PASS known dimensions and material remain prefilled
+PASS derived product guard protects legacy entry links
+PASS derived guard varies script cache version
+PASS structured product can resolve missing style
+exit=0

@@ -1,0 +1,99 @@
+﻿path,pattern,occurrences,first_html_context
+/2026/09/21/custom-packaging-sample-checklist/,ISTA,2,"href=""https://www.ista.org/getting_started_with_design.php"">ISTA's design guidance</a> connects distribution-test choices to the actual environm"
+/2026/09/21/mailer-box-protection-concept-image/,ISTA,2,"href=""https://www.ista.org/getting_started_with_design.php"">ISTA's design and testing guidance</a> ties test selection to the distribution envir"
+/2026/09/28/candle-packaging-box-insert-outer-pack/,ISTA,2," evaluation. <a href=""https://ista.org/test_procedures.php"">ISTA’s public procedure overview</a> distinguishes screening and distribution-simula"
+/2026/09/28/food-contact-packaging-documents-checklist/,ISO,9,"ce of the full package.""}},{""@type"":""Question"",""name"":""Does ISO 9001 mean the material is approved for food?"",""acceptedAnswer"":{""@type"":""Answer"
+/2026/09/28/mailer-box-with-insert-fit-brief/,ISTA,2," conditions. <a href=""https://ista.org/test_procedures.php"">ISTA’s procedure overview</a> distinguishes evaluation purposes and shipment environ"
+/2026/09/28/packaging-insert-materials/,ISTA,2,"tion.</p> <p><a href=""https://ista.org/test_procedures.php"">ISTA’s public procedure overview</a> separates screening from distribution simulatio"
+/2026/09/28/packaging-reorder-checklist/,ISTA,2,"owner, file and proof scope before releasing output.</p> <p>ISTA’s <a href=""https://support.ista.org/portal/en/kb/articles/when-should-a-package"
+/2026/10/02/multi-sku-jewelry-packaging-fit-matrix/,ISTA,2,"/en/kb/articles/when-should-a-packaged-product-be-retested"">ISTA’s guidance on retesting a packaged product</a> identifies product, package and"
+/2026/10/05/candle-glass-contact-map/,ISTA,1,"/en/kb/articles/when-should-a-packaged-product-be-retested"">ISTA's retesting guidance</a> explains why product, package and process changes can"
+/2026/10/05/care-card-packout-clearance/,ISTA,1,"/en/kb/articles/when-should-a-packaged-product-be-retested"">ISTA's retesting guidance</a> identifies product, package and process changes as rel"
+/2026/10/05/currency-rate-basis/,ISO,1,ls CUR_A and CUR_B solely for unit arithmetic; they are not ISO currency codes or payment options offered by anyone. Assume an original amount
+/2026/10/05/damage-location-record/,ISTA,2,"er staged arrangement should be labelled separately.</p> <p>ISTA’s <a href=""https://ista.org/test_procedures.php"">evaluation overview</a> treats"
+/2026/10/05/distribution-test-scope/,ISTA,1,"ly become evidence for another distribution pattern.</p> <p>ISTA’s <a href=""https://ista.org/test_procedures.php"">procedure overview</a> disting"
+/2026/10/05/incoming-component-damage-hold/,ISTA,2,"The official <a href=""https://ista.org/test_procedures.php"">ISTA procedure overview</a> describes purpose-specific packaged-product testing. It"
+/2026/10/05/package-conditioning-plan/,ISO,4,"d> </tr> <tr data-csv-scope=""HISTORY_PAIR_LIMIT""> <td>COMPARISON25</td> <td>HISTORY_PAIR</td> <td>has limit</td> <td>MATERIAL_REFERENCE_HELD</t"
+/2026/10/05/package-conditioning-plan/,ISTA,2,"ed.</p> <h2>Ask which condition controls the review</h2> <p>ISTA’s <a href=""https://ista.org/test_procedures.php"">procedure overview</a> include"
+/2026/10/05/reorder-product-change-trigger/,ISTA,1,"sions and weights with their sources where relevant.</p> <p>ISTA’s <a href=""https://ista.org/test_procedures.php"">procedure overview</a> uses de"
+/2026/10/05/test-report-configuration/,ISTA,1,"nal document through the authorized project process.</p> <p>ISTA’s <a href=""https://ista.org/test_procedures.php"">procedure overview</a> shows t"
+/2026/10/07/accessible-gift-packaging-limited-dexterity/,ISO,4,"<a href=""https://www.iso.org/standard/59881.html?browse=tc"">ISO 17480’s public scope</a> covers ease of opening, including opening location, op"
+/2026/10/10/packaging-transparency-export/,ISO,9,"<td>CV2</td> </tr> <tr data-csv-scope=""AB_FIRST""> <td>COMPARISON27</td> <td>AB</td> <td>first candidate</td> <td>EXPORT_A27</td> </tr> <tr data"
+/2026/10/11/aql-2-5-packaging-acceptance-sampling/,ISO,4,"commended for any real packaging order, do not come from an ISO 2859 table, and should not be substituted for an agreed inspection procedure.</"
+/2026/10/11/delta-e-formula-comparison/,ISO,4,"s/colorimetry-part-6-ciede2000-colour-difference-formula-1"">ISO/CIE 11664-6:2022 description</a> identifies CIEDE2000 as an extension of the 19"
+/2026/10/11/delta-e-formula-comparison/,ISTA,2,"e=""NO_PAIR_TRANSFER""> <td>VECTORS29</td> <td>TWO_REFERENCE_DISTANCES_EQUAL2</td> <td>does not establish</td> <td>CANDIDATES_EQUAL_OR_DISTANCE2</"
+/2026/10/11/delta-e-formula-comparison/,ΔE,15,eeds to know which formula produced each result. A CIE 1976 ΔE*ab number and a CIEDE2000 ΔE00 number are not two interchangeable readings on o
+/2026/10/11/edge-crush-vs-box-compression/,ISO,5,"f=""https://committee.iso.org/standard/80310.html?browse=tc"">ISO 3037:2022</a> specifies a non-waxed edge method with force along the flute axis"
+/2026/10/11/packaging-colour-metamerism-lighting/,ISO,6," scope of <a href=""https://www.iso.org/standard/83759.html"">ISO 3664:2025</a> covers viewing conditions for reflective and transmissive images,"
+/2026/10/11/paper-packaging-humidity-curl/,ISO,1,"csv-scope=""NO_OUTCOME""> <td>PAPER29</td> <td>PROPOSED_COMPARISON</td> <td>does not predict</td> <td>CURL_DIRECTION_CAUSE_RECOVERY_OR_CUT_ERROR<"
+/2026/10/11/usps-rectangular-parcel-dim-weight-rounding/,ISO,4,"r> <tr data-csv-scope=""A29_GREATER""> <td>A29</td> <td>COMPARISON_WEIGHT</td> <td>calculated from</td> <td>max(A29_DIM_UP,A29_ACTUAL_UP); 16 lb<"
+/2026/10/12/board-bursting-puncture-resistance/,ISO,5,"tinction. <a href=""https://www.iso.org/standard/61488.html"">ISO 2759:2014</a> identifies a board bursting assessment based on increasing hydrau"
+/2026/10/12/care-card-paper-opacity-show-through/,ISO,5,"nical Information</a> separates opacity from CIE whiteness, ISO brightness and colour.</p> <p>Its opacity section describes a measurement princ"
+/2026/10/12/carton-compression-moisture-state/,ISO,4,"/td> </tr> <tr data-csv-scope=""PEAK_DIFF""> <td>REPORT_COMPARISON</td> <td>A_MINUS_B</td> <td>calculated from</td> <td>REPORT_A_PEAK-REPORT_B_PE"
+/2026/10/12/gift-packaging-return-reuse-system/,ISO,2,"stract of <a href=""https://www.iso.org/standard/55871.html"">ISO 18603:2013</a> includes associated systems within the reusable-packaging assess"
+/2026/10/12/packaging-life-cycle-functional-unit/,ISO,6,"p> <p>The <a href=""https://www.iso.org/standard/37456.html"">ISO 14040</a> and <a href=""https://www.iso.org/standard/38498.html"">ISO 14044</a> p"
+/2026/10/12/packaging-print-light-fading/,ISO,2,"/p> <p>The <a href=""https://www.iso.org/standard/2121.html"">ISO 12040:1997 catalogue entry</a> identifies a standard for assessing the lightfas"
+/2026/10/12/paperboard-hinge-repeated-opening-life/,ISO,3,"s.</p> <p><a href=""https://www.iso.org/standard/11700.html"">ISO 5626:1993</a>, <em>Paper — Determination of Folding Endurance</em>, describes m"
+/2026/10/12/parcel-drop-orientation-impact/,ISO,2,"s. D5276’s public 110 lb (50 kg) statement is tied to named ISO correspondence, not a universal maximum for all use of the method. No drop heig"
+/2026/10/12/qr-payload-error-correction-module-size/,ISO,1,"al pages were checked 10 October 2026 and are undated. Paid ISO/IEC 18004 was not obtained. The 22 mm calculations are hypothetical arithmetic,"
+/2026/10/12/textile-rubbing-transfer-light-fading/,ISO,1,"stract of <a href=""https://www.iso.org/standard/65207.html"">ISO 105-X12:2016</a> concerns resistance of textile colour to rubbing off and stain"
+/2026/10/12/threaded-lid-torque-grip-radius/,ISO,2," </tr> <tr data-csv-scope=""DIRECTION_ONLY""> <td>ANGLE_COMPARISON</td> <td>SAME_TORQUE_RADIUS</td> <td>changes</td> <td>FORCE_DIRECTION_ONLY</td"
+/2026/10/12/usps-letter-nonmachinable-packaging/,ISO,2,"d>LETTER_A32_FLAG</td> <td>ASPECT_RATIO — CONDITIONAL_COMPARISON</td> <td>WITHIN_ASPECT_INTERVAL_ONLY</td> </tr> <tr data-csv-scope=""LETTER_B32"
+/2026/10/15/3pl-packing-order-mix/,ISO,4,> <tr> <td>A155</td> <td>FEEA17_r01</td> <td>WORKLOAD_COMPARISON</td> <td>100 x1 +55 x0.30</td> </tr> <tr> <td>B155</td> <td>FEEB17_r01</td> <t
+/2026/10/15/packaging-storage-pick-frequency/,ISTA,10,"culation</th> </tr> </thead> <tbody> <tr data-csv-scope=""C_DISTANCE""> <td>COCOLLECT35</td> <td>C_ROUTE_DISTANCE</td> <td>calculated from</td> <t"
+/2026/10/15/packing-station-task-balance/,ISO,1,"AIVE""> <td>THREE32_NAIVE</td> <td>OMITTED_LINE_TIMING_COMPARISON — CALCULATED_FROM</td> <td>JOB32_COUNT*THREE32_INTERVAL; 400 s; Incomplete mod"
+/2026/10/15/print-setup-run-length/,ISO,6,> <tr> <td>A490</td> <td>RA16_r01</td> <td>PRINT_ONLY_COMPARISON</td> <td>240 + 490 x 0.60</td> </tr> <tr> <td>B490</td> <td>RB16_r01</td> <td>
+/2026/10/20/packaging-supplier-certificate-check/,ISO,2,"iv> <p>The <a href=""https://www.iso.org/certification.html"">ISO certification guidance</a> explains that external certification bodies issue ce"
+/2026/10/26/molded-pulp-tray-vs-end-supports-packout/,ISTA,2,"/en/kb/articles/when-should-a-packaged-product-be-retested"">ISTA guidance on retesting</a> explains why changes to the product, package or packi"
+/2026/10/28/candle-molded-pulp-foam-choice/,ISTA,1,".</p> <p>The <a href=""https://ista.org/test_procedures.php"">ISTA test procedure overview</a> distinguishes screening from distribution simulatio"
+/2026/10/28/necklace-earring-set-box-options/,ISTA,1,"roposed. The <a href=""https://ista.org/test_procedures.php"">ISTA test procedure overview</a> distinguishes different distribution-test purposes."
+/ar/blog/,ISO,1,"n."",""caption"":""AI-assisted conceptual loading patterns, not ISO apparatus or tested specimens. The generic local contact specifies no actual ti"
+/ar/blog/,ISTA,1,fy the actual component and observed condition The official ISTA procedure overview describes purpose-specific packaged-product testing. It supp
+/ar/blog/,ΔE,2,eeds to know which formula produced each result. A CIE 1976 ΔE*ab number and a CIEDE2000 ΔE00 number are not two interchangeable readings on o
+/ar/guide-mailer-rfq-checklist/,ISTA,1,"est_procedures.php"">نظرة عامة على إجراءات اختبار التغليف من ISTA</a> — سياق لمناقشة أدلة النقل، وليس نتيجة اختبار لهذا الظرف.</li><li><a href=""h"
+/blog/,ISO,1,"n."",""caption"":""AI-assisted conceptual loading patterns, not ISO apparatus or tested specimens. The generic local contact specifies no actual ti"
+/blog/,ISTA,1,fy the actual component and observed condition The official ISTA procedure overview describes purpose-specific packaged-product testing. It supp
+/corrugated-wine-shipper/,ISTA,1,</th><td>Drop test per your courier profile</td><td>Whether ISTA-style testing is required</td></tr></tbody></table></div></div></section><secti
+/de/blog/,ISO,1,"n."",""caption"":""AI-assisted conceptual loading patterns, not ISO apparatus or tested specimens. The generic local contact specifies no actual ti"
+/de/blog/,ISTA,1,fy the actual component and observed condition The official ISTA procedure overview describes purpose-specific packaged-product testing. It supp
+/de/blog/,ΔE,2,eeds to know which formula produced each result. A CIE 1976 ΔE*ab number and a CIEDE2000 ΔE00 number are not two interchangeable readings on o
+/de/guide-mailer-rfq-checklist/,ISTA,1,"a href=""https://ista.org/test_procedures.php"">Übersicht des ISTA-Prüfverfahrens für Verpackungen</a> — Kontext zur Besprechung von Versandnachwe"
+/es/blog/,ISO,1,"n."",""caption"":""AI-assisted conceptual loading patterns, not ISO apparatus or tested specimens. The generic local contact specifies no actual ti"
+/es/blog/,ISTA,1,fy the actual component and observed condition The official ISTA procedure overview describes purpose-specific packaged-product testing. It supp
+/es/blog/,ΔE,2,eeds to know which formula produced each result. A CIE 1976 ΔE*ab number and a CIEDE2000 ΔE00 number are not two interchangeable readings on o
+/es/customization/,ISTA,2,"v class=""sample-caption""><span class=""eyebrow sample-mode"">VISTA PREVIA / NO SELECCIONADO</span><h3 class=""sample-name"">Papel kraft</h3><p class"
+/es/guide-jewelry-insert-fit/,ISTA,1,E LA CADENA / PIEZAS SUELTAS: ORIENTACIÓN DE EXHIBICIÓN PREVISTA: CONTACTO PERMITIDO / CONTACTO A REVISAR: PUNTO DE ELEVACIÓN DEL CLIENTE Y ORDE
+/es/guide-mailer-rfq-checklist/,ISTA,1,"es.php"">Resumen del procedimiento de pruebas de embalaje de ISTA</a> — contexto para hablar de evidencia de transporte, no un resultado de prueb"
+/fr/blog/,ISO,1,"n."",""caption"":""AI-assisted conceptual loading patterns, not ISO apparatus or tested specimens. The generic local contact specifies no actual ti"
+/fr/blog/,ISTA,1,fy the actual component and observed condition The official ISTA procedure overview describes purpose-specific packaged-product testing. It supp
+/fr/blog/,ΔE,2,eeds to know which formula produced each result. A CIE 1976 ΔE*ab number and a CIEDE2000 ΔE00 number are not two interchangeable readings on o
+/fr/guide-mailer-rfq-checklist/,ISTA,1,"cedures.php"">Aperçu des procédures d’essai d’emballage de l’ISTA</a> — contexte pour discuter des preuves de transport, et non résultat d’essai"
+/guide-mailer-rfq-checklist/,ISTA,1,"</h2><ul><li><a href=""https://ista.org/test_procedures.php"">ISTA packaging test procedure overview</a> — context for discussing transport eviden"
+/it/blog/,ISO,1,"n."",""caption"":""AI-assisted conceptual loading patterns, not ISO apparatus or tested specimens. The generic local contact specifies no actual ti"
+/it/blog/,ISTA,1,fy the actual component and observed condition The official ISTA procedure overview describes purpose-specific packaged-product testing. It supp
+/it/blog/,ΔE,2,eeds to know which formula produced each result. A CIE 1976 ΔE*ab number and a CIEDE2000 ΔE00 number are not two interchangeable readings on o
+/it/guide-mailer-rfq-checklist/,ISTA,1,"ures.php"">Panoramica delle procedure di test per imballaggi ISTA</a> — contesto per discutere le prove di trasporto, non risultato di un test pe"
+/ja/blog/,ISO,1,"n."",""caption"":""AI-assisted conceptual loading patterns, not ISO apparatus or tested specimens. The generic local contact specifies no actual ti"
+/ja/blog/,ISTA,1,fy the actual component and observed condition The official ISTA procedure overview describes purpose-specific packaged-product testing. It supp
+/ja/blog/,ΔE,2,eeds to know which formula produced each result. A CIE 1976 ΔE*ab number and a CIEDE2000 ΔE00 number are not two interchangeable readings on o
+/ja/guide-mailer-rfq-checklist/,ISTA,1,"</h2><ul><li><a href=""https://ista.org/test_procedures.php"">ISTA包装試験手順の概要</a> — 輸送根拠の相談に使う背景情報であり、この郵送箱の試験結果ではありません.</li><li><a href=""https://ww"
+/ko/blog/,ISO,1,"n."",""caption"":""AI-assisted conceptual loading patterns, not ISO apparatus or tested specimens. The generic local contact specifies no actual ti"
+/ko/blog/,ISTA,1,fy the actual component and observed condition The official ISTA procedure overview describes purpose-specific packaged-product testing. It supp
+/ko/blog/,ΔE,2,eeds to know which formula produced each result. A CIE 1976 ΔE*ab number and a CIEDE2000 ΔE00 number are not two interchangeable readings on o
+/ko/guide-mailer-rfq-checklist/,ISTA,1,"</h2><ul><li><a href=""https://ista.org/test_procedures.php"">ISTA 포장 시험 절차 개요</a> — 운송 증빙을 논의하기 위한 맥락 정보이며, 이 우편 포장의 시험 결과가 아닙니다.</li><li><a href"
+/nl/blog/,ISO,1,"n."",""caption"":""AI-assisted conceptual loading patterns, not ISO apparatus or tested specimens. The generic local contact specifies no actual ti"
+/nl/blog/,ISTA,1,fy the actual component and observed condition The official ISTA procedure overview describes purpose-specific packaged-product testing. It supp
+/nl/blog/,ΔE,2,eeds to know which formula produced each result. A CIE 1976 ΔE*ab number and a CIEDE2000 ΔE00 number are not two interchangeable readings on o
+/nl/guide-mailer-rfq-checklist/,ISTA,1,"ref=""https://ista.org/test_procedures.php"">Overzicht van de ISTA-procedure voor verpakkingstests</a> — context voor het bespreken van transportb"
+/pt/blog/,ISO,1,"n."",""caption"":""AI-assisted conceptual loading patterns, not ISO apparatus or tested specimens. The generic local contact specifies no actual ti"
+/pt/blog/,ISTA,1,fy the actual component and observed condition The official ISTA procedure overview describes purpose-specific packaged-product testing. It supp
+/pt/blog/,ΔE,2,eeds to know which formula produced each result. A CIE 1976 ΔE*ab number and a CIEDE2000 ΔE00 number are not two interchangeable readings on o
+/pt/guide-mailer-rfq-checklist/,ISTA,1,"s.php"">Visão geral dos procedimentos de teste de embalagens ISTA</a> — contexto para discutir evidências de transporte, não um resultado de test"
+/zh-CN/blog/,ISO,1,"n."",""caption"":""AI-assisted conceptual loading patterns, not ISO apparatus or tested specimens. The generic local contact specifies no actual ti"
+/zh-CN/blog/,ISTA,1,fy the actual component and observed condition The official ISTA procedure overview describes purpose-specific packaged-product testing. It supp
+/zh-CN/blog/,ΔE,2,eeds to know which formula produced each result. A CIE 1976 ΔE*ab number and a CIEDE2000 ΔE00 number are not two interchangeable readings on o
+/zh-CN/guide-mailer-rfq-checklist/,ISTA,1,"</h2><ul><li><a href=""https://ista.org/test_procedures.php"">ISTA 包装测试流程概览</a> — 用于讨论运输证据的背景信息，并非此邮寄包装的测试结果。</li><li><a href=""https://www.trade.g"
+/zh-TW/blog/,ISO,1,"n."",""caption"":""AI-assisted conceptual loading patterns, not ISO apparatus or tested specimens. The generic local contact specifies no actual ti"
+/zh-TW/blog/,ISTA,1,fy the actual component and observed condition The official ISTA procedure overview describes purpose-specific packaged-product testing. It supp
+/zh-TW/blog/,ΔE,2,eeds to know which formula produced each result. A CIE 1976 ΔE*ab number and a CIEDE2000 ΔE00 number are not two interchangeable readings on o
+/zh-TW/guide-mailer-rfq-checklist/,ISTA,1,"</h2><ul><li><a href=""https://ista.org/test_procedures.php"">ISTA 包裝測試程序概覽</a> — 作為討論運輸證據的背景資訊，並非此郵寄盒的測試結果。</li><li><a href=""https://www.trade.go"

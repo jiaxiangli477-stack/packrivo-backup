@@ -1,0 +1,43 @@
+ROW product-magnetic-jewelry-box QTY 250 UNIT $3.41 GOODS $702.76 SETUP Waived PASS
+ROW product-magnetic-jewelry-box QTY 500 UNIT $2.21 GOODS $957.43 SETUP Waived PASS
+ROW product-magnetic-jewelry-box QTY 1000 UNIT $2.05 GOODS $1,780.83 SETUP Waived PASS
+ROW product-magnetic-jewelry-box QTY 2500 UNIT $1.87 GOODS $4,069.09 SETUP Waived PASS
+ROW product-magnetic-jewelry-box QTY 5000 UNIT $1.72 GOODS $7,467.98 SETUP Waived PASS
+ROW product-magnetic-jewelry-box QTY 10000 UNIT $1.59 GOODS $13,787.03 SETUP Waived PASS
+ROW product-magnetic-jewelry-box QTY 25000 UNIT $1.45 GOODS $31,595.29 SETUP Waived PASS
+HERO product-magnetic-jewelry-box DISPLAY ["$2.05 / unit","$3.41 / unit"] ENGINE $2.05/$3.41 PASS
+FINISH_DELTA foil DISPLAY +$0.76 / unit ENGINE $0.76 PASS
+WIDGET_TILE mailer DISPLAY 1.1 ENGINE 1.1 PASS
+WIDGET_TILE product DISPLAY 0.96 ENGINE 0.96 PASS
+WIDGET_TILE shipping DISPLAY 0.87 ENGINE 0.87 PASS
+WIDGET_TILE rigid DISPLAY 2.21 ENGINE 2.21 PASS
+WIDGET_TILE carton DISPLAY 0.72 ENGINE 0.72 PASS
+WIDGET_TILE pouch DISPLAY 0.56 ENGINE 0.56 PASS
+WIDGET_TILE bag DISPLAY 0.82 ENGINE 0.82 PASS
+WIDGET_TILE sticker DISPLAY 0.39 ENGINE 0.39 PASS
+WIDGET_TILE poly DISPLAY 0.65 ENGINE 0.65 PASS
+RELATED_CARD product-drawer-jewelry-box DISPLAY null ENGINE unavailable PASS
+RELATED_CARD product-collapsible-magnetic-gift-box DISPLAY null ENGINE unavailable PASS
+RESULT product-magnetic-jewelry-box ROWS 7 ENGINE_ROWS 7
+ROW product-drawer-jewelry-box QTY 250 UNCONFIRMED_PLACEHOLDER PASS
+ROW product-drawer-jewelry-box QTY 500 UNCONFIRMED_PLACEHOLDER PASS
+ROW product-drawer-jewelry-box QTY 1000 UNCONFIRMED_PLACEHOLDER PASS
+ROW product-drawer-jewelry-box QTY 2500 UNCONFIRMED_PLACEHOLDER PASS
+ROW product-drawer-jewelry-box QTY 5000 UNCONFIRMED_PLACEHOLDER PASS
+ROW product-drawer-jewelry-box QTY 10000 UNCONFIRMED_PLACEHOLDER PASS
+ROW product-drawer-jewelry-box QTY 25000 UNCONFIRMED_PLACEHOLDER PASS
+INITIAL_WIDGET_PRICE product-drawer-jewelry-box NONE_PASS
+RELATED_CARD product-magnetic-jewelry-box DISPLAY 3.41 ENGINE 3.41 PASS
+RESULT product-drawer-jewelry-box ROWS 7 ENGINE_ROWS 0
+ROW product-collapsible-magnetic-gift-box QTY 250 UNCONFIRMED_PLACEHOLDER PASS
+ROW product-collapsible-magnetic-gift-box QTY 500 UNCONFIRMED_PLACEHOLDER PASS
+ROW product-collapsible-magnetic-gift-box QTY 1000 UNCONFIRMED_PLACEHOLDER PASS
+ROW product-collapsible-magnetic-gift-box QTY 2500 UNCONFIRMED_PLACEHOLDER PASS
+ROW product-collapsible-magnetic-gift-box QTY 5000 UNCONFIRMED_PLACEHOLDER PASS
+ROW product-collapsible-magnetic-gift-box QTY 10000 UNCONFIRMED_PLACEHOLDER PASS
+ROW product-collapsible-magnetic-gift-box QTY 25000 UNCONFIRMED_PLACEHOLDER PASS
+INITIAL_WIDGET_PRICE product-collapsible-magnetic-gift-box NONE_PASS
+RELATED_CARD product-magnetic-jewelry-box DISPLAY 3.41 ENGINE 3.41 PASS
+RESULT product-collapsible-magnetic-gift-box ROWS 7 ENGINE_ROWS 0
+TOTAL_PRICE_FAILURES 0
+exit=0

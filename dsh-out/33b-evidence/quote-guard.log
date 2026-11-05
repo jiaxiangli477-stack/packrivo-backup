@@ -1,0 +1,26 @@
+PASS legacy calculator immediately prices known input
+PASS legacy quantity unchanged
+PASS legacy no JavaScript errors
+PASS missing dimensions and material show no estimated price
+PASS material step blocked before dimensions
+PASS dimension fields present
+PASS unknown dimensions start empty
+PASS guarded dimension controls describe valid limits
+PASS cannot continue with missing dimensions
+PASS out-of-range dimensions blocked without a quote
+PASS nonrepresentable sub-millimetre dimension blocked
+PASS valid explicit dimensions enable next step
+PASS material is unselected and no estimate is shown
+PASS choosing material enables estimate and progression
+PASS mocked submission carries explicit inputs
+PASS guarded flow no JavaScript errors
+PASS known dimensions with unknown material show no estimate
+PASS clicking the preselected style does not guess a material
+PASS confirmed dimensions are preserved
+PASS known dimensions permit material selection
+PASS prototype property is not accepted as a material
+PASS both known inputs remain immediately quotable
+PASS clearing a known dimension hides price and explains the block
+PASS changing style invalidates previous specific inputs
+PASS changed style does not silently supply dimensions
+exit=0

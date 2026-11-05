@@ -54,8 +54,14 @@ function pk33a_product_spec_html($post_id) {
 function pk33a_product_footer($post) {
     $post=get_post($post); if (!$post) return '';
     $quantity=250; $style=pk_engine_style_for($post->ID); $price=pk_from_price($post->ID,$quantity);
+    $structured=function_exists('pk33b_get_product') && (!function_exists('packrivo_lang') || packrivo_lang() === null) ? pk33b_get_product($post->ID) : null;
+    if ($structured && function_exists('pk33b_card_price')) {
+        $style=$structured['engine_style'] ?: $style;
+        $price=pk33b_card_price($post->ID,$quantity);
+    }
     $query=['product'=>$post->post_name];
     if ($price !== null && $style) $query=['style'=>$style,'qty'=>$quantity,'product'=>$post->post_name];
+    elseif ($structured && $style) $query=['style'=>$style,'qty'=>$quantity,'product'=>$post->post_name];
     $translate=static function ($s) { return function_exists('pkv4_i18n_t') ? pkv4_i18n_t($s,['text','block','attr']) : $s; };
     $html='<div class="pk-product-card-footer"><span>';
     if ($price !== null && $style) {

@@ -1,0 +1,257 @@
+{
+  "products": [
+    {
+      "slug": "product-magnetic-jewelry-box",
+      "h1": "Custom Magnetic Jewelry Boxes with Logo",
+      "lede": "A rigid magnetic box with a hinged lid and separate base.",
+      "category_hub": "jewelry-boxes",
+      "engine_style": "rigid",
+      "engine_material": "rigidboard",
+      "sizes": [
+        {
+          "label": "Quoted magnetic box example",
+          "l_mm": 95,
+          "w_mm": 95,
+          "h_mm": 40,
+          "source": "quote"
+        }
+      ],
+      "images": [
+        {
+          "file": "existing-concept.webp",
+          "alt": "Rigid magnetic jewelry box with a deep navy tactile exterior, abstract curved detailing and a contrasting light insert.",
+          "caption": "AI-assisted packaging concept. Review the actual materials and fit on a physical sample."
+        }
+      ],
+      "construction": [
+        "Hinge and closure arrangement; product dimensions and insert cavities.",
+        "Board wrap, artwork surfaces and decoration preferences.",
+        "Opening clearance and how the customer removes the jewelry."
+      ],
+      "finishes": [
+        "foil"
+      ],
+      "inserts": [
+        "eva"
+      ],
+      "specs": [
+        {
+          "label": "Quoted example: board",
+          "value": "1000g black board",
+          "source": "xiangfeng-quote"
+        },
+        {
+          "label": "Quoted example: wrap",
+          "value": "Soft-touch paper",
+          "source": "xiangfeng-quote"
+        },
+        {
+          "label": "Quoted example: insert",
+          "value": "EVA ring insert",
+          "source": "xiangfeng-quote"
+        },
+        {
+          "label": "Quoted example: decoration",
+          "value": "40×20 mm foil",
+          "source": "xiangfeng-quote"
+        },
+        {
+          "label": "Sample timing",
+          "value": "5–10 days",
+          "source": "confirmed-fact"
+        },
+        {
+          "label": "Production timing",
+          "value": "7–30 days after sample approval",
+          "source": "confirmed-fact"
+        },
+        {
+          "label": "Print review",
+          "value": "Press sheets sent before printing",
+          "source": "confirmed-fact"
+        },
+        {
+          "label": "Order documents",
+          "value": "Photos and material declaration per order",
+          "source": "confirmed-fact"
+        }
+      ],
+      "faq": [
+        {
+          "question": "Does a magnetic jewelry box prove secure closure?",
+          "answer": "No. The closure and fit need supplier review and a sample for the intended use."
+        },
+        {
+          "question": "Does this concept confirm supplier availability?",
+          "answer": "No. Materials, construction, sampling, price, lead time and performance require supplier-specific confirmation."
+        }
+      ],
+      "related": [
+        "product-drawer-jewelry-box",
+        "product-collapsible-magnetic-gift-box"
+      ],
+      "keywords": {
+        "primary": "",
+        "secondary": []
+      }
+    },
+    {
+      "slug": "product-drawer-jewelry-box",
+      "h1": "Custom Drawer Jewelry Boxes with Logo",
+      "lede": "Plan a custom drawer jewelry box around the complete jewelry set.",
+      "category_hub": "jewelry-boxes",
+      "engine_style": "rigid",
+      "engine_material": "",
+      "sizes": [
+        {
+          "label": "Supplier catalogue drawer sample",
+          "l_mm": 50,
+          "w_mm": 50,
+          "h_mm": 35,
+          "source": "supplier-catalogue"
+        },
+        {
+          "label": "Supplier catalogue drawer sample",
+          "l_mm": 70,
+          "w_mm": 90,
+          "h_mm": 35,
+          "source": "supplier-catalogue"
+        },
+        {
+          "label": "Supplier catalogue drawer sample",
+          "l_mm": 90,
+          "w_mm": 90,
+          "h_mm": 35,
+          "source": "supplier-catalogue"
+        },
+        {
+          "label": "Supplier catalogue drawer sample",
+          "l_mm": 75,
+          "w_mm": 75,
+          "h_mm": 35,
+          "source": "supplier-catalogue"
+        }
+      ],
+      "images": [
+        {
+          "file": "existing-concept.webp",
+          "alt": "Drawer jewelry packaging concept with terracotta sleeve, ivory sliding tray and cream pull loop",
+          "caption": "AI-assisted concept · Overall."
+        },
+        {
+          "file": "supplier-drawer-example.jpg",
+          "alt": "Orange drawer box samples with a coordinating paper bag on a white background.",
+          "caption": "Supplier catalogue drawer box examples; size and configuration require project confirmation."
+        }
+      ],
+      "construction": [
+        "Outer sleeve around a sliding tray.",
+        "Specify the opening, pull attachment and any tray stop in the supplier proposal.",
+        "Review sleeve-to-tray movement and jewelry removal on a sample."
+      ],
+      "finishes": [],
+      "inserts": [],
+      "specs": [
+        {
+          "label": "Sample timing",
+          "value": "5–10 days",
+          "source": "confirmed-fact"
+        },
+        {
+          "label": "Production timing",
+          "value": "7–30 days after sample approval",
+          "source": "confirmed-fact"
+        },
+        {
+          "label": "Print review",
+          "value": "Press sheets sent before printing",
+          "source": "confirmed-fact"
+        },
+        {
+          "label": "Order documents",
+          "value": "Photos and material declaration per order",
+          "source": "confirmed-fact"
+        }
+      ],
+      "faq": [
+        {
+          "question": "Can several jewelry configurations use one box?",
+          "answer": "Possibly. Compare each complete configuration against the proposed interior, insert, closure and removal route. Shared packaging or insert components require project-specific confirmation."
+        },
+        {
+          "question": "Is a pull tab or tray stop included?",
+          "answer": "Neither is confirmed by this concept. State your preferred opening detail and whether a tray stop is needed, then confirm the construction with the relevant supplier."
+        }
+      ],
+      "related": [
+        "product-magnetic-jewelry-box"
+      ],
+      "keywords": {
+        "primary": "",
+        "secondary": []
+      }
+    },
+    {
+      "slug": "product-collapsible-magnetic-gift-box",
+      "h1": "Custom Collapsible Magnetic Gift Boxes",
+      "lede": "A collapsible magnetic box pairs gift presentation with a folding shell.",
+      "category_hub": "foldable-gift-boxes",
+      "engine_style": "rigid",
+      "engine_material": "",
+      "sizes": [],
+      "images": [
+        {
+          "file": "existing-concept.webp",
+          "alt": "A collapsible magnetic gift box shown flat and assembled in plum and orange.",
+          "caption": "AI-assisted packaging concept. Review the actual materials and fit on a physical sample."
+        }
+      ],
+      "construction": [
+        "Fold sequence, closure, board and wrap.",
+        "Insert and how it is held in place.",
+        "Packed-flat and assembled sizes, destination and sample needs."
+      ],
+      "finishes": [],
+      "inserts": [],
+      "specs": [
+        {
+          "label": "Sample timing",
+          "value": "5–10 days",
+          "source": "confirmed-fact"
+        },
+        {
+          "label": "Production timing",
+          "value": "7–30 days after sample approval",
+          "source": "confirmed-fact"
+        },
+        {
+          "label": "Print review",
+          "value": "Press sheets sent before printing",
+          "source": "confirmed-fact"
+        },
+        {
+          "label": "Order documents",
+          "value": "Photos and material declaration per order",
+          "source": "confirmed-fact"
+        }
+      ],
+      "faq": [
+        {
+          "question": "Does collapsible always mean flat shipment?",
+          "answer": "No. The exact construction and packed state need confirmation from the supplier."
+        },
+        {
+          "question": "Is the shown structure confirmed?",
+          "answer": "No. This is a visual inquiry concept. Structure, materials, sample, commercial terms and market suitability need project-specific confirmation."
+        }
+      ],
+      "related": [
+        "product-magnetic-jewelry-box"
+      ],
+      "keywords": {
+        "primary": "",
+        "secondary": []
+      }
+    }
+  ]
+}

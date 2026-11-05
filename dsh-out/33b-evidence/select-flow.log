@@ -1,0 +1,2 @@
+SELECT_5000 {"qty":"5000","length":"9.5","width":"9.5","height":"4","product":"product-magnetic-jewelry-box","price":"$1.72"} URL http://localhost:8087/get-a-quote/?product=product-magnetic-jewelry-box&style=rigid&qty=5000&size=0
+exit=0

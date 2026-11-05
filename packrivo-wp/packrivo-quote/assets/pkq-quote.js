@@ -181,16 +181,19 @@
 
     var requestedStyle = root.getAttribute('data-style') || '';
     var needsStyleChoice = !!root.getAttribute('data-product') && !cfg.styles[requestedStyle];
+    var requireSize = root.getAttribute('data-require-size') === '1';
+    var requireMaterial = root.getAttribute('data-require-material') === '1';
+    var guarded = requireSize || requireMaterial;
     var attrNum = function (name, fallback) {
       var v = parseFloat(root.getAttribute(name));
-      return isFinite(v) && v > 0 ? v : fallback;
+      return isFinite(v) && v > 0 ? v : (requireSize ? null : fallback);
     };
     var attrStr = function (name) { return root.getAttribute(name) || ''; };
     var state = {
       style: needsStyleChoice ? '' : (requestedStyle || 'mailer'),
       material: 'kraft',
-      print: 'full-color',
-      finish: 'matte',
+      print: guarded ? 'none' : 'full-color',
+      finish: guarded ? 'none' : 'matte',
       qty: parseInt(root.getAttribute('data-qty'), 10) || 1000,
       length: attrNum('data-length', 30),
       width: attrNum('data-width', 22),
@@ -203,10 +206,42 @@
     // The card reference spec wins when the page hands one over; the style default
     // below is only the fallback for a bare visit.
     if (attrStr('data-material')) state.material = attrStr('data-material');
+    else if (requireMaterial) state.material = '';
     else if (state.style === 'rigid') state.material = 'rigidboard';
-    if (!attrStr('data-material') && (state.style === 'pouch' || state.style === 'poly')) state.material = 'kraftpoly';
+    if (!attrStr('data-material') && !requireMaterial && (state.style === 'pouch' || state.style === 'poly')) state.material = 'kraftpoly';
     if (attrStr('data-print')) state.print = attrStr('data-print');
     if (attrStr('data-finish')) state.finish = attrStr('data-finish');
+
+    function sizeReady() {
+      if (!guarded) return true;
+      return [state.length, state.width, state.height].every(function (n) {
+        return typeof n === 'number' && isFinite(n) && n >= 2 && n <= 120 && Math.abs(n * 10 - Math.round(n * 10)) < 1e-7;
+      });
+    }
+    function materialReady() {
+      if (!guarded) return true;
+      return Object.prototype.hasOwnProperty.call(MATERIALS, state.material)
+        && (!cfg.materials || Object.prototype.hasOwnProperty.call(cfg.materials, state.material));
+    }
+    function specReady() { return sizeReady() && materialReady(); }
+    function guardMessage() {
+      if (!sizeReady() && !materialReady()) return t('Enter dimensions from 2 to 120 cm (one decimal place) and choose a material before viewing an estimate.');
+      if (!sizeReady()) return t('Enter dimensions from 2 to 120 cm (one decimal place) before viewing an estimate.');
+      if (!materialReady()) return t('Choose a material before viewing an estimate.');
+      return '';
+    }
+    function stepAllowed(i) {
+      if (!state.style && i > 0) return false;
+      if (guarded && i >= 2 && !sizeReady()) return false;
+      if (guarded && i >= 3 && !specReady()) return false;
+      return !(i === 4 && (state.qty < cfg.minQty || state.qty > cfg.maxQty));
+    }
+    function nextAllowed() {
+      if (!state.style || state.qty < cfg.minQty || state.qty > cfg.maxQty) return false;
+      if (guarded && state.step === 1 && !sizeReady()) return false;
+      if (guarded && state.step === 2 && !specReady()) return false;
+      return true;
+    }
 
     root.innerHTML = '';
     var shell = el('div', 'pkq-shell');
@@ -257,11 +292,19 @@
     function render() {
       Array.prototype.forEach.call(steps.children, function (b, i) {
         b.className = 'pkq-step' + (i === state.step ? ' is-active' : '') + (i < state.step ? ' is-done' : '');
-        b.disabled = (!state.style && i > 0) || (i === 4 && (state.qty < cfg.minQty || state.qty > cfg.maxQty));
+        b.disabled = !stepAllowed(i);
       });
 
       main.innerHTML = '';
-      var p = price(state, cfg);
+      if (guarded && !specReady()) {
+        var note = el('p', 'pkq-note pkq-guard-note', guardMessage());
+        note.setAttribute('role', 'status');
+        main.appendChild(note);
+      }
+      // Do not calculate or show an estimate for unknown guarded inputs.
+      var p = guarded && !specReady()
+        ? { qty: Math.min(cfg.maxQty, Math.max(cfg.minQty, Math.round(state.qty))) }
+        : price(state, cfg);
 
       if (state.step === 0) {
         main.appendChild(el('h3', 'pkq-h3', t('What are we making?')));
@@ -271,18 +314,28 @@
           var b = el('button', 'pkq-tile' + (key === state.style ? ' is-active' : ''));
           b.type = 'button';
           b.appendChild(el('span', 'pkq-tile-name', t(s.label)));
-          b.appendChild(el('span', 'pkq-tile-price', tf('from {price}', {
-            price: money(price(Object.assign({}, state, { style: key, qty: 500 }), cfg).unit)
-          })));
+          if (!guarded || specReady()) {
+            b.appendChild(el('span', 'pkq-tile-price', tf('from {price}', {
+              price: money(price(Object.assign({}, state, { style: key, qty: 500 }), cfg).unit)
+            })));
+          }
           b.addEventListener('click', function () {
-            state.style = key;
-            if (key === 'rigid') state.material = 'rigidboard';
-            else if (key === 'pouch' || key === 'poly') state.material = 'kraftpoly';
-            else if (state.material === 'rigidboard' || state.material === 'kraftpoly') state.material = 'kraft';
-            var dims = STYLE_DIMS[key] || STYLE_DIMS.mailer;
-            state.length = dims[1][0];
-            state.width = dims[1][1];
-            state.height = dims[1][2];
+            if (guarded) {
+              if (state.style !== key) {
+                state.style = key;
+                state.length = state.width = state.height = null;
+                state.material = '';
+              }
+            } else {
+              state.style = key;
+              if (key === 'rigid') state.material = 'rigidboard';
+              else if (key === 'pouch' || key === 'poly') state.material = 'kraftpoly';
+              else if (state.material === 'rigidboard' || state.material === 'kraftpoly') state.material = 'kraft';
+              var dims = STYLE_DIMS[key] || STYLE_DIMS.mailer;
+              state.length = dims[1][0];
+              state.width = dims[1][1];
+              state.height = dims[1][2];
+            }
             render();
           });
           tiles.appendChild(b);
@@ -314,13 +367,15 @@
           field.appendChild(el('span', 'pkq-label', t(pair[1])));
           var input = el('input', 'pkq-input');
           input.type = 'number';
-          input.min = '1';
+          input.min = guarded ? '2' : '1';
           input.max = '120';
-          input.step = '0.5';
-          input.value = state[pair[0]];
+          input.step = guarded ? '0.1' : '0.5';
+          input.value = state[pair[0]] == null ? '' : state[pair[0]];
           input.addEventListener('input', function () {
-            state[pair[0]] = parseFloat(input.value) || 1;
+            var value = parseFloat(input.value);
+            state[pair[0]] = guarded ? (isFinite(value) ? value : null) : (value || 1);
             updateAside();
+            if (guarded) refreshGuardControls();
           });
           field.appendChild(input);
           dims.appendChild(field);
@@ -334,7 +389,7 @@
           return { key: k, label: MATERIALS[k].label };
         }), state.material, function (k) {
           state.material = k;
-        }, MATERIALS[state.material].note));
+        }, MATERIALS[state.material] ? MATERIALS[state.material].note : ''));
 
         main.appendChild(optionRow(t('Print'), Object.keys(PRINTS).map(function (k) {
           return { key: k, label: PRINTS[k].label };
@@ -419,7 +474,7 @@
           updateAside();
           var next = main.querySelector('.pkq-btn');
           if (next) next.disabled = state.qty < cfg.minQty || state.qty > cfg.maxQty;
-          steps.children[4].disabled = state.qty < cfg.minQty || state.qty > cfg.maxQty;
+          steps.children[4].disabled = !stepAllowed(4);
         });
       }
 
@@ -446,6 +501,7 @@
         submit.type = 'button';
         var status = el('p', 'pkq-status');
         submit.addEventListener('click', function () {
+          if (guarded && !specReady()) { status.textContent = guardMessage(); return; }
           var data = new FormData(form);
           var payload = {
             style: state.style,
@@ -514,7 +570,7 @@
       if (state.step < 4) {
         var next = el('button', 'pkq-btn', t('Continue'));
         next.type = 'button';
-        next.disabled = !state.style || state.qty < cfg.minQty || state.qty > cfg.maxQty;
+        next.disabled = !nextAllowed();
         next.addEventListener('click', function () {
           state.step = Math.min(4, state.step + 1);
           render();
@@ -523,14 +579,36 @@
       }
       main.appendChild(nav);
 
-      aside.hidden = !state.style;
+      aside.hidden = !state.style || (guarded && !specReady());
       if (state.style) updateAside();
     }
 
+    function refreshGuardControls() {
+      Array.prototype.forEach.call(steps.children, function (button, i) { button.disabled = !stepAllowed(i); });
+      var next = main.querySelector('.pkq-nav .pkq-btn');
+      if (next) next.disabled = !nextAllowed();
+      var note = main.querySelector('.pkq-guard-note');
+      if (!note && !specReady()) {
+        note = el('p', 'pkq-note pkq-guard-note', guardMessage());
+        note.setAttribute('role', 'status');
+        main.insertBefore(note, main.firstChild);
+      }
+      if (note) { note.textContent = guardMessage(); note.hidden = specReady(); }
+    }
+
     function updateAside() {
-      var p = price(state, cfg);
-      aside.innerHTML = '';
-      if (state.qty < cfg.minQty || state.qty > cfg.maxQty) return;
+      var p;
+      if (!guarded) {
+        // Preserve the original calculator behaviour on all legacy pages.
+        p = price(state, cfg);
+        aside.innerHTML = '';
+        if (state.qty < cfg.minQty || state.qty > cfg.maxQty) return;
+      } else {
+        aside.innerHTML = '';
+        if (!state.style || !specReady() || state.qty < cfg.minQty || state.qty > cfg.maxQty) { aside.hidden = true; return; }
+        aside.hidden = false;
+        p = price(state, cfg);
+      }
       var card = el('div', 'pkq-card');
       card.appendChild(el('p', 'pkq-label', t('Live estimate')));
       card.appendChild(el('p', 'pkq-price', money(p.unit)));

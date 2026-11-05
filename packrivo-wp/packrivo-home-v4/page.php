@@ -109,7 +109,16 @@ while (have_posts()) :
                 <div class="pk-wrap">
                     <p class="pk-price-bar">
                         <strong><?php echo esc_html(sprintf(pkv4_i18n_t('from $%s / unit', array('text', 'block')), number_format((float) $pk_prod_unit, 2))); ?></strong>
-                        <span><?php echo esc_html(sprintf(pkv4_i18n_t('at %s pcs · %s cm · full-colour print, matte', array('text', 'block')), (string) $pk_prod_qty, implode('×', array_slice($pk_prod_ref, 0, 3)))); ?></span>
+                        <span><?php
+                        $pk_price_template=pkv4_i18n_t('at %s pcs · %s cm · full-colour print, matte', array('text', 'block'));
+                        $pk_ref_dimensions=implode('×', array_slice($pk_prod_ref, 0, 3));
+                        $pk_33b_rtl=function_exists('packrivo_lang') && packrivo_lang()==='ar' && function_exists('pk33b_get_product') && pk33b_get_product(get_the_ID());
+                        if ($pk_33b_rtl && substr_count($pk_price_template, '%s') === 2) {
+                            echo sprintf(esc_html($pk_price_template), '<bdi dir="ltr">'.esc_html((string)$pk_prod_qty).'</bdi>', '<bdi dir="ltr">'.esc_html($pk_ref_dimensions).'</bdi>');
+                        } else {
+                            echo esc_html(sprintf($pk_price_template, (string)$pk_prod_qty, $pk_ref_dimensions));
+                        }
+                        ?></span>
                         <a href="<?php echo esc_url(add_query_arg(['style' => $pk_prod_style, 'qty' => $pk_prod_qty, 'product' => $pk_prod_slug], home_url('/get-a-quote/'))); ?>"><?php echo esc_html(pkv4_i18n_t('Configure →', array('text', 'block'))); ?></a>
                     </p>
                 </div>

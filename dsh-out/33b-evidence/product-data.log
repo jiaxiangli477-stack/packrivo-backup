@@ -1,0 +1,24 @@
+PASS valid data accepted, including film-frame
+PASS blank source spec retained but hidden
+PASS blank source retained for later completion
+PASS finite numeric spec normalized to string
+PASS non-finite numeric spec rejected
+PASS basename anchored inside product directory
+PASS image traversal and external URL rejected
+PASS reject invalid sizes
+PASS reject invalid sizes
+PASS reject invalid finishes
+PASS reject invalid inserts
+PASS reject invalid engine_style
+PASS reject invalid engine_material
+PASS reject invalid images
+PASS reject invalid specs
+PASS missing optional data has empty safe defaults
+PASS bad product slug rejected
+PASS legacy related product slug accepted
+PASS related path traversal rejected
+PASS stored JSON is decoded and validated
+PASS missing or invalid meta falls back
+PASS record without h1 falls back to original template
+TOTAL 22 PASS
+exit=0

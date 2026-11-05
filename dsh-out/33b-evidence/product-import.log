@@ -1,0 +1,10 @@
+PASS duplicate slug rejects before transaction
+PASS ambiguous published slug rejects before transaction
+PASS bad later record causes no partial write
+PASS second write failure rolls back first
+PASS valid batch imports both records
+PASS JSON special characters preserved
+PASS second import is idempotent
+PASS single object import is idempotent
+TOTAL 8 PASS
+exit=0
