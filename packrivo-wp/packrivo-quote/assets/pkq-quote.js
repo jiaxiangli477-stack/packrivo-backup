@@ -555,7 +555,7 @@
         minimum: money(cfg.minFee), total: money(p.total)
       })));
       card.appendChild(el('p', 'pkq-fine', tf('Instant quotes include the sourcing fee at {percent}%; your final rate is confirmed on the written quote.', {percent: cfg.feePercent})));
-      card.appendChild(el('p', 'pkq-fine', t('Ex-works. Freight quoted separately. Setup amortised into the unit price.')));
+      card.appendChild(el('p', 'pkq-fine', t('Ex-works. Freight & duties quoted per destination. Setup amortised into the unit price.')));
       aside.appendChild(card);
     }
 
@@ -568,6 +568,12 @@
       mount(root);
     });
   }
+
+  // The homepage curve uses the exact same calculator and server settings as
+  // the quote configurator; it does not maintain another pricing formula.
+  window.PKQPricing = {
+    price: function (state, cfg) { return price(state, normaliseConfig(cfg)); }
+  };
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', boot);

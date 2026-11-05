@@ -14,7 +14,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('PKQ_VERSION', '1.0.1-32a');
+define('PKQ_VERSION', '1.0.1-33a');
 define('PKQ_FILE', __FILE__);
 define('PKQ_DIR', plugin_dir_path(__FILE__));
 define('PKQ_URL', plugin_dir_url(__FILE__));

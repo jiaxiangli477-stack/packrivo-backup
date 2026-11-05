@@ -1,0 +1,44 @@
+﻿英文原文,展示位置,涉及页面,旧英文,source
+Samples %s days,首页 Hero 事实卡,/,,theme
+DDP or FOB,首页 Hero 事实卡,/,,theme
+Sourcing fee %s,首页 Hero 事实卡,/,,theme
+Example quote · Rigid magnetic box,首页 Hero 规格卡,/,,theme
+Size,首页 Hero 规格卡,/,,theme
+Board,首页 Hero 规格卡,/,,theme
+Rigid greyboard,首页 Hero 规格卡,/,,theme
+"%s pieces, sourcing fee included",首页 Hero 规格卡,/,,theme
+Samples,首页 Hero 规格卡,/,,theme
+Milestone: Brief,首页四步流程,/,,theme
+Milestone: Sample,首页四步流程,/,,theme
+Milestone: Produce,首页四步流程,/,,theme
+Milestone: Deliver,首页四步流程,/,,theme
+Freight & duties quoted per destination,首页价格曲线,/,,theme
+Quantity,首页价格曲线,/,,theme
+"2,500 · print setup waived",首页价格曲线,/,,theme
+"5,000 · die setup waived",首页价格曲线,/,,theme
+Goods,首页价格曲线,/,,theme
+Sourcing fee,首页价格曲线,/,,theme
+"Unit price, sourcing fee included",首页价格曲线,/,,theme
+Order total,首页价格曲线,/,,theme
+Print setup is waived from %1$s pieces; die setup is waived from %2$s pieces.,首页价格曲线,/,,theme
+Kraft corrugated · E/B/F/EB/BC,首页材料表,/,,theme
+Rigid greyboard · %1$s coated paper over %2$s greyboard,首页材料表,/,,theme
+%s recycled greyboard,首页材料表,/,,theme
+Folding carton · %s,首页材料表,/,,theme
+Folding boxes,首页材料表,/,,theme
+"Inserts, trays · on request, mould quoted separately",首页材料表,/,,theme
+EVA / PU,首页材料表,/,,theme
+Protective inserts,首页材料表,/,,theme
+Multi-colour sheet-fed offset printing press in a packaging workshop,首页流程图片替代文字,/,,theme
+Topics,博客专题网格标题,/blog/,,theme
+%s articles,博客专题卡片文章数量,/blog/,,theme
+Read,博客文章卡片链接,/blog/、/blog/topic/*/,,theme
+print setup waived,首页价格曲线,/,,theme
+die setup waived,首页价格曲线,/,,theme
+Product categories,品类页筛选导航的无障碍标签,首页、/products/、品类页,,theme
+From %s units,产品卡数量标签,首页、/products/、品类页,,theme
+/ unit,产品卡单价单位,首页、/products/、品类页,,theme
+Reference estimate,产品卡参考价说明,首页、/products/、品类页,,theme
+Ex-works. Freight & duties quoted per destination. Setup amortised into the unit price.,报价器费用说明,/get-a-quote/,Ex-works. Freight quoted separately. Setup amortised into the unit price.,quote-i18n
+"Freight & duties quoted per destination. At 5,000 pieces the unit price is %s% lower than at 500. Final price confirmed after dieline review.",首页价格阶梯对比,/,"Indicative, excludes freight. At 5,000 pieces the unit price is %s% lower than at 500. Final price confirmed after dieline review.",theme
+%s days,首页 Hero 规格卡,/,,theme

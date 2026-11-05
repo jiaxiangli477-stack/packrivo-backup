@@ -1,0 +1,9 @@
+SLIDER_JS_PHP_COMPARE 40 MISMATCHES 0 ROUNDING_DIFFERENCES [{"qty":1250,"cents":1},{"qty":2000,"cents":1},{"qty":5250,"cents":1},{"qty":6000,"cents":1},{"qty":6500,"cents":1},{"qty":7750,"cents":1},{"qty":8000,"cents":-1}]
+FIRST_MISMATCHES []
+PRODUCT product-window-lid-rigid-gift-box CARD 5.20 ENGINE 5.20 STYLE rigid QTY 250 PASS
+PRODUCT product-hinged-nonmagnetic-rigid-box CARD 5.20 ENGINE 5.20 STYLE rigid QTY 250 PASS
+PRODUCT product-corrugated-roll-end-hinged-lid CARD 4.60 ENGINE 4.60 STYLE mailer QTY 250 PASS
+PRODUCT product-euro-tote-paper-carrier CARD 3.36 ENGINE 3.36 STYLE bag QTY 250 PASS
+PRODUCT product-sos-paper-gift-bag CARD 3.36 ENGINE 3.36 STYLE bag QTY 250 PASS
+PRODUCT_FAILURES 0
+exit=0

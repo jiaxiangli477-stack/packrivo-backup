@@ -1,0 +1,41 @@
+/* 33a: warm paper surfaces and reusable, readable product information. */
+:root { --pk33a-paper:#faf8f2; --pk33a-ink:#18201d; --pk33a-line:#e2e4dc; --pk33a-soft:#f1f2eb; }
+body { background:var(--pk33a-paper); }
+.pk-hero { background:var(--pk33a-paper); }
+.pk33a-hero-facts { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin-top:24px; }
+.pk33a-hero-facts span { display:flex; flex-direction:column; justify-content:center; min-height:62px; padding:12px; border:1px solid var(--pk33a-line); border-radius:8px; background:#fff; font-size:.84rem; font-weight:600; line-height:1.35; }
+.pk33a-showcase { padding:14px; border:1px solid var(--pk33a-line); border-radius:14px; background:#fff; box-shadow:0 12px 30px rgba(22,35,26,.08); overflow:hidden; }
+.pk33a-showcase img { aspect-ratio:16/10; max-height:360px; border-radius:8px; object-fit:cover; }
+.pk33a-showcase .pk-hero-card { position:static; padding:18px 2px 2px; border-radius:0; box-shadow:none; }
+.pk33a-specs { margin:14px 0 0; }
+.pk33a-specs div,.pk33a-curve-result dl div { display:flex; justify-content:space-between; align-items:baseline; gap:16px; padding:8px 0; border-bottom:1px solid var(--pk33a-line); }
+.pk33a-specs dt,.pk33a-curve-result dt { color:#59635e; font-size:.82rem; }
+.pk33a-specs dd,.pk33a-curve-result dd { margin:0; text-align:end; font-weight:700; font-size:.87rem; }
+.pk-steps li { padding:12px; border:1px solid rgba(255,255,255,.2); border-radius:12px; overflow:hidden; }
+.pk-steps .pk-step-photo img { border-radius:8px; }
+.pk-steps .pk-step-num { display:grid; place-items:center; width:32px; height:32px; border:1px solid rgba(255,255,255,.35); border-radius:6px; }
+.pk-milestone,.pk33a-milestone { display:block; margin-top:14px; font-size:.76rem; color:#e2e9e3; }
+.pk33a-curve { display:grid; gap:12px; border:1px solid var(--pk33a-line); border-radius:14px; background:#fff; box-shadow:0 12px 30px rgba(22,35,26,.06); }
+.pk33a-curve label { font-weight:700; font-size:.85rem; }
+.pk33a-quantity { font-size:1.35rem; font-weight:700; }
+.pk33a-curve input[type=range] { width:100%; accent-color:var(--pk-moss); }
+.pk33a-ticks { display:flex; justify-content:space-between; gap:8px; color:#59635e; font-size:.68rem; line-height:1.35; }
+.pk33a-ticks span { max-width:27%; }
+.pk33a-curve-result { padding:18px; border-radius:10px; color:#fff; background:#18201d; }
+.pk33a-curve-result dl { margin:0; }
+.pk33a-curve-result dl div { border-color:rgba(255,255,255,.2); }
+.pk33a-curve-result dt { color:#dce3dd; }
+.pk33a-curve-result p { margin:14px 0 0; color:#dce3dd; font-size:.76rem; }
+.pk-faq details { border-bottom:1px solid var(--pk33a-line); }
+.pk-faq summary { position:relative; padding-inline-end:28px; list-style:none; }
+.pk-faq summary::-webkit-details-marker { display:none; }
+.pk-faq summary::after { content:'+'; position:absolute; inset-inline-end:0; font-size:1.2rem; }
+.pk-faq details[open] summary::after { content:'−'; }
+@media (max-width:900px) { .pk33a-showcase img { max-height:340px; } }
+@media (max-width:560px) {
+  .pk33a-hero-facts { gap:6px; }
+  .pk33a-hero-facts span { min-height:58px; padding:8px; font-size:.72rem; }
+  .pk33a-showcase { padding:10px; }
+  .pk33a-ticks { flex-wrap:wrap; }
+  .pk33a-ticks span { max-width:45%; }
+}

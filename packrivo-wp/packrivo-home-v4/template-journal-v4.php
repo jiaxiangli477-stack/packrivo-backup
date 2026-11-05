@@ -24,50 +24,18 @@ $args = [
 if ($topic) $args['category_name'] = $topic;
 $q = new WP_Query($args);
 
-$default_cat = (int) get_option('default_category');
 $cats = get_categories(['hide_empty' => true, 'orderby' => 'count', 'order' => 'DESC']);
-// 默认分类（未分类）不进口径按钮：它只是文章还没归档的临时状态，不是一个品类。
-$cats = array_values(array_filter($cats, static function ($c) use ($default_cat) {
-    return (int) $c->term_id !== $default_cat && $c->slug !== 'uncategorized';
+// A renamed default category can be a real topic (for example, Guides).
+$cats = array_values(array_filter($cats, static function ($c) {
+    return $c->slug !== 'uncategorized';
 }));
 
-$upper = static function ($s) {
-    // 分类名在库里是 Structures &amp; fit 这种实体写法，先解码再大写，避免 esc_html 之后变成 &amp;AMP;
-    $s = html_entity_decode((string) $s, ENT_QUOTES | ENT_HTML5, 'UTF-8');
-    return function_exists('mb_strtoupper') ? mb_strtoupper($s, 'UTF-8') : strtoupper($s);
-};
 $posts_page = (int) get_option('page_for_posts');
 $base = $posts_page ? get_permalink($posts_page) : home_url('/blog/');
 $total_published = (int) wp_count_posts('post')->publish;
 
-$read_time = static function ($post) {
-    return max(1, (int) ceil(str_word_count(wp_strip_all_tags(strip_shortcodes($post->post_content))) / 230));
-};
-$cover_of = static function ($post) {
-    $cover = get_the_post_thumbnail_url($post, 'large');
-    if (!$cover) $cover = (string) get_post_meta($post->ID, '_packrivo_article_cover_url', true);
-    return $cover;
-};
-$cats_of = static function ($post) use ($default_cat) {
-    $list = get_the_category($post->ID);
-    $list = array_values(array_filter($list, static function ($c) use ($default_cat) {
-        return (int) $c->term_id !== $default_cat && $c->slug !== 'uncategorized';
-    }));
-    if (!$list) {
-        $list = get_the_category($post->ID);
-    }
-    return $list;
-};
-
 /* ---- min read / 日期：先查字典，再走语言表 ---- */
 $lang = function_exists('packrivo_lang') ? packrivo_lang() : null;
-$lookup = static function ($text) {
-    if (function_exists('packrivo_i18n_lookup') && function_exists('packrivo_lang') && packrivo_lang() !== null) {
-        $hit = packrivo_i18n_lookup($text, ['text', 'block', 'attr']);
-        if ($hit !== null && $hit !== '') return $hit;
-    }
-    return null;
-};
 // 每种语言：阅读时长单位、月份缩写、日期版式
 $journal_locale = [
     'ar'    => ['unit' => 'دقيقة قراءة', 'months' => ['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'], 'pattern' => '{d} {M} {Y}'],
@@ -106,16 +74,23 @@ $date_label = static function ($post) use ($locale) {
     <p class="pk-lede"><?php echo esc_html(pkv4_i18n_t('Supplier briefs, material notes and pricing explainers for small brands sourcing custom packaging.')); ?></p>
   </div>
 </section>
+<?php if (pk31b_is_english() && $cats) : ?>
+<section class="pk33-topic-section" aria-labelledby="pk33-topics-heading">
+  <div class="pk-wrap">
+    <h2 id="pk33-topics-heading" class="pk-h2"><?php echo esc_html(pkv4_i18n_t('Topics', ['text', 'block'])); ?></h2>
+    <div class="pk33-topic-grid"><?php foreach ($cats as $category) get_template_part('template-parts/journal-topic-card', null, ['term'=>$category]); ?></div>
+  </div>
+</section>
+<?php endif; ?>
 <section class="pk-section" style="padding-top:0">
   <div class="pk-wrap">
     <div class="pk-filterbar">
       <div class="pk-chips">
         <a class="pk-chip <?php echo !$topic ? 'is-active' : ''; ?>" href="<?php echo esc_url(add_query_arg(['sort' => $sort], $base)); ?>">All <span><?php echo (int) $total_published; ?></span></a>
         <?php foreach ($cats as $c) : ?>
-          <a class="pk-chip <?php echo $topic === $c->slug ? 'is-active' : ''; ?>" href="<?php echo esc_url(add_query_arg(['topic' => $c->slug, 'sort' => $sort], $base)); ?>"><?php echo esc_html($c->name); ?> <span><?php echo (int) $c->count; ?></span></a>
+          <a class="pk-chip <?php echo $topic === $c->slug ? 'is-active' : ''; ?>" href="<?php echo esc_url(pk31b_is_english() ? pk31b_topic_url($c) : add_query_arg(['topic' => $c->slug, 'sort' => $sort], $base)); ?>"><?php echo esc_html(html_entity_decode($c->name, ENT_QUOTES | ENT_HTML5, 'UTF-8')); ?> <span><?php echo (int) $c->count; ?></span></a>
         <?php endforeach; ?>
       </div>
-      <?php if (pk31b_is_english()) : ?><div class="pk-chips"><?php foreach (pk31b_topics() as $pk_topic) : ?><a class="pk-chip" href="<?php echo esc_url(pk31b_topic_url($pk_topic)); ?>"><?php echo esc_html($pk_topic->name); ?></a><?php endforeach; ?></div><?php endif; ?>
       <form class="pk-sort" method="get" action="<?php echo esc_url($base); ?>">
         <?php if ($topic) : ?><input type="hidden" name="topic" value="<?php echo esc_attr($topic); ?>"><?php endif; ?>
         <label for="journal-sort">Sort</label>
@@ -129,26 +104,7 @@ $date_label = static function ($post) use ($locale) {
 
     <div class="pk-jcards">
       <?php if ($q->have_posts()) : ?>
-        <?php while ($q->have_posts()) : $q->the_post(); $post_obj = get_post(); $cover = $cover_of($post_obj); $post_cats = $cats_of($post_obj); $primary = $post_cats ? $post_cats[0] : null; ?>
-          <article class="pk-jcard">
-            <a class="pk-jcard-media" href="<?php the_permalink(); ?>" tabindex="-1" aria-hidden="true">
-              <?php if ($cover) : ?>
-                <img src="<?php echo esc_url($cover); ?>" alt="" loading="lazy" width="640" height="400">
-              <?php else : ?>
-                <span class="pk-jcard-media-blank"></span>
-              <?php endif; ?>
-              <?php if ($primary) : ?>
-                <span class="pk-jcard-badge"><?php echo esc_html($upper($primary->name) . ' · ' . get_the_date('Y')); ?></span>
-              <?php endif; ?>
-            </a>
-            <div class="pk-jcard-body">
-              <?php if ($primary) : ?><p class="pk-jcard-kicker"><?php echo esc_html($upper($primary->name)); ?></p><?php endif; ?>
-              <h2 class="pk-jcard-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-              <p class="pk-jcard-excerpt"><?php echo esc_html(wp_trim_words(wp_strip_all_tags(get_the_excerpt()), 26, '…')); ?></p>
-              <p class="pk-jcard-meta"><?php echo esc_html($min_read_label($read_time($post_obj)) . ' · ' . $date_label($post_obj)); ?></p>
-            </div>
-          </article>
-        <?php endwhile; ?>
+        <?php while ($q->have_posts()) : $q->the_post(); get_template_part('template-parts/journal-card', null, ['post'=>get_post(), 'min_read_label'=>$min_read_label, 'date_label'=>$date_label]); endwhile; ?>
       <?php else : ?>
         <p class="pk-lede"><?php echo esc_html(pkv4_i18n_t('No articles in this topic yet.')); ?></p>
       <?php endif; ?>

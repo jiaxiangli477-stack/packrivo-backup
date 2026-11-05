@@ -1,0 +1,38 @@
+/* Shared catalogue card presentation; native card content remains intact. */
+.pk-product-card { position:relative; overflow:hidden; border:1px solid #e0e3da; border-radius:12px; background:#fff; box-shadow:0 6px 18px rgba(22,35,26,.05); }
+.pk-product-card-image { aspect-ratio:4/3; background:#f0f1eb; }
+.pk-product-card-image img { object-fit:cover; }
+.pk33a-product-placeholder { display:block; width:100%; aspect-ratio:4/3; background:#ecefe8; }
+.pk33a-local-image-placeholder { display:block; width:100%; aspect-ratio:4/3; background:#ecefe8; }
+.pk-product-card-image .pk33a-product-placeholder { height:100%; }
+.pk-product-moq { top:10px; inset-inline-end:10px; bottom:auto; left:auto; border-radius:4px; background:#e9f1e8; color:#173e2d; font-weight:700; }
+.pk-product-card-copy { padding:18px; }
+.pk-product-card-desc { line-height:1.5; }
+.pk33a-product-specs { margin:0 18px; padding:8px 0; border-top:1px solid #e5e9e2; }
+.pk33a-product-specs div { display:flex; justify-content:space-between; gap:12px; padding:4px 0; font-size:.76rem; }
+.pk33a-product-specs dt { color:#59635e; }
+.pk33a-product-specs dd { margin:0; text-align:end; font-weight:600; }
+.pk-product-card-footer { margin-top:auto; padding:14px 18px 18px; border-top:1px solid #e5e9e2; }
+.pk-product-card-footer small { color:#59635e; line-height:1.5; }
+.pk-product-card-footer strong { font-size:1rem; }
+.pk-product-card-footer .pk33a-configure { display:inline-flex; align-items:center; justify-content:center; min-height:40px; padding:9px 13px; border-radius:6px; background:#174b37; color:#fff; font-weight:600; text-decoration:none; }
+.pk-product-card-footer .pk33a-configure:hover { background:#103928; color:#fff; }
+.pk-product-card-footer .pk33a-configure:focus-visible { outline:3px solid #174b37; outline-offset:3px; }
+.pk33a-category-chips { display:flex; flex-wrap:wrap; gap:8px; margin:20px 0; }
+.pk33a-category-chips + .format-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+.pk33a-category-card { display:flex; flex-direction:column; min-width:0; padding:0; }
+.pk33a-category-card > .product-image-link { display:block; aspect-ratio:4/3; background:#ecefe8; }
+.pk33a-category-card > .product-image-link { order:-5 !important; }
+.pk33a-category-card > .category-name { order:-4 !important; }
+.pk33a-category-card > h3 { order:-3 !important; }
+.pk33a-category-card > p:not(.category-name) { order:-2 !important; }
+.pk33a-category-card figure { height:100%; margin:0; }
+.pk33a-category-card figure img { display:block; width:100%; height:100%; object-fit:cover; }
+.pk33a-category-card figcaption { padding:4px 12px; font-size:.72rem; }
+.pk33a-category-card > h3,.pk33a-category-card > p,.pk33a-category-card > .text-link { margin-inline:18px; }
+.pk33a-category-card > h3 { margin-top:16px; }
+.pk33a-category-card > .text-link { margin-bottom:14px; }
+.pk33a-category-card > .pk-product-moq { position:absolute; z-index:1; }
+.pk33a-category-card .pk-product-card-footer { display:flex; justify-content:space-between; align-items:end; gap:8px; }
+@media (max-width:900px) { .pk33a-category-chips + .format-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (max-width:560px) { .pk33a-category-chips + .format-grid { grid-template-columns:minmax(0,1fr); } .pk-product-card { padding:0; } .pk-product-card-footer .pk33a-configure { min-height:44px; } }

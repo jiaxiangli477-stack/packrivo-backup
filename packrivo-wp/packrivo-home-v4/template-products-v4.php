@@ -34,7 +34,7 @@ $ids=array_values(array_filter($ids,static function($id) use ($group,$groups,$su
  return $search==='' || stripos($p->post_title.' '.get_post_meta($id,'_packrivo_description',true),$search)!==false;
 }));
 $prices=[];
-if ($sort==='price-asc' || $sort==='price-desc') foreach ($ids as $id) $prices[$id]=pk_from_price($id);
+if ($sort==='price-asc' || $sort==='price-desc') foreach ($ids as $id) $prices[$id]=pk_from_price($id, 250);
 usort($ids,static function($a,$b) use ($sort,$prices) {
  if ($sort==='price-asc' || $sort==='price-desc') {
   $pa=$prices[$a]; $pb=$prices[$b];

@@ -27,6 +27,10 @@
     var isCurrentProduct = !!product && !!config.product && product.replace(/^product-/, '') === config.product.replace(/^product-/, '');
     if (isCurrentProduct) product = config.product;
     var style = u.searchParams.get('style') || styleFor(product) || (isCurrentProduct ? config.style : '');
+    // An explicit card quantity is part of the displayed estimate; do not
+    // silently replace it while localising the destination.
+    var requestedQty = u.searchParams.get('qty');
+    var qty = /^\d+$/.test(requestedQty || '') ? requestedQty : '500';
     // 报价类链接在语种页面统一去本语种的配置器；只有真正的询盘链接留在询盘页。
     // .pr-quote-cta 是父主题/MU 注入的页脚报价按钮，按类名识别，不碰 MU 源码。
     var wantsBuilder = quotePath || sticky || quoteText || link.classList.contains('pr-quote-cta');
@@ -37,13 +41,13 @@
       if (lang && style) {
         target = new URL('/' + lang + '/get-a-quote/', site);
         target.searchParams.set('style', style);
-        target.searchParams.set('qty', '500');
+        target.searchParams.set('qty', qty);
         target.searchParams.set('product', product);
       } else if (lang) {
         target.searchParams.set('product', product.replace(/^product-/, ''));
       } else {
         target.searchParams.set('style', style);
-        target.searchParams.set('qty', '500');
+        target.searchParams.set('qty', qty);
         target.searchParams.set('product', product);
       }
     } else if (!lang && quotePath) {

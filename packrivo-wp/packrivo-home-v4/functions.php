@@ -7,7 +7,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('PKV4_VERSION', '4.0.6');
+define('PKV4_VERSION', '4.0.7-33a');
 
 require_once get_stylesheet_directory() . '/inc/seo-31a.php';
 require_once get_stylesheet_directory() . '/inc/site-31b.php';
@@ -17,11 +17,19 @@ require_once get_stylesheet_directory() . '/inc/quote-page.php';
 
 // 29y：列表页 ItemList / 可见 FAQ 的 FAQPage（第 4 项结构化数据）。
 require_once get_stylesheet_directory() . '/inc/structured-data.php';
+require_once get_stylesheet_directory() . '/inc/33a-category-cards.php';
 
 function pkv4_assets()
 {
     wp_enqueue_style('pkv4-fonts', 'https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap', [], null);
     wp_enqueue_style('pkv4-site', get_stylesheet_directory_uri() . '/assets/site.css', ['pkv4-fonts'], PKV4_VERSION);
+    wp_enqueue_style('pk33a-site', get_stylesheet_directory_uri() . '/assets/33a.css', ['pkv4-site'], PKV4_VERSION);
+    $pk33a_product_css = get_stylesheet_directory() . '/assets/33a-products.css';
+    if (is_readable($pk33a_product_css)) wp_add_inline_style('pk33a-site', (string)file_get_contents($pk33a_product_css));
+    $pk33a_path = (string)parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
+    if (is_home() || strpos($pk33a_path, '/blog/topic/') === 0) {
+        wp_enqueue_style('pk33a-blog', get_stylesheet_directory_uri() . '/assets/33a-blog.css', ['pk33a-site'], PKV4_VERSION);
+    }
     wp_enqueue_script('pkv4-nav', get_stylesheet_directory_uri() . '/assets/nav.js', [], PKV4_VERSION, true);
     wp_enqueue_script('pkv4-quote-targets', get_stylesheet_directory_uri() . '/assets/cta-28l.js', [], PKV4_VERSION, true);
     $post_id = is_singular('page') ? get_queried_object_id() : 0;

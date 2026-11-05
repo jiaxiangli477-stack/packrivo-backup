@@ -6,6 +6,37 @@ function pk31b_is_english() { return !function_exists('packrivo_lang') || packri
 function pk31b_topic_url($term) { return home_url('/blog/topic/' . $term->slug . '/'); }
 function pk31b_topics() { return get_categories(['hide_empty'=>true,'orderby'=>'count','order'=>'DESC']); }
 
+/** Use only an article's assigned site-owned cover; never load a remote substitute. */
+function pk33_journal_cover($post, $size = 'large') {
+    $cover = get_the_post_thumbnail_url($post, $size);
+    if (!$cover) $cover = (string) get_post_meta($post->ID, '_packrivo_article_cover_url', true);
+    if (!$cover) return '';
+    $parts = wp_parse_url($cover);
+    if (!is_array($parts) || (isset($parts['scheme']) && !in_array(strtolower($parts['scheme']), ['http', 'https'], true)) || isset($parts['user']) || isset($parts['pass'])) return '';
+    $home_host = strtolower((string) wp_parse_url(home_url('/'), PHP_URL_HOST));
+    $host = strtolower((string) ($parts['host'] ?? ''));
+    if ($host && !in_array($host, array_unique([$home_host, 'www.packrivo.com', 'packrivo.com']), true)) return '';
+    $is_local = in_array($home_host, ['localhost', '127.0.0.1', '::1'], true);
+    if ($is_local && !empty($parts['path'])) {
+        // A rehearsal may have a database without its media files. Do not let
+        // those missing local uploads create broken-image icons in previews.
+        $uploads = wp_get_upload_dir();
+        $uploads_path = rtrim((string) wp_parse_url($uploads['baseurl'] ?? '', PHP_URL_PATH), '/');
+        $path = rawurldecode($parts['path']);
+        if ($uploads_path !== '' && strpos($path, $uploads_path . '/') === 0) {
+            $base = realpath($uploads['basedir'] ?? '');
+            $file = $base ? realpath($base . '/' . substr($path, strlen($uploads_path) + 1)) : false;
+            if (!$file || strpos($file, $base . DIRECTORY_SEPARATOR) !== 0 || !is_file($file)) return '';
+        }
+    }
+    // The rehearsal uses the same existing assets on its own host, not production.
+    if ($host && $is_local && in_array($host, ['www.packrivo.com', 'packrivo.com'], true)) {
+        $path = $parts['path'] ?? '/';
+        return home_url($path . (isset($parts['query']) ? '?' . $parts['query'] : '') . (isset($parts['fragment']) ? '#' . $parts['fragment'] : ''));
+    }
+    return $cover;
+}
+
 add_action('template_redirect', static function () {
     if (!pk31b_is_english()) return;
     $path = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);
@@ -24,10 +55,10 @@ add_action('template_redirect', static function () {
     add_filter('wpseo_title', static function () use ($title) { return $title; }, 20000);
     add_filter('pre_get_document_title', static function () use ($title) { return $title; }, 20000);
     get_header();
-    echo '<main id="main" class="pk-main"><section class="pk-section"><div class="pk-wrap"><h1 class="pk-h2">' . esc_html(html_entity_decode($term->name, ENT_QUOTES | ENT_HTML5, 'UTF-8')) . '</h1><ul class="pk-list">';
+    echo '<main id="main" class="pk-main"><section class="pk-section"><div class="pk-wrap"><h1 class="pk-h2">' . esc_html(html_entity_decode($term->name, ENT_QUOTES | ENT_HTML5, 'UTF-8')) . '</h1><div class="pk-jcards">';
     $posts = get_posts(['post_type'=>'post','post_status'=>'publish','posts_per_page'=>-1,'category'=>$term->term_id,'orderby'=>'date','order'=>'DESC']);
-    foreach ($posts as $post) echo '<li><a href="' . esc_url(get_permalink($post)) . '">' . esc_html(get_the_title($post)) . '</a></li>';
-    echo '</ul></div></section></main>';
+    foreach ($posts as $post) get_template_part('template-parts/journal-card', null, ['post'=>$post]);
+    echo '</div></div></section></main>';
     get_footer(); exit;
 }, -10);
 
