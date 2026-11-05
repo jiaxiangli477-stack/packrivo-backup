@@ -11,6 +11,74 @@ $WPCLI eval-file /pkg/32a-update-options.php
 
 第一次只将 `pkq_settings.min_qty` 设为 250，并在缺失时补上 `fee_percent=15`、`min_fee=150`；已有费率值及其他键不改。另将 Yoast 的 `wpseo_titles.title-404-wpseo` 设为 `Page not found | Packrivo`。第二次应显示两个 `unchanged`。回滚时从本次数据库备份恢复对应选项。翻译清单 `dsh-out/32a-new-strings.csv` 需先交给 dsh；不得把本地验收视为上线授权。
 
+### 32a-2：页面 MOQ 内容迁移（紧接选项迁移之后）
+
+站长在另行取得上线授权、建立并核验数据库备份后，将本提交的 `32a-moq-content.php` 和 `32a-moq-plan.json` 一起放入宿主机 `$PKG`，再复制到容器同一目录 `$PKGC`：
+
+```sh
+docker cp "$PKG/32a-moq-content.php" php:"$PKGC/32a-moq-content.php"
+docker cp "$PKG/32a-moq-plan.json" php:"$PKGC/32a-moq-plan.json"
+$WPCLI eval-file "$PKGC/32a-moq-content.php"
+$WPCLI eval-file "$PKGC/32a-moq-content.php"
+```
+
+脚本只对计划中指定的 page ID、slug、字段和精确旧文案执行替换，包含实际用于输出的 Yoast、主题投影及旧产品页面字段；博客、修订和明确的 500 件报价示例不改。逐项身份或原文不匹配会在写入前报错退出；遇到报错，停下核对最新导出并更新计划，不绕过检查。一次事务同时对与原 Yoast 标题/描述完全相符的对应 indexable 缓存字段做相同替换，避免旧标题继续输出；不重建全站索引。
+
+父主题的独立 `packrivo_moq` 选项控制产品规格中的动态 MOQ；缺失时默认 500，和报价插件 `pkq_settings.min_qty` 是两个设置。本步骤在同一事务中将缺失或 500 的 `packrivo_moq` 设置为 250；若已是其他非 250 的值则停下核对，不覆盖未知设置。首次记录 `before`、`after`、`replaced`、`yoast_cache_replaced` 和 `site_moq_updated`；第二次要求三种更新数为 0。剩余的一条 `500 pieces per` 是保留的 500 件具体报价示例。然后抓取 `/about/`、两个目标产品页和 `/products/`，确认标题及正文。若需回滚，从本次备份按受影响的页面、meta、Yoast indexable 和 `packrivo_moq` 恢复（原先缺失则删除该新增选项），不覆盖其他业务变动。
+
+### 32a-2：旧 mu-plugin 的生产现场核对和精确替换
+
+`packrivo-wave1.php`、`packrivo-site-remediation-20261022.php`、`packrivo-product-workspace/includes/class-product-renderer.php` 和父主题 `packrivo-static-bridge-1.2.38/functions.php` 不在本仓库跟踪文件或任何 Git 引用中；32a 本地快照中分别存在 sticky CTA、产品规格/结构化数据及 About 文案、产品工作区显示模板和产品摘要。**不能用本地快照覆盖生产文件。** 站长应在正式授权后从当时生产容器获取原文件、备份并生成候选；以下命令使用本手册定义的 `$WPC`、`$PKG`、`$PKGC` 和 `$BACKUP`：
+
+```sh
+docker cp php:"$WPC/wp-content/mu-plugins/packrivo-wave1.php" "$BACKUP/32a-wave1.before.php"
+docker cp php:"$WPC/wp-content/mu-plugins/packrivo-site-remediation-20261022.php" "$BACKUP/32a-remediation.before.php"
+docker cp php:"$WPC/wp-content/plugins/packrivo-product-workspace/includes/class-product-renderer.php" "$BACKUP/32a-workspace.before.php"
+docker cp php:"$WPC/wp-content/themes/packrivo-static-bridge-1.2.38/functions.php" "$BACKUP/32a-parent.before.php"
+docker cp "$BACKUP/32a-wave1.before.php" php:"$PKGC/32a-wave1.before.php"
+docker cp "$BACKUP/32a-remediation.before.php" php:"$PKGC/32a-remediation.before.php"
+docker cp "$BACKUP/32a-workspace.before.php" php:"$PKGC/32a-workspace.before.php"
+docker cp "$BACKUP/32a-parent.before.php" php:"$PKGC/32a-parent.before.php"
+docker cp "$PKG/32a-patch-legacy-moq.php" php:"$PKGC/32a-patch-legacy-moq.php"
+docker exec php php "$PKGC/32a-patch-legacy-moq.php" wave1 "$PKGC/32a-wave1.before.php" "$PKGC/32a-wave1.candidate.php"
+docker exec php php "$PKGC/32a-patch-legacy-moq.php" remediation "$PKGC/32a-remediation.before.php" "$PKGC/32a-remediation.candidate.php"
+docker exec php php "$PKGC/32a-patch-legacy-moq.php" workspace-renderer "$PKGC/32a-workspace.before.php" "$PKGC/32a-workspace.candidate.php"
+docker exec php php "$PKGC/32a-patch-legacy-moq.php" parent-functions "$PKGC/32a-parent.before.php" "$PKGC/32a-parent.candidate.php"
+docker exec php php -l "$PKGC/32a-wave1.candidate.php"
+docker exec php php -l "$PKGC/32a-remediation.candidate.php"
+docker exec php php -l "$PKGC/32a-workspace.candidate.php"
+docker exec php php -l "$PKGC/32a-parent.candidate.php"
+docker cp php:"$PKGC/32a-wave1.candidate.php" "$BACKUP/32a-wave1.candidate.php"
+docker cp php:"$PKGC/32a-remediation.candidate.php" "$BACKUP/32a-remediation.candidate.php"
+docker cp php:"$PKGC/32a-workspace.candidate.php" "$BACKUP/32a-workspace.candidate.php"
+docker cp php:"$PKGC/32a-parent.candidate.php" "$BACKUP/32a-parent.candidate.php"
+diff -u "$BACKUP/32a-wave1.before.php" "$BACKUP/32a-wave1.candidate.php" || true
+diff -u "$BACKUP/32a-remediation.before.php" "$BACKUP/32a-remediation.candidate.php" || true
+diff -u "$BACKUP/32a-workspace.before.php" "$BACKUP/32a-workspace.candidate.php" || true
+diff -u "$BACKUP/32a-parent.before.php" "$BACKUP/32a-parent.candidate.php" || true
+```
+
+脚本要求 sticky 旧串恰好 1 处、remediation 的三种旧串分别恰好 2、1、1 处、工作区显示的两种旧串各 1 处、父主题摘要旧串 1 处，否则不写候选并停下人工核对；不得用猜测覆盖不同版本。站长逐行确认差异仅为 MOQ 数字、四个 `php -l` 通过后，核对生产文件与备份的 SHA-256 仍分别相同：
+
+```sh
+docker exec php sha256sum "$WPC/wp-content/mu-plugins/packrivo-wave1.php" "$WPC/wp-content/mu-plugins/packrivo-site-remediation-20261022.php" "$WPC/wp-content/plugins/packrivo-product-workspace/includes/class-product-renderer.php"
+docker exec php sha256sum "$WPC/wp-content/themes/packrivo-static-bridge-1.2.38/functions.php"
+sha256sum "$BACKUP/32a-wave1.before.php" "$BACKUP/32a-remediation.before.php" "$BACKUP/32a-workspace.before.php" "$BACKUP/32a-parent.before.php"
+```
+
+只有四组哈希分别一致后，才执行下列替换，并验证产品页 sticky、规格及 About：
+
+```sh
+docker cp "$BACKUP/32a-wave1.candidate.php" php:"$WPC/wp-content/mu-plugins/packrivo-wave1.php"
+docker cp "$BACKUP/32a-remediation.candidate.php" php:"$WPC/wp-content/mu-plugins/packrivo-site-remediation-20261022.php"
+docker cp "$BACKUP/32a-workspace.candidate.php" php:"$WPC/wp-content/plugins/packrivo-product-workspace/includes/class-product-renderer.php"
+docker cp "$BACKUP/32a-parent.candidate.php" php:"$WPC/wp-content/themes/packrivo-static-bridge-1.2.38/functions.php"
+```
+
+回滚使用该次 `.before.php` 备份。上述步骤不构成本轮上线授权。
+
+**产品工作区契约待复核：**32a 本地 `pkpw_pilot_enabled()` 为真，`pkpw_store()->read_public(11)` 的 `commercial.moq` 仍为 500；该旧插件的管理表单、校验和公开投影也固定 500。已按本轮范围只在独立实例彩排可见模板文案，未修改产品记录或工作区数据契约；本地 drawer 页抓取未发现 `MOQ 500`，但不能据此证明所有投影消费者都不读取该值。上线前须由负责人单独审查 250 的数据契约、旧记录兼容和发布流程，处理完成并回归后再决定是否部署本轮。不得只改管理页面显示来掩盖数据仍为 500。
+
 > **上线以本文件为准。`deploy/README.md` 里按轮次堆的 27g…28q 记录只作历史参考，命令和顺序以这里为唯一口径。**
 > 本文件不含任何密码、密钥或 token：wp-cli 走服务器上已有的 SSH/容器配置，Cloudflare 清缓存走本机 `E:\破甲工作区\i18n\.cf.env`（只引用路径，不抄值）。
 >

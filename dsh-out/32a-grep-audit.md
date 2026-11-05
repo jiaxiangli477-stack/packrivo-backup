@@ -1,5 +1,7 @@
 # 32a 全仓文案检索清单
 
+> 32a-2 更新：下方是第一轮历史清单；本地数据库、旧插件快照及精确迁移的后续结果见 `CODEX-RESULT-32a-2.md` 与 `32a-moq-db-hits.csv`。正式生产插件须由站长按 RUNBOOK 获取和核对后处理。
+
 检索表达式：`MOQ|500 pieces|500 pcs|500 / design|minimum order|sourcing fee`；忽略大小写；覆盖工作树所有文件（排除 Git 元数据、独立测试快照与本清单本身）。
 命中文件：282；命中行：20868；完整原始输出保存在本地 `.rehearsal-32a/grep-raw.txt`。
 扫描 `*-dict.json` 22 份（包含 11 种语言的多份基线），quote-i18n 11 份；本轮均未修改。
