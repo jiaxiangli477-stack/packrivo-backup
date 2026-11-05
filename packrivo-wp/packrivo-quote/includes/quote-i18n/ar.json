@@ -97,5 +97,8 @@
  "Kraft-look poly": "بلاستيك بمظهر الكرافت",
  "Water resistant": "مقاوم للماء",
  "Compostable stock": "ورق قابل للتحلل العضوي",
- "CMYK + spot": "CMYK + لون خاص"
+ "CMYK + spot": "CMYK + لون خاص",
+ "Under 250? Send the brief and we'll quote by hand.": "أقل من 250؟ أرسل الموجز وسنعدّ عرض السعر يدويًا.",
+ "Goods {goods} · Sourcing fee {fee} ({percent}%, min. {minimum}) · Total {total}": "البضائع {goods} · رسوم التوريد {fee} ({percent}%، بحد أدنى {minimum}) · الإجمالي {total}",
+ "Instant quotes include the sourcing fee at {percent}%; your final rate is confirmed on the written quote.": "تشمل عروض السعر الفورية رسوم التوريد بنسبة {percent}%؛ ويُثبَّت سعرك النهائي في عرض السعر المكتوب."
 }

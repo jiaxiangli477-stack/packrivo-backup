@@ -97,5 +97,8 @@
  "Kraft-look poly": "クラフト調ポリ",
  "Water resistant": "防水",
  "Compostable stock": "コンポスト可能な用紙",
- "CMYK + spot": "CMYK＋スポット"
+ "CMYK + spot": "CMYK＋スポット",
+ "Under 250? Send the brief and we'll quote by hand.": "250個未満ですか？要件をお送りいただければ、担当者が個別にお見積もりします。",
+ "Goods {goods} · Sourcing fee {fee} ({percent}%, min. {minimum}) · Total {total}": "商品 {goods} · 調達手数料 {fee}（{percent}%、最低 {minimum}）· 合計 {total}",
+ "Instant quotes include the sourcing fee at {percent}%; your final rate is confirmed on the written quote.": "即時見積もりには{percent}%の調達手数料が含まれます。最終的なレートは書面の見積書で確定します。"
 }

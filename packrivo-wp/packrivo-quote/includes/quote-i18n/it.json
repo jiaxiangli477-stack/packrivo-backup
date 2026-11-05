@@ -97,5 +97,8 @@
  "Kraft-look poly": "Poly effetto kraft",
  "Water resistant": "Resistente all'acqua",
  "Compostable stock": "Cartone compostabile",
- "CMYK + spot": "CMYK + colore spot"
+ "CMYK + spot": "CMYK + colore spot",
+ "Under 250? Send the brief and we'll quote by hand.": "Meno di 250 pezzi? Inviate il brief e vi quotiamo manualmente.",
+ "Goods {goods} · Sourcing fee {fee} ({percent}%, min. {minimum}) · Total {total}": "Merci {goods} · Commissione di approvvigionamento {fee} ({percent}%, min. {minimum}) · Totale {total}",
+ "Instant quotes include the sourcing fee at {percent}%; your final rate is confirmed on the written quote.": "I preventivi immediati includono la commissione di approvvigionamento al {percent}%; la tariffa finale è confermata sul preventivo scritto."
 }
