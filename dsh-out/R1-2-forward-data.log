@@ -1,0 +1,88 @@
+=== COPY 32a-update-options.php exit=0 ===
+
+=== COPY 32a-moq-content.php exit=0 ===
+
+=== COPY 32a-moq-plan.json exit=0 ===
+
+=== COPY 32a5-blog-migrate.php exit=0 ===
+
+=== COPY 32a5-blog-plan.json exit=0 ===
+
+=== COPY 32a6-blog-rewrite.php exit=0 ===
+
+=== COPY 32a6-blog-rollback.php exit=0 ===
+
+=== COPY 32a-blog-rewrite.csv exit=0 ===
+
+=== COPY default-category.php exit=0 ===
+
+=== COPY 32a-workspace-backup-final.csv exit=0 ===
+
+=== 31B_DEFAULT_CATEGORY exit=0 ===
+Success: Default category renamed to Guides (ID 1).
+
+=== INSTALL wave1 exit=0 ===
+
+=== INSTALL remediation exit=0 ===
+
+=== INSTALL workspace-renderer exit=0 ===
+
+=== INSTALL workspace-admin exit=0 ===
+
+=== INSTALL workspace-validation exit=0 ===
+
+=== INSTALL parent-functions exit=0 ===
+
+=== WORKSPACE_MIGRATE_1 exit=0 ===
+before_500=6 before_250=0
+after_500=0 after_250=6
+replaced=6 mode=migrate snapshots=6
+
+=== WORKSPACE_MIGRATE_2 exit=0 ===
+before_500=0 before_250=6
+after_500=0 after_250=6
+replaced=0 mode=migrate snapshots=6
+
+=== OPTIONS_1 exit=0 ===
+pkq_settings: updated
+title-404-wpseo: updated
+
+=== OPTIONS_2 exit=0 ===
+pkq_settings: unchanged
+title-404-wpseo: unchanged
+
+=== MOQ_1 exit=0 ===
+before MOQ 500=452 | 500 pieces per=550
+site_moq_before=missing(default 500)
+after MOQ 500=0 | 500 pieces per=1
+replaced=1666 | fields=1123 | pages=399
+yoast_cache_replaced=925 | indexable_rows=363
+site_moq_after=250 | site_moq_updated=1
+
+=== MOQ_2 exit=0 ===
+before MOQ 500=0 | 500 pieces per=1
+site_moq_before=250
+after MOQ 500=0 | 500 pieces per=1
+replaced=0 | fields=0 | pages=0
+yoast_cache_replaced=0 | indexable_rows=0
+site_moq_after=250 | site_moq_updated=0
+
+=== 32A5_DRY_RUN exit=0 ===
+mode=dry-run plan=318 posts=276 state=before old=318 new=0
+
+=== 32A5_BACKUP exit=0 ===
+mode=backup plan=318 posts=276 state=before old=318 new=0
+backup_rows=276 sha256=8cbbbdfd3c46c5a0aff3fc37eb23f97ec54eb4dd947bd5fa9f91e7387db1e646
+
+=== 32A5_BACKUP_COPY exit=0 ===
+
+=== 32A5_APPLY_1 exit=0 ===
+mode=apply plan=318 posts=276 state=before old=318 new=0
+changed=318 posts=276
+
+=== 32A5_APPLY_2 exit=0 ===
+mode=apply plan=318 posts=276 state=after old=0 new=318
+changed=0 posts=0
+
+=== 32A6_DRY_RUN exit=1 ===
+Error: Post 448 must match the complete old or transformed new content; nothing changed.
