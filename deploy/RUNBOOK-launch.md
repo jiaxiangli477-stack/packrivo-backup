@@ -1692,7 +1692,7 @@ cat "$BACKUP/r1-meta-apply-2.log"; grep -qx 'changed=0' "$BACKUP/r1-meta-apply-2
 for f in r1-moq-render.php r1-sitemap-fix.php r1-field-projection.php r1-500-field-map.json; do docker cp "$PKG/$f" "${WP_CONTAINER}:${WPC}/wp-content/mu-plugins/$f"; done
 ```
 
-⛳ `dry-run` 为三字段 before、备份哈希相同、`changed=3 → 0`。三个字段的局部回滚为 `$WPCLI eval-file "$PKGC/r1-moq-meta.php" rollback "$R1_META_BACKUP"`；值或 Yoast 参考字段漂移即停。15 页 17 个头部／H1 映射仅按页面和完整旧值投影，不改数据库或正文价格数量例子；映射须纳入本批复核。三个 catalog 页保持数据库与 noindex 不动，暂列 R2。
+⛳ `dry-run` 为三字段 before、备份哈希相同、`changed=3 → 0`。三个字段的局部回滚为 `$WPCLI eval-file "$PKGC/r1-moq-meta.php" rollback "$R1_META_BACKUP"`；值或 Yoast 参考字段漂移即停。样品页 OG/Twitter 及 Yoast JSON-LD 中与旧摘要完全相同的值，只有在 2884 的新摘要已匹配时才投影为新摘要，不改 Yoast 的原数据库字段。15 页 17 个头部／H1 映射仅按页面和完整旧值投影，不改数据库或正文价格数量例子；映射须纳入本批复核。三个 catalog 页保持数据库与 noindex 不动，暂列 R2。
 
 ### E.4 · GEO、缓存与第一次响应
 

@@ -5,7 +5,13 @@ function r1_moq_social_description($id,$description,$projection){
  $new='Order a sample of your custom box or pouch to check size, print and finish before your 250-piece order. Get a price.';
  return (int)$id===2884 && $description===$old && $projection===$new ? $new : $description;
 }
+function r1_moq_schema_graph($id,$graph,$projection){
+ if((int)$id!==2884||!is_array($graph))return $graph;
+ foreach($graph as &$node)if(is_array($node)&&isset($node['description'])&&is_string($node['description']))$node['description']=r1_moq_social_description($id,$node['description'],$projection);
+ unset($node);return $graph;
+}
 if(defined('R1_MOQ_RENDER_TEST_ONLY')&&R1_MOQ_RENDER_TEST_ONLY)return;
 if(!defined('ABSPATH'))return;
 add_filter('wpseo_opengraph_desc',static function($description){$id=(int)get_queried_object_id();return r1_moq_social_description($id,$description,$id?get_post_meta($id,'_packrivo_description',true):'');},1100);
 add_filter('wpseo_twitter_description',static function($description){$id=(int)get_queried_object_id();return r1_moq_social_description($id,$description,$id?get_post_meta($id,'_packrivo_description',true):'');},1100);
+add_filter('wpseo_schema_graph',static function($graph){$id=(int)get_queried_object_id();return r1_moq_schema_graph($id,$graph,$id?get_post_meta($id,'_packrivo_description',true):'');},1100);
