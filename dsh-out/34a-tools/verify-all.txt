@@ -1,3 +1,11 @@
-##### E:\破甲工作区\packrivo-backup-34a\dsh-out\34a-tools\lang\ar.json  errors=1 warnings=0
-  ERR JSON parse error: [Errno 2] No such file or directory: 'E:\\破甲工作区\\packrivo-backup-34a\\dsh-out\\34a-tools\\lang\\ar.json.json'
 ##### ar  errors=0 warnings=0
+##### de  errors=0 warnings=0
+##### es  errors=0 warnings=0
+##### fr  errors=0 warnings=0
+##### it  errors=0 warnings=0
+##### ja  errors=0 warnings=0
+##### ko  errors=0 warnings=0
+##### nl  errors=0 warnings=0
+##### pt  errors=0 warnings=0
+##### zh-CN  errors=0 warnings=0
+##### zh-TW  errors=0 warnings=0

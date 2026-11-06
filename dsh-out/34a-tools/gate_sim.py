@@ -64,9 +64,29 @@ for row in src_rows:
         row['new_en'] = new
     rows_b.append(row)
 
-# C: B 再去掉本批明确不译的两处（首页 title 两行、/cases/ meta 一行）
-rows_c = []
+# 34a-3 会把 4 条 coordination-fee meta 的英文改成新句（去 retainer / production only）
+NEW_MID = '8-15% coordination fee, agreed in writing before work starts.'
+FIX2 = {
+    '/services/': 'Custom packaging sourcing. Then a quote. ' + NEW_MID + ' Request a quote.',
+    '/guides/': 'Custom packaging guide. ' + NEW_MID + ' Dieline with every quote. Request a quote.',
+    '/inquiry/': 'Custom packaging quote request. ' + NEW_MID + ' Dieline with every quote. Request a quote.',
+    '/customization/': 'Custom packaging finishes. ' + NEW_MID + ' Dieline with every quote. Request a quote.',
+}
+
+# B2: B 再把 4 条 meta 换成新句（= 34a-3 最终 new-strings.csv 的英文）
+rows_b2, swapped2 = [], 0
 for row in rows_b:
+    row = dict(row)
+    if row['source'] in ('yoast_meta', 'hub_desc') and row['url'] in FIX2:
+        new = FIX2[row['url']]
+        if row['new_en'] != new:
+            swapped2 += 1
+        row['new_en'] = new
+    rows_b2.append(row)
+
+# C: B2 再去掉本批明确不译的两处（首页 title 两行、/cases/ meta 一行）
+rows_c = []
+for row in rows_b2:
     key = row['new_en']
     if key in SKIPPED or (row['url'] == '/cases/' and row['source'] in ('yoast_meta', 'hub_desc')):
         NO_TL.add((row['url'], row['source']))
@@ -74,8 +94,9 @@ for row in rows_b:
     rows_c.append(row)
 
 TMPCSV_B = TMPROOT + r'\34a-new-strings-auth.csv'
-TMPCSV_C = TMPROOT + r'\34a-new-strings-auth-scoped.csv'
-for path, rows in ((TMPCSV_B, rows_b), (TMPCSV_C, rows_c)):
+TMPCSV_B2 = TMPROOT + r'\34a-new-strings-auth-fix2.csv'
+TMPCSV_C = TMPROOT + r'\34a-new-strings-auth-fix2-scoped.csv'
+for path, rows in ((TMPCSV_B, rows_b), (TMPCSV_B2, rows_b2), (TMPCSV_C, rows_c)):
     with io.open(path, 'w', encoding='utf-8', newline='') as f:
         w = csv.DictWriter(f, fieldnames=fields, lineterminator='\n')
         w.writeheader()
@@ -91,9 +112,10 @@ def run_gate(csv_path, tag):
 
 
 blocks, summary = [], []
-summary.append('merged_rows=%d temp_csv_meta_swapped=%d dropped_rows=%d'
-               % (n, swapped, len(src_rows) - len(rows_c)))
-for tag, path in (('A_real_csv', SRC), ('B_auth_csv', TMPCSV_B), ('C_auth_scoped', TMPCSV_C)):
+summary.append('merged_rows=%d auth_swapped=%d fix2_swapped=%d dropped_rows=%d'
+               % (n, swapped, swapped2, len(src_rows) - len(rows_c)))
+for tag, path in (('A_real_csv', SRC), ('B_auth_csv', TMPCSV_B),
+                  ('B2_fix2_csv', TMPCSV_B2), ('C_fix2_scoped', TMPCSV_C)):
     code, out = run_gate(path, tag)
     blocks.append('===== run %s  csv=%s  exit=%d\n%s' % (tag, path, code, out.rstrip()))
     miss = []

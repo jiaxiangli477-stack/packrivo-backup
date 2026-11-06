@@ -113,16 +113,16 @@
   "PakFactory Alternatives: Packaging Compared | Packrivo",
   "Pakfactory alternatives: order terms side by side. MOQ and tooling compared. Sampling and production time. Request a quote.",
   "PakFactory alternatives, and Packrivo side by side",
-  "Custom packaging sourcing. Then a quote. No retainer before scope. 8-15% coordination fee on production only. Request a quote.",
-  "Custom packaging guide. No retainer before scope. 8-15% coordination fee on production only. Dieline with every quote. Request a quote.",
+  "Custom packaging sourcing. Then a quote. 8-15% coordination fee, agreed in writing before work starts. Request a quote.",
+  "Custom packaging guide. 8-15% coordination fee, agreed in writing before work starts. Dieline with every quote. Request a quote.",
   "Packaging guides and buyer worksheets",
   "Packaging Quote Request: Custom Boxes | Packrivo",
-  "Custom packaging quote request. No retainer before scope. 8-15% coordination fee on production only. Dieline with every quote. Request a quote.",
+  "Custom packaging quote request. 8-15% coordination fee, agreed in writing before work starts. Dieline with every quote. Request a quote.",
   "Packaging Quote Request",
   "Custom Packaging Examples: Concepts | Packrivo",
   "Custom Packaging Examples",
   "Packaging Finishes: Colors and Materials | Packrivo",
-  "Custom packaging finishes. No retainer before scope. 8-15% coordination fee on production only. Dieline with every quote. Request a quote.",
+  "Custom packaging finishes. 8-15% coordination fee, agreed in writing before work starts. Dieline with every quote. Request a quote.",
   "Packaging Finishes",
   "Custom jewelry insert fit. What suppliers do with it. Common mistakes that add a week. Send it with your spec. Open the sheet.",
   "Flat Pack Gift Boxes: Working Sheet | Packrivo",
@@ -940,16 +940,6 @@
     "text"
    ]
   ],
-  "Custom packaging sourcing. Then a quote. No retainer before scope. 8-15% coordination fee on production only. Request a quote.": [
-   [
-    "attr"
-   ]
-  ],
-  "Custom packaging guide. No retainer before scope. 8-15% coordination fee on production only. Dieline with every quote. Request a quote.": [
-   [
-    "attr"
-   ]
-  ],
   "Packaging guides and buyer worksheets": [
    [
     "block",
@@ -959,11 +949,6 @@
   "Packaging Quote Request: Custom Boxes | Packrivo": [
    [
     "title"
-   ]
-  ],
-  "Custom packaging quote request. No retainer before scope. 8-15% coordination fee on production only. Dieline with every quote. Request a quote.": [
-   [
-    "attr"
    ]
   ],
   "Packaging Quote Request": [
@@ -986,11 +971,6 @@
   "Packaging Finishes: Colors and Materials | Packrivo": [
    [
     "title"
-   ]
-  ],
-  "Custom packaging finishes. No retainer before scope. 8-15% coordination fee on production only. Dieline with every quote. Request a quote.": [
-   [
-    "attr"
    ]
   ],
   "Packaging Finishes": [
@@ -2156,6 +2136,26 @@
     "text",
     "block"
    ]
+  ],
+  "Custom packaging sourcing. Then a quote. 8-15% coordination fee, agreed in writing before work starts. Request a quote.": [
+   [
+    "attr"
+   ]
+  ],
+  "Custom packaging guide. 8-15% coordination fee, agreed in writing before work starts. Dieline with every quote. Request a quote.": [
+   [
+    "attr"
+   ]
+  ],
+  "Custom packaging quote request. 8-15% coordination fee, agreed in writing before work starts. Dieline with every quote. Request a quote.": [
+   [
+    "attr"
+   ]
+  ],
+  "Custom packaging finishes. 8-15% coordination fee, agreed in writing before work starts. Dieline with every quote. Request a quote.": [
+   [
+    "attr"
+   ]
   ]
  },
  "where": {
@@ -2506,22 +2506,12 @@
   "PakFactory alternatives, and Packrivo side by side": [
    "h1 /packrivo-vs-pakfactory/"
   ],
-  "Custom packaging sourcing. Then a quote. No retainer before scope. 8-15% coordination fee on production only. Request a quote.": [
-   "yoast_meta /services/"
-  ],
-  "Custom packaging guide. No retainer before scope. 8-15% coordination fee on production only. Dieline with every quote. Request a quote.": [
-   "yoast_meta /guides/"
-  ],
   "Packaging guides and buyer worksheets": [
    "h1 /guides/"
   ],
   "Packaging Quote Request: Custom Boxes | Packrivo": [
    "yoast_title /inquiry/",
    "hub_title /inquiry/"
-  ],
-  "Custom packaging quote request. No retainer before scope. 8-15% coordination fee on production only. Dieline with every quote. Request a quote.": [
-   "yoast_meta /inquiry/",
-   "hub_desc /inquiry/"
   ],
   "Packaging Quote Request": [
    "h1 /inquiry/"
@@ -2534,9 +2524,6 @@
   ],
   "Packaging Finishes: Colors and Materials | Packrivo": [
    "yoast_title /customization/"
-  ],
-  "Custom packaging finishes. No retainer before scope. 8-15% coordination fee on production only. Dieline with every quote. Request a quote.": [
-   "yoast_meta /customization/"
   ],
   "Packaging Finishes": [
    "h1 /customization/"
@@ -3179,6 +3166,19 @@
   ],
   "Custom packaging quote. DDP or FOB, quoted both ways. Dieline before production. MOQ 250, 5-10 day sampling. Request a quote.": [
    "theme /get-a-quote/"
+  ],
+  "Custom packaging sourcing. Then a quote. 8-15% coordination fee, agreed in writing before work starts. Request a quote.": [
+   "yoast_meta /services/"
+  ],
+  "Custom packaging guide. 8-15% coordination fee, agreed in writing before work starts. Dieline with every quote. Request a quote.": [
+   "yoast_meta /guides/"
+  ],
+  "Custom packaging quote request. 8-15% coordination fee, agreed in writing before work starts. Dieline with every quote. Request a quote.": [
+   "yoast_meta /inquiry/",
+   "hub_desc /inquiry/"
+  ],
+  "Custom packaging finishes. 8-15% coordination fee, agreed in writing before work starts. Dieline with every quote. Request a quote.": [
+   "yoast_meta /customization/"
   ]
  },
  "final": {
@@ -3377,7 +3377,8 @@
   "Custom tuck end sleeve boxes.",
   "Custom two-door rigid boxes.",
   "Custom window lid rigid boxes.",
-  "Custom zippered fabric pouches for jewelry and gifts."
+  "Custom zippered fabric pouches for jewelry and gifts.",
+  "8-15% coordination fee, agreed in writing before work starts."
  ],
  "h1": [
   "Custom packaging for jewelry, candles and gifts",
