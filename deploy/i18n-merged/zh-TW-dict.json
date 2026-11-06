@@ -1181,7 +1181,8 @@
     "Supplier sample room with shelves of rigid gift boxes and jewelry boxes": "供應商樣品室，層架上陳列硬質禮品盒與珠寶盒",
     "Operator feeding a printed proof sheet into a wide-format digital proofing printer": "操作人員將印好的樣張送入大尺寸數位打樣機",
     "Multi-colour sheet-fed offset printing press in a packaging factory": "包裝廠內的多色單張紙平版印刷機",
-    "Finished jewelry boxes packed in export cartons before shipping": "成品珠寶盒在出貨前裝入出口紙箱"
+    "Finished jewelry boxes packed in export cartons before shipping": "成品珠寶盒在出貨前裝入出口紙箱",
+    "Order a sample of your custom box or pouch to check size, print and finish before your 250-piece order. Get a price.": "先訂客製盒或包裝袋樣品，在下單250件前檢查尺寸、印刷和表面處理。歡迎詢價。"
   },
   "block": {
     ". The minimum is 500 pieces per design. Proposed materials, component grouping, sample scope and commercial terms still require project confirmation.": ". 每款最低訂購量為 500 件。擬議材料、元件分組、樣品範圍與商業條款仍需經專案確認。",
@@ -8309,7 +8310,8 @@
     "Explore a drawer jewelry packaging direction. Define structure, insert and sample requirements. MOQ 250 pieces per product/design; project quotation required.": "探索抽屜式珠寶包裝方向。界定結構、內襯與樣品需求。每項產品／每款最低訂購量 250 件；需專案報價。",
     "**Basis for every price above:** ex-works Shenzhen; includes full-colour print, matte finish, plate and die setup spread over the run, and the sourcing fee at 15% with a $150 minimum per order; excludes freight, duties and sampling. Your final rate is confirmed on the written quote.": "**上述各價格的計算基礎：**深圳出廠價；含全彩印刷、霧面處理、分攤於整批的印版與刀模前置費用，以及 15%、每筆訂單最低 $150 的採購協調費；不含運費、關稅與樣品費。最終單價以書面報價為準。",
     "Server-rendered main content from the current English page sitemap. Blog posts, navigation, scripts and forms are excluded.": "取自目前英文頁面 sitemap 的伺服器端主內容。不含部落格文章、導覽、腳本與表單。",
-    "Product reference prices (500 pieces, size as shown on the product card, full-colour print, matte):": "產品參考價格（500 件、尺寸如產品卡所示、全彩印刷、霧面）："
+    "Product reference prices (500 pieces, size as shown on the product card, full-colour print, matte):": "產品參考價格（500 件、尺寸如產品卡所示、全彩印刷、霧面）：",
+    "Order a sample of your custom box or pouch to check size, print and finish before your 250-piece order. Get a price.": "先訂客製盒或包裝袋樣品，在下單250件前檢查尺寸、印刷和表面處理。歡迎詢價。"
   },
   "text": {
     "Sample kit": "樣品套裝",

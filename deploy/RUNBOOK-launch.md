@@ -1613,3 +1613,52 @@ docker exec php sha256sum "$WPC/wp-content/mu-plugins/packrivo-wave2.php"       
 本机 R1 已演练完整数据库 dump 及分别归档子主题、报价插件、语言选择器、mu-plugins、词典目录、两份 llms；同时归档父主题和产品工作区插件，因为现有 32a 精确补丁会写这两个目录。每项记录存在/缺失、字节数、SHA256，存在的 tar 均实际解压验证。发生错误停止；缺失项必须作为缺失记录，不能拿空文件替代。`31b/prepare-photos.py` 写子主题下 `assets/img/31b-process/`；本轮使用已打包素材，没有运行它。11 份实际站点字典会写入 `uploads/packrivo-i18n/`，该目录必须进入整体回滚。
 
 本机从 E1 执行失败后的恢复时，数据库和上列目录按实际备份恢复，目录挂载点不能直接删除时先清空其全部子项再解包，避免新版残留；最后执行 `wp cache flush` 并与 S0 的数据库、文件清单及 30 个页面正文比对。生产必须先核对全部目标路径、备份哈希与不存在标记，逐项模拟同一过程；完整生产命令尚未验证，不能引用首次安装第 9 节代替。此次 32a-5 后 32a-6 预检失败，附录 E 尚未定稿，禁止生产执行。
+
+### E · R1-4 metadata、sitemap 与首次响应（草案，须两轮完整验收后才可定稿）
+
+在完成 32a-5 和 32a-6 且 E.1 全库、子主题、父主题、报价插件、工作区插件、mu、词典及 llms 备份均通过校验后，先在宿主机 `(cd "$PKG" && sha256sum -c MANIFEST.sha256)`；失败立即停止。包中的 `r1-moq-meta.php`、`r1-moq-render.php` 和 `r1-sitemap-fix.php` 应来自同一已审核 Git 提交。以下是待完整演练的命令，不构成上线授权。
+
+```sh
+# 生产宿主；WP_CONTAINER、WPC、PKG、PKGC、BACKUP、WPCLI、LAUNCH 均按 E.0 与当天指纹确认。
+for f in r1-moq-meta.php r1-moq-render.php r1-sitemap-fix.php; do
+  docker cp "$PKG/$f" "${WP_CONTAINER}:${PKGC}/$f" || { echo "STOP copy $f"; exit 1; }
+  docker exec "$WP_CONTAINER" php -l "$PKGC/$f" || exit 1
+done
+R1_META_BACKUP="$PKGC/r1-moq-meta-$LAUNCH.json"
+$WPCLI eval-file "$PKGC/r1-moq-meta.php" dry-run "$R1_META_BACKUP" || exit 1
+$WPCLI eval-file "$PKGC/r1-moq-meta.php" backup "$R1_META_BACKUP" || exit 1
+docker cp "${WP_CONTAINER}:${R1_META_BACKUP}" "$BACKUP/r1-moq-meta.json" || exit 1
+R1_HOST_SHA=$(sha256sum "$BACKUP/r1-moq-meta.json" | cut -d' ' -f1)
+R1_CONT_SHA=$(docker exec "$WP_CONTAINER" sha256sum "$R1_META_BACKUP" | cut -d' ' -f1)
+test -n "$R1_HOST_SHA" && test "$R1_HOST_SHA" = "$R1_CONT_SHA" || { echo 'STOP metadata backup mismatch'; exit 1; }
+$WPCLI eval-file "$PKGC/r1-moq-meta.php" apply "$R1_META_BACKUP" || exit 1
+$WPCLI eval-file "$PKGC/r1-moq-meta.php" apply "$R1_META_BACKUP" || exit 1
+# 必须分别看到 changed=3、changed=0；与预期不同则停止。
+for f in r1-moq-render.php r1-sitemap-fix.php; do
+  docker cp "$PKG/$f" "${WP_CONTAINER}:${WPC}/wp-content/mu-plugins/$f" || exit 1
+done
+```
+
+三个元数据字段的回滚使用同一备份和 `$WPCLI eval-file "$PKGC/r1-moq-meta.php" rollback "$R1_META_BACKUP"`；若目标值或 Yoast 参考字段发生漂移即停。mu 文件与 11 语言字典须使用 E.1 完整备份恢复，不能只回滚数据库。字典包须先运行 `r1-dict-500to250.py` 和两道语言闸门并绑定清单；已有词典冲突、缺失旧译文或不是单一数字替换即停止。448 摘要的新旧文案不止数字有差异，若未来出现旧译文键，脚本会停下等待审核，不能复制当作译文。
+
+清缓存时仅 `wp cache flush` 不会删除 WordPress 数据库中的 `_transient_packrivo_buyer_registry_v2`；它是 Buyer Experience 产品注册表的一小时 transient。迁移最后按下列顺序在 **生产宿主**清理并验证，不得把第二次请求掩盖第一次的失败：
+
+```sh
+$WPCLI cache flush || exit 1
+$WPCLI eval 'delete_transient("packrivo_buyer_registry_v2"); if (false !== get_option("_transient_packrivo_buyer_registry_v2") || false !== get_option("_transient_timeout_packrivo_buyer_registry_v2")) WP_CLI::error("registry transient remains"); WP_CLI::success("registry transient absent");' || exit 1
+# SITE_HOST、ORIGIN_IP 在 E.0 由站长当天核对；直连源站，禁止落到生产 CDN 或其他主机。
+i=0
+for path in / /products/ /samples/ /get-a-quote/ /product-magnetic-jewelry-box/ /product-front-tuck-mailer/ /product-collapsible-magnetic-gift-box/ /product-double-wall-tray-lid/ /product-lock-cap-auto-bottom-carton/; do
+  i=$((i+1)); attempt=1
+  while test "$attempt" -le 2; do
+    out="$BACKUP/r1-http-$i-$attempt.html"
+    test ! -e "$out" || { echo 'STOP response exists'; exit 1; }
+    code=$(curl --noproxy '*' --resolve "${SITE_HOST}:443:${ORIGIN_IP}" --silent --show-error --output "$out" --write-out '%{http_code}' "https://${SITE_HOST}${path}") || exit 1
+    test "$code" = 200 || { echo "STOP $path HTTP $code"; exit 1; }
+    if test "$path" = /products/; then python3 "$PKG/r1-first-response-check.py" "$out" --products || exit 1; else python3 "$PKG/r1-first-response-check.py" "$out" || exit 1; fi
+    attempt=$((attempt+1))
+  done
+done
+```
+
+⛳ 每条路径第一次和第二次均 200、`FIRST_RESPONSE_FIELD_AND_PRODUCTS_HITS=0`；任一不符立即停止。保存两轮 `/products/` 首次完整响应及命中前后 200 字符。字典同步、页面 sitemap、语言覆盖与整个 E.1 回滚仍须依本次验收结果逐项确认；本段不能单独视为最终上线许可。

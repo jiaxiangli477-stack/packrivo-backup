@@ -1181,7 +1181,8 @@
     "Supplier sample room with shelves of rigid gift boxes and jewelry boxes": "硬質ギフトボックスとジュエリーボックスが棚に並ぶサプライヤーのサンプルルーム",
     "Operator feeding a printed proof sheet into a wide-format digital proofing printer": "印刷した校正紙を大判デジタル校正プリンターに送り込むオペレーター",
     "Multi-colour sheet-fed offset printing press in a packaging factory": "包装工場にある多色枚葉オフセット印刷機",
-    "Finished jewelry boxes packed in export cartons before shipping": "出荷前に輸出用カートンに梱包された完成ジュエリーボックス"
+    "Finished jewelry boxes packed in export cartons before shipping": "出荷前に輸出用カートンに梱包された完成ジュエリーボックス",
+    "Order a sample of your custom box or pouch to check size, print and finish before your 250-piece order. Get a price.": "オーダーメイドの箱やポーチのサンプルを注文し、250個の注文前にサイズ、印刷、仕上がりをご確認ください。価格をお問い合わせください。"
   },
   "block": {
     ". The minimum is 500 pieces per design. Proposed materials, component grouping, sample scope and commercial terms still require project confirmation.": ". 最小ロットはデザインごとに500個です。提案材料、部品構成、サンプル範囲、取引条件はプロジェクトでの確認が必要です。",
@@ -8353,7 +8354,8 @@
     "Explore a drawer jewelry packaging direction. Define structure, insert and sample requirements. MOQ 250 pieces per product/design; project quotation required.": "引き出し式ジュエリー包装の方向性をご検討ください。構造、インサート、サンプルの要件を定めます。最小ロットは製品・デザインあたり250個で、案件ごとのお見積もりが必要です。",
     "**Basis for every price above:** ex-works Shenzhen; includes full-colour print, matte finish, plate and die setup spread over the run, and the sourcing fee at 15% with a $150 minimum per order; excludes freight, duties and sampling. Your final rate is confirmed on the written quote.": "**上記すべての価格の基準：** 深セン渡し（EXW）。フルカラー印刷、マット仕上げ、ロットに按分した版代と抜き型の段取り、注文あたり最低$150の15%の調達手数料を含みます。輸送費、関税、サンプルは含みません。最終的なレートは書面の見積書で確定します。",
     "Server-rendered main content from the current English page sitemap. Blog posts, navigation, scripts and forms are excluded.": "現在の英語版ページのサイトマップから取得した、サーバー側でレンダリングされる主要コンテンツです。ブログ記事、ナビゲーション、スクリプト、フォームは含みません。",
-    "Product reference prices (500 pieces, size as shown on the product card, full-colour print, matte):": "製品の参考価格（500個、サイズは製品カードの表示どおり、フルカラー印刷、マット仕上げ）："
+    "Product reference prices (500 pieces, size as shown on the product card, full-colour print, matte):": "製品の参考価格（500個、サイズは製品カードの表示どおり、フルカラー印刷、マット仕上げ）：",
+    "Order a sample of your custom box or pouch to check size, print and finish before your 250-piece order. Get a price.": "オーダーメイドの箱やポーチのサンプルを注文し、250個の注文前にサイズ、印刷、仕上がりをご確認ください。価格をお問い合わせください。"
   },
   "text": {
     "Sample kit": "サンプルキット",

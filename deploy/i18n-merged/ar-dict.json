@@ -1181,7 +1181,8 @@
     "Supplier sample room with shelves of rigid gift boxes and jewelry boxes": "غرفة عينات المورد مع أرفف تحمل علب هدايا صلبة وعلب مجوهرات",
     "Operator feeding a printed proof sheet into a wide-format digital proofing printer": "مشغّل يُدخل ورقة إثبات مطبوعة في طابعة إثبات رقمية بعرض كبير",
     "Multi-colour sheet-fed offset printing press in a packaging factory": "مطبعة أوفست متعددة الألوان بتغذية ورقية داخل مصنع تغليف",
-    "Finished jewelry boxes packed in export cartons before shipping": "علب مجوهرات جاهزة تُعبّأ في كراتين تصدير قبل الشحن"
+    "Finished jewelry boxes packed in export cartons before shipping": "علب مجوهرات جاهزة تُعبّأ في كراتين تصدير قبل الشحن",
+    "Order a sample of your custom box or pouch to check size, print and finish before your 250-piece order. Get a price.": "اطلب عينة من علبتك أو كيسك المخصص لفحص المقاس والطباعة والتشطيب قبل طلب 250 قطعة. اطلب سعرًا."
   },
   "block": {
     "A hypothetical outer carton of gift sets might be filled at a small packing bench. Staff need an instruction that shows the bottom flap order before loading and the top order afterwards. Reversing the outer-flap order can also change the visible seam and label placement.": "قد يُملأ كرتون خارجي افتراضي لأطقم الهدايا على طاولة تغليف صغيرة. يحتاج الموظفون إلى تعليمات توضح ترتيب الرفرف السفلي قبل التحميل وترتيب الرفرف العلوي بعده. كما يمكن أن يؤدي عكس ترتيب الرفرف الخارجي إلى تغيير خط التماس المرئي وموضع الملصق.",
@@ -8357,7 +8358,8 @@
     "Explore a drawer jewelry packaging direction. Define structure, insert and sample requirements. MOQ 250 pieces per product/design; project quotation required.": "استكشف اتجاهًا لتغليف المجوهرات بدرج. حدّد الهيكل والحشوة ومتطلبات العينات. الحد الأدنى للطلب 250 قطعة لكل منتج/تصميم؛ ويلزم عرض سعر خاص بالمشروع.",
     "**Basis for every price above:** ex-works Shenzhen; includes full-colour print, matte finish, plate and die setup spread over the run, and the sourcing fee at 15% with a $150 minimum per order; excludes freight, duties and sampling. Your final rate is confirmed on the written quote.": "**أساس كل سعر أعلاه:** تسليم أرض المصنع في شنتشن؛ يشمل الطباعة كاملة الألوان، والتشطيب المطفي، وتجهيز الألواح والقوالب موزَّعًا على الدفعة، ورسوم التوريد بنسبة 15% بحد أدنى $150 لكل طلب؛ ولا يشمل الشحن والرسوم الجمركية وإعداد العينات. يُثبَّت سعرك النهائي في عرض السعر المكتوب.",
     "Server-rendered main content from the current English page sitemap. Blog posts, navigation, scripts and forms are excluded.": "المحتوى الرئيسي المُصيَّر من الخادم من خريطة موقع الصفحات الإنجليزية الحالية. تُستثنى منشورات المدونة والتنقل والسكربتات والنماذج.",
-    "Product reference prices (500 pieces, size as shown on the product card, full-colour print, matte):": "أسعار مرجعية للمنتجات (500 قطعة، المقاس كما يظهر في بطاقة المنتج، طباعة كاملة الألوان، تشطيب مطفي):"
+    "Product reference prices (500 pieces, size as shown on the product card, full-colour print, matte):": "أسعار مرجعية للمنتجات (500 قطعة، المقاس كما يظهر في بطاقة المنتج، طباعة كاملة الألوان، تشطيب مطفي):",
+    "Order a sample of your custom box or pouch to check size, print and finish before your 250-piece order. Get a price.": "اطلب عينة من علبتك أو كيسك المخصص لفحص المقاس والطباعة والتشطيب قبل طلب 250 قطعة. اطلب سعرًا."
   },
   "text": {
     "Sample kit": "مجموعة عينات",
