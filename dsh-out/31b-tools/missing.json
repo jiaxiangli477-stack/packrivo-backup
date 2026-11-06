@@ -1,0 +1,562 @@
+[
+ {
+  "en": "More in this category",
+  "bucket": "text",
+  "where": "品类页相关链接区标题",
+  "pages": "/jewelry-boxes/; /mailer-boxes/; /foldable-gift-boxes/; /bags-pouches/; /inserts/",
+  "have": [],
+  "absent": [
+   "ar",
+   "de",
+   "es",
+   "fr",
+   "it",
+   "ja",
+   "ko",
+   "nl",
+   "pt",
+   "zh-CN",
+   "zh-TW"
+  ]
+ },
+ {
+  "en": "Related reading",
+  "bucket": "text",
+  "where": "文章末尾相关链接区标题",
+  "pages": "所有英文博客文章",
+  "have": [],
+  "absent": [
+   "ar",
+   "de",
+   "es",
+   "fr",
+   "it",
+   "ja",
+   "ko",
+   "nl",
+   "pt",
+   "zh-CN",
+   "zh-TW"
+  ]
+ },
+ {
+  "en": "{Topic} | Packrivo",
+  "bucket": "title",
+  "where": "专题页文档标题模板（专题名称复用现有分类）",
+  "pages": "英文专题页",
+  "have": [],
+  "absent": [
+   "ar",
+   "de",
+   "es",
+   "fr",
+   "it",
+   "ja",
+   "ko",
+   "nl",
+   "pt",
+   "zh-CN",
+   "zh-TW"
+  ]
+ },
+ {
+  "en": "Drawer Box With Ribbon Pull",
+  "bucket": "text",
+  "where": "品类页相关链接标题",
+  "pages": "/jewelry-boxes/",
+  "have": [],
+  "absent": [
+   "ar",
+   "de",
+   "es",
+   "fr",
+   "it",
+   "ja",
+   "ko",
+   "nl",
+   "pt",
+   "zh-CN",
+   "zh-TW"
+  ]
+ },
+ {
+  "en": "Corrugated Wine Bottle Shipper",
+  "bucket": "text",
+  "where": "品类页相关链接标题",
+  "pages": "/mailer-boxes/",
+  "have": [],
+  "absent": [
+   "ar",
+   "de",
+   "es",
+   "fr",
+   "it",
+   "ja",
+   "ko",
+   "nl",
+   "pt",
+   "zh-CN",
+   "zh-TW"
+  ]
+ },
+ {
+  "en": "Subscription Mailer Box With Insert",
+  "bucket": "text",
+  "where": "品类页相关链接标题",
+  "pages": "/mailer-boxes/",
+  "have": [],
+  "absent": [
+   "ar",
+   "de",
+   "es",
+   "fr",
+   "it",
+   "ja",
+   "ko",
+   "nl",
+   "pt",
+   "zh-CN",
+   "zh-TW"
+  ]
+ },
+ {
+  "en": "Eco Kraft Cosmetic Box for Small Batches",
+  "bucket": "text",
+  "where": "品类页相关链接标题",
+  "pages": "/foldable-gift-boxes/",
+  "have": [],
+  "absent": [
+   "ar",
+   "de",
+   "es",
+   "fr",
+   "it",
+   "ja",
+   "ko",
+   "nl",
+   "pt",
+   "zh-CN",
+   "zh-TW"
+  ]
+ },
+ {
+  "en": "Magnetic Book-Style Presentation Box",
+  "bucket": "text",
+  "where": "品类页相关链接标题",
+  "pages": "/foldable-gift-boxes/",
+  "have": [],
+  "absent": [
+   "ar",
+   "de",
+   "es",
+   "fr",
+   "it",
+   "ja",
+   "ko",
+   "nl",
+   "pt",
+   "zh-CN",
+   "zh-TW"
+  ]
+ },
+ {
+  "en": "Custom Kraft Soap Box With Window",
+  "bucket": "text",
+  "where": "品类页相关链接标题",
+  "pages": "/foldable-gift-boxes/",
+  "have": [],
+  "absent": [
+   "ar",
+   "de",
+   "es",
+   "fr",
+   "it",
+   "ja",
+   "ko",
+   "nl",
+   "pt",
+   "zh-CN",
+   "zh-TW"
+  ]
+ },
+ {
+  "en": "Jewelry Pouch and Box Set",
+  "bucket": "text",
+  "where": "品类页相关链接标题",
+  "pages": "/bags-pouches/",
+  "have": [],
+  "absent": [
+   "ar",
+   "de",
+   "es",
+   "fr",
+   "it",
+   "ja",
+   "ko",
+   "nl",
+   "pt",
+   "zh-CN",
+   "zh-TW"
+  ]
+ },
+ {
+  "en": "Kraft Stand-Up Pouch With Window",
+  "bucket": "text",
+  "where": "品类页相关链接标题",
+  "pages": "/bags-pouches/",
+  "have": [],
+  "absent": [
+   "ar",
+   "de",
+   "es",
+   "fr",
+   "it",
+   "ja",
+   "ko",
+   "nl",
+   "pt",
+   "zh-CN",
+   "zh-TW"
+  ]
+ },
+ {
+  "en": "Jewelry Boxes, Pouches and Bags — Reference Catalogue",
+  "bucket": "text",
+  "where": "品类页相关链接标题",
+  "pages": "/bags-pouches/",
+  "have": [],
+  "absent": [
+   "ar",
+   "de",
+   "es",
+   "fr",
+   "it",
+   "ja",
+   "ko",
+   "nl",
+   "pt",
+   "zh-CN",
+   "zh-TW"
+  ]
+ },
+ {
+  "en": "Pink Jewelry Storage Box",
+  "bucket": "text",
+  "where": "品类页相关链接标题",
+  "pages": "/bags-pouches/",
+  "have": [],
+  "absent": [
+   "ar",
+   "de",
+   "es",
+   "fr",
+   "it",
+   "ja",
+   "ko",
+   "nl",
+   "pt",
+   "zh-CN",
+   "zh-TW"
+  ]
+ },
+ {
+  "en": "Jewelry Packaging Box — Ref. 996892",
+  "bucket": "text",
+  "where": "品类页相关链接标题",
+  "pages": "/bags-pouches/",
+  "have": [],
+  "absent": [
+   "ar",
+   "de",
+   "es",
+   "fr",
+   "it",
+   "ja",
+   "ko",
+   "nl",
+   "pt",
+   "zh-CN",
+   "zh-TW"
+  ]
+ },
+ {
+  "en": "Velvet-Lined Boxes — Reference Catalogue",
+  "bucket": "text",
+  "where": "品类页相关链接标题",
+  "pages": "/jewelry-boxes/",
+  "have": [],
+  "absent": [
+   "ar",
+   "de",
+   "es",
+   "fr",
+   "it",
+   "ja",
+   "ko",
+   "nl",
+   "pt",
+   "zh-CN",
+   "zh-TW"
+  ]
+ },
+ {
+  "en": "Velvet-Lined Box — Velvet, Faux Fur",
+  "bucket": "text",
+  "where": "品类页相关链接标题",
+  "pages": "/jewelry-boxes/",
+  "have": [],
+  "absent": [
+   "ar",
+   "de",
+   "es",
+   "fr",
+   "it",
+   "ja",
+   "ko",
+   "nl",
+   "pt",
+   "zh-CN",
+   "zh-TW"
+  ]
+ },
+ {
+  "en": "For a quote, email us or contact us on WhatsApp.",
+  "bucket": "text",
+  "where": "无 JavaScript 兜底",
+  "pages": "/get-a-quote/",
+  "have": [],
+  "absent": [
+   "ar",
+   "de",
+   "es",
+   "fr",
+   "it",
+   "ja",
+   "ko",
+   "nl",
+   "pt",
+   "zh-CN",
+   "zh-TW"
+  ]
+ },
+ {
+  "en": "illustrative walkthroughs",
+  "bucket": "text",
+  "where": "About 正文链接（原文已有文字）",
+  "pages": "/about/",
+  "have": [],
+  "absent": [
+   "ar",
+   "de",
+   "es",
+   "fr",
+   "it",
+   "ja",
+   "ko",
+   "nl",
+   "pt",
+   "zh-CN",
+   "zh-TW"
+  ]
+ },
+ {
+  "en": "English",
+  "bucket": "attr",
+  "where": "语言切换器链接（复用现有语言名称）",
+  "pages": "全站语言切换器",
+  "have": [],
+  "absent": [
+   "ar",
+   "de",
+   "es",
+   "fr",
+   "it",
+   "ja",
+   "ko",
+   "nl",
+   "pt",
+   "zh-CN",
+   "zh-TW"
+  ]
+ },
+ {
+  "en": "Supplier sample room with shelves of rigid gift boxes and jewelry boxes",
+  "bucket": "attr",
+  "where": "首页照片 alt",
+  "pages": "/",
+  "have": [],
+  "absent": [
+   "ar",
+   "de",
+   "es",
+   "fr",
+   "it",
+   "ja",
+   "ko",
+   "nl",
+   "pt",
+   "zh-CN",
+   "zh-TW"
+  ]
+ },
+ {
+  "en": "Supplier sample room, Dongguan. Structures are chosen from real samples before artwork starts.",
+  "bucket": "text",
+  "where": "首页照片图注",
+  "pages": "/",
+  "have": [],
+  "absent": [
+   "ar",
+   "de",
+   "es",
+   "fr",
+   "it",
+   "ja",
+   "ko",
+   "nl",
+   "pt",
+   "zh-CN",
+   "zh-TW"
+  ]
+ },
+ {
+  "en": "Operator feeding a printed proof sheet into a wide-format digital proofing printer",
+  "bucket": "attr",
+  "where": "首页照片 alt",
+  "pages": "/",
+  "have": [],
+  "absent": [
+   "ar",
+   "de",
+   "es",
+   "fr",
+   "it",
+   "ja",
+   "ko",
+   "nl",
+   "pt",
+   "zh-CN",
+   "zh-TW"
+  ]
+ },
+ {
+  "en": "Digital proof printing at a supplier in Dongguan.",
+  "bucket": "text",
+  "where": "首页照片图注",
+  "pages": "/",
+  "have": [],
+  "absent": [
+   "ar",
+   "de",
+   "es",
+   "fr",
+   "it",
+   "ja",
+   "ko",
+   "nl",
+   "pt",
+   "zh-CN",
+   "zh-TW"
+  ]
+ },
+ {
+  "en": "Multi-colour sheet-fed offset printing press in a packaging factory",
+  "bucket": "attr",
+  "where": "首页照片 alt",
+  "pages": "/",
+  "have": [],
+  "absent": [
+   "ar",
+   "de",
+   "es",
+   "fr",
+   "it",
+   "ja",
+   "ko",
+   "nl",
+   "pt",
+   "zh-CN",
+   "zh-TW"
+  ]
+ },
+ {
+  "en": "Sheet-fed offset press used for production runs.",
+  "bucket": "text",
+  "where": "首页照片图注",
+  "pages": "/",
+  "have": [],
+  "absent": [
+   "ar",
+   "de",
+   "es",
+   "fr",
+   "it",
+   "ja",
+   "ko",
+   "nl",
+   "pt",
+   "zh-CN",
+   "zh-TW"
+  ]
+ },
+ {
+  "en": "Finished jewelry boxes packed in export cartons before shipping",
+  "bucket": "attr",
+  "where": "首页照片 alt",
+  "pages": "/",
+  "have": [],
+  "absent": [
+   "ar",
+   "de",
+   "es",
+   "fr",
+   "it",
+   "ja",
+   "ko",
+   "nl",
+   "pt",
+   "zh-CN",
+   "zh-TW"
+  ]
+ },
+ {
+  "en": "Finished boxes packed into cartons, Shantou.",
+  "bucket": "text",
+  "where": "首页照片图注",
+  "pages": "/",
+  "have": [],
+  "absent": [
+   "ar",
+   "de",
+   "es",
+   "fr",
+   "it",
+   "ja",
+   "ko",
+   "nl",
+   "pt",
+   "zh-CN",
+   "zh-TW"
+  ]
+ },
+ {
+  "en": "Supplier photos, used with permission.",
+  "bucket": "text",
+  "where": "首页照片统一图注",
+  "pages": "/",
+  "have": [],
+  "absent": [
+   "ar",
+   "de",
+   "es",
+   "fr",
+   "it",
+   "ja",
+   "ko",
+   "nl",
+   "pt",
+   "zh-CN",
+   "zh-TW"
+  ]
+ }
+]
