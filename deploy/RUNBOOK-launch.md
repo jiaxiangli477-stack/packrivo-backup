@@ -1584,162 +1584,114 @@ docker exec php sha256sum "$WPC/wp-content/mu-plugins/packrivo-wave2.php"       
 
 ---
 
-## §34a · 关键词表写入现有页面（34a-keyword-map）
+## §34a · 关键词表写入现有页面（34a-2）
 
-对象：`dsh-out/34a-keyword-map.csv`（表头 1 行 + 141 行数据，14 列）。
-写什么：只写**已存在的英文页**的 title / meta description / H1；不建新页、不改正文、不改 slug / canonical / hreflang、不动词典文件。
-不写什么：`建议新增 H2(2-4)` 只做表格列，整列不落页面正文。
+仅站长在另行获得生产上线授权、32a 的各项步骤已完成、完整数据库备份可恢复并进入维护状态后执行。历史 34a 演练记录见 `dsh-out/CODEX-RESULT-34a.md`；旧版“自动取最新备份”“写社交 indexable 列”等命令已停用。
 
-### 34a.0 前置：32a 还没合并进 main
+### 34a.0 翻译闸门：所有写入之前
 
-`git rev-list --left-right --count main...32a` 在本次执行时是 `12  4`（main 领先 12 / 32a 领先 4），
-即 **32a 和 32a-2 尚未合并进 main**。词表的「现 title / 现 H1」列写的是 `MOQ 250`，
-必须先把 32a 系列落库（`32a-update-options` → `32a-moq-content`）再跑本表，
-否则 12 条 title 会落成 `MOQ 500`（drift）。
+把本轮 `dsh-out/34a-new-strings.csv`、`deploy/34a-i18n-gate.py` 和实际待部署的 11 份词典放到 `$PKG`。词典由 dsh 补译；不通过不得继续部署 34a 主题或运行迁移。
 
-本次执行按指令从 32a 分支拉出 34a 分支、worktree `packrivo-backup-34a`，**不做合并**。
-
-### 34a.1 上线顺序（三步，顺序不能换）
-
-```
-32a-update-options  ->  32a-moq-content  ->  34a-keyword-map
-```
-
-1. `32a-update-options`：MOQ 选项值 500 → 250（`pkq_settings.min_qty`、`packrivo_moq`）。
-2. `32a-moq-content`：正文里的 500 件表述批量换成 250 件（这是 34a 词表「现 title/现 H1」的取数前提）。
-3. `34a-keyword-map`：本表，只碰 title / meta / H1 三个字段。
-
-### 34a.2 dry-run（先跑，不改库、不写备份）
-
-```bash
-# 宿主：把词表推进容器（推进后必须比哈希，cp 静默失败过一次）
-docker cp "$MAP" php:/tmp/34a-map.csv
-docker exec php sha256sum /tmp/34a-map.csv; sha256sum "$MAP"          # ⛳ 两个 sha256 逐字相同，且 wc -l = 142
-
-# 容器内：迁移脚本
-docker exec -e PK34A_OUT_DIR=/tmp/out -e PK34A_BACKUP_DIR=/tmp/backup php \
-  php /tmp/wp-cli.phar --allow-root --path="$WPC" eval-file /tmp/34a-m.php /tmp/34a-map.csv dry-run
-```
-
-⛳ 本次实测输出（原样）：
-
-```
-map_rows=141 resolved=141 missing=0
-gate_rank8=pass (8/8 strip_eq)
-title: update=0 drift_update=0 skip=139 conflict=2 empty_new=0
-meta:  update=0 skip=141
-hub:   title update=4 drift_update=0 skip=3 conflict=0 | desc update=7 skip=0
-h1:    update=0 drift_update=0 skip=139 conflict=1 no_content_h1=1
-changed_pages=7 changed_fields=11
-dry_run=1 (no database change, no backup file)
-Success: 34a dry-run finished.
+```sh
+MANIFEST_GATE_SHA=$(sha256sum "$PKG/34a-new-strings.csv" | cut -d' ' -f1)
+test -n "$MANIFEST_GATE_SHA" || { echo 'STOP: manifest hash missing'; exit 1; }
+DICT34A_SHA_FILE="$BACKUP/34a-dictionaries.sha256"
+test ! -e "$DICT34A_SHA_FILE" || { echo 'STOP: dictionary hash file exists'; exit 1; }
+for lang in ar de es fr it ja ko nl pt zh-CN zh-TW; do
+  test -f "$PKG/i18n-merged/$lang-dict.json" || { echo "STOP: dictionary missing: $lang"; exit 1; }
+  digest=$(sha256sum "$PKG/i18n-merged/$lang-dict.json" | cut -d' ' -f1)
+  test -n "$digest" || { echo "STOP: dictionary hash missing: $lang"; exit 1; }
+  printf '%s %s\n' "$lang" "$digest" >> "$DICT34A_SHA_FILE"
+done
+DICT34A_RECORD_SHA=$(sha256sum "$DICT34A_SHA_FILE" | cut -d' ' -f1)
+test -n "$DICT34A_RECORD_SHA" || { echo 'STOP: dictionary hash ledger missing'; exit 1; }
+verify34a_package_dicts() {
+  ledger=$(sha256sum "$DICT34A_SHA_FILE" | cut -d' ' -f1)
+  test -n "$ledger" && test "$ledger" = "$DICT34A_RECORD_SHA" || return 1
+  while read -r lang expected; do
+    current=$(sha256sum "$PKG/i18n-merged/$lang-dict.json" | cut -d' ' -f1)
+    test -n "$current" && test "$current" = "$expected" || return 1
+  done < "$DICT34A_SHA_FILE"
+}
+python3 "$PKG/34a-i18n-gate.py" \
+  --csv "$PKG/34a-new-strings.csv" \
+  --dict-dir "$PKG/i18n-merged" \
+  --report "$BACKUP/34a-i18n-missing.csv" || { echo 'STOP: 34a translations missing'; exit 1; }
+test "$MANIFEST_GATE_SHA" = "$(sha256sum "$PKG/34a-new-strings.csv" | cut -d' ' -f1)" || { echo 'STOP: manifest changed during gate'; exit 1; }
+verify34a_package_dicts || { echo 'STOP: dictionaries changed during gate'; exit 1; }
 ```
 
-8 个排名页断言门：新 title 去掉 `MOQ 250/500` 后必须与**现库 title 完全相同**，任何一条不等就整轮中止（`GATE_FAIL` + `WP_CLI::error`，写库前退出）。
-本次 8/8 全过：`/labels/ /foldable-gift-boxes/ /jewelry-boxes/ /inserts/ /products/ /services/ /guide-jewelry-insert-fit/ /product-magnetic-jewelry-box/`。
+必须看到各语言 `missing=0` 和 `GATE PASS`。闸门按实际用途检查 title、attr 或 block/text 桶，不等于翻译质量验收；还须核验已部署的实际词典和多语言页面。
 
-### 34a.3 备份（真跑自动做，位置固定）
+### 34a.1 文件、dry-run 与目标范围
 
-真跑在写第一条之前先把**全部 141 页的旧值**导出：
+把 `dsh-out/34a-keyword-map.csv` 放到 `$PKG/34a-keyword-map.csv`，脚本放到 `$PKG`；经批准的报价页主题 `inc/quote-page.php` 属于同一受控包。以下使用本手册定义的 `$WPC`、`$PKG`、`$PKGC`、`$BACKUP`，`php` 为站长确认后的目标 PHP 容器。不要使用未经核验的旧脚本或旧备份。
 
-```
-$PK34A_BACKUP_DIR/34a-before-<YYYYMMDD-HHMMSS>.csv
-列：ts,post_id,url,field,old_value,new_value
-field：_yoast_wpseo_title | _yoast_wpseo_metadesc | _packrivo_document_title | _packrivo_description | idx:<rowid>:<col>
-```
-
-本次实测：`backup=/tmp/backup/34a-before-20261105-050956.csv rows=1282`
-（全量 141 页基线是 `34a-before-20261105-043010.csv`：`posts=141 meta_rows=282 h1_rows=130 idx_rows=846`）。
-备份文件要落盘到宿主 `deploy/backup/` 留档，回滚只认这一份。
-
-### 34a.4 真跑
-
-```bash
-docker exec -e PK34A_OUT_DIR=/tmp/out -e PK34A_BACKUP_DIR=/tmp/backup php \
-  php /tmp/wp-cli.phar --allow-root --path="$WPC" eval-file /tmp/34a-m.php /tmp/34a-map.csv
-```
-
-写库形态：`START TRANSACTION` → 逐字段 `$wpdb->update`（`meta_value` 比对，无行则 `insert`，`!== 1` 立刻 `ROLLBACK` + `WP_CLI::error`）→ H1 用 `substr_replace` 只替换 `<h1>` 内文（断言恰好 1 个 `<h1>`）→ 只按 title/meta 两个槽位更新 `wp_yoast_indexable` → `COMMIT` → 刷缓存。
-
-⛳ 本次实测输出（原样）：
-
-```
-backup=/tmp/backup/34a-before-20261105-050956.csv rows=1282
-after_check title_bad=0 meta_bad=0 h1_bad=0 hub_bad=0
-new_strings=/tmp/out/34a-new-strings.csv new=0 total=347
-Success: 34a applied: pages=7 fields=11
+```sh
+for name in 34a-keyword-map.php 34a-rollback.php 34a-cli.php 34a-backup-lib.php 34a-plan-lib.php 34a-keyword-map.csv 34a-new-strings.csv; do
+  docker cp "$PKG/$name" php:"$PKGC/$name" || { echo "STOP: copy failed: $name"; exit 1; }
+done
+docker exec php mkdir -p "$PKGC/34a-backup" "$PKGC/34a-out" || exit 1
+MANIFEST_HOST_SHA=$(sha256sum "$PKG/34a-new-strings.csv" | cut -d' ' -f1)
+MANIFEST_CONTAINER_SHA=$(docker exec php sha256sum "$PKGC/34a-new-strings.csv" | cut -d' ' -f1)
+test -n "$MANIFEST_HOST_SHA" && test "$MANIFEST_HOST_SHA" = "$MANIFEST_GATE_SHA" && test "$MANIFEST_HOST_SHA" = "$MANIFEST_CONTAINER_SHA" || { echo 'STOP: 34a manifest hash mismatch'; exit 1; }
+verify34a_runtime_dicts() {
+  verify34a_package_dicts || return 1
+  while read -r lang expected; do
+    live=$(docker exec php sha256sum "$WPC/wp-content/uploads/packrivo-i18n/$lang-dict.json" | cut -d' ' -f1)
+    test -n "$live" && test "$live" = "$expected" || return 1
+  done < "$DICT34A_SHA_FILE"
+}
+pk34a() {
+  verify34a_runtime_dicts || { echo 'STOP: gated and deployed dictionaries differ'; return 1; }
+  docker exec -e PK34A_BACKUP_DIR="$PKGC/34a-backup" -e PK34A_OUT_DIR="$PKGC/34a-out" -e PK34A_APPROVED_STRINGS="$PKGC/34a-new-strings.csv" -e PK34A_MANIFEST_SHA256="$MANIFEST_GATE_SHA" php \
+    php -d disable_functions= /usr/local/bin/wp --allow-root --path="$WPC" --require="$PKGC/34a-cli.php" pk34a migrate "$PKGC/34a-keyword-map.csv" --force-url=/collapsible-magnetic-gift-box/ "$@"
+}
+pk34a --dry-run || { echo 'STOP: 34a dry-run failed'; exit 1; }
 ```
 
-### 34a.5 幂等（第二次必须 0）
+检查 `map_rows=141 resolved=141 missing=0`、`manifest_coverage=pass`、排名页 8/8、冲突和任何 `MOQ_ADJUST`。实际计划的新英文及报价页三处文案必须属于已过闸门的清单；若词表或库漂移导致清单遗漏，脚本中止，须先更新清单并重新翻译过闸。`--force-url` 只允许 `/collapsible-magnetic-gift-box/`，仅放行该页 title 的既有差异；任何其他路径报错。这个包装命令显式接收 `--force-url`，避免 `wp eval-file` 将未知选项截走。脚本只操作四个指定 post meta、第一个 H1 及 indexable 的 title/description；indexable 的 `updated_at` 显式保持原值。`/get-a-quote/` 三个字段由主题管理，首页、`/products/` 和 `/samples/` 的正文 H1 保留。
 
-同一条命令再跑一次：
+### 34a.2 写前备份、执行和幂等
 
-```
-title: update=0 drift_update=0 skip=139 conflict=2 empty_new=0
-meta:  update=0 skip=141
-hub:   title update=0 drift_update=0 skip=7 conflict=0 | desc update=0 skip=7
-h1:    update=0 drift_update=0 skip=139 conflict=1 no_content_h1=1
-changed_pages=0 changed_fields=0
-changed_pages=0 — nothing to write (already applied).
-Success: 34a finished: idempotent no-op.
-```
+脚本在事务写入前自动创建唯一的版本 3 备份，保存实际会修改的每项旧/新值、存在状态和 indexable NULL 状态；备份失败则不写库。先确认完整数据库备份可恢复，再执行：
 
-⛳ `changed_pages=0`。同值跳过是在比较阶段做的（不靠数据库唯一键），所以重跑不会产生备份垃圾行。
-
-### 34a.6 回滚
-
-```bash
-# 默认取 PK34A_BACKUP_DIR 里最新一份 34a-before-*.csv；也可 --file= 指定
-docker exec -e PK34A_BACKUP_DIR=/tmp/backup php \
-  php /tmp/wp-cli.phar --allow-root --path="$WPC" eval-file /tmp/34a-rb.php
-docker exec -e PK34A_BACKUP_DIR=/tmp/backup php \
-  php /tmp/wp-cli.phar --allow-root --path="$WPC" eval-file /tmp/34a-rb.php --file=/tmp/backup/34a-before-20261105-043010.csv
+```sh
+if ! pk34a > "$BACKUP/34a-apply.log" 2>&1; then
+  cat "$BACKUP/34a-apply.log"; echo 'STOP: migration failed'; exit 1
+fi
+cat "$BACKUP/34a-apply.log"
+BACKUP34A=$(sed -n 's/^backup=\([^ ]*\).*/\1/p' "$BACKUP/34a-apply.log")
+test -n "$BACKUP34A" || { echo 'STOP: explicit backup path missing'; exit 1; }
+test ! -e "$BACKUP/34a-field-backup.csv" || { echo 'STOP: backup already exists'; exit 1; }
+docker cp "php:$BACKUP34A" "$BACKUP/34a-field-backup.csv" || exit 1
+HOST_SHA=$(sha256sum "$BACKUP/34a-field-backup.csv" | cut -d' ' -f1)
+CONTAINER_SHA=$(docker exec php sha256sum "$BACKUP34A" | cut -d' ' -f1)
+test -n "$HOST_SHA" && test "$HOST_SHA" = "$CONTAINER_SHA" || { echo 'STOP: backup hash mismatch'; exit 1; }
+pk34a || { echo 'STOP: idempotence check failed'; exit 1; }
 ```
 
-```bash
-# 先演练
-docker exec ... eval-file /tmp/34a-rb.php dry-run
+记录首次真实 `changed`；第二次必须为 `changed=0`。备份含原页面值，按敏感业务备份保管。若中途发现数据漂移、排名断言失败或字段并发变化，停下核对，不能用 force 绕过其他页面。
+
+### 34a.3 回滚
+
+回滚必须使用本次明确备份的**位置参数**，不支持自动选择“最新”文件；缺少版本 3 完整性校验的旧备份不可交给新版脚本。核对宿主和容器备份哈希后，先 dry-run，再执行：
+
+```sh
+$WPCLI --require="$PKGC/34a-cli.php" eval-file "$PKGC/34a-rollback.php" "$BACKUP34A" dry-run || { echo 'STOP: rollback preflight failed'; exit 1; }
+$WPCLI --require="$PKGC/34a-cli.php" eval-file "$PKGC/34a-rollback.php" "$BACKUP34A" || { echo 'STOP: rollback failed'; exit 1; }
 ```
 
-回滚规则：
+目标字段若已被其他操作更改，回滚会整体中止，不覆盖新值。回滚后抽查原值及未授权字段；需要恢复到新版本时必须重新创建备份并再次执行迁移。
 
-- 按 `post_id` 分组，只认上面 4 个 meta 键（白名单），`idx:` 行进 indexable 恢复计划；
-- `new_value` 为空的行跳过（当初是「本来没有这个键」，回滚要的是**删键**不是写空串，脚本按 `exists` 位判断）；
-- 判据：`restored meta= h1= idx= h1_problems=0` + `rolled_back=1`，`h1_problems` 必须 0。
+### 34a.4 渲染验收与保留项
 
-⛳ 本次实测：`restored meta=11 h1=0 idx=0 h1_problems=0` / `rolled_back=1`（用 050956 那份 11 字段备份）；
-全量回滚演练（用 043010 那份）：`posts=141 meta_rows=282 h1_rows=130 idx_rows=846` → `restored meta=205 h1=130 idx=615`。
-测完必须再真跑一次回到已应用状态，否则站点停在被回滚的样子。
+逐一抓取词表 141 个 URL，比较 `<title>`、meta description 和第一个 `<h1>`，列出每个不一致及 HTTP 状态；分别报告字段和整页的 `MOQ 500`、ISO/ISTA/FSC 与 factory 自称命中，不把 301、404、历史内容或未通过项算作通过。
 
-### 34a.7 验收（渲染层，不看库）
+- `/` 的 H1 保持现有 `&` 和句号。
+- `/products/` 的正文旧 H1 不改，核实模板渲染值。
+- `/get-a-quote/` 的 title、meta 和 H1 由本轮主题新字符串输出。
+- `/samples/` 的 H1 写在仓库外的父主题中，本轮不改；需另行处理。
+- `/collapsible-magnetic-gift-box/` 若仍 301，记录目标页渲染差异，不把跳转目标误认为原页本身。
 
-13 个页面抓渲染后的 HTML，逐字比对 `<title>` / `<meta name="description">` / 第一个 `<h1>`：
-
-```
-pages=13 checked_fields=39 ok=34 mismatch=5 keyword_hits=0
-```
-
-`keyword_hits` = 在 title/meta/H1 上匹配 `moq 500|500-piece|500 pieces|manufacturer|factory` 的条数（白名单放行 `not a factory`），**必须 0**。
-
-通过 10 页（三字段全中）：`/labels/ /products/ /jewelry-boxes/ /guide-jewelry-insert-fit/ /about/ /mailer-boxes/ /inquiry/ /candle-gift-set-box/ /corrugated-wine-shipper/ /magnetic-book-style-box/`。
-
-### 34a.8 三处模板字面量例外（改库无效，必须改主题，本次不动主题）
-
-| 页面 | 字段 | 渲染值来源 |
-| --- | --- | --- |
-| `/samples/` | H1 | `wp-content/themes/packrivo-static-bridge-1.2.38/master-site-remediation.php:295` 里 `packrivo_master_samples()` 写死 `<h1>Packaging samples</h1>` |
-| `/` | H1 | `wp-content/themes/packrivo-home-v4/front-page.php:72-74` 走 `packrivo_i18n_lookup('Custom packaging for jewelry, candles & gifts.')`，保留 `&` 和句号 |
-| `/get-a-quote/` | title + meta + H1 | `wp-content/themes/packrivo-home-v4/inc/quote-page.php:14-51` 的 `pkv4_quote_strings()` 挂在 `wpseo_title` / `pre_get_document_title` / `wpseo_metadesc` 的 **priority 1200**，压过 34a 写的所有键 |
-
-这三处不在 34a 范围内：改它们要动主题文件或 `deploy/i18n-merged/*-dict.json`，属于 34b/31b 的活。
-
-### 34a.9 外文页
-
-外文（`/ko/` `/zh-CN/`）不是独立 post 行，是同一份内容在渲染期按 URL 前缀套词典，所以 141 行里没有外文行。
-英文 title 换掉后，若该页正文是外文（词典命中），34a 不写这几条，记录在
-`dsh-out/34a-new-strings.csv`（`source,url,old_en,new_en`，本次 347 行），**等 dsh 翻译后与词典一起上线**。
-
-### 34a.10 顺序收尾
-
-`32a-update-options` → `32a-moq-content` → `34a-keyword-map`（dry-run → 备份 → 真跑 → 再跑验 0）→ 渲染层验收 → 需要退就 `34a-rollback.php`。
-不合并、不发布。
+若翻译闸门未通过或任何验收未通过，保留证据、停止发布，不以本地演练代替上线授权。

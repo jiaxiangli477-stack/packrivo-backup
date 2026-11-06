@@ -1,0 +1,30 @@
+<?php
+/** Verify the early CLI guard prevents unrelated theme-pattern timeout writes. */
+if (!defined('WP_CLI') || !WP_CLI) exit(1);
+global $wpdb;
+$key='_site_transient_timeout_wp_theme_files_patterns-a3a578f1ac01bff5256b4358f2326802';
+$data_key='_site_transient_wp_theme_files_patterns-a3a578f1ac01bff5256b4358f2326802';
+$missing='_site_transient_wp_theme_files_patterns-34a2-test-missing';
+$missing_timeout='_site_transient_timeout_wp_theme_files_patterns-34a2-test-missing';
+$old=$wpdb->get_var($wpdb->prepare("SELECT option_value FROM {$wpdb->options} WHERE option_name=%s",$key));
+$old_data=$wpdb->get_var($wpdb->prepare("SELECT option_value FROM {$wpdb->options} WHERE option_name=%s",$data_key));
+if ($old===null || $old_data===null) WP_CLI::error('Expected test transient options are absent.');
+if ($wpdb->get_var($wpdb->prepare("SELECT option_id FROM {$wpdb->options} WHERE option_name=%s",$missing))!==null) WP_CLI::error('Test missing option already exists.');
+if ($wpdb->get_var($wpdb->prepare("SELECT option_id FROM {$wpdb->options} WHERE option_name=%s",$missing_timeout))!==null) WP_CLI::error('Test missing timeout already exists.');
+$wpdb->query('START TRANSACTION');
+$result=update_option($key,(int)$old+60);
+$db=$wpdb->get_var($wpdb->prepare("SELECT option_value FROM {$wpdb->options} WHERE option_name=%s",$key));
+$result_data=update_option($data_key,array('version'=>'__unexpected_version__','patterns'=>array()));
+$db_data=$wpdb->get_var($wpdb->prepare("SELECT option_value FROM {$wpdb->options} WHERE option_name=%s",$data_key));
+$result_missing=update_option($missing,array('version'=>'__new__','patterns'=>array()));
+$db_missing=$wpdb->get_var($wpdb->prepare("SELECT option_id FROM {$wpdb->options} WHERE option_name=%s",$missing));
+$transient_missing=set_site_transient('wp_theme_files_patterns-34a2-test-missing',array('version'=>'__new__','patterns'=>array()),60);
+$missing_rows=$wpdb->get_var($wpdb->prepare("SELECT COUNT(*) FROM {$wpdb->options} WHERE option_name IN (%s,%s)",$missing,$missing_timeout));
+$transient_existing=set_site_transient('wp_theme_files_patterns-a3a578f1ac01bff5256b4358f2326802',array('version'=>'__stale_version__','patterns'=>array()),60);
+$existing_after=$wpdb->get_var($wpdb->prepare("SELECT option_value FROM {$wpdb->options} WHERE option_name=%s",$data_key));
+$wpdb->update($wpdb->options,array('option_value'=>'1'),array('option_name'=>$key));
+get_site_transient('wp_theme_files_patterns-a3a578f1ac01bff5256b4358f2326802');
+$expired_present=$wpdb->get_var($wpdb->prepare("SELECT COUNT(*) FROM {$wpdb->options} WHERE option_name IN (%s,%s)",$key,$data_key));
+$wpdb->query('ROLLBACK');
+if ($result!==false || (string)$db!==(string)$old || $result_data!==false || $db_data!==$old_data || $result_missing!==false || $db_missing!==null || $transient_missing!==false || (int)$missing_rows!==0 || $transient_existing!==false || $existing_after!==$old_data || (int)$expired_present!==2) WP_CLI::error('Unrelated option write was not blocked.');
+WP_CLI::line('THEME_OPTION_GUARD existing_timeout=PASS stale_data=PASS missing_data=PASS expired_read=PASS');

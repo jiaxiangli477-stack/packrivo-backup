@@ -14,9 +14,9 @@ if (!defined('ABSPATH')) {
 function pkv4_quote_strings()
 {
     return [
-        'title' => 'Custom Packaging Quote & Price Calculator | Packrivo',
-        'h1'    => 'Custom Packaging Quote & Price Calculator',
-        'desc'  => 'Box size, quantity, print and finish set the unit price. See the published curve, then get a written scope and supplier confirmation.',
+        'title' => 'Get a Custom Packaging Quote | Packrivo',
+        'h1'    => 'Get a packaging quote',
+        'desc'  => 'Custom packaging quote. DDP or FOB, quoted both ways. Dieline before production. MOQ 250, 5-10 day sampling. Request a quote.',
     ];
 }
 

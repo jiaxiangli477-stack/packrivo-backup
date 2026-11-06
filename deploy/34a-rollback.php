@@ -1,238 +1,104 @@
 <?php
-/**
- * 34a 回滚 — 读 deploy/backup/34a-before-<timestamp>.csv，把 title / meta description / H1 还原成写前原值。
- *
- * 用法：
- *   wp eval-file deploy/34a-rollback.php                        # 用 backup/ 里最新的 34a-before-*.csv
- *   wp eval-file deploy/34a-rollback.php /path/34a-before-x.csv
- *   wp eval-file deploy/34a-rollback.php --file=/path/x.csv dry-run
- * 环境变量：
- *   PK34A_BACKUP_DIR  备份目录，默认 __DIR__/backup
- *
- * 备份行的 field 取值：
- *   _yoast_wpseo_title / _yoast_wpseo_metadesc   old_value 空串表示写前没有这条 meta → 回滚时删掉
- *   h1                                            old_value 是 <h1> 内层原始文本；new_value 为空表示这页 H1 没写过
- *   idx:<rowid>:<column>                          wp_yoast_indexable 单列原值
- */
-
-if (!defined('WP_CLI') || !WP_CLI) {
-    fwrite(STDERR, "This script must run through WP-CLI eval-file.\n");
-    exit(1);
-}
-
+/** Restore only fields recorded in an intact version-3 backup. WP-CLI eval-file. */
+if (!defined('WP_CLI') || !WP_CLI) exit(1);
 global $wpdb;
-
-$argv = (isset($args) && is_array($args)) ? $args : array();
-$dry = false;
-$file = '';
-foreach ($argv as $a) {
-    $a = (string) $a;
-    if ($a === 'dry-run' || $a === '--dry-run') {
-        $dry = true;
-    } elseif (strpos($a, '--file=') === 0) {
-        $file = substr($a, 7);
-    } elseif (strpos($a, '--') !== 0) {
-        $file = $a;
-    }
+$argv = isset($args) && is_array($args) ? $args : array();
+$file = ''; $dry = false;
+foreach ($argv as $arg) {
+    $arg = (string)$arg;
+    if ($arg === 'dry-run' || $arg === '--dry-run') $dry = true;
+    elseif (strpos($arg, '--') === 0) WP_CLI::error('Use an explicit positional backup path; flags are not backup paths.');
+    elseif ($file === '') $file = $arg;
+    else WP_CLI::error('Unexpected argument; nothing rolled back.');
 }
-if ($file === '') {
-    $dir = getenv('PK34A_BACKUP_DIR');
-    if (!$dir) {
-        $dir = __DIR__ . '/backup';
-    }
-    $cand = glob(rtrim($dir, '/\\') . '/34a-before-*.csv');
-    if (!$cand) {
-        WP_CLI::error("No 34a-before-*.csv under $dir; nothing rolled back.");
-    }
-    sort($cand);
-    $file = end($cand);
+if ($file === '') WP_CLI::error('Explicit backup path required; nothing rolled back.');
+if (!is_readable($file)) WP_CLI::error("Backup file not readable: $file; nothing rolled back.");
+require_once __DIR__.'/34a-backup-lib.php';
+try { $decoded=pk34a_backup_decode((string)file_get_contents($file)); }
+catch (Throwable $e) { WP_CLI::error($e->getMessage().'; nothing rolled back.'); }
+$meta_keys = array('_yoast_wpseo_title','_yoast_wpseo_metadesc','_packrivo_document_title','_packrivo_description');
+$records=array();$seen=array();
+foreach ($decoded as $r) {
+    if ($r['version'] !== '3' || !ctype_digit($r['post_id']) || (int)$r['post_id'] < 1 || !in_array($r['old_exists'],array('0','1'),true) || !in_array($r['old_is_null'],array('0','1'),true)) WP_CLI::error('Invalid backup data; nothing rolled back.');
+    $field=$r['field'];
+    if (!in_array($field,$meta_keys,true) && $field !== 'h1' && !preg_match('/^idx:\d+:(title|description)$/',$field)) WP_CLI::error("Disallowed backup field $field; nothing rolled back.");
+    if ($r['old_is_null'] === '1' && strpos($field,'idx:') !== 0) WP_CLI::error('Only indexable values may be null; nothing rolled back.');
+    if (($field === 'h1' || strpos($field,'idx:') === 0) && $r['old_exists'] !== '1') WP_CLI::error('Invalid existence flag; nothing rolled back.');
+    $key=$r['post_id'].':'.$field;
+    if (isset($seen[$key])) WP_CLI::error("Duplicate backup field $key; nothing rolled back.");
+    $seen[$key]=true; $records[]=$r;
 }
-if (!is_readable($file)) {
-    WP_CLI::error("Backup file not readable: $file; nothing rolled back.");
+if (!$records) WP_CLI::error('Backup contains no records; nothing rolled back.');
+$indexable_table=$wpdb->prefix.'yoast_indexable';
+foreach (array($wpdb->posts,$wpdb->postmeta,$indexable_table) as $table) {
+    $engine=$wpdb->get_var($wpdb->prepare('SELECT ENGINE FROM information_schema.TABLES WHERE TABLE_SCHEMA=DATABASE() AND TABLE_NAME=%s',$table));
+    if (strtoupper((string)$engine) !== 'INNODB') WP_CLI::error("Non-transactional table $table; nothing rolled back.");
 }
-$indexable_table = $wpdb->prefix . 'yoast_indexable';
-
-$fh = fopen($file, 'rb');
-$header = fgetcsv($fh, 0, ',', '"', '');
-if (!is_array($header)) {
-    fclose($fh);
-    WP_CLI::error('Backup has no header row; nothing rolled back.');
-}
-$header[0] = preg_replace('/^\xEF\xBB\xBF/', '', (string) $header[0]);
-$col = array();
-foreach ($header as $i => $n) {
-    $col[trim((string) $n)] = $i;
-}
-foreach (array('post_id', 'url', 'field', 'old_value', 'new_value') as $need) {
-    if (!isset($col[$need])) {
-        fclose($fh);
-        WP_CLI::error("Backup is missing column [$need]; nothing rolled back.");
-    }
-}
-$by_post = array();
-while (($r = fgetcsv($fh, 0, ',', '"', '')) !== false) {
-    if ($r === array(null) || (count($r) === 1 && trim((string) $r[0]) === '')) {
+if ($wpdb->query('START TRANSACTION') === false) WP_CLI::error('Cannot start transaction.');
+$checked_posts=array();
+foreach ($records as $r) {
+    $id=(int)$r['post_id'];
+    if (isset($checked_posts[$id])) {
+        if ($checked_posts[$id] !== $r['url']) { $wpdb->query('ROLLBACK'); WP_CLI::error("Conflicting backup URLs for post $id; nothing rolled back."); }
         continue;
     }
-    $id = (int) $r[$col['post_id']];
-    if (!$id) {
-        continue;
+    $post=$wpdb->get_row($wpdb->prepare("SELECT post_type,post_status FROM {$wpdb->posts} WHERE ID=%d FOR UPDATE",$id),ARRAY_A);
+    if (!$post || $post['post_type']!=='page' || $post['post_status']!=='publish' || (int)url_to_postid(home_url($r['url']))!==$id) {
+        $wpdb->query('ROLLBACK'); WP_CLI::error("Page identity changed $id; nothing rolled back.");
     }
-    $by_post[$id][] = array(
-        'url' => (string) $r[$col['url']],
-        'field' => (string) $r[$col['field']],
-        'old' => isset($r[$col['old_value']]) ? (string) $r[$col['old_value']] : '',
-        'new' => isset($r[$col['new_value']]) ? (string) $r[$col['new_value']] : '',
-    );
+    $checked_posts[$id]=$r['url'];
 }
-fclose($fh);
-if (!$by_post) {
-    WP_CLI::error("Backup $file has no usable rows; nothing rolled back.");
-}
-
-function pk34a_r_norm($s) {
-    $s = html_entity_decode((string) $s, ENT_QUOTES | ENT_HTML5, 'UTF-8');
-    $s = strip_tags($s);
-    $s = preg_replace('/\s+/u', ' ', $s);
-    return trim($s);
-}
-
-$plan_meta = array();
-$plan_h1 = array();
-$plan_idx = array();
-$skipped = array();
-foreach ($by_post as $id => $items) {
-    foreach ($items as $it) {
-        $f = $it['field'];
-        if ($f === '_yoast_wpseo_title' || $f === '_yoast_wpseo_metadesc' || $f === '_packrivo_document_title' || $f === '_packrivo_description') {
-            $plan_meta[] = array('id' => $id, 'key' => $f, 'old' => $it['old'], 'new' => $it['new']);
-        } elseif ($f === 'h1') {
-            if ($it['new'] === '' && $it['old'] === '') {
-                continue;
-            }
-            if ($it['new'] === '') {
-                $skipped[] = "$id h1 new_value 为空（这页 H1 未写入），无需回滚";
-                continue;
-            }
-            $plan_h1[] = array('id' => $id, 'old' => $it['old'], 'new' => $it['new'], 'url' => $it['url']);
-        } elseif (strpos($f, 'idx:') === 0) {
-            $parts = explode(':', $f);
-            if (count($parts) !== 3) {
-                $skipped[] = "$id 无法解析 indexable 字段 $f";
-                continue;
-            }
-            $plan_idx[] = array('id' => $id, 'row' => (int) $parts[1], 'column' => $parts[2], 'old' => $it['old']);
-        } else {
-            $skipped[] = "$id 未知字段 $f";
-        }
-    }
-}
-
-WP_CLI::line('rollback_file=' . $file);
-WP_CLI::line('posts=' . count($by_post) . ' meta_rows=' . count($plan_meta) . ' h1_rows=' . count($plan_h1) . ' idx_rows=' . count($plan_idx));
-foreach ($skipped as $s) {
-    WP_CLI::line('SKIP ' . $s);
-}
-if ($dry) {
-    WP_CLI::line('dry_run=1 (no database change)');
-    WP_CLI::success('34a rollback dry-run finished.');
-    return;
-}
-
-$wpdb->query('START TRANSACTION');
-$meta_done = 0;
-foreach ($plan_meta as $mp) {
-    $row = $wpdb->get_row($wpdb->prepare("SELECT meta_id, meta_value FROM {$wpdb->postmeta} WHERE post_id=%d AND meta_key=%s LIMIT 1", $mp['id'], $mp['key']), ARRAY_A);
-    if ($mp['old'] === '') {
-        if ($row) {
-            $ok = $wpdb->delete($wpdb->postmeta, array('meta_id' => (int) $row['meta_id']));
-            if ($ok !== 1) {
-                $wpdb->query('ROLLBACK');
-                WP_CLI::error("Delete meta failed for post {$mp['id']} {$mp['key']}; rolled back.");
-            }
-            $meta_done++;
-        }
-        continue;
-    }
-    if ($row) {
-        if ((string) $row['meta_value'] === $mp['old']) {
-            continue;
-        }
-        $ok = $wpdb->update($wpdb->postmeta, array('meta_value' => $mp['old']), array('meta_id' => (int) $row['meta_id']));
+$pending=array();$unchanged=0;
+foreach ($records as $r) {
+    $id=(int)$r['post_id'];$field=$r['field'];
+    if (in_array($field,$meta_keys,true)) {
+        $rows=$wpdb->get_results($wpdb->prepare("SELECT meta_id,meta_value FROM {$wpdb->postmeta} WHERE post_id=%d AND meta_key=%s FOR UPDATE",$id,$field),ARRAY_A);
+        if (!is_array($rows) || count($rows)>1) { $wpdb->query('ROLLBACK'); WP_CLI::error("Duplicate metadata $id $field; nothing rolled back."); }
+        if ($r['old_exists']==='0' && !$rows) { $unchanged++; continue; }
+        if ($r['old_exists']==='1' && count($rows)===1 && $rows[0]['meta_value']===$r['old_value']) { $unchanged++; continue; }
+        if (count($rows)!==1 || $rows[0]['meta_value']!==$r['new_value']) { $wpdb->query('ROLLBACK'); WP_CLI::error("Metadata changed since migration $id $field; nothing rolled back."); }
+        $pending[]=array('record'=>$r,'meta_id'=>(int)$rows[0]['meta_id']);
+    } elseif ($field === 'h1') {
+        $body=$wpdb->get_var($wpdb->prepare("SELECT post_content FROM {$wpdb->posts} WHERE ID=%d FOR UPDATE",$id));
+        if (!is_string($body) || preg_match_all('~<h1\b[^>]*>([\s\S]*?)</h1>~i',$body,$m,PREG_OFFSET_CAPTURE)!==1) { $wpdb->query('ROLLBACK'); WP_CLI::error("H1 structure changed for post $id; nothing rolled back."); }
+        $current=$m[1][0][0];
+        if ($current===$r['old_value']) { $unchanged++; continue; }
+        if ($current!==$r['new_value']) { $wpdb->query('ROLLBACK'); WP_CLI::error("H1 changed since migration $id; nothing rolled back."); }
+        $pending[]=array('record'=>$r,'content'=>$body,'offset'=>$m[1][0][1]);
     } else {
-        $ok = $wpdb->insert($wpdb->postmeta, array('post_id' => $mp['id'], 'meta_key' => $mp['key'], 'meta_value' => $mp['old']));
+        preg_match('/^idx:(\d+):(title|description)$/',$field,$match);
+        $row=$wpdb->get_row($wpdb->prepare("SELECT object_id,object_type,{$match[2]} AS val FROM {$indexable_table} WHERE id=%d FOR UPDATE",(int)$match[1]),ARRAY_A);
+        $old=$r['old_is_null']==='1' ? null : $r['old_value'];
+        if (!$row || (int)$row['object_id']!==$id || $row['object_type']!=='post') { $wpdb->query('ROLLBACK'); WP_CLI::error("Indexable identity changed $id $field; nothing rolled back."); }
+        if ($row['val']===$old) { $unchanged++; continue; }
+        if ($row['val']!==$r['new_value']) { $wpdb->query('ROLLBACK'); WP_CLI::error("Indexable changed since migration $id $field; nothing rolled back."); }
+        $pending[]=array('record'=>$r,'row'=>(int)$match[1],'column'=>$match[2]);
     }
-    if ($ok !== 1) {
-        $wpdb->query('ROLLBACK');
-        WP_CLI::error("Restore meta failed for post {$mp['id']} {$mp['key']}; rolled back.");
-    }
-    $meta_done++;
 }
-
-$h1_done = 0;
-$h1_bad = array();
-foreach ($plan_h1 as $hp) {
-    $content = (string) $wpdb->get_var($wpdb->prepare("SELECT post_content FROM {$wpdb->posts} WHERE ID=%d", $hp['id']));
-    if ($content === '') {
-        $h1_bad[] = $hp['id'] . ' post_content 读不到';
-        continue;
+WP_CLI::line('rollback_file='.$file.' records='.count($records).' pending='.count($pending).' unchanged='.$unchanged);
+if ($dry) { $wpdb->query('ROLLBACK'); WP_CLI::line('dry_run=1 (no database change)'); return; }
+$counts=array('meta'=>0,'h1'=>0,'indexable'=>0);$touched=array();
+foreach ($pending as $p) {
+    $r=$p['record'];$id=(int)$r['post_id'];$field=$r['field'];
+    if (in_array($field,$meta_keys,true)) {
+        $ok=$r['old_exists']==='0' ? $wpdb->delete($wpdb->postmeta,array('meta_id'=>$p['meta_id'])) : $wpdb->update($wpdb->postmeta,array('meta_value'=>$r['old_value']),array('meta_id'=>$p['meta_id']));
+        $counts['meta']++;
+    } elseif ($field==='h1') {
+        $restored=substr_replace($p['content'],$r['old_value'],$p['offset'],strlen($r['new_value']));
+        $ok=$wpdb->update($wpdb->posts,array('post_content'=>$restored),array('ID'=>$id));
+        $counts['h1']++;
+    } else {
+        $value=$r['old_is_null']==='1' ? null : $r['old_value'];
+        // Suppress Yoast's automatic updated_at modification on rollback too.
+        $ok=$value===null
+            ? $wpdb->query($wpdb->prepare("UPDATE {$indexable_table} SET {$p['column']}=NULL, updated_at=updated_at WHERE id=%d",$p['row']))
+            : $wpdb->query($wpdb->prepare("UPDATE {$indexable_table} SET {$p['column']}=%s, updated_at=updated_at WHERE id=%d",$value,$p['row']));
+        $counts['indexable']++;
     }
-    if (!preg_match_all('~<h1\b[^>]*>([\s\S]*?)</h1>~i', $content, $m, PREG_OFFSET_CAPTURE) || count($m[1]) !== 1) {
-        $h1_bad[] = $hp['id'] . ' 当前 <h1> 数量不为 1';
-        continue;
-    }
-    $cur_raw = $m[1][0][0];
-    $cur_off = $m[1][0][1];
-    if (pk34a_r_norm($cur_raw) === pk34a_r_norm($hp['old'])) {
-        continue;
-    }
-    if (pk34a_r_norm($cur_raw) !== pk34a_r_norm($hp['new'])) {
-        $h1_bad[] = $hp['id'] . ' 当前 H1 既不是新值也不是旧值: ' . pk34a_r_norm($cur_raw);
-        continue;
-    }
-    $old_raw = $hp['old'];
-    if (html_entity_decode($cur_raw, ENT_QUOTES | ENT_HTML5, 'UTF-8') !== $cur_raw) {
-        $old_raw = htmlspecialchars($old_raw, ENT_QUOTES, 'UTF-8');
-    }
-    $new_content = substr_replace($content, $old_raw, $cur_off, strlen($cur_raw));
-    $ok = $wpdb->update($wpdb->posts, array('post_content' => $new_content), array('ID' => $hp['id'], 'post_content' => $content));
-    if ($ok !== 1) {
-        $wpdb->query('ROLLBACK');
-        WP_CLI::error("Restore H1 failed for post {$hp['id']}; transaction rolled back.");
-    }
-    $h1_done++;
+    if ($ok!==1) { $wpdb->query('ROLLBACK'); WP_CLI::error("Restore failed $id $field; transaction rolled back."); }
+    $touched[$id]=true;
 }
-
-$idx_done = 0;
-foreach ($plan_idx as $ip) {
-    $exists = $wpdb->get_var($wpdb->prepare("SELECT id FROM {$indexable_table} WHERE id=%d", $ip['row']));
-    if (!$exists) {
-        continue;
-    }
-    $cur = $wpdb->get_var($wpdb->prepare("SELECT {$ip['column']} FROM {$indexable_table} WHERE id=%d", $ip['row']));
-    if ((string) $cur === $ip['old']) {
-        continue;
-    }
-    $ok = $wpdb->update($indexable_table, array($ip['column'] => $ip['old']), array('id' => $ip['row']));
-    if ($ok !== 1) {
-        $wpdb->query('ROLLBACK');
-        WP_CLI::error("Restore indexable failed for row {$ip['row']} col {$ip['column']}; rolled back.");
-    }
-    $idx_done++;
-}
-if ($wpdb->query('COMMIT') === false) {
-    $wpdb->query('ROLLBACK');
-    WP_CLI::error('Commit failed; transaction rolled back.');
-}
-foreach (array_keys($by_post) as $id) {
-    clean_post_cache($id);
-    wp_cache_delete($id, 'post_meta');
-}
-wp_cache_flush();
-
-WP_CLI::line('restored meta=' . $meta_done . ' h1=' . $h1_done . ' idx=' . $idx_done . ' h1_problems=' . count($h1_bad));
-foreach ($h1_bad as $b) {
-    WP_CLI::line('H1_PROBLEM ' . $b);
-}
-WP_CLI::line('rolled_back=1');
+if ($wpdb->query('COMMIT')===false) { $wpdb->query('ROLLBACK'); WP_CLI::error('Rollback commit failed.'); }
+foreach (array_keys($touched) as $id) { clean_post_cache($id); wp_cache_delete($id,'post_meta'); }
+WP_CLI::line('changed='.count($pending).' meta='.$counts['meta'].' h1='.$counts['h1'].' indexable='.$counts['indexable']);
 WP_CLI::success('34a rollback finished.');
