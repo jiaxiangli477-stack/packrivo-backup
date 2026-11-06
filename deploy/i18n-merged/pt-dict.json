@@ -300,7 +300,8 @@
     "Custom Jewelry Boxes: Rigid, Drawer, MOQ 250 | Packrivo": "Caixas de joias rígidas, gaveta, MOQ 250 | Packrivo",
     "Custom Packaging: 134 Styles, MOQ 250 | Packrivo": "Embalagens à medida: 134 modelos, MOQ 250 | Packrivo",
     "Packrivo — English page text": "Packrivo — texto da página em inglês",
-    "Page not found | Packrivo": "Página não encontrada | Packrivo"
+    "Page not found | Packrivo": "Página não encontrada | Packrivo",
+    "{Topic} | Packrivo": "{Topic} | Packrivo"
   },
   "attr": {
     "Next step": "Próxima etapa",
@@ -1182,7 +1183,12 @@
     "Two-door rigid boxes that open from the centre, printed with your logo from 250 pieces. Get a price.": "Caixas rígidas de duas portas que abrem ao centro, impressas com o seu logótipo, a partir de 250 unidades. Peça um preço.",
     "Wide gusset paper carriers for boxed gifts, printed with your logo and available from 250 pieces. Get a price.": "Sacos de papel com fole largo para presentes em caixa, impressos com o seu logótipo, a partir de 250 unidades. Peça um preço.",
     "Windowed folding cartons that show the product, printed with your logo and from 250 pieces. Get a price.": "Caixas de cartão dobrado com janela que mostram o produto, impressas com o seu logótipo, a partir de 250 unidades. Peça um preço.",
-    "Zippered fabric pouches for jewelry and gifts, printed with your logo from 250 pieces. Get a price.": "Sacos de tecido com fecho de correr para joias e presentes, impressos com o seu logótipo, a partir de 250 unidades. Peça um preço."
+    "Zippered fabric pouches for jewelry and gifts, printed with your logo from 250 pieces. Get a price.": "Sacos de tecido com fecho de correr para joias e presentes, impressos com o seu logótipo, a partir de 250 unidades. Peça um preço.",
+    "English": "English",
+    "Supplier sample room with shelves of rigid gift boxes and jewelry boxes": "Sala de amostras de um fornecedor com prateleiras de caixas de presente rígidas e caixas de joias",
+    "Operator feeding a printed proof sheet into a wide-format digital proofing printer": "Operador a introduzir uma folha de prova impressa numa impressora digital de provas de grande formato",
+    "Multi-colour sheet-fed offset printing press in a packaging factory": "Máquina de impressão offset multicolor de folhas numa fábrica de embalagens",
+    "Finished jewelry boxes packed in export cartons before shipping": "Caixas de joias acabadas acondicionadas em caixas de exportação antes do envio"
   },
   "block": {
     "Size": "Dimensões",
@@ -8839,6 +8845,28 @@
     "Minimum (USD)": "Mínimo (USD)",
     "Goods total: {goods_total}": "Total de mercadorias: {goods_total}",
     "Sourcing fee: {fee}": "Taxa de fornecimento: {fee}",
-    "Thanks {name},\n\nWe have your request for {quantity} units at {unit} each. Goods total: {goods_total}. Sourcing fee: {fee}. An engineer replies within one business day.\n\nReference: {ref}": "Obrigado {name},\n\nRecebemos o seu pedido de {quantity} unidades a {unit} cada. Total de mercadorias: {goods_total}. Taxa de fornecimento: {fee}. Um engenheiro responde no prazo de um dia útil.\n\nReferência: {ref}"
+    "Thanks {name},\n\nWe have your request for {quantity} units at {unit} each. Goods total: {goods_total}. Sourcing fee: {fee}. An engineer replies within one business day.\n\nReference: {ref}": "Obrigado {name},\n\nRecebemos o seu pedido de {quantity} unidades a {unit} cada. Total de mercadorias: {goods_total}. Taxa de fornecimento: {fee}. Um engenheiro responde no prazo de um dia útil.\n\nReferência: {ref}",
+    "More in this category": "Mais nesta categoria",
+    "Related reading": "Leituras relacionadas",
+    "Drawer Box With Ribbon Pull": "Caixa com gaveta e puxador de fita",
+    "Corrugated Wine Bottle Shipper": "Caixa de transporte em cartão ondulado para garrafa de vinho",
+    "Subscription Mailer Box With Insert": "Caixa mailer de assinatura com inserto",
+    "Eco Kraft Cosmetic Box for Small Batches": "Caixa cosmética kraft ecológica para pequenas séries",
+    "Magnetic Book-Style Presentation Box": "Caixa de apresentação magnética tipo livro",
+    "Custom Kraft Soap Box With Window": "Caixa de sabão kraft personalizada com janela",
+    "Jewelry Pouch and Box Set": "Conjunto de bolsa e caixa de joias",
+    "Kraft Stand-Up Pouch With Window": "Bolsa kraft vertical com janela",
+    "Jewelry Boxes, Pouches and Bags — Reference Catalogue": "Caixas de joias, bolsas e sacos — catálogo de referências",
+    "Pink Jewelry Storage Box": "Caixa de armazenamento de joias rosa",
+    "Jewelry Packaging Box — Ref. 996892": "Caixa de embalagem de joias — Ref. 996892",
+    "Velvet-Lined Boxes — Reference Catalogue": "Caixas forradas a veludo — catálogo de referências",
+    "Velvet-Lined Box — Velvet, Faux Fur": "Caixa forrada a veludo — veludo, pelo sintético",
+    "For a quote, email us or contact us on WhatsApp.": "Para uma cotação, envie-nos um e-mail ou contacte-nos pelo WhatsApp.",
+    "illustrative walkthroughs": "passo a passo ilustrativo",
+    "Supplier sample room, Dongguan. Structures are chosen from real samples before artwork starts.": "Sala de amostras de um fornecedor, Dongguan. As estruturas são escolhidas a partir de amostras reais antes de começar a arte final.",
+    "Digital proof printing at a supplier in Dongguan.": "Impressão digital de provas num fornecedor em Dongguan.",
+    "Sheet-fed offset press used for production runs.": "Máquina offset de folhas utilizada para tiragens de produção.",
+    "Finished boxes packed into cartons, Shantou.": "Caixas acabadas acondicionadas em caixas de cartão, Shantou.",
+    "Supplier photos, used with permission.": "Fotografias do fornecedor, utilizadas com autorização."
   }
 }

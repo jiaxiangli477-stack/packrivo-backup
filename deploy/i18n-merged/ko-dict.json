@@ -294,7 +294,8 @@
     "Custom Jewelry Boxes: Rigid, Drawer, MOQ 250 | Packrivo": "맞춤 주얼리 박스: 경질·서랍형, 최소 250개 | Packrivo",
     "Custom Packaging: 134 Styles, MOQ 250 | Packrivo": "맞춤 포장 134종 · 최소 주문 250개 | Packrivo",
     "Packrivo — English page text": "Packrivo — 영어 페이지 텍스트",
-    "Page not found | Packrivo": "페이지를 찾을 수 없습니다 | Packrivo"
+    "Page not found | Packrivo": "페이지를 찾을 수 없습니다 | Packrivo",
+    "{Topic} | Packrivo": "{Topic} | Packrivo"
   },
   "attr": {
     "A closed display carton sits beside an opened header and front-access tray holding retail units.": "닫힌 디스플레이 카톤 옆에 개봉된 헤더와 전면 접근 트레이가 있으며, 여기에 소매 단위 제품이 담겨 있습니다.",
@@ -1176,7 +1177,12 @@
     "Two-door rigid boxes that open from the centre, printed with your logo from 250 pieces. Get a price.": "가운데에서 양쪽으로 열리는 양문형 경질 박스입니다. 로고 인쇄, 250개부터. 견적 문의.",
     "Wide gusset paper carriers for boxed gifts, printed with your logo and available from 250 pieces. Get a price.": "박스 선물을 담는 와이드 거싯 종이 가방입니다. 로고 인쇄 가능하며 250개부터. 견적 문의.",
     "Windowed folding cartons that show the product, printed with your logo and from 250 pieces. Get a price.": "제품이 보이는 창문형 접이식 카톤입니다. 로고 인쇄 가능하며 250개부터. 견적 문의.",
-    "Zippered fabric pouches for jewelry and gifts, printed with your logo from 250 pieces. Get a price.": "주얼리와 선물용 지퍼 원단 파우치입니다. 로고 인쇄 가능하며 250개부터. 견적 문의."
+    "Zippered fabric pouches for jewelry and gifts, printed with your logo from 250 pieces. Get a price.": "주얼리와 선물용 지퍼 원단 파우치입니다. 로고 인쇄 가능하며 250개부터. 견적 문의.",
+    "English": "English",
+    "Supplier sample room with shelves of rigid gift boxes and jewelry boxes": "경질 선물 상자와 주얼리 박스가 진열된 공급업체 샘플룸",
+    "Operator feeding a printed proof sheet into a wide-format digital proofing printer": "인쇄된 교정지를 대형 디지털 교정 프린터에 넣는 작업자",
+    "Multi-colour sheet-fed offset printing press in a packaging factory": "포장 공장의 다색 매엽 오프셋 인쇄기",
+    "Finished jewelry boxes packed in export cartons before shipping": "출하 전 수출용 카톤에 포장된 완성 주얼리 박스"
   },
   "block": {
     ", from Shenzhen, China (UTC+8).": ", 중국 선전(UTC+8)에서.",
@@ -8823,6 +8829,28 @@
     "Minimum (USD)": "최저 금액 (USD)",
     "Goods total: {goods_total}": "상품 합계: {goods_total}",
     "Sourcing fee: {fee}": "소싱 수수료: {fee}",
-    "Thanks {name},\n\nWe have your request for {quantity} units at {unit} each. Goods total: {goods_total}. Sourcing fee: {fee}. An engineer replies within one business day.\n\nReference: {ref}": "{name}님, 감사합니다.\n\n{quantity}개를 개당 {unit} 조건으로 요청하신 내용을 접수했습니다. 상품 합계: {goods_total}. 소싱 수수료: {fee}. 엔지니어가 영업일 기준 하루 이내에 회신드립니다.\n\n참조: {ref}"
+    "Thanks {name},\n\nWe have your request for {quantity} units at {unit} each. Goods total: {goods_total}. Sourcing fee: {fee}. An engineer replies within one business day.\n\nReference: {ref}": "{name}님, 감사합니다.\n\n{quantity}개를 개당 {unit} 조건으로 요청하신 내용을 접수했습니다. 상품 합계: {goods_total}. 소싱 수수료: {fee}. 엔지니어가 영업일 기준 하루 이내에 회신드립니다.\n\n참조: {ref}",
+    "More in this category": "이 카테고리의 다른 항목",
+    "Related reading": "관련 글",
+    "Drawer Box With Ribbon Pull": "리본 풀 손잡이 서랍 박스",
+    "Corrugated Wine Bottle Shipper": "골판지 와인병 운송 상자",
+    "Subscription Mailer Box With Insert": "인서트가 있는 구독 메일러 박스",
+    "Eco Kraft Cosmetic Box for Small Batches": "소량 배치용 에코 크라프트 화장품 상자",
+    "Magnetic Book-Style Presentation Box": "자석 북 스타일 프레젠테이션 박스",
+    "Custom Kraft Soap Box With Window": "창 개방형 맞춤 크라프트 비누 상자",
+    "Jewelry Pouch and Box Set": "주얼리 파우치 & 박스 세트",
+    "Kraft Stand-Up Pouch With Window": "창 개방형 크라프트 스탠드업 파우치",
+    "Jewelry Boxes, Pouches and Bags — Reference Catalogue": "주얼리 박스, 파우치, 가방 — 레퍼런스 카탈로그",
+    "Pink Jewelry Storage Box": "핑크 주얼리 보관함",
+    "Jewelry Packaging Box — Ref. 996892": "주얼리 포장 박스 — 참조 번호 996892",
+    "Velvet-Lined Boxes — Reference Catalogue": "벨벳 안감 박스 — 레퍼런스 카탈로그",
+    "Velvet-Lined Box — Velvet, Faux Fur": "벨벳 안감 박스 — 벨벳, 페이크 퍼",
+    "For a quote, email us or contact us on WhatsApp.": "견적이 필요하시면 이메일을 보내시거나 WhatsApp으로 문의해 주십시오.",
+    "illustrative walkthroughs": "예시 중심 단계별 안내",
+    "Supplier sample room, Dongguan. Structures are chosen from real samples before artwork starts.": "공급업체 샘플룸, 둥관. 구조는 아트워크 작업 전에 실제 샘플에서 선택합니다.",
+    "Digital proof printing at a supplier in Dongguan.": "둥관 소재 공급업체의 디지털 교정 인쇄.",
+    "Sheet-fed offset press used for production runs.": "양산 인쇄에 사용되는 매엽 오프셋 인쇄기.",
+    "Finished boxes packed into cartons, Shantou.": "완성된 박스를 카톤에 포장, 산터우.",
+    "Supplier photos, used with permission.": "공급업체 사진, 사용 허가를 받았습니다."
   }
 }

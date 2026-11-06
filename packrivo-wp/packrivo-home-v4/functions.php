@@ -7,7 +7,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('PKV4_VERSION', '4.0.6');
+define('PKV4_VERSION', '4.0.7');
 
 require_once get_stylesheet_directory() . '/inc/seo-31a.php';
 require_once get_stylesheet_directory() . '/inc/site-31b.php';

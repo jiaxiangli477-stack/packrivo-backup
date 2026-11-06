@@ -300,7 +300,8 @@
     "Custom Jewelry Boxes: Rigid, Drawer, MOQ 250 | Packrivo": "Boîtes à bijoux personnalisées avec logo – dès 250 pièces",
     "Custom Packaging: 134 Styles, MOQ 250 | Packrivo": "Emballages personnalisés : 134 modèles, MOQ 250 | Packrivo",
     "Packrivo — English page text": "Packrivo — Texte des pages en anglais",
-    "Page not found | Packrivo": "Page introuvable | Packrivo"
+    "Page not found | Packrivo": "Page introuvable | Packrivo",
+    "{Topic} | Packrivo": "{Topic} | Packrivo"
   },
   "attr": {
     "Next step": "Étape suivante",
@@ -1182,7 +1183,12 @@
     "Two-door rigid boxes that open from the centre, printed with your logo from 250 pieces. Get a price.": "Boîtes rigides à deux portes qui s'ouvrent par le centre, avec votre logo, dès 250 pièces. Demandez un prix.",
     "Wide gusset paper carriers for boxed gifts, printed with your logo and available from 250 pieces. Get a price.": "Sacs papier à large soufflet pour cadeaux encaissés, avec votre logo, dès 250 pièces. Demandez un prix.",
     "Windowed folding cartons that show the product, printed with your logo and from 250 pieces. Get a price.": "Étuis pliants à fenêtre qui montrent le produit, avec votre logo, dès 250 pièces. Demandez un prix.",
-    "Zippered fabric pouches for jewelry and gifts, printed with your logo from 250 pieces. Get a price.": "Pochettes en tissu zippées pour bijoux et cadeaux, avec votre logo, dès 250 pièces. Demandez un prix."
+    "Zippered fabric pouches for jewelry and gifts, printed with your logo from 250 pieces. Get a price.": "Pochettes en tissu zippées pour bijoux et cadeaux, avec votre logo, dès 250 pièces. Demandez un prix.",
+    "English": "English",
+    "Supplier sample room with shelves of rigid gift boxes and jewelry boxes": "Salle d’échantillons d’un fournisseur avec des étagères de boîtes cadeau rigides et de boîtes à bijoux",
+    "Operator feeding a printed proof sheet into a wide-format digital proofing printer": "Opérateur introduisant une feuille d’épreuve imprimée dans une imprimante numérique grand format",
+    "Multi-colour sheet-fed offset printing press in a packaging factory": "Presse offset feuille multicolore dans une usine d’emballage",
+    "Finished jewelry boxes packed in export cartons before shipping": "Boîtes à bijoux finies emballées dans des cartons d’exportation avant expédition"
   },
   "block": {
     "Size": "Dimension",
@@ -8831,6 +8837,28 @@
     "Minimum (USD)": "Minimum (en USD)",
     "Goods total: {goods_total}": "Total marchandise : {goods_total}",
     "Sourcing fee: {fee}": "Frais de sourcing : {fee}",
-    "Thanks {name},\n\nWe have your request for {quantity} units at {unit} each. Goods total: {goods_total}. Sourcing fee: {fee}. An engineer replies within one business day.\n\nReference: {ref}": "Merci {name},\n\nNous avons bien reçu votre demande pour {quantity} unités à {unit} l’unité. Total marchandise : {goods_total}. Frais de sourcing : {fee}. Un ingénieur vous répond sous un jour ouvré.\n\nRéférence : {ref}"
+    "Thanks {name},\n\nWe have your request for {quantity} units at {unit} each. Goods total: {goods_total}. Sourcing fee: {fee}. An engineer replies within one business day.\n\nReference: {ref}": "Merci {name},\n\nNous avons bien reçu votre demande pour {quantity} unités à {unit} l’unité. Total marchandise : {goods_total}. Frais de sourcing : {fee}. Un ingénieur vous répond sous un jour ouvré.\n\nRéférence : {ref}",
+    "More in this category": "Plus dans cette catégorie",
+    "Related reading": "Lectures associées",
+    "Drawer Box With Ribbon Pull": "Boîte à tiroir avec tirette en ruban",
+    "Corrugated Wine Bottle Shipper": "Carton d’expédition en carton ondulé pour bouteille de vin",
+    "Subscription Mailer Box With Insert": "Boîte d’expédition pour abonnement avec calage",
+    "Eco Kraft Cosmetic Box for Small Batches": "Boîte cosmétique en kraft écologique pour petites séries",
+    "Magnetic Book-Style Presentation Box": "Boîte de présentation magnétique façon livre",
+    "Custom Kraft Soap Box With Window": "Boîte à savon en kraft avec fenêtre personnalisée",
+    "Jewelry Pouch and Box Set": "Ensemble pochette et boîte à bijoux",
+    "Kraft Stand-Up Pouch With Window": "Pochette kraft autoportante avec fenêtre",
+    "Jewelry Boxes, Pouches and Bags — Reference Catalogue": "Boîtes à bijoux, pochettes et sacs — Catalogue de référence",
+    "Pink Jewelry Storage Box": "Boîte de rangement à bijoux rose",
+    "Jewelry Packaging Box — Ref. 996892": "Boîte d’emballage pour bijoux — Réf. 996892",
+    "Velvet-Lined Boxes — Reference Catalogue": "Boîtes doublées velours — Catalogue de référence",
+    "Velvet-Lined Box — Velvet, Faux Fur": "Boîte doublée velours — velours, fausse fourrure",
+    "For a quote, email us or contact us on WhatsApp.": "Pour obtenir un devis, écrivez-nous par e-mail ou contactez-nous sur WhatsApp.",
+    "illustrative walkthroughs": "parcours illustratifs",
+    "Supplier sample room, Dongguan. Structures are chosen from real samples before artwork starts.": "Salle d’échantillons d’un fournisseur, Dongguan. Les structures sont choisies sur des échantillons réels avant le début du visuel.",
+    "Digital proof printing at a supplier in Dongguan.": "Impression d’épreuves numériques chez un fournisseur à Dongguan.",
+    "Sheet-fed offset press used for production runs.": "Presse offset feuille utilisée pour les séries de production.",
+    "Finished boxes packed into cartons, Shantou.": "Boîtes finies emballées en cartons, Shantou.",
+    "Supplier photos, used with permission.": "Photos du fournisseur, utilisées avec autorisation."
   }
 }

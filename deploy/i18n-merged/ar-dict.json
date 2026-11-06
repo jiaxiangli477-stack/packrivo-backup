@@ -294,7 +294,8 @@
     "Custom Jewelry Boxes: Rigid, Drawer, MOQ 250 | Packrivo": "علب مجوهرات مخصصة: صلبة وبدرج، من 250 | Packrivo",
     "Custom Packaging: 134 Styles, MOQ 250 | Packrivo": "تغليف مخصص: 134 تصميمًا، حد أدنى 250 | Packrivo",
     "Packrivo — English page text": "Packrivo — نص الصفحة الإنجليزية",
-    "Page not found | Packrivo": "الصفحة غير موجودة | Packrivo"
+    "Page not found | Packrivo": "الصفحة غير موجودة | Packrivo",
+    "{Topic} | Packrivo": "{Topic} | Packrivo"
   },
   "attr": {
     "A kraft paper mailer bag with bold blue and coral graphic curves.": "كيس إرسال من ورق الكرافت بمنحنيات رسومية زرقاء ومرجانية جريئة.",
@@ -1175,7 +1176,12 @@
     "Two-door rigid boxes that open from the centre, printed with your logo from 250 pieces. Get a price.": "علب صلبة ببابين تُفتح من المنتصف، مع طباعة الشعار وبحد أدنى 250 قطعة. اطلب عرض سعر.",
     "Wide gusset paper carriers for boxed gifts, printed with your logo and available from 250 pieces. Get a price.": "أكياس ورقية بجوانب عريضة للهدايا المعلبة، مع طباعة الشعار وبحد أدنى 250 قطعة. اطلب عرض سعر.",
     "Windowed folding cartons that show the product, printed with your logo and from 250 pieces. Get a price.": "علب مطوية بنافذة تُظهر المنتج، مع طباعة الشعار وبحد أدنى 250 قطعة. اطلب عرض سعر.",
-    "Zippered fabric pouches for jewelry and gifts, printed with your logo from 250 pieces. Get a price.": "أكياس قماشية بسحاب للمجوهرات والهدايا، مع طباعة الشعار وبحد أدنى 250 قطعة. اطلب عرض سعر."
+    "Zippered fabric pouches for jewelry and gifts, printed with your logo from 250 pieces. Get a price.": "أكياس قماشية بسحاب للمجوهرات والهدايا، مع طباعة الشعار وبحد أدنى 250 قطعة. اطلب عرض سعر.",
+    "English": "English",
+    "Supplier sample room with shelves of rigid gift boxes and jewelry boxes": "غرفة عينات المورد مع أرفف تحمل علب هدايا صلبة وعلب مجوهرات",
+    "Operator feeding a printed proof sheet into a wide-format digital proofing printer": "مشغّل يُدخل ورقة إثبات مطبوعة في طابعة إثبات رقمية بعرض كبير",
+    "Multi-colour sheet-fed offset printing press in a packaging factory": "مطبعة أوفست متعددة الألوان بتغذية ورقية داخل مصنع تغليف",
+    "Finished jewelry boxes packed in export cartons before shipping": "علب مجوهرات جاهزة تُعبّأ في كراتين تصدير قبل الشحن"
   },
   "block": {
     "A hypothetical outer carton of gift sets might be filled at a small packing bench. Staff need an instruction that shows the bottom flap order before loading and the top order afterwards. Reversing the outer-flap order can also change the visible seam and label placement.": "قد يُملأ كرتون خارجي افتراضي لأطقم الهدايا على طاولة تغليف صغيرة. يحتاج الموظفون إلى تعليمات توضح ترتيب الرفرف السفلي قبل التحميل وترتيب الرفرف العلوي بعده. كما يمكن أن يؤدي عكس ترتيب الرفرف الخارجي إلى تغيير خط التماس المرئي وموضع الملصق.",
@@ -8831,6 +8837,28 @@
     "Minimum (USD)": "الحد الأدنى (دولار أمريكي)",
     "Goods total: {goods_total}": "إجمالي البضائع: {goods_total}",
     "Sourcing fee: {fee}": "رسوم التوريد: {fee}",
-    "Thanks {name},\n\nWe have your request for {quantity} units at {unit} each. Goods total: {goods_total}. Sourcing fee: {fee}. An engineer replies within one business day.\n\nReference: {ref}": "شكرًا {name}،\n\nلدينا طلبك لعدد {quantity} وحدة بسعر {unit} للوحدة. إجمالي البضائع: {goods_total}. رسوم التوريد: {fee}. يردّ أحد المهندسين خلال يوم عمل واحد.\n\nالمرجع: {ref}"
+    "Thanks {name},\n\nWe have your request for {quantity} units at {unit} each. Goods total: {goods_total}. Sourcing fee: {fee}. An engineer replies within one business day.\n\nReference: {ref}": "شكرًا {name}،\n\nلدينا طلبك لعدد {quantity} وحدة بسعر {unit} للوحدة. إجمالي البضائع: {goods_total}. رسوم التوريد: {fee}. يردّ أحد المهندسين خلال يوم عمل واحد.\n\nالمرجع: {ref}",
+    "More in this category": "المزيد في هذا التصنيف",
+    "Related reading": "قراءات ذات صلة",
+    "Drawer Box With Ribbon Pull": "علبة بدرج مع مقبض شريطي",
+    "Corrugated Wine Bottle Shipper": "صندوق شحن من الكرتون المضلع لزجاجة نبيذ",
+    "Subscription Mailer Box With Insert": "صندوق بريد للاشتراكات مع حشوة داخلية",
+    "Eco Kraft Cosmetic Box for Small Batches": "علبة مستحضرات تجميل كرافت صديقة للبيئة للدفعات الصغيرة",
+    "Magnetic Book-Style Presentation Box": "علبة عرض مغناطيسية بشكل كتاب",
+    "Custom Kraft Soap Box With Window": "علبة صابون كرافت مخصصة بنافذة",
+    "Jewelry Pouch and Box Set": "طقم كيس وعلبة مجوهرات",
+    "Kraft Stand-Up Pouch With Window": "كيس كرافت قائم بنافذة",
+    "Jewelry Boxes, Pouches and Bags — Reference Catalogue": "علب المجوهرات والأكياس والعبوات — كتالوج مرجعي",
+    "Pink Jewelry Storage Box": "علبة تخزين مجوهرات وردية",
+    "Jewelry Packaging Box — Ref. 996892": "علبة تغليف مجوهرات — مرجع 996892",
+    "Velvet-Lined Boxes — Reference Catalogue": "علب مبطّنة بالمخمل — كتالوج مرجعي",
+    "Velvet-Lined Box — Velvet, Faux Fur": "علبة مبطّنة بالمخمل — مخمل، فرو صناعي",
+    "For a quote, email us or contact us on WhatsApp.": "للحصول على عرض سعر، راسلنا بالبريد الإلكتروني أو تواصل معنا على WhatsApp.",
+    "illustrative walkthroughs": "شروحات توضيحية خطوة بخطوة",
+    "Supplier sample room, Dongguan. Structures are chosen from real samples before artwork starts.": "غرفة عينات المورد، دونغقوان. تُختار الهياكل من عينات حقيقية قبل بدء العمل الفني.",
+    "Digital proof printing at a supplier in Dongguan.": "طباعة إثبات رقمية عند مورد في دونغقوان.",
+    "Sheet-fed offset press used for production runs.": "مطبعة أوفست بتغذية ورقية تُستخدم لدفعات الإنتاج.",
+    "Finished boxes packed into cartons, Shantou.": "علب جاهزة تُعبّأ في كراتين، شانتو.",
+    "Supplier photos, used with permission.": "صور المورد، مستخدمة بإذن."
   }
 }

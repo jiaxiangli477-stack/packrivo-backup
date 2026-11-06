@@ -3,7 +3,7 @@
  * Plugin Name:       Packrivo Quote & Order
  * Plugin URI:        https://www.packrivo.com/
  * Description:       五步配置器：结构 → 尺寸 → 材料/工艺 → 数量 → 下单。前端实时报价，服务端重算价格后入库，后台可查单、导出 CSV。
- * Version:           1.0.1
+ * Version:           1.0.2
  * Requires at least: 6.2
  * Requires PHP:      7.4
  * Author:            Packrivo
@@ -14,7 +14,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('PKQ_VERSION', '1.0.1-32a');
+define('PKQ_VERSION', '1.0.2');
 define('PKQ_FILE', __FILE__);
 define('PKQ_DIR', plugin_dir_path(__FILE__));
 define('PKQ_URL', plugin_dir_url(__FILE__));

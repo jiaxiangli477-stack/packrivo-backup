@@ -294,7 +294,8 @@
     "Custom Jewelry Boxes: Rigid, Drawer, MOQ 250 | Packrivo": "ジュエリーボックス：貼り箱・引き出し式・250個から | Packrivo",
     "Custom Packaging: 134 Styles, MOQ 250 | Packrivo": "オリジナル包装134種類・最低注文数250個 | Packrivo",
     "Packrivo — English page text": "Packrivo — 英語ページ本文",
-    "Page not found | Packrivo": "ページが見つかりません | Packrivo"
+    "Page not found | Packrivo": "ページが見つかりません | Packrivo",
+    "{Topic} | Packrivo": "{Topic} | Packrivo"
   },
   "attr": {
     "A broad fifth hanger panel sits behind a retail body while a hand opens the loaded key-accessory pack.": "幅広の第5ハンガーパネルが小売用本体の背後にあり、手で商品入りのキーアクセサリーパックを開けています。",
@@ -1175,7 +1176,12 @@
     "Two-door rigid boxes that open from the centre, printed with your logo from 250 pieces. Get a price.": "中央から左右に開く観音開きの貼り箱。ロゴ印刷は250個から。見積もりを依頼。",
     "Wide gusset paper carriers for boxed gifts, printed with your logo and available from 250 pieces. Get a price.": "箱入りギフトに向くワイドマチの紙手提げ袋。ロゴ印刷に対応し、250枚から。見積もりを依頼。",
     "Windowed folding cartons that show the product, printed with your logo and from 250 pieces. Get a price.": "中身が見える窓付きの化粧箱。ロゴ印刷に対応し、250個から。見積もりを依頼。",
-    "Zippered fabric pouches for jewelry and gifts, printed with your logo from 250 pieces. Get a price.": "ジュエリーやギフトに向くファスナー付きの布ポーチ。ロゴ印刷は250枚から。見積もりを依頼。"
+    "Zippered fabric pouches for jewelry and gifts, printed with your logo from 250 pieces. Get a price.": "ジュエリーやギフトに向くファスナー付きの布ポーチ。ロゴ印刷は250枚から。見積もりを依頼。",
+    "English": "English",
+    "Supplier sample room with shelves of rigid gift boxes and jewelry boxes": "硬質ギフトボックスとジュエリーボックスが棚に並ぶサプライヤーのサンプルルーム",
+    "Operator feeding a printed proof sheet into a wide-format digital proofing printer": "印刷した校正紙を大判デジタル校正プリンターに送り込むオペレーター",
+    "Multi-colour sheet-fed offset printing press in a packaging factory": "包装工場にある多色枚葉オフセット印刷機",
+    "Finished jewelry boxes packed in export cartons before shipping": "出荷前に輸出用カートンに梱包された完成ジュエリーボックス"
   },
   "block": {
     ". The minimum is 500 pieces per design. Proposed materials, component grouping, sample scope and commercial terms still require project confirmation.": ". 最小ロットはデザインごとに500個です。提案材料、部品構成、サンプル範囲、取引条件はプロジェクトでの確認が必要です。",
@@ -8820,6 +8826,28 @@
     "Minimum (USD)": "最低額（USD）",
     "Goods total: {goods_total}": "商品合計: {goods_total}",
     "Sourcing fee: {fee}": "調達手数料: {fee}",
-    "Thanks {name},\n\nWe have your request for {quantity} units at {unit} each. Goods total: {goods_total}. Sourcing fee: {fee}. An engineer replies within one business day.\n\nReference: {ref}": "{name} 様\n\n{quantity}個、1個あたり{unit}でのご依頼を承りました。商品合計: {goods_total}。調達手数料: {fee}。担当エンジニアより1営業日以内にご返信します。\n\n参照番号: {ref}"
+    "Thanks {name},\n\nWe have your request for {quantity} units at {unit} each. Goods total: {goods_total}. Sourcing fee: {fee}. An engineer replies within one business day.\n\nReference: {ref}": "{name} 様\n\n{quantity}個、1個あたり{unit}でのご依頼を承りました。商品合計: {goods_total}。調達手数料: {fee}。担当エンジニアより1営業日以内にご返信します。\n\n参照番号: {ref}",
+    "More in this category": "このカテゴリのその他の項目",
+    "Related reading": "関連記事",
+    "Drawer Box With Ribbon Pull": "リボンプル付きドロワーボックス",
+    "Corrugated Wine Bottle Shipper": "段ボール製ワインボトル輸送箱",
+    "Subscription Mailer Box With Insert": "インサート付きサブスクリプションメーラーボックス",
+    "Eco Kraft Cosmetic Box for Small Batches": "小ロット向けエコクラフト化粧品ボックス",
+    "Magnetic Book-Style Presentation Box": "マグネット式ブックスタイルプレゼンテーションボックス",
+    "Custom Kraft Soap Box With Window": "オーダーメイドの窓付きクラフト紙製ソープボックス",
+    "Jewelry Pouch and Box Set": "ジュエリーポーチ＆ボックスセット",
+    "Kraft Stand-Up Pouch With Window": "窓付きクラフトスタンドパウチ",
+    "Jewelry Boxes, Pouches and Bags — Reference Catalogue": "ジュエリーボックス、ポーチ、バッグ — リファレンスカタログ",
+    "Pink Jewelry Storage Box": "ピンクのジュエリー収納ボックス",
+    "Jewelry Packaging Box — Ref. 996892": "ジュエリー包装ボックス — Ref. 996892",
+    "Velvet-Lined Boxes — Reference Catalogue": "ベルベット張りのボックス — リファレンスカタログ",
+    "Velvet-Lined Box — Velvet, Faux Fur": "ベルベット張りのボックス — ベルベット、フェイクファー",
+    "For a quote, email us or contact us on WhatsApp.": "お見積もりについては、メールでご連絡いただくか、WhatsApp でお問い合わせください。",
+    "illustrative walkthroughs": "図解付きの手順解説",
+    "Supplier sample room, Dongguan. Structures are chosen from real samples before artwork starts.": "サプライヤーのサンプルルーム、東莞。構造はアートワーク着手前に実サンプルから選定します。",
+    "Digital proof printing at a supplier in Dongguan.": "東莞のサプライヤーでのデジタル校正印刷。",
+    "Sheet-fed offset press used for production runs.": "量産に使用される枚葉オフセット印刷機。",
+    "Finished boxes packed into cartons, Shantou.": "完成したボックスをカートンに梱包、汕頭。",
+    "Supplier photos, used with permission.": "サプライヤー提供の写真（使用許諾済み）。"
   }
 }

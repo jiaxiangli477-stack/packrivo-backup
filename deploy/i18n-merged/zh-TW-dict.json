@@ -294,7 +294,8 @@
     "Custom Jewelry Boxes: Rigid, Drawer, MOQ 250 | Packrivo": "客製首飾盒：裱紙、抽屜式，250件起訂 | Packrivo",
     "Custom Packaging: 134 Styles, MOQ 250 | Packrivo": "客製包裝：134種款式，最低250件 | Packrivo",
     "Packrivo — English page text": "Packrivo — 英文頁面文案",
-    "Page not found | Packrivo": "找不到頁面 | Packrivo"
+    "Page not found | Packrivo": "找不到頁面 | Packrivo",
+    "{Topic} | Packrivo": "{Topic} | Packrivo"
   },
   "attr": {
     "A broad fifth hanger panel sits behind a retail body while a hand opens the loaded key-accessory pack.": "寬大的第五吊掛面板位於零售盒身後方，同時手部開啟已裝入內容物的鑰匙配件包。",
@@ -1175,7 +1176,12 @@
     "Two-door rigid boxes that open from the centre, printed with your logo from 250 pieces. Get a price.": "由中央向兩側打開的對開門裱紙盒，可印 logo，250 件起訂。取得報價。",
     "Wide gusset paper carriers for boxed gifts, printed with your logo and available from 250 pieces. Get a price.": "側寬加大、可裝盒裝禮品的紙提袋，可印 logo，250 件起訂。取得報價。",
     "Windowed folding cartons that show the product, printed with your logo and from 250 pieces. Get a price.": "可展示商品的開窗摺疊盒，可印 logo，250 件起訂。取得報價。",
-    "Zippered fabric pouches for jewelry and gifts, printed with your logo from 250 pieces. Get a price.": "附拉鍊、適合首飾與禮品的布質袋，可印 logo，250 件起訂。取得報價。"
+    "Zippered fabric pouches for jewelry and gifts, printed with your logo from 250 pieces. Get a price.": "附拉鍊、適合首飾與禮品的布質袋，可印 logo，250 件起訂。取得報價。",
+    "English": "English",
+    "Supplier sample room with shelves of rigid gift boxes and jewelry boxes": "供應商樣品室，層架上陳列硬質禮品盒與珠寶盒",
+    "Operator feeding a printed proof sheet into a wide-format digital proofing printer": "操作人員將印好的樣張送入大尺寸數位打樣機",
+    "Multi-colour sheet-fed offset printing press in a packaging factory": "包裝廠內的多色單張紙平版印刷機",
+    "Finished jewelry boxes packed in export cartons before shipping": "成品珠寶盒在出貨前裝入出口紙箱"
   },
   "block": {
     ". The minimum is 500 pieces per design. Proposed materials, component grouping, sample scope and commercial terms still require project confirmation.": ". 每款最低訂購量為 500 件。擬議材料、元件分組、樣品範圍與商業條款仍需經專案確認。",
@@ -8732,6 +8738,28 @@
     "Minimum (USD)": "最低金額（USD）",
     "Goods total: {goods_total}": "貨品小計：{goods_total}",
     "Sourcing fee: {fee}": "採購協調費：{fee}",
-    "Thanks {name},\n\nWe have your request for {quantity} units at {unit} each. Goods total: {goods_total}. Sourcing fee: {fee}. An engineer replies within one business day.\n\nReference: {ref}": "感謝您，{name}：\n\n我們已收到您 {quantity} 件、每件 {unit} 的需求。貨品小計：{goods_total}。採購協調費：{fee}。工程師會在一個工作天內回覆。\n\n參考編號：{ref}"
+    "Thanks {name},\n\nWe have your request for {quantity} units at {unit} each. Goods total: {goods_total}. Sourcing fee: {fee}. An engineer replies within one business day.\n\nReference: {ref}": "感謝您，{name}：\n\n我們已收到您 {quantity} 件、每件 {unit} 的需求。貨品小計：{goods_total}。採購協調費：{fee}。工程師會在一個工作天內回覆。\n\n參考編號：{ref}",
+    "More in this category": "此分類下的更多內容",
+    "Related reading": "相關閱讀",
+    "Drawer Box With Ribbon Pull": "附緞帶拉手的抽屜盒",
+    "Corrugated Wine Bottle Shipper": "瓦楞葡萄酒瓶運輸箱",
+    "Subscription Mailer Box With Insert": "附內襯的訂閱郵寄盒",
+    "Eco Kraft Cosmetic Box for Small Batches": "小批量環保牛皮紙化妝品盒",
+    "Magnetic Book-Style Presentation Box": "磁吸書本式展示盒",
+    "Custom Kraft Soap Box With Window": "客製牛皮紙開窗皂盒",
+    "Jewelry Pouch and Box Set": "首飾袋與珠寶盒套組",
+    "Kraft Stand-Up Pouch With Window": "牛皮紙開窗站立袋",
+    "Jewelry Boxes, Pouches and Bags — Reference Catalogue": "珠寶盒、首飾袋與袋類 — 參考目錄",
+    "Pink Jewelry Storage Box": "粉紅色首飾收納盒",
+    "Jewelry Packaging Box — Ref. 996892": "珠寶包裝盒 — 編號 996892",
+    "Velvet-Lined Boxes — Reference Catalogue": "絨布內襯盒 — 參考目錄",
+    "Velvet-Lined Box — Velvet, Faux Fur": "絨布內襯盒 — 絨布、仿毛",
+    "For a quote, email us or contact us on WhatsApp.": "如需報價，請寄電子郵件給我們，或透過 WhatsApp 與我們聯絡。",
+    "illustrative walkthroughs": "示意流程說明",
+    "Supplier sample room, Dongguan. Structures are chosen from real samples before artwork starts.": "供應商樣品室，東莞。結構在開始製作圖稿之前，即由實體樣品中選定。",
+    "Digital proof printing at a supplier in Dongguan.": "東莞一家供應商的數位打樣。",
+    "Sheet-fed offset press used for production runs.": "用於量產的單張紙平版印刷機。",
+    "Finished boxes packed into cartons, Shantou.": "成品盒裝箱，汕頭。",
+    "Supplier photos, used with permission.": "供應商照片，經許可使用。"
   }
 }

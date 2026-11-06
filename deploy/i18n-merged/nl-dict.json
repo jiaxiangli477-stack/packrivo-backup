@@ -305,7 +305,8 @@
     "Custom Jewelry Boxes: Rigid, Drawer, MOQ 250 | Packrivo": "Sieradendoos op maat met logo – vanaf 250 stuks",
     "Custom Packaging: 134 Styles, MOQ 250 | Packrivo": "Verpakkingen op maat: 134 stijlen, MOQ 250 | Packrivo",
     "Packrivo — English page text": "Packrivo — Engelse paginatekst",
-    "Page not found | Packrivo": "Pagina niet gevonden | Packrivo"
+    "Page not found | Packrivo": "Pagina niet gevonden | Packrivo",
+    "{Topic} | Packrivo": "{Topic} | Packrivo"
   },
   "attr": {
     "Next step": "Volgende stap",
@@ -1187,7 +1188,12 @@
     "Two-door rigid boxes that open from the centre, printed with your logo from 250 pieces. Get a price.": "Luxe dozen met twee deuren die in het midden opengaan, bedrukt met je logo vanaf 250 stuks. Vraag een prijs aan.",
     "Wide gusset paper carriers for boxed gifts, printed with your logo and available from 250 pieces. Get a price.": "Papieren zakken met brede zijkant voor verpakte geschenken, bedrukt met je logo vanaf 250 stuks. Vraag een prijs aan.",
     "Windowed folding cartons that show the product, printed with your logo and from 250 pieces. Get a price.": "Vouwdozen met venster die het product tonen, bedrukt met je logo en vanaf 250 stuks. Vraag een prijs aan.",
-    "Zippered fabric pouches for jewelry and gifts, printed with your logo from 250 pieces. Get a price.": "Stoffen zakjes met rits voor sieraden en geschenken, bedrukt met je logo vanaf 250 stuks. Vraag een prijs aan."
+    "Zippered fabric pouches for jewelry and gifts, printed with your logo from 250 pieces. Get a price.": "Stoffen zakjes met rits voor sieraden en geschenken, bedrukt met je logo vanaf 250 stuks. Vraag een prijs aan.",
+    "English": "English",
+    "Supplier sample room with shelves of rigid gift boxes and jewelry boxes": "Monsterkamer van een leverancier met stellingen vol harde geschenkdozen en sieradendozen",
+    "Operator feeding a printed proof sheet into a wide-format digital proofing printer": "Operator die een bedrukt proefblad in een grootformaat digitale proefdrukprinter voert",
+    "Multi-colour sheet-fed offset printing press in a packaging factory": "Meerkleurenveloffsetpers in een verpakkingsfabriek",
+    "Finished jewelry boxes packed in export cartons before shipping": "Afgewerkte sieradendozen verpakt in exportdozen vóór verzending"
   },
   "block": {
     "Size": "Formaat",
@@ -8841,6 +8847,28 @@
     "Minimum (USD)": "Minimaal (USD)",
     "Goods total: {goods_total}": "Goederentotaal: {goods_total}",
     "Sourcing fee: {fee}": "Inkoopvergoeding: {fee}",
-    "Thanks {name},\n\nWe have your request for {quantity} units at {unit} each. Goods total: {goods_total}. Sourcing fee: {fee}. An engineer replies within one business day.\n\nReference: {ref}": "Dank je wel {name},\n\nWe hebben je aanvraag voor {quantity} stuks tegen {unit} per stuk. Goederentotaal: {goods_total}. Inkoopvergoeding: {fee}. Een engineer reageert binnen één werkdag.\n\nReferentie: {ref}"
+    "Thanks {name},\n\nWe have your request for {quantity} units at {unit} each. Goods total: {goods_total}. Sourcing fee: {fee}. An engineer replies within one business day.\n\nReference: {ref}": "Dank je wel {name},\n\nWe hebben je aanvraag voor {quantity} stuks tegen {unit} per stuk. Goederentotaal: {goods_total}. Inkoopvergoeding: {fee}. Een engineer reageert binnen één werkdag.\n\nReferentie: {ref}",
+    "More in this category": "Meer in deze categorie",
+    "Related reading": "Gerelateerde artikelen",
+    "Drawer Box With Ribbon Pull": "Ladedoos met linttrekker",
+    "Corrugated Wine Bottle Shipper": "Golfkartonnen verzenddoos voor een wijnfles",
+    "Subscription Mailer Box With Insert": "Mailerbox voor abonnementen met inleg",
+    "Eco Kraft Cosmetic Box for Small Batches": "Eco-kraft cosmeticadoos voor kleine oplagen",
+    "Magnetic Book-Style Presentation Box": "Magnetische presentatiebox in boekstijl",
+    "Custom Kraft Soap Box With Window": "Kraft zeepdoos op maat met venster",
+    "Jewelry Pouch and Box Set": "Set van sieradenzakje en sieradendoos",
+    "Kraft Stand-Up Pouch With Window": "Kraft staande zak met venster",
+    "Jewelry Boxes, Pouches and Bags — Reference Catalogue": "Sieradendozen, zakjes en tassen — referentiecatalogus",
+    "Pink Jewelry Storage Box": "Roze opbergdoos voor sieraden",
+    "Jewelry Packaging Box — Ref. 996892": "Sieradendoos voor verpakking — Ref. 996892",
+    "Velvet-Lined Boxes — Reference Catalogue": "Dozen met fluweelvoering — referentiecatalogus",
+    "Velvet-Lined Box — Velvet, Faux Fur": "Doos met fluweelvoering — fluweel, kunstbont",
+    "For a quote, email us or contact us on WhatsApp.": "Voor een prijsopgave kunt u ons e-mailen of contact opnemen via WhatsApp.",
+    "illustrative walkthroughs": "illustratieve stapsgewijze uitleg",
+    "Supplier sample room, Dongguan. Structures are chosen from real samples before artwork starts.": "Monsterkamer van een leverancier, Dongguan. Structuren worden op echte monsters gekozen voordat het artwork begint.",
+    "Digital proof printing at a supplier in Dongguan.": "Digitaal proefdrukken bij een leverancier in Dongguan.",
+    "Sheet-fed offset press used for production runs.": "Veloffsetpers die voor productieoplagen wordt gebruikt.",
+    "Finished boxes packed into cartons, Shantou.": "Afgewerkte dozen in kartons verpakt, Shantou.",
+    "Supplier photos, used with permission.": "Foto’s van de leverancier, gebruikt met toestemming."
   }
 }

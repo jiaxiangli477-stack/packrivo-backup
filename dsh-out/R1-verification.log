@@ -1,0 +1,64 @@
+=== IMPORT_TEST exit=0 ===
+..
+----------------------------------------------------------------------
+Ran 2 tests in 1.439s
+
+OK
+
+=== GATE_TEST exit=0 ===
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+
+=== 32A_GATE_TEST exit=0 ===
+.......
+----------------------------------------------------------------------
+Ran 7 tests in 6.196s
+
+OK
+
+=== 31B_GATE exit=0 ===
+rows=37 languages=11
+ar missing=0 import_mismatch=0
+de missing=0 import_mismatch=0
+es missing=0 import_mismatch=0
+fr missing=0 import_mismatch=0
+it missing=0 import_mismatch=0
+ja missing=0 import_mismatch=0
+ko missing=0 import_mismatch=0
+nl missing=0 import_mismatch=0
+pt missing=0 import_mismatch=0
+zh-CN missing=0 import_mismatch=0
+zh-TW missing=0 import_mismatch=0
+GATE PASS issues=0
+
+=== 32A_GATE exit=0 ===
+csv_rows=573 unique_keys=565 quote_keys=3
+ar missing=0 quote_missing=0 quote_invalid=0 title_missing=0
+de missing=0 quote_missing=0 quote_invalid=0 title_missing=0
+es missing=0 quote_missing=0 quote_invalid=0 title_missing=0
+fr missing=0 quote_missing=0 quote_invalid=0 title_missing=0
+it missing=0 quote_missing=0 quote_invalid=0 title_missing=0
+ja missing=0 quote_missing=0 quote_invalid=0 title_missing=0
+ko missing=0 quote_missing=0 quote_invalid=0 title_missing=0
+nl missing=0 quote_missing=0 quote_invalid=0 title_missing=0
+pt missing=0 quote_missing=0 quote_invalid=0 title_missing=0
+zh-CN missing=0 quote_missing=0 quote_invalid=0 title_missing=0
+zh-TW missing=0 quote_missing=0 quote_invalid=0 title_missing=0
+GATE PASS missing_entries=0 title_errors=0 errors=0
+
+=== IMPORT_IDEMPOTENCE exit=0 ===
+ar added=0
+de added=0
+es added=0
+fr added=0
+it added=0
+ja added=0
+ko added=0
+nl added=0
+pt added=0
+zh-CN added=0
+zh-TW added=0
+IMPORT PASS rows=308 added=0

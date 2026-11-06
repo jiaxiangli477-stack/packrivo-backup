@@ -300,7 +300,8 @@
     "Custom Jewelry Boxes: Rigid, Drawer, MOQ 250 | Packrivo": "Scatole per gioielli personalizzate con logo – da 250 pz",
     "Custom Packaging: 134 Styles, MOQ 250 | Packrivo": "Packaging personalizzato: 134 modelli, MOQ 250 | Packrivo",
     "Packrivo — English page text": "Packrivo — Testo della pagina in inglese",
-    "Page not found | Packrivo": "Pagina non trovata | Packrivo"
+    "Page not found | Packrivo": "Pagina non trovata | Packrivo",
+    "{Topic} | Packrivo": "{Topic} | Packrivo"
   },
   "attr": {
     "Next step": "Prossimo passo",
@@ -1182,7 +1183,12 @@
     "Two-door rigid boxes that open from the centre, printed with your logo from 250 pieces. Get a price.": "Scatole rigide a due ante che si aprono dal centro, stampate con il tuo logo, da 250 pezzi. Richiedi un preventivo.",
     "Wide gusset paper carriers for boxed gifts, printed with your logo and available from 250 pieces. Get a price.": "Shopper in carta con soffietto largo per regali in scatola, stampate con il tuo logo, da 250 pezzi. Richiedi un preventivo.",
     "Windowed folding cartons that show the product, printed with your logo and from 250 pieces. Get a price.": "Astucci con finestra che mostrano il prodotto, stampati con il tuo logo, da 250 pezzi. Richiedi un preventivo.",
-    "Zippered fabric pouches for jewelry and gifts, printed with your logo from 250 pieces. Get a price.": "Pochette in tessuto con zip per gioielli e regali, stampate con il tuo logo, da 250 pezzi. Richiedi un preventivo."
+    "Zippered fabric pouches for jewelry and gifts, printed with your logo from 250 pieces. Get a price.": "Pochette in tessuto con zip per gioielli e regali, stampate con il tuo logo, da 250 pezzi. Richiedi un preventivo.",
+    "English": "English",
+    "Supplier sample room with shelves of rigid gift boxes and jewelry boxes": "Sala campioni di un fornitore con scaffali di scatole regalo rigide e scatole per gioielli",
+    "Operator feeding a printed proof sheet into a wide-format digital proofing printer": "Operatore che inserisce un foglio di prova stampato in una stampante digitale di prova in grande formato",
+    "Multi-colour sheet-fed offset printing press in a packaging factory": "Macchina da stampa offset a foglio multicolore in una fabbrica di packaging",
+    "Finished jewelry boxes packed in export cartons before shipping": "Scatole per gioielli finite imballate in cartoni per l’esportazione prima della spedizione"
   },
   "block": {
     "Size": "Dimensione",
@@ -8825,6 +8831,28 @@
     "Minimum (USD)": "Minimo (USD)",
     "Goods total: {goods_total}": "Totale merci: {goods_total}",
     "Sourcing fee: {fee}": "Commissione di approvvigionamento: {fee}",
-    "Thanks {name},\n\nWe have your request for {quantity} units at {unit} each. Goods total: {goods_total}. Sourcing fee: {fee}. An engineer replies within one business day.\n\nReference: {ref}": "Grazie {name},\n\nAbbiamo ricevuto la vostra richiesta per {quantity} unità a {unit} ciascuna. Totale merci: {goods_total}. Commissione di approvvigionamento: {fee}. Un tecnico risponde entro un giorno lavorativo.\n\nRiferimento: {ref}"
+    "Thanks {name},\n\nWe have your request for {quantity} units at {unit} each. Goods total: {goods_total}. Sourcing fee: {fee}. An engineer replies within one business day.\n\nReference: {ref}": "Grazie {name},\n\nAbbiamo ricevuto la vostra richiesta per {quantity} unità a {unit} ciascuna. Totale merci: {goods_total}. Commissione di approvvigionamento: {fee}. Un tecnico risponde entro un giorno lavorativo.\n\nRiferimento: {ref}",
+    "More in this category": "Altro in questa categoria",
+    "Related reading": "Letture correlate",
+    "Drawer Box With Ribbon Pull": "Scatola a cassetto con maniglia in nastro",
+    "Corrugated Wine Bottle Shipper": "Cartone da spedizione in cartone ondulato per bottiglia di vino",
+    "Subscription Mailer Box With Insert": "Scatola a busta per abbonamenti con inserto",
+    "Eco Kraft Cosmetic Box for Small Batches": "Scatola cosmetica eco in carta kraft per piccole serie",
+    "Magnetic Book-Style Presentation Box": "Scatola da presentazione magnetica in stile libro",
+    "Custom Kraft Soap Box With Window": "Scatola per sapone in carta kraft con finestra personalizzata",
+    "Jewelry Pouch and Box Set": "Set con sacchetto e scatola per gioielli",
+    "Kraft Stand-Up Pouch With Window": "Sacchetto kraft stand-up con finestra",
+    "Jewelry Boxes, Pouches and Bags — Reference Catalogue": "Scatole per gioielli, sacchetti e borse — Catalogo di riferimento",
+    "Pink Jewelry Storage Box": "Scatola portaoggetti per gioielli rosa",
+    "Jewelry Packaging Box — Ref. 996892": "Scatola per packaging gioielli — Rif. 996892",
+    "Velvet-Lined Boxes — Reference Catalogue": "Scatole rivestite in velluto — Catalogo di riferimento",
+    "Velvet-Lined Box — Velvet, Faux Fur": "Scatola rivestita in velluto — velluto, pelliccia sintetica",
+    "For a quote, email us or contact us on WhatsApp.": "Per un preventivo, scrivici un’e-mail o contattaci su WhatsApp.",
+    "illustrative walkthroughs": "percorsi illustrativi",
+    "Supplier sample room, Dongguan. Structures are chosen from real samples before artwork starts.": "Sala campioni di un fornitore, Dongguan. Le strutture vengono scelte da campioni reali prima di iniziare la grafica.",
+    "Digital proof printing at a supplier in Dongguan.": "Stampa digitale di prove presso un fornitore a Dongguan.",
+    "Sheet-fed offset press used for production runs.": "Macchina offset a foglio utilizzata per le tirature di produzione.",
+    "Finished boxes packed into cartons, Shantou.": "Scatole finite imballate in cartoni, Shantou.",
+    "Supplier photos, used with permission.": "Foto del fornitore, utilizzate su autorizzazione."
   }
 }

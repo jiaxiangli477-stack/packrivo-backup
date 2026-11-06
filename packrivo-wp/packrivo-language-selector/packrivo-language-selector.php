@@ -2,12 +2,12 @@
 /**
  * Plugin Name: Packrivo Language Selector
  * Description: Accessible language selector for Packrivo localized routes.
- * Version: 1.0.9-31b
+ * Version: 1.0.10
  */
 if (!defined('ABSPATH')) { exit; }
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('packrivo-language-selector', plugins_url('selector.css', __FILE__), [], (string) filemtime(__DIR__ . '/selector.css'));
-    wp_enqueue_script('packrivo-language-selector', plugins_url('selector-v1.0.7.js', __FILE__), [], '1.0.9-31b', true);
+    wp_enqueue_script('packrivo-language-selector', plugins_url('selector-v1.0.7.js', __FILE__), [], '1.0.10', true);
 
     $aliases = [
         'de' => 'Germany Deutschland Austria Switzerland',

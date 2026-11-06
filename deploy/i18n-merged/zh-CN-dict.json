@@ -294,7 +294,8 @@
     "Custom Jewelry Boxes: Rigid, Drawer, MOQ 250 | Packrivo": "定制首饰盒：精装、抽屉，250件起订 | Packrivo",
     "Custom Packaging: 134 Styles, MOQ 250 | Packrivo": "定制包装：134种款式，250件起订 | Packrivo",
     "Packrivo — English page text": "Packrivo — 英文页面文案",
-    "Page not found | Packrivo": "页面不存在 | Packrivo"
+    "Page not found | Packrivo": "页面不存在 | Packrivo",
+    "{Topic} | Packrivo": "{Topic} | Packrivo"
   },
   "attr": {
     "Next step": "下一步",
@@ -1177,7 +1178,12 @@
     "Two-door rigid boxes that open from the centre, printed with your logo from 250 pieces. Get a price.": "双开门精装盒，从中间向两侧打开，可印 logo，250 件起订。获取报价。",
     "Wide gusset paper carriers for boxed gifts, printed with your logo and available from 250 pieces. Get a price.": "宽侧纸质手提袋，适合盒装礼品，可印 logo，250 件起订。获取报价。",
     "Windowed folding cartons that show the product, printed with your logo and from 250 pieces. Get a price.": "开窗折叠盒，产品看得见，可印 logo，250 件起订。获取报价。",
-    "Zippered fabric pouches for jewelry and gifts, printed with your logo from 250 pieces. Get a price.": "拉链布质小袋，适合首饰与礼品，可印 logo，250 件起订。获取报价。"
+    "Zippered fabric pouches for jewelry and gifts, printed with your logo from 250 pieces. Get a price.": "拉链布质小袋，适合首饰与礼品，可印 logo，250 件起订。获取报价。",
+    "English": "English",
+    "Supplier sample room with shelves of rigid gift boxes and jewelry boxes": "供应商样品间，货架上摆放着硬质礼盒和首饰盒",
+    "Operator feeding a printed proof sheet into a wide-format digital proofing printer": "操作员将打好的样张送入大幅面数码打样机",
+    "Multi-colour sheet-fed offset printing press in a packaging factory": "包装厂内的多色单张纸胶印机",
+    "Finished jewelry boxes packed in export cartons before shipping": "成品首饰盒在发货前装入出口纸箱"
   },
   "block": {
     "Size": "尺寸",
@@ -8784,6 +8790,28 @@
     "Minimum (USD)": "最低收费（USD）",
     "Goods total: {goods_total}": "货款合计：{goods_total}",
     "Sourcing fee: {fee}": "采购协调费：{fee}",
-    "Thanks {name},\n\nWe have your request for {quantity} units at {unit} each. Goods total: {goods_total}. Sourcing fee: {fee}. An engineer replies within one business day.\n\nReference: {ref}": "感谢 {name}，\n\n我们已收到你的需求：{quantity} 件，单价 {unit}。货款合计：{goods_total}。采购协调费：{fee}。工程师将在一个工作日内回复。\n\n参考号：{ref}"
+    "Thanks {name},\n\nWe have your request for {quantity} units at {unit} each. Goods total: {goods_total}. Sourcing fee: {fee}. An engineer replies within one business day.\n\nReference: {ref}": "感谢 {name}，\n\n我们已收到你的需求：{quantity} 件，单价 {unit}。货款合计：{goods_total}。采购协调费：{fee}。工程师将在一个工作日内回复。\n\n参考号：{ref}",
+    "More in this category": "该分类下的更多内容",
+    "Related reading": "相关阅读",
+    "Drawer Box With Ribbon Pull": "带丝带拉手的抽屉盒",
+    "Corrugated Wine Bottle Shipper": "瓦楞葡萄酒瓶运输箱",
+    "Subscription Mailer Box With Insert": "带内托的订阅邮寄盒",
+    "Eco Kraft Cosmetic Box for Small Batches": "小批量环保牛皮纸化妆品盒",
+    "Magnetic Book-Style Presentation Box": "磁吸书本式展示盒",
+    "Custom Kraft Soap Box With Window": "定制牛皮纸开窗皂盒",
+    "Jewelry Pouch and Box Set": "珠宝袋与首饰盒套装",
+    "Kraft Stand-Up Pouch With Window": "牛皮纸开窗自立袋",
+    "Jewelry Boxes, Pouches and Bags — Reference Catalogue": "首饰盒、首饰袋与包装袋 — 参考目录",
+    "Pink Jewelry Storage Box": "粉色首饰收纳盒",
+    "Jewelry Packaging Box — Ref. 996892": "首饰包装盒 — 编号 996892",
+    "Velvet-Lined Boxes — Reference Catalogue": "天鹅绒内衬盒 — 参考目录",
+    "Velvet-Lined Box — Velvet, Faux Fur": "天鹅绒内衬盒 — 天鹅绒、仿毛",
+    "For a quote, email us or contact us on WhatsApp.": "如需报价，请发邮件给我们，或通过 WhatsApp 联系我们。",
+    "illustrative walkthroughs": "示例性流程讲解",
+    "Supplier sample room, Dongguan. Structures are chosen from real samples before artwork starts.": "供应商样品间，东莞。结构在开始设计稿之前就从实物样品中选定。",
+    "Digital proof printing at a supplier in Dongguan.": "东莞一家供应商的数码打样。",
+    "Sheet-fed offset press used for production runs.": "用于量产的单张纸胶印机。",
+    "Finished boxes packed into cartons, Shantou.": "成品盒装箱，汕头。",
+    "Supplier photos, used with permission.": "供应商照片，经许可使用。"
   }
 }
