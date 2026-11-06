@@ -1,0 +1,12 @@
+dsh-out/**/*.csv -text
+dsh-out/**/*.json -text
+dsh-out/**/*.php -text
+dsh-out/**/*.sql -text
+dsh-out/**/*.txt -text
+dsh-out/**/*.md -text
+deploy/**/*.csv -text
+deploy/**/*.json -text
+deploy/**/*.php -text
+deploy/**/*.sql -text
+deploy/**/*.txt -text
+deploy/**/*.md -text
