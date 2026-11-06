@@ -1596,7 +1596,7 @@ docker exec php sha256sum "$WPC/wp-content/mu-plugins/packrivo-wave2.php"       
 
 回滚后若要重来，从 D.2 继续（`$BACKUP` 里那三份备份不要删）。
 
-## 附录 E · R1 发版
+## 附录 E · R1 发版（待 catalog 范围确认）
 
 本附录仅供站长在本批生产执行获得单独授权后使用。本机 R1 的 4.0.4 基线使用历史 SQL 和本地 uploads，不能证明当天生产状态；站长必须暂停博客任务、核对全部指纹、容器和路径，不一致即停止。发布及所有回滚在维护窗口进行，上游必须另行封闭外部写入及访问；WP `.maintenance` 本身可能过期，不能单独承担长窗口封锁。
 
@@ -1692,7 +1692,7 @@ cat "$BACKUP/r1-meta-apply-2.log"; grep -qx 'changed=0' "$BACKUP/r1-meta-apply-2
 for f in r1-moq-render.php r1-sitemap-fix.php r1-field-projection.php r1-500-field-map.json; do docker cp "$PKG/$f" "${WP_CONTAINER}:${WPC}/wp-content/mu-plugins/$f"; done
 ```
 
-⛳ `dry-run` 为三字段 before、备份哈希相同、`changed=3 → 0`。三个字段的局部回滚为 `$WPCLI eval-file "$PKGC/r1-moq-meta.php" rollback "$R1_META_BACKUP"`；值或 Yoast 参考字段漂移即停。样品页 OG/Twitter 及 Yoast JSON-LD 中与旧摘要完全相同的值，只有在 2884 的新摘要已匹配时才投影为新摘要，不改 Yoast 的原数据库字段。15 页 17 个头部／H1 映射仅按页面和完整旧值投影，不改数据库或正文价格数量例子；映射须纳入本批复核。三个 catalog 页保持数据库与 noindex 不动，暂列 R2。
+⛳ `dry-run` 为三字段 before、备份哈希相同、`changed=3 → 0`。三个字段的局部回滚为 `$WPCLI eval-file "$PKGC/r1-moq-meta.php" rollback "$R1_META_BACKUP"`；值或 Yoast 参考字段漂移即停。样品页 OG/Twitter 及 Yoast JSON-LD 中与旧摘要完全相同的值，只有在 2884 的新摘要已匹配时才投影为新摘要，不改 Yoast 的原数据库字段。15 页 17 个头部／H1 映射仅按页面和完整旧值投影，不改数据库或正文价格数量例子；映射须纳入本批复核。三个 catalog 页的 noindex 状态和页面本身的 30a 处理暂列 R2；既有 32a 计划会更新这三页的旧 MOQ 正文和 SEO 摘要，是否允许保留该更新须按用户对范围的确认执行。
 
 ### E.4 · GEO、缓存与第一次响应
 
@@ -1775,7 +1775,7 @@ python3 "$PKG/r1-29y-report.py" "$BACKUP/29y-results.jsonl" --expected "$BACKUP/
 
 ### E.7 · 恢复访问与博客任务
 
-只有所有阻塞验收通过且站长确认公开窗口时，才按现场流程清 Cloudflare 缓存并核对公开 URL、实际版本及红线；任何失败由 trap 恢复 WP 维护模式，并保持或恢复上游封闭。公开复核全部成功后才执行 `trap - EXIT`，然后按批准流程解除上游封闭。上线、复测及可能回滚全部结束后，站长才恢复原有每日博客任务并核对状态。生产指纹、MANIFEST、容器名和路径由站长当天核对，不一致即停。
+只有所有阻塞验收通过且站长确认公开窗口时，才按现场流程清 Cloudflare 缓存。仍保持普通访客封闭，由站长按已授权的上游规则仅放通复核来源，核对公开 URL、实际版本及红线；若无法安全地进行受限复核则停止。任何失败由 trap 恢复 WP 维护模式，并保持或恢复上游封闭。受限公开复核全部成功后才执行 `trap - EXIT`，然后按批准流程解除上游封闭。上线、复测及可能回滚全部结束后，站长才恢复原有每日博客任务并核对状态。生产指纹、MANIFEST、容器名和路径由站长当天核对，不一致即停。
 
 ### E.8 · 整体回滚与 S0 对照
 

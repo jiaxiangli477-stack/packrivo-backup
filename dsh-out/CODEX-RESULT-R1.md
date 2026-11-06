@@ -1,6 +1,6 @@
 # R1 发版准备与演练记录
 
-状态：**未完成 / NOT READY，禁止生产执行。** 未连接生产、未部署、未 push。用户要求完整从头演练、整体回滚、再执行和全部验收；这些项目本轮尚未完成，不得将下述局部检查视为通过。
+状态：**R1-4 正在执行，catalog 范围待确认；尚无生产执行授权。** 以下各历史章节保留当时状态，不以历史结果代替本次验收。未连接生产、未部署、未 push。
 
 ## 基线与隔离
 
@@ -327,3 +327,73 @@ POST_448: 01-worksheet=0 b03-448-teaching=0 250_present=1 MOQ_500=0
 - `dsh-out/R1-3b-widget-targets.csv` 列出 header、footer、nav、aside 抓到的 1,857 个站内目标及出现次数，是挂件目标宽口径并集，并不表示每项全站出现。
 
 生产只读指纹身份、历史 29y 命令和 32a 容器路径的完整适配尚未验证。上述严格失败及未验证项存在，禁止将附录 E 与操作单标为定稿或用于生产。
+
+## 原始 17 项清单的权威来源与判定修正（2026-11-06）
+
+用户指出并授权引用 `E:/Claude/packrivo-SEO体检-2026-11-02/报告.md` 第二节“清单 1”（第 69–87 行）。原始清单及两轮 R1-4 结果：
+
+| # | 路径 | 两轮处理结果 |
+|---:|---|---|
+| 1 | `/candle-gift-set-box/` | 两轮均有 1 个站内来源页 |
+| 2 | `/catalog-jewelry-pouch-164909/` | 两轮均有 2 个站内来源页 |
+| 3 | `/catalog-jewelry-pouch-996892/` | 两轮均有 2 个站内来源页 |
+| 4 | `/catalog-pouch/` | 两轮均有 3 个站内来源页 |
+| 5 | `/catalog-velvet-lined-box-916436/` | 两轮均有 2 个站内来源页 |
+| 6 | `/catalog-velvet/` | 两轮均有 2 个站内来源页 |
+| 7 | `/collapsible-magnetic-gift-box/` | 301 到 `/product-collapsible-magnetic-gift-box/`；用户确认不要求入链 |
+| 8 | `/corrugated-wine-shipper/` | 两轮均有 1 个站内来源页 |
+| 9 | `/drawer-box-with-ribbon/` | 两轮均有 1 个站内来源页 |
+| 10 | `/eco-kraft-cosmetic-box/` | 两轮均有 1 个站内来源页 |
+| 11 | `/jewelry-pouch-and-box-set/` | 两轮均有 1 个站内来源页 |
+| 12 | `/kraft-stand-up-pouch/` | 两轮均有 1 个站内来源页 |
+| 13 | `/magnetic-book-style-box/` | 两轮均有 1 个站内来源页 |
+| 14 | `/paper-insert-card/` | 两轮均有 1 个站内来源页 |
+| 15 | `/printed-tissue-paper/` | 两轮均有 1 个站内来源页 |
+| 16 | `/soap-box-with-window/` | 两轮均有 1 个站内来源页 |
+| 17 | `/subscription-mailer-with-insert/` | 两轮均有 1 个站内来源页 |
+
+两轮判定 **17/17 已处理**。该结论取代本报告早先“原 17 项来源不明”的未验证记录；原 `/collapsible-magnetic-gift-box/` 保持 301，不为凑数新增指向跳转的内链。
+
+## R1-4：500 口径、缓存及 sitemap（进行中，2026-11-06）
+
+**当前状态：最终 schema 修正后的第一轮正向、验收和整体回滚已完成；第二轮等待用户确认 catalog 三页范围。** 本轮只操作独立 R1，未连接生产、未 push。旧值核对：
+
+```text
+2884 _packrivo_description = Order a sample of your custom box or pouch to check size, print and finish before your 500-piece order. Get a price.
+448 _packrivo_document_title = Custom Packaging MOQ: Plan 500 Pieces per Design
+448 _packrivo_description = Plan a 500-piece packaging MOQ by design. Separate selling products, packaging variants and reserve allocations with a clear quantity worksheet for your brief.
+448 _yoast_wpseo_title = Custom Packaging MOQ: Plan 250 Pieces per Design
+448 _yoast_wpseo_metadesc = Plan a 250-piece packaging MOQ by design. Separate selling products, packaging variants and reserves with a clear quantity worksheet for your brief.
+```
+
+2884 旧值与用户指定完全一致。`r1-moq-meta.php` 只写指定三条 postmeta，事务内锁定并核对参考 Yoast 目标；首次 `changed=3`，第二次 `changed=0`，独立 rollback `changed=3`、再次 apply `changed=3` 及再次幂等 `changed=0` 均在 R1 实测。11 词典中旧摘要各有 attr/block 两桶译文，逐个仅替换数字新增 22 键，97,235 个既有键值保留；448 两条旧文无匹配译文键，未伪造翻译。31b 和 32a 闸门均 PASS。
+
+2884 的 `_yoast_wpseo_metadesc` 旧字段仍为 500，按限定未写数据库；`r1-moq-render.php` 仅在目标页的已批准新摘要与旧输出精确匹配时投影 OG/Twitter 与 Yoast JSON-LD。最终第一轮样品页英文及 11 语言的 WebPage JSON-LD 描述均未包含 500。
+
+扩大字段扫描先发现 15 个英文页面的 33 个字段含 500，其中若干是数量价格示例，不可擅自改成 250。`deploy/r1-500-field-map.json` 对 15 页 17 个确切旧值提供无数字的标题／摘要／H1 投影；只影响相应网页渲染，不改额外数据库字段或正文示例。映射逐项 `dsh-out/R1-4-field-projections.csv`；`/packaging-cost/` 正文的 `500 pieces per design, packed in export cartons, ex-works Shenzhen` 保留。
+
+### 缓存证据和首次响应
+
+R1 没有 object-cache.php / advanced-cache.php drop-in，代理未配置缓存；Buyer Experience 的 `packrivo_buyer_registry_v2` 是 `wp_options` 中的一小时 transient。受控实验把 S0 含旧文的 transient 恢复并设为未过期，`wp cache flush` 前后该项仍含 `MOQ 500`，之后第一次 `/products/` HTTP 200 且旧 MOQ 命中 1；只定向删除该 transient 后首次响应命中 0。该实验只证明 R1，生产缓存状态须站长当天核对。
+
+最终第一轮按“WP cache flush → 定向删除并验证 transient → 请求”执行，9 个指定路径首次与二次均 HTTP 200 且即时红线 0。`/products/` 首次完整 HTML：`E:/破甲工作区/r1-2-rehearsal/r14schema-1-first-responses/01-1.html`，SHA256 `944bdca1291d356bbe7b6bd072e0631ba41c438e3783e9af109feeb2cc7f1ce7`；其中 58 个 MOQ、4 个 500 字符片段的前后 200 字符逐项在 `dsh-out/R1-4-products-first-1-contexts.txt`。这些独立 `500` 样例包含 JS 时间值和 CSS 尺寸，不是 MOQ。
+
+### sitemap 与第一轮结果
+
+Yoast 对 page sitemap 的批量 SQL 只按修改时间排序，存在相同时间时跨批次会漏项；此前稳定排序补丁只覆盖 post sitemap。R1 页／语言 sitemap 使用同一精确 SQL 追加 ID 次序，补入实际可确认的 6 个漏掉的产品页；另加入 6 个专题页、28 个自 canonical 的博客分页和 77 个对应语言 URL。用户提及的 8 个产品页在本地记录中只能确认 6 个，未凭空补报。三张 catalog 页的 noindex 未改，仍按用户要求列 R2。
+
+```text
+STAGE_RELEASE_PASS; 32a5 changed=318 -> 0; 32a6 changed=7 -> 0; R1 metadata changed=3 -> 0
+R1_TARGET_REPORT targets=12 languages=11 routes=4 bots=11 issues=0
+R1_LINK_AUDIT targets=16 missing_inbound=[] redirect_ok=true orphans=0 query_links=0 sitemap_bad=0
+R1_AUDIT pages=2803 sitemap=2166 field_hits=0 sitemap_bad=0 indexable_omissions=0 catalog_r2=3 body_hits=1699
+29Y_REPORT pages=1606 residual_nonblocking=137 scan_errors=0
+```
+
+唯一红线例外 ID 1094 的 FSC 文字属于标签许可话题讨论，不是认证自称；它不在其他白名单。全部正文 `500` 上下文清单见 `dsh-out/R1-4-body-500-round1.csv`，非英文 29y 的 137 页按用户指示不阻塞，见 `dsh-out/R1-4-residual-nonenglish.csv`；原因栏是待复核初判。第一轮 17 项来源及逐项结果见上方“原始 17 项清单的权威来源与判定修正”。
+
+最终第一轮运行包来自 Git 提交 `dc2d3053914aa09fec2baa6269e4e66c282ba1a5`，348 文件均与对应 Git blob 相同，MANIFEST SHA256 `ca4ed30b1f013d4c24fc9d95bff20698dde67f97eb40df96d2c76075bfe5becf`。运行后 `r1-snapshot.py restore` / `check`：数据库 SHA256 前后均 `7b360455de332560180d062330bebb5c10af8c6aa289849800dbae0bb8215c4d`，九组文件均匹配；30 页 HTML 快照 SHA256 前后均 `08f9ea2c197b6ec888c8568b718e627721d2993c94c2f69e0231452a3348f39e`。R1 目前已恢复 S0、数据库只读。
+
+### 待确认的 catalog 范围
+
+三个 catalog 的 noindex 状态未改，R1 sitemap 扩展保持它们仍不列入；但是既有 32a 计划对这三页有 **12 条** MOQ 相关操作，会修改正文、Yoast 摘要和 OG 摘要（以及相应 indexable 缓存），与用户“catalog 三页不动”存在范围歧义。明细见 `dsh-out/R1-4-catalog-32a-impact.csv`。已请求确认“不动”是否仅指 noindex／30a 状态；在答复前不执行最终第二轮或声称定稿。如果要求任何字段不变，将与“全站受检字段 500 为 0、仅 ID1094 白名单”产生冲突，必须重新处理，不能自行放宽。
