@@ -1696,7 +1696,14 @@ for f in r1-moq-render.php r1-sitemap-fix.php r1-field-projection.php r1-500-fie
 
 ### E.4 · GEO、缓存与第一次响应
 
-**生产宿主**运行本手册上方 `32a-4：重新生成并核验 AI 摘要` 的现有命令，令 `LLMS_INTERNAL_ORIGIN="$AUDIT_INTERNAL_ORIGIN"`。⛳ 两文件 `stale_moq=0`，全部 sitemap 页面生成成功；任何 301、404 或内容错误停止。确认 E.1 保存了原文件和缺失状态后，仅在维护窗口安装并核验：
+**生产宿主**先确认上游仍封闭且外部访问与写入不能进入；为内部源站生成和验收，暂时关闭 WordPress 维护模式，并设置失败时自动恢复的 shell trap。上游不得开放；任何内部 HTTP 或验收失败均重新启用 WP 维护模式并停下。
+
+```sh
+$WPCLI maintenance-mode deactivate
+trap '$WPCLI maintenance-mode activate >/dev/null 2>&1 || true' EXIT
+```
+
+运行本手册上方 `32a-4：重新生成并核验 AI 摘要` 的现有命令，令 `LLMS_INTERNAL_ORIGIN="$AUDIT_INTERNAL_ORIGIN"`。⛳ 两文件 `stale_moq=0`，全部 sitemap 页面生成成功；任何 301、404 或内容错误停止。确认 E.1 保存了原文件和缺失状态后，仅在维护窗口安装并核验：
 
 ```sh
 docker exec "$WP_CONTAINER" cp "$LLMS_STAGE/llms.txt" "$WPC/llms.txt"
@@ -1768,7 +1775,7 @@ python3 "$PKG/r1-29y-report.py" "$BACKUP/29y-results.jsonl" --expected "$BACKUP/
 
 ### E.7 · 恢复访问与博客任务
 
-只有所有阻塞验收通过且站长确认公开窗口时，才结束 WP 维护模式，按现场流程清 Cloudflare 缓存并核对公开 URL、实际版本及红线；任何失败保持或恢复上游封闭。上线、复测及可能回滚全部结束后，站长才恢复原有每日博客任务并核对状态。生产指纹、MANIFEST、容器名和路径由站长当天核对，不一致即停。
+只有所有阻塞验收通过且站长确认公开窗口时，才按现场流程清 Cloudflare 缓存并核对公开 URL、实际版本及红线；任何失败由 trap 恢复 WP 维护模式，并保持或恢复上游封闭。公开复核全部成功后才执行 `trap - EXIT`，然后按批准流程解除上游封闭。上线、复测及可能回滚全部结束后，站长才恢复原有每日博客任务并核对状态。生产指纹、MANIFEST、容器名和路径由站长当天核对，不一致即停。
 
 ### E.8 · 整体回滚与 S0 对照
 

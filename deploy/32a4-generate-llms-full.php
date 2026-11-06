@@ -16,10 +16,8 @@ $previous=libxml_use_internal_errors(true);$map=simplexml_load_string($xml,'Simp
 if(!$map){fwrite(STDERR,"Invalid page sitemap\n");exit(3);}
 $map->registerXPathNamespace('s','http://www.sitemaps.org/schemas/sitemap/0.9');$paths=[];
 foreach($map->xpath('//s:url/s:loc')?:[] as $loc){
- $v=parse_url((string)$loc);$path=$v['path']??'/';
- if(!is_array($v)||!isset($v['host'])||strcasecmp($v['host'],$host_name)!==0||isset($v['query'])||isset($v['fragment'])||!str_starts_with($path,'/')||str_starts_with($path,'//')||strpos($path,'..')!==false){fwrite(STDERR,"Unexpected sitemap URL\n");exit(3);}
- if(preg_match('~^/(?:ar|de|es|fr|it|ja|ko|nl|pt|zh-CN|zh-TW)(?:/|$)~',$path)){fwrite(STDERR,"Localized URL in English sitemap\n");exit(3);}
- $paths[$path]=true;
+ try{$path=pk32a4_sitemap_path((string)$loc,$host_name);}catch(Throwable $e){fwrite(STDERR,$e->getMessage()."\n");exit(3);}
+ if($path!==null)$paths[$path]=true;
 }
 $paths=array_keys($paths);if(!$paths){fwrite(STDERR,"Empty sitemap\n");exit(3);}
 $multi=curl_multi_init();$active=[];$next=0;$done=0;$parts=[];$errors=[];
