@@ -1,0 +1,857 @@
+
+=== r14schema-stage-2.log ===
+BASELINE_MATCH theme
+BASELINE_MATCH parent
+BASELINE_MATCH quote
+BASELINE_MATCH selector
+BASELINE_MATCH workspace
+BASELINE_MATCH mu
+BASELINE_MATCH dictionaries
+BASELINE_MATCH llms
+BASELINE_MATCH llms_full
+STAGED_ZIP packrivo-home-v4-4.0.7.zip files 54
+STAGED_ZIP packrivo-quote-1.0.2.zip files 19
+STAGED_ZIP packrivo-language-selector-1.0.10.zip files 3
+INSTALLED packrivo-home-v4
+INSTALLED packrivo-quote
+INSTALLED packrivo-language-selector
+INSTALLED_MU packrivo-privacy-noindex-29y.php
+INSTALLED_MU 000-packrivo-31b-routes.php
+INSTALLED_MU 001-packrivo-32a-404-title.php
+INSTALLED_DICTIONARIES 11
+STAGE_RELEASE_PASS
+
+
+=== forward-data-r14schema-2.log ===
+=== COPY r1-moq-meta.php exit=0 ===
+
+=== COPY 32a-workspace-moq-lib.php exit=0 ===
+
+=== COPY 32a-workspace-moq-migrate.php exit=0 ===
+
+=== COPY 32a-update-options.php exit=0 ===
+
+=== COPY 32a-moq-content.php exit=0 ===
+
+=== COPY 32a-moq-plan.json exit=0 ===
+
+=== COPY 32a5-blog-migrate.php exit=0 ===
+
+=== COPY 32a5-blog-plan.json exit=0 ===
+
+=== COPY 32a6-blog-rewrite.php exit=0 ===
+
+=== COPY 32a6-blog-rollback.php exit=0 ===
+
+=== COPY 32a-blog-rewrite.csv exit=0 ===
+
+=== COPY default-category.php exit=0 ===
+
+=== COPY r14schema-workspace-backup.csv exit=0 ===
+
+=== 31B_DEFAULT_CATEGORY exit=0 ===
+Success: Default category renamed to Guides (ID 1).
+
+=== INSTALL wave1 exit=0 ===
+
+=== INSTALL remediation exit=0 ===
+
+=== INSTALL workspace-renderer exit=0 ===
+
+=== INSTALL workspace-admin exit=0 ===
+
+=== INSTALL workspace-validation exit=0 ===
+
+=== INSTALL parent-functions exit=0 ===
+
+=== WORKSPACE_MIGRATE_1 exit=0 ===
+before_500=6 before_250=0
+after_500=0 after_250=6
+replaced=6 mode=migrate snapshots=6
+
+=== WORKSPACE_MIGRATE_2 exit=0 ===
+before_500=0 before_250=6
+after_500=0 after_250=6
+replaced=0 mode=migrate snapshots=6
+
+=== OPTIONS_1 exit=0 ===
+pkq_settings: updated
+title-404-wpseo: updated
+
+=== OPTIONS_2 exit=0 ===
+pkq_settings: unchanged
+title-404-wpseo: unchanged
+
+=== MOQ_1 exit=0 ===
+before MOQ 500=452 | 500 pieces per=550
+site_moq_before=missing(default 500)
+after MOQ 500=0 | 500 pieces per=1
+replaced=1666 | fields=1123 | pages=399
+yoast_cache_replaced=925 | indexable_rows=363
+site_moq_after=250 | site_moq_updated=1
+
+=== MOQ_2 exit=0 ===
+before MOQ 500=0 | 500 pieces per=1
+site_moq_before=250
+after MOQ 500=0 | 500 pieces per=1
+replaced=0 | fields=0 | pages=0
+yoast_cache_replaced=0 | indexable_rows=0
+site_moq_after=250 | site_moq_updated=0
+
+=== 32A5_DRY_RUN exit=0 ===
+mode=dry-run plan=318 posts=276 state=before old=318 new=0
+
+=== 32A5_BACKUP exit=0 ===
+mode=backup plan=318 posts=276 state=before old=318 new=0
+backup_rows=276 sha256=aa1c68d226c78d35c3bc826b575c0be3bf1b34dc623e60eb6ffa2c5f59c6d9a9
+
+=== 32A5_BACKUP_COPY exit=0 ===
+
+=== 32A5_APPLY_1 exit=0 ===
+mode=apply plan=318 posts=276 state=before old=318 new=0
+changed=318 posts=276
+
+=== 32A5_APPLY_2 exit=0 ===
+mode=apply plan=318 posts=276 state=after old=0 new=318
+changed=0 posts=0
+
+=== 32A6_DRY_RUN exit=0 ===
+mode=dry-run plan=7 fields=6 state=before old=7 new=0
+
+=== 32A6_BACKUP exit=0 ===
+mode=backup plan=7 fields=6 state=before old=7 new=0
+backup_fields=6 indexable_rows=1 sha256=bfe6a0473b53d9146e195a1f7570ebe0da425e900bf60d7397caa69835804f2c
+
+=== 32A6_BACKUP_COPY exit=0 ===
+
+=== 32A6_APPLY_1 exit=0 ===
+mode=apply plan=7 fields=6 state=before old=7 new=0
+changed=7 fields=6 indexable_rows=1
+
+=== 32A6_APPLY_2 exit=0 ===
+mode=apply plan=7 fields=6 state=after old=0 new=7
+changed=0 fields=0 indexable_rows=0
+
+=== R1_META_DRY_RUN exit=0 ===
+mode=dry-run fields=3 state=before plan_sha256=f667a646ef1d71d686a1bf25faf0dcf1e69df8125a1e1b7721c55c3a8f98b283
+
+=== R1_META_BACKUP exit=0 ===
+mode=backup fields=3 state=before plan_sha256=f667a646ef1d71d686a1bf25faf0dcf1e69df8125a1e1b7721c55c3a8f98b283
+backup_fields=3 sha256=b5ab4765bb08b99a28c683cf6a39bf5c3b1da18e46d6a8c44594fcbbcbb688d8
+
+=== R1_META_BACKUP_COPY exit=0 ===
+
+=== R1_META_APPLY_1 exit=0 ===
+mode=apply fields=3 state=before plan_sha256=f667a646ef1d71d686a1bf25faf0dcf1e69df8125a1e1b7721c55c3a8f98b283
+changed=3
+
+=== R1_META_APPLY_2 exit=0 ===
+mode=apply fields=3 state=after plan_sha256=f667a646ef1d71d686a1bf25faf0dcf1e69df8125a1e1b7721c55c3a8f98b283
+changed=0
+
+=== INSTALL r1-moq-render.php exit=0 ===
+
+=== INSTALL r1-sitemap-fix.php exit=0 ===
+
+=== INSTALL r1-field-projection.php exit=0 ===
+
+=== INSTALL r1-500-field-map.json exit=0 ===
+
+
+=== r14schema-2-llms-full.log ===
+processed=25/360 errors=0
+processed=50/360 errors=0
+processed=75/360 errors=0
+processed=100/360 errors=0
+processed=125/360 errors=0
+processed=150/360 errors=0
+processed=175/360 errors=0
+processed=200/360 errors=0
+processed=225/360 errors=0
+processed=250/360 errors=0
+processed=275/360 errors=0
+processed=300/360 errors=0
+processed=325/360 errors=0
+processed=350/360 errors=0
+pages=360 bytes=909841 sha256=0179b9f8553c94c8c2ed86fbe98a5c47c803da4c09b8c75231e301bb8f04a3df stale_moq=0
+
+
+=== r14schema-2-first-responses/checks.log ===
+=== WP_CACHE_FLUSH exit=0 ===
+Success: The cache was flushed.
+
+=== DELETE_REGISTRY_TRANSIENT exit=0 ===
+Success: registry transient absent
+
+=== FETCH /products/ attempt=1 exit=0 ===
+200
+=== COPY_RESPONSE exit=0 ===
+
+=== CHECK /products/ attempt=1 exit=0 ===
+FIRST_RESPONSE_FIELD_AND_PRODUCTS_HITS=0
+
+=== FETCH /products/ attempt=2 exit=0 ===
+200
+=== COPY_RESPONSE exit=0 ===
+
+=== CHECK /products/ attempt=2 exit=0 ===
+FIRST_RESPONSE_FIELD_AND_PRODUCTS_HITS=0
+
+=== FETCH / attempt=1 exit=0 ===
+200
+=== COPY_RESPONSE exit=0 ===
+
+=== CHECK / attempt=1 exit=0 ===
+FIRST_RESPONSE_FIELD_AND_PRODUCTS_HITS=0
+
+=== FETCH / attempt=2 exit=0 ===
+200
+=== COPY_RESPONSE exit=0 ===
+
+=== CHECK / attempt=2 exit=0 ===
+FIRST_RESPONSE_FIELD_AND_PRODUCTS_HITS=0
+
+=== FETCH /samples/ attempt=1 exit=0 ===
+200
+=== COPY_RESPONSE exit=0 ===
+
+=== CHECK /samples/ attempt=1 exit=0 ===
+FIRST_RESPONSE_FIELD_AND_PRODUCTS_HITS=0
+
+=== FETCH /samples/ attempt=2 exit=0 ===
+200
+=== COPY_RESPONSE exit=0 ===
+
+=== CHECK /samples/ attempt=2 exit=0 ===
+FIRST_RESPONSE_FIELD_AND_PRODUCTS_HITS=0
+
+=== FETCH /get-a-quote/ attempt=1 exit=0 ===
+200
+=== COPY_RESPONSE exit=0 ===
+
+=== CHECK /get-a-quote/ attempt=1 exit=0 ===
+FIRST_RESPONSE_FIELD_AND_PRODUCTS_HITS=0
+
+=== FETCH /get-a-quote/ attempt=2 exit=0 ===
+200
+=== COPY_RESPONSE exit=0 ===
+
+=== CHECK /get-a-quote/ attempt=2 exit=0 ===
+FIRST_RESPONSE_FIELD_AND_PRODUCTS_HITS=0
+
+=== FETCH /product-magnetic-jewelry-box/ attempt=1 exit=0 ===
+200
+=== COPY_RESPONSE exit=0 ===
+
+=== CHECK /product-magnetic-jewelry-box/ attempt=1 exit=0 ===
+FIRST_RESPONSE_FIELD_AND_PRODUCTS_HITS=0
+
+=== FETCH /product-magnetic-jewelry-box/ attempt=2 exit=0 ===
+200
+=== COPY_RESPONSE exit=0 ===
+
+=== CHECK /product-magnetic-jewelry-box/ attempt=2 exit=0 ===
+FIRST_RESPONSE_FIELD_AND_PRODUCTS_HITS=0
+
+=== FETCH /product-front-tuck-mailer/ attempt=1 exit=0 ===
+200
+=== COPY_RESPONSE exit=0 ===
+
+=== CHECK /product-front-tuck-mailer/ attempt=1 exit=0 ===
+FIRST_RESPONSE_FIELD_AND_PRODUCTS_HITS=0
+
+=== FETCH /product-front-tuck-mailer/ attempt=2 exit=0 ===
+200
+=== COPY_RESPONSE exit=0 ===
+
+=== CHECK /product-front-tuck-mailer/ attempt=2 exit=0 ===
+FIRST_RESPONSE_FIELD_AND_PRODUCTS_HITS=0
+
+=== FETCH /product-collapsible-magnetic-gift-box/ attempt=1 exit=0 ===
+200
+=== COPY_RESPONSE exit=0 ===
+
+=== CHECK /product-collapsible-magnetic-gift-box/ attempt=1 exit=0 ===
+FIRST_RESPONSE_FIELD_AND_PRODUCTS_HITS=0
+
+=== FETCH /product-collapsible-magnetic-gift-box/ attempt=2 exit=0 ===
+200
+=== COPY_RESPONSE exit=0 ===
+
+=== CHECK /product-collapsible-magnetic-gift-box/ attempt=2 exit=0 ===
+FIRST_RESPONSE_FIELD_AND_PRODUCTS_HITS=0
+
+=== FETCH /product-double-wall-tray-lid/ attempt=1 exit=0 ===
+200
+=== COPY_RESPONSE exit=0 ===
+
+=== CHECK /product-double-wall-tray-lid/ attempt=1 exit=0 ===
+FIRST_RESPONSE_FIELD_AND_PRODUCTS_HITS=0
+
+=== FETCH /product-double-wall-tray-lid/ attempt=2 exit=0 ===
+200
+=== COPY_RESPONSE exit=0 ===
+
+=== CHECK /product-double-wall-tray-lid/ attempt=2 exit=0 ===
+FIRST_RESPONSE_FIELD_AND_PRODUCTS_HITS=0
+
+=== FETCH /product-lock-cap-auto-bottom-carton/ attempt=1 exit=0 ===
+200
+=== COPY_RESPONSE exit=0 ===
+
+=== CHECK /product-lock-cap-auto-bottom-carton/ attempt=1 exit=0 ===
+FIRST_RESPONSE_FIELD_AND_PRODUCTS_HITS=0
+
+=== FETCH /product-lock-cap-auto-bottom-carton/ attempt=2 exit=0 ===
+200
+=== COPY_RESPONSE exit=0 ===
+
+=== CHECK /product-lock-cap-auto-bottom-carton/ attempt=2 exit=0 ===
+FIRST_RESPONSE_FIELD_AND_PRODUCTS_HITS=0
+
+
+=== r14schema-2-schema-languages.log ===
+en HTTP=200 WEBPAGE_DESCRIPTIONS=1 CONTAINS_500=0
+ar HTTP=200 WEBPAGE_DESCRIPTIONS=1 CONTAINS_500=0
+de HTTP=200 WEBPAGE_DESCRIPTIONS=1 CONTAINS_500=0
+es HTTP=200 WEBPAGE_DESCRIPTIONS=1 CONTAINS_500=0
+fr HTTP=200 WEBPAGE_DESCRIPTIONS=1 CONTAINS_500=0
+it HTTP=200 WEBPAGE_DESCRIPTIONS=1 CONTAINS_500=0
+ja HTTP=200 WEBPAGE_DESCRIPTIONS=1 CONTAINS_500=0
+ko HTTP=200 WEBPAGE_DESCRIPTIONS=1 CONTAINS_500=0
+nl HTTP=200 WEBPAGE_DESCRIPTIONS=1 CONTAINS_500=0
+pt HTTP=200 WEBPAGE_DESCRIPTIONS=1 CONTAINS_500=0
+zh-CN HTTP=200 WEBPAGE_DESCRIPTIONS=1 CONTAINS_500=0
+zh-TW HTTP=200 WEBPAGE_DESCRIPTIONS=1 CONTAINS_500=0
+
+
+=== r14schema-2-target.log ===
+TARGET / HTTP=200 MOQ250=1 MOQ500=0
+TARGET /products/ HTTP=200 MOQ250=1 MOQ500=0
+TARGET /jewelry-boxes/ HTTP=200 MOQ250=1 MOQ500=0
+TARGET /get-a-quote/ HTTP=200 MOQ250=1 MOQ500=0
+TARGET /2026/10/01/packaging-moq-design-planning/ HTTP=200 MOQ250=1 MOQ500=0
+TARGET /2026/10/02/multi-sku-jewelry-packaging-fit-matrix/ HTTP=200 MOQ250=1 MOQ500=0
+TARGET /2026/10/15/retail-demonstrator-material-plan/ HTTP=200 MOQ250=1 MOQ500=0
+TARGET /product-magnetic-jewelry-box/ HTTP=200 MOQ250=1 MOQ500=0
+TARGET /product-front-tuck-mailer/ HTTP=200 MOQ250=1 MOQ500=0
+TARGET /product-collapsible-magnetic-gift-box/ HTTP=200 MOQ250=1 MOQ500=0
+TARGET /product-double-wall-tray-lid/ HTTP=200 MOQ250=1 MOQ500=0
+TARGET /product-lock-cap-auto-bottom-carton/ HTTP=200 MOQ250=1 MOQ500=0
+ROUTE /PRIVACY/?x=AbC HTTP=301 LOCATION=https://www.packrivo.com/privacy/?x=AbC
+ROUTE /de/about HTTP=301 LOCATION=http://packrivo-r1-proxy/de/about/
+ROUTE /zh-CN/about HTTP=301 LOCATION=http://packrivo-r1-proxy/zh-CN/about/
+ROUTE /blog/page/2/ HTTP=301 LOCATION=https://www.packrivo.com/blog/?pg=2
+PAGINATION HTTP=200 CANONICAL=https://www.packrivo.com/blog/?pg=2
+LANG_HOME ar HTTP=200 HREFLANG_COUNT=12 MISSING=
+LANG_HOME de HTTP=200 HREFLANG_COUNT=12 MISSING=
+LANG_HOME es HTTP=200 HREFLANG_COUNT=12 MISSING=
+LANG_HOME fr HTTP=200 HREFLANG_COUNT=12 MISSING=
+LANG_HOME it HTTP=200 HREFLANG_COUNT=12 MISSING=
+LANG_HOME ja HTTP=200 HREFLANG_COUNT=12 MISSING=
+LANG_HOME ko HTTP=200 HREFLANG_COUNT=12 MISSING=
+LANG_HOME nl HTTP=200 HREFLANG_COUNT=12 MISSING=
+LANG_HOME pt HTTP=200 HREFLANG_COUNT=12 MISSING=
+LANG_HOME zh-CN HTTP=200 HREFLANG_COUNT=12 MISSING=
+LANG_HOME zh-TW HTTP=200 HREFLANG_COUNT=12 MISSING=
+GEO /llms.txt HTTP=200 MOQ250=1 MOQ500=0
+GEO /llms-full.txt HTTP=200 MOQ250=110 MOQ500=0
+GEO /robots.txt HTTP=200 MOQ250=0 MOQ500=0
+BOT GPTBot BLOCK_ALL=0
+BOT OAI-SearchBot BLOCK_ALL=0
+BOT ChatGPT-User BLOCK_ALL=0
+BOT ClaudeBot BLOCK_ALL=0
+BOT Claude-SearchBot BLOCK_ALL=0
+BOT Claude-User BLOCK_ALL=0
+BOT PerplexityBot BLOCK_ALL=0
+BOT Perplexity-User BLOCK_ALL=0
+BOT Google-Extended BLOCK_ALL=0
+BOT Applebot-Extended BLOCK_ALL=0
+BOT Bingbot BLOCK_ALL=0
+
+
+=== r14schema-2-link.log ===
+SITEMAP_URLS 2166
+FETCH 100/2166
+FETCH 200/2166
+FETCH 300/2166
+FETCH 400/2166
+FETCH 500/2166
+FETCH 600/2166
+FETCH 700/2166
+FETCH 800/2166
+FETCH 900/2166
+FETCH 1000/2166
+FETCH 1100/2166
+FETCH 1200/2166
+FETCH 1300/2166
+FETCH 1400/2166
+FETCH 1500/2166
+FETCH 1600/2166
+FETCH 1700/2166
+FETCH 1800/2166
+FETCH 1900/2166
+FETCH 2000/2166
+FETCH 2100/2166
+BFS_SEEN 1 NEXT 41
+BFS_SEEN 42 NEXT 640
+FETCH 100/114
+BFS_SEEN 642 NEXT 1566
+FETCH 100/142
+BFS_SEEN 1890 NEXT 373
+FETCH 100/225
+FETCH 200/225
+BFS_SEEN 2190 NEXT 39
+BFS_SEEN 2195 NEXT 7
+BFS_SEEN 2199 NEXT 6
+BFS_SEEN 2203 NEXT 3
+BFS_SEEN 2203 NEXT 0
+SITEMAP_TOTAL 2166 ENGLISH 714 BAD 0
+REDLINES {"moq_500":0,"standard":3,"factory_self":0}
+QUERY_LINKS 0
+WIDGET_TARGETS 2078
+ORPHANS 0 REACHABLE 2203
+
+
+=== r14schema-2-redline.log ===
+processed=100/2803 http_non200=0 field_hits=0 body_hits=41
+processed=200/2803 http_non200=0 field_hits=0 body_hits=96
+processed=300/2803 http_non200=0 field_hits=0 body_hits=161
+processed=400/2803 http_non200=0 field_hits=0 body_hits=268
+processed=500/2803 http_non200=0 field_hits=0 body_hits=353
+processed=600/2803 http_non200=0 field_hits=0 body_hits=354
+processed=700/2803 http_non200=0 field_hits=0 body_hits=354
+processed=800/2803 http_non200=1 field_hits=0 body_hits=375
+processed=900/2803 http_non200=1 field_hits=0 body_hits=475
+processed=1000/2803 http_non200=1 field_hits=0 body_hits=549
+processed=1100/2803 http_non200=1 field_hits=0 body_hits=622
+processed=1200/2803 http_non200=1 field_hits=0 body_hits=717
+processed=1300/2803 http_non200=1 field_hits=0 body_hits=717
+processed=1400/2803 http_non200=1 field_hits=0 body_hits=717
+processed=1500/2803 http_non200=1 field_hits=0 body_hits=717
+processed=1600/2803 http_non200=1 field_hits=0 body_hits=717
+processed=1700/2803 http_non200=1 field_hits=0 body_hits=800
+processed=1800/2803 http_non200=1 field_hits=0 body_hits=875
+processed=1900/2803 http_non200=1 field_hits=0 body_hits=969
+processed=2000/2803 http_non200=1 field_hits=0 body_hits=1052
+processed=2100/2803 http_non200=1 field_hits=0 body_hits=1124
+processed=2200/2803 http_non200=1 field_hits=0 body_hits=1224
+processed=2300/2803 http_non200=12 field_hits=0 body_hits=1309
+processed=2400/2803 http_non200=16 field_hits=0 body_hits=1362
+processed=2500/2803 http_non200=16 field_hits=0 body_hits=1457
+processed=2600/2803 http_non200=16 field_hits=0 body_hits=1529
+processed=2700/2803 http_non200=16 field_hits=0 body_hits=1603
+processed=2800/2803 http_non200=16 field_hits=0 body_hits=1699
+SCANNED=2803 HTTP_NON200=16 FIELD_HITS=0 BODY_HITS=1699
+
+
+=== r14schema-2-29y-retry.log ===
+  50/1606  扣过本族词后>5 的页面 2  异常 0
+  100/1606  扣过本族词后>5 的页面 3  异常 0
+  150/1606  扣过本族词后>5 的页面 9  异常 0
+  200/1606  扣过本族词后>5 的页面 9  异常 0
+  250/1606  扣过本族词后>5 的页面 10  异常 0
+  300/1606  扣过本族词后>5 的页面 16  异常 0
+  350/1606  扣过本族词后>5 的页面 17  异常 0
+  400/1606  扣过本族词后>5 的页面 19  异常 0
+  450/1606  扣过本族词后>5 的页面 23  异常 0
+  500/1606  扣过本族词后>5 的页面 24  异常 0
+  550/1606  扣过本族词后>5 的页面 26  异常 0
+  600/1606  扣过本族词后>5 的页面 30  异常 0
+  650/1606  扣过本族词后>5 的页面 31  异常 0
+  700/1606  扣过本族词后>5 的页面 33  异常 0
+  750/1606  扣过本族词后>5 的页面 37  异常 0
+  800/1606  扣过本族词后>5 的页面 38  异常 0
+  850/1606  扣过本族词后>5 的页面 41  异常 0
+  900/1606  扣过本族词后>5 的页面 46  异常 0
+  950/1606  扣过本族词后>5 的页面 46  异常 0
+  1000/1606  扣过本族词后>5 的页面 49  异常 0
+  1050/1606  扣过本族词后>5 的页面 54  异常 0
+  1100/1606  扣过本族词后>5 的页面 54  异常 0
+  1150/1606  扣过本族词后>5 的页面 55  异常 0
+  1200/1606  扣过本族词后>5 的页面 60  异常 0
+  1250/1606  扣过本族词后>5 的页面 60  异常 0
+  1300/1606  扣过本族词后>5 的页面 62  异常 0
+  1350/1606  扣过本族词后>5 的页面 69  异常 0
+  1400/1606  扣过本族词后>5 的页面 77  异常 0
+  1450/1606  扣过本族词后>5 的页面 96  异常 0
+  1500/1606  扣过本族词后>5 的页面 106  异常 0
+  1550/1606  扣过本族词后>5 的页面 116  异常 0
+  1600/1606  扣过本族词后>5 的页面 135  异常 0
+完成 1606 条，扣过本族词后>5 的页面 138，异常 0
+
+
+=== r14schema-catalog-s0.tsv ===
+ID	post_name	post_status	meta_noindex	indexable_noindex	indexable_public
+3178	catalog-paper-box-o1cn01gehn2a1i	publish	<absent>	<NULL>	<NULL>
+3179	catalog-paper-box-o1cn019mnvjf1i	publish	<absent>	<NULL>	<NULL>
+3180	catalog-paper-box-o1cn01p56uj3qy	publish	<absent>	<NULL>	<NULL>
+
+
+=== r14schema-catalog-after.tsv ===
+ID	post_name	post_status	meta_noindex	indexable_noindex	indexable_public
+3178	catalog-paper-box-o1cn01gehn2a1i	publish	<absent>	<NULL>	<NULL>
+3179	catalog-paper-box-o1cn019mnvjf1i	publish	<absent>	<NULL>	<NULL>
+3180	catalog-paper-box-o1cn01p56uj3qy	publish	<absent>	<NULL>	<NULL>
+
+
+=== r14-final-r1-manifest-check.log ===
+31b-i18n.csv: OK
+31b-new-strings.csv: OK
+31b/default-category.php: OK
+31b/mu-plugins/000-packrivo-31b-routes.php: OK
+31b/prepare-photos.py: OK
+32a-blog-rewrite.csv: OK
+32a-i18n-gate.py: OK
+32a-moq-content.php: OK
+32a-moq-plan.json: OK
+32a-new-strings.csv: OK
+32a-patch-legacy-moq.php: OK
+32a-update-options.php: OK
+32a-workspace-moq-backup.php: OK
+32a-workspace-moq-lib.php: OK
+32a-workspace-moq-migrate.php: OK
+32a-workspace-moq-rollback.php: OK
+32a/mu-plugins/001-packrivo-32a-404-title.php: OK
+32a4-generate-llms-full.php: OK
+32a4-generate-llms.php: OK
+32a4-llms-text.php: OK
+32a4/llms.base.txt: OK
+32a5-blog-migrate.php: OK
+32a5-blog-plan.json: OK
+32a6-blog-rewrite.php: OK
+32a6-blog-rollback.php: OK
+32a7-dict-merge.py: OK
+RUNBOOK-29y.md: OK
+RUNBOOK-launch.md: OK
+deploy/31b/default-category.php: OK
+deploy/31b/mu-plugins/000-packrivo-31b-routes.php: OK
+deploy/31b/prepare-photos.py: OK
+deploy/32a-i18n-gate.py: OK
+deploy/32a-moq-content.php: OK
+deploy/32a-moq-plan.json: OK
+deploy/32a-patch-legacy-moq.php: OK
+deploy/32a-update-options.php: OK
+deploy/32a-workspace-moq-backup.php: OK
+deploy/32a-workspace-moq-lib.php: OK
+deploy/32a-workspace-moq-migrate.php: OK
+deploy/32a-workspace-moq-rollback.php: OK
+deploy/32a/mu-plugins/001-packrivo-32a-404-title.php: OK
+deploy/32a4-generate-llms-full.php: OK
+deploy/32a4-generate-llms.php: OK
+deploy/32a4-llms-text.php: OK
+deploy/32a4/llms.base.txt: OK
+deploy/32a5-blog-migrate.php: OK
+deploy/32a5-blog-plan.json: OK
+deploy/32a6-blog-rewrite.php: OK
+deploy/32a6-blog-rollback.php: OK
+deploy/32a7-dict-merge.py: OK
+deploy/RUNBOOK-29y.md: OK
+deploy/RUNBOOK-launch.md: OK
+deploy/i18n-merged/ar-dict.json: OK
+deploy/i18n-merged/ar-js.json: OK
+deploy/i18n-merged/de-dict.json: OK
+deploy/i18n-merged/de-js.json: OK
+deploy/i18n-merged/es-dict.json: OK
+deploy/i18n-merged/es-js.json: OK
+deploy/i18n-merged/fr-dict.json: OK
+deploy/i18n-merged/fr-js.json: OK
+deploy/i18n-merged/it-dict.json: OK
+deploy/i18n-merged/it-js.json: OK
+deploy/i18n-merged/ja-dict.json: OK
+deploy/i18n-merged/ja-js.json: OK
+deploy/i18n-merged/ko-dict.json: OK
+deploy/i18n-merged/ko-js.json: OK
+deploy/i18n-merged/nl-dict.json: OK
+deploy/i18n-merged/nl-js.json: OK
+deploy/i18n-merged/paths.json: OK
+deploy/i18n-merged/pt-dict.json: OK
+deploy/i18n-merged/pt-js.json: OK
+deploy/i18n-merged/zh-CN-dict.json: OK
+deploy/i18n-merged/zh-CN-js.json: OK
+deploy/i18n-merged/zh-TW-dict.json: OK
+deploy/i18n-merged/zh-TW-js.json: OK
+deploy/r1-29y-list.py: OK
+deploy/r1-29y-report.py: OK
+deploy/r1-500-field-map.json: OK
+deploy/r1-baseline/dictionaries.sha256: OK
+deploy/r1-baseline/llms.sha256: OK
+deploy/r1-baseline/llms_full.sha256: OK
+deploy/r1-baseline/mu.sha256: OK
+deploy/r1-baseline/parent.sha256: OK
+deploy/r1-baseline/quote.sha256: OK
+deploy/r1-baseline/selector.sha256: OK
+deploy/r1-baseline/theme.sha256: OK
+deploy/r1-baseline/workspace.sha256: OK
+deploy/r1-build-scan-list.php: OK
+deploy/r1-context-extract.py: OK
+deploy/r1-dict-500to250.py: OK
+deploy/r1-field-projection.php: OK
+deploy/r1-first-response-check.py: OK
+deploy/r1-html-snapshot.php: OK
+deploy/r1-i18n-gate.py: OK
+deploy/r1-import-i18n-csv.py: OK
+deploy/r1-link-audit.php: OK
+deploy/r1-link-report.py: OK
+deploy/r1-moq-meta.php: OK
+deploy/r1-moq-render.php: OK
+deploy/r1-orphan-targets.json: OK
+deploy/r1-packages/packrivo-home-v4-4.0.7.zip: OK
+deploy/r1-packages/packrivo-language-selector-1.0.10.zip: OK
+deploy/r1-packages/packrivo-quote-1.0.2.zip: OK
+deploy/r1-redline-report.py: OK
+deploy/r1-redline-scan.php: OK
+deploy/r1-s0-paths.json: OK
+deploy/r1-sitemap-fix.php: OK
+deploy/r1-sitemap-list.php: OK
+deploy/r1-snapshot.py: OK
+deploy/r1-stage-release.py: OK
+deploy/r1-target-audit.php: OK
+deploy/r1-target-report.py: OK
+deploy/r1-union-scan-paths.py: OK
+deploy/scripts-29y/add-card-i18n-29y.py: OK
+deploy/scripts-29y/apply-batch-29y.py: OK
+deploy/scripts-29y/apply-translation-packets-29y.py: OK
+deploy/scripts-29y/apply-translations-29y.py: OK
+deploy/scripts-29y/by-lang-residual-29y.py: OK
+deploy/scripts-29y/dict_io_29y.py: OK
+deploy/scripts-29y/extract-en-nodes-29y.php: OK
+deploy/scripts-29y/gen-llms-prices.php: OK
+deploy/scripts-29y/hold-dicts-29y.py: OK
+deploy/scripts-29y/import-working-delta-29y.py: OK
+deploy/scripts-29y/inject-test-29y.php: OK
+deploy/scripts-29y/negtest-allow-29y.py: OK
+deploy/scripts-29y/negtest-es-29y.py: OK
+deploy/scripts-29y/negtest-homograph-29y.py: OK
+deploy/scripts-29y/normalize-json-lf-29y.py: OK
+deploy/scripts-29y/privacy-note-29y.php: OK
+deploy/scripts-29y/rebuild-delta-from-work-29y.py: OK
+deploy/scripts-29y/rebuild-dicts-from-head-29y.py: OK
+deploy/scripts-29y/report-dict-mods-29y.py: OK
+deploy/scripts-29y/run-scan-29y.py: OK
+deploy/scripts-29y/scan-main-english-29y.php: OK
+deploy/scripts-29y/scan-residual-readback.txt: OK
+deploy/scripts-29y/summarize-residual-29y.py: OK
+deploy/scripts-29y/verify-card-guard-29y.py: OK
+deploy/scripts-29y/verify-card-srcset-29y.py: OK
+deploy/scripts-29y/verify-dict-rebuild-29y.py: OK
+deploy/scripts-29y/verify-hero-srcset-29y.py: OK
+deploy/site-29y/mu-plugins/packrivo-i18n.php: OK
+deploy/site-29y/mu-plugins/packrivo-privacy-noindex-29y.php: OK
+deploy/verification-29y/i18n/allow-ar.json: OK
+deploy/verification-29y/i18n/allow-es.json: OK
+deploy/verification-29y/i18n/allow-fr.json: OK
+deploy/verification-29y/i18n/allow-it.json: OK
+deploy/verification-29y/i18n/allow-ja.json: OK
+deploy/verification-29y/i18n/allow-ko.json: OK
+deploy/verification-29y/i18n/allow-nl.json: OK
+deploy/verification-29y/i18n/allow-pt.json: OK
+deploy/verification-29y/i18n/delta/ar-add.json: OK
+deploy/verification-29y/i18n/delta/ar-drop.json: OK
+deploy/verification-29y/i18n/delta/ar-mod.json: OK
+deploy/verification-29y/i18n/delta/de-add.json: OK
+deploy/verification-29y/i18n/delta/de-drop.json: OK
+deploy/verification-29y/i18n/delta/de-mod.json: OK
+deploy/verification-29y/i18n/delta/es-add.json: OK
+deploy/verification-29y/i18n/delta/es-drop.json: OK
+deploy/verification-29y/i18n/delta/es-mod.json: OK
+deploy/verification-29y/i18n/delta/fr-add.json: OK
+deploy/verification-29y/i18n/delta/fr-drop.json: OK
+deploy/verification-29y/i18n/delta/fr-mod.json: OK
+deploy/verification-29y/i18n/delta/it-add.json: OK
+deploy/verification-29y/i18n/delta/it-drop.json: OK
+deploy/verification-29y/i18n/delta/it-mod.json: OK
+deploy/verification-29y/i18n/delta/ja-add.json: OK
+deploy/verification-29y/i18n/delta/ja-drop.json: OK
+deploy/verification-29y/i18n/delta/ja-mod.json: OK
+deploy/verification-29y/i18n/delta/ko-add.json: OK
+deploy/verification-29y/i18n/delta/ko-drop.json: OK
+deploy/verification-29y/i18n/delta/ko-mod.json: OK
+deploy/verification-29y/i18n/delta/nl-add.json: OK
+deploy/verification-29y/i18n/delta/nl-drop.json: OK
+deploy/verification-29y/i18n/delta/nl-mod.json: OK
+deploy/verification-29y/i18n/delta/pt-add.json: OK
+deploy/verification-29y/i18n/delta/pt-drop.json: OK
+deploy/verification-29y/i18n/delta/pt-mod.json: OK
+deploy/verification-29y/i18n/delta/zh-CN-add.json: OK
+deploy/verification-29y/i18n/delta/zh-CN-drop.json: OK
+deploy/verification-29y/i18n/delta/zh-CN-mod.json: OK
+deploy/verification-29y/i18n/delta/zh-TW-add.json: OK
+deploy/verification-29y/i18n/delta/zh-TW-drop.json: OK
+deploy/verification-29y/i18n/delta/zh-TW-mod.json: OK
+deploy/verification-29y/i18n/en-lexicon.json: OK
+deploy/verification-29y/i18n/local-stop.json: OK
+deploy/verification-29y/i18n/packets/de-todo.json: OK
+deploy/verification-29y/i18n/packets/it-todo.json: OK
+dsh-out/31b-i18n.csv: OK
+dsh-out/31b-new-strings.csv: OK
+dsh-out/32a-blog-rewrite.csv: OK
+dsh-out/32a-new-strings.csv: OK
+i18n-merged/ar-dict.json: OK
+i18n-merged/ar-js.json: OK
+i18n-merged/de-dict.json: OK
+i18n-merged/de-js.json: OK
+i18n-merged/es-dict.json: OK
+i18n-merged/es-js.json: OK
+i18n-merged/fr-dict.json: OK
+i18n-merged/fr-js.json: OK
+i18n-merged/it-dict.json: OK
+i18n-merged/it-js.json: OK
+i18n-merged/ja-dict.json: OK
+i18n-merged/ja-js.json: OK
+i18n-merged/ko-dict.json: OK
+i18n-merged/ko-js.json: OK
+i18n-merged/nl-dict.json: OK
+i18n-merged/nl-js.json: OK
+i18n-merged/paths.json: OK
+i18n-merged/pt-dict.json: OK
+i18n-merged/pt-js.json: OK
+i18n-merged/zh-CN-dict.json: OK
+i18n-merged/zh-CN-js.json: OK
+i18n-merged/zh-TW-dict.json: OK
+i18n-merged/zh-TW-js.json: OK
+packrivo-quote/includes/quote-i18n/ar.json: OK
+packrivo-quote/includes/quote-i18n/de.json: OK
+packrivo-quote/includes/quote-i18n/es.json: OK
+packrivo-quote/includes/quote-i18n/fr.json: OK
+packrivo-quote/includes/quote-i18n/it.json: OK
+packrivo-quote/includes/quote-i18n/ja.json: OK
+packrivo-quote/includes/quote-i18n/ko.json: OK
+packrivo-quote/includes/quote-i18n/nl.json: OK
+packrivo-quote/includes/quote-i18n/pt.json: OK
+packrivo-quote/includes/quote-i18n/zh-CN.json: OK
+packrivo-quote/includes/quote-i18n/zh-TW.json: OK
+packrivo-wp/packrivo-quote/includes/quote-i18n/ar.json: OK
+packrivo-wp/packrivo-quote/includes/quote-i18n/de.json: OK
+packrivo-wp/packrivo-quote/includes/quote-i18n/es.json: OK
+packrivo-wp/packrivo-quote/includes/quote-i18n/fr.json: OK
+packrivo-wp/packrivo-quote/includes/quote-i18n/it.json: OK
+packrivo-wp/packrivo-quote/includes/quote-i18n/ja.json: OK
+packrivo-wp/packrivo-quote/includes/quote-i18n/ko.json: OK
+packrivo-wp/packrivo-quote/includes/quote-i18n/nl.json: OK
+packrivo-wp/packrivo-quote/includes/quote-i18n/pt.json: OK
+packrivo-wp/packrivo-quote/includes/quote-i18n/zh-CN.json: OK
+packrivo-wp/packrivo-quote/includes/quote-i18n/zh-TW.json: OK
+r1-29y-list.py: OK
+r1-29y-report.py: OK
+r1-500-field-map.json: OK
+r1-baseline/dictionaries.sha256: OK
+r1-baseline/llms.sha256: OK
+r1-baseline/llms_full.sha256: OK
+r1-baseline/mu.sha256: OK
+r1-baseline/parent.sha256: OK
+r1-baseline/quote.sha256: OK
+r1-baseline/selector.sha256: OK
+r1-baseline/theme.sha256: OK
+r1-baseline/workspace.sha256: OK
+r1-build-scan-list.php: OK
+r1-context-extract.py: OK
+r1-dict-500to250.py: OK
+r1-field-projection.php: OK
+r1-first-response-check.py: OK
+r1-html-snapshot.php: OK
+r1-i18n-gate.py: OK
+r1-import-i18n-csv.py: OK
+r1-link-audit.php: OK
+r1-link-report.py: OK
+r1-moq-meta.php: OK
+r1-moq-render.php: OK
+r1-orphan-targets.json: OK
+r1-packages/packrivo-home-v4-4.0.7.zip: OK
+r1-packages/packrivo-language-selector-1.0.10.zip: OK
+r1-packages/packrivo-quote-1.0.2.zip: OK
+r1-redline-report.py: OK
+r1-redline-scan.php: OK
+r1-s0-paths.json: OK
+r1-sitemap-fix.php: OK
+r1-sitemap-list.php: OK
+r1-snapshot.py: OK
+r1-stage-release.py: OK
+r1-target-audit.php: OK
+r1-target-report.py: OK
+r1-union-scan-paths.py: OK
+scripts-29y/add-card-i18n-29y.py: OK
+scripts-29y/apply-batch-29y.py: OK
+scripts-29y/apply-translation-packets-29y.py: OK
+scripts-29y/apply-translations-29y.py: OK
+scripts-29y/by-lang-residual-29y.py: OK
+scripts-29y/dict_io_29y.py: OK
+scripts-29y/extract-en-nodes-29y.php: OK
+scripts-29y/gen-llms-prices.php: OK
+scripts-29y/hold-dicts-29y.py: OK
+scripts-29y/import-working-delta-29y.py: OK
+scripts-29y/inject-test-29y.php: OK
+scripts-29y/negtest-allow-29y.py: OK
+scripts-29y/negtest-es-29y.py: OK
+scripts-29y/negtest-homograph-29y.py: OK
+scripts-29y/normalize-json-lf-29y.py: OK
+scripts-29y/privacy-note-29y.php: OK
+scripts-29y/rebuild-delta-from-work-29y.py: OK
+scripts-29y/rebuild-dicts-from-head-29y.py: OK
+scripts-29y/report-dict-mods-29y.py: OK
+scripts-29y/run-scan-29y.py: OK
+scripts-29y/scan-main-english-29y.php: OK
+scripts-29y/scan-residual-readback.txt: OK
+scripts-29y/summarize-residual-29y.py: OK
+scripts-29y/verify-card-guard-29y.py: OK
+scripts-29y/verify-card-srcset-29y.py: OK
+scripts-29y/verify-dict-rebuild-29y.py: OK
+scripts-29y/verify-hero-srcset-29y.py: OK
+site-29y/mu-plugins/packrivo-i18n.php: OK
+site-29y/mu-plugins/packrivo-privacy-noindex-29y.php: OK
+verification-29y/i18n/allow-ar.json: OK
+verification-29y/i18n/allow-es.json: OK
+verification-29y/i18n/allow-fr.json: OK
+verification-29y/i18n/allow-it.json: OK
+verification-29y/i18n/allow-ja.json: OK
+verification-29y/i18n/allow-ko.json: OK
+verification-29y/i18n/allow-nl.json: OK
+verification-29y/i18n/allow-pt.json: OK
+verification-29y/i18n/delta/ar-add.json: OK
+verification-29y/i18n/delta/ar-drop.json: OK
+verification-29y/i18n/delta/ar-mod.json: OK
+verification-29y/i18n/delta/de-add.json: OK
+verification-29y/i18n/delta/de-drop.json: OK
+verification-29y/i18n/delta/de-mod.json: OK
+verification-29y/i18n/delta/es-add.json: OK
+verification-29y/i18n/delta/es-drop.json: OK
+verification-29y/i18n/delta/es-mod.json: OK
+verification-29y/i18n/delta/fr-add.json: OK
+verification-29y/i18n/delta/fr-drop.json: OK
+verification-29y/i18n/delta/fr-mod.json: OK
+verification-29y/i18n/delta/it-add.json: OK
+verification-29y/i18n/delta/it-drop.json: OK
+verification-29y/i18n/delta/it-mod.json: OK
+verification-29y/i18n/delta/ja-add.json: OK
+verification-29y/i18n/delta/ja-drop.json: OK
+verification-29y/i18n/delta/ja-mod.json: OK
+verification-29y/i18n/delta/ko-add.json: OK
+verification-29y/i18n/delta/ko-drop.json: OK
+verification-29y/i18n/delta/ko-mod.json: OK
+verification-29y/i18n/delta/nl-add.json: OK
+verification-29y/i18n/delta/nl-drop.json: OK
+verification-29y/i18n/delta/nl-mod.json: OK
+verification-29y/i18n/delta/pt-add.json: OK
+verification-29y/i18n/delta/pt-drop.json: OK
+verification-29y/i18n/delta/pt-mod.json: OK
+verification-29y/i18n/delta/zh-CN-add.json: OK
+verification-29y/i18n/delta/zh-CN-drop.json: OK
+verification-29y/i18n/delta/zh-CN-mod.json: OK
+verification-29y/i18n/delta/zh-TW-add.json: OK
+verification-29y/i18n/delta/zh-TW-drop.json: OK
+verification-29y/i18n/delta/zh-TW-mod.json: OK
+verification-29y/i18n/en-lexicon.json: OK
+verification-29y/i18n/local-stop.json: OK
+verification-29y/i18n/packets/de-todo.json: OK
+verification-29y/i18n/packets/it-todo.json: OK
+
+
+=== computed acceptance ===
+R1_AUDIT {"body_hits":1699,"catalog_r2":3,"field_hits":0,"indexable_omissions":0,"pages":2803,"sitemap":2166,"sitemap_bad":0}
+29Y_REPORT pages=1606 residual_nonblocking=137 scan_errors=0
+POST448_01_WORKSHEET 0 POST448_B03_TEACHING 0 MOQ_250 14
+
+=== interrupted invalid resolver scan: first three raw rows ===
+{"lang":"ar","url":"http://packrivo-r1-proxy/ar/","http":0,"bytes":0,"main_found":false,"residual_count":-1,"residual_raw":-1,"error":"empty"}
+{"lang":"ar","url":"http://packrivo-r1-proxy/ar/about/","http":0,"bytes":0,"main_found":false,"residual_count":-1,"residual_raw":-1,"error":"empty"}
+{"lang":"ar","url":"http://packrivo-r1-proxy/ar/bags-pouches/","http":0,"bytes":0,"main_found":false,"residual_count":-1,"residual_raw":-1,"error":"empty"}

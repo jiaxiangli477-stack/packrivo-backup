@@ -1,6 +1,6 @@
 # R1 发版准备与演练记录
 
-状态：**R1-4 正在执行，catalog 范围待确认；尚无生产执行授权。** 以下各历史章节保留当时状态，不以历史结果代替本次验收。未连接生产、未部署、未 push。
+状态：**R1-4 两轮本地演练与验收完成，等待复核；尚无生产执行授权。** 以下各历史章节保留当时状态，不以历史结果代替本次验收。未连接生产、未部署、未 push。
 
 ## 基线与隔离
 
@@ -354,9 +354,9 @@ POST_448: 01-worksheet=0 b03-448-teaching=0 250_present=1 MOQ_500=0
 
 两轮判定 **17/17 已处理**。该结论取代本报告早先“原 17 项来源不明”的未验证记录；原 `/collapsible-magnetic-gift-box/` 保持 301，不为凑数新增指向跳转的内链。
 
-## R1-4：500 口径、缓存及 sitemap（进行中，2026-11-06）
+## R1-4：500 口径、缓存及 sitemap（2026-11-06）
 
-**当前状态：最终 schema 修正后的第一轮正向、验收和整体回滚已完成；第二轮等待用户确认 catalog 三页范围。** 本轮只操作独立 R1，未连接生产、未 push。旧值核对：
+**当前状态：最终 schema 修正后的两轮正向、验收和中间整体回滚已完成，等待复核。** 本轮只操作独立 R1，未连接生产、未 push。旧值核对：
 
 ```text
 2884 _packrivo_description = Order a sample of your custom box or pouch to check size, print and finish before your 500-piece order. Get a price.
@@ -392,8 +392,27 @@ R1_AUDIT pages=2803 sitemap=2166 field_hits=0 sitemap_bad=0 indexable_omissions=
 
 唯一红线例外 ID 1094 的 FSC 文字属于标签许可话题讨论，不是认证自称；它不在其他白名单。全部正文 `500` 上下文清单见 `dsh-out/R1-4-body-500-round1.csv`，非英文 29y 的 137 页按用户指示不阻塞，见 `dsh-out/R1-4-residual-nonenglish.csv`；原因栏是待复核初判。第一轮 17 项来源及逐项结果见上方“原始 17 项清单的权威来源与判定修正”。
 
-最终第一轮运行包来自 Git 提交 `dc2d3053914aa09fec2baa6269e4e66c282ba1a5`，348 文件均与对应 Git blob 相同，MANIFEST SHA256 `ca4ed30b1f013d4c24fc9d95bff20698dde67f97eb40df96d2c76075bfe5becf`。运行后 `r1-snapshot.py restore` / `check`：数据库 SHA256 前后均 `7b360455de332560180d062330bebb5c10af8c6aa289849800dbae0bb8215c4d`，九组文件均匹配；30 页 HTML 快照 SHA256 前后均 `08f9ea2c197b6ec888c8568b718e627721d2993c94c2f69e0231452a3348f39e`。R1 目前已恢复 S0、数据库只读。
+最终第一轮运行包来自 Git 提交 `dc2d3053914aa09fec2baa6269e4e66c282ba1a5`，348 文件均与对应 Git blob 相同，MANIFEST SHA256 `ca4ed30b1f013d4c24fc9d95bff20698dde67f97eb40df96d2c76075bfe5becf`。运行后 `r1-snapshot.py restore` / `check`：数据库 SHA256 前后均 `7b360455de332560180d062330bebb5c10af8c6aa289849800dbae0bb8215c4d`，九组文件均匹配；30 页 HTML 快照 SHA256 前后均 `08f9ea2c197b6ec888c8568b718e627721d2993c94c2f69e0231452a3348f39e`。第二轮之前再次恢复并核验 S0。
 
-### 待确认的 catalog 范围
+### catalog 范围确认
 
-三个 catalog 的 noindex 状态未改，R1 sitemap 扩展保持它们仍不列入；但是既有 32a 计划对这三页有 **12 条** MOQ 相关操作，会修改正文、Yoast 摘要和 OG 摘要（以及相应 indexable 缓存），与用户“catalog 三页不动”存在范围歧义。明细见 `dsh-out/R1-4-catalog-32a-impact.csv`。已请求确认“不动”是否仅指 noindex／30a 状态；在答复前不执行最终第二轮或声称定稿。如果要求任何字段不变，将与“全站受检字段 500 为 0、仅 ID1094 白名单”产生冲突，必须重新处理，不能自行放宽。
+用户确认“仅不改 noindex”，既有 32a 的 12 条 MOQ 正文与摘要迁移保留，明细见 `dsh-out/R1-4-catalog-32a-impact.csv`。三个页面的 noindex 与 indexable 指纹在 S0 和第二轮后逐字节一致，两个 TSV 的 SHA256 均为 `676ec0e32dd5064d3b9533da83e220e84e392f69819606a417dfbaefee50f998`；三页 30a 问题列入 R2。
+
+
+### 第二轮原始结果（最终 schema 版）
+
+```text
+STAGE_RELEASE_PASS
+32a5 changed=318 -> 0; 32a6 dry-run/backup/apply changed=7 -> 0; R1 metadata changed=3 -> 0
+POST448_01_WORKSHEET 0 POST448_B03_TEACHING 0 MOQ_250 14
+R1_TARGET_REPORT targets=12 languages=11 routes=4 bots=11 issues=0
+R1_LINK_AUDIT {"crawl_errors":0,"issues":0,"missing_inbound":[],"orphans":0,"query_links":0,"redirect_ok":true,"sitemap_bad":0,"targets":16}
+R1_AUDIT {"body_hits":1699,"catalog_r2":3,"field_hits":0,"indexable_omissions":0,"pages":2803,"sitemap":2166,"sitemap_bad":0}
+29Y_REPORT pages=1606 residual_nonblocking=137 scan_errors=0
+```
+
+32a-6 位于 32a-5 后，原始 dry-run、backup、两次 apply、网页检查、抓取和两轮日志见 `dsh-out/R1-4-round1.log` 与 `dsh-out/R1-4-round2.log`。第二轮 `/products/` 首次完整响应保存在 `E:/破甲工作区/r1-2-rehearsal/r14schema-2-first-responses/01-1.html`，SHA256 `3fecbcada0e564a54fe40fc2430c441d3cddeca45fe5395bb2726ff3e39d8c21`；62 处 MOQ/500 的前后 200 字符见 `dsh-out/R1-4-products-first-2-contexts.txt`。两轮 9 个指定路径两次请求均通过。第二轮 samples 的英文及 11 个翻译页 WebPage JSON-LD 均 HTTP 200 且描述不含 500。
+
+非英文扫描第一次输入的 resolver 参数无效，出现 `http=0` 后停止；未将这一中断视为通过。随后用合法 resolver 参数重跑全量 1606 条，`scan_errors=0`，保留原始重跑日志及失败片段。正文 500 为不阻塞清单，存量译文 137 页及原因清单仍需复核。实际本地证据只能确认六个原遗漏 product 页，全部纳入 sitemap；未把用户提及的八页当作已证实。
+
+最终交付包从 Git 提交 `56228160273b7ab0298dfe45e273ab2efd224c5b` 导出，位置 `E:/破甲工作区/r1-4-final-r1-pkg`；174 个原始文件及全部 348 个带别名文件均逐项等于对应 Git blob。`MANIFEST.sha256` SHA256 `1f31bb3065610f40a54a9f76b6671a65f4f474d2f93310ffafd1c726e2373a31`，独立 R1 容器内 `sha256sum -c` 348/348 OK。源码归档 SHA256 `d5bb3e3024882a32a7ada1bc24d0ac6fd07cbd19f5e44194d1b5a5ed0053f802`；映射收据 `dsh-out/R1-4-package-map.json`。最终包与两轮所用 `dc2d305` 在 deploy 下仅 `RUNBOOK-launch.md` 文档不同；迁移、插件、主题和验收脚本字节不变。
