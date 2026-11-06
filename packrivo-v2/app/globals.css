@@ -1,0 +1,284 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0c1411;
+  --color-forest: #0b2b20;
+  --color-moss: #0d4836;
+  --color-fern: #145c45;
+  --color-lime: #b89553;
+  --color-lime-soft: #d8bd8b;
+  --color-bone: #f3f0e7;
+  --color-sand: #e2ddd0;
+  --color-paper: #fdfcf8;
+  --color-rust: #a8401f;
+  --color-clay: #b9a88c;
+  --color-slate: #5b615b;
+
+  --font-display: "Archivo", "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter Tight", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --radius-xs: 2px;
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 10px;
+
+  --shadow-card: 0 1px 0 rgba(16, 19, 18, 0.04), 0 18px 40px -30px rgba(16, 19, 18, 0.35);
+  --shadow-pop: 0 32px 80px -48px rgba(16, 19, 18, 0.5);
+
+  --animate-marquee: marquee 38s linear infinite;
+  --animate-rise: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@font-face {
+  font-family: "Archivo";
+  src: url("/fonts/archivo-600.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Archivo";
+  src: url("/fonts/archivo-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Archivo";
+  src: url("/fonts/archivo-800.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/jbmono-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/jbmono-500.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter Tight";
+  src: url("/fonts/inter-tight-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter Tight";
+  src: url("/fonts/inter-tight-500.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter Tight";
+  src: url("/fonts/inter-tight-600.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter Tight";
+  src: url("/fonts/inter-tight-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background: var(--color-bone);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-synthesis: none;
+    line-break: strict;
+    overflow-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  table,
+  .tabular {
+    font-variant-numeric: tabular-nums slashed-zero;
+  }
+
+  ::selection {
+    background: var(--color-lime);
+    color: var(--color-ink);
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    letter-spacing: -0.025em;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-moss);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .wrap {
+    @apply mx-auto w-full max-w-[1320px] px-5 md:px-8;
+  }
+
+  /* Technical label, not the uppercase-with-dot cliché: a rule carries the eye. */
+  .eyebrow {
+    @apply inline-flex items-center gap-2.5 font-mono text-[10.5px] font-medium uppercase tracking-[0.08em] text-slate;
+  }
+
+  .eyebrow::before {
+    content: "";
+    @apply block h-px w-6 bg-current opacity-60;
+  }
+
+  .display {
+    @apply font-display font-extrabold tracking-[-0.03em];
+  }
+
+  /* A heavy grotesque has no honest italic in this family; emphasis is carried
+     by colour instead of a synthesised slant. */
+  .h-hero em,
+  .h-section em,
+  .display em {
+    font-style: normal;
+  }
+
+  .h-hero {
+    @apply font-display font-extrabold tracking-[-0.035em] text-[clamp(2.3rem,4.3vw,4rem)] leading-[0.94];
+  }
+
+  .h-section {
+    @apply font-display font-extrabold tracking-[-0.03em] text-[clamp(1.9rem,3.4vw,3.1rem)] leading-[0.98];
+  }
+
+  .h-card {
+    @apply text-[1.02rem] font-semibold tracking-[-0.015em];
+  }
+
+  .lede {
+    @apply text-[1.02rem] leading-[1.65] text-slate;
+  }
+
+  .hairline {
+    @apply border-t border-ink/10;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-[3px] px-5 py-3 text-[13.5px] font-semibold tracking-[-0.01em] transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-[3px] px-5 py-3 text-[13.5px] font-semibold tracking-[-0.01em] transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-50 bg-ink text-paper hover:bg-moss;
+  }
+
+  .btn-lime {
+    @apply inline-flex items-center justify-center gap-2 rounded-[3px] px-5 py-3 text-[13.5px] font-semibold tracking-[-0.01em] transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-50 bg-lime text-ink hover:bg-lime-soft;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-[3px] px-5 py-3 text-[13.5px] font-semibold tracking-[-0.01em] transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-50 border border-ink/20 bg-transparent text-ink hover:border-ink hover:bg-ink/[0.04];
+  }
+
+  .btn-light {
+    @apply inline-flex items-center justify-center gap-2 rounded-[3px] px-5 py-3 text-[13.5px] font-semibold tracking-[-0.01em] transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-50 border border-paper/30 text-paper hover:border-paper hover:bg-paper/10;
+  }
+
+  .card {
+    @apply rounded-[6px] border border-ink/12 bg-paper;
+  }
+
+  .field {
+    @apply w-full rounded-[3px] border border-ink/20 bg-paper px-3.5 py-2.5 text-sm text-ink outline-none transition-colors placeholder:text-slate/60 focus:border-ink;
+  }
+
+  .label {
+    @apply mb-1.5 block font-mono text-[10px] font-medium uppercase tracking-[0.08em] text-slate;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1.5 rounded-[3px] border border-ink/15 bg-bone px-2 py-1 font-mono text-[10px] font-medium uppercase tracking-[0.06em] text-ink/70;
+  }
+
+  .grain {
+    background-image: radial-gradient(rgba(16, 19, 18, 0.055) 1px, transparent 1px);
+    background-size: 4px 4px;
+  }
+
+  .link-underline {
+    @apply relative inline-block after:absolute after:-bottom-0.5 after:left-0 after:h-px after:w-full after:origin-right after:scale-x-0 after:bg-current after:transition-transform hover:after:origin-left hover:after:scale-x-100;
+  }
+
+  .stripe {
+    background-image: repeating-linear-gradient(
+      -45deg,
+      rgba(16, 19, 18, 0.05) 0 1px,
+      transparent 1px 9px
+    );
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

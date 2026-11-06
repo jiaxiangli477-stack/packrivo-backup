@@ -97,5 +97,8 @@
  "Kraft-look poly": "크라프트 느낌 폴리",
  "Water resistant": "방수",
  "Compostable stock": "퇴비화 가능 소재",
- "CMYK + spot": "CMYK + 별색"
+ "CMYK + spot": "CMYK + 별색",
+ "Under 250? Send the brief and we'll quote by hand.": "250개 미만인가요? 브리프를 보내주시면 직접 견적해 드립니다.",
+ "Goods {goods} · Sourcing fee {fee} ({percent}%, min. {minimum}) · Total {total}": "상품 {goods} · 소싱 수수료 {fee} ({percent}%, 최저 {minimum}) · 합계 {total}",
+ "Instant quotes include the sourcing fee at {percent}%; your final rate is confirmed on the written quote.": "즉시 견적에는 {percent}% 소싱 수수료가 포함되며, 최종 단가는 서면 견적에서 확정됩니다."
 }

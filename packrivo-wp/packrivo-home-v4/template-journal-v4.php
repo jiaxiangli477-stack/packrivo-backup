@@ -115,6 +115,7 @@ $date_label = static function ($post) use ($locale) {
           <a class="pk-chip <?php echo $topic === $c->slug ? 'is-active' : ''; ?>" href="<?php echo esc_url(add_query_arg(['topic' => $c->slug, 'sort' => $sort], $base)); ?>"><?php echo esc_html($c->name); ?> <span><?php echo (int) $c->count; ?></span></a>
         <?php endforeach; ?>
       </div>
+      <?php if (pk31b_is_english()) : ?><div class="pk-chips"><?php foreach (pk31b_topics() as $pk_topic) : ?><a class="pk-chip" href="<?php echo esc_url(pk31b_topic_url($pk_topic)); ?>"><?php echo esc_html($pk_topic->name); ?></a><?php endforeach; ?></div><?php endif; ?>
       <form class="pk-sort" method="get" action="<?php echo esc_url($base); ?>">
         <?php if ($topic) : ?><input type="hidden" name="topic" value="<?php echo esc_attr($topic); ?>"><?php endif; ?>
         <label for="journal-sort">Sort</label>

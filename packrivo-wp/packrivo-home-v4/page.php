@@ -12,7 +12,7 @@ get_header();
 while (have_posts()) :
     the_post();
     $native = (string) get_post_meta(get_the_ID(), '_packrivo_native_page', true) === '1';
-    $content = get_the_content();
+    $content = pk31b_orphan_links(pkv4_31a_existing_orphan_links(pkv4_31a_catalog_links(get_the_content())));
 
     if ($native && is_page('inquiry')) {
         require_once get_stylesheet_directory() . '/inc/repair-inquiry.php';
@@ -91,15 +91,15 @@ while (have_posts()) :
         <?php if ($native) : ?>
             <?php
             // 29y 第 1 项：产品页原本一个价格都不显示，首页卡片却写 "from $X"。
-            // 这一条与卡片同源（pk_from_price + pk_card_reference，500 件），
-            // 和 llms.txt 的价格段由同一个引擎算出，三处对得上。
+            // 这一条与卡片同源（pk_from_price + pk_card_reference，250 件）。
             $pk_prod_slug = (string) get_post_field('post_name', get_the_ID());
+            $pk_prod_qty = 250;
             $pk_prod_unit = null;
             $pk_prod_ref = null;
             $pk_prod_style = null;
             if (strpos($pk_prod_slug, 'product-') === 0 && function_exists('pk_from_price') && function_exists('pk_engine_style_for')) {
                 $pk_prod_style = pk_engine_style_for(get_the_ID());
-                $pk_prod_unit = pk_from_price(get_the_ID());
+                $pk_prod_unit = pk_from_price(get_the_ID(), $pk_prod_qty);
                 if ($pk_prod_style) $pk_prod_ref = pk_card_reference($pk_prod_style);
             }
             ?>
@@ -109,8 +109,8 @@ while (have_posts()) :
                 <div class="pk-wrap">
                     <p class="pk-price-bar">
                         <strong><?php echo esc_html(sprintf(pkv4_i18n_t('from $%s / unit', array('text', 'block')), number_format((float) $pk_prod_unit, 2))); ?></strong>
-                        <span><?php echo esc_html(sprintf(pkv4_i18n_t('at %s pcs · %s cm · full-colour print, matte', array('text', 'block')), '500', implode('×', array_slice($pk_prod_ref, 0, 3)))); ?></span>
-                        <a href="<?php echo esc_url(add_query_arg(['style' => $pk_prod_style, 'qty' => 500, 'product' => $pk_prod_slug], home_url('/get-a-quote/'))); ?>"><?php echo esc_html(pkv4_i18n_t('Configure →', array('text', 'block'))); ?></a>
+                        <span><?php echo esc_html(sprintf(pkv4_i18n_t('at %s pcs · %s cm · full-colour print, matte', array('text', 'block')), (string) $pk_prod_qty, implode('×', array_slice($pk_prod_ref, 0, 3)))); ?></span>
+                        <a href="<?php echo esc_url(add_query_arg(['style' => $pk_prod_style, 'qty' => $pk_prod_qty, 'product' => $pk_prod_slug], home_url('/get-a-quote/'))); ?>"><?php echo esc_html(pkv4_i18n_t('Configure →', array('text', 'block'))); ?></a>
                     </p>
                 </div>
             <?php endif; ?>
@@ -139,6 +139,9 @@ while (have_posts()) :
                 <?php endif; ?>
                 <?php // Must run the content filters, otherwise shortcodes such as [packrivo_quote] stay literal. ?>
                 <article class="article"><?php echo apply_filters('the_content', $content); ?></article>
+                <?php if (pkv4_is_quote_page() && pk31b_is_english()) : $pk_email=function_exists('packrivo_master_contact_email') ? packrivo_master_contact_email() : ''; ?>
+                  <noscript><p>For a quote, email us or contact us on WhatsApp.</p><p><?php if ($pk_email) : ?><a href="<?php echo esc_url('mailto:'.$pk_email); ?>"><?php echo esc_html($pk_email); ?></a><?php endif; ?> <a href="<?php echo esc_url(packrivo_whatsapp_url()); ?>">WhatsApp</a></p></noscript>
+                <?php endif; ?>
             </div>
         <?php endif; ?>
     </main>

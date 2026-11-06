@@ -9,6 +9,9 @@ if (!defined('ABSPATH')) {
 
 define('PKV4_VERSION', '4.0.6');
 
+require_once get_stylesheet_directory() . '/inc/seo-31a.php';
+require_once get_stylesheet_directory() . '/inc/site-31b.php';
+
 // 29y：/get-a-quote/ 的 H1 / title / meta description（11 语种走词典）。
 require_once get_stylesheet_directory() . '/inc/quote-page.php';
 
@@ -264,7 +267,7 @@ function pk_pricing_tables_ready()
     return true;
 }
 
-function pk_from_price($post_id)
+function pk_from_price($post_id, $quantity = 500)
 {
     if (!pk_pricing_tables_ready()) return null;
     $style = pk_engine_style_for($post_id);
@@ -272,7 +275,7 @@ function pk_from_price($post_id)
     if (!$style || !$reference) return null;
     $raw = file_get_contents(PKQ_DIR . 'includes/pricing.json');
     $settings = PKQ_Plugin::settings();
-    $input = ['style'=>$style,'material'=>$reference[3],'print'=>'full-color','finish'=>'matte','quantity'=>500,'length'=>$reference[0],'width'=>$reference[1],'height'=>$reference[2],'rush'=>false];
+    $input = ['style'=>$style,'material'=>$reference[3],'print'=>'full-color','finish'=>'matte','quantity'=>(int)$quantity,'length'=>$reference[0],'width'=>$reference[1],'height'=>$reference[2],'rush'=>false];
     $key = 'pk_card_' . md5($raw . wp_json_encode([$input,$settings]));
     $cached = get_transient($key);
     if ($cached !== false) return (float) $cached;
@@ -321,13 +324,13 @@ function pk_related_structures($post_id)
     return ['group'=>$selected,'ids'=>$out];
 }
 
-/** Parameterised journal views share the unfiltered archive canonical. */
+/** The journal's numbered pages have distinct canonical URLs. */
 add_filter('wpseo_canonical', function ($canonical) {
-    return is_home() ? get_permalink((int)get_option('page_for_posts')) : $canonical;
+    return is_home() ? pkv4_31a_journal_canonical() : $canonical;
 }, 9999);
 add_action('wp_head', function () {
     if (is_home() && !defined('WPSEO_VERSION')) {
-        $url=get_permalink((int)get_option('page_for_posts')) ?: home_url('/blog/');
+        $url=pkv4_31a_journal_canonical();
         echo '<link rel="canonical" href="'.esc_url($url).'" />' . "\n";
     }
 }, 5);

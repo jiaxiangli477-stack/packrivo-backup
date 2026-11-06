@@ -14,7 +14,7 @@ function is_wp_error($t) { return $t instanceof WP_Error; }
 require_once __DIR__ . '/../includes/class-pkq-pricing.php';
 
 $settings = [
-    'min_qty' => 500,
+    'min_qty' => 250,
     'max_qty' => 250000,
     'setup_print' => 220,
     'setup_die' => 120,

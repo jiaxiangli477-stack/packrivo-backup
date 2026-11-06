@@ -19,12 +19,17 @@ $home_specs = [
     ['product-sos-paper-gift-bag','Paper bags'],
 ];
 $home_products = [];
+$home_250_prices = [];
 foreach ($home_specs as [$slug,$group]) {
     $page = get_page_by_path($slug);
     if (!$page || $page->post_status !== 'publish') continue;
     $cover = get_the_post_thumbnail_url($page,'medium_large') ?: get_post_meta($page->ID,'_packrivo_article_cover_url',true);
     $price = pk_from_price($page->ID);
-    if ($cover && $price !== null) $home_products[] = ['product'=>$page,'group'=>$group,'title'=>wp_strip_all_tags(get_the_title($page)),'price'=>$price];
+    if ($cover && $price !== null) {
+        $home_products[] = ['product'=>$page,'group'=>$group,'title'=>wp_strip_all_tags(get_the_title($page)),'price'=>$price];
+        $price_250 = pk_from_price($page->ID, 250);
+        if ($price_250 !== null) $home_250_prices[] = $price_250;
+    }
     if (count($home_products) === 8) break;
 }
 $contact = get_page_by_path('contact');
@@ -34,6 +39,12 @@ $steps = [
     ['02', 'Sample', 'A physical sample in your artwork, produced in 5–10 days. Nothing is committed before you hold it.'],
     ['03', 'Produce', 'Artwork goes to plate, the run is scheduled, and we send press sheets before packing.'],
     ['04', 'Deliver', 'DDP or FOB, palletised, with photos and the material declaration per order.'],
+];
+$step_photos = [
+    ['brief',1600,1200,'Supplier sample room with shelves of rigid gift boxes and jewelry boxes','Supplier sample room, Dongguan. Structures are chosen from real samples before artwork starts.'],
+    ['sample',1600,1200,'Operator feeding a printed proof sheet into a wide-format digital proofing printer','Digital proof printing at a supplier in Dongguan.'],
+    ['produce',1600,1200,'Multi-colour sheet-fed offset printing press in a packaging factory','Sheet-fed offset press used for production runs.'],
+    ['deliver',1040,780,'Finished jewelry boxes packed in export cartons before shipping','Finished boxes packed into cartons, Shantou.'],
 ];
 
 $faq_price_answer = 'The quote builder shows the full curve for your size.';
@@ -46,10 +57,10 @@ if (pk_pricing_tables_ready()) {
     }
 }
 $faq = [
-    ['What is the minimum order?', 'MOQ 500 pieces per design for printed boxes. Unprinted stock ships from 100 pieces.'],
+    ['What is the minimum order?', 'MOQ 250 pieces per design for printed boxes. Unprinted stock ships from 100 pieces. Runs of 100–249 are quoted on request.'],
     ['How much does a custom box cost?', $faq_price_answer],
     ['How long does production take?', 'Stock styles ship in 1–15 days. Printed custom orders are scheduled after sample approval, usually 7–30 days depending on structure and finishing.'],
-    ['Do you handle the whole supply chain?', 'We coordinate sampling, production, inspection and freight with vetted suppliers, and charge an 8–15% sourcing fee on the order value.'],
+    ['Do you handle the whole supply chain?', 'We coordinate sampling, production, inspection and freight with vetted suppliers, and charge an 8–15% sourcing fee on the order value, with a $150 minimum per order. Instant quotes include the fee at 15%; your final rate is confirmed on the written quote.'],
     ['Where do you ship from?', 'Shenzhen, China. DDP to the US and EU is standard; FOB is available if you consolidate.'],
 ];
 ?>
@@ -57,7 +68,7 @@ $faq = [
 <section class="pk-hero">
   <div class="pk-wrap pk-hero-grid">
     <div class="pk-hero-copy">
-      <p class="pk-eyebrow">Custom packaging · MOQ 500 · 11 languages</p>
+      <p class="pk-eyebrow">Custom packaging · MOQ 250 · 11 languages</p>
       <h1 class="pk-display"><?php
       $pk_home_h1_translation = function_exists('packrivo_lang') && packrivo_lang() !== null && function_exists('packrivo_i18n_lookup')
           ? packrivo_i18n_lookup('Custom packaging for jewelry, candles & gifts.', ['block', 'text']) : null;
@@ -100,15 +111,15 @@ $faq = [
             }
         }
         ?>
-        <?php if ($pk_hero_unit !== null) : ?><p class="pk-price">$<?php echo esc_html(number_format($pk_hero_unit, 2)); ?></p><?php endif; ?>
-        <p class="pk-mono pk-muted">per unit at 1,000 pieces</p>
+        <?php if ($pk_hero_unit !== null) : ?><p class="pk-price"><bdi dir="ltr">$<?php echo esc_html(number_format($pk_hero_unit, 2)); ?></bdi></p><?php endif; ?>
+        <p class="pk-mono pk-muted">per unit at 1,000 pieces, sourcing fee included</p>
       </figcaption>
     </figure>
     <dl class="pk-stats">
-      <?php if ($home_products) : ?><div><dt>From · 500 pcs</dt><dd>$<?php echo esc_html(number_format(min(array_column($home_products,'price')),2)); ?> / unit</dd></div><?php endif; ?>
-      <div><dt>MOQ</dt><dd>500 / design</dd></div>
-      <div><dt>Production</dt><dd>7–30 days</dd></div>
-      <div><dt>Sourcing fee</dt><dd>8–15%</dd></div>
+      <?php if ($home_250_prices) : ?><div><dt>From · 250 pcs</dt><dd><bdi dir="ltr">$<?php echo esc_html(number_format(min($home_250_prices),2)); ?> / unit</bdi></dd></div><?php endif; ?>
+      <div><dt>MOQ</dt><dd><bdi dir="ltr">250 / design</bdi></dd></div>
+      <div><dt>Production</dt><dd><bdi dir="ltr">7–30 days</bdi></dd></div>
+      <div><dt>Sourcing fee</dt><dd><bdi dir="ltr">8–15%</bdi></dd></div>
     </dl>
   </div>
 </section>
@@ -120,7 +131,7 @@ $faq = [
         <p class="pk-eyebrow">What we make</p>
         <h2 class="pk-h2">Custom jewelry boxes, pouches and gift boxes with your logo</h2>
       </div>
-      <a class="pk-more" href="<?php echo esc_url(home_url('/products/')); ?>">All products →</a>
+      <a class="pk-more" href="<?php echo esc_url(home_url('/products/')); ?>">All products →</a><?php if (pk31b_is_english()) : ?><a class="pk-more" href="<?php echo esc_url(home_url('/bags-pouches/')); ?>">Bags &amp; pouches</a><?php endif; echo "\n"; ?>
     </div>
     <div class="pk-cards pk-cards-4">
       <?php foreach ($home_products as $card) : get_template_part('template-parts/product-card', null, $card); endforeach; ?>
@@ -137,14 +148,14 @@ $faq = [
       </div>
     </div>
     <ol class="pk-steps">
-      <?php foreach ($steps as [$num, $title, $body]) : ?>
-        <li>
+      <?php foreach ($steps as $pk_step_index => [$num, $title, $body]) : [$photo,$width,$height,$alt,$caption]=$step_photos[$pk_step_index]; $base=$img.'/31b-process/'.$photo.'-'; ?>
+        <li><figure class="pk-step-photo" style="margin:0 0 1rem"><img src="<?php echo esc_url($base.'960.webp'); ?>" srcset="<?php echo esc_attr($base.'480.webp 480w, '.$base.'960.webp 960w, '.$base.$width.'.webp '.$width.'w'); ?>" sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 25vw" width="<?php echo (int)$width; ?>" height="<?php echo (int)$height; ?>" alt="<?php echo esc_attr($alt); ?>" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover"><figcaption style="font-size:.75rem;line-height:1.4;color:#e2e9e3;opacity:1;margin-top:.5rem;min-height:clamp(0px,calc(100vw - 1100px),5.6em)"><?php echo esc_html($caption); ?></figcaption></figure>
           <span class="pk-step-num"><?php echo esc_html($num); ?></span>
           <span class="pk-step-title"><?php echo esc_html($title); ?></span>
           <span class="pk-step-text"><?php echo esc_html($body); ?></span>
         </li>
       <?php endforeach; ?>
-    </ol>
+    </ol><p class="pk-step-photo-note" style="font-size:.75rem;line-height:1.4;color:#e2e9e3;margin-top:.5rem">Supplier photos, used with permission.</p>
   </div>
 </section>
 

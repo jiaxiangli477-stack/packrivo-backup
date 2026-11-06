@@ -1,0 +1,2867 @@
+{
+  "version": 1,
+  "operations": [
+    {
+      "id": 366,
+      "slug": "eu-ppwr-packaging-buyer-checklist",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 367,
+      "slug": "food-contact-packaging-documents-checklist",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "Its published MOQ is 500 pieces per product/design; the small quantities in these planning examples do not establish a smaller custom-production offer.",
+      "new": "Its published MOQ is 250 pieces per product/design; the small quantities in these planning examples do not establish a smaller custom-production offer.",
+      "count": 1
+    },
+    {
+      "id": 449,
+      "slug": "sample-revision-record",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "The published starting MOQ is 500 pieces per product/design; actual component, design and commercial scope require confirmation.",
+      "new": "The published starting MOQ is 250 pieces per product/design; actual component, design and commercial scope require confirmation.",
+      "count": 1
+    },
+    {
+      "id": 450,
+      "slug": "supplier-clarification-matrix",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "The published starting MOQ is 500 pieces per product/design; actual component, design and commercial scope require confirmation.",
+      "new": "The published starting MOQ is 250 pieces per product/design; actual component, design and commercial scope require confirmation.",
+      "count": 1
+    },
+    {
+      "id": 451,
+      "slug": "flat-assembled-delivery-scope",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "The published starting MOQ is 500 pieces per product/design; actual component, design and commercial scope require confirmation.",
+      "new": "The published starting MOQ is 250 pieces per product/design; actual component, design and commercial scope require confirmation.",
+      "count": 1
+    },
+    {
+      "id": 452,
+      "slug": "dimensions-acceptance-method",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "The published starting MOQ is 500 pieces per product/design; actual component, design and commercial scope require confirmation.",
+      "new": "The published starting MOQ is 250 pieces per product/design; actual component, design and commercial scope require confirmation.",
+      "count": 1
+    },
+    {
+      "id": 453,
+      "slug": "packaging-color-approval",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "The published starting MOQ is 500 pieces per product/design; actual component, design and commercial scope require confirmation.",
+      "new": "The published starting MOQ is 250 pieces per product/design; actual component, design and commercial scope require confirmation.",
+      "count": 1
+    },
+    {
+      "id": 454,
+      "slug": "packaging-dieline-change-control",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "The published starting MOQ is 500 pieces per product/design; actual component, design and commercial scope require confirmation.",
+      "new": "The published starting MOQ is 250 pieces per product/design; actual component, design and commercial scope require confirmation.",
+      "count": 1
+    },
+    {
+      "id": 456,
+      "slug": "packaging-carton-freight-data",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "Packrivo's starting order requirement is 500 pieces per design.",
+      "new": "Packrivo's starting order requirement is 250 pieces per design.",
+      "count": 1
+    },
+    {
+      "id": 456,
+      "slug": "packaging-carton-freight-data",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "The published starting MOQ is 500 pieces per product/design; actual component, design and commercial scope require confirmation.",
+      "new": "The published starting MOQ is 250 pieces per product/design; actual component, design and commercial scope require confirmation.",
+      "count": 1
+    },
+    {
+      "id": 457,
+      "slug": "packaging-approval-milestones",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 510,
+      "slug": "packaging-material-claim-evidence-scope",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 612,
+      "slug": "care-card-packout-clearance",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 613,
+      "slug": "pendant-chain-routing",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 614,
+      "slug": "earring-card-backing-clearance",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 615,
+      "slug": "candle-glass-contact-map",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 616,
+      "slug": "packaging-set-quote-units",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 617,
+      "slug": "retail-hang-slot-trial",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 618,
+      "slug": "collapsible-box-first-assembly",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 619,
+      "slug": "candle-label-placement-map",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 620,
+      "slug": "retail-barcode-proof-check",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 621,
+      "slug": "packaging-component-match",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 622,
+      "slug": "board-grammage-caliper",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 623,
+      "slug": "board-grain-crease-map",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 624,
+      "slug": "fold-line-print-cracking",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 625,
+      "slug": "rigid-wrap-seam-placement",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 626,
+      "slug": "wrap-turned-edge-clearance",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 627,
+      "slug": "uncoated-paper-proof",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 629,
+      "slug": "large-solid-print-panels",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ is 500 pieces per design; printing, material, samples and commercial terms are confirmed for the project.",
+      "new": "MOQ is 250 pieces per design; printing, material, samples and commercial terms are confirmed for the project.",
+      "count": 1
+    },
+    {
+      "id": 629,
+      "slug": "large-solid-print-panels",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 630,
+      "slug": "fine-type-print-scope",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ is 500 pieces per design; the printing proposal, sample scope and commercial conditions are confirmed for the project.",
+      "new": "MOQ is 250 pieces per design; the printing proposal, sample scope and commercial conditions are confirmed for the project.",
+      "count": 1
+    },
+    {
+      "id": 630,
+      "slug": "fine-type-print-scope",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 631,
+      "slug": "reversed-type-print-proof",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ is 500 pieces per design; print, sample and commercial details are confirmed for the project.",
+      "new": "MOQ is 250 pieces per design; print, sample and commercial details are confirmed for the project.",
+      "count": 1
+    },
+    {
+      "id": 631,
+      "slug": "reversed-type-print-proof",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 632,
+      "slug": "foil-near-fold-map",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 633,
+      "slug": "emboss-backspace-record",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ is 500 pieces per design; the effect, sample scope and commercial conditions are confirmed for the project.",
+      "new": "MOQ is 250 pieces per design; the effect, sample scope and commercial conditions are confirmed for the project.",
+      "count": 1
+    },
+    {
+      "id": 633,
+      "slug": "emboss-backspace-record",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 634,
+      "slug": "spot-gloss-panel-boundary",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ is 500 pieces per design; the actual coating, samples and commercial terms are confirmed for the project.",
+      "new": "MOQ is 250 pieces per design; the actual coating, samples and commercial terms are confirmed for the project.",
+      "count": 1
+    },
+    {
+      "id": 634,
+      "slug": "spot-gloss-panel-boundary",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 635,
+      "slug": "film-varnish-claim-scope",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ is 500 pieces per design; offered materials, sampling and commercial conditions are confirmed for the project.",
+      "new": "MOQ is 250 pieces per design; offered materials, sampling and commercial conditions are confirmed for the project.",
+      "count": 1
+    },
+    {
+      "id": 635,
+      "slug": "film-varnish-claim-scope",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 636,
+      "slug": "finish-contact-transfer",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ is 500 pieces per design; the proposed finish, samples and commercial conditions are confirmed for the project.",
+      "new": "MOQ is 250 pieces per design; the proposed finish, samples and commercial conditions are confirmed for the project.",
+      "count": 1
+    },
+    {
+      "id": 636,
+      "slug": "finish-contact-transfer",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 637,
+      "slug": "glue-zone-artwork-map",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ is 500 pieces per design; structure, materials, sample scope and commercial details are confirmed for the project.",
+      "new": "MOQ is 250 pieces per design; structure, materials, sample scope and commercial details are confirmed for the project.",
+      "count": 1
+    },
+    {
+      "id": 637,
+      "slug": "glue-zone-artwork-map",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 638,
+      "slug": "window-patch-position",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 639,
+      "slug": "transparent-window-proof",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 640,
+      "slug": "surface-scuff-observation",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 641,
+      "slug": "exposed-board-edge-color-decision",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ is 500 pieces per design; materials, samples and commercial terms are confirmed for the project.",
+      "new": "MOQ is 250 pieces per design; materials, samples and commercial terms are confirmed for the project.",
+      "count": 1
+    },
+    {
+      "id": 641,
+      "slug": "exposed-board-edge-color-decision",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 642,
+      "slug": "label-roll-changeover-splice-record",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ is 500 pieces per design; the label construction, sample scope and commercial conditions are confirmed for the project.",
+      "new": "MOQ is 250 pieces per design; the label construction, sample scope and commercial conditions are confirmed for the project.",
+      "count": 1
+    },
+    {
+      "id": 642,
+      "slug": "label-roll-changeover-splice-record",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 643,
+      "slug": "label-gap-liner-layout",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ is 500 pieces per design; the actual label proposal, sample scope and commercial conditions are confirmed for the project.",
+      "new": "MOQ is 250 pieces per design; the actual label proposal, sample scope and commercial conditions are confirmed for the project.",
+      "count": 1
+    },
+    {
+      "id": 643,
+      "slug": "label-gap-liner-layout",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 644,
+      "slug": "label-removal-observation",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 645,
+      "slug": "label-overlap-joint",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 646,
+      "slug": "label-liner-release",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ is 500 pieces per design; label construction, samples and commercial details are confirmed for the project.",
+      "new": "MOQ is 250 pieces per design; label construction, samples and commercial details are confirmed for the project.",
+      "count": 1
+    },
+    {
+      "id": 646,
+      "slug": "label-liner-release",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 647,
+      "slug": "label-roll-receipt-inspection",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ is 500 pieces per design; label construction, sample scope and commercial details are confirmed for the project.",
+      "new": "MOQ is 250 pieces per design; label construction, sample scope and commercial details are confirmed for the project.",
+      "count": 1
+    },
+    {
+      "id": 647,
+      "slug": "label-roll-receipt-inspection",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 648,
+      "slug": "barcode-data-before-art",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 649,
+      "slug": "belly-band-retained-product-identity",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ is 500 pieces per design.",
+      "new": "MOQ is 250 pieces per design.",
+      "count": 1
+    },
+    {
+      "id": 649,
+      "slug": "belly-band-retained-product-identity",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 650,
+      "slug": "actual-size-trim-diecut-proof",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ is 500 pieces per design; artwork, samples and commercial terms are confirmed for the project.",
+      "new": "MOQ is 250 pieces per design; artwork, samples and commercial terms are confirmed for the project.",
+      "count": 1
+    },
+    {
+      "id": 650,
+      "slug": "actual-size-trim-diecut-proof",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 651,
+      "slug": "file-packaging-links-fonts",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ is 500 pieces per design; artwork, sample scope and commercial conditions are confirmed for the project.",
+      "new": "MOQ is 250 pieces per design; artwork, sample scope and commercial conditions are confirmed for the project.",
+      "count": 1
+    },
+    {
+      "id": 651,
+      "slug": "file-packaging-links-fonts",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 652,
+      "slug": "sleeve-seam-tray-travel",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 653,
+      "slug": "drawer-stop-removal-scope",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 654,
+      "slug": "drawer-pull-attachment",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 655,
+      "slug": "lift-lid-grip-record",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 656,
+      "slug": "neck-display-height",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 657,
+      "slug": "two-piece-wall-build",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 658,
+      "slug": "manual-bottom-sequence",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 659,
+      "slug": "prepared-bottom-opening",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 660,
+      "slug": "tuck-loading-end",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 661,
+      "slug": "retail-front-wall-height",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 662,
+      "slug": "display-refill-pattern",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 663,
+      "slug": "fixture-collision-layout",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 664,
+      "slug": "carrier-handle-retailer",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ is 500 pieces per design; materials, carrying review, samples and commercial terms are confirmed for the project.",
+      "new": "MOQ is 250 pieces per design; materials, carrying review, samples and commercial terms are confirmed for the project.",
+      "count": 1
+    },
+    {
+      "id": 664,
+      "slug": "carrier-handle-retailer",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 665,
+      "slug": "gift-bag-loading-corner-clearance",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ is 500 pieces per design; materials, sample scope and commercial details are confirmed for the project.",
+      "new": "MOQ is 250 pieces per design; materials, sample scope and commercial details are confirmed for the project.",
+      "count": 1
+    },
+    {
+      "id": 665,
+      "slug": "gift-bag-loading-corner-clearance",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 666,
+      "slug": "bag-handle-join-record",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 667,
+      "slug": "tissue-fold-copy",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 668,
+      "slug": "jewelry-card-mounting-work-instruction",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 669,
+      "slug": "holder-removal-tab",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 670,
+      "slug": "divider-handness",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 671,
+      "slug": "pulp-cavity-release",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 672,
+      "slug": "formed-tray-edge",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 673,
+      "slug": "foam-fabrication-layer-proposal",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ is 500 pieces per design; material, sample and commercial details are confirmed for the project.",
+      "new": "MOQ is 250 pieces per design; material, sample and commercial details are confirmed for the project.",
+      "count": 1
+    },
+    {
+      "id": 673,
+      "slug": "foam-fabrication-layer-proposal",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 674,
+      "slug": "endcap-handed-pair",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 675,
+      "slug": "liner-corner-overlap",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 676,
+      "slug": "bookwrap-thickness-settings",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 677,
+      "slug": "flat-envelope-flap-reach",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 678,
+      "slug": "return-mailer-second-seal",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 679,
+      "slug": "seal-end-packing-equipment",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 680,
+      "slug": "assembly-tool-consumable-units",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ is 500 pieces per design; supplied resources, actual consumable quantities, samples and commercial terms are confirmed for the project.",
+      "new": "MOQ is 250 pieces per design; supplied resources, actual consumable quantities, samples and commercial terms are confirmed for the project.",
+      "count": 1
+    },
+    {
+      "id": 680,
+      "slug": "assembly-tool-consumable-units",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 681,
+      "slug": "packing-bench-trial-time",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 682,
+      "slug": "carton-packaging-version-manifest",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ is 500 pieces per design; component grouping, sampling and commercial details are confirmed for the project.",
+      "new": "MOQ is 250 pieces per design; component grouping, sampling and commercial details are confirmed for the project.",
+      "count": 1
+    },
+    {
+      "id": 682,
+      "slug": "carton-packaging-version-manifest",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 683,
+      "slug": "master-carton-label-reconciliation",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 684,
+      "slug": "carton-packing-orientation",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 685,
+      "slug": "carrier-size-classification",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ is 500 pieces per design; package design, sample scope and commercial terms are confirmed for the project.",
+      "new": "MOQ is 250 pieces per design; package design, sample scope and commercial terms are confirmed for the project.",
+      "count": 1
+    },
+    {
+      "id": 685,
+      "slug": "carrier-size-classification",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 686,
+      "slug": "shipping-label-seam-map",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ is 500 pieces per design; package materials, samples and commercial conditions are confirmed for the project.",
+      "new": "MOQ is 250 pieces per design; package materials, samples and commercial conditions are confirmed for the project.",
+      "count": 1
+    },
+    {
+      "id": 686,
+      "slug": "shipping-label-seam-map",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 687,
+      "slug": "closure-tape-method",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 688,
+      "slug": "package-conditioning-plan",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 689,
+      "slug": "distribution-test-scope",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 690,
+      "slug": "test-report-configuration",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 691,
+      "slug": "damage-location-record",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 692,
+      "slug": "tooling-line-ownership",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ is 500 pieces per design; actual tooling, samples and commercial terms are confirmed for the project.",
+      "new": "MOQ is 250 pieces per design; actual tooling, samples and commercial terms are confirmed for the project.",
+      "count": 1
+    },
+    {
+      "id": 692,
+      "slug": "tooling-line-ownership",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 693,
+      "slug": "material-substitution-record",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 694,
+      "slug": "quoted-sample-versions",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 695,
+      "slug": "seller-identity-contract",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 696,
+      "slug": "currency-rate-basis",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 697,
+      "slug": "quote-validity-change",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 698,
+      "slug": "sampling-production-order-lines",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "Packrivo’s minimum is 500 pieces per design; sample requests and their actual terms are confirmed independently within the project.",
+      "new": "Packrivo’s minimum is 250 pieces per design; sample requests and their actual terms are confirmed independently within the project.",
+      "count": 1
+    },
+    {
+      "id": 698,
+      "slug": "sampling-production-order-lines",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "The published baseline remains 500 pieces per product/design, while actual sampling terms require project confirmation.",
+      "new": "The published baseline remains 250 pieces per product/design, while actual sampling terms require project confirmation.",
+      "count": 1
+    },
+    {
+      "id": 698,
+      "slug": "sampling-production-order-lines",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 699,
+      "slug": "leftover-packaging-version-status",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ is 500 pieces per design; actual component quantities, materials, sampling and commercial conditions are confirmed for the project.",
+      "new": "MOQ is 250 pieces per design; actual component quantities, materials, sampling and commercial conditions are confirmed for the project.",
+      "count": 1
+    },
+    {
+      "id": 699,
+      "slug": "leftover-packaging-version-status",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 700,
+      "slug": "file-naming-drawing-revision",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ is 500 pieces per design; artwork, sample and commercial details are confirmed for the project.",
+      "new": "MOQ is 250 pieces per design; artwork, sample and commercial details are confirmed for the project.",
+      "count": 1
+    },
+    {
+      "id": 700,
+      "slug": "file-naming-drawing-revision",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 701,
+      "slug": "photo-evidence-three-views",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 702,
+      "slug": "conflicting-supplier-answer-record",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ is 500 pieces per design; offered construction, sample scope and commercial terms are confirmed for the project.",
+      "new": "MOQ is 250 pieces per design; offered construction, sample scope and commercial terms are confirmed for the project.",
+      "count": 1
+    },
+    {
+      "id": 702,
+      "slug": "conflicting-supplier-answer-record",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 703,
+      "slug": "pre-sample-deviation-approval",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ is 500 pieces per design; materials, sampling and commercial conditions are confirmed for the project.",
+      "new": "MOQ is 250 pieces per design; materials, sampling and commercial conditions are confirmed for the project.",
+      "count": 1
+    },
+    {
+      "id": 703,
+      "slug": "pre-sample-deviation-approval",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 704,
+      "slug": "sample-approval-scope-label",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 705,
+      "slug": "artwork-lock-per-panel",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 706,
+      "slug": "incoming-lot-item-reference",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 707,
+      "slug": "incoming-component-damage-hold",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ is 500 pieces per design; offered components, sampling and commercial details are confirmed for the project.",
+      "new": "MOQ is 250 pieces per design; offered components, sampling and commercial details are confirmed for the project.",
+      "count": 1
+    },
+    {
+      "id": 707,
+      "slug": "incoming-component-damage-hold",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 708,
+      "slug": "reorder-product-change-trigger",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 709,
+      "slug": "retail-copy-responsibility",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 710,
+      "slug": "brief-unknowns-to-questions",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 711,
+      "slug": "component-approval-dependencies",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1032,
+      "slug": "gift-box-design-outside-inside",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1038,
+      "slug": "seasonal-packaging-sleeves",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "The published starting MOQ is 500 pieces per product/design; actual component, design and commercial scope require confirmation.",
+      "new": "The published starting MOQ is 250 pieces per product/design; actual component, design and commercial scope require confirmation.",
+      "count": 1
+    },
+    {
+      "id": 1040,
+      "slug": "accessible-gift-packaging-limited-dexterity",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1042,
+      "slug": "gift-ready-ecommerce-packaging",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1046,
+      "slug": "qr-codes-packaging-placement-links-maintenance",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1048,
+      "slug": "how-to-personalize-gift-packaging",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "The published starting MOQ is 500 pieces per product/design; actual component, design and commercial scope require confirmation.",
+      "new": "The published starting MOQ is 250 pieces per product/design; actual component, design and commercial scope require confirmation.",
+      "count": 1
+    },
+    {
+      "id": 1050,
+      "slug": "ecommerce-vs-retail-packaging",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "The published starting MOQ is 500 pieces per product/design; actual component, design and commercial scope require confirmation.",
+      "new": "The published starting MOQ is 250 pieces per product/design; actual component, design and commercial scope require confirmation.",
+      "count": 1
+    },
+    {
+      "id": 1087,
+      "slug": "packaging-image-resolution",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1088,
+      "slug": "black-ink-packaging-artwork",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1089,
+      "slug": "white-overprint-packaging",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1090,
+      "slug": "packaging-pdf-preflight",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1091,
+      "slug": "packaging-spot-color-plates",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1092,
+      "slug": "packaging-transparency-export",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1093,
+      "slug": "silver-jewelry-packaging",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1094,
+      "slug": "fsc-packaging-label-permission",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1095,
+      "slug": "recycled-recyclable-packaging",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1096,
+      "slug": "multilingual-packaging-proof",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1097,
+      "slug": "refillable-packaging-route",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1099,
+      "slug": "preprinted-label-second-pass",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1100,
+      "slug": "us-candle-gift-box-labels",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1101,
+      "slug": "label-liner-waste-collection",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1102,
+      "slug": "retail-packaging-customer-access",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1103,
+      "slug": "tapered-container-label-shape-fit-trial",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "Its published MOQ baseline is 500 pieces per product/design.",
+      "new": "Its published MOQ baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1103,
+      "slug": "tapered-container-label-shape-fit-trial",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1104,
+      "slug": "candle-box-scent-route",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "Its public starting MOQ is 500 pieces per product/design; samples, final construction, price, capacity and timing need project-specific confirmation.",
+      "new": "Its public starting MOQ is 250 pieces per product/design; samples, final construction, price, capacity and timing need project-specific confirmation.",
+      "count": 1
+    },
+    {
+      "id": 1104,
+      "slug": "candle-box-scent-route",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1135,
+      "slug": "gift-packaging-component-disposal-map",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1136,
+      "slug": "wood-shipping-support-material-scope",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1137,
+      "slug": "braille-packaging-transcription-tactile-reading",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1138,
+      "slug": "magnetic-gift-box-air-review",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1139,
+      "slug": "empty-packaging-imports-origin-marking",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1140,
+      "slug": "uk-packaging-epr-plastic-tax",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1166,
+      "slug": "exw-fca-packaging-pickup-handover",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1167,
+      "slug": "edge-crush-vs-box-compression",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1168,
+      "slug": "foam-compression-deflection-point",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1169,
+      "slug": "overseas-printing-data-transfer",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1170,
+      "slug": "gift-box-seal-opening-indication",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1171,
+      "slug": "hot-melt-carton-fractures",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1318,
+      "slug": "rhode-island-bag-warnings",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1319,
+      "slug": "delta-e-formula-comparison",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1321,
+      "slug": "usps-rectangular-parcel-dim-weight-rounding",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1322,
+      "slug": "packaging-colour-metamerism-lighting",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1323,
+      "slug": "paper-packaging-humidity-curl",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1326,
+      "slug": "packaging-print-ink-setoff-vs-abrasion",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1327,
+      "slug": "pallet-column-vs-interlocking-carton-stacking",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1328,
+      "slug": "film-wvtr-finished-pouch-moisture-paths",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1329,
+      "slug": "inflatable-packaging-pressure-temperature",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1330,
+      "slug": "label-edge-lift-wet-out-facestock-spring-back",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1331,
+      "slug": "shipping-carton-creep-under-constant-load",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1332,
+      "slug": "nfc-tags-metal-foil-packaging",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1334,
+      "slug": "case-gtin-vs-logistic-unit-sscc",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1336,
+      "slug": "static-kinetic-friction-sliding-box",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1337,
+      "slug": "packaging-film-static-cling-without-adhesive",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1338,
+      "slug": "packaging-print-light-fading",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1339,
+      "slug": "paperboard-hinge-repeated-opening-life",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1340,
+      "slug": "fresh-cooled-heat-seal-hot-tack",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1341,
+      "slug": "foam-stress-relaxation-fixed-gap",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1342,
+      "slug": "cold-package-condensation-contents-leak",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1343,
+      "slug": "paperboard-face-cut-edge-water-paths",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1344,
+      "slug": "packaging-window-transmission-haze-clarity",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1345,
+      "slug": "packaging-gloss-measurement-angle",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1346,
+      "slug": "film-tear-initiation-propagation",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1347,
+      "slug": "paperboard-grammage-bending-stiffness",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1348,
+      "slug": "cushion-shock-vibration-response",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1349,
+      "slug": "threaded-lid-torque-grip-radius",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1350,
+      "slug": "magnetic-closure-installed-gap",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1351,
+      "slug": "label-peel-angle-grip-motion",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1352,
+      "slug": "desiccant-pouch-moisture-load",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1353,
+      "slug": "package-relative-humidity-temperature",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1354,
+      "slug": "oxygen-water-vapour-barrier-results",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1355,
+      "slug": "carton-compression-moisture-state",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1357,
+      "slug": "pouch-seal-strength-leak-tightness",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1358,
+      "slug": "corrugated-board-bending-direction",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1359,
+      "slug": "parcel-drop-orientation-impact",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1360,
+      "slug": "drop-height-shock-fragility",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1361,
+      "slug": "cushion-remaining-travel",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1362,
+      "slug": "vibration-product-clearance",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1363,
+      "slug": "pallet-wrap-lateral-restraint",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1364,
+      "slug": "paperboard-divider-buckling",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1365,
+      "slug": "print-tone-value-increase",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1366,
+      "slug": "print-pattern-moire",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1369,
+      "slug": "rgb-colour-printing-gamut",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1370,
+      "slug": "gift-bag-load-position-balance",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1371,
+      "slug": "packaging-tape-peel-static-shear",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1372,
+      "slug": "counter-display-tipping-loaded-balance",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1373,
+      "slug": "free-shrink-restrained-wrapping-force",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1374,
+      "slug": "board-bursting-puncture-resistance",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1375,
+      "slug": "compostable-packaging-conditions-route",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1376,
+      "slug": "paper-packaging-repulping-route-evidence",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1377,
+      "slug": "gift-packaging-return-reuse-system",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1378,
+      "slug": "thermoformed-tray-wall-thickness",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1379,
+      "slug": "packaging-life-cycle-functional-unit",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1380,
+      "slug": "textile-rubbing-transfer-light-fading",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1381,
+      "slug": "jewellery-pouch-yarn-snagging",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1382,
+      "slug": "candle-jar-insert-thermal-fit",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1383,
+      "slug": "thread-travel-liner-compression",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1384,
+      "slug": "black-plastic-insert-nir-sorting",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1385,
+      "slug": "made-in-usa-import-origin-marking",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1386,
+      "slug": "dap-ddp-packaging-import-clearance",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1387,
+      "slug": "usps-letter-nonmachinable-packaging",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1564,
+      "slug": "stock-custom-first-order",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1565,
+      "slug": "quantity-discount-actual-use",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1567,
+      "slug": "sample-credit-cash-comparison",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1568,
+      "slug": "print-setup-run-length",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1569,
+      "slug": "released-packaging-cost-denominator",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1570,
+      "slug": "buyer-supplied-component-cost",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1571,
+      "slug": "split-delivery-stock-peaks",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1572,
+      "slug": "redesign-cost-use-horizon",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1573,
+      "slug": "gift-service-uptake-cost",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1576,
+      "slug": "direct-location-delivery-cost",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1577,
+      "slug": "shared-box-insert-stock",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1578,
+      "slug": "component-purchase-pack-multiples",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1581,
+      "slug": "shared-stock-channel-reservations",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1582,
+      "slug": "consolidated-print-run-inventory",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1583,
+      "slug": "packaging-location-transfer-count",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1585,
+      "slug": "integrated-specialist-procurement-cost",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1588,
+      "slug": "stopped-project-committed-costs",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1589,
+      "slug": "staged-procurement-cash-exposure",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1591,
+      "slug": "artwork-reuse-permission-files",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1592,
+      "slug": "packaging-currency-rate-sensitivity",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1593,
+      "slug": "packing-station-task-balance",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1594,
+      "slug": "packing-shift-capacity-model",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1595,
+      "slug": "batch-single-gift-flow",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1597,
+      "slug": "preassembled-box-buffer-planning",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1598,
+      "slug": "gift-component-kitting-work",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1599,
+      "slug": "gift-variant-changeover-sequence",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1600,
+      "slug": "packing-bench-refill-lots",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1601,
+      "slug": "packing-inspection-rework-timing",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1602,
+      "slug": "finish-fulfilment-handling-work",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1603,
+      "slug": "temporary-packer-capacity-planning",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1604,
+      "slug": "self-packing-fulfilment-cost",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1609,
+      "slug": "gift-queue-dispatch-cutoff",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1610,
+      "slug": "3pl-packing-order-mix",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 500 pieces per product/design.",
+      "new": "These records establish no supplier offer, service availability or MOQ exception; its published baseline is 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1611,
+      "slug": "gift-location-feasibility-routing",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1612,
+      "slug": "packing-equipment-eligible-payback",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1614,
+      "slug": "wholesale-case-cycles",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1615,
+      "slug": "shelf-ready-case-comparison",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1616,
+      "slug": "shelf-backroom-stock-balance",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1617,
+      "slug": "case-quantity-gtin-change",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1618,
+      "slug": "mixed-wholesale-case-ratios",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1619,
+      "slug": "printed-price-packaging-identity",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1625,
+      "slug": "wordless-packaging-directions",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1629,
+      "slug": "daily-jewelry-repacking-task",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1631,
+      "slug": "consignment-packaging-counts",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1632,
+      "slug": "packaging-rework-recovery-yield",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1636,
+      "slug": "keepsake-storage-conversion",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1637,
+      "slug": "packaging-demand-forecast-errors",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1639,
+      "slug": "promotional-sleeve-gtin-handling",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1642,
+      "slug": "packaging-photo-white-balance",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1643,
+      "slug": "subscription-shipment-due-demand",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1645,
+      "slug": "packaging-storage-pick-frequency",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1646,
+      "slug": "event-container-return-budget",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1648,
+      "slug": "wholesale-inner-pack-unit",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1650,
+      "slug": "inpost-uk-parcel-limits",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1653,
+      "slug": "packaging-stock-balance-reconciliation",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1655,
+      "slug": "discontinued-product-packaging-exit",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1657,
+      "slug": "packing-time-percentiles",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1658,
+      "slug": "shared-packaging-cost-split",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1659,
+      "slug": "packaging-shortage-order-allocation",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1660,
+      "slug": "observed-packaging-consumption",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1661,
+      "slug": "packaging-vat-cash-recoverability",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 1663,
+      "slug": "packaging-improvement-baseline",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ: 500 pieces per product/design; illustrative quantities are not production offers.",
+      "new": "MOQ: 250 pieces per product/design; illustrative quantities are not production offers.",
+      "count": 1
+    },
+    {
+      "id": 2937,
+      "slug": "jewelry-pouch-box-customer-handoff",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "Packrivo's public starting minimum is 500 pieces per product/design, not a promise that a mixed box-and-pouch offer is available as one divisible order.",
+      "new": "Packrivo's public starting minimum is 250 pieces per product/design, not a promise that a mixed box-and-pouch offer is available as one divisible order.",
+      "count": 1
+    },
+    {
+      "id": 2938,
+      "slug": "molded-pulp-tray-vs-end-supports-packout",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "Its published starting minimum of 500 pieces per product/design does not prove feasibility at 500 complete packs, establish A/B design grouping or guarantee a combined kit offer.",
+      "new": "Its published starting minimum of 250 pieces per product/design does not prove feasibility at 500 complete packs, establish A/B design grouping or guarantee a combined kit offer.",
+      "count": 1
+    },
+    {
+      "id": 94,
+      "slug": "packaging-supplier-brief-small-brand",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "Packrivo&#x27;s project policy is MOQ 500 pieces per design.",
+      "new": "Packrivo&#x27;s project policy is MOQ 250 pieces per design.",
+      "count": 1
+    },
+    {
+      "id": 233,
+      "slug": "custom-packaging-quote-comparison-checklist",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "It doesn&#x27;t confirm stock, a supplier&#x27;s accepted design grouping or an exception to Packrivo&#x27;s MOQ policy of 500 pieces per design.",
+      "new": "It doesn&#x27;t confirm stock, a supplier&#x27;s accepted design grouping or an exception to Packrivo&#x27;s MOQ policy of 250 pieces per design.",
+      "count": 1
+    },
+    {
+      "id": 616,
+      "slug": "packaging-set-quote-units",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "Packrivo&#x27;s planning basis is 500 pieces per product / design; confirm the proposed design grouping and component quantities in the project scope.",
+      "new": "Packrivo&#x27;s planning basis is 250 pieces per product / design; confirm the proposed design grouping and component quantities in the project scope.",
+      "count": 1
+    },
+    {
+      "id": 683,
+      "slug": "master-carton-label-reconciliation",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "MOQ is 500 pieces per design; actual component grouping, <a href=\"https://www.packrivo.com/samples/\">samples</a> and commercial conditions are confirmed for the project.",
+      "new": "MOQ is 250 pieces per design; actual component grouping, <a href=\"https://www.packrivo.com/samples/\">samples</a> and commercial conditions are confirmed for the project.",
+      "count": 1
+    },
+    {
+      "id": 698,
+      "slug": "sampling-production-order-lines",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "This scope record clarifies sampling without changing Packrivo’s 500-piece-per-design production policy.",
+      "new": "This scope record clarifies sampling without changing Packrivo’s 250-piece-per-design production policy.",
+      "count": 1
+    },
+    {
+      "id": 699,
+      "slug": "leftover-packaging-version-status",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "90or30 deficit is not an available custom order quantity; MOQ500pieces/product/design remains",
+      "new": "90or30 deficit is not an available custom order quantity; MOQ250pieces/product/design remains",
+      "count": 1
+    },
+    {
+      "id": 1038,
+      "slug": "seasonal-packaging-sleeves",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "<a href=\"https://www.packrivo.com/services/\">Packrivo's services page</a> states a starting MOQ of 500 pieces per product/design.",
+      "new": "<a href=\"https://www.packrivo.com/services/\">Packrivo's services page</a> states a starting MOQ of 250 pieces per product/design.",
+      "count": 1
+    },
+    {
+      "id": 1038,
+      "slug": "seasonal-packaging-sleeves",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "Treat each proposed sleeve artwork and component design as its own line for project confirmation; three artworks should not be assumed to share a single 500-piece minimum.",
+      "new": "Treat each proposed sleeve artwork and component design as its own line for project confirmation; three artworks should not be assumed to share a single 250-piece minimum.",
+      "count": 1
+    },
+    {
+      "id": 1044,
+      "slug": "shipping-box-sizes-small-business",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "<a href=\"https://www.packrivo.com/services/\">Packrivo states a starting MOQ of 500 pieces per product/design</a>.",
+      "new": "<a href=\"https://www.packrivo.com/services/\">Packrivo states a starting MOQ of 250 pieces per product/design</a>.",
+      "count": 1
+    },
+    {
+      "id": 1050,
+      "slug": "ecommerce-vs-retail-packaging",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "<a href=\"https://www.packrivo.com/services/\">Packrivo's published starting MOQ is 500 pieces per product/design</a>, with the actual component and project terms to be confirmed.",
+      "new": "<a href=\"https://www.packrivo.com/services/\">Packrivo's published starting MOQ is 250 pieces per product/design</a>, with the actual component and project terms to be confirmed.",
+      "count": 1
+    },
+    {
+      "id": 1102,
+      "slug": "retail-packaging-customer-access",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "Packrivo&#8217;s stated MOQ is <strong>500 pieces per product/design</strong>; prices, production feasibility, lead times, material choices and sample arrangements are project-specific matters for confirmation.",
+      "new": "Packrivo&#8217;s stated MOQ is <strong>250 pieces per product/design</strong>; prices, production feasibility, lead times, material choices and sample arrangements are project-specific matters for confirmation.",
+      "count": 1
+    },
+    {
+      "id": 1575,
+      "slug": "complete-pack-component-bottleneck",
+      "field": "post_content",
+      "row_id": 0,
+      "old": "Packrivo&#8217;s minimum order quantity remains 500 pieces per product/design; this example does not establish an order below that minimum.",
+      "new": "Packrivo&#8217;s minimum order quantity remains 250 pieces per product/design; this example does not establish an order below that minimum.",
+      "count": 1
+    }
+  ]
+}

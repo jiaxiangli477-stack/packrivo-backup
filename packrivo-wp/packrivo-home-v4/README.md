@@ -40,7 +40,7 @@ cp -r packrivo-home-v4/assets  wp-content/themes/packrivo-static-bridge/
 
 | 板块 | 数据来源 |
 |---|---|
-| Hero | 现站 H1「Custom packaging for jewelry, candles & gifts.」+ 真实口径（MOQ 500、7–30 天、8–15% 服务费）|
+| Hero | 首页 H1「Custom packaging for jewelry, candles & gifts.」+ 目标口径（MOQ 250、7–30 天、8–15% 服务费）|
 | 五个品类 | 现站真实分类：jewelry / foldable gift / mailer / labels / inserts |
 | 四步流程 | 现站代采模式：Brief → Sample → Produce → Deliver |
 | 价格透明 | 阶梯价表（数据可接 `packrivo-quote` 插件的定价类）|

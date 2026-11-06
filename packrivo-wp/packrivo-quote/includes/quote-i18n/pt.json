@@ -97,5 +97,8 @@
  "Kraft-look poly": "Poly efeito kraft",
  "Water resistant": "Resistente à água",
  "Compostable stock": "Cartão compostável",
- "CMYK + spot": "CMYK + cor direta"
+ "CMYK + spot": "CMYK + cor direta",
+ "Under 250? Send the brief and we'll quote by hand.": "Menos de 250? Envie o briefing e orçamentamos manualmente.",
+ "Goods {goods} · Sourcing fee {fee} ({percent}%, min. {minimum}) · Total {total}": "Mercadorias {goods} · Taxa de fornecimento {fee} ({percent}%, mín. {minimum}) · Total {total}",
+ "Instant quotes include the sourcing fee at {percent}%; your final rate is confirmed on the written quote.": "Os orçamentos imediatos incluem a taxa de fornecimento de {percent}%; a sua tarifa final é confirmada no orçamento escrito."
 }

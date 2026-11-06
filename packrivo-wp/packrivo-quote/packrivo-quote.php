@@ -14,7 +14,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('PKQ_VERSION', '1.0.1');
+define('PKQ_VERSION', '1.0.1-32a');
 define('PKQ_FILE', __FILE__);
 define('PKQ_DIR', plugin_dir_path(__FILE__));
 define('PKQ_URL', plugin_dir_url(__FILE__));
@@ -42,7 +42,9 @@ final class PKQ_Plugin
             'currency' => 'USD',
             'admin_email' => get_option('admin_email'),
             'notify_customer' => 0,
-            'min_qty' => 500,
+            'min_qty' => 250,
+            'fee_percent' => 15,
+            'min_fee' => 150,
             'max_qty' => 250000,
             'setup_print' => 220,
             'setup_die' => 120,
@@ -158,6 +160,9 @@ final class PKQ_Plugin
             'setupPrint' => (float) $settings['setup_print'],
             'setupDie' => (float) $settings['setup_die'],
             'rushPercent' => (float) $settings['rush_percent'],
+            'feePercent' => (float) $settings['fee_percent'],
+            'minFee' => (float) $settings['min_fee'],
+            'inquiryUrl' => home_url('/contact/'),
             // The browser must price with the same table the server does, otherwise
             // a config change in pricing.json silently desyncs the two.
             'tiers' => $pricing['tiers'],

@@ -128,6 +128,14 @@
   },
   "tiers": [
     [
+      100,
+      2.864
+    ],
+    [
+      250,
+      1.468
+    ],
+    [
       500,
       1
     ],
@@ -165,6 +173,8 @@
     "freePrintSetupFrom": 2500,
     "freeDieFrom": 5000,
     "rushPercent": 22,
-    "tierFloor": 0.64
+    "tierFloor": 0.64,
+    "fee_percent": 15,
+    "min_fee": 150
   }
 }

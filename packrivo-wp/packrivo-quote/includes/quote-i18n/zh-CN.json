@@ -97,5 +97,8 @@
  "Kraft-look poly": "仿牛皮塑料",
  "Water resistant": "防水",
  "Compostable stock": "可堆肥纸材",
- "CMYK + spot": "CMYK + 专色"
+ "CMYK + spot": "CMYK + 专色",
+ "Under 250? Send the brief and we'll quote by hand.": "不到 250 件？把需求发来，我们人工报价。",
+ "Goods {goods} · Sourcing fee {fee} ({percent}%, min. {minimum}) · Total {total}": "货款 {goods} · 采购协调费 {fee}（{percent}%，最低 {minimum}）· 合计 {total}",
+ "Instant quotes include the sourcing fee at {percent}%; your final rate is confirmed on the written quote.": "即时报价按 {percent}% 计入采购协调费；最终价格以书面报价为准。"
 }

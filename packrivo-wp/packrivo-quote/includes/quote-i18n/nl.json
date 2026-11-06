@@ -97,5 +97,8 @@
  "Kraft-look poly": "Poly in kraftlook",
  "Water resistant": "Waterbestendig",
  "Compostable stock": "Composteerbaar karton",
- "CMYK + spot": "CMYK + steunkleur"
+ "CMYK + spot": "CMYK + steunkleur",
+ "Under 250? Send the brief and we'll quote by hand.": "Minder dan 250? Stuur de briefing en we maken handmatig een prijsopgave.",
+ "Goods {goods} · Sourcing fee {fee} ({percent}%, min. {minimum}) · Total {total}": "Goederen {goods} · Inkoopvergoeding {fee} ({percent}%, min. {minimum}) · Totaal {total}",
+ "Instant quotes include the sourcing fee at {percent}%; your final rate is confirmed on the written quote.": "Directe prijsopgaven bevatten de inkoopvergoeding van {percent}%; je definitieve tarief wordt bevestigd op de schriftelijke offerte."
 }

@@ -54,7 +54,7 @@ $quote_url = home_url($pk_lang_prefix . '/get-a-quote/');
                 </div>
               <?php endforeach; ?>
             </div>
-            <p class="pk-panel-note">Every structure is priced from 500 units. Dielines included.</p>
+            <p class="pk-panel-note">Every structure is priced from 250 units. Dielines included.</p>
           </div>
         </li>
 
@@ -80,9 +80,9 @@ $quote_url = home_url($pk_lang_prefix . '/get-a-quote/');
                   All articles <span><?php echo (int) wp_count_posts('post')->publish; ?></span>
                 </a>
               </li>
-              <?php foreach (get_categories(['hide_empty' => true, 'orderby' => 'count', 'order' => 'DESC']) as $pk_cat) : ?>
+              <?php foreach (pk31b_topics() as $pk_cat) : ?>
                 <li>
-                  <a href="<?php echo esc_url(add_query_arg('topic', $pk_cat->slug, $pk_base)); ?>">
+                  <a href="<?php echo esc_url(pk31b_is_english() ? pk31b_topic_url($pk_cat) : add_query_arg('topic', $pk_cat->slug, $pk_base)); ?>">
                     <?php echo esc_html($pk_cat->name); ?> <span><?php echo (int) $pk_cat->count; ?></span>
                   </a>
                 </li>

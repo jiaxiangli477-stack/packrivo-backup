@@ -1,0 +1,173 @@
+{
+    "moved": 28,
+    "files": [
+        {
+            "source": "/tmp/34a-diag.php",
+            "destination": "/tmp/_dsh-34a-quarantine/34a-diag.php",
+            "bytes": 1960,
+            "sha256": "40d9a24ab141f97a11cd29308943ba2252f384de6a563f56ff8436276e918d07"
+        },
+        {
+            "source": "/tmp/34a-dump.php",
+            "destination": "/tmp/_dsh-34a-quarantine/34a-dump.php",
+            "bytes": 1065,
+            "sha256": "0533b90e8315ce965f3b4f01f3dade50e3511f0fd817a4e18ea64fe42030f500"
+        },
+        {
+            "source": "/tmp/34a-h1.php",
+            "destination": "/tmp/_dsh-34a-quarantine/34a-h1.php",
+            "bytes": 970,
+            "sha256": "699636b3c8c41a5a089f17175b6cd81c6c9a7e7c2a7799680c1a67b102ce87ef"
+        },
+        {
+            "source": "/tmp/34a-hubdump.php",
+            "destination": "/tmp/_dsh-34a-quarantine/34a-hubdump.php",
+            "bytes": 922,
+            "sha256": "6f94ac9c9b356d70404c3e84fccb3c3be0bdf1d032f74754a9717dd5ba1872e0"
+        },
+        {
+            "source": "/tmp/34a-inventory.php",
+            "destination": "/tmp/_dsh-34a-quarantine/34a-inventory.php",
+            "bytes": 848,
+            "sha256": "ef81e68d06c44c1759222e36d06f7d3b7ea682bfc0eeb52e10c78f8067859932"
+        },
+        {
+            "source": "/tmp/34a-keyword-map.csv",
+            "destination": "/tmp/_dsh-34a-quarantine/34a-keyword-map.csv",
+            "bytes": 121934,
+            "sha256": "1880f4d154779134111ba1e117e3212e93f79345c8951f2854a2a36d1a479351"
+        },
+        {
+            "source": "/tmp/34a-keyword-map.php",
+            "destination": "/tmp/_dsh-34a-quarantine/34a-keyword-map.php",
+            "bytes": 27622,
+            "sha256": "c8e79d481a56e28a9ec4d2f36f00a073861898f3c7fffc2ee73ad3c73e0a7c04"
+        },
+        {
+            "source": "/tmp/34a-m.php",
+            "destination": "/tmp/_dsh-34a-quarantine/34a-m.php",
+            "bytes": 27622,
+            "sha256": "c8e79d481a56e28a9ec4d2f36f00a073861898f3c7fffc2ee73ad3c73e0a7c04"
+        },
+        {
+            "source": "/tmp/34a-map.csv",
+            "destination": "/tmp/_dsh-34a-quarantine/34a-map.csv",
+            "bytes": 121934,
+            "sha256": "1880f4d154779134111ba1e117e3212e93f79345c8951f2854a2a36d1a479351"
+        },
+        {
+            "source": "/tmp/34a-rb.php",
+            "destination": "/tmp/_dsh-34a-quarantine/34a-rb.php",
+            "bytes": 8675,
+            "sha256": "5ed053fbce05602fba8cfcf2006278edfd30a2e629b8272342f2217b17143efa"
+        },
+        {
+            "source": "/tmp/34a-resolve.php",
+            "destination": "/tmp/_dsh-34a-quarantine/34a-resolve.php",
+            "bytes": 1387,
+            "sha256": "99129b19a83a6142a6b787edf60afab8b4b7e604089db0195b328c289c4fb0dc"
+        },
+        {
+            "source": "/tmp/34a-rollback.php",
+            "destination": "/tmp/_dsh-34a-quarantine/34a-rollback.php",
+            "bytes": 8675,
+            "sha256": "5ed053fbce05602fba8cfcf2006278edfd30a2e629b8272342f2217b17143efa"
+        },
+        {
+            "source": "/tmp/34a-run.log",
+            "destination": "/tmp/_dsh-34a-quarantine/34a-run.log",
+            "bytes": 8405,
+            "sha256": "f524122d817e1109e705765c09ba22d301d2350674c25044dc731471a5433a0e"
+        },
+        {
+            "source": "/tmp/34a-urls.json",
+            "destination": "/tmp/_dsh-34a-quarantine/34a-urls.json",
+            "bytes": 4631,
+            "sha256": "5c563ee5d0c1743230b314deb9e1944cef29dfaa607c9ea9855988ab360c62e8"
+        },
+        {
+            "source": "/tmp/b.sh",
+            "destination": "/tmp/_dsh-34a-quarantine/b.sh",
+            "bytes": 409,
+            "sha256": "f456e119eccb239ea3634888bdefaac9381d42ee8eb76fad8f924493e63af27e"
+        },
+        {
+            "source": "/tmp/b2.sh",
+            "destination": "/tmp/_dsh-34a-quarantine/b2.sh",
+            "bytes": 616,
+            "sha256": "b8b92eaa999a8d88731d5aa6983040400b250723999117c2e75c963f27ed0b40"
+        },
+        {
+            "source": "/tmp/backup/34a-before-20261105-043010.csv",
+            "destination": "/tmp/_dsh-34a-quarantine/backup/34a-before-20261105-043010.csv",
+            "bytes": 187150,
+            "sha256": "4ef8acc7479cb9e06efa505c39be34266c82afc4e91d4c92371b16506a877228"
+        },
+        {
+            "source": "/tmp/backup/34a-before-20261105-043405.csv",
+            "destination": "/tmp/_dsh-34a-quarantine/backup/34a-before-20261105-043405.csv",
+            "bytes": 187150,
+            "sha256": "13d55481ee33d74350eb1ab0d6f4fa5c3a066e68fadfbfae9bcf51ca97c17cb9"
+        },
+        {
+            "source": "/tmp/backup/34a-before-20261105-044138.csv",
+            "destination": "/tmp/_dsh-34a-quarantine/backup/34a-before-20261105-044138.csv",
+            "bytes": 187150,
+            "sha256": "d40d22aff273c4fe17730616bb9a796fb611ac85de290b71ad5928ab0d78bec5"
+        },
+        {
+            "source": "/tmp/backup/34a-before-20261105-044321.csv",
+            "destination": "/tmp/_dsh-34a-quarantine/backup/34a-before-20261105-044321.csv",
+            "bytes": 197301,
+            "sha256": "2817fbb6d6a39d8e89feecc72652d36215cad34b0beab7f220f441b69d337baf"
+        },
+        {
+            "source": "/tmp/backup/34a-before-20261105-044512.csv",
+            "destination": "/tmp/_dsh-34a-quarantine/backup/34a-before-20261105-044512.csv",
+            "bytes": 197301,
+            "sha256": "44a906c76c68b70f1cd1ad39fcc6b6a5124071950f992fcf5c4175d075bb8bda"
+        },
+        {
+            "source": "/tmp/backup/34a-before-20261105-050956.csv",
+            "destination": "/tmp/_dsh-34a-quarantine/backup/34a-before-20261105-050956.csv",
+            "bytes": 197301,
+            "sha256": "2cc2d66b33313fbcda5d167811b7e5001f5f46b883e0f667eb931014e04db7f7"
+        },
+        {
+            "source": "/tmp/backup/34a-before-20261105-051918.csv",
+            "destination": "/tmp/_dsh-34a-quarantine/backup/34a-before-20261105-051918.csv",
+            "bytes": 197301,
+            "sha256": "c1b2e550e61f5a46a7c73beb487e76c591eac386669fefcda7071202a6a643de"
+        },
+        {
+            "source": "/tmp/backup/34a-before-clean-merged.csv",
+            "destination": "/tmp/_dsh-34a-quarantine/backup/34a-before-clean-merged.csv",
+            "bytes": 190481,
+            "sha256": "2063fc8e492a680e54e71bab661fac866d3f3add7c6bc1397e38c2d28811fb64"
+        },
+        {
+            "source": "/tmp/out/34a-new-strings.csv",
+            "destination": "/tmp/_dsh-34a-quarantine/out/34a-new-strings.csv",
+            "bytes": 66754,
+            "sha256": "c567fe7a98ed87d96440bbcb3f33deb4c12bfc06775fef4f0ba44f3ab52a9207"
+        },
+        {
+            "source": "/tmp/out34a/backup/34a-before-20261105-052304.csv",
+            "destination": "/tmp/_dsh-34a-quarantine/out34a/backup/34a-before-20261105-052304.csv",
+            "bytes": 190478,
+            "sha256": "eddeaf79de6ebff754d8643e583a2190a48e2254a11083ab2e8c0b9780c34250"
+        },
+        {
+            "source": "/tmp/out34a/backup/34a-before-20261105-052446.csv",
+            "destination": "/tmp/_dsh-34a-quarantine/out34a/backup/34a-before-20261105-052446.csv",
+            "bytes": 190478,
+            "sha256": "6fdf3c0087c80001e813e3e9daed0f44a7fd10b65ed959a76b24feb79cf6af91"
+        },
+        {
+            "source": "/tmp/out34a/dsh-out/34a-new-strings.csv",
+            "destination": "/tmp/_dsh-34a-quarantine/out34a/dsh-out/34a-new-strings.csv",
+            "bytes": 66754,
+            "sha256": "ba46d2e9d89f41676a18a2a2fde3a1978f33c8d280e7a6c679457000873b3956"
+        }
+    ]
+}
