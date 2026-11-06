@@ -1,0 +1,388 @@
+rows=350 unique_new_en=339 deliverable_keys=337 skipped=3
+  skip: yoast_title /                                                            Custom Packaging for Jewelry, Candles & Gifts | Packrivo
+  skip: yoast_meta  /cases/                                                      Custom packaging examples. No retainer before scope. 8-15% coordinatio
+  skip: hub_title   /                                                            Custom Packaging for Jewelry, Candles & Gifts | Packrivo
+group patterns: Counter({(('attr',),): 139, (('block', 'text'),): 131, (('title',),): 65, (('text', 'block'),): 2})
+bucket split: {'title': 65, 'attr': 139, 'h1': 131, 'other': 2}
+
+=== meta sentence segments (176) ===
+131  Request a quote.
+ 72  MOQ 250, 5-10 day sampling.
+ 71  7-30 day production after approval.
+ 69  Dieline with every quote.
+ 62  DDP or FOB, quoted both ways.
+ 47  Board, corrugated or rigid stock.
+ 14  Recycled-content stock on request.
+ 12  Dieline before production.
+  4  Compare structures and materials.
+  4  MOQ and tooling compared.
+  4  No retainer before scope.
+  4  8-15% coordination fee on production only.
+  3  MOQ 250, 5-10 day sampling, 7-30 day production.
+  3  Sampling and production time.
+  3  What suppliers do with it.
+  3  Common mistakes that add a week.
+  3  Open the sheet.
+  2  How quotes differ on landed cost.
+  2  What each one will not quote.
+  2  A blank worksheet you fill in.
+  1  Custom jewelry boxes, pouches and gift packaging with your logo.
+  1  Custom packaging labels.
+  1  Custom gift boxes.
+  1  Custom jewelry boxes.
+  1  Custom packaging inserts.
+  1  Custom mailer boxes.
+  1  Custom jewelry pouches, gift bags and mailer bags with your logo.
+  1  Packrivo is a custom packaging sourcing team, not a factory.
+  1  Packaging for jewelry brands: rigid boxes, pouches, gift bags, mailers and inserts, printed with your logo.
+  1  MOQ 250 and a dieline with every quote.
+  1  Custom molded pulp packaging.
+  1  Custom candle gift box.
+  1  Custom clear display boxes.
+  1  Custom collapsible magnetic gift box.
+  1  Custom wine shipper box.
+  1  Custom drawer box with ribbon.
+  1  Custom kraft cosmetic boxes.
+  1  Recycled-content kraft stock on request.
+  1  Custom gift bag and tissue paper.
+  1  Custom jewelry pouch and box set.
+  1  Custom kraft stand up pouch.
+  1  Custom magnetic closure gift boxes.
+  1  Custom printed insert cards.
+  1  Custom paper mailer bags.
+  1  Custom poly mailer bags.
+  1  Custom tissue paper.
+  1  Custom cardboard tube boxes.
+  1  Custom packaging samples before you commit to a full production run.
+  1  Custom soap boxes.
+  1  Custom subscription boxes.
+  1  Custom jewelry pouches.
+  1  Custom thermoformed insert trays.
+  1  Custom windowed folding cartons.
+  1  Custom jewelry box manufacturers.
+  1  Sampling before you commit.
+  1  Red flags in a spec sheet.
+  1  Custom mailer box manufacturers.
+  1  What to ask in writing before paying.
+  1  Custom packaging cost.
+  1  What moves unit price most.
+  1  Tooling, sampling and freight split out.
+  1  How to hold a quote for 30 days.
+  1  Custom packaging moq.
+  1  How to split a first order across SKUs.
+  1  Stock sizes that skip tooling.
+  1  What changes above 1,000 units.
+  1  Packaging samples: what a physical or digital proof costs and what it proves.
+  1  Packaging lead time: 5-10 days for samples, 7-30 days for production.
+  1  5-10 days for samples.
+  1  Custom packaging suppliers.
+  1  Side by side across five suppliers.
+  1  No sales call needed.
+  1  Which one fits a 250-piece first run.
+  1  Arka alternatives: order terms side by side.
+  1  Packhelp alternatives: order terms side by side.
+  1  Packlane alternatives: order terms side by side.
+  1  Pakfactory alternatives: order terms side by side.
+  1  Custom packaging sourcing.
+  1  Then a quote.
+  1  Custom packaging guide.
+  1  Custom packaging quote request.
+  1  Custom packaging finishes.
+  1  Custom jewelry insert fit.
+  1  Send it with your spec.
+  1  Custom flat pack gift boxes.
+  1  Custom mailer box rfq.
+  1  Custom magnetic jewelry boxes.
+  1  Custom collapsible magnetic gift boxes.
+  1  Custom five-panel corrugated folders.
+  1  Custom chipboard dividers.
+  1  Custom printed display boxes.
+  1  Custom shipping boxes.
+  1  Custom auto-lock bottom boxes.
+  1  Custom book-style rigid gift boxes.
+  1  Custom bookend folding cartons.
+  1  Custom fabric tote bags.
+  1  Custom coated labels.
+  1  Custom corrugated book mailers.
+  1  Custom bottle gift boxes with handle.
+  1  Custom corrugated dividers and inserts.
+  1  Custom corrugated gusset folders.
+  1  Custom reverse tuck boxes.
+  1  Custom hinged lid boxes.
+  1  Custom tuck top auto bottom boxes.
+  1  Custom snap bottom cartons.
+  1  Custom counter display boxes.
+  1  Custom carry boxes with handle.
+  1  Custom die-cut handle paper bags.
+  1  Custom die-cut box inserts.
+  1  Custom double-wall tray and lid sets.
+  1  Custom tray and sleeve boxes.
+  1  Custom corrugated tray boxes with lid.
+  1  Custom drawer jewelry boxes.
+  1  Custom drawstring gift bags in bulk for jewelry and small gifts.
+  1  Custom paper gift bags.
+  1  Custom eva foam inserts.
+  1  Custom dispenser boxes.
+  1  Custom petal top gift boxes.
+  1  Custom foldable lid and base boxes.
+  1  Custom folded box liners.
+  1  Custom folded tray and sleeve boxes.
+  1  Custom folding cartons wholesale.
+  1  Custom display trays for retail.
+  1  Custom pre-glued boxes bulk.
+  1  Custom full flap auto bottom boxes.
+  1  Custom seal end cartons wholesale.
+  1  Custom full overlap shipping boxes.
+  1  Custom gable boxes with handle.
+  1  Custom gusset folder boxes.
+  1  Custom hanging retail boxes.
+  1  Custom header card bag toppers.
+  1  Custom hexagonal gift boxes.
+  1  Custom hinged rigid gift boxes.
+  1  Custom printed info cards.
+  1  Custom jewelry boxes with fitted inserts.
+  1  Custom lid-and-base jewelry boxes.
+  1  Custom lock cap auto bottom boxes.
+  1  Custom mailer boxes with inserts.
+  1  Custom pe foam packaging inserts.
+  1  Custom corrugated end caps.
+  1  Custom printed belly bands.
+  1  Custom flat paper merchandise bags.
+  1  Custom padded paper mailers.
+  1  Custom grid dividers for boxes.
+  1  Custom paperboard inserts.
+  1  Custom dust flap cartons.
+  1  Custom peg hook counter displays.
+  1  Custom pillow jewelry boxes.
+  1  Custom pinch lock trays.
+  1  Custom poly bubble mailers.
+  1  Custom pu foam inserts.
+  1  Custom printed tissue sheets.
+  1  Custom rectangle roll labels.
+  1  Custom regular slotted shipping cartons.
+  1  Custom returnable parcel bags.
+  1  Custom returnable poly mailers.
+  1  Custom reverse tuck retail boxes.
+  1  Custom rigid postal envelopes.
+  1  Custom self-locking mailers.
+  1  Custom printed sheet labels.
+  1  Custom tiered counter displays.
+  1  Custom document window pouches.
+  1  Custom shoulder neck rigid boxes.
+  1  Custom side lock display boxes.
+  1  Custom hinged gift trays.
+  1  Custom six-corner pre-glued boxes.
+  1  Custom snap bottom shipping boxes.
+  1  Custom snap lock bottom boxes.
+  1  Custom sos paper bags bulk.
+  1  Custom straight tuck boxes.
+  1  Custom tab lock corrugated packs.
+  1  Custom three flap lock boxes.
+  1  Custom tuck end sleeve boxes.
+  1  Custom two-door rigid boxes.
+  1  Custom window lid rigid boxes.
+  1  Custom zippered fabric pouches for jewelry and gifts.
+
+=== h1 keys (131) ===
+  Custom packaging for jewelry, candles and gifts
+  Custom Mailer Boxes for small brands
+  Custom Bags with Logo for small brands
+  Who you are actually working with
+  Every structure we can source
+  Molded Pulp Packaging
+  Candle Gift Box
+  Clear Display Boxes
+  Wine Shipper Box
+  Drawer Box With Ribbon
+  Custom Kraft Cosmetic Boxes
+  Gift Bag and Tissue Paper
+  Kraft Stand Up Pouch
+  Magnetic Closure Gift Boxes
+  Printed Insert Cards
+  Paper Mailer Bags
+  Poly Mailer Bags
+  Custom Tissue Paper
+  Cardboard Tube Boxes
+  Custom Packaging Samples
+  Custom Soap Boxes
+  Custom Subscription Boxes
+  Custom Jewelry Pouches
+  Thermoformed Insert Trays
+  Windowed Folding Cartons
+  How to choose a jewelry box manufacturer, and what to ask
+  How to choose a mailer box manufacturer, and what to ask
+  What packaging costs, and why
+  Packaging MOQ: how 250-piece runs work
+  What a packaging sample costs and proves
+  Packaging lead time, step by step
+  Custom packaging suppliers, compared
+  Arka alternatives, and Packrivo side by side
+  Packhelp alternatives, and Packrivo side by side
+  Packlane alternatives, and Packrivo side by side
+  PakFactory alternatives, and Packrivo side by side
+  Packaging guides and buyer worksheets
+  Packaging Quote Request
+  Custom Packaging Examples
+  Packaging Finishes
+  Flat Pack Gift Boxes: a working sheet
+  Mailer Box RFQ: a working sheet
+  Collapsible Magnetic Gift Boxes, dieline first
+  Five-panel Corrugated Folders, dieline first
+  Chipboard Dividers, dieline first
+  Printed Display Boxes, dieline first
+  Custom Shipping Boxes, dieline first
+  Auto-lock Bottom Boxes, dieline first
+  Book-style Rigid Gift Boxes, dieline first
+  Bookend Folding Cartons, dieline first
+  Fabric Tote Bags, dieline first
+  Coated Labels, dieline first
+  Corrugated Book Mailers, dieline first
+  Bottle Gift Boxes with Handle, dieline first
+  Corrugated Dividers and Inserts, dieline first
+  Corrugated Gusset Folders, dieline first
+  Reverse Tuck Boxes, dieline first
+  Hinged Lid Boxes, dieline first
+  Tuck Top Auto Bottom Boxes, dieline first
+  Snap Bottom Cartons, dieline first
+  Counter Display Boxes, dieline first
+  Carry Boxes with Handle, dieline first
+  Die-cut Handle Paper Bags, dieline first
+  Die-cut Box Inserts, dieline first
+  Double-wall Tray and Lid Sets, dieline first
+  Tray and Sleeve Boxes, dieline first
+  Corrugated Tray Boxes with Lid, dieline first
+  Drawer Jewelry Boxes, dieline first
+  Drawstring Gift Bags Bulk, dieline first
+  Custom Paper Gift Bags, dieline first
+  Eva Foam Inserts, dieline first
+  Dispenser Boxes, dieline first
+  Petal Top Gift Boxes, dieline first
+  Foldable Lid and Base Boxes, dieline first
+  Folded Box Liners, dieline first
+  Folded Tray and Sleeve Boxes, dieline first
+  Folding Cartons Wholesale, dieline first
+  Display Trays for Retail, dieline first
+  Pre-glued Boxes Bulk, dieline first
+  Full Flap Auto Bottom Boxes, dieline first
+  Seal End Cartons Wholesale, dieline first
+  Full Overlap Shipping Boxes, dieline first
+  Gable Boxes with Handle, dieline first
+  Gusset Folder Boxes, dieline first
+  Hanging Retail Boxes, dieline first
+  Header Card Bag Toppers, dieline first
+  Hexagonal Gift Boxes, dieline first
+  Hinged Rigid Gift Boxes, dieline first
+  Printed Info Cards, dieline first
+  Jewelry Boxes with Fitted Inserts, dieline first
+  Lid-and-base Jewelry Boxes, dieline first
+  Lock Cap Auto Bottom Boxes, dieline first
+  Mailer Boxes with Inserts, dieline first
+  Pe Foam Packaging Inserts, dieline first
+  Corrugated End Caps, dieline first
+  Printed Belly Bands, dieline first
+  Flat Paper Merchandise Bags, dieline first
+  Padded Paper Mailers, dieline first
+  Grid Dividers for Boxes, dieline first
+  Paperboard Inserts, dieline first
+  Dust Flap Cartons, dieline first
+  Peg Hook Counter Displays, dieline first
+  Pillow Jewelry Boxes, dieline first
+  Pinch Lock Trays, dieline first
+  Poly Bubble Mailers, dieline first
+  Pu Foam Inserts, dieline first
+  Printed Tissue Sheets, dieline first
+  Rectangle Roll Labels, dieline first
+  Regular Slotted Shipping Cartons, dieline first
+  Returnable Parcel Bags, dieline first
+  Returnable Poly Mailers, dieline first
+  Reverse Tuck Retail Boxes, dieline first
+  Rigid Postal Envelopes, dieline first
+  Self-locking Mailers, dieline first
+  Printed Sheet Labels, dieline first
+  Tiered Counter Displays, dieline first
+  Document Window Pouches, dieline first
+  Shoulder Neck Rigid Boxes, dieline first
+  Side Lock Display Boxes, dieline first
+  Hinged Gift Trays, dieline first
+  Six-corner Pre-glued Boxes, dieline first
+  Snap Bottom Shipping Boxes, dieline first
+  Snap Lock Bottom Boxes, dieline first
+  Sos Paper Bags Bulk, dieline first
+  Straight Tuck Boxes, dieline first
+  Tab Lock Corrugated Packs, dieline first
+  Three Flap Lock Boxes, dieline first
+  Tuck End Sleeve Boxes, dieline first
+  Two-door Rigid Boxes, dieline first
+  Window Lid Rigid Boxes, dieline first
+  Zippered Fabric Pouches, dieline first
+
+=== title keys (65) ===
+  Custom Mailer Boxes: Printed & Shipping Ready | Packrivo
+  Custom Bags with Logo: Paper, Cotton & Pouches | Packrivo
+  Custom Packaging Supplier: Who You Work With | Packrivo
+  Molded Pulp Packaging: Inserts and Trays | Packrivo
+  Candle Gift Box Sets With Inserts | Packrivo
+  Clear Display Boxes for Retail | Packrivo
+  Collapsible Magnetic Gift Boxes | Packrivo
+  Wine Shipper Box, Corrugated (MOQ 250) | Packrivo
+  Drawer Box With Ribbon Pull | Packrivo
+  Custom Kraft Cosmetic Boxes (MOQ 250) | Packrivo
+  Gift Bag and Tissue Paper Sets | Packrivo
+  Jewelry Pouch and Box Sets | Packrivo
+  Kraft Stand-Up Pouches with Window | Packrivo
+  Magnetic Closure Gift Boxes, Book-Style | Packrivo
+  Printed Insert Cards & Thank-You Cards | Packrivo
+  Printed Paper Mailer Bags | Packrivo
+  Poly Mailer Bags, Printed to Order | Packrivo
+  Custom Tissue Paper Printing (MOQ 250) | Packrivo
+  Round Cardboard Tube Boxes | Packrivo
+  Custom Soap Boxes with Window (MOQ 250) | Packrivo
+  Custom Subscription Boxes & Mailers | Packrivo
+  Custom Jewelry Pouches, Textile | Packrivo
+  Thermoformed Insert Trays | Packrivo
+  Windowed Folding Cartons | Packrivo
+  Find a Jewelry Box Manufacturer: Costs & Vetting | Packrivo
+  Find a Mailer Box Manufacturer: Costs & Vetting | Packrivo
+  Packaging Cost: What Drives the Price | Packrivo
+  Packaging MOQ: How 250-Piece Runs Work | Packrivo
+  Packaging Samples: Cost and Timing | Packrivo
+  Packaging Lead Time: 5-30 Days Explained | Packrivo
+  Custom Packaging Suppliers Compared | Packrivo
+  Arka Alternatives: Packaging Compared | Packrivo
+  Packhelp Alternatives: Packaging Compared | Packrivo
+  Packlane Alternatives: Packaging Compared | Packrivo
+  PakFactory Alternatives: Packaging Compared | Packrivo
+  Packaging Quote Request: Custom Boxes | Packrivo
+  Custom Packaging Examples: Concepts | Packrivo
+  Packaging Finishes: Colors and Materials | Packrivo
+  Flat Pack Gift Boxes: Working Sheet | Packrivo
+  Mailer Box RFQ: Working Sheet | Packrivo
+  Custom Five-panel Corrugated Folders | Packrivo
+  Custom Shipping Boxes | Packrivo
+  Custom Auto-lock Bottom Boxes | Packrivo
+  Custom Book-style Rigid Gift Boxes | Packrivo
+  Custom Fabric Tote Bags | Packrivo
+  Custom Coated Labels | Packrivo
+  Custom Hinged Lid Boxes | Packrivo
+  Custom Die-cut Handle Paper Bags | Packrivo
+  Custom Die-cut Box Inserts | Packrivo
+  Custom Double-wall Tray and Lid Sets | Packrivo
+  Custom Drawer Jewelry Boxes | Packrivo
+  Custom Paper Gift Bags | Packrivo
+  Custom Eva Foam Inserts | Packrivo
+  Custom Dispenser Boxes | Packrivo
+  Custom Pre-glued Boxes Bulk | Packrivo
+  Custom Lid-and-base Jewelry Boxes | Packrivo
+  Custom Pe Foam Packaging Inserts | Packrivo
+  Custom Pu Foam Inserts | Packrivo
+  Custom Printed Tissue Sheets | Packrivo
+  Custom Regular Slotted Shipping Cartons | Packrivo
+  Custom Self-locking Mailers | Packrivo
+  Custom Six-corner Pre-glued Boxes | Packrivo
+  Custom Sos Paper Bags Bulk | Packrivo
+  Custom Two-door Rigid Boxes | Packrivo
+  Get a Custom Packaging Quote | Packrivo
+
+=== other (2) ===
+  Get a packaging quote   [('text', 'block')]
+  Custom packaging quote. DDP or FOB, quoted both ways. Dieline before production. MOQ 250, 5-10 day sampling. Request a quote.   [('text', 'block')]

@@ -1,0 +1,702 @@
+===== rigid boxes
+  ar     علب صلبة بحافة كتف مخصصة || علب صلبة ببابين مخصصة || علب هدايا صلبة بنافذة بالغطاء
+  de     Hartschachteln mit Schulterrand || Hartschachteln mit zwei Türen || Hartschachteln mit Fensterdeckel
+  es     Cajas rígidas con cuello de apoyo || Cajas rígidas de dos puertas || Cajas rígidas con ventana en la tapa
+  fr     Boîtes rigides à épaulement || Boîtes rigides à deux portes || Boîtes rigides à couvercle fenêtre
+  it     Scatole rigide con collo interno || Scatole rigide a due ante || Scatole rigide con coperchio a finestra
+  ja     オリジナル ショルダーネック 貼り箱 || オリジナル 観音開き 貼り箱 || オリジナル 天面窓 貼り箱
+  ko     숄더 넥 경질 박스 제작 || 양문형 경질 박스 제작 || 창문 뚜껑 경질 선물 박스 제작
+  nl     Luxe dozen met schouderrand || Luxe dozen met twee deuren || Luxe dozen met vensterdeksel
+  pt     Caixas rígidas com ombro interior || Caixas rígidas de duas portas || Caixas rígidas com tampa e janela
+  zh-CN  定制肩颈精装盒 || 定制双开门精装盒 || 定制开窗盖精装礼盒
+  zh-TW  客製肩頸裱紙盒 || 客製對開門裱紙盒 || 客製開窗裱紙禮盒
+
+===== mailer boxes
+  ar     صناديق بريدية || مفهوم فئة الصناديق البريدية || علب بريدية مخصصة
+  de     Versandschachteln || Versandboxen || Kategoriekonzept Versandschachteln
+  es     Cajas mailer || cajas de envío || Concepto de categoría de cajas mailer
+  fr     Boîtes d’expédition || boîtes d'expédition || Concept de catégorie des boîtes d’expédition
+  it     Scatole mailer || scatole per spedizione || Concept di categoria scatole a busta
+  ja     メーラーボックス || メーラーボックスカテゴリーのコンセプト || オリジナル メーラーボックス
+  ko     메일러 박스 || 메일러 박스 카테고리 콘셉트 || 메일러 박스 제작
+  nl     Verzenddozen || mailerdozen || Concept voor de categorie verzenddozen
+  pt     Caixas de envio || caixas de envio || Conceito da categoria de caixas de envio
+  zh-CN  邮寄盒 || 邮寄盒品类概念 || 定制快递盒
+  zh-TW  郵寄盒 || 郵寄盒類別概念 || 客製飛機盒
+
+===== pouches
+  ar     الأكياس والعبوات المرنة || أكياس وحافظات حسب الطلب. || صناديق وأكياس مجوهرات
+  de     Beutel & Taschen || Schmuckboxen & Schmuckbeutel || Kundenspezifische Taschen und Beutel.
+  es     Cajas y bolsas para joyería || Bolsas y bolsitas || Bolsas y bolsitas personalizadas.
+  fr     Boîtes à bijoux & pochettes || Sacs et sachets || Sacs et pochettes sur mesure.
+  it     Scatole e pochette per gioielli || Borse e sacchetti || Sacchetti e pochette su misura.
+  ja     袋 & パウチ || 特注バッグおよびポーチ。 || ジュエリーボックス & ポーチ
+  ko     백 및 파우치 || 맞춤형 백 및 파우치. || 주얼리 박스 & 파우치
+  nl     Sieradendozen en zakjes || Zakken & pouches || Tassen en zakjes op maat.
+  pt     Caixas de joias e saquinhos || Sacos e bolsas || Bolsas e saquinhos personalizados.
+  zh-CN  袋与软包装袋 || 定制袋类与小袋。 || 珠宝盒与收纳袋
+  zh-TW  袋類與軟袋 || 客製袋類與軟包。 || 首飾盒 & 首飾袋
+
+===== gift bags
+  ar     أكياس المجوهرات الصغيرة وحقائب الهدايا
+  de     Schmuckbeutel und Geschenktüten
+  es     Bolsas para joyería y bolsas de regalo
+  fr     Pochettes à bijoux et sacs cadeaux
+  it     Pochette per gioielli e sacchetti regalo
+  ja     ジュエリーポーチとギフトバッグ。
+  ko     주얼리 파우치 및 선물용 백
+  nl     Sieradenzakjes en cadeautasjes
+  pt     Saquetas e Sacos de Oferta para Joalharia
+  zh-CN  珠宝首饰袋与礼品袋
+  zh-TW  珠寶首飾袋與禮品袋
+
+===== inserts
+  ar     الإدراجات || حشوات داخلية || مفهوم فئة الإدراجات
+  de     Einleger || Konzept der Kategorie Einleger || Verpackungseinlagen & Karten
+  es     Insertos || insertos || Insertos y tarjetas de embalaje
+  fr     Inserts || inserts || Calages
+  it     Inserti || inserti || Inserti e schede per imballaggio
+  ja     インサート || インサートカテゴリーのコンセプト || インサートに戻る →
+  ko     인서트 || 인서트 카테고리 개념 || 인서트로 돌아가기 →
+  nl     Inzetten || inzetstukken || Verpakkingsinlays en kaarten
+  pt     Insertos || insertos || Encartes e cartões para embalagens
+  zh-CN  内衬 || 内衬类别概念 || 内衬：帮助我选择
+  zh-TW  內襯 || 內襯類別概念 || 返回內襯 →
+
+===== labels
+  ar     الملصقات || ملصقات || مفهوم الملصقات المطلية
+  de     Etiketten || Konzept für quadratische Rollenetiketten || Kategoriekonzept Etiketten
+  es     Etiquetas || etiquetas || Concepto de etiquetas en hoja
+  fr     Étiquettes || étiquettes || Concept d'étiquettes en feuille
+  it     Etichette || etichette || Concept di etichette in foglio
+  ja     ラベル || コーティングラベルのコンセプト || 円形ロールラベルのコンセプト
+  ko     라벨 || 코팅 라벨 콘셉트 || 원형 롤 라벨 콘셉트
+  nl     Labels || labels || Etiketten
+  pt     Etiquetas || etiquetas || Conceito de etiquetas em folha
+  zh-CN  标签 || 片装标签概念 || 涂布标签概念
+  zh-TW  標籤 || 塗佈標籤概念 || 圓形捲式標籤概念
+
+===== corrugated
+  ar     تصميم فاصل مموج || تصميم بطانة داخلية مموجة للعبوة البريدية || تصور للكرتون المموج مُنشأ بالذكاء الاصطناعي
+  de     Konzept einer Wellpappe-Versandeinlage || Wellpappe-Trenner-Konzept || KI-Konzept für Wellpappe
+  es     Concepto de separador de cartón corrugado || Concepto de inserto para envío de cartón corrugado || Concepto de IA de cartón corrugado
+  fr     Concept de séparateur en carton ondulé || Concept d'encart pour emballage postal en carton ondulé || Sélectionner le carton ondulé
+  it     Concept del divisorio in cartone ondulato || Concept dell'inserto per busta in cartone ondulato || Concept AI in cartone ondulato
+  ja     段ボール製仕切りのコンセプト || 段ボール製メーラーインレイのコンセプト || AIによる段ボールのコンセプト
+  ko     골판지 칸막이 컨셉 || 골판지 메일러 인레이 컨셉 || AI 골판지 콘셉트
+  nl     Concept van een golfkartonnen scheidingswand || Concept van een golfkartonnen verzenddoosinleg || AI-concept van golfkarton
+  pt     Conceito de divisória em cartão ondulado || Conceito de forro para embalagem postal em cartão ondulado || Conceito de papelão ondulado gerado por IA
+  zh-CN  瓦楞隔板方案 || 瓦楞邮寄盒内衬方案 || 瓦楞纸板 AI 概念
+  zh-TW  瓦楞分隔板概念圖 || 瓦楞郵寄盒內襯概念圖 || 瓦楞紙板 AI 概念圖
+
+===== chipboard
+  ar     فواصل كرتون مقوى مخصصة || فاصل من الكرتون المقوى بخلايا ثابتة
+  de     Graupappen-Stegeinsätze || Festeinlage aus Graupappe mit festen Zellen
+  es     Separadores de cartón rígido || Divisor de cartón gris de celdas fijas
+  fr     Intercalaires en carton gris || Séparateur en carton gris à alvéoles fixes.
+  it     Divisori in cartone pressato || Divisorio in cartoncino a celle fisse
+  ja     オリジナル チップボール 中仕切り || 固定セル式チップボール仕切り
+  ko     하드보드 칸막이 제작 || 고정 셀 칩보드 칸막이
+  nl     Kartonnen verdelers met vakken || Verdeelstuk met vaste vakken van massief karton
+  pt     Separadores em cartão compacto || Divisória de célula fixa em papelão cinza
+  zh-CN  定制灰板隔档 || 固定格位灰板隔板
+  zh-TW  客製灰紙板隔板 || 固定格灰紙板隔板
+
+===== kraft
+  ar     تصور لورق كرافت مُنشأ بالذكاء الاصطناعي || اختر ورق كرافت || كيس طرد كرافت قابل للتوسيع
+  de     KI-Konzept für Kraftpapier || Kraftpapier auswählen || Erweiterbare Kraftpapier-Pakettasche
+  es     Concepto de IA de papel kraft || Seleccionar papel kraft || Bolsa para paquetes Kraft expandible
+  fr     Concept de papier kraft généré par IA || Sélectionner le papier kraft || Sac colis kraft extensible
+  it     Concept AI in carta kraft || Seleziona carta kraft || Sacchetto per pacchi in Kraft espandibile
+  ja     AIによるクラフト紙のコンセプト || クラフト紙を選択 || 拡張式クラフト宅配袋
+  ko     AI 크라프트지 콘셉트 || 크라프트지 선택 || 확장형 크라프트 소포 봉투
+  nl     AI-concept van kraftpapier || Selecteer kraftpapier || Uitbreidbare Kraft-pakketzak
+  pt     Conceito de papel kraft gerado por IA || Selecione papel kraft || Saco para encomendas Kraft expansível
+  zh-CN  牛皮纸 AI 概念 || 选择牛皮纸 || 可扩展牛皮纸包裹袋
+  zh-TW  牛皮紙 AI 概念圖 || 選取牛皮紙 || 可擴充牛皮紙包裹袋
+
+===== tissue paper
+  ar     ورق تغليف مطبوع مخصص
+  de     Bedrucktes Seidenpapier
+  es     Papel de seda impreso
+  fr     Papier de soie imprimé
+  it     Carta velina stampata
+  ja     オリジナル 薄葉紙 印刷
+  ko     인쇄 티슈 페이퍼 제작
+  nl     Bedrukt vloeipapier
+  pt     Papel de seda impresso personalizado
+  zh-CN  定制印刷雪梨纸
+  zh-TW  客製印刷棉紙
+
+===== ribbon
+  ar     مثبّت الشريط || صندوق صلب مفصلي برباط شريطي
+  de     Bandanker || Aufklappbare Rigidbox mit Bandbindung
+  es     Anclaje de la cinta || Caja rígida con bisagra y atado de cinta
+  fr     Ancrage du ruban || Boîte rigide à charnière et fermeture par ruban
+  it     Ancoraggio del nastro || Scatola rigida con coperchio incernierato e legatura a nastro
+  ja     リボン固定部 || リボン結び式ヒンジ付きリジッドボックス
+  ko     리본 고정점 || 리본 타이 경첩형 리지드 박스
+  nl     Lintanker || Scharnierende harde doos met lintsluiting
+  pt     Ponto de fixação da fita || Caixa rígida articulada com amarração de fita
+  zh-CN  丝带固定点 || 丝带系合翻盖硬质盒
+  zh-TW  緞帶固定點 || 緞帶綁結掀蓋硬盒
+
+===== magnetic
+  ar     مفهوم علبة مجوهرات مغناطيسية || علب مجوهرات مغناطيسية مخصصة || علبة هدايا مغناطيسية قابلة للطي
+  de     Konzept einer magnetischen Schmuckschatulle || Magnet-Schmuckschachteln || Magnetische Schmuckschatulle
+  es     Concepto de caja de joyería con cierre magnético || Cajas para joyería magnéticas || Caja de joyería con cierre magnético
+  fr     Concept de boîte à bijoux magnétique || Boîtes à bijoux magnétiques personnalisées || Boîte à bijoux magnétique
+  it     Concept di scatola portagioie magnetica || Scatole per gioielli magnetiche || Scatola portagioie magnetica
+  ja     マグネット式ジュエリーボックスのコンセプト || オリジナル マグネット式ジュエリーボックス || 折りたたみ式マグネットギフトボックス
+  ko     자석형 주얼리 박스 콘셉트 || 자석형 주얼리 박스 제작 || 접이식 자석 선물 상자
+  nl     Concept voor een magnetische juwelendoos || Sieradendozen met magneet || Magnetische juwelendoos
+  pt     Conceito de caixa magnética para joias || Caixas para joias magnéticas personalizadas || Caixa magnética para joias
+  zh-CN  磁吸首饰盒概念 || 定制磁吸首饰盒 || 磁吸首饰盒
+  zh-TW  磁吸珠寶盒概念 || 客製磁吸首飾盒 || 可折疊磁吸禮盒
+
+===== collapsible
+  ar     علبة هدايا مغناطيسية قابلة للطي || علبة مغناطيسية قابلة للطي || خيار صندوق هدايا قابل للطي
+  de     Zusammenklappbare magnetische Geschenkbox || Zusammenklappbare magnetische Box || Option für zusammenklappbare Geschenkbox
+  es     Caja de regalo magnética plegable || Caja magnética plegable || opción de caja de regalo plegable
+  fr     Boîte cadeau magnétique pliable || Boîte magnétique pliable || option de boîte cadeau pliable
+  it     Scatola regalo magnetica pieghevole || Scatola magnetica pieghevole || opzione scatola regalo pieghevole
+  ja     折りたたみ式マグネットギフトボックス || 折りたたみ式マグネットボックス || 折りたたみ式ギフトボックスの選択肢
+  ko     접이식 자석 선물 상자 || 접이식 자석 상자 || 접이식 선물 상자 옵션
+  nl     Opvouwbare magnetische cadeaudoos || Opvouwbare magnetische doos || optie voor opvouwbare geschenkdoos
+  pt     Caixa de presente magnética desmontável || Caixa de Presente Magnética Desmontável || Caixa magnética desmontável
+  zh-CN  可折叠磁性礼盒 || 可折叠磁性盒 || 可折叠礼品盒选项
+  zh-TW  可折疊磁吸禮盒 || 可折疊磁吸盒 || 可折疊禮盒選項
+
+===== die-cut
+  ar     مفهوم الحشوة المقصوصة بالقالب || كيس ورقي بمقبض مقصوص بالقالب || حشوة مقصوصة بالقالب
+  de     Stanzeinlagen-Konzept || Stanzeinlage || Papier-Tragetasche mit gestanztem Griff
+  es     Concepto de inserto troquelado || Inserto troquelado || Bolsa de papel con asa troquelada
+  fr     Concept de calage découpé à l’emporte-pièce || Calage découpé à l’emporte-pièce || Sac en papier à poignée découpée à l’emporte-pièce
+  it     Concetto di inserto fustellato || Inserto fustellato || Sacchetto di carta con manico fustellato
+  ja     ダイカットインサート構想 || ダイカット手提げ紙袋 || ダイカットインサート
+  ko     다이컷 인서트 개념 || 다이컷 손잡이 종이백 || 다이컷 인서트
+  nl     Concept voor gestanste inleg || Gestanste inleg || Papieren draagtas met gestanst handvat
+  pt     Conceito de inserto com corte em faca || Inserto com corte em faca || Sacola de papel com alça e corte em faca
+  zh-CN  模切内托方案 || 模切内托 || 模切手提纸袋
+  zh-TW  模切內襯概念 || 模切手提紙袋 || 模切內襯
+
+===== folding cartons
+  ar     علب كرتونية قابلة للطي || علب كرتونية مطوية من نوع Bookend || علب كرتونية مطوية وعلب هدايا
+  de     Faltschachteln || Bookend-Faltschachteln || Faltschachteln und Geschenkboxen
+  es     Cajas plegables || Cajas plegables Bookend || Estuches plegables y cajas de regalo
+  fr     Boîtes pliantes || Étuis pliants Bookend || Cartons pliants et boîtes cadeaux
+  it     Astucci pieghevoli || Astucci pieghevoli Bookend || Astucci in cartoncino pieghevole e scatole regalo
+  ja     折りたたみ式カートン || オリジナル Bookend型 折りたたみ化粧箱 || 折り畳みカートンとギフトボックス
+  ko     접이식 카톤 || Bookend형 접이식 카톤 제작 || 접이식 카톤 및 기프트 박스
+  nl     Vouwdozen || Bookend-vouwdozen || Vouwkartons en geschenkdozen
+  pt     Cartuchos dobráveis || Caixas dobráveis Bookend || Caixas Cartonadas Dobráveis e Caixas de Presente
+  zh-CN  折叠纸盒 || 定制 Bookend 型折叠纸盒 || 折叠纸盒和礼品盒
+  zh-TW  折疊紙盒 || 客製 Bookend 型摺疊紙盒 || 摺疊紙盒與禮品盒
+
+===== sleeve
+  ar     غلاف كمّي || صندوق صينية وأكمام مطوي || الغلاف حول
+  de     Hülle || Gefaltete Tablett- und Schuberbox || Katalog für Steckhülsen
+  es     Funda || Caja bandeja y funda plegadas || Caja de cartón tipo funda con cierre de lengüeta
+  fr     Fourreau || Boîte plateau et étui pliés || Le fourreau autour d'un
+  it     Fascia || Vassoio pieghevole e scatola con fascetta || Astuccio a guaina con estremità a incastro
+  ja     スリーブ || 折り畳みトレイ＆スリーブボックス || タックエンドスリーブカートン
+  ko     슬리브 || 접힌 트레이 & 슬리브 박스 || 턱엔드 슬리브 카톤
+  nl     Sleeve || Gevouwen tray & hoesdoos || catalogus voor hoezen met insteekflappen
+  pt     Cinta || Caixa de Bandeja & Manga Dobradas || A cinta ao redor de uma
+  zh-CN  套筒 || 折叠式托盘与套筒盒 || 插舌式套筒纸盒
+  zh-TW  套筒 || 摺疊式托盤與套筒盒 || 插口式套筒紙盒
+
+===== tray
+  ar     صينية || كتالوج صواني ArtiosCAD || الغطاء والكعب والصينية
+  de     Schale || Thermoformte Einsatzschale || ArtiosCAD-Katalog für Trays
+  es     Bandeja || Bandeja termoconformada de inserto || Catálogo de bandejas ArtiosCAD
+  fr     Plateau || Plateau d’insertion thermoformé || Catalogue de plateaux ArtiosCAD
+  it     Vassoio || Vassoio inserto termoformato || Catalogo vassoi ArtiosCAD
+  ja     トレー || ArtiosCAD トレイカタログ || カバー、背表紙、トレー
+  ko     트레이 || ArtiosCAD 트레이 카탈로그 || 커버, 스파인 및 트레이
+  nl     Tray || Thermogevormde inzettray || ArtiosCAD-traycatalogus
+  pt     Bandeja || Bandeja termoformada com encaixe || Catálogo de bandejas ArtiosCAD
+  zh-CN  托盘 || 热成型内托 || 盖、书脊和托盘
+  zh-TW  托盤 || ArtiosCAD 托盤型錄 || 上蓋、書脊與托盤
+
+===== drawer
+  ar     درج || درج، إدراج، ملصق… || علب مجوهرات بأدراج مخصصة
+  de     Schublade || Schublade, Einlage, Etikett… || Schmuckschachteln mit Schublade
+  es     Cajón || Cajón, inserto, etiqueta… || Cajas para joyería con cajón
+  fr     Tiroir || Tiroir, calage, étiquette… || Boîtes à bijoux à tiroir personnalisées
+  it     Cassetto || Cassetto, inserto, etichetta… || Scatole per gioielli con cassetto
+  ja     引き出し || 引き出し、インサート、ラベル… || オリジナル 引き出し式ジュエリーボックス
+  ko     서랍 || 서랍, 인서트, 라벨… || 서랍형 주얼리 박스 제작
+  nl     Lade || Lade, inleg, label… || Sieradendozen met lade
+  pt     Gaveta || Gaveta, inserto, etiqueta… || Caixas para joias com gaveta personalizadas
+  zh-CN  抽屉 || 抽屉、内衬、标签… || 定制抽屉式首饰盒
+  zh-TW  抽屜 || 抽屜、內襯、標籤… || 客製抽屜式首飾盒
+
+===== pillow
+  ar     مفهوم علبة مجوهرات على شكل وسادة || علبة مجوهرات على شكل وسادة || علب وسادة للمجوهرات
+  de     Konzept eines Kissen-Schmuckkästchens || Kissen-Schmuckkästchen || Kissenschachteln für Schmuck
+  es     Concepto de caja de joyería tipo almohada || Caja de joyería tipo almohada || Cajas almohada para joyería
+  fr     Concept de boîte à bijoux coussin || Boîte à bijoux coussin || Boîtes berlingot pour bijoux
+  it     Concept di scatola portagioie a cuscino || Scatola portagioie a cuscino || Scatole a cuscino per gioielli
+  ja     ピロージュエリーボックスのコンセプト || ピロージュエリーボックス || ピローボックス ジュエリー用
+  ko     필로우 주얼리 박스 콘셉트 || 필로우 주얼리 박스 || 필로우 박스 주얼리 포장
+  nl     Concept voor een sieradendoosje in kussenvorm || Sieradendoosje in kussenvorm || Kussendoosjes voor sieraden
+  pt     Conceito de caixa de joias tipo almofada || Caixa de joias tipo almofada || Caixas travesseiro para joias
+  zh-CN  枕形首饰盒概念 || 枕形首饰盒 || 定制枕头盒首饰包装
+  zh-TW  枕形珠寶盒概念 || 枕形珠寶盒 || 客製枕頭盒首飾包裝
+
+===== velvet
+  ar     علب مجوهرات مخملية
+  de     Samt-Schmuckschachteln
+  es     Cajas de terciopelo para joyería
+  fr     Boîtes à bijoux en velours
+  it     Scatole per gioielli in velluto
+  ja     ベルベット製ジュエリーボックス
+  ko     벨벳 주얼리 상자
+  nl     Fluwelen sieradendozen
+  pt     Caixas de veludo para joias
+  zh-CN  丝绒首饰盒
+  zh-TW  絲絨首飾盒
+
+===== foam
+  ar     تصور لحشوة إسفنجية مُنشأ بالذكاء الاصطناعي || اختر حشوة إسفنجية || حامل رغوة PU مقطوع على الكونتور
+  de     KI-Konzept für Schaumstoffeinlage || Schaumstoffeinlage auswählen || Konturgeschnittener PU-Schaumstoff-Halter
+  es     Concepto de IA de inserto de espuma || Seleccionar inserto de espuma || Soporte de espuma PU con corte de contorno
+  fr     Concept d’insert en mousse généré par IA || Sélectionner l’insert en mousse || Support en mousse PU découpé à la forme
+  it     Concept AI di inserto in schiuma || Seleziona inserto in schiuma || Supporto in schiuma PU tagliato a contorno
+  ja     AIによるフォームインサートのコンセプト || フォームインサートを選択 || 輪郭カットPUフォームホルダー
+  ko     AI 폼 인서트 콘셉트 || 폼 인서트 선택 || 컨투어 컷 PU 폼 홀더
+  nl     AI-concept van schuiminlay || Selecteer schuiminlay || Contourgesneden PU-schuimhouder
+  pt     Conceito de inserto de espuma gerado por IA || Selecione inserto de espuma || Suporte em espuma PU com corte de contorno
+  zh-CN  泡沫内衬 AI 概念 || 选择泡沫内衬 || 轮廓切割 PU 泡沫固定座
+  zh-TW  泡棉內襯 AI 概念圖 || 選取泡棉內襯 || 輪廓切割 PU 泡棉固定座
+
+===== molded pulp
+  ar     لب مصبوب || مقارنة دعامات اللبّ المصبوب || دعامة زوايا من اللب المصبوب
+  de     Formfaser || Vergleich der Stützwirkung von Formfaser || Eckauflage aus Formpappe
+  es     Pulpa moldeada || Comparación de soportes de pulpa moldeada || Cuna de esquina de pulpa moldeada
+  fr     Pulpe moulée || Comparaison de supports en pâte moulée || Berceau d’angle en pâte moulée
+  it     Pasta di cellulosa stampata || Confronto tra supporti in polpa di carta stampata || Culla angolare in polpa stampata
+  ja     モールドパルプ || 成形パルプサポートの比較 || 成形パルプ製コーナークレードル
+  ko     몰드 펄프 || 성형 펄프 지지대 비교 || 성형 펄프 코너 크래들
+  nl     Gevormde pulp || Vergelijking van steunen van gevormde pulp || Hoekhouder van gevormde pulp
+  pt     Polpa moldada || Comparação de suportes de polpa moldada || Berço de canto em polpa moldada
+  zh-CN  模塑纸浆 || 模塑纸浆支撑对比 || 纸浆模塑角部托架
+  zh-TW  模塑紙漿 || 模塑紙漿支撐比較 || 紙漿模塑角部護托
+
+===== window
+  ar     علب هدايا بنافذة مخصصة || منظر النافذة بعد التحميل || علبة هدايا صلبة بغطاء بنافذة
+  de     Geschenkboxen mit Sichtfenster || Faltschachtel mit Fenster || Referenz für starres Fensterdeckel-Format
+  es     Cajas de regalo con ventana || Estuche plegable con ventana || Vista de ventana en estado cargado
+  fr     Boîtes cadeaux à fenêtre personnalisées || Carton pliant à fenêtre || Vue de la fenêtre à l'état chargé
+  it     Scatole regalo con finestra || Astuccio pieghevole con finestra || Vista dalla finestra a confezione caricata
+  ja     オリジナル 窓付きギフトボックス || 装入時のウィンドウビュー || 窓付き蓋のリジッドギフトボックス
+  ko     창문형 선물 상자 제작 || 적재 상태 윈도 뷰 || 윈도 뚜껑 리지드 기프트 박스
+  nl     Geschenkdozen met venster || Vouwdoos met venster || referentie voor rigide deksel met venster
+  pt     Caixas de presente com janela personalizadas || Cartucho dobrável com janela || Vista da janela com o produto carregado
+  zh-CN  定制开窗礼盒 || 开窗折叠纸盒 || 装载状态窗口视图
+  zh-TW  客製開窗禮盒 || 裝載後窗口視圖 || 開窗盒蓋硬式禮盒
+
+===== auto bottom
+  ar     علبة عرض كرتونية بقاعدة أوتوماتيكية || علبة كرتونية خارجية مشقّقة بقاعدة أوتوماتيكية || كتالوج عرض القاع التلقائي
+  de     Displaykarton mit Automatikboden || Außenkarton mit Automatikboden und Schlitzen || Katalog für Steckdeckel mit Automatikboden
+  es     Cartón expositor con fondo automático || Cartón exterior ranurado con fondo automático || El catálogo de expositores con fondo automático
+  fr     Carton de présentation à fond automatique || Carton extérieur à fond automatique et à rainures || Le catalogue de présentoirs à fond automatique
+  it     Cartone espositore con fondo automatico || Cartone esterno a fessure con fondo automatico || catalogo espositori con fondo automatico
+  ja     オートボトム式ディスプレイカートン || オートボトム式スロッテッド外箱 || オートボトムディスプレイカタログ
+  ko     자동 바닥 디스플레이 카톤 || 자동 바닥 슬롯형 외부 카톤 || 오토 바텀 디스플레이 카탈로그
+  nl     Displaydoos met automatische bodem || Buitenkarton met automatische bodem en sleuven || catalogus voor tuck-top met automatische bodem
+  pt     Caixa de exposição com fundo automático || Caixa externa com fundo automático e ranhuras || O catálogo de displays com fundo automático
+  zh-CN  自动底展示纸盒 || 自动底开槽外箱 || 自动扣底展示盒目录
+  zh-TW  自動底展示紙盒 || 自動底開槽外紙箱 || 自動扣底展示型錄
+
+===== reverse tuck
+  ar     عبوة مموجة بطي عكسي || علبة تجزئة كرتونية بطيّ عكسي || تكوين الطي العكسي
+  de     Wellpappe-Verpackung mit umgekehrtem Steckverschluss || Reverse-Tuck-Konfiguration || Reverse-Tuck-Referenz
+  es     Empaque de cartón corrugado con plegado inverso || Caja de venta minorista con solapa invertida || configuración de solapa invertida
+  fr     Étui à rabats inversés en carton ondulé || Carton de vente au détail à rabats inversés || configuration à rabats inversés
+  it     Confezione a linguetta inversa in cartone ondulato || Astuccio retail con tuck inverso || configurazione a pieghe inverse
+  ja     段ボール製リバースタックパック || リバースタック小売用カートン || リバースタック構成
+  ko     골판지 리버스 턱 팩 || 리버스 턱 소매 카톤 || 리버스 턱 구성
+  nl     Golfkartonnen verpakking met omgekeerde insteekflappen || omgekeerde insteekconfiguratie || referentie voor omgekeerde insteekconfiguratie
+  pt     Embalagem com fecho reverso em cartão ondulado || Cartucho de varejo com aba reversa || configuração com fecho reverso
+  zh-CN  瓦楞反插舌包装盒 || 反插式零售纸盒 || 反插式结构
+  zh-TW  瓦楞反插式包裝盒 || 反插式零售紙盒 || 反插式結構
+
+===== snap bottom
+  ar     علبة كرتونية خارجية ذات شقوق بقاعدة كبس || كرتون خارجي بقاعدة كبس || كرتون خارجي بقاعدة كبس ذات شقوق
+  de     Außenkarton mit Schnappboden || geschlitzter Außenkarton mit Schnappboden || Geschlitzter Außenkarton mit Snap-Boden
+  es     caja exterior con fondo de encaje || caja exterior ranurada con fondo de encaje || Caja exterior ranurada con fondo de encaje
+  fr     carton extérieur à fond clipsable || carton extérieur à fond clipsable et à fentes || Carton extérieur à fentes à fond clipsable
+  it     Cartone esterno fessurato con fondo a scatto || cartone esterno a fessure con fondo a scatto || cartone esterno con fondo a scatto
+  ja     スナップ底スロット付き外カートン || スナップ底外装カートン || スナップ底スリット付き外装箱
+  ko     스냅 바텀 슬롯형 외부 카톤 || 스냅 바텀 외부 카톤 || 스냅 바닥 카톤 제작
+  nl     buitenkarton met klikbodem || gesleufde buitenverpakking met klikbodem || Doos met sleuven en klikbodem
+  pt     Cartucho exterior ranhurado com fundo de encaixe || caixa externa com fundo de encaixe || caixa externa com fundo de encaixe e ranhuras
+  zh-CN  卡扣底开槽外纸箱 || 扣底外箱 || 扣底开槽外箱
+  zh-TW  扣底外箱 || 扣底開槽外箱 || 扣底開槽外紙箱
+
+===== gusset
+  ar     الطية الجانبية || حافظة مموجة بطيات جانبية || اتجاه التمويج عند الطيات الجانبية
+  de     Seitenfalte || Wellpappe-Seitenfaltenmappe || Wellenrichtung an Seitenfalten
+  es     Fuelle || Carpeta con fuelle de cartón corrugado || Dirección de la onda en los fuelles
+  fr     Soufflet || Chemise à soufflets en carton ondulé || Sens des cannelures au niveau des soufflets
+  it     Soffietto || Cartella a soffietto in cartone ondulato || Direzione della scanalatura sulle soffietti
+  ja     ガセット || 段ボール製ガセットフォルダー || ガセット部の段方向
+  ko     거싯 || 골판지 거싯 폴더 || 거셋의 골 방향
+  nl     Zijvouw || Golfkartonnen vouwmap met zijplooi || Golfrichting bij zijvouwen
+  pt     Fole || Pasta com fole em cartão ondulado || Direção da onda nos foles
+  zh-CN  角撑 || 瓦楞侧褶折页盒 || 折角处的瓦楞方向
+  zh-TW  側褶 || 瓦楞側褶夾 || 側褶處的瓦楞方向
+
+===== gable
+  ar     كرتون حمل بقمة جملونية || علبة بمقبض وقمة جملونية
+  de     Giebelkarton mit Tragegriff || Giebel-Tragekarton
+  es     Caja de transporte con asa y techo a dos aguas || caja con asa y tapa a dos aguas
+  fr     Carton de transport à toit en pignon || boîte à poignée à toit en pignon
+  it     Cartone da trasporto con coperchio a frontone || scatola a tetto con manico
+  ja     ゲーブルトップキャリーカートン || ゲーブルトップ型ハンドル箱
+  ko     게이블톱 캐리 카톤 || 박공형 상단 손잡이 박스
+  nl     Draagdoos met zadeldak || doos met zadeldak en handvat
+  pt     Caixa de transporte com topo em empena || caixa com alça e topo tipo empena
+  zh-CN  屋顶式手提纸盒 || 屋顶型手提盒
+  zh-TW  屋頂型手提紙盒 || 山牆頂提把盒
+
+===== belly band
+  ar     توريد أحزمة ورقية وسطية مخصصة || حزام ورقي || أحزمة ورقية مطبوعة
+  de     Beschaffung kundenspezifischer Papier-Bauchbinden || Papier-Bauchbinde || Bedruckte Bauchbinden
+  es     Abastecimiento de fajas de papel personalizadas || Faja de papel || Fajas de papel impresas
+  fr     Approvisionnement en bandes de ceinture en papier personnalisées || Bande ventrale en papier || Bandeaux papier imprimés
+  it     Approvvigionamento di fascette in carta personalizzate || Fascia avvolgente in carta || Fasce in carta stampate
+  ja     特注紙製ベリーバンドの調達 || 紙製ベリーバンド || オリジナル 帯紙 印刷
+  ko     맞춤 제작 종이 벨리 밴드 소싱 || 종이 벨리 밴드 || 인쇄 벨리 밴드 제작
+  nl     Inkoop van op maat gemaakte papieren buikbanden || Papieren banderol || Bedrukte banderollen
+  pt     Aquisição de Cinta de Papel Personalizada || Cinta envolvente de papel || Faixas de papel impressas personalizadas
+  zh-CN  定制纸质腰封采购 || 纸质腰封 || 定制印刷腰封
+  zh-TW  訂製紙質腰封採購 || 紙質腰封 || 客製印刷腰封
+
+===== header card
+  ar     بطاقة ترويسة لغطاء الكيس || مرجع كتالوج بطاقة الرأس || بطاقات إغلاق وتعليق للأكياس
+  de     Katalogreferenz für Header-Karten || Headerkarten-Beutelaufsatz || Aufhängekarten für Tüten
+  es     Tarjeta cabecera para bolsa || La referencia de catálogo de tarjeta cabecera || Cabeceras de cartón para bolsas
+  fr     Carte d'en-tête pour sac || La référence catalogue de carte d’en-tête || Cavaliers carton pour sachets
+  it     Topper per sacchetto con cartoncino di testata || riferimento catalogo per cartoncino intestazione || Cartoncini di chiusura per sacchetti
+  ja     ヘッダーカード付きバッグトッパー || ヘッダーカードカタログ参考情報 || オリジナル ヘッダーカード 袋用トッパー
+  ko     헤더 카드 백 토퍼 || 헤더 카드 카탈로그 참조 || 헤더 카드 백 토퍼 제작
+  nl     headercard-catalogusreferentie || Kopkaart-zaktopper || Kopkaarten voor zakken
+  pt     Cartão de cabeçalho para saco || A referência de catálogo de cartões de cabeçalho || Solapas de cartão para sacos
+  zh-CN  头卡式袋口封头 || 头卡目录参考 || 定制袋头卡
+  zh-TW  頭卡式袋口卡 || 吊卡目錄參考 || 客製袋用頭卡
+
+===== dust flap
+  ar     رفرف الغبار D1 || علب بسدائل غبار مخصصة
+  de     Staubklappe D1 || Versandkartons mit Staubklappen
+  es     Solapa antipolvo D1 || Estuches con solapas antipolvo
+  fr     Rabat anti-poussière D1 || Étuis à rabats anti-poussière
+  it     Aletta antipolvere D1 || Astucci con alette antipolvere
+  ja     ダストフラップ D1 || オリジナル ダストフラップ 化粧箱
+  ko     더스트 플랩 D1 || 더스트 플랩 박스 제작
+  nl     Stofklep D1 || Dozen met stofkleppen
+  pt     Aba antipoeira D1 || Caixas com aba antipó personalizadas
+  zh-CN  防尘翻盖 D1 || 定制防尘翼纸盒
+  zh-TW  防塵翻蓋 D1 || 客製防塵蓋紙盒
+
+===== end caps
+  ar     أغطية الأطراف || أغطية أطراف مموجة مخصصة || أغطية أطراف مموجة مقترنة
+  de     Endkappen || Wellpappe-Endkappen || Paarweise Wellpappe-Endkappen
+  es     Tapas de extremo || Cabezales de cartón ondulado || Tapas extremas de cartón corrugado emparejadas
+  fr     Embouts || Embouts en carton ondulé || Coiffes d’extrémité en carton ondulé appariées
+  it     Tappi terminali || Cuffie in cartone ondulato || Testate in cartone ondulato accoppiate
+  ja     エンドキャップ || オリジナル 段ボール エンドキャップ || 一対の段ボール製エンドキャップ
+  ko     엔드 캡 || 골판지 엔드 캡 제작 || 한 쌍의 골판지 엔드캡
+  nl     Eindkappen || Golfkartonnen eindkappen || Gekoppelde gegolfde eindkappen
+  pt     Tampas de extremidade || Tampas de extremidade em cartão canelado || Acabamentos corrugados emparelhados
+  zh-CN  端盖 || 定制瓦楞护角端盖 || 成对瓦楞端盖
+  zh-TW  端蓋 || 客製瓦楞端蓋 || 成對瓦楞端蓋
+
+===== dividers
+  ar     فواصل كرتون مقوى مخصصة || فواصل شبكية للعلب مخصصة
+  de     Graupappen-Stegeinsätze || Stegeinsätze für Schachteln
+  es     Separadores de cartón rígido || Separadores de rejilla para cajas
+  fr     Intercalaires en carton gris || Intercalaires à cases pour boîtes
+  it     Divisori in cartone pressato || Divisori a griglia per scatole
+  ja     オリジナル チップボール 中仕切り || オリジナル グリッド中仕切り
+  ko     하드보드 칸막이 제작 || 박스 격자 칸막이 제작
+  nl     Kartonnen verdelers met vakken || Rasterverdelers voor dozen
+  pt     Separadores em cartão compacto || Grelhas separadoras para caixas
+  zh-CN  定制灰板隔档 || 定制网格隔档
+  zh-TW  客製灰紙板隔板 || 客製格狀隔板
+
+===== counter display
+  ar     علب عرض كاونتر مخصصة || علبة عرض على المنضدة || عرض منضدي متعدد الطوابق
+  de     Thekendisplays mit Ihrem Logo || Thekendisplay-Schachtel || Thekendisplay mit einem Tablett
+  es     Expositores de mostrador || Caja expositora para mostrador || Expositor de mostrador de varios niveles
+  fr     Boîtes présentoirs de comptoir || Présentoir de comptoir en carton || Présentoir de comptoir à plusieurs niveaux
+  it     Espositori da banco personalizzati || Espositore da banco in cartone || Espositore da banco a più livelli
+  ja     オリジナル カウンター陳列箱 || カウンターディスプレイカートン || 多段カウンターディスプレイ
+  ko     카운터 진열 박스 제작 || 카운터 디스플레이 카톤 || 다단 카운터 디스플레이
+  nl     Toonbankdisplays op maat || Toonbankdisplaydoos || baliedisplay met één tray
+  pt     Expositores de balcão personalizados || Caixa expositora para balcão || Expositor de balcão em vários níveis
+  zh-CN  定制柜台展示盒 || 柜台展示纸箱 || 多层柜台展示架
+  zh-TW  客製櫃檯陳列盒 || 櫃檯陳列紙箱 || 多層櫃檯陳列架
+
+===== stand-up pouch
+  ar     -
+  de     -
+  es     -
+  fr     -
+  it     -
+  ja     -
+  ko     -
+  nl     -
+  pt     -
+  zh-CN  -
+  zh-TW  -
+
+===== poly mailer
+  ar     كيس بريد من البولي || شراء أظرف شحن بلاستيكية مخصصة من الموردين || أكياس بريد بلاستيكية بالجملة
+  de     Poly-Versandtasche || Beschaffung kundenspezifischer Versandbeutel aus Kunststoff || Poly-Versandtaschen Großhandel
+  es     Bolsa de envío de polietileno || Abastecimiento de bolsas de plástico personalizadas para envíos || Bolsas de polietileno para envíos al por mayor
+  fr     sac d’expédition en poly || Sac d’expédition en poly || Sourcing de sacs d’expédition en plastique sur mesure
+  it     Busta postale in polietilene || Ricerca fornitori per buste postali in plastica su misura || Buste in polietilene personalizzate all'ingrosso
+  ja     ポリメールバッグ || 特注ポリメーラーバッグのサプライヤー調達 || オリジナル ポリ宅配袋 ロット対応
+  ko     폴리 메일러 백 || 맞춤 폴리 메일러백 공급업체 조달 || 폴리 메일러 백 대량 제작
+  nl     Poly-mailerzak || Inkoop van plastic verzendzakken op maat || Poly verzendzakken grootverpakking
+  pt     Saco postal de polietileno || Aquisição de envelopes plásticos personalizados para envio || Sacos de envio em polietileno personalizados
+  zh-CN  聚乙烯邮寄袋 || 定制塑料邮寄袋的包装采购 || 定制塑料快递袋 批量批发
+  zh-TW  塑膠快遞袋 || 客製塑膠郵寄袋採購 || 客製塑膠快遞袋 大量訂製
+
+===== bubble mailer
+  ar     مرجع أصلي لمظروف بريدي فقاعي من البولي || كتالوج المغلفات الفقاعية من ورق كرافت || مظاريف كرافت منفوخة مخصصة
+  de     Katalog für Kraft-Luftpolsterversandtaschen || Referenz für Poly-Luftpolsterversandtaschen || Kraftpapier-Luftpolstertaschen
+  es     catálogo de sobres acolchados kraft || La referencia de sobre acolchado de burbuja de polietileno || Sobres acolchados kraft
+  fr     catalogue d'enveloppes à bulles kraft || La référence d'enveloppe à bulles en poly || Enveloppes kraft à bulles avec logo
+  it     catalogo di buste imbottite kraft || riferimento busta imbottita in polietilene || Buste imbottite in carta kraft
+  ja     ポリバブルメーラー参考資料 || クラフト気泡メーラーカタログ || オリジナル クラフト クッション封筒
+  ko     크라프트 버블 메일러 카탈로그 || 폴리 버블 메일러 참고자료 || 크라프트 에어캡 봉투 제작
+  nl     catalogus voor kraft luchtkussen enveloppen || referentie voor polybubbelenvelop || Kraft luchtkussenenveloppen
+  pt     catálogo de envelopes de envio acolchoados kraft || A referência de envelope plástico com bolhas || Envelopes kraft com bolha personalizados
+  zh-CN  牛皮纸气泡邮寄袋目录 || 聚乙烯气泡邮寄袋参考 || 定制牛皮纸气泡袋
+  zh-TW  牛皮紙氣泡信封目錄 || 聚乙烯氣泡郵寄袋參考資料 || 客製牛皮氣泡信封
+
+===== shipping carton
+  ar     كرتون شحن عادي ذو شقوق
+  de     Standard-Versandkarton mit durchgehenden Laschen
+  es     Caja de envío de solapas regulares
+  fr     Carton d’expédition à rabats droits
+  it     Cartone da spedizione a fessure regolari
+  ja     標準スロット式輸送カートン
+  ko     일반 슬롯형 배송 카톤
+  nl     Verzenddoos met normale kleppen
+  pt     Caixa de expedição com abas de comprimento regular
+  zh-CN  常规开槽运输纸箱
+  zh-TW  標準開槽運輸紙箱
+
+===== dieline
+  ar     مخطط القص والتجعيد الحالي للوسم || سجل تغيير خط القص || راجع تغيير مخطط القص
+  de     Aktuelle Anhänger-Stanzform || Änderungsprotokoll zur Stanzkontur || Eine Änderung der Stanzkontur prüfen
+  es     Troquel actual de la etiqueta colgante || registro de cambios de troquel || Revise un cambio en el troquel
+  fr     Découpe actuelle de l'étiquette || registre des modifications de tracé de découpe || Examiner une modification du tracé de découpe
+  it     Fustella attuale del cartellino || registro delle modifiche alla fustella || Verifica una modifica alla fustella
+  ja     現行タグのダイライン || ダイライン変更記録 || 抜き型の変更を確認する
+  ko     현재 태그 다이라인 || 다이라인 변경 기록 || 다이라인 변경 검토
+  nl     Huidige hangtag-stansmal || registratie van wijzigingen aan de stanslijn || Beoordeel een wijziging in de stansvorm
+  pt     Facão atual da etiqueta || registo de alterações da faca || Revise uma alteração na faca de corte
+  zh-CN  当前吊牌刀模线 || 刀模线变更记录 || 审查刀模线变更
+  zh-TW  目前吊牌刀模線 || 刀模線變更記錄 || 檢視刀模線變更
+
+===== MOQ
+  ar     -
+  de     -
+  es     -
+  fr     -
+  it     -
+  ja     -
+  ko     -
+  nl     -
+  pt     -
+  zh-CN  -
+  zh-TW  -
+
+===== sampling
+  ar     أسئلة قبل أخذ العينة
+  de     Fragen vor der Bemusterung
+  es     Preguntas antes del muestreo
+  fr     Questions avant l'échantillonnage
+  it     Domande prima del campionamento
+  ja     サンプル作成前の質問
+  ko     샘플링 전 질문
+  nl     Vragen vóór het maken van monsters
+  pt     Perguntas antes da amostragem
+  zh-CN  打样前的问题
+  zh-TW  打樣前問題
+
+===== lead time
+  ar     مدة التسليم || المدة حسب المرحلة || مدة التسليم مرحلة بمرحلة
+  de     Lieferzeit || Lieferzeit nach Phase || Lieferzeit Schritt für Schritt
+  es     Plazo de entrega || Plazo por etapa || Plazo de entrega etapa por etapa
+  fr     Délai de livraison || Délai par étape || Délai de production étape par étape
+  it     Tempi di consegna || Tempi per fase || Tempi di consegna fase per fase
+  ja     リードタイム || 工程ごとの所要期間 || 工程ごとのリードタイム
+  ko     리드 타임 || 단계별 소요 시간 || 단계별 리드 타임
+  nl     Levertijd || Doorlooptijd per fase || Levertijd fase voor fase
+  pt     Prazo de produção || Prazo por etapa || Prazo de entrega etapa por etapa
+  zh-CN  交货周期 || 各阶段所需时间 || 各阶段交期
+  zh-TW  交期 || 各階段所需時間 || 各階段交期
+
+===== quote
+  ar     اطلب عرض سعر – Packrivo || اطلب عرض سعر || احصل على عرض سعر للتغليف →
+  de     Angebot anfordern – Packrivo || Angebot anfordern || Angebotsdetails
+  es     Solicitar cotización – Packrivo || Solicitar cotización || Solicitar presupuesto
+  fr     Obtenir un devis – Packrivo || Obtenir un devis || Demander un devis
+  it     Richiedi un preventivo – Packrivo || Richiedi un preventivo || Dettagli del preventivo
+  ja     見積もりを依頼 – Packrivo || 見積もりを依頼 || 包装見積を取得 →
+  ko     견적 요청 – Packrivo || 견적 요청 || 패키징 견적 받기 →
+  nl     Prijsopgave aanvragen – Packrivo || Vraag een offerte aan || Offerte aanvragen
+  pt     Pedir orçamento – Packrivo || Solicite uma Cotação || Solicitar orçamento
+  zh-CN  获取报价 – Packrivo || 获取报价 || 申请报价
+  zh-TW  取得報價 – Packrivo || 取得報價 || 申請報價
+
+===== supplier
+  ar     قبل مناقشة المورد || قارن بين الموردين || كيف يتم اختيار الموردين؟
+  de     Lieferantenabgleich || Packrivo + Lieferant || Lieferant + Packrivo + Sie
+  es     Proveedor + Usted || Emparejamiento con proveedor || Mínimos del proveedor
+  fr     Fournisseur + Vous || Mise en correspondance fournisseur || Minimums fournisseurs
+  it     Fornitore + Lei || Abbinamento fornitori || Minimi del fornitore
+  ja     サプライヤーとの打ち合わせ前に || サプライヤーを比較してください || サプライヤーはどのように選定されますか。
+  ko     공급업체 논의 전 || 공급업체를 비교하십시오 || 공급업체는 어떻게 선정됩니까?
+  nl     Leverancier + u || Afstemming door de leverancier || Minimumaantallen van de leverancier
+  pt     Fornecedor + Você || Correspondência com fornecedores || Mínimos do fornecedor
+  zh-CN  供应商 + 您 || 供应商匹配 || 供应商最低起订量
+  zh-TW  與供應商討論前 || 比較供應商 || 供應商如何選定？
+
+===== tooling
+  ar     لا مفاجآت في تكاليف القوالب || دليل نطاق القوالب
+  de     Keine Überraschung bei den Werkzeugkosten || Leitfaden zum Werkzeugumfang
+  es     Sin sorpresas de utillaje || La guía del alcance del utillaje
+  fr     Pas de surprise sur l'outillage || Le guide du périmètre des outillages
+  it     Nessun costo di attrezzaggio a sorpresa || guida all'ambito del tooling
+  ja     型代の追加請求なし || 金型・治具の適用範囲ガイド
+  ko     추가 금형비 없음 || 툴링 범위 가이드
+  nl     Geen verrassing met stansmallen || handleiding voor de omvang van matrijzen
+  pt     Sem surpresas de ferramenta || O guia do âmbito de ferramentas
+  zh-CN  模具费不藏价 || 模具范围指南
+  zh-TW  沒有隱藏的模具費 || 開模範圍指南
+
+===== freight
+  ar     الشحن منفصل
+  de     Fracht kommt separat
+  es     El transporte va aparte
+  fr     Le transport est à part
+  it     Il trasporto è a parte
+  ja     送料は別途
+  ko     운송료는 별도
+  nl     Vracht wordt apart berekend
+  pt     O transporte é à parte
+  zh-CN  运费单独计算
+  zh-TW  運費另計
+
+===== landed cost
+  ar     -
+  de     -
+  es     -
+  fr     -
+  it     -
+  ja     -
+  ko     -
+  nl     -
+  pt     -
+  zh-CN  -
+  zh-TW  -
+
+===== unit price
+  ar     -
+  de     -
+  es     -
+  fr     -
+  it     -
+  ja     -
+  ko     -
+  nl     -
+  pt     -
+  zh-CN  -
+  zh-TW  -
+
+===== foil stamping
+  ar     -
+  de     -
+  es     -
+  fr     -
+  it     -
+  ja     -
+  ko     -
+  nl     -
+  pt     -
+  zh-CN  -
+  zh-TW  -
+
+===== emboss
+  ar     تصور للنقش البارز بدون حبر مُنشأ بالذكاء الاصطناعي || اختر نقشًا بارزًا بدون حبر || نقش بارز بدون حبر
+  de     KI-Konzept für eine Blindprägung als Hochprägung || Blindprägung als Hochprägung auswählen || Blindprägung als Hochprägung
+  es     Concepto de IA de relieve en seco sin tinta || Seleccionar relieve en seco sin tinta || Relieve en seco sin tinta
+  fr     Concept de gaufrage en relief sans encre généré par IA || Sélectionner le gaufrage en relief sans encre || Gaufrage en relief sans encre
+  it     Concept AI di embossing a secco || Seleziona embossing a secco || Embossing a secco
+  ja     AIによる空浮き出し加工のコンセプト || 空浮き出し（エンボス加工）を選択 || 空浮き出し（エンボス加工）
+  ko     AI 무색 양각 콘셉트 || 무색 양각(엠보싱) 선택 || 무색 양각(엠보싱)
+  nl     AI-concept voor blind embossing || Selecteer blind embossing || Reliëfdruk
+  pt     Conceito de relevo sem tinta gerado por IA || Selecione relevo sem tinta || Relevo sem tinta
+  zh-CN  盲压凸 AI 概念 || 选择盲压凸 || 盲压凸
+  zh-TW  無色凸壓 AI 概念圖 || 選取無色凸壓 || 無色燙壓凹凸中的凸壓
+
+===== spot UV
+  ar     -
+  de     -
+  es     -
+  fr     -
+  it     -
+  ja     -
+  ko     -
+  nl     -
+  pt     -
+  zh-CN  -
+  zh-TW  -
+
+===== matte lamination
+  ar     -
+  de     -
+  es     -
+  fr     -
+  it     -
+  ja     -
+  ko     -
+  nl     -
+  pt     -
+  zh-CN  -
+  zh-TW  -
+
+===== certificate
+  ar     -
+  de     -
+  es     -
+  fr     -
+  it     -
+  ja     -
+  ko     -
+  nl     -
+  pt     -
+  zh-CN  -
+  zh-TW  -
+
+===== worksheet
+  ar     أنشئ ورقة عمل للتجويف || ورقة عمل نطاق التسليم || ورقة عمل كمية التصميم
+  de     Arbeitsblatt zur Messmethode || die Projektarbeitsblätter || Ein Kavitäten-Arbeitsblatt erstellen
+  es     Crear una hoja de trabajo de cavidades || hoja de trabajo de cantidad de diseño || hoja de trabajo del alcance de entrega
+  fr     Créer une fiche de travail de cavité || fiche de travail des quantités de conception || fiche de travail sur le périmètre de livraison
+  it     Creare un foglio di lavoro per la cavità || foglio di lavoro ambito di consegna || foglio di lavoro quantità di progetto
+  ja     キャビティ用ワークシートを作成する || 納品範囲ワークシート || 設計数量ワークシート
+  ko     캐비티 워크시트 작성 || 납품 범위 워크시트 || 디자인 수량 워크시트
+  nl     meetmethode voor het werkblad || de projectwerkbladen || Maak een werkblad voor de uitsparing
+  pt     Monte uma planilha da cavidade || folha de trabalho do âmbito de entrega || ficha de trabalho da quantidade de produção
+  zh-CN  制作腔体工作表 || 设计数量工作表 || 交付范围工作表
+  zh-TW  製作容納腔工作表 || 設計數量工作表 || 量測方法工作紙
+

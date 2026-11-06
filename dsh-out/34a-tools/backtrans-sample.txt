@@ -1,0 +1,222 @@
+===== ar   sampled=20 total=337 buckets={'title': 65, 'attr': 139, 'text': 132}
+[title] en: Custom Mailer Boxes: Printed & Shipping Ready | Packrivo
+     tr: علب بريدية مخصصة: مطبوعة وجاهزة للشحن | Packrivo   (new)
+[attr] en: Custom jewelry boxes, pouches and gift packaging with your logo. Dieline with every quote. MOQ 250, 5-10 day sampling, 7-30 day production.
+     tr: علب مجوهرات وأكياس وتغليف هدايا مخصصة بشعارك. قالب القص مرفق مع كل عرض سعر. MOQ 250، وأخذ عينات خلال 5-10 أيام، وإنتاج خلال 7-30 يومًا.   (new)
+[text] en: Custom packaging for jewelry, candles and gifts
+     tr: تغليف مخصص للمجوهرات والشموع والهدايا   (new)
+[title] en: Custom Kraft Cosmetic Boxes (MOQ 250) | Packrivo
+     tr: علب كرافت للمستحضرات (MOQ 250) | Packrivo   (new)
+[attr] en: Custom magnetic closure gift boxes. MOQ 250, 5-10 day sampling. 7-30 day production after approval. Recycled-content stock on request. Request a quote.
+     tr: علب هدايا بإغلاق مغناطيسي مخصصة. MOQ 250، وأخذ عينات خلال 5-10 أيام. إنتاج خلال 7-30 يومًا بعد الموافقة. مواد معاد تدويرها عند الطلب. اطلب عرض سعر.   (new)
+[text] en: Custom Packaging Samples
+     tr: عينات تغليف مخصصة   (new)
+[title] en: Round Cardboard Tube Boxes | Packrivo
+     tr: علب أنبوبية كرتونية دائرية | Packrivo   (new)
+[attr] en: Packhelp alternatives: order terms side by side. MOQ and tooling compared. Sampling and production time. Request a quote.
+     tr: بدائل Packhelp: شروط الطلب جنبًا إلى جنب. مقارنة MOQ والقوالب. وقت أخذ العينات والإنتاج. اطلب عرض سعر.   (new)
+[text] en: Custom Packaging Examples
+     tr: أمثلة تغليف مخصص   (new)
+[title] en: Packaging MOQ: How 250-Piece Runs Work | Packrivo
+     tr: MOQ التغليف: دفعات 250 قطعة | Packrivo   (new)
+[attr] en: Custom coated labels. DDP or FOB, quoted both ways. Dieline with every quote. MOQ 250, 5-10 day sampling. Request a quote.
+     tr: ملصقات مطلية مخصصة. DDP أو FOB، مع تسعير بالطريقتين. قالب القص مرفق مع كل عرض سعر. MOQ 250، وأخذ عينات خلال 5-10 أيام. اطلب عرض سعر.   (new)
+[text] en: Hinged Lid Boxes, dieline first
+     tr: علب بغطاء مفصلي، قالب القص أولًا   (new)
+[title] en: Packaging Finishes: Colors and Materials | Packrivo
+     tr: تشطيبات التغليف: ألوان ومواد | Packrivo   (new)
+[attr] en: Custom dispenser boxes. DDP or FOB, quoted both ways. Dieline with every quote. MOQ 250, 5-10 day sampling. Request a quote.
+     tr: علب توزيع مخصصة. DDP أو FOB، مع تسعير بالطريقتين. قالب القص مرفق مع كل عرض سعر. MOQ 250، وأخذ عينات خلال 5-10 أيام. اطلب عرض سعر.   (new)
+[text] en: Folding Cartons Wholesale, dieline first
+     tr: علب كرتونية مطوية بالجملة، قالب القص أولًا   (new)
+[title] en: Custom Hinged Lid Boxes | Packrivo
+     tr: علب بغطاء مفصلي مخصصة | Packrivo   (new)
+[attr] en: Custom lock cap auto bottom boxes. Dieline with every quote. MOQ 250, 5-10 day sampling. 7-30 day production after approval. Request a quote.
+     tr: علب بغطاء قفل وقاعدة تلقائية. قالب القص مرفق مع كل عرض سعر. MOQ 250، وأخذ عينات خلال 5-10 أيام. إنتاج خلال 7-30 يومًا بعد الموافقة. اطلب عرض سعر.   (new)
+[text] en: Printed Belly Bands, dieline first
+     tr: أحزمة ورقية مطبوعة، قالب القص أولًا   (new)
+[title] en: Custom Lid-and-base Jewelry Boxes | Packrivo
+     tr: علب مجوهرات مخصصة بغطاء وقاعدة | Packrivo   (new)
+[attr] en: Custom reverse tuck retail boxes. DDP or FOB, quoted both ways. Dieline with every quote. MOQ 250, 5-10 day sampling. Request a quote.
+     tr: علب متاجر بتثبيت عكسي. DDP أو FOB، مع تسعير بالطريقتين. قالب القص مرفق مع كل عرض سعر. MOQ 250، وأخذ عينات خلال 5-10 أيام. اطلب عرض سعر.   (new)
+
+===== de   sampled=5 total=337 buckets={'title': 65, 'attr': 139, 'text': 132}
+[title] en: Custom Mailer Boxes: Printed & Shipping Ready | Packrivo
+     tr: Versandboxen bedruckt, versandfertig | Packrivo   (new)
+[attr] en: Custom jewelry boxes, pouches and gift packaging with your logo. Dieline with every quote. MOQ 250, 5-10 day sampling, 7-30 day production.
+     tr: Individuelle Schmuckschachteln, Beutel und Geschenkverpackungen mit Ihrem Logo. Stanzkontur zu jedem Angebot. MOQ 250, Bemusterung in 5-10 Tagen, Produktion in 7-30 Tagen.   (new)
+[text] en: Custom packaging for jewelry, candles and gifts
+     tr: Individuelle Verpackung für Schmuck, Kerzen und Geschenke   (new)
+[title] en: Packhelp Alternatives: Packaging Compared | Packrivo
+     tr: Packhelp-Alternativen im Vergleich | Packrivo   (new)
+[attr] en: Custom carry boxes with handle. Dieline with every quote. MOQ 250, 5-10 day sampling. 7-30 day production after approval. Request a quote.
+     tr: Individuelle Trageboxen mit Griff. Stanzkontur zu jedem Angebot. MOQ 250, Bemusterung in 5-10 Tagen. 7-30 Tage Produktion nach Ihrer Freigabe. Fordern Sie ein Angebot an.   (new)
+
+===== es   sampled=5 total=337 buckets={'title': 65, 'attr': 139, 'text': 132}
+[title] en: Custom Mailer Boxes: Printed & Shipping Ready | Packrivo
+     tr: Cajas mailer a medida, impresas | Packrivo   (new)
+[attr] en: Custom jewelry boxes, pouches and gift packaging with your logo. Dieline with every quote. MOQ 250, 5-10 day sampling, 7-30 day production.
+     tr: Cajas de joyería, bolsas y embalaje de regalo personalizados con tu logo. Troquel con cada cotización. MOQ 250, muestreo en 5-10 días, producción en 7-30 días.   (new)
+[text] en: Custom packaging for jewelry, candles and gifts
+     tr: Embalaje a medida para joyería, velas y regalos   (new)
+[title] en: Packhelp Alternatives: Packaging Compared | Packrivo
+     tr: Alternativas a Packhelp: comparativa | Packrivo   (new)
+[attr] en: Custom carry boxes with handle. Dieline with every quote. MOQ 250, 5-10 day sampling. 7-30 day production after approval. Request a quote.
+     tr: Cajas de transporte con asa personalizadas. Troquel con cada cotización. MOQ 250, muestreo en 5-10 días. Producción en 7-30 días tras la aprobación. Solicitar cotización.   (new)
+
+===== fr   sampled=5 total=337 buckets={'title': 65, 'attr': 139, 'text': 132}
+[title] en: Custom Mailer Boxes: Printed & Shipping Ready | Packrivo
+     tr: Boîtes d'expédition imprimées | Packrivo   (new)
+[attr] en: Custom jewelry boxes, pouches and gift packaging with your logo. Dieline with every quote. MOQ 250, 5-10 day sampling, 7-30 day production.
+     tr: Boîtes à bijoux, pochettes et emballages cadeaux personnalisés avec votre logo. Tracé de découpe avec chaque devis. MOQ 250, échantillons en 5-10 jours, production en 7-30 jours.   (new)
+[text] en: Custom packaging for jewelry, candles and gifts
+     tr: Emballages personnalisés pour bijoux, bougies et cadeaux   (new)
+[title] en: Packhelp Alternatives: Packaging Compared | Packrivo
+     tr: Alternatives à Packhelp : emballages | Packrivo   (new)
+[attr] en: Custom carry boxes with handle. Dieline with every quote. MOQ 250, 5-10 day sampling. 7-30 day production after approval. Request a quote.
+     tr: Boîtes de transport avec poignée personnalisées. Tracé de découpe avec chaque devis. MOQ 250, échantillons en 5-10 jours. Production en 7-30 jours après validation. Demandez un devis.   (new)
+
+===== it   sampled=5 total=337 buckets={'title': 65, 'attr': 139, 'text': 132}
+[title] en: Custom Mailer Boxes: Printed & Shipping Ready | Packrivo
+     tr: Scatole mailer stampate e pronte | Packrivo   (new)
+[attr] en: Custom jewelry boxes, pouches and gift packaging with your logo. Dieline with every quote. MOQ 250, 5-10 day sampling, 7-30 day production.
+     tr: Scatole per gioielli, pochette e packaging regalo personalizzati con il tuo logo. Fustella con ogni preventivo. MOQ 250, campionatura in 5-10 giorni, produzione in 7-30 giorni.   (new)
+[text] en: Custom packaging for jewelry, candles and gifts
+     tr: Packaging personalizzato per gioielli, candele e regali   (new)
+[title] en: Packhelp Alternatives: Packaging Compared | Packrivo
+     tr: Alternative a Packhelp: packaging a confronto | Packrivo   (new)
+[attr] en: Custom carry boxes with handle. Dieline with every quote. MOQ 250, 5-10 day sampling. 7-30 day production after approval. Request a quote.
+     tr: Scatole con manico per asporto. Fustella con ogni preventivo. MOQ 250, campionatura in 5-10 giorni. Produzione in 7-30 giorni dopo l'approvazione. Richiedi un preventivo.   (new)
+
+===== ja   sampled=20 total=337 buckets={'title': 65, 'attr': 139, 'text': 132}
+[title] en: Custom Mailer Boxes: Printed & Shipping Ready | Packrivo
+     tr: オリジナル メーラーボックス 印刷・発送対応 | Packrivo   (new)
+[attr] en: Custom jewelry boxes, pouches and gift packaging with your logo. Dieline with every quote. MOQ 250, 5-10 day sampling, 7-30 day production.
+     tr: ロゴを入れたジュエリーボックス、ポーチ、ギフト包装のオーダーメイド。ダイラインは見積もりごとに添付します。MOQ 250、サンプリング5-10日、生産7-30日。   (new)
+[text] en: Custom packaging for jewelry, candles and gifts
+     tr: ジュエリー、キャンドル、ギフト向け オリジナル包装   (new)
+[title] en: Custom Kraft Cosmetic Boxes (MOQ 250) | Packrivo
+     tr: オリジナル クラフト化粧品ボックス（MOQ 250） | Packrivo   (new)
+[attr] en: Custom magnetic closure gift boxes. MOQ 250, 5-10 day sampling. 7-30 day production after approval. Recycled-content stock on request. Request a quote.
+     tr: オリジナルマグネット式ギフトボックス。MOQ 250、サンプリング5-10日。承認後、生産7-30日。再生原料の素材もご要望に応じて対応。見積もりをご依頼ください。   (new)
+[text] en: Custom Packaging Samples
+     tr: オリジナル包装 サンプル   (new)
+[title] en: Round Cardboard Tube Boxes | Packrivo
+     tr: 丸型 紙管ボックス | Packrivo   (new)
+[attr] en: Packhelp alternatives: order terms side by side. MOQ and tooling compared. Sampling and production time. Request a quote.
+     tr: Packhelpの代替：発注条件を横並びで比較。MOQと型代を比較。サンプリングと生産の期間。見積もりをご依頼ください。   (new)
+[text] en: Custom Packaging Examples
+     tr: オリジナル包装の事例   (new)
+[title] en: Packaging MOQ: How 250-Piece Runs Work | Packrivo
+     tr: 包装のMOQ：250個ロットの進め方 | Packrivo   (new)
+[attr] en: Custom coated labels. DDP or FOB, quoted both ways. Dieline with every quote. MOQ 250, 5-10 day sampling. Request a quote.
+     tr: オリジナルコーティングラベル。DDPまたはFOB、両条件で見積もります。ダイラインは見積もりごとに添付します。MOQ 250、サンプリング5-10日。見積もりをご依頼ください。   (new)
+[text] en: Hinged Lid Boxes, dieline first
+     tr: 開き蓋 段ボール箱、ダイライン先行   (new)
+[title] en: Packaging Finishes: Colors and Materials | Packrivo
+     tr: 包装の仕上げ：色と素材 | Packrivo   (new)
+[attr] en: Custom dispenser boxes. DDP or FOB, quoted both ways. Dieline with every quote. MOQ 250, 5-10 day sampling. Request a quote.
+     tr: オリジナルディスペンサー箱。DDPまたはFOB、両条件で見積もります。ダイラインは見積もりごとに添付します。MOQ 250、サンプリング5-10日。見積もりをご依頼ください。   (new)
+[text] en: Folding Cartons Wholesale, dieline first
+     tr: 化粧箱 卸売、ダイライン先行   (new)
+[title] en: Custom Hinged Lid Boxes | Packrivo
+     tr: オリジナル 開き蓋ボックス | Packrivo   (new)
+[attr] en: Custom lock cap auto bottom boxes. Dieline with every quote. MOQ 250, 5-10 day sampling. 7-30 day production after approval. Request a quote.
+     tr: オリジナルロックキャップ自動底箱。ダイラインは見積もりごとに添付します。MOQ 250、サンプリング5-10日。承認後、生産7-30日。見積もりをご依頼ください。   (new)
+[text] en: Printed Belly Bands, dieline first
+     tr: 印刷 帯紙、ダイライン先行   (new)
+[title] en: Custom Lid-and-base Jewelry Boxes | Packrivo
+     tr: オリジナル 蓋と台のジュエリーボックス | Packrivo   (new)
+[attr] en: Custom reverse tuck retail boxes. DDP or FOB, quoted both ways. Dieline with every quote. MOQ 250, 5-10 day sampling. Request a quote.
+     tr: オリジナル逆差し込み式店頭ボックス。DDPまたはFOB、両条件で見積もります。ダイラインは見積もりごとに添付します。MOQ 250、サンプリング5-10日。見積もりをご依頼ください。   (new)
+
+===== ko   sampled=5 total=337 buckets={'title': 65, 'attr': 139, 'text': 132}
+[title] en: Custom Mailer Boxes: Printed & Shipping Ready | Packrivo
+     tr: 맞춤 메일러 박스: 인쇄·발송 준비 | Packrivo   (new)
+[attr] en: Custom jewelry boxes, pouches and gift packaging with your logo. Dieline with every quote. MOQ 250, 5-10 day sampling, 7-30 day production.
+     tr: 로고를 넣은 주얼리 박스, 파우치, 선물 포장 맞춤 제작. 다이라인은 모든 견적에 첨부됩니다. MOQ 250, 샘플링 5-10일, 생산 7-30일.   (new)
+[text] en: Custom packaging for jewelry, candles and gifts
+     tr: 주얼리, 캔들, 선물 맞춤 포장   (new)
+[title] en: Packhelp Alternatives: Packaging Compared | Packrivo
+     tr: Packhelp 대안: 포장 비교 | Packrivo   (new)
+[attr] en: Custom carry boxes with handle. Dieline with every quote. MOQ 250, 5-10 day sampling. 7-30 day production after approval. Request a quote.
+     tr: 맞춤 제작 손잡이 캐리 박스. 다이라인은 모든 견적에 첨부됩니다. MOQ 250, 샘플링 5-10일. 승인 후 생산 7-30일. 견적을 요청하세요.   (new)
+
+===== nl   sampled=5 total=337 buckets={'title': 65, 'attr': 139, 'text': 132}
+[title] en: Custom Mailer Boxes: Printed & Shipping Ready | Packrivo
+     tr: Verzenddozen op maat: bedrukt en klaar | Packrivo   (new)
+[attr] en: Custom jewelry boxes, pouches and gift packaging with your logo. Dieline with every quote. MOQ 250, 5-10 day sampling, 7-30 day production.
+     tr: Sieradendozen, zakjes en cadeauverpakking met je logo. Stansmal bij elke offerte. MOQ 250, 5-10 dagen monsters, 7-30 dagen productie.   (new)
+[text] en: Custom packaging for jewelry, candles and gifts
+     tr: Verpakkingen op maat voor sieraden, kaarsen en geschenken   (new)
+[title] en: Packhelp Alternatives: Packaging Compared | Packrivo
+     tr: Alternatieven voor Packhelp: verpakkingen | Packrivo   (new)
+[attr] en: Custom carry boxes with handle. Dieline with every quote. MOQ 250, 5-10 day sampling. 7-30 day production after approval. Request a quote.
+     tr: Draagdozen met handvat op maat. Stansmal bij elke offerte. MOQ 250, 5-10 dagen voor monsters. 7-30 dagen productie na goedkeuring. Vraag een offerte aan.   (new)
+
+===== pt   sampled=5 total=337 buckets={'title': 65, 'attr': 139, 'text': 132}
+[title] en: Custom Mailer Boxes: Printed & Shipping Ready | Packrivo
+     tr: Caixas de envio impressas | Packrivo   (new)
+[attr] en: Custom jewelry boxes, pouches and gift packaging with your logo. Dieline with every quote. MOQ 250, 5-10 day sampling, 7-30 day production.
+     tr: Caixas de joalharia, saquetas e embalagens de presente personalizadas com o seu logótipo. Linha de corte em cada orçamento. MOQ 250, amostragem em 5-10 dias, produção em 7-30 dias.   (new)
+[text] en: Custom packaging for jewelry, candles and gifts
+     tr: Embalagens personalizadas para joalharia, velas e presentes   (new)
+[title] en: Packhelp Alternatives: Packaging Compared | Packrivo
+     tr: Alternativas à Packhelp: embalagens comparadas | Packrivo   (new)
+[attr] en: Custom carry boxes with handle. Dieline with every quote. MOQ 250, 5-10 day sampling. 7-30 day production after approval. Request a quote.
+     tr: Caixas de transporte com asa personalizadas. Linha de corte em cada orçamento. MOQ 250, amostragem em 5-10 dias. Produção em 7-30 dias após aprovação. Solicite um orçamento.   (new)
+
+===== zh-CN   sampled=20 total=337 buckets={'title': 65, 'attr': 139, 'text': 132}
+[title] en: Custom Mailer Boxes: Printed & Shipping Ready | Packrivo
+     tr: 定制邮寄盒：印刷与发运就绪 | Packrivo   (new)
+[attr] en: Custom jewelry boxes, pouches and gift packaging with your logo. Dieline with every quote. MOQ 250, 5-10 day sampling, 7-30 day production.
+     tr: 定制首饰盒、收纳袋与礼品包装，可印 Logo。每份报价均附刀模图。MOQ 250，打样 5-10 天，生产 7-30 天。   (new)
+[text] en: Custom packaging for jewelry, candles and gifts
+     tr: 首饰、蜡烛与礼品定制包装   (new)
+[title] en: Custom Kraft Cosmetic Boxes (MOQ 250) | Packrivo
+     tr: 定制牛皮纸化妆盒（MOQ 250） | Packrivo   (new)
+[attr] en: Custom magnetic closure gift boxes. MOQ 250, 5-10 day sampling. 7-30 day production after approval. Recycled-content stock on request. Request a quote.
+     tr: 定制磁吸礼盒。MOQ 250，打样 5-10 天。确认后生产 7-30 天。可按需提供再生料。申请报价。   (new)
+[text] en: Custom Packaging Samples
+     tr: 定制包装样品   (new)
+[title] en: Round Cardboard Tube Boxes | Packrivo
+     tr: 圆形纸筒盒 | Packrivo   (new)
+[attr] en: Packhelp alternatives: order terms side by side. MOQ and tooling compared. Sampling and production time. Request a quote.
+     tr: Packhelp 替代方案：订单条款横向对比。MOQ 与模具一并对比。打样与生产时间。申请报价。   (new)
+[text] en: Custom Packaging Examples
+     tr: 定制包装案例   (new)
+[title] en: Packaging MOQ: How 250-Piece Runs Work | Packrivo
+     tr: 包装 MOQ：250 件怎么跑 | Packrivo   (new)
+[attr] en: Custom coated labels. DDP or FOB, quoted both ways. Dieline with every quote. MOQ 250, 5-10 day sampling. Request a quote.
+     tr: 定制涂布标签。DDP 或 FOB，两种方式分别报价。每份报价均附刀模图。MOQ 250，打样 5-10 天。申请报价。   (new)
+[text] en: Hinged Lid Boxes, dieline first
+     tr: 翻盖盒，刀模图先行   (new)
+[title] en: Packaging Finishes: Colors and Materials | Packrivo
+     tr: 包装工艺：颜色与材料 | Packrivo   (new)
+[attr] en: Custom dispenser boxes. DDP or FOB, quoted both ways. Dieline with every quote. MOQ 250, 5-10 day sampling. Request a quote.
+     tr: 定制抽取盒。DDP 或 FOB，两种方式分别报价。每份报价均附刀模图。MOQ 250，打样 5-10 天。申请报价。   (new)
+[text] en: Folding Cartons Wholesale, dieline first
+     tr: 折叠纸盒批发，刀模图先行   (new)
+[title] en: Custom Hinged Lid Boxes | Packrivo
+     tr: 定制翻盖盒 | Packrivo   (new)
+[attr] en: Custom lock cap auto bottom boxes. Dieline with every quote. MOQ 250, 5-10 day sampling. 7-30 day production after approval. Request a quote.
+     tr: 定制锁扣盖自动锁底盒。每份报价均附刀模图。MOQ 250，打样 5-10 天。确认后生产 7-30 天。申请报价。   (new)
+[text] en: Printed Belly Bands, dieline first
+     tr: 印刷腰封，刀模图先行   (new)
+[title] en: Custom Lid-and-base Jewelry Boxes | Packrivo
+     tr: 定制天地盖首饰盒 | Packrivo   (new)
+[attr] en: Custom reverse tuck retail boxes. DDP or FOB, quoted both ways. Dieline with every quote. MOQ 250, 5-10 day sampling. Request a quote.
+     tr: 定制反插零售盒。DDP 或 FOB，两种方式分别报价。每份报价均附刀模图。MOQ 250，打样 5-10 天。申请报价。   (new)
+
+===== zh-TW   sampled=5 total=337 buckets={'title': 65, 'attr': 139, 'text': 132}
+[title] en: Custom Mailer Boxes: Printed & Shipping Ready | Packrivo
+     tr: 客製飛機盒：印刷完成即可出貨 | Packrivo   (new)
+[attr] en: Custom jewelry boxes, pouches and gift packaging with your logo. Dieline with every quote. MOQ 250, 5-10 day sampling, 7-30 day production.
+     tr: 印上品牌標誌的客製珠寶盒、首飾袋與禮品包裝。每次報價附刀模圖。MOQ 250，打樣 5-10 天，生產 7-30 天。   (new)
+[text] en: Custom packaging for jewelry, candles and gifts
+     tr: 珠寶、蠟燭與禮品的客製包裝   (new)
+[title] en: Packhelp Alternatives: Packaging Compared | Packrivo
+     tr: Packhelp 替代方案：包裝比較 | Packrivo   (new)
+[attr] en: Custom carry boxes with handle. Dieline with every quote. MOQ 250, 5-10 day sampling. 7-30 day production after approval. Request a quote.
+     tr: 客製附提把提盒。每次報價附刀模圖。MOQ 250，打樣 5-10 天。確認後生產 7-30 天。索取報價。   (new)
+

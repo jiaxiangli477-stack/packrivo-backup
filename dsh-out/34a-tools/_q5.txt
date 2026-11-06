@@ -1,0 +1,228 @@
+SEG :: Custom packaging labels.
+    [Custom Packaging Labels | Packrivo] 特注包装ラベル | Packrivo
+    [Custom Packaging Labels | Packrivo] 特注包装ラベル | Packrivo
+SEG :: Custom gift boxes.
+    [Custom Gift Boxes & Retail Packaging | Packrivo] カスタムギフトボックス&リテールパッケージ | Packrivo
+    [Custom Gift Boxes & Retail Packaging | Packrivo] カスタムギフトボックス&リテールパッケージ | Packrivo
+SEG :: Custom jewelry boxes.
+    [Custom Jewelry Boxes & Pouches | Packrivo] カスタムジュエリーボックス&ポーチ | Packrivo
+    [Custom Jewelry Boxes with Fitted Inserts | Packrivo] 専用インサート付きオーダーメイドジュエリーボックス | Packrivo
+SEG :: Custom packaging inserts.
+    [Custom Packaging Inserts & Cards | Packrivo] 特注包装用インサート & カード | Packrivo
+    [Custom Packaging Inserts & Cards | Packrivo] 特注包装用インサート & カード | Packrivo
+SEG :: Custom mailer boxes.
+    [Custom Mailer Boxes with Inserts | Packrivo] オリジナル インサート付き メーラーボックス | Packrivo
+    [Custom Mailer Boxes & Shipping Boxes with Logo | Packrivo] ロゴ入りメーラーボックス・配送箱 | Packrivo
+SEG :: Custom molded pulp packaging.
+    [Custom Molded Pulp Packaging Inserts | Packrivo] オリジナル パルプモールド 中仕切り | Packrivo
+SEG :: Custom clear display boxes.
+    [Custom Clear Display Boxes with Logo | Packrivo] オリジナル クリアディスプレイボックス 名入れ | Packrivo
+SEG :: Custom collapsible magnetic gift box.
+    [Custom Collapsible Magnetic Gift Box Sourcing | Packrivo] 特注折り畳み式マグネットギフトボックスの調達 | Packrivo
+    [Custom Collapsible Magnetic Gift Boxes | Packrivo] オリジナル 折りたたみ マグネット式ギフトボックス | Packrivo
+SEG :: Custom poly mailer bags.
+    [Custom Poly Mailer Bags Bulk | Packrivo] オリジナル ポリ宅配袋 ロット対応 | Packrivo
+SEG :: Custom jewelry pouches.
+    [Custom Jewelry Pouches with Logo | Packrivo] オリジナル ジュエリーポーチ 名入れ | Packrivo
+SEG :: Custom thermoformed insert trays.
+    [Custom Thermoformed Insert Trays | Packrivo] オリジナル 熱成形 インサートトレー | Packrivo
+SEG :: Custom windowed folding cartons.
+    [Custom Windowed Folding Cartons | Packrivo] オリジナル 窓付き 化粧箱 | Packrivo
+SEG :: Custom packaging moq.
+    [Custom Packaging MOQ: 250 Pieces Explained | Packrivo] オリジナル包装の最小ロット：250個の考え方 | Packrivo
+SEG :: Custom packaging suppliers.
+    [Custom Packaging Suppliers Compared for Small Brands | Packrivo] 小規模ブランド向け特注包装サプライヤー比較 | Packrivo
+    [Custom Packaging Suppliers Compared for Small Brands | Packrivo] 小規模ブランド向け特注包装サプライヤー比較 | Packrivo
+SEG :: Custom packaging sourcing.
+    [Custom Packaging Sourcing for Small Brands | Packrivo] 小規模ブランド向け特注包装調達 | Packrivo
+    [Custom Packaging Sourcing for Small Brands | Packrivo] 小規模ブランド向け特注包装調達 | Packrivo
+SEG :: Custom packaging guide.
+    [Custom Packaging Guides for Small Brands | Packrivo] 小規模ブランド向けオリジナル包装ガイド | Packrivo
+SEG :: Custom magnetic jewelry boxes.
+    [Custom Magnetic Jewelry Boxes with Logo | Packrivo] ロゴ入りオーダーメイド磁石式ジュエリーボックス | Packrivo
+SEG :: Custom collapsible magnetic gift boxes.
+    [Custom Collapsible Magnetic Gift Boxes | Packrivo] オリジナル 折りたたみ マグネット式ギフトボックス | Packrivo
+SEG :: Custom five-panel corrugated folders.
+    [Custom Five-Panel Corrugated Folders | Packrivo] オリジナル 5面 段ボールフォルダー | Packrivo
+SEG :: Custom chipboard dividers.
+    [Custom Chipboard Dividers | Packrivo] オリジナル チップボール 中仕切り | Packrivo
+SEG :: Custom printed display boxes.
+    [Custom Printed Display Boxes | Packrivo] オリジナル ディスプレイボックス ロゴ印刷 | Packrivo
+SEG :: Custom shipping boxes.
+    [Custom Shipping Boxes & Mailers | Packrivo] カスタム配送用箱 & メーラー | Packrivo
+    [Custom Shipping Boxes with Logo | Packrivo] オリジナル 発送箱 名入れ | Packrivo
+SEG :: Custom auto-lock bottom boxes.
+    [Custom Auto-Lock Bottom Boxes | Packrivo] オリジナル 自動底組み 化粧箱 | Packrivo
+SEG :: Custom book-style rigid gift boxes.
+    [Custom Book-Style Rigid Gift Boxes | Packrivo] オリジナル ブック型 貼り箱 | Packrivo
+SEG :: Custom bookend folding cartons.
+    [Custom Bookend Folding Cartons | Packrivo] オリジナル Bookend型 折りたたみ化粧箱 | Packrivo
+SEG :: Custom fabric tote bags.
+    [Custom Fabric Tote Bags with Logo | Packrivo] オリジナル 布製トートバッグ 名入れ | Packrivo
+SEG :: Custom coated labels.
+    [Custom Coated Labels Sourcing | Packrivo] 特注コーティングラベルの調達 | Packrivo
+    [Custom Coated Labels with Logo | Packrivo] オリジナル コーティングラベル 名入れ | Packrivo
+SEG :: Custom corrugated book mailers.
+    [Custom Corrugated Book Mailers | Packrivo] オリジナル 段ボール ブックメーラー | Packrivo
+SEG :: Custom bottle gift boxes with handle.
+    [Custom Bottle Gift Boxes with Handle | Packrivo] オリジナル 手提げ付き ボトルギフトボックス | Packrivo
+SEG :: Custom corrugated dividers and inserts.
+    [Custom Corrugated Dividers and Inserts | Packrivo] オリジナル 段ボール 中仕切り インサート | Packrivo
+SEG :: Custom corrugated gusset folders.
+    [Custom Corrugated Gusset Folders | Packrivo] オリジナル 段ボール マチ付きフォルダー | Packrivo
+SEG :: Custom reverse tuck boxes.
+    [Custom Reverse Tuck Boxes | Packrivo] オリジナル 逆差し込み式 化粧箱 | Packrivo
+SEG :: Custom hinged lid boxes.
+    [Custom Hinged Lid Boxes with Logo | Packrivo] オリジナル 開き蓋 段ボール箱 名入れ | Packrivo
+SEG :: Custom tuck top auto bottom boxes.
+    [Custom Tuck Top Auto Bottom Boxes | Packrivo] オリジナル 差し込み蓋 自動底 化粧箱 | Packrivo
+SEG :: Custom snap bottom cartons.
+    [Custom Snap Bottom Cartons | Packrivo] オリジナル スナップ底 化粧箱 | Packrivo
+SEG :: Custom counter display boxes.
+    [Custom Counter Display Boxes | Packrivo] オリジナル カウンター陳列箱 | Packrivo
+SEG :: Custom carry boxes with handle.
+    [Custom Carry Boxes with Handle | Packrivo] オリジナル 手提げ付き キャリー箱 | Packrivo
+SEG :: Custom die-cut handle paper bags.
+    [Custom Die-Cut Handle Paper Bags | Packrivo] オリジナル 抜き型取っ手 紙袋 | Packrivo
+SEG :: Custom die-cut box inserts.
+    [Custom Die-Cut Box Inserts | Packrivo] オリジナル 型抜き インサート | Packrivo
+SEG :: Custom double-wall tray and lid sets.
+    [Custom Double-Wall Tray and Lid Sets | Packrivo] オリジナル 二重構造 トレー 蓋セット | Packrivo
+SEG :: Custom tray and sleeve boxes.
+    [Custom Tray and Sleeve Boxes | Packrivo] オリジナル トレー スリーブ 化粧箱 | Packrivo
+SEG :: Custom corrugated tray boxes with lid.
+    [Custom Corrugated Tray Boxes with Lid | Packrivo] 段ボール トレー箱 蓋付き | Packrivo
+SEG :: Custom drawer jewelry boxes.
+    [Custom Drawer Jewelry Boxes with Logo | Packrivo] ロゴ入りオーダーメイド引き出し式ジュエリーボックス | Packrivo
+SEG :: Custom paper gift bags.
+    [Custom Paper Gift Bags with Logo | Packrivo] オリジナル 手提げ紙袋 名入れ | Packrivo
+SEG :: Custom eva foam inserts.
+    [Custom EVA Foam Inserts | Packrivo] オリジナル EVAフォーム インサート | Packrivo
+SEG :: Custom dispenser boxes.
+    [Custom Dispenser Boxes with Logo | Packrivo] オリジナル ディスペンサー箱 名入れ | Packrivo
+SEG :: Custom petal top gift boxes.
+    [Custom Petal Top Gift Boxes | Packrivo] オリジナル 花びら蓋 ギフトボックス | Packrivo
+SEG :: Custom foldable lid and base boxes.
+    [Custom Foldable Lid and Base Boxes | Packrivo] オリジナル 折りたたみ 蓋付きベース箱 | Packrivo
+SEG :: Custom folded box liners.
+    [Custom Folded Box Liners | Packrivo] オリジナル 折り加工 箱用ライナー | Packrivo
+SEG :: Custom folded tray and sleeve boxes.
+    [Custom Folded Tray and Sleeve Boxes | Packrivo] オリジナル 折りトレー スリーブ箱 | Packrivo
+SEG :: Custom folding cartons wholesale.
+    [Custom Folding Cartons Wholesale | Packrivo] オリジナル 化粧箱 卸売 | Packrivo
+SEG :: Custom display trays for retail.
+    [Custom Display Trays for Retail | Packrivo] オリジナル 陳列トレー | Packrivo
+SEG :: Custom pre-glued boxes bulk.
+    [Custom Pre-Glued Boxes Bulk | Packrivo] オリジナル 糊付け済み 化粧箱 ロット対応 | Packrivo
+SEG :: Custom full flap auto bottom boxes.
+    [Custom Full Flap Auto Bottom Boxes | Packrivo] オリジナル フルフラップ 自動底 箱 | Packrivo
+SEG :: Custom seal end cartons wholesale.
+    [Custom Seal End Cartons Wholesale | Packrivo] オリジナル シールエンド箱 卸売 | Packrivo
+SEG :: Custom full overlap shipping boxes.
+    [Custom Full Overlap Shipping Boxes | Packrivo] オリジナル フルオーバーラップ 発送箱 | Packrivo
+SEG :: Custom gable boxes with handle.
+    [Custom Gable Boxes with Handle | Packrivo] オリジナル 手提げ付き ギャブル箱 | Packrivo
+SEG :: Custom gusset folder boxes.
+    [Custom Gusset Folder Boxes | Packrivo] オリジナル マチ付き フォルダー箱 | Packrivo
+SEG :: Custom hanging retail boxes.
+    [Custom Hanging Retail Boxes | Packrivo] オリジナル 吊り下げ 店頭箱 | Packrivo
+SEG :: Custom header card bag toppers.
+    [Custom Header Card Bag Toppers | Packrivo] オリジナル ヘッダーカード 袋用トッパー | Packrivo
+SEG :: Custom hexagonal gift boxes.
+    [Custom Hexagonal Gift Boxes | Packrivo] オリジナル 六角形 ギフトボックス | Packrivo
+SEG :: Custom hinged rigid gift boxes.
+    [Custom Hinged Rigid Gift Boxes | Packrivo] オリジナル 開き蓋 貼り箱 マグネットなし | Packrivo
+SEG :: Custom printed info cards.
+    [Custom Printed Info Cards | Packrivo] オリジナル 同梱カード 印刷 | Packrivo
+SEG :: Custom jewelry boxes with fitted inserts.
+    [Custom Jewelry Boxes with Fitted Inserts | Packrivo] 専用インサート付きオーダーメイドジュエリーボックス | Packrivo
+SEG :: Custom lid-and-base jewelry boxes.
+    [Custom Lid-and-Base Jewelry Boxes | Packrivo] オーダーメイドの身蓋式ジュエリーボックス | Packrivo
+SEG :: Custom lock cap auto bottom boxes.
+    [Custom Lock Cap Auto Bottom Boxes | Packrivo] オリジナル ロックキャップ 自動底 箱 | Packrivo
+SEG :: Custom mailer boxes with inserts.
+    [Custom Mailer Boxes with Inserts | Packrivo] オリジナル インサート付き メーラーボックス | Packrivo
+SEG :: Custom pe foam packaging inserts.
+    [Custom PE Foam Packaging Inserts | Packrivo] オリジナル PEフォーム 緩衝インサート | Packrivo
+SEG :: Custom corrugated end caps.
+    [Custom Corrugated End Caps | Packrivo] オリジナル 段ボール エンドキャップ | Packrivo
+SEG :: Custom printed belly bands.
+    [Custom Printed Belly Bands | Packrivo] オリジナル 帯紙 印刷 | Packrivo
+SEG :: Custom flat paper merchandise bags.
+    [Custom Flat Paper Merchandise Bags | Packrivo] オリジナル 平袋 紙製商品袋 | Packrivo
+SEG :: Custom padded paper mailers.
+    [Custom Padded Paper Mailers | Packrivo] オリジナル 紙製 パッド入り封筒 | Packrivo
+SEG :: Custom grid dividers for boxes.
+    [Custom Grid Dividers for Boxes | Packrivo] オリジナル グリッド中仕切り | Packrivo
+SEG :: Custom paperboard inserts.
+    [Custom Paperboard Inserts | Packrivo] オリジナル 紙製 インサート | Packrivo
+SEG :: Custom dust flap cartons.
+    [Custom Dust Flap Cartons | Packrivo] オリジナル ダストフラップ 化粧箱 | Packrivo
+SEG :: Custom peg hook counter displays.
+    [Custom Peg Hook Counter Displays | Packrivo] オリジナル ペグフック カウンター什器 | Packrivo
+SEG :: Custom pillow jewelry boxes.
+    [Custom Pillow Jewelry Boxes | Packrivo] ピローボックス ジュエリー用 | Packrivo
+SEG :: Custom pinch lock trays.
+    [Custom Pinch Lock Trays | Packrivo] オリジナル ピンチロック トレー | Packrivo
+SEG :: Custom poly bubble mailers.
+    [Custom Poly Bubble Mailers | Packrivo] オリジナル ポリ クッション封筒 | Packrivo
+SEG :: Custom pu foam inserts.
+    [Custom PU Foam Inserts | Packrivo] オリジナル PUフォーム インサート | Packrivo
+SEG :: Custom rectangle roll labels.
+    [Custom Rectangle Roll Labels | Packrivo] オリジナル 角型 ロールラベル | Packrivo
+SEG :: Custom returnable parcel bags.
+    [Custom Returnable Parcel Bags | Packrivo] オリジナル 返品対応 紙製宅配袋 | Packrivo
+SEG :: Custom returnable poly mailers.
+    [Custom Returnable Poly Mailers | Packrivo] オリジナル 返品対応 ポリ宅配袋 | Packrivo
+SEG :: Custom reverse tuck retail boxes.
+    [Custom Reverse Tuck Retail Boxes | Packrivo] オリジナル 逆差し込み 店頭箱 | Packrivo
+SEG :: Custom rigid postal envelopes.
+    [Custom Rigid Postal Envelopes | Packrivo] オリジナル 硬質 郵送封筒 | Packrivo
+SEG :: Custom self-locking mailers.
+    [Custom Self-Locking Mailers | Packrivo] オリジナル セルフロック メーラー | Packrivo
+SEG :: Custom printed sheet labels.
+    [Custom Printed Sheet Labels | Packrivo] オリジナル シートラベル 印刷 | Packrivo
+SEG :: Custom tiered counter displays.
+    [Custom Tiered Counter Displays | Packrivo] オリジナル 多段 カウンター什器 | Packrivo
+SEG :: Custom document window pouches.
+    [Custom Document Window Pouches | Packrivo] オリジナル 送り状 透明ポケット | Packrivo
+SEG :: Custom shoulder neck rigid boxes.
+    [Custom Shoulder Neck Rigid Boxes | Packrivo] オリジナル ショルダーネック 貼り箱 | Packrivo
+SEG :: Custom side lock display boxes.
+    [Custom Side Lock Display Boxes | Packrivo] オリジナル サイドロック 陳列箱 | Packrivo
+SEG :: Custom hinged gift trays.
+    [Custom Hinged Gift Trays | Packrivo] オリジナル 開き蓋 ギフトトレー | Packrivo
+SEG :: Custom six-corner pre-glued boxes.
+    [Custom Six-Corner Pre-Glued Boxes | Packrivo] オリジナル 6点糊付け 化粧箱 | Packrivo
+SEG :: Custom snap bottom shipping boxes.
+    [Custom Snap Bottom Shipping Boxes | Packrivo] オリジナル スナップ底 発送箱 | Packrivo
+SEG :: Custom snap lock bottom boxes.
+    [Custom Snap Lock Bottom Boxes | Packrivo] オリジナル スナップロック底 化粧箱 | Packrivo
+SEG :: Custom sos paper bags bulk.
+    [Custom SOS Paper Bags Bulk | Packrivo] オリジナル SOS 紙袋 ロット対応 | Packrivo
+SEG :: Custom straight tuck boxes.
+    [Custom Straight Tuck Boxes | Packrivo] オリジナル ストレート差し込み 箱 | Packrivo
+SEG :: Custom tab lock corrugated packs.
+    [Custom Tab Lock Corrugated Packs | Packrivo] オリジナル タブロック 段ボールパック | Packrivo
+SEG :: Custom three flap lock boxes.
+    [Custom Three Flap Lock Boxes | Packrivo] オリジナル 3フラップロック 箱 | Packrivo
+SEG :: Custom tuck end sleeve boxes.
+    [Custom Tuck End Sleeve Boxes | Packrivo] オリジナル 差し込み蓋 スリーブ箱 | Packrivo
+SEG :: Custom two-door rigid boxes.
+    [Custom Two-Door Rigid Boxes | Packrivo] オリジナル 観音開き 貼り箱 | Packrivo
+SEG :: Custom window lid rigid boxes.
+    [Custom Window Lid Rigid Boxes | Packrivo] オリジナル 天面窓 貼り箱 | Packrivo
+H1 :: Drawer Box With Ribbon
+    [Drawer Box With Ribbon Pull (MOQ 250) | Packrivo] リボン引き手付きドロワーボックス（最小ロット250）| Packrivo
+H1 :: Kraft Stand Up Pouch
+    [Kraft Stand-Up Pouch With Window (MOQ 250) | Packrivo] 窓付きクラフトスタンドパウチ（最小ロット250）| Packrivo
+H1 :: Printed Insert Cards
+    [Printed Insert Cards and Thank-You Cards (MOQ 250) | Packrivo] 印刷済みインサートカードとサンキューカード（最小ロット250）| Packrivo
+H1 :: Custom Packaging Samples
+    [Custom Packaging Samples: Structure & Finish | Packrivo] 特注パッケージサンプル：構造 & 仕上げ | Packrivo
+    [Custom Packaging Samples Before You Order | Packrivo] 注文前に確認するオリジナル包装サンプル | Packrivo
+H1 :: Custom Jewelry Pouches
+    [Custom Jewelry Pouches with Logo | Packrivo] オリジナル ジュエリーポーチ 名入れ | Packrivo
+H1 :: Custom packaging suppliers, compared
+    [Custom Packaging Suppliers Compared for Small Brands | Packrivo] 小規模ブランド向け特注包装サプライヤー比較 | Packrivo
+    [Custom Packaging Suppliers Compared for Small Brands | Packrivo] 小規模ブランド向け特注包装サプライヤー比較 | Packrivo

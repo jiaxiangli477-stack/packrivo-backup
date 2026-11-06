@@ -1,0 +1,15 @@
+=== TITLE (first 6) ===
+'Custom Mailer Boxes: Printed & Shipping Ready | Packrivo' -> 'オリジナル メーラーボックス 印刷・発送対応 | Packrivo'
+'Custom Bags with Logo: Paper, Cotton & Pouches | Packrivo' -> 'ロゴ入りバッグ：紙・コットン・ポーチ | Packrivo'
+'Custom Packaging Supplier: Who You Work With | Packrivo' -> 'オリジナル包装サプライヤー：取引相手 | Packrivo'
+'Molded Pulp Packaging: Inserts and Trays | Packrivo' -> 'パルプモールド包装：インサートとトレー | Packrivo'
+'Candle Gift Box Sets With Inserts | Packrivo' -> 'インサート付き キャンドルギフトボックス | Packrivo'
+'Clear Display Boxes for Retail | Packrivo' -> '店頭向け クリアディスプレイボックス | Packrivo'
+=== TITLE (last 4) ===
+'Custom Six-corner Pre-glued Boxes | Packrivo' -> 'オリジナル 六隅糊付け済み箱 | Packrivo'
+'Custom Sos Paper Bags Bulk | Packrivo' -> 'オリジナル SOS紙袋 ロット対応 | Packrivo'
+'Custom Two-door Rigid Boxes | Packrivo' -> 'オリジナル 観音開き 貼り箱 | Packrivo'
+'Get a Custom Packaging Quote | Packrivo' -> 'オリジナル包装の見積もりを依頼 | Packrivo'
+=== OTHER ===
+'Get a packaging quote' -> '包装の見積もりを依頼'
+'Custom packaging quote. DDP or FOB, quoted both ways. Dieline before production. MOQ 250, 5-10 day sampling. Request a quote.' -> 'オリジナル包装の見積もり。DDPまたはFOB、両条件で見積もります。生産前にダイラインを確認。MOQ 250、サンプリング5〜10日。見積もりをご依頼ください。'

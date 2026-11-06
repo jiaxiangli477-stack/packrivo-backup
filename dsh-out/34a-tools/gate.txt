@@ -1,0 +1,55 @@
+merged_rows=3707 temp_csv_meta_swapped=7 dropped_rows=3
+A_real_csv csv_rows=350 unique_keys=339
+A_real_csv GATE FAIL missing_entries=77 errors=0
+A_real_csv per-lang ar=7 de=7 es=7 fr=7 it=7 ja=7 ko=7 nl=7 pt=7 zh-CN=7 zh-TW=7
+B_auth_csv csv_rows=350 unique_keys=339
+B_auth_csv GATE FAIL missing_entries=22 errors=0
+B_auth_csv per-lang ar=2 de=2 es=2 fr=2 it=2 ja=2 ko=2 nl=2 pt=2 zh-CN=2 zh-TW=2
+C_auth_scoped csv_rows=347 unique_keys=337
+C_auth_scoped GATE PASS missing_entries=0 errors=0
+C_auth_scoped per-lang ar=0 de=0 es=0 fr=0 it=0 ja=0 ko=0 nl=0 pt=0 zh-CN=0 zh-TW=0
+
+===== run A_real_csv  csv=E:\破甲工作区\packrivo-backup-34a\dsh-out\34a-new-strings.csv  exit=1
+csv_rows=350 unique_keys=339
+ar missing=7
+de missing=7
+es missing=7
+fr missing=7
+it missing=7
+ja missing=7
+ko missing=7
+nl missing=7
+pt missing=7
+zh-CN missing=7
+zh-TW missing=7
+GATE FAIL missing_entries=77 errors=0
+
+===== run B_auth_csv  csv=E:\破甲工作区\.tmp\34a\34a-new-strings-auth.csv  exit=1
+csv_rows=350 unique_keys=339
+ar missing=2
+de missing=2
+es missing=2
+fr missing=2
+it missing=2
+ja missing=2
+ko missing=2
+nl missing=2
+pt missing=2
+zh-CN missing=2
+zh-TW missing=2
+GATE FAIL missing_entries=22 errors=0
+
+===== run C_auth_scoped  csv=E:\破甲工作区\.tmp\34a\34a-new-strings-auth-scoped.csv  exit=0
+csv_rows=347 unique_keys=337
+ar missing=0
+de missing=0
+es missing=0
+fr missing=0
+it missing=0
+ja missing=0
+ko missing=0
+nl missing=0
+pt missing=0
+zh-CN missing=0
+zh-TW missing=0
+GATE PASS missing_entries=0 errors=0

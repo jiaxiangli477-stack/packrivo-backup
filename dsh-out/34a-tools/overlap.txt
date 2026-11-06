@@ -1,0 +1,34 @@
+ar     keys=337 already_satisfied=1
+    hit: Every structure we can source
+de     keys=337 already_satisfied=1
+    hit: Every structure we can source
+es     keys=337 already_satisfied=1
+    hit: Every structure we can source
+fr     keys=337 already_satisfied=1
+    hit: Every structure we can source
+it     keys=337 already_satisfied=1
+    hit: Every structure we can source
+ja     keys=337 already_satisfied=1
+    hit: Every structure we can source
+ko     keys=337 already_satisfied=1
+    hit: Every structure we can source
+nl     keys=337 already_satisfied=1
+    hit: Every structure we can source
+pt     keys=337 already_satisfied=1
+    hit: Every structure we can source
+zh-CN  keys=337 already_satisfied=1
+    hit: Every structure we can source
+zh-TW  keys=337 already_satisfied=1
+    hit: Every structure we can source
+
+ar     dict sizes: title=295 attr=879 block=7174 text=478
+de     dict sizes: title=295 attr=880 block=7170 text=478
+es     dict sizes: title=307 attr=880 block=7164 text=472
+fr     dict sizes: title=301 attr=880 block=7118 text=527
+it     dict sizes: title=301 attr=880 block=7120 text=519
+ja     dict sizes: title=295 attr=879 block=7170 text=471
+ko     dict sizes: title=295 attr=880 block=7173 text=470
+nl     dict sizes: title=306 attr=880 block=7166 text=484
+pt     dict sizes: title=301 attr=880 block=7129 text=524
+zh-CN  dict sizes: title=295 attr=881 block=7128 text=475
+zh-TW  dict sizes: title=295 attr=879 block=7126 text=427

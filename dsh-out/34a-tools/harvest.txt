@@ -1,0 +1,505 @@
+##### ar
+== Dieline with every quote (0 unique values)
+== MOQ 250, 5-10 day sampling (0 unique values)
+== 7-30 day production (0 unique values)
+== DDP or FOB (1 unique values)
+  [block] DDP or FOB, palletised, with photos and the material declaration per order.
+       -> DDP أو FOB، على منصات تحميل، مع صور وإقرار بالمواد لكل طلب.
+== Board, corrugated or rigid stock (0 unique values)
+== Recycled-content (0 unique values)
+== Dieline before production (0 unique values)
+== coordination fee (11 unique values)
+  [block] A coordination fee of 8–15%. The calculation basis and included work are agreed in writing before paid work starts.
+       -> رسم تنسيق بنسبة 8–15%. يُتفق على أساس الحساب والأعمال المشمولة كتابيًا قبل بدء العمل المدفوع.
+  [block] Coordination fees range from 8–15%. The quotation identifies the fee basis and included work alongside supplier pricing, sampling,
+       -> تتراوح رسوم التنسيق بين 8–15%. يحدد عرض السعر أساس الرسوم والأعمال المشمولة إلى جانب تسعير الموردين وأخذ العينات والشحن والتكاليف الأخرى ذات الصلة.
+  [block] It depends on quantity and box type. Arka suits small runs ordered online. Packrivo works from 500 pieces per design, where factor
+       -> يعتمد ذلك على الكمية ونوع الصندوق. تناسب Arka الطلبيات الصغيرة التي تُطلب عبر الإنترنت. وتبدأ Packrivo من 500 قطعة لكل تصميم، حيث تنخفض أسعار الوحدة لدى المصانع؛ فعلى سبيل المثال، يبدأ سعر صناديق المجوهرات المتوفرة بنمط 
+  [block] It depends on quantity and box type. Packhelp suits small runs ordered online. Packrivo works from 500 pieces per design, where fa
+       -> يعتمد ذلك على الكمية ونوع الصندوق. تناسب Packhelp الطلبيات الصغيرة التي تُطلب عبر الإنترنت. وتبدأ Packrivo من 500 قطعة لكل تصميم، حيث تنخفض أسعار الوحدة لدى المصانع؛ فعلى سبيل المثال، يبدأ سعر صناديق المجوهرات المتوفرة ب
+  [block] It depends on quantity and box type. Packlane suits small runs ordered online. Packrivo works from 500 pieces per design, where fa
+       -> يعتمد ذلك على الكمية ونوع الصندوق. تناسب Packlane الطلبيات الصغيرة التي تُطلب عبر الإنترنت. وتبدأ Packrivo من 500 قطعة لكل تصميم، حيث تنخفض أسعار الوحدة لدى المصانع؛ فعلى سبيل المثال، يبدأ سعر صناديق المجوهرات المتوفرة ب
+  [block] It depends on quantity and box type. PakFactory suits small runs ordered online. Packrivo works from 500 pieces per design, where 
+       -> يعتمد ذلك على الكمية ونوع الصندوق. تناسب PakFactory الطلبيات الصغيرة التي تُطلب عبر الإنترنت. وتبدأ Packrivo من 500 قطعة لكل تصميم، حيث تنخفض أسعار الوحدة لدى المصانع؛ فعلى سبيل المثال، يبدأ سعر صناديق المجوهرات المتوفرة
+== retainer (0 unique values)
+== Request a quote (5 unique values)
+  [attr] Request a quote
+       -> اطلب عرض سعر
+  [block] Questions before you request a quote.
+       -> أسئلة قبل أن تطلب عرض سعر.
+  [block] Before you request a quote
+       -> قبل طلب عرض سعر
+  [block] Request a quote for the complete arrangement
+       -> اطلب عرض سعر للتجهيز الكامل
+  [block] Request a quote for your jewelry packaging.
+       -> اطلب عرض سعر لتغليف مجوهراتك.
+== Compare structures and materials (0 unique values)
+== MOQ and tooling compared (0 unique values)
+== Sampling and production time (0 unique values)
+== Every structure we can source (1 unique values)
+  [block] Every structure we can source
+       -> كل التصاميم الهيكلية التي يمكننا توريدها
+== Custom packaging for jewelry, candles (1 unique values)
+  [block] Custom packaging for jewelry, candles & gifts.
+       -> تغليف مخصص للمجوهرات والشموع والهدايا.
+
+##### de
+== Dieline with every quote (0 unique values)
+== MOQ 250, 5-10 day sampling (0 unique values)
+== 7-30 day production (0 unique values)
+== DDP or FOB (1 unique values)
+  [block] DDP or FOB, palletised, with photos and the material declaration per order.
+       -> DDP oder FOB, palettiert, mit Fotos und Materialerklärung zu jeder Bestellung.
+== Board, corrugated or rigid stock (0 unique values)
+== Recycled-content (0 unique values)
+== Dieline before production (0 unique values)
+== coordination fee (11 unique values)
+  [block] Coordination fees range from 8–15%. The quotation identifies the fee basis and included work alongside supplier pricing, sampling,
+       -> Die Koordinationsgebühren liegen zwischen 8–15 %. Das Angebot weist die Gebührenbasis und die enthaltenen Leistungen neben Lieferantenpreisen, Bemusterung, Fracht und weiteren anfallenden Kosten aus.
+  [block] A coordination fee of 8–15%. The calculation basis and included work are agreed in writing before paid work starts.
+       -> Eine Koordinierungsgebühr von 8–15%. Die Berechnungsgrundlage und die enthaltenen Leistungen werden vor Beginn der bezahlten Arbeiten schriftlich vereinbart.
+  [block] It depends on quantity and box type. Arka suits small runs ordered online. Packrivo works from 500 pieces per design, where factor
+       -> Das hängt von Menge und Boxart ab. Arka eignet sich für kleine, online bestellte Auflagen. Packrivo arbeitet ab 500 Stück je Design, bei denen die Stückpreise ab Werk sinken; beispielsweise beginnen vorrätige Schmuckboxe
+  [block] It depends on quantity and box type. Packhelp suits small runs ordered online. Packrivo works from 500 pieces per design, where fa
+       -> Das hängt von Menge und Boxart ab. Packhelp eignet sich für kleine, online bestellte Auflagen. Packrivo arbeitet ab 500 Stück je Design, bei denen die Stückpreise ab Werk sinken; beispielsweise beginnen vorrätige Schmuck
+  [block] It depends on quantity and box type. Packlane suits small runs ordered online. Packrivo works from 500 pieces per design, where fa
+       -> Das hängt von Menge und Boxart ab. Packlane eignet sich für kleine, online bestellte Auflagen. Packrivo arbeitet ab 500 Stück je Design, bei denen die Stückpreise ab Werk sinken; beispielsweise beginnen vorrätige Schmuck
+  [block] It depends on quantity and box type. PakFactory suits small runs ordered online. Packrivo works from 500 pieces per design, where 
+       -> Das hängt von Menge und Boxart ab. PakFactory eignet sich für kleine, online bestellte Auflagen. Packrivo arbeitet ab 500 Stück je Design, bei denen die Stückpreise ab Werk sinken; beispielsweise beginnen vorrätige Schmu
+== retainer (0 unique values)
+== Request a quote (5 unique values)
+  [attr] Request a quote
+       -> Angebot anfordern
+  [block] Questions before you request a quote.
+       -> Fragen, bevor Sie ein Angebot anfordern.
+  [block] Before you request a quote
+       -> Bevor Sie ein Angebot anfordern
+  [block] Request a quote for the complete arrangement
+       -> Angebot für die vollständige Zusammenstellung anfordern
+  [block] Request a quote for your jewelry packaging.
+       -> Fordern Sie ein Angebot für Ihre Schmuckverpackung an.
+== Compare structures and materials (0 unique values)
+== MOQ and tooling compared (0 unique values)
+== Sampling and production time (0 unique values)
+== Every structure we can source (1 unique values)
+  [block] Every structure we can source
+       -> Alle Verpackungsformen, die wir beschaffen können
+== Custom packaging for jewelry, candles (1 unique values)
+  [block] Custom packaging for jewelry, candles & gifts.
+       -> Kundenspezifische Verpackungen für Schmuck, Kerzen & Geschenke.
+
+##### es
+== Dieline with every quote (0 unique values)
+== MOQ 250, 5-10 day sampling (0 unique values)
+== 7-30 day production (0 unique values)
+== DDP or FOB (1 unique values)
+  [block] DDP or FOB, palletised, with photos and the material declaration per order.
+       -> DDP o FOB, paletizado, con fotos y declaración de material por pedido.
+== Board, corrugated or rigid stock (0 unique values)
+== Recycled-content (0 unique values)
+== Dieline before production (0 unique values)
+== coordination fee (11 unique values)
+  [block] Coordination fees range from 8–15%. The quotation identifies the fee basis and included work alongside supplier pricing, sampling,
+       -> Las tarifas de coordinación oscilan entre 8–15%. La cotización identifica la base de la tarifa y el trabajo incluido junto con el precio del proveedor, el muestreo, el flete y otros costos aplicables.
+  [block] A coordination fee of 8–15%. The calculation basis and included work are agreed in writing before paid work starts.
+       -> Una tarifa de coordinación del 8–15 %. La base de cálculo y el trabajo incluido se acuerdan por escrito antes de que comience el trabajo remunerado.
+  [block] It depends on quantity and box type. Arka suits small runs ordered online. Packrivo works from 500 pieces per design, where factor
+       -> Depende de la cantidad y del tipo de caja. Arka es adecuada para tiradas pequeñas pedidas en línea. Packrivo trabaja a partir de 500 unidades por diseño, donde bajan los precios unitarios de fábrica; por ejemplo, las caj
+  [block] It depends on quantity and box type. Packhelp suits small runs ordered online. Packrivo works from 500 pieces per design, where fa
+       -> Depende de la cantidad y del tipo de caja. Packhelp es adecuada para tiradas pequeñas pedidas en línea. Packrivo trabaja a partir de 500 unidades por diseño, donde bajan los precios unitarios de fábrica; por ejemplo, las
+  [block] It depends on quantity and box type. Packlane suits small runs ordered online. Packrivo works from 500 pieces per design, where fa
+       -> Depende de la cantidad y del tipo de caja. Packlane es adecuada para tiradas pequeñas pedidas en línea. Packrivo trabaja a partir de 500 unidades por diseño, donde bajan los precios unitarios de fábrica; por ejemplo, las
+  [block] It depends on quantity and box type. PakFactory suits small runs ordered online. Packrivo works from 500 pieces per design, where 
+       -> Depende de la cantidad y del tipo de caja. PakFactory es adecuada para tiradas pequeñas pedidas en línea. Packrivo trabaja a partir de 500 unidades por diseño, donde bajan los precios unitarios de fábrica; por ejemplo, l
+== retainer (0 unique values)
+== Request a quote (6 unique values)
+  [attr] Request a quote
+       -> Solicitar presupuesto
+  [block] Request a Quote
+       -> Solicitar una cotización
+  [block] Questions before you request a quote.
+       -> Preguntas antes de solicitar una cotización.
+  [block] Before you request a quote
+       -> Antes de solicitar un presupuesto
+  [block] Request a quote for the complete arrangement
+       -> Solicitar presupuesto para el conjunto completo
+  [block] Request a quote for your jewelry packaging.
+       -> Solicita un presupuesto para tu embalaje de joyería.
+== Compare structures and materials (0 unique values)
+== MOQ and tooling compared (0 unique values)
+== Sampling and production time (0 unique values)
+== Every structure we can source (1 unique values)
+  [block] Every structure we can source
+       -> Todas las estructuras que podemos conseguir
+== Custom packaging for jewelry, candles (1 unique values)
+  [block] Custom packaging for jewelry, candles & gifts.
+       -> Embalaje personalizado para joyería, velas y regalos.
+
+##### fr
+== Dieline with every quote (0 unique values)
+== MOQ 250, 5-10 day sampling (0 unique values)
+== 7-30 day production (0 unique values)
+== DDP or FOB (1 unique values)
+  [block] DDP or FOB, palletised, with photos and the material declaration per order.
+       -> DDP ou FOB, sur palettes, avec photos et déclaration des matériaux pour chaque commande.
+== Board, corrugated or rigid stock (0 unique values)
+== Recycled-content (0 unique values)
+== Dieline before production (0 unique values)
+== coordination fee (11 unique values)
+  [block] Coordination fees range from 8–15%. The quotation identifies the fee basis and included work alongside supplier pricing, sampling,
+       -> Les frais de coordination vont de 8–15 %. Le devis précise la base de calcul des frais et les travaux inclus, ainsi que les prix fournisseurs, l'échantillonnage, le fret et les autres coûts applicables.
+  [block] A coordination fee of 8–15%. The calculation basis and included work are agreed in writing before paid work starts.
+       -> Des frais de coordination de 8–15 %. La base de calcul et les travaux inclus sont convenus par écrit avant le début des travaux payants.
+  [block] It depends on quantity and box type. Arka suits small runs ordered online. Packrivo works from 500 pieces per design, where factor
+       -> Cela dépend de la quantité et du type de boîte. Arka convient aux petites séries commandées en ligne. Packrivo travaille à partir de 500 pièces par modèle, niveau auquel les prix unitaires d’usine diminuent ; par exemple
+  [block] It depends on quantity and box type. Packhelp suits small runs ordered online. Packrivo works from 500 pieces per design, where fa
+       -> Cela dépend de la quantité et du type de boîte. Packhelp convient aux petites séries commandées en ligne. Packrivo travaille à partir de 500 pièces par modèle, niveau auquel les prix unitaires d’usine diminuent ; par exe
+  [block] It depends on quantity and box type. Packlane suits small runs ordered online. Packrivo works from 500 pieces per design, where fa
+       -> Cela dépend de la quantité et du type de boîte. Packlane convient aux petites séries commandées en ligne. Packrivo travaille à partir de 500 pièces par modèle, niveau auquel les prix unitaires d’usine diminuent ; par exe
+  [block] It depends on quantity and box type. PakFactory suits small runs ordered online. Packrivo works from 500 pieces per design, where 
+       -> Cela dépend de la quantité et du type de boîte. PakFactory convient aux petites séries commandées en ligne. Packrivo travaille à partir de 500 pièces par modèle, niveau auquel les prix unitaires d’usine diminuent ; par e
+== retainer (0 unique values)
+== Request a quote (5 unique values)
+  [attr] Request a quote
+       -> Demander un devis
+  [block] Questions before you request a quote.
+       -> Questions avant de demander un devis.
+  [block] Before you request a quote
+       -> Avant de demander un devis
+  [block] Request a quote for the complete arrangement
+       -> Demander un devis pour l’ensemble complet
+  [block] Request a quote for your jewelry packaging.
+       -> Demandez un devis pour votre emballage à bijoux.
+== Compare structures and materials (0 unique values)
+== MOQ and tooling compared (0 unique values)
+== Sampling and production time (0 unique values)
+== Every structure we can source (1 unique values)
+  [block] Every structure we can source
+       -> Toutes les structures que nous pouvons sourcer
+== Custom packaging for jewelry, candles (1 unique values)
+  [block] Custom packaging for jewelry, candles & gifts.
+       -> Emballages personnalisés pour bijoux, bougies et cadeaux.
+
+##### it
+== Dieline with every quote (0 unique values)
+== MOQ 250, 5-10 day sampling (0 unique values)
+== 7-30 day production (0 unique values)
+== DDP or FOB (1 unique values)
+  [block] DDP or FOB, palletised, with photos and the material declaration per order.
+       -> DDP o FOB, su pallet, con foto e dichiarazione dei materiali per ogni ordine.
+== Board, corrugated or rigid stock (0 unique values)
+== Recycled-content (0 unique values)
+== Dieline before production (0 unique values)
+== coordination fee (11 unique values)
+  [block] Coordination fees range from 8–15%. The quotation identifies the fee basis and included work alongside supplier pricing, sampling,
+       -> Le commissioni di coordinamento variano dall'8% al 15%. Il preventivo identifica la base della commissione e le attività incluse insieme ai prezzi dei fornitori, al campionamento, al trasporto e agli altri costi applicab
+  [block] A coordination fee of 8–15%. The calculation basis and included work are agreed in writing before paid work starts.
+       -> Una commissione di coordinamento dell'8–15%. La base di calcolo e il lavoro incluso vengono concordati per iscritto prima dell'inizio del lavoro retribuito.
+  [block] It depends on quantity and box type. Arka suits small runs ordered online. Packrivo works from 500 pieces per design, where factor
+       -> Dipende dalla quantità e dal tipo di scatola. Arka è adatta a piccoli quantitativi ordinati online. Packrivo opera da 500 pezzi per modello, quando i prezzi unitari dei produttori diminuiscono; ad esempio, le scatole a c
+  [block] It depends on quantity and box type. Packhelp suits small runs ordered online. Packrivo works from 500 pieces per design, where fa
+       -> Dipende dalla quantità e dal tipo di scatola. Packhelp è adatta a piccoli quantitativi ordinati online. Packrivo opera da 500 pezzi per modello, quando i prezzi unitari dei produttori diminuiscono; ad esempio, le scatole
+  [block] It depends on quantity and box type. Packlane suits small runs ordered online. Packrivo works from 500 pieces per design, where fa
+       -> Dipende dalla quantità e dal tipo di scatola. Packlane è adatta a piccoli quantitativi ordinati online. Packrivo opera da 500 pezzi per modello, quando i prezzi unitari dei produttori diminuiscono; ad esempio, le scatole
+  [block] It depends on quantity and box type. PakFactory suits small runs ordered online. Packrivo works from 500 pieces per design, where 
+       -> Dipende dalla quantità e dal tipo di scatola. PakFactory è adatta a piccoli quantitativi ordinati online. Packrivo opera da 500 pezzi per modello, quando i prezzi unitari dei produttori diminuiscono; ad esempio, le scato
+== retainer (0 unique values)
+== Request a quote (5 unique values)
+  [attr] Request a quote
+       -> Richiedi un preventivo
+  [block] Questions before you request a quote.
+       -> Domande prima di richiedere un preventivo.
+  [block] Before you request a quote
+       -> Prima di richiedere un preventivo
+  [block] Request a quote for the complete arrangement
+       -> Richiedi un preventivo per la soluzione completa
+  [block] Request a quote for your jewelry packaging.
+       -> Richiedi un preventivo per il tuo packaging per gioielli.
+== Compare structures and materials (0 unique values)
+== MOQ and tooling compared (0 unique values)
+== Sampling and production time (0 unique values)
+== Every structure we can source (1 unique values)
+  [block] Every structure we can source
+       -> Tutte le strutture che possiamo reperire
+== Custom packaging for jewelry, candles (1 unique values)
+  [block] Custom packaging for jewelry, candles & gifts.
+       -> Imballaggi personalizzati per gioielli, candele e regali.
+
+##### ja
+== Dieline with every quote (0 unique values)
+== MOQ 250, 5-10 day sampling (0 unique values)
+== 7-30 day production (0 unique values)
+== DDP or FOB (1 unique values)
+  [block] DDP or FOB, palletised, with photos and the material declaration per order.
+       -> DDPまたはFOB、パレット積み。注文ごとに写真と素材申告書が付きます。
+== Board, corrugated or rigid stock (0 unique values)
+== Recycled-content (0 unique values)
+== Dieline before production (0 unique values)
+== coordination fee (11 unique values)
+  [block] A coordination fee of 8–15%. The calculation basis and included work are agreed in writing before paid work starts.
+       -> コーディネーション費は8–15%です。算定基準と含まれる作業は、有償作業の開始前に書面で合意します。
+  [block] Coordination fees range from 8–15%. The quotation identifies the fee basis and included work alongside supplier pricing, sampling,
+       -> コーディネーション費用は8–15%の範囲です。見積書には、料金の算定基準と含まれる作業を、サプライヤー価格、サンプリング、運賃、その他該当する費用とともに明記します。
+  [block] It depends on quantity and box type. Arka suits small runs ordered online. Packrivo works from 500 pieces per design, where factor
+       -> 数量と箱の種類によります。Arkaはオンラインで注文する小ロットに適しています。Packrivoではデザインごとに500個から対応し、数量が増えると工場の単価が下がります。たとえば、在庫品の引き出し式ジュエリーボックスは1箱あたりUS$0.10–0.33程度からで、ロゴ印刷、運賃、関税は別途です。さらに調整手数料8–15%が加わります。計算基準は書面で合意します.
+  [block] It depends on quantity and box type. Packhelp suits small runs ordered online. Packrivo works from 500 pieces per design, where fa
+       -> 数量と箱の種類によります。Packhelpはオンラインで注文する小ロットに適しています。Packrivoではデザインごとに500個から対応し、数量が増えると工場の単価が下がります。たとえば、在庫品の引き出し式ジュエリーボックスは1箱あたりUS$0.10–0.33程度からで、ロゴ印刷、運賃、関税は別途です。さらに調整手数料8–15%が加わります。計算基準は書面で合意します.
+  [block] It depends on quantity and box type. Packlane suits small runs ordered online. Packrivo works from 500 pieces per design, where fa
+       -> 数量と箱の種類によります。Packlaneはオンラインで注文する小ロットに適しています。Packrivoではデザインごとに500個から対応し、数量が増えると工場の単価が下がります。たとえば、在庫品の引き出し式ジュエリーボックスは1箱あたりUS$0.10–0.33程度からで、ロゴ印刷、運賃、関税は別途です。さらに調整手数料8–15%が加わります。計算基準は書面で合意します.
+  [block] It depends on quantity and box type. PakFactory suits small runs ordered online. Packrivo works from 500 pieces per design, where 
+       -> 数量と箱の種類によります。PakFactoryはオンラインで注文する小ロットに適しています。Packrivoではデザインごとに500個から対応し、数量が増えると工場の単価が下がります。たとえば、在庫品の引き出し式ジュエリーボックスは1箱あたりUS$0.10–0.33程度からで、ロゴ印刷、運賃、関税は別途です。さらに調整手数料8–15%が加わります。計算基準は書面で合意します.
+== retainer (0 unique values)
+== Request a quote (6 unique values)
+  [attr] Request a quote
+       -> 見積もりを依頼
+  [block] Questions before you request a quote.
+       -> 見積依頼前の質問。
+  [block] Request a Quote
+       -> 見積を依頼
+  [block] Before you request a quote
+       -> 見積もりを依頼する前に
+  [block] Request a quote for the complete arrangement
+       -> 組み合わせ全体の見積もりを依頼
+  [block] Request a quote for your jewelry packaging.
+       -> ジュエリー包装の見積もりをご依頼ください。
+== Compare structures and materials (0 unique values)
+== MOQ and tooling compared (0 unique values)
+== Sampling and production time (0 unique values)
+== Every structure we can source (1 unique values)
+  [block] Every structure we can source
+       -> 手配可能なすべての形状
+== Custom packaging for jewelry, candles (1 unique values)
+  [block] Custom packaging for jewelry, candles & gifts.
+       -> ジュエリー、キャンドル、ギフト用のオーダーメイド包装。
+
+##### ko
+== Dieline with every quote (0 unique values)
+== MOQ 250, 5-10 day sampling (0 unique values)
+== 7-30 day production (0 unique values)
+== DDP or FOB (1 unique values)
+  [block] DDP or FOB, palletised, with photos and the material declaration per order.
+       -> DDP 또는 FOB, 팔레트 적재, 주문별 사진과 소재 선언서 제공.
+== Board, corrugated or rigid stock (0 unique values)
+== Recycled-content (0 unique values)
+== Dieline before production (0 unique values)
+== coordination fee (11 unique values)
+  [block] A coordination fee of 8–15%. The calculation basis and included work are agreed in writing before paid work starts.
+       -> 코디네이션 수수료 8–15%. 산정 기준과 포함 작업 범위는 유료 작업 시작 전에 서면으로 합의합니다.
+  [block] Coordination fees range from 8–15%. The quotation identifies the fee basis and included work alongside supplier pricing, sampling,
+       -> 조정 수수료는 8–15%입니다. 견적서에는 공급업체 가격, 샘플링, 운송 및 기타 적용 비용과 함께 수수료 기준과 포함 작업이 명시됩니다.
+  [block] It depends on quantity and box type. Arka suits small runs ordered online. Packrivo works from 500 pieces per design, where factor
+       -> 수량과 상자 유형에 따라 다릅니다. Arka는 온라인으로 주문하는 소량 생산에 적합합니다. Packrivo는 디자인당 500개부터 대응하며, 수량이 늘면 공장 단가가 낮아집니다. 예를 들어 재고형 서랍식 주얼리 상자는 EXW 기준 상자당 약 US$0.10–0.33부터이며 로고 인쇄, 운임, 관세는 별도입니다. 여기에 조정 수수료 8–15%가 추가되고 계산 기준은 서면 합의합니다.
+  [block] It depends on quantity and box type. Packhelp suits small runs ordered online. Packrivo works from 500 pieces per design, where fa
+       -> 수량과 상자 유형에 따라 다릅니다. Packhelp는 온라인으로 주문하는 소량 생산에 적합합니다. Packrivo는 디자인당 500개부터 대응하며, 수량이 늘면 공장 단가가 낮아집니다. 예를 들어 재고형 서랍식 주얼리 상자는 EXW 기준 상자당 약 US$0.10–0.33부터이며 로고 인쇄, 운임, 관세는 별도입니다. 여기에 조정 수수료 8–15%가 추가되고 계산 기준은 서면 합의합니다.
+  [block] It depends on quantity and box type. Packlane suits small runs ordered online. Packrivo works from 500 pieces per design, where fa
+       -> 수량과 상자 유형에 따라 다릅니다. Packlane은 온라인으로 주문하는 소량 생산에 적합합니다. Packrivo는 디자인당 500개부터 대응하며, 수량이 늘면 공장 단가가 낮아집니다. 예를 들어 재고형 서랍식 주얼리 상자는 EXW 기준 상자당 약 US$0.10–0.33부터이며 로고 인쇄, 운임, 관세는 별도입니다. 여기에 조정 수수료 8–15%가 추가되고 계산 기준은 서면 합의합니다.
+  [block] It depends on quantity and box type. PakFactory suits small runs ordered online. Packrivo works from 500 pieces per design, where 
+       -> 수량과 상자 유형에 따라 다릅니다. PakFactory는 온라인으로 주문하는 소량 생산에 적합합니다. Packrivo는 디자인당 500개부터 대응하며, 수량이 늘면 공장 단가가 낮아집니다. 예를 들어 재고형 서랍식 주얼리 상자는 EXW 기준 상자당 약 US$0.10–0.33부터이며 로고 인쇄, 운임, 관세는 별도입니다. 여기에 조정 수수료 8–15%가 추가되고 계산 기준은 서면 합의합니다.
+== retainer (0 unique values)
+== Request a quote (5 unique values)
+  [attr] Request a quote
+       -> 견적 요청
+  [block] Questions before you request a quote.
+       -> 견적을 요청하기 전 질문.
+  [block] Before you request a quote
+       -> 견적을 요청하기 전에
+  [block] Request a quote for the complete arrangement
+       -> 전체 구성 견적 요청
+  [block] Request a quote for your jewelry packaging.
+       -> 주얼리 패키징 견적을 요청하세요.
+== Compare structures and materials (0 unique values)
+== MOQ and tooling compared (0 unique values)
+== Sampling and production time (0 unique values)
+== Every structure we can source (1 unique values)
+  [block] Every structure we can source
+       -> 조달할 수 있는 모든 구조
+== Custom packaging for jewelry, candles (1 unique values)
+  [block] Custom packaging for jewelry, candles & gifts.
+       -> 주얼리, 캔들 및 선물용 맞춤 제작 포장.
+
+##### nl
+== Dieline with every quote (0 unique values)
+== MOQ 250, 5-10 day sampling (0 unique values)
+== 7-30 day production (0 unique values)
+== DDP or FOB (1 unique values)
+  [block] DDP or FOB, palletised, with photos and the material declaration per order.
+       -> DDP of FOB, op pallets, met foto's en de materiaalverklaring per bestelling.
+== Board, corrugated or rigid stock (0 unique values)
+== Recycled-content (0 unique values)
+== Dieline before production (0 unique values)
+== coordination fee (11 unique values)
+  [block] Coordination fees range from 8–15%. The quotation identifies the fee basis and included work alongside supplier pricing, sampling,
+       -> Coördinatiekosten variëren van 8–15%. De offerte vermeldt de kostenbasis en de inbegrepen werkzaamheden naast leveranciersprijzen, bemonstering, vracht en andere van toepassing zijnde kosten.
+  [block] A coordination fee of 8–15%. The calculation basis and included work are agreed in writing before paid work starts.
+       -> Een coördinatievergoeding van 8–15%. De berekeningsbasis en het inbegrepen werk worden schriftelijk overeengekomen voordat betaald werk begint.
+  [block] It depends on quantity and box type. Arka suits small runs ordered online. Packrivo works from 500 pieces per design, where factor
+       -> Dat hangt af van de hoeveelheid en het doosmodel. Arka is geschikt voor kleine oplagen die online worden besteld. Packrivo werkt vanaf 500 stuks per ontwerp, waarbij de fabrieksprijs voor elk stuk daalt; standaard ladedo
+  [block] It depends on quantity and box type. Packhelp suits small runs ordered online. Packrivo works from 500 pieces per design, where fa
+       -> Dat hangt af van de hoeveelheid en het doosmodel. Packhelp is geschikt voor kleine oplagen die online worden besteld. Packrivo werkt vanaf 500 stuks per ontwerp, waarbij de fabrieksprijs voor elk stuk daalt; standaard la
+  [block] It depends on quantity and box type. Packlane suits small runs ordered online. Packrivo works from 500 pieces per design, where fa
+       -> Dat hangt af van de hoeveelheid en het doosmodel. Packlane is geschikt voor kleine oplagen die online worden besteld. Packrivo werkt vanaf 500 stuks per ontwerp, waarbij de fabrieksprijs voor elk stuk daalt; standaard la
+  [block] It depends on quantity and box type. PakFactory suits small runs ordered online. Packrivo works from 500 pieces per design, where 
+       -> Dat hangt af van de hoeveelheid en het doosmodel. PakFactory is geschikt voor kleine oplagen die online worden besteld. Packrivo werkt vanaf 500 stuks per ontwerp, waarbij de fabrieksprijs voor elk stuk daalt; standaard 
+== retainer (0 unique values)
+== Request a quote (6 unique values)
+  [attr] Request a quote
+       -> Offerte aanvragen
+  [block] Request a Quote
+       -> Vraag een offerte aan
+  [block] Questions before you request a quote.
+       -> Vragen voordat u een offerte aanvraagt.
+  [block] Before you request a quote
+       -> Voordat u een offerte aanvraagt
+  [block] Request a quote for the complete arrangement
+       -> Vraag een offerte aan voor de volledige samenstelling
+  [block] Request a quote for your jewelry packaging.
+       -> Vraag een offerte aan voor uw sieradenverpakking.
+== Compare structures and materials (0 unique values)
+== MOQ and tooling compared (0 unique values)
+== Sampling and production time (0 unique values)
+== Every structure we can source (1 unique values)
+  [block] Every structure we can source
+       -> Alle constructies die wij kunnen inkopen
+== Custom packaging for jewelry, candles (1 unique values)
+  [block] Custom packaging for jewelry, candles & gifts.
+       -> Op maat gemaakte verpakkingen voor sieraden, kaarsen en geschenken.
+
+##### pt
+== Dieline with every quote (0 unique values)
+== MOQ 250, 5-10 day sampling (0 unique values)
+== 7-30 day production (0 unique values)
+== DDP or FOB (1 unique values)
+  [block] DDP or FOB, palletised, with photos and the material declaration per order.
+       -> DDP ou FOB, em paletes, com fotos e declaração de material por pedido.
+== Board, corrugated or rigid stock (0 unique values)
+== Recycled-content (0 unique values)
+== Dieline before production (0 unique values)
+== coordination fee (11 unique values)
+  [block] Coordination fees range from 8–15%. The quotation identifies the fee basis and included work alongside supplier pricing, sampling,
+       -> As taxas de coordenação variam entre 8–15%. O cotação identifica a base da taxa e o trabalho incluído, a par dos preços dos fornecedores, amostragem, frete e outros custos aplicáveis.
+  [block] A coordination fee of 8–15%. The calculation basis and included work are agreed in writing before paid work starts.
+       -> Uma taxa de coordenação de 8–15%. A base de cálculo e o trabalho incluído são acordados por escrito antes do início do trabalho remunerado.
+  [block] It depends on quantity and box type. Arka suits small runs ordered online. Packrivo works from 500 pieces per design, where factor
+       -> Depende da quantidade e do tipo de caixa. A Arka atende pequenas tiragens encomendadas online. A Packrivo trabalha a partir de 500 peças por design, quando os preços unitários das fábricas diminuem; por exemplo, caixas t
+  [block] It depends on quantity and box type. Packhelp suits small runs ordered online. Packrivo works from 500 pieces per design, where fa
+       -> Depende da quantidade e do tipo de caixa. A Packhelp atende pequenas tiragens encomendadas online. A Packrivo trabalha a partir de 500 peças por design, quando os preços unitários das fábricas diminuem; por exemplo, caix
+  [block] It depends on quantity and box type. Packlane suits small runs ordered online. Packrivo works from 500 pieces per design, where fa
+       -> Depende da quantidade e do tipo de caixa. A Packlane atende pequenas tiragens encomendadas online. A Packrivo trabalha a partir de 500 peças por design, quando os preços unitários das fábricas diminuem; por exemplo, caix
+  [block] It depends on quantity and box type. PakFactory suits small runs ordered online. Packrivo works from 500 pieces per design, where 
+       -> Depende da quantidade e do tipo de caixa. A PakFactory atende pequenas tiragens encomendadas online. A Packrivo trabalha a partir de 500 peças por design, quando os preços unitários das fábricas diminuem; por exemplo, ca
+== retainer (0 unique values)
+== Request a quote (6 unique values)
+  [attr] Request a quote
+       -> Solicitar orçamento
+  [block] Request a Quote
+       -> Solicite uma cotação
+  [block] Questions before you request a quote.
+       -> Perguntas antes de solicitar uma cotação.
+  [block] Before you request a quote
+       -> Antes de solicitar um orçamento
+  [block] Request a quote for the complete arrangement
+       -> Solicitar orçamento para o conjunto completo
+  [block] Request a quote for your jewelry packaging.
+       -> Solicite um orçamento para sua embalagem de joias.
+== Compare structures and materials (0 unique values)
+== MOQ and tooling compared (0 unique values)
+== Sampling and production time (0 unique values)
+== Every structure we can source (1 unique values)
+  [block] Every structure we can source
+       -> Todas as estruturas que podemos fornecer
+== Custom packaging for jewelry, candles (1 unique values)
+  [block] Custom packaging for jewelry, candles & gifts.
+       -> Embalagens personalizadas para joias, velas e presentes.
+
+##### zh-CN
+== Dieline with every quote (0 unique values)
+== MOQ 250, 5-10 day sampling (0 unique values)
+== 7-30 day production (0 unique values)
+== DDP or FOB (1 unique values)
+  [block] DDP or FOB, palletised, with photos and the material declaration per order.
+       -> DDP 或 FOB，托盘运输，每单附照片和材料声明。
+== Board, corrugated or rigid stock (0 unique values)
+== Recycled-content (0 unique values)
+== Dieline before production (0 unique values)
+== coordination fee (11 unique values)
+  [block] Coordination fees range from 8–15%. The quotation identifies the fee basis and included work alongside supplier pricing, sampling,
+       -> 协调费范围为 8–15%。报价单会说明费用依据和包含的工作，并同时列明供应商价格、打样、运费及其他适用费用。
+  [block] A coordination fee of 8–15%. The calculation basis and included work are agreed in writing before paid work starts.
+       -> 协调费为 8–15%。计算基础和包含的工作在付费工作开始前以书面形式约定。
+  [block] It depends on quantity and box type. Arka suits small runs ordered online. Packrivo works from 500 pieces per design, where factor
+       -> 这取决于数量和纸盒类型。Arka 适合在线下单的小批量订单。Packrivo 从每款设计 500 件起订，此时工厂单价会降低；例如，现货抽屉式珠宝盒约为每盒 US$0.10–0.33（工厂交货价），不含 Logo 印刷、运费和关税，另加 8–15% 协调费，计算基准以书面约定为准。
+  [block] It depends on quantity and box type. Packhelp suits small runs ordered online. Packrivo works from 500 pieces per design, where fa
+       -> 这取决于数量和纸盒类型。Packhelp 适合在线下单的小批量订单。Packrivo 从每款设计 500 件起订，此时工厂单价会降低；例如，现货抽屉式珠宝盒约为每盒 US$0.10–0.33（工厂交货价），不含 Logo 印刷、运费和关税，另加 8–15% 协调费，计算基准以书面约定为准。
+  [block] It depends on quantity and box type. Packlane suits small runs ordered online. Packrivo works from 500 pieces per design, where fa
+       -> 这取决于数量和纸盒类型。Packlane 适合在线下单的小批量订单。Packrivo 从每款设计 500 件起订，此时工厂单价会降低；例如，现货抽屉式珠宝盒约为每盒 US$0.10–0.33（工厂交货价），不含 Logo 印刷、运费和关税，另加 8–15% 协调费，计算基准以书面约定为准。
+  [block] It depends on quantity and box type. PakFactory suits small runs ordered online. Packrivo works from 500 pieces per design, where 
+       -> 这取决于数量和纸盒类型。PakFactory 适合在线下单的小批量订单。Packrivo 从每款设计 500 件起订，此时工厂单价会降低；例如，现货抽屉式珠宝盒约为每盒 US$0.10–0.33（工厂交货价），不含 Logo 印刷、运费和关税，另加 8–15% 协调费，计算基准以书面约定为准。
+== retainer (0 unique values)
+== Request a quote (5 unique values)
+  [attr] Request a quote
+       -> 申请报价
+  [block] Questions before you request a quote.
+       -> 请求报价前的问题。
+  [block] Before you request a quote
+       -> 申请报价前
+  [block] Request a quote for the complete arrangement
+       -> 为整套组合申请报价
+  [block] Request a quote for your jewelry packaging.
+       -> 申请首饰包装报价。
+== Compare structures and materials (0 unique values)
+== MOQ and tooling compared (0 unique values)
+== Sampling and production time (0 unique values)
+== Every structure we can source (1 unique values)
+  [block] Every structure we can source
+       -> 我们可代采的全部结构
+== Custom packaging for jewelry, candles (1 unique values)
+  [block] Custom packaging for jewelry, candles & gifts.
+       -> 定制首饰、蜡烛和礼品包装。
+
+##### zh-TW
+== Dieline with every quote (0 unique values)
+== MOQ 250, 5-10 day sampling (0 unique values)
+== 7-30 day production (0 unique values)
+== DDP or FOB (1 unique values)
+  [block] DDP or FOB, palletised, with photos and the material declaration per order.
+       -> DDP 或 FOB，托盤運輸，每單附照片和材料聲明。
+== Board, corrugated or rigid stock (0 unique values)
+== Recycled-content (0 unique values)
+== Dieline before production (0 unique values)
+== coordination fee (11 unique values)
+  [block] A coordination fee of 8–15%. The calculation basis and included work are agreed in writing before paid work starts.
+       -> 協調費為 8–15%。計算基礎與包含的工作範圍須在付費工作開始前以書面議定。
+  [block] Coordination fees range from 8–15%. The quotation identifies the fee basis and included work alongside supplier pricing, sampling,
+       -> 協調費介於 8–15%。報價單會說明費用基準與包含的工作，並同時列出供應商價格、打樣、運費及其他適用成本。
+  [block] It depends on quantity and box type. Arka suits small runs ordered online. Packrivo works from 500 pieces per design, where factor
+       -> 這取決於數量與盒型。Arka 適合在線上下單的小批量訂單。Packrivo 每款從 500 件起，工廠單價會隨之降低；例如，現貨抽屜式珠寶盒每盒約 US$0.10–0.33，為工廠交貨價，尚未包含商標印刷、運費與關稅，另加 8–15% 協調費，並以書面議定計算依據。
+  [block] It depends on quantity and box type. Packhelp suits small runs ordered online. Packrivo works from 500 pieces per design, where fa
+       -> 這取決於數量與盒型。Packhelp 適合在線上下單的小批量訂單。Packrivo 每款從 500 件起，工廠單價會隨之降低；例如，現貨抽屜式珠寶盒每盒約 US$0.10–0.33，為工廠交貨價，尚未包含商標印刷、運費與關稅，另加 8–15% 協調費，並以書面議定計算依據。
+  [block] It depends on quantity and box type. Packlane suits small runs ordered online. Packrivo works from 500 pieces per design, where fa
+       -> 這取決於數量與盒型。Packlane 適合在線上下單的小批量訂單。Packrivo 每款從 500 件起，工廠單價會隨之降低；例如，現貨抽屜式珠寶盒每盒約 US$0.10–0.33，為工廠交貨價，尚未包含商標印刷、運費與關稅，另加 8–15% 協調費，並以書面議定計算依據。
+  [block] It depends on quantity and box type. PakFactory suits small runs ordered online. Packrivo works from 500 pieces per design, where 
+       -> 這取決於數量與盒型。PakFactory 適合在線上下單的小批量訂單。Packrivo 每款從 500 件起，工廠單價會隨之降低；例如，現貨抽屜式珠寶盒每盒約 US$0.10–0.33，為工廠交貨價，尚未包含商標印刷、運費與關稅，另加 8–15% 協調費，並以書面議定計算依據。
+== retainer (0 unique values)
+== Request a quote (6 unique values)
+  [attr] Request a quote
+       -> 申請報價
+  [block] Questions before you request a quote.
+       -> 詢價前待確認問題。
+  [block] Request a Quote
+       -> 索取報價
+  [block] Before you request a quote
+       -> 申請報價前
+  [block] Request a quote for the complete arrangement
+       -> 為整套組合申請報價
+  [block] Request a quote for your jewelry packaging.
+       -> 申請首飾包裝報價。
+== Compare structures and materials (0 unique values)
+== MOQ and tooling compared (0 unique values)
+== Sampling and production time (0 unique values)
+== Every structure we can source (1 unique values)
+  [block] Every structure we can source
+       -> 我們可代採的全部結構
+== Custom packaging for jewelry, candles (1 unique values)
+  [block] Custom packaging for jewelry, candles & gifts.
+       -> 珠寶、蠟燭與禮品客製包裝。
+
