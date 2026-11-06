@@ -1,0 +1,11 @@
+6a863f64cd1ab67e94758f74c337bffb36c6ae4ed50260886a74aabdb9eab5bc  ./assets/admin.css
+542cd0b0deeec306d30dd968015d4a86b97db158fdd5661be0a070d7936adad5  ./assets/admin.js
+9399351d25e065614e7ec6dd16e40eaa756e3eb1efaa852d83ba590c1cbbe61e  ./assets/public.css
+82b70cb6a7eea1cc4c72c37bbfb8d9e02d71071cc561695f1ba070ef8d37c9a3  ./assets/public.js
+13b263dea5a0c3762b5a80e360fbc082fe931396884ded5e3bc2985a2a106d40  ./fixtures/drawer-jewelry-box.json
+9b0b4270f593e3533e8c1f25c13f32e02233019615bc0869b4dde9da36b2ff9f  ./includes/class-product-admin.php
+71fc84ffa2b0f300e4eb128e2a23da6efef3cc998d0f597f3a01e796e16664b6  ./includes/class-product-inquiry.php
+960d2de80e828ea34b1b79163df4c0a8a24f7efd8fe8deac20d582be29708cfd  ./includes/class-product-renderer.php
+3628cf9d41f3c274d51f2ae8317e1385fc44e05554226866afd139075f013359  ./includes/class-product-store.php
+799d426ab68bfa52c329c2890851380f74b423fb0a572fd38e8cd238ca0fd44f  ./includes/class-product-validation.php
+758db545769572c96b63e885926b16ea10f537242a99e7579ed7b16f52b01ac5  ./packrivo-product-workspace.php

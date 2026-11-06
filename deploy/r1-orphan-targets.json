@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "inbound_targets": [
+    "/candle-gift-set-box/",
+    "/catalog-jewelry-pouch-164909/",
+    "/catalog-jewelry-pouch-996892/",
+    "/catalog-pouch/",
+    "/catalog-velvet-lined-box-916436/",
+    "/catalog-velvet/",
+    "/corrugated-wine-shipper/",
+    "/drawer-box-with-ribbon/",
+    "/eco-kraft-cosmetic-box/",
+    "/jewelry-pouch-and-box-set/",
+    "/kraft-stand-up-pouch/",
+    "/magnetic-book-style-box/",
+    "/paper-insert-card/",
+    "/printed-tissue-paper/",
+    "/soap-box-with-window/",
+    "/subscription-mailer-with-insert/"
+  ],
+  "redirect": {
+    "path": "/collapsible-magnetic-gift-box/",
+    "status": 301,
+    "target": "/product-collapsible-magnetic-gift-box/"
+  }
+}
