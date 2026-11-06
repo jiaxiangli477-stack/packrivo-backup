@@ -39,7 +39,7 @@ Printed jewelry gift boxes start at **250 pieces per style**; unprinted stock bo
 
 Seasonal gift programs are the case where the calendar, not the artwork, sets the schedule. Production runs **7 to 30 days** after sample sign-off, plus transit, so a gift-season drop that needs a printed sleeve and printed tissue has to start well before the artwork is finished — the tooling and the sample round sit on the critical path, not the printing. Place the sample round against the season, then the bulk order against the sample.
 
-If a gift box runs once a year, the dieline and foil plates are worth holding between runs; a repeat order with unchanged artwork skips tooling and sampling.
+If a gift box runs once a year, the dieline and foil plates are worth holding between runs; a repeat order with unchanged artwork can usually reuse them; what carries over is confirmed on the quote.
 
 ## Quotes, lead times and shipping terms
 

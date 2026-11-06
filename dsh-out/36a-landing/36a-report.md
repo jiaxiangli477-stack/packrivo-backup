@@ -71,13 +71,20 @@ url,title,meta,h1,primary_kw,primary_vol,primary_kd,secondary_kws,internal_links
     + personalized ring box         vol=720    kd=21
     + custom engagement ring box    vol=480    kd=5
     + custom proposal ring box      vol=170    kd=4
-  primary /custom-earring-boxes/     earring jewelry box   vol=1600   kd=38  MATCH
-    - custom earring boxes / earring boxes wholesale / bulk earring boxes
-      earring packaging / earring packaging cards / earring box size      无量（universe 搜索量为空）
-  primary /custom-necklace-boxes/    custom necklace boxes vol=70     kd=12  MATCH
-    + necklace presentation gift box vol=90    kd=20
-    - necklace box wholesale / custom necklace packaging / velvet necklace box wholesale
-      necklace box with logo / necklace box size                          无量（universe 搜索量为空）
+  primary /custom-earring-boxes/     earring jewelry box          vol=1600   kd=38  MATCH
+    - custom earring boxes                         n/a (universe vol='', KD='')
+    - earring boxes wholesale                      n/a (universe vol='', KD='')
+    - bulk earring boxes                           n/a (universe vol='', KD='')
+    - earring packaging                            n/a (universe vol='', KD='')
+    - earring packaging cards                      n/a (universe vol='', KD='')
+    - earring box size                             n/a (universe vol='', KD='')
+  primary /custom-necklace-boxes/    custom necklace boxes        vol=70     kd=12  MATCH
+    + necklace presentation gift box               vol=90     kd=20
+    - necklace box wholesale                       n/a (universe vol='', KD='')
+    - custom necklace packaging                    n/a (universe vol='', KD='')
+    - velvet necklace box wholesale                n/a (universe vol='', KD='')
+    - necklace box with logo                       n/a (universe vol='', KD='')
+    - necklace box size                            n/a (universe vol='', KD='')
   primary /jewelry-gift-boxes/       jewelry gift box      vol=1900   kd=26  MATCH
     + jewelry packaging box         vol=210    kd=18
     + jewel box packaging           vol=140    kd=23
@@ -91,8 +98,8 @@ url,title,meta,h1,primary_kw,primary_vol,primary_kd,secondary_kws,internal_links
 
 两处必须写清的处置：
 
-1. **耳饰页 6 条次词全部无量。** `earring jewelry box` 是 universe 里唯一带搜索量的耳饰盒行（1600 / KD 38，也正是本页主词），其余耳饰长尾（`custom earring boxes`、`bulk earring boxes`、`earring box size` 等）搜索量字段为空。按「不改不编」要求，CSV 与页面头块一律记 `无量 / -`，不填估算值。
-2. **`jewelry gift boxes`（复数）不在 universe。** 任务书把 `jewelry gift boxes` 列为礼盒页候选次词，但全表 6318 行无此行，首轮按 `无量` 写入后被校验器判为 `NOT IN UNIVERSE`，已替换为实数行 `jewelry packaging supplies`（260 / KD 24），替换后复测通过。这是本轮唯一一次关键词表条目变更，理由是原始条目无数据来源可引。
+1. **耳饰页 6 条次词全部无量。** `earring jewelry box` 是 universe 里唯一带搜索量的耳饰盒行（1600 / KD 38，也正是本页主词），其余耳饰长尾（`custom earring boxes`、`bulk earring boxes`、`earring box size` 等）搜索量字段为空。按「不改不编」要求，CSV 与页面头块一律记 `n/a`，不填估算值（36a-2 起改为 ASCII 标记，见第 11 节）。
+2. **`jewelry gift boxes`（复数）不在 universe。** 任务书把 `jewelry gift boxes` 列为礼盒页候选次词，但全表 6318 行无此行，首轮按占位标记写入后被校验器判为 `NOT IN UNIVERSE`，已替换为实数行 `jewelry packaging supplies`（260 / KD 24），替换后复测通过。这是本轮唯一一次关键词表条目变更，理由是原始条目无数据来源可引。
 
 另注：`ring velvet box`（1900 / 13）与 `velvet ring box`（2400 / 11）是同一词的词序倒装，两者都有独立搜索量，故都保留在次关键词表中；若复核要求去重，建议删 `ring velvet box`，保留搜索量更高的前者。
 
@@ -229,3 +236,45 @@ C:\Users\21996\.dsh\dsh-runtimes\dsh-primary-runtime\dependencies\python\python.
 ```
 
 生成脚本内置闸门在任一条件不满足时把 `VALIDATION` 打成 `FAIL` 并列出原因（title/meta/首段词数越界、H1 缺主词、红线命中、产品链接不足、缺 `/get-a-quote/` 或 `/samples/`、H2 少于 4、表格缺失），当前状态：`VALIDATION: PASS`。
+
+## 11. 36a-2 修订记录（7 处文字 + 1 处占位标记）
+
+触发：36a-2 任务书指定改 6 项措辞（其中耳饰页一项含两处），并在 36a 自检之外追加一条硬检查——**四页正文和 CSV 里中文字符必须为 0**。
+
+### 11.1 逐条对照（行号为改动前的 36a 版本）
+
+| 任务项 | 文件:行 | 原句 | 改后 |
+| --- | --- | --- | --- |
+| 1 | `custom-ring-boxes.md:45` | `Every quote ships with a **dieline** (刀模), the flat cutting …` | 删去 `(刀模)`，英文页不留中文 |
+| 2 | `custom-ring-boxes.md:35` | `Two practical rules from sampling.` | `Two rules worth checking on a sample.` |
+| 3 | `custom-ring-boxes.md:71` | `which is quoted once and kept for reorders` | `which is quoted once; whether it is held for reorders is confirmed on the quote.` |
+| 4 | `jewelry-gift-boxes.md:42` | `a repeat order with unchanged artwork skips tooling and sampling.` | `a repeat order with unchanged artwork can usually reuse them; what carries over is confirmed on the quote.` |
+| 5 | `custom-earring-boxes.md:44` | `does not need a new plate or a new sample round. Ask for the plate to be held under your order reference when the first run closes.` | `can usually reuse the existing plate. Ask on the first quote whether the plate is held for reorders and what a repeat order needs.` |
+| 5 | `custom-earring-boxes.md:40` | `which is what most brands use to bridge a launch` | `which can bridge a launch` |
+| 6 | `custom-necklace-boxes.md:26` | `are the two variables that cause returns` | `are the two variables that most often cause fit problems` |
+
+改动性质：把「免除打样 / 保留刀模钢板 / 换新不用开版」这类无来源的确定性承诺，降为 `usually` + 「以报价单为准」；去掉 `most brands` 这类无来源社会证明；`cause returns` 收窄为 `most often cause fit problems`，该页未持有退货数据，不能主张因果。
+
+### 11.2 一处必要连带改动：头块占位 `无量 / -` → `n/a`
+
+中文字符归零的范围包含页面头块与 `36a-pages.csv`，而头块里记「universe 搜索量为空」的占位原本是中文 `无量`：
+
+- `custom-earring-boxes.md` 头块 1 行（6 条无搜索量次词）、`custom-necklace-boxes.md` 头块 1 行（5 条）；
+- `36a-pages.csv` 对应两行的 `secondary_kws` 单元格（CSV 单元格与头块同源）。
+
+现统一改为 ASCII 标记 `n/a`，语义不变（universe 里该行 `搜索量` 与 `KD` 均为空字符串，不填估算值）。这是 36a-2「其他一个字不动」与「中文字符 0」两条要求冲突时，按后者执行的结果，改动仅限上述 4 行。
+
+### 11.3 改后复核（脚本回读磁盘，输出全文见 `E:\破甲工作区\.tmp\36a\verify-out.txt`）
+
+- **title / meta / intro 未变**（从 CSV 单元格重算）：`/custom-ring-boxes/` 59/147/53、`/custom-earring-boxes/` 54/148/57、`/custom-necklace-boxes/` 54/145/52、`/jewelry-gift-boxes/` 56/153/50 —— 全部 OK，四项均在上限内，未触发 meta 重算。
+- **中文字符 0**：`36a-pages.csv` 0、四页 md 各 0，合计 0（第 8b 节，判据覆盖 CJK 标点与全角区段）。
+- **红线 grep 0**：`factory|manufactur|FSC|ISO|ISTA|MOQ 500` 在 CSV 与四页正文里 0 命中；`36a-report.md` 按设计排除（本文件为说明判据本身必须列出这些词）。
+- **禁用事实**：四页 `dimensions=none`；`$` 后接数字仅 `$150`（8–15% 采购协调费的最低值，属允许事实清单），无成品单价。
+- **结构与链接**：H2 6 个含 FAQ、FAQ 6 对、表格 5 行、产品/指南页正文链接 4/3/5/4 条（≥2），`/get-a-quote/` 与 `/samples/` 齐备，链接全部落在 `34a-keyword-map.csv` 的 url 清单内。
+- **生成器同步**：`E:\破甲工作区\.tmp\36a\build.py` 里 7 处源串与 `n/a` 标记已同步，重跑输出 `VALIDATION: PASS`，与磁盘文件一致；`git diff` 只含上述预期行（5 文件 11 增 11 删），未出现漂移。
+
+### 11.4 未执行 / 缺口
+
+- 未做英文母语外审，也未跑 LanguageTool 一类工具（同 36a 第 9 节）。
+- 未 push，停在 `main` 本地提交 `wip: dsh 36a-2 landing copy fixes (not yet reviewed)` 等复核。
+- 第 9 节列出的三项缺口（页面 5、线上现状、SERP 复核）本轮同样未做，状态不变。

@@ -5,7 +5,7 @@
 - meta description: Earring jewelry boxes for bulk buyers: card-backed packs, insert trays, velvet or printed wraps, logo foil. MOQ 250 per style, samples in 5-10 days.  (148 chars)
 - H1: Earring Jewelry Boxes in Bulk
 - primary keyword: earring jewelry box  (1600 / KD 38)
-- secondary keywords: custom earring boxes (无量 / -); earring boxes wholesale (无量 / -); bulk earring boxes (无量 / -); earring packaging (无量 / -); earring packaging cards (无量 / -); earring box size (无量 / -)
+- secondary keywords: custom earring boxes (n/a); earring boxes wholesale (n/a); bulk earring boxes (n/a); earring packaging (n/a); earring packaging cards (n/a); earring box size (n/a)
 - internal links: /product-jewelry-box-with-insert/, /product-magnetic-jewelry-box/, /guide-jewelry-insert-fit/, /textile-jewelry-pouch/, /customization/, /packaging-cost/, /packaging-moq/, /get-a-quote/, /samples/, /jewelry-boxes/
 
 ---
@@ -37,11 +37,11 @@ Bulk pricing logic sits on [packaging cost](/packaging-cost/); the finish option
 
 ## Bulk quantities, sampling and reorders
 
-Printed earring boxes start at **250 pieces per style**; a style is one size plus one artwork. Unprinted stock boxes start at **100 pieces**, which is what most brands use to bridge a launch before the printed run lands. Orders of **100 to 249 pieces** are quoted by hand.
+Printed earring boxes start at **250 pieces per style**; a style is one size plus one artwork. Unprinted stock boxes start at **100 pieces**, which can bridge a launch before the printed run lands. Orders of **100 to 249 pieces** are quoted by hand.
 
 The earring-specific advice is to sample the size grid, not the single box. Send three earring types — a stud, a drop and a hoop — and check that one insert layout holds all three without the pair touching. Sampling runs **5 to 10 days**; what one round covers is set out on [samples](/samples/).
 
-Because earring packaging turns over with colorways and seasonal sets, the reorder path matters more than the first order. Keep the dieline and the foil plate on file; a reorder with unchanged artwork and the same insert does not need a new plate or a new sample round. Ask for the plate to be held under your order reference when the first run closes.
+Because earring packaging turns over with colorways and seasonal sets, the reorder path matters more than the first order. Keep the dieline and the foil plate on file; a reorder with unchanged artwork and the same insert can usually reuse the existing plate. Ask on the first quote whether the plate is held for reorders and what a repeat order needs.
 
 ## Quotes, lead times and shipping terms
 

@@ -32,7 +32,7 @@ The wrap decides most of the perceived quality, and the interior decides whether
 - **Interior**: velvet or suede-touch lining over foam, satin for a softer drape, uncoated card when the box is a shipping container rather than a display piece.
 - **Finishes**: hot foil stamping in gold, silver, rose gold, copper or matte black; blind emboss and deboss for a tone-on-tone logo; screen print for one or two spot colors on paper wraps; spot UV for a gloss mark on a matte sheet.
 
-Two practical rules from sampling. Foil reads best on velvet and on grained PU, and poorly on heavily textured linen; a debossed logo on a dark velvet lid is often more legible than foil at small sizes, because it catches the pile instead of sitting on it. And the interior lining color drives the ring's perceived warmth — a warm off-white lining flatters yellow gold, a cool grey flatters white gold and platinum. Both rules are worth one sample each before committing to a foil plate.
+Two rules worth checking on a sample. Foil reads best on velvet and on grained PU, and poorly on heavily textured linen; a debossed logo on a dark velvet lid is often more legible than foil at small sizes, because it catches the pile instead of sitting on it. And the interior lining color drives the ring's perceived warmth — a warm off-white lining flatters yellow gold, a cool grey flatters white gold and platinum. Both rules are worth one sample each before committing to a foil plate.
 
 Finish options and the artwork files each one needs are collected on the [packaging finishes](/customization/) page.
 
@@ -42,7 +42,7 @@ Printed ring boxes run from **250 pieces per style**, where a style is one size 
 
 Sampling takes **5 to 10 days**. A sample round normally covers the shell, the wrap and one insert; artwork proofs and foil plates can run in parallel. Sign off on the sample before bulk — the wrap color, the insert tension and the lid fit are the three things that are expensive to correct after production starts.
 
-Every quote ships with a **dieline** (刀模), the flat cutting and creasing drawing for the box. The dieline is where artwork placement, foil position and insert clearance are actually defined, so it is the file your designer should be working from rather than a rendered mockup. If a supplier hands you a JPEG and asks for print-ready art, ask for the dieline instead.
+Every quote ships with a **dieline**, the flat cutting and creasing drawing for the box. The dieline is where artwork placement, foil position and insert clearance are actually defined, so it is the file your designer should be working from rather than a rendered mockup. If a supplier hands you a JPEG and asks for print-ready art, ask for the dieline instead.
 
 ## How quotes and lead times work
 
@@ -68,7 +68,7 @@ Pricing tiers and the cost drivers behind them are explained on [packaging cost]
 Lid-and-base, magnetic, drawer, pillow and clamshell shells, in rigid board or folding board, with velvet, PU, linen or printed paper wraps, and with foam, card, pulp or pillow inserts.
 
 **Can the box carry my logo?**
-Yes, as foil stamping, blind emboss or deboss, screen print, or a printed wrap. Foil and emboss both need a plate, which is quoted once and kept for reorders.
+Yes, as foil stamping, blind emboss or deboss, screen print, or a printed wrap. Foil and emboss both need a plate, which is quoted once; whether it is held for reorders is confirmed on the quote.
 
 **Which insert keeps a ring from moving in transit?**
 A die-cut slit pad is the reliable default: the band sits in the slit and cannot rotate. For stones that stand above the band, a card platform with a clip holds the ring off the surface so the lid closes without touching the setting.

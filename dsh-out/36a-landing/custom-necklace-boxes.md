@@ -5,7 +5,7 @@
 - meta description: Custom necklace boxes with anti-tangle inserts and pendant cards, in velvet or printed wrap. MOQ 250 per style, samples in 5-10 days, DDP or FOB.  (145 chars)
 - H1: Custom Necklace Boxes
 - primary keyword: custom necklace boxes  (70 / KD 12)
-- secondary keywords: necklace presentation gift box (90 / 20); necklace box wholesale (无量 / -); custom necklace packaging (无量 / -); velvet necklace box wholesale (无量 / -); necklace box with logo (无量 / -); necklace box size (无量 / -)
+- secondary keywords: necklace presentation gift box (90 / 20); necklace box wholesale (n/a); custom necklace packaging (n/a); velvet necklace box wholesale (n/a); necklace box with logo (n/a); necklace box size (n/a)
 - internal links: /product-jewelry-box-with-insert/, /product-magnetic-jewelry-box/, /product-lid-and-base-jewelry-box/, /product-drawer-jewelry-box/, /guide-jewelry-insert-fit/, /textile-jewelry-pouch/, /customization/, /packaging-moq/, /packaging-cost/, /get-a-quote/, /samples/, /jewelry-boxes/
 
 ---
@@ -23,7 +23,7 @@ The four formats that work:
 
 Inserts decide the rest. A suede or velvet tray with two notches holds the chain ends at a fixed spread; a card with a top slit and a bottom recess holds the pendant face up and the chain behind it; a foam pad with a curved channel keeps a fixed length of chain in place; a roll holds a whole strand but hides the clasp. For a presentation box where the pendant is the hero, the card-plus-tray combination is the one that photographs cleanly: pendant on top, chain tucked behind the card.
 
-Chain gauge and box depth are the two variables that cause returns. A fine cable chain in a deep tray sits at the bottom and looks lost; a heavy curb chain in a shallow tray holds the lid off the card. Both problems are visible in one sample — which is why the sample should be loaded with the real product, not a stand-in.
+Chain gauge and box depth are the two variables that most often cause fit problems. A fine cable chain in a deep tray sits at the bottom and looks lost; a heavy curb chain in a shallow tray holds the lid off the card. Both problems are visible in one sample — which is why the sample should be loaded with the real product, not a stand-in.
 
 Insert geometry and fit testing are covered on the [jewelry insert fit guide](/guide-jewelry-insert-fit/); the box shell with a fitted insert is on [jewelry boxes with fitted inserts](/product-jewelry-box-with-insert/).
 
