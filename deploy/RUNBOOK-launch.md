@@ -1616,11 +1616,11 @@ docker exec php sha256sum "$WPC/wp-content/mu-plugins/packrivo-wave2.php"       
 
 ### E · R1-4 metadata、sitemap 与首次响应（草案，须两轮完整验收后才可定稿）
 
-在完成 32a-5 和 32a-6 且 E.1 全库、子主题、父主题、报价插件、工作区插件、mu、词典及 llms 备份均通过校验后，先在宿主机 `(cd "$PKG" && sha256sum -c MANIFEST.sha256)`；失败立即停止。包中的 `r1-moq-meta.php`、`r1-moq-render.php` 和 `r1-sitemap-fix.php` 应来自同一已审核 Git 提交。以下是待完整演练的命令，不构成上线授权。
+在完成 32a-5 和 32a-6 且 E.1 全库、子主题、父主题、报价插件、工作区插件、mu、词典及 llms 备份均通过校验后，先在宿主机 `(cd "$PKG" && sha256sum -c MANIFEST.sha256)`；失败立即停止。包中的 `r1-moq-meta.php`、`r1-moq-render.php`、`r1-sitemap-fix.php` 和 `r1-field-projection.php` 及其映射 应来自同一已审核 Git 提交。以下是待完整演练的命令，不构成上线授权。
 
 ```sh
 # 生产宿主；WP_CONTAINER、WPC、PKG、PKGC、BACKUP、WPCLI、LAUNCH 均按 E.0 与当天指纹确认。
-for f in r1-moq-meta.php r1-moq-render.php r1-sitemap-fix.php; do
+for f in r1-moq-meta.php r1-moq-render.php r1-sitemap-fix.php r1-field-projection.php; do
   docker cp "$PKG/$f" "${WP_CONTAINER}:${PKGC}/$f" || { echo "STOP copy $f"; exit 1; }
   docker exec "$WP_CONTAINER" php -l "$PKGC/$f" || exit 1
 done
@@ -1634,10 +1634,12 @@ test -n "$R1_HOST_SHA" && test "$R1_HOST_SHA" = "$R1_CONT_SHA" || { echo 'STOP m
 $WPCLI eval-file "$PKGC/r1-moq-meta.php" apply "$R1_META_BACKUP" || exit 1
 $WPCLI eval-file "$PKGC/r1-moq-meta.php" apply "$R1_META_BACKUP" || exit 1
 # 必须分别看到 changed=3、changed=0；与预期不同则停止。
-for f in r1-moq-render.php r1-sitemap-fix.php; do
+for f in r1-moq-render.php r1-sitemap-fix.php r1-field-projection.php r1-500-field-map.json; do
   docker cp "$PKG/$f" "${WP_CONTAINER}:${WPC}/wp-content/mu-plugins/$f" || exit 1
 done
 ```
+
+`r1-500-field-map.json` 对 15 个既有英文页面的 17 个精确旧标题／摘要／H1 做渲染投影，以无数量或标明示例的措辞替代头部中的 500；只在目标页面和旧值完全一致时生效，不改数据库或正文的价格数量示例。清单缺失或值漂移须由全站 500 字段扫描发现并停止；正式上线前应复核映射，不能把 500 件示例改写成 250 件价格。
 
 三个元数据字段的回滚使用同一备份和 `$WPCLI eval-file "$PKGC/r1-moq-meta.php" rollback "$R1_META_BACKUP"`；若目标值或 Yoast 参考字段发生漂移即停。mu 文件与 11 语言字典须使用 E.1 完整备份恢复，不能只回滚数据库。字典包须先运行 `r1-dict-500to250.py` 和两道语言闸门并绑定清单；已有词典冲突、缺失旧译文或不是单一数字替换即停止。448 摘要的新旧文案不止数字有差异，若未来出现旧译文键，脚本会停下等待审核，不能复制当作译文。
 
