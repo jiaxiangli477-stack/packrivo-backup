@@ -1602,7 +1602,13 @@ docker exec php sha256sum "$WPC/wp-content/mu-plugins/packrivo-wave2.php"       
 
 ### E.0 · 授权、指纹、清单和变量
 
-**站长本机**暂停 `packrivo-03-00-packrivo-2`，确认显示已暂停，直至上线、复测及可能回滚全部结束。站长按 `dsh-out/R1-上线操作单.md` 执行只读指纹，并与 `$PKG/r1-baseline/*.sha256` 及本批核定的版本、数据库状态比对；主题、插件、mu、词典、llms 的任何缺失、额外文件或哈希差异均停止。当地只读数据库身份及其接入须站长验证；未验证时不得把 WP-CLI 命令当作只读。基线文件来自本地演练，是核对基准，不是当天生产证据。
+**站长本机**暂停 `packrivo-03-00-packrivo-2`，确认显示已暂停，直至上线、复测及可能回滚全部结束。站长按 `dsh-out/R1-上线操作单.md` 以正常 WP-CLI 身份核对指纹，所有 WP 命令均带 `--skip-update-check`；预期唯一可能的写入是更新检查 transient，可接受。生产实际副作用未经验证，若发现其他写入或异常就停下。与 `$PKG/r1-baseline/*.sha256` 及核定的版本比对，主题、插件、mu、词典、llms 任一缺失、额外文件或哈希不同均停下发回。语言选择器基线为**不存在**；若发现任何版本，立即停下并把输出发给 Claude 判断。词典 `$WPC/wp-content/uploads/packrivo-i18n` 和 `$WPC/llms.txt`、`$WPC/llms-full.txt` 是演练实例的路径；生产找不到就停下发回。基线来自本地演练，不是当天生产证据。
+
+本次发版包为 `E:/破甲工作区/r1-4-final-r1-pkg`（源自 `5622816`），`MANIFEST.sha256` 的 SHA256 为 `1f31bb3065610f40a54a9f76b6671a65f4f474d2f93310ffafd1c726e2373a31`。上传后首先核对该值，再校验清单；操作本次发布时使用当前仓库修订的附录 E，包内手册源自旧提交。
+
+**站长本机 Git Bash 导出**：先确认 `netcup` 别名、远端容器名及站点路径，获准只读导出后执行操作单第 3 步的完整 Git Bash 命令；不要在 PowerShell 里运行。命令使用 SSH 标准输出的字节重定向，检查 SQL 非空、末尾 `Dump completed` 和 gzip 完整性，再记录 SHA256；任一失败立即停止并保留现场。数据库与 uploads 并非原子快照，须在受控窗口复核。
+
+独立 R1 的 Git Bash 二进制重定向验证：容器内 11 字节小文件包含 NUL、CR、LF 和高位字节，经 Git Bash 的 `docker exec ... cat ... > "$out"` 重定向到本机；容器端与本地文件 SHA256 均为 `b87a5078e3d1bed51b6dff805af36623feb98db1595c4d29177baf2a616f1cea`。此测试验证本地重定向字节保真，不代表生产 SSH 或导出已执行。
 
 **生产宿主**由站长确认并设置 `WP_CONTAINER`、`DB_CONTAINER`、`WPC`、`WP_BIN`、`DB_NAME`、`PKG`、`BACKUP`、`LAUNCH`、`SITE_HOST`、`ORIGIN_IP`、`AUDIT_INTERNAL_ORIGIN` 和审核后独立取得的 `MANIFEST_SHA`。`WPC`、`WP_BIN`、`PKG`、`BACKUP` 须为当天实际绝对路径；容器名和路径不得含空白或 shell 元字符。`AUDIT_INTERNAL_ORIGIN` 必须是 WordPress 容器能访问、直接路由到当前站点并保留正确 Host/HTTPS 语义的内网 origin，不得指向 CDN 或外部生产域名；先由站长确认根路径请求为 200。`BACKUP` 是本轮唯一的新目录。
 
