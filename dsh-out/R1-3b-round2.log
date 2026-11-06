@@ -1,0 +1,238 @@
+=== DATA ===
+=== COPY 32a-workspace-moq-lib.php exit=0 ===
+
+=== COPY 32a-workspace-moq-migrate.php exit=0 ===
+
+=== COPY 32a-update-options.php exit=0 ===
+
+=== COPY 32a-moq-content.php exit=0 ===
+
+=== COPY 32a-moq-plan.json exit=0 ===
+
+=== COPY 32a5-blog-migrate.php exit=0 ===
+
+=== COPY 32a5-blog-plan.json exit=0 ===
+
+=== COPY 32a6-blog-rewrite.php exit=0 ===
+
+=== COPY 32a6-blog-rollback.php exit=0 ===
+
+=== COPY 32a-blog-rewrite.csv exit=0 ===
+
+=== COPY default-category.php exit=0 ===
+
+=== COPY 32a-workspace-r13b2.csv exit=0 ===
+
+=== 31B_DEFAULT_CATEGORY exit=0 ===
+Success: Default category renamed to Guides (ID 1).
+
+=== INSTALL wave1 exit=0 ===
+
+=== INSTALL remediation exit=0 ===
+
+=== INSTALL workspace-renderer exit=0 ===
+
+=== INSTALL workspace-admin exit=0 ===
+
+=== INSTALL workspace-validation exit=0 ===
+
+=== INSTALL parent-functions exit=0 ===
+
+=== WORKSPACE_MIGRATE_1 exit=0 ===
+before_500=6 before_250=0
+after_500=0 after_250=6
+replaced=6 mode=migrate snapshots=6
+
+=== WORKSPACE_MIGRATE_2 exit=0 ===
+before_500=0 before_250=6
+after_500=0 after_250=6
+replaced=0 mode=migrate snapshots=6
+
+=== OPTIONS_1 exit=0 ===
+pkq_settings: updated
+title-404-wpseo: updated
+
+=== OPTIONS_2 exit=0 ===
+pkq_settings: unchanged
+title-404-wpseo: unchanged
+
+=== MOQ_1 exit=0 ===
+before MOQ 500=452 | 500 pieces per=550
+site_moq_before=missing(default 500)
+after MOQ 500=0 | 500 pieces per=1
+replaced=1666 | fields=1123 | pages=399
+yoast_cache_replaced=925 | indexable_rows=363
+site_moq_after=250 | site_moq_updated=1
+
+=== MOQ_2 exit=0 ===
+before MOQ 500=0 | 500 pieces per=1
+site_moq_before=250
+after MOQ 500=0 | 500 pieces per=1
+replaced=0 | fields=0 | pages=0
+yoast_cache_replaced=0 | indexable_rows=0
+site_moq_after=250 | site_moq_updated=0
+
+=== 32A5_DRY_RUN exit=0 ===
+mode=dry-run plan=318 posts=276 state=before old=318 new=0
+
+=== 32A5_BACKUP exit=0 ===
+mode=backup plan=318 posts=276 state=before old=318 new=0
+backup_rows=276 sha256=aa1c68d226c78d35c3bc826b575c0be3bf1b34dc623e60eb6ffa2c5f59c6d9a9
+
+=== 32A5_BACKUP_COPY exit=0 ===
+
+=== 32A5_APPLY_1 exit=0 ===
+mode=apply plan=318 posts=276 state=before old=318 new=0
+changed=318 posts=276
+
+=== 32A5_APPLY_2 exit=0 ===
+mode=apply plan=318 posts=276 state=after old=0 new=318
+changed=0 posts=0
+
+=== 32A6_DRY_RUN exit=0 ===
+mode=dry-run plan=7 fields=6 state=before old=7 new=0
+
+=== 32A6_BACKUP exit=0 ===
+mode=backup plan=7 fields=6 state=before old=7 new=0
+backup_fields=6 indexable_rows=1 sha256=bfe6a0473b53d9146e195a1f7570ebe0da425e900bf60d7397caa69835804f2c
+
+=== 32A6_BACKUP_COPY exit=0 ===
+
+=== 32A6_APPLY_1 exit=0 ===
+mode=apply plan=7 fields=6 state=before old=7 new=0
+changed=7 fields=6 indexable_rows=1
+
+=== 32A6_APPLY_2 exit=0 ===
+mode=apply plan=7 fields=6 state=after old=0 new=7
+changed=0 fields=0 indexable_rows=0
+
+=== TARGETS ===
+TARGET / HTTP=200 MOQ250=1 MOQ500=0
+TARGET /products/ HTTP=200 MOQ250=1 MOQ500=1
+TARGET /jewelry-boxes/ HTTP=200 MOQ250=1 MOQ500=0
+TARGET /get-a-quote/ HTTP=200 MOQ250=1 MOQ500=0
+TARGET /2026/10/01/packaging-moq-design-planning/ HTTP=200 MOQ250=1 MOQ500=0
+TARGET /2026/10/02/multi-sku-jewelry-packaging-fit-matrix/ HTTP=200 MOQ250=1 MOQ500=0
+TARGET /2026/10/15/retail-demonstrator-material-plan/ HTTP=200 MOQ250=1 MOQ500=0
+TARGET /product-magnetic-jewelry-box/ HTTP=200 MOQ250=1 MOQ500=0
+TARGET /product-front-tuck-mailer/ HTTP=200 MOQ250=1 MOQ500=0
+TARGET /product-collapsible-magnetic-gift-box/ HTTP=200 MOQ250=1 MOQ500=0
+TARGET /product-double-wall-tray-lid/ HTTP=200 MOQ250=1 MOQ500=0
+TARGET /product-lock-cap-auto-bottom-carton/ HTTP=200 MOQ250=1 MOQ500=0
+ROUTE /PRIVACY/?x=AbC HTTP=301 LOCATION=https://www.packrivo.com/privacy/?x=AbC
+ROUTE /de/about HTTP=301 LOCATION=http://packrivo-r1-proxy/de/about/
+ROUTE /zh-CN/about HTTP=301 LOCATION=http://packrivo-r1-proxy/zh-CN/about/
+ROUTE /blog/page/2/ HTTP=301 LOCATION=https://www.packrivo.com/blog/?pg=2
+PAGINATION HTTP=200 CANONICAL=https://www.packrivo.com/blog/?pg=2
+LANG_HOME ar HTTP=200 HREFLANG_COUNT=12 MISSING=
+LANG_HOME de HTTP=200 HREFLANG_COUNT=12 MISSING=
+LANG_HOME es HTTP=200 HREFLANG_COUNT=12 MISSING=
+LANG_HOME fr HTTP=200 HREFLANG_COUNT=12 MISSING=
+LANG_HOME it HTTP=200 HREFLANG_COUNT=12 MISSING=
+LANG_HOME ja HTTP=200 HREFLANG_COUNT=12 MISSING=
+LANG_HOME ko HTTP=200 HREFLANG_COUNT=12 MISSING=
+LANG_HOME nl HTTP=200 HREFLANG_COUNT=12 MISSING=
+LANG_HOME pt HTTP=200 HREFLANG_COUNT=12 MISSING=
+LANG_HOME zh-CN HTTP=200 HREFLANG_COUNT=12 MISSING=
+LANG_HOME zh-TW HTTP=200 HREFLANG_COUNT=12 MISSING=
+GEO /llms.txt HTTP=200 MOQ250=1 MOQ500=0
+GEO /llms-full.txt HTTP=200 MOQ250=109 MOQ500=0
+GEO /robots.txt HTTP=200 MOQ250=0 MOQ500=0
+BOT GPTBot BLOCK_ALL=0
+BOT OAI-SearchBot BLOCK_ALL=0
+BOT ChatGPT-User BLOCK_ALL=0
+BOT ClaudeBot BLOCK_ALL=0
+BOT PerplexityBot BLOCK_ALL=0
+
+=== LLMS_FULL ===
+processed=25/348 errors=0
+processed=50/348 errors=0
+processed=75/348 errors=0
+processed=100/348 errors=0
+processed=125/348 errors=0
+processed=150/348 errors=0
+processed=175/348 errors=0
+processed=200/348 errors=0
+processed=225/348 errors=0
+processed=250/348 errors=0
+processed=275/348 errors=0
+processed=300/348 errors=0
+processed=325/348 errors=0
+pages=348 bytes=858175 sha256=2be0d3d5f5b4dafaa00bb56a3ef2bae876ebd7826a7d4c46108cceeb328ef16b stale_moq=0
+
+=== CRAWL ===
+SITEMAP_URLS 2049
+FETCH 100/2049
+FETCH 200/2049
+FETCH 300/2049
+FETCH 400/2049
+FETCH 500/2049
+FETCH 600/2049
+FETCH 700/2049
+FETCH 800/2049
+FETCH 900/2049
+FETCH 1000/2049
+FETCH 1100/2049
+FETCH 1200/2049
+FETCH 1300/2049
+FETCH 1400/2049
+FETCH 1500/2049
+FETCH 1600/2049
+FETCH 1700/2049
+FETCH 1800/2049
+FETCH 1900/2049
+FETCH 2000/2049
+BFS_SEEN 1 NEXT 41
+BFS_SEEN 42 NEXT 640
+FETCH 100/122
+BFS_SEEN 642 NEXT 1577
+FETCH 100/160
+BFS_SEEN 1901 NEXT 394
+FETCH 100/246
+FETCH 200/246
+BFS_SEEN 2217 NEXT 51
+BFS_SEEN 2226 NEXT 12
+BFS_SEEN 2234 NEXT 9
+BFS_SEEN 2238 NEXT 6
+BFS_SEEN 2242 NEXT 3
+BFS_SEEN 2243 NEXT 0
+SITEMAP_TOTAL 2049 ENGLISH 674 BAD 0
+REDLINES {"moq_500":0,"standard":3,"factory_self":0}
+QUERY_LINKS 0
+WIDGET_TARGETS 1857
+ORPHANS 0 REACHABLE 2243
+
+=== 29Y ===
+  50/1606  扣过本族词后>5 的页面 2  异常 0
+  100/1606  扣过本族词后>5 的页面 3  异常 0
+  150/1606  扣过本族词后>5 的页面 9  异常 0
+  200/1606  扣过本族词后>5 的页面 10  异常 0
+  250/1606  扣过本族词后>5 的页面 11  异常 0
+  300/1606  扣过本族词后>5 的页面 16  异常 0
+  350/1606  扣过本族词后>5 的页面 17  异常 0
+  400/1606  扣过本族词后>5 的页面 19  异常 0
+  450/1606  扣过本族词后>5 的页面 23  异常 0
+  500/1606  扣过本族词后>5 的页面 24  异常 0
+  550/1606  扣过本族词后>5 的页面 26  异常 0
+  600/1606  扣过本族词后>5 的页面 30  异常 0
+  650/1606  扣过本族词后>5 的页面 31  异常 0
+  700/1606  扣过本族词后>5 的页面 32  异常 0
+  750/1606  扣过本族词后>5 的页面 36  异常 0
+  800/1606  扣过本族词后>5 的页面 37  异常 0
+  850/1606  扣过本族词后>5 的页面 39  异常 0
+  900/1606  扣过本族词后>5 的页面 43  异常 0
+  950/1606  扣过本族词后>5 的页面 43  异常 0
+  1000/1606  扣过本族词后>5 的页面 46  异常 0
+  1050/1606  扣过本族词后>5 的页面 51  异常 0
+  1100/1606  扣过本族词后>5 的页面 51  异常 0
+  1150/1606  扣过本族词后>5 的页面 54  异常 0
+  1200/1606  扣过本族词后>5 的页面 59  异常 0
+  1250/1606  扣过本族词后>5 的页面 59  异常 0
+  1300/1606  扣过本族词后>5 的页面 62  异常 0
+  1350/1606  扣过本族词后>5 的页面 69  异常 0
+  1400/1606  扣过本族词后>5 的页面 77  异常 0
+  1450/1606  扣过本族词后>5 的页面 96  异常 0
+  1500/1606  扣过本族词后>5 的页面 106  异常 0
+  1550/1606  扣过本族词后>5 的页面 116  异常 0
+  1600/1606  扣过本族词后>5 的页面 135  异常 0
+完成 1606 条，扣过本族词后>5 的页面 138，异常 0

@@ -234,3 +234,96 @@ Error: Post 448 must match the complete old or transformed new content; nothing 
 在本地 `super_read_only` 下，普通 `wp theme list` 和 `wp plugin list` 尝试写入更新缓存；加入 `--skip-update-check` 后本地重测返回 0 且未见上述数据库写入错误，但本地不能证明生产 mu 插件无其他副作用。当前操作单命令仍须只读数据库身份与复核，禁止视为已经验证可在生产只读执行。
 
 附录 E 仍为草案：缺完整正向及两轮验收、32a6 失败、生产只读指纹未获验证，不得去掉草案标识。
+
+## R1-3 / R1-3b：按 Git 字节出包及两轮演练（2026-11-06，美西）
+
+**整体未通过，附录 E 和站长操作单继续为草案。** 没有连接生产或 push。先在 `05226e3` 检查 `git diff --cached --ignore-cr-at-eol --name-only` 为 0 行，随后恢复 `deploy` 和 `dsh-out`，没有提交 610 项暂存。由于其余 `.py`、`.sh` 等未覆盖的已跟踪文件仍是 CRLF，从 Git blob 按字节恢复，并只刷新索引；生成任务文件前 `git status --short` 空。最终检出统计：
+
+```text
+ 196 i/-text w/-text
+ 970 i/lf    w/lf
+2246 i/none  w/none
+w/crlf=0; w/mixed=0
+```
+
+三个指定文件与 Git blob 的 SHA-256 一致，CSV 中 CR 字节为 0：
+
+```text
+deploy/32a6-blog-rewrite.php e31aba89f53f657819dbcbb2a9e9ca6746eaa4345cfcd28b4225d4a3dfbfba5c
+deploy/32a5-blog-plan.json    b494b74fe645fc592386f98abca1f430c75b84906db50421ac6bd68b6e5ccb31
+dsh-out/32a-blog-rewrite.csv 96598eb887165247253e8e882a67f35f67bb1b365e2d0715b2d0acf7beafa878
+```
+
+R1-2 容器中遗留的原 CSV 含 148 个 CRLF，两个多行字段含 CR；转换 CRLF 为 LF 后恰等于 Git blob。此轮未修改 32a6 判据或在脚本内归一换行。`.gitattributes` 提交 `05226e3` 对指定六类扩展名按字节检出；未覆盖路径及其他 worktree 合并前，仍须从 Git 对象出包。
+
+### Git 对象包与 MANIFEST
+
+默认 `git archive` 在 `core.autocrlf=true` 下使未覆盖 `.py` 转换为 CRLF，该候选包校验失败、未用于演练。改用 `git -c core.autocrlf=false archive` 从 `3e0dca0f217e202a3764b75fb697cc8dca014117` 导出 96 个文件，逐个与 blob 完全一致；容器内 `sha256sum -c` 96/96 OK，两轮迁移使用 `E:/破甲工作区/r1-3b-pkg-v3/`。
+
+另从同一归档生成兼容扁平 `$PKG` 路径的 `E:/破甲工作区/r1-3b-pkg-v4/`，192 个文件及别名逐一与对应 blob 一致、192/192 清单校验 OK，32a 和 31b 两道翻译闸门 PASS；兼容包未单独再跑两轮。别名与来源映射见 `dsh-out/R1-3b-package-map.json`。
+
+```text
+SOURCE_COMMIT 3e0dca0f217e202a3764b75fb697cc8dca014117
+GIT_ARCHIVE_SHA256 31adbf3f50228fa801164c61204d3a56d84a9886ea112df1d676e7432761fb71
+MANIFEST_96_SHA256 9c2eae563a8975bdf1ea134d2109ec355d5fc125f710ec31c0cc9cd793a6a3f8
+MANIFEST_192_SHA256 aee55c6e053420d824d0b62eef2896f963788d6edcbcd631cd22692001c4728e
+```
+
+附录 E 与站长操作单加入每次上传后、迁移前 `sha256sum -c MANIFEST.sha256`，清单自身哈希须另行核对。重新从源码 blob 构建的候选 ZIP：
+
+```text
+packrivo-home-v4-4.0.7.zip            0cbd7dc862ead119f93b9e408b724b99a70be1f6cb8aa96343848756a9739b54
+packrivo-quote-1.0.2.zip              51e62c83177e5dfffd75a749b86221bad001263cdec22c6f274d69dd8776aa08
+packrivo-language-selector-1.0.10.zip b1706a007afb4be1c70d35c76f4a59e720f46ec1c49d7408ca3f3f2dddbbdd30
+```
+
+三个 ZIP 内分别 54、19、3 个文件均与源码 blob 一致。96 条输入的 EOL、多行字段及风险见 `dsh-out/R1-3b-input-audit.csv`：13 个 JSON/CSV 含多行字段；11 个报价插件翻译 JSON 的工作区仍是 CRLF，应使用 Git 对象包。
+
+### 两轮演练与回滚
+
+R1-2 最终 S0 与本轮 S0 的数据库、文件和 30 页正文一致。新建独立 E1 备份并逐 tar 解压验证，包括 32a 涉及的父主题与产品工作区插件。第一轮正向及验收后，进入维护模式，从 E1 恢复库和各目录、缺失标记并清缓存；S0 对比：
+
+```text
+DATABASE_MATCH True 7b360455de332560180d062330bebb5c10af8c6aa289849800dbae0bb8215c4d 7b360455de332560180d062330bebb5c10af8c6aa289849800dbae0bb8215c4d
+FILES_MATCH True
+HTML_BODY_MATCH 30 / 30
+```
+
+| 项目 | S0 清单 SHA256 | 回滚后清单 SHA256 | 状态 |
+|---|---|---|---|
+| theme | f5a4f957475673f80a37118dddf0a3b747e764116071177a9239b9642f730ae0 | f5a4f957475673f80a37118dddf0a3b747e764116071177a9239b9642f730ae0 | present |
+| parent | 7a66f6146e0b3b7a92a4352684baf0146cf4d96a3c7f782eae59de826191661e | 7a66f6146e0b3b7a92a4352684baf0146cf4d96a3c7f782eae59de826191661e | present |
+| workspace | 3d265373acf32268b22f930fd650a0d342fd878a9d02e24ec60b1836b6c662ba | 3d265373acf32268b22f930fd650a0d342fd878a9d02e24ec60b1836b6c662ba | present |
+| quote | bb9026b64dc4b49a1b13e5e3a53b5e3894a0ec1e9fc9ae4bce6d2faa81d9dfbe | bb9026b64dc4b49a1b13e5e3a53b5e3894a0ec1e9fc9ae4bce6d2faa81d9dfbe | present |
+| selector | 44a32d4506665562fdfed83f4deb46ba771d9432b1767f6b8d445f0451bdf42b | 44a32d4506665562fdfed83f4deb46ba771d9432b1767f6b8d445f0451bdf42b | missing |
+| mu | 7cef3a9ba9f4b72230c10de1bc4f61737454527c3a85a473b6d2d21087e05228 | 7cef3a9ba9f4b72230c10de1bc4f61737454527c3a85a473b6d2d21087e05228 | present |
+| dictionaries | c8ea107ada9bbe7a9f21a5c028de6408d3a6167337ccca1fdf546dc2aaf3ec00 | c8ea107ada9bbe7a9f21a5c028de6408d3a6167337ccca1fdf546dc2aaf3ec00 | present |
+| llms | 44a32d4506665562fdfed83f4deb46ba771d9432b1767f6b8d445f0451bdf42b | 44a32d4506665562fdfed83f4deb46ba771d9432b1767f6b8d445f0451bdf42b | missing |
+| llms_full | 44a32d4506665562fdfed83f4deb46ba771d9432b1767f6b8d445f0451bdf42b | 44a32d4506665562fdfed83f4deb46ba771d9432b1767f6b8d445f0451bdf42b | missing |
+
+缺失项是 `MISSING\n` 标记哈希。HTTP 比对为正文与状态码，未声称响应头逐字节一致。随后从 S0 进行第二次正向。两轮 32a-5 与 32a-6 的原始摘要一致：
+
+```text
+32A5_DRY_RUN: plan=318 posts=276 state=before old=318 new=0
+32A5_APPLY_1: changed=318 posts=276
+32A5_APPLY_2: changed=0 posts=0
+32A6_DRY_RUN: plan=7 fields=6 state=before old=7 new=0
+32A6_APPLY_1: changed=7 fields=6 indexable_rows=1
+32A6_APPLY_2: changed=0 fields=0 indexable_rows=0
+POST_448: 01-worksheet=0 b03-448-teaching=0 250_present=1 MOQ_500=0
+```
+
+两轮 llms 输出旧 MOQ 检测通过：`llms.txt` SHA256 `39d3b9678bdfc96d37c27f6c39892f4e510dde23186d4585594ba249df890e7c`；`llms-full.txt` SHA256 `2be0d3d5f5b4dafaa00bb56a3ef2bae876ebd7826a7d4c46108cceeb328ef16b`，来自 348 页。首次用 HTTP 直接源时首页 301 导致 full 生成失败；仅在 R1 内网增加反向代理并传递 `X-Forwarded-Proto: https` 后通过。
+
+### 验收与未通过项
+
+两轮原始输出分别见 `dsh-out/R1-3b-round1.log`、`dsh-out/R1-3b-round2.log`。12 个指定页面两轮均 200 且出现 250；`/products/` 两次初次抽查的嵌入数据各出现一次 `MOQ 500`，严格零旧口径未通过，后续 6 次复查为 0。数据库工作区快照 3 条含旧字符串，是否为唯一来源未证明。
+
+- 大写 URL 和语言无斜杠 URL 301，博客分页 canonical 指向本页；11 语言首页均 200 且输出可抓取语言链接；所测 AI 爬虫 robots 规则无全站禁止。
+- 两轮 sitemap 内 2,049 个 URL 全部 200，英文站内可达孤立页 0，`?page_id=` / `?p=` 站内链接 0。另有 51 个无查询参数的 200 页面不在 sitemap：36 个 noindex、15 个可索引或待核对；严格“所有 200 页面”口径未通过，见 `dsh-out/R1-3b-200-outside-sitemap.csv`。带查询参数的 200 地址另有 496 个，不应直接等同独立可索引页面。
+- 可由 31a/31b 本地记录确认的 16 个历史目标均有站内入链；旧 301 地址 `/collapsible-magnetic-gift-box/` 入链 0，但未找到其是否属于原始 17 项的权威清单，不能声称 17/17。见 `dsh-out/R1-3b-inbound-check.csv`。
+- 两轮 title/meta/H1 红线：MOQ500=0、工厂自称规则=0、ISO/ISTA/FSC 关键词=3，均来自 `/2026/10/10/fsc-packaging-label-permission/` 的 title/meta/H1；内容是标签许可讨论，严格关键词零命中未通过，不等同已证实认证自称。
+- 29y 非英文扫描两轮均 11×146=1,606 页、HTTP 失败 0、逐页指标差异 0；按拉丁语种 >5 词和 CJK 连续段标准，137 个非英文页未通过，按用户指示不阻塞，明细 `dsh-out/R1-3b-residual-nonenglish.csv`；原因是路径和片段初判，须复核。扫描进度按统一 >5 词口径为 138。该工具用于非英文页英文残留，英文页独立“0 未通过”未验证。
+- `dsh-out/R1-3b-widget-targets.csv` 列出 header、footer、nav、aside 抓到的 1,857 个站内目标及出现次数，是挂件目标宽口径并集，并不表示每项全站出现。
+
+生产只读指纹身份、历史 29y 命令和 32a 容器路径的完整适配尚未验证。上述严格失败及未验证项存在，禁止将附录 E 与操作单标为定稿或用于生产。

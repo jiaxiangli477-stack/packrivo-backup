@@ -1,0 +1,97 @@
+path,git_eol,worktree_eol,package_CRLF,multiline_field_count,CR_in_field_count,risk
+deploy/31b/default-category.php,i/lf,w/lf,0,n/a,n/a,
+deploy/31b/mu-plugins/000-packrivo-31b-routes.php,i/lf,w/lf,0,n/a,n/a,
+deploy/31b/prepare-photos.py,i/lf,w/lf,0,n/a,n/a,
+deploy/32a-i18n-gate.py,i/lf,w/lf,0,n/a,n/a,
+deploy/32a-moq-content.php,i/lf,w/lf,0,n/a,n/a,
+deploy/32a-moq-plan.json,i/lf,w/lf,0,0,0,
+deploy/32a-patch-legacy-moq.php,i/lf,w/lf,0,n/a,n/a,
+deploy/32a-update-options.php,i/lf,w/lf,0,n/a,n/a,
+deploy/32a-workspace-moq-backup.php,i/lf,w/lf,0,n/a,n/a,
+deploy/32a-workspace-moq-lib.php,i/lf,w/lf,0,n/a,n/a,
+deploy/32a-workspace-moq-migrate.php,i/lf,w/lf,0,n/a,n/a,
+deploy/32a-workspace-moq-rollback.php,i/lf,w/lf,0,n/a,n/a,
+deploy/32a/mu-plugins/001-packrivo-32a-404-title.php,i/lf,w/lf,0,n/a,n/a,
+deploy/32a4-generate-llms-full.php,i/lf,w/lf,0,n/a,n/a,
+deploy/32a4-generate-llms.php,i/lf,w/lf,0,n/a,n/a,
+deploy/32a4-llms-text.php,i/lf,w/lf,0,n/a,n/a,
+deploy/32a4/llms.base.txt,i/lf,w/lf,0,n/a,n/a,
+deploy/32a5-blog-migrate.php,i/lf,w/lf,0,n/a,n/a,
+deploy/32a5-blog-plan.json,i/lf,w/lf,0,0,0,
+deploy/32a6-blog-rewrite.php,i/lf,w/lf,0,n/a,n/a,
+deploy/32a6-blog-rollback.php,i/lf,w/lf,0,n/a,n/a,
+deploy/32a7-dict-merge.py,i/lf,w/lf,0,n/a,n/a,
+deploy/RUNBOOK-29y.md,i/lf,w/lf,0,n/a,n/a,
+deploy/RUNBOOK-launch.md,i/lf,w/lf,0,n/a,n/a,
+deploy/i18n-merged/ar-dict.json,i/lf,w/lf,0,2,0,multiline fields; preserve blob bytes
+deploy/i18n-merged/ar-js.json,i/lf,w/lf,0,0,0,
+deploy/i18n-merged/de-dict.json,i/lf,w/lf,0,2,0,multiline fields; preserve blob bytes
+deploy/i18n-merged/de-js.json,i/lf,w/lf,0,0,0,
+deploy/i18n-merged/es-dict.json,i/lf,w/lf,0,2,0,multiline fields; preserve blob bytes
+deploy/i18n-merged/es-js.json,i/lf,w/lf,0,0,0,
+deploy/i18n-merged/fr-dict.json,i/lf,w/lf,0,2,0,multiline fields; preserve blob bytes
+deploy/i18n-merged/fr-js.json,i/lf,w/lf,0,0,0,
+deploy/i18n-merged/it-dict.json,i/lf,w/lf,0,2,0,multiline fields; preserve blob bytes
+deploy/i18n-merged/it-js.json,i/lf,w/lf,0,0,0,
+deploy/i18n-merged/ja-dict.json,i/lf,w/lf,0,2,0,multiline fields; preserve blob bytes
+deploy/i18n-merged/ja-js.json,i/lf,w/lf,0,0,0,
+deploy/i18n-merged/ko-dict.json,i/lf,w/lf,0,2,0,multiline fields; preserve blob bytes
+deploy/i18n-merged/ko-js.json,i/lf,w/lf,0,0,0,
+deploy/i18n-merged/nl-dict.json,i/lf,w/lf,0,2,0,multiline fields; preserve blob bytes
+deploy/i18n-merged/nl-js.json,i/lf,w/lf,0,0,0,
+deploy/i18n-merged/paths.json,i/lf,w/lf,0,0,0,
+deploy/i18n-merged/pt-dict.json,i/lf,w/lf,0,2,0,multiline fields; preserve blob bytes
+deploy/i18n-merged/pt-js.json,i/lf,w/lf,0,0,0,
+deploy/i18n-merged/zh-CN-dict.json,i/lf,w/lf,0,2,0,multiline fields; preserve blob bytes
+deploy/i18n-merged/zh-CN-js.json,i/lf,w/lf,0,0,0,
+deploy/i18n-merged/zh-TW-dict.json,i/lf,w/lf,0,2,0,multiline fields; preserve blob bytes
+deploy/i18n-merged/zh-TW-js.json,i/lf,w/lf,0,0,0,
+deploy/r1-i18n-gate.py,i/lf,w/lf,0,n/a,n/a,
+deploy/r1-import-i18n-csv.py,i/lf,w/lf,0,n/a,n/a,
+deploy/r1-packages/packrivo-home-v4-4.0.7.zip,i/-text,w/-text,23,n/a,n/a,
+deploy/r1-packages/packrivo-language-selector-1.0.10.zip,i/-text,w/-text,0,n/a,n/a,
+deploy/r1-packages/packrivo-quote-1.0.2.zip,i/-text,w/-text,1,n/a,n/a,
+deploy/scripts-29y/add-card-i18n-29y.py,i/lf,w/lf,0,n/a,n/a,
+deploy/scripts-29y/apply-batch-29y.py,i/lf,w/lf,0,n/a,n/a,
+deploy/scripts-29y/apply-translation-packets-29y.py,i/lf,w/lf,0,n/a,n/a,
+deploy/scripts-29y/apply-translations-29y.py,i/lf,w/lf,0,n/a,n/a,
+deploy/scripts-29y/by-lang-residual-29y.py,i/lf,w/lf,0,n/a,n/a,
+deploy/scripts-29y/dict_io_29y.py,i/lf,w/lf,0,n/a,n/a,
+deploy/scripts-29y/extract-en-nodes-29y.php,i/lf,w/lf,0,n/a,n/a,
+deploy/scripts-29y/gen-llms-prices.php,i/lf,w/lf,0,n/a,n/a,
+deploy/scripts-29y/hold-dicts-29y.py,i/lf,w/lf,0,n/a,n/a,
+deploy/scripts-29y/import-working-delta-29y.py,i/lf,w/lf,0,n/a,n/a,
+deploy/scripts-29y/inject-test-29y.php,i/lf,w/lf,0,n/a,n/a,
+deploy/scripts-29y/negtest-allow-29y.py,i/lf,w/lf,0,n/a,n/a,
+deploy/scripts-29y/negtest-es-29y.py,i/lf,w/lf,0,n/a,n/a,
+deploy/scripts-29y/negtest-homograph-29y.py,i/lf,w/lf,0,n/a,n/a,
+deploy/scripts-29y/normalize-json-lf-29y.py,i/lf,w/lf,0,n/a,n/a,
+deploy/scripts-29y/privacy-note-29y.php,i/lf,w/lf,0,n/a,n/a,
+deploy/scripts-29y/rebuild-delta-from-work-29y.py,i/lf,w/lf,0,n/a,n/a,
+deploy/scripts-29y/rebuild-dicts-from-head-29y.py,i/lf,w/lf,0,n/a,n/a,
+deploy/scripts-29y/report-dict-mods-29y.py,i/lf,w/lf,0,n/a,n/a,
+deploy/scripts-29y/run-scan-29y.py,i/lf,w/lf,0,n/a,n/a,
+deploy/scripts-29y/scan-main-english-29y.php,i/lf,w/lf,0,n/a,n/a,
+deploy/scripts-29y/scan-residual-readback.txt,i/lf,w/lf,0,n/a,n/a,
+deploy/scripts-29y/summarize-residual-29y.py,i/lf,w/lf,0,n/a,n/a,
+deploy/scripts-29y/verify-card-guard-29y.py,i/lf,w/lf,0,n/a,n/a,
+deploy/scripts-29y/verify-card-srcset-29y.py,i/lf,w/lf,0,n/a,n/a,
+deploy/scripts-29y/verify-dict-rebuild-29y.py,i/lf,w/lf,0,n/a,n/a,
+deploy/scripts-29y/verify-hero-srcset-29y.py,i/lf,w/lf,0,n/a,n/a,
+deploy/site-29y/mu-plugins/packrivo-i18n.php,i/lf,w/lf,0,n/a,n/a,
+deploy/site-29y/mu-plugins/packrivo-privacy-noindex-29y.php,i/lf,w/lf,0,n/a,n/a,
+dsh-out/31b-i18n.csv,i/lf,w/lf,0,0,0,
+dsh-out/31b-new-strings.csv,i/lf,w/lf,0,0,0,
+dsh-out/32a-blog-rewrite.csv,i/lf,w/lf,0,2,0,HIGH: exact whole-post match; multiline CSV fields; original Git bytes required
+dsh-out/32a-new-strings.csv,i/lf,w/lf,0,1,0,multiline fields; preserve blob bytes
+packrivo-wp/packrivo-quote/includes/quote-i18n/ar.json,i/lf,w/crlf,0,0,0,workspace CRLF; only use exported Git bytes
+packrivo-wp/packrivo-quote/includes/quote-i18n/de.json,i/lf,w/crlf,0,0,0,workspace CRLF; only use exported Git bytes
+packrivo-wp/packrivo-quote/includes/quote-i18n/es.json,i/lf,w/crlf,0,0,0,workspace CRLF; only use exported Git bytes
+packrivo-wp/packrivo-quote/includes/quote-i18n/fr.json,i/lf,w/crlf,0,0,0,workspace CRLF; only use exported Git bytes
+packrivo-wp/packrivo-quote/includes/quote-i18n/it.json,i/lf,w/crlf,0,0,0,workspace CRLF; only use exported Git bytes
+packrivo-wp/packrivo-quote/includes/quote-i18n/ja.json,i/lf,w/crlf,0,0,0,workspace CRLF; only use exported Git bytes
+packrivo-wp/packrivo-quote/includes/quote-i18n/ko.json,i/lf,w/crlf,0,0,0,workspace CRLF; only use exported Git bytes
+packrivo-wp/packrivo-quote/includes/quote-i18n/nl.json,i/lf,w/crlf,0,0,0,workspace CRLF; only use exported Git bytes
+packrivo-wp/packrivo-quote/includes/quote-i18n/pt.json,i/lf,w/crlf,0,0,0,workspace CRLF; only use exported Git bytes
+packrivo-wp/packrivo-quote/includes/quote-i18n/zh-CN.json,i/lf,w/crlf,0,0,0,workspace CRLF; only use exported Git bytes
+packrivo-wp/packrivo-quote/includes/quote-i18n/zh-TW.json,i/lf,w/crlf,0,0,0,workspace CRLF; only use exported Git bytes
