@@ -1,0 +1,16 @@
+--- a/wp-content/mu-plugins/packrivo-historic-public-urls.php
++++ b/wp-content/mu-plugins/packrivo-historic-public-urls.php
+@@ -7,5 +7,12 @@
+ 
+ add_action('template_redirect', static function () {
+-    if (!is_404() || !in_array($_SERVER['REQUEST_METHOD'] ?? '', ['GET', 'HEAD'], true)) return;
++    if (!in_array($_SERVER['REQUEST_METHOD'] ?? '', ['GET', 'HEAD'], true)) return;
++
++    $path = wp_parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
++    if (!is_preview() && in_array($path, ['/2026/10/05/packaging-set-quote-units', '/2026/10/05/packaging-set-quote-units/'], true)) {
++        wp_safe_redirect(home_url('/2026/09/28/custom-packaging-quote-comparison-checklist/'), 301, 'Packrivo');
++        exit;
++    }
++    if (!is_404()) return;
+ 
+     $replacements = [
